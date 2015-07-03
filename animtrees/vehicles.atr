@@ -1,0 +1,555 @@
+humvee_passenger_2_turret_minigun
+humvee_turret_2_passenger_minigun
+
+humvee_mount_frontR_door
+humvee_mount_frontL_door
+humvee_mount_backL_door
+humvee_mount_backR_door
+
+humvee_dismount_backL_door
+humvee_dismount_backR_door
+humvee_dismount_frontL_door
+humvee_dismount_frontR_door
+
+suburban_dismount_backL_door
+suburban_dismount_backR_door
+suburban_dismount_frontL_door
+suburban_dismount_frontR_door
+
+DCemp_heli_crash_1
+DCemp_heli_crash_2
+DCemp_heli_crash_3
+DCemp_emp_heli_crash
+DCemp_car_hit
+
+boneyard_jeep_evac
+boneyard_UAZ_door
+boneyard_UAZ_steer_straight
+boneyard_UAZ_steer_left
+boneyard_UAZ_steer_right
+
+	      
+M60A1_tank_lower
+M60A1_tank_raise
+M60A1_bridge_lower
+M60A1_bridge_raise
+M60A1_tank_cross
+roadkill_M60A1_bridge_lower
+roadkill_M60A1_tank_lower
+roadkill_M60A1_tank_driveup
+roadkill_M60A1_bridge_driveup
+roadkill_M60A1_tank_cross
+roadkill_M60A1_arm_lower
+
+roadkill_hummer_door_soldier
+roadkill_hummer_gun_getin
+
+afchase_chopper_landing
+AFchase_waterfall_zodiac_R
+AFchase_waterfall_zodiac_L
+AFchase_waterfall_zodiac_rocking
+AFchase_waterfall_zodiac_fall
+AFchase_waterfall_pavelow
+AFchase_waterfall_pavelow_idle
+AFchase_waterfall_player_zodiac
+
+
+
+roadkill_hummer_mount_frontR_door
+
+roadkill_pickup_technical_pushed
+
+stryker_movement
+stryker_movement_backwards
+stryker_cannon_fire
+stryker_shell_hatch
+
+
+bh_minigun_spin_loop
+dcburning_BHrescue_BH_animatic
+dcburning_BHrescue_BH
+
+
+mi17_heli_idle
+gulag_end_pavelow
+
+cliffhanger_icepick_fight_snowmobile
+cliffhanger_truck_bm21	
+cliffhanger_mig_landing_1
+cliffhanger_mig_landing_2
+mig_landing_gear_up
+		
+
+technical_driving_idle_forward
+technical_driving_idle_backward
+
+
+sniper_escape_crash_mi28_entrance
+sniper_escape_crash_mi28_idle
+sniper_escape_crash_mi28_crash
+sniper_escape_crash_mi28_rotor_1
+sniper_escape_crash_mi28_rotor_2
+sniper_escape_crash_mi28_rotor_3
+sniper_escape_crash_mi28_rotor_4
+sniper_escape_crash_mi28_rotor_5
+
+cliffhanger_crash_mi28_rotor_1
+cliffhanger_crash_mi28_rotor_2
+cliffhanger_crash_mi28_rotor_3
+cliffhanger_crash_mi28_rotor_4
+cliffhanger_crash_mi28_rotor_5
+cliffhanger_crash_mi28_crash
+
+mi17_heli_rotors
+
+blackhawk
+{
+	bh_cargo_path
+	bh_idle
+	bh_rotors
+}
+
+
+door_pickup_driver_climb_in
+door_pickup_passenger_climb_in
+door_pickup_driver_climb_out
+door_pickup_passenger_climb_out
+door_pickup_passenger_RL_climb_out
+door_pickup_passenger_RR_climb_out
+cobra_crash
+cobra_crash_relative
+abrams_movement
+abrams_movement_backwards
+
+pickup_tankcrush_front
+tank_tankcrush_front
+sedan_tankcrush_side
+tank_tankcrush_side
+
+cobra : additive
+{
+}
+
+bmp
+{
+	bmp_doors_open
+	bmp_doors_close
+	bmp_movement
+	bmp_movement_backwards
+}
+
+
+BTR80
+{
+	BTR80_doorsR_open
+	BTR80_doorsL_open
+	BTR80_exit_1
+	BTR80_exit_2
+	BTR80_exit_3
+	BTR80_exit_4
+	BTR80_movement
+	BTR80_movement_backwards
+}
+
+
+bog_b_tank_explosion
+bog_b_tank_explosion2
+
+cobra_copilot_idle
+cobra_copilot_idle_l
+cobra_copilot_idle_r
+
+coup_opening_car
+coup_opening_car_driving
+coup_ending_drag_cardoor
+
+vehicle_steeringwheel
+{
+	coup_driver_bigleft2center_car
+	coup_driver_bigleft_idle_car
+	coup_driver_bigleft_loop_car
+	coup_driver_bigleftloop2center_car
+	coup_driver_center2smallleft_car
+	coup_driver_center2smallright_car
+	coup_driver_idle_car
+	coup_driver_smallleft2center_car
+	coup_driver_smallleft2bigleft_car
+	coup_driver_smallleft_idle_car
+	coup_driver_smallright2center_car
+	coup_driver_smallright_idle_car
+	coup_driver_bigleftloop_idle_car
+}
+
+vehicle_additives : additive
+{
+	coup_opening_car_driving_idle_bumpy
+	coup_opening_car_driving_idle_normal
+	coup_opening_car_driving_idle_smooth
+	coup_opening_car_driving_idle_static
+
+}
+
+ac130_carjack
+{
+	ac130_carjack_door_1a
+	ac130_carjack_door_1b
+	ac130_carjack_door_others
+}
+
+ch46_anims
+{
+	sniper_escape_ch46_take_off
+	sniper_escape_ch46_land
+	sniper_escape_ch46_idle
+}
+
+blackhawk_anims
+{
+	blackout_bh_evac_heli_idle
+	blackout_bh_evac_heli_land
+	blackout_bh_evac_heli_takeoff
+}
+
+ch46_rotors
+{
+	sniper_escape_ch46_rotors
+}
+
+ch46_turret
+{
+	ch46_turret_fire
+	ch46_turret_idle
+}
+
+ch46_doors
+{
+	ch46_doors_open
+	ch46_doors_close
+}
+
+cargoship_ch46_rescue_in
+cargoship_ch46_rescue_idle
+cargoship_ch46_rescue_out
+cargoship_ch46_rescue_drift
+cargoship_ch46_rescue_drift_idle
+
+armada_blackhawk_sniper_idle_loop_fastrope80
+armada_blackhawk_sniper_drop_fastrope80
+armada_blackhawk_sniper_idle_fastrope80
+
+bm21
+{
+	bm21_driving_idle_forward
+	bm21_driving_idle_backward	
+	bm21_passenger_climbout_door
+	bm21_driver_climbout_door
+	bm21_guy_climbout_truckdoor	
+}
+
+zpu_gun_fire_a
+zpu_gun_fire_b
+zpu_gun_stop
+
+bus_driving_idle_forward
+bus_driving_idle_backward
+tanker_truck_driving_idle_forward
+tanker_truck_driving_idle_backward
+jeepride_crash_tunnel_pickup
+jeepride_flip_pickup
+jeepride_crash_pillar
+
+
+uaz_drive
+{
+	uaz_driving_idle_forward
+	uaz_driving_idle_backward
+}
+
+uaz
+{
+	ambush_VIP_escape_UAZ
+	uaz_driver_enter_from_huntedrun_door
+	uaz_driver_exit_into_run_door
+	uaz_passenger_enter_from_huntedrun_door
+	uaz_passenger_exit_into_run_door
+	uaz_rear_driver_exit_into_run_door
+	uaz_passenger2_exit_into_run_door
+	uaz_rear_driver_enter_from_huntedrun_door
+	uaz_passenger2_enter_from_huntedrun_door
+	uaz_driver_exit_into_stand_door
+	uaz_passenger_exit_into_stand_door
+	uaz_passenger2_exit_into_stand_door
+	uaz_rear_driver_exit_into_stand_door	
+}
+
+uaz_driver
+{
+	UAZ_steeringwheel_death
+	UAZ_steeringwheel_duck
+	UAZ_steeringwheel_idle
+	UAZ_steeringwheel_turnleft
+	UAZ_steeringwheel_turnright
+	UAZ_steeringwheel_weave
+}
+
+
+
+mi28_path
+{
+	jeepride_mi28_flyby
+}
+mi28
+{
+	mi28_rotors
+}
+
+mi28_add : additive
+{
+	mi28_rotors_add
+}
+
+president_crash
+{
+	pres_crash_suv_pres
+	pres_crash_suv_1
+}
+
+snowmobile
+{
+    snowmobile_vehicle_driving_idle
+    sm_turn
+    {
+        snowmobile_vehicle_lean_L_delta
+        snowmobile_vehicle_lean_R_delta
+    }
+}
+
+motorcycle
+{
+	motorcycle_pose_lean_l_50
+	motorcycle_pose_lean_r_50
+	motorcycle_pose_straight
+	motorcycle_pose_turn_l
+	motorcycle_pose_turn_r
+	motorcycle_rider_pose_f
+	motorcycle_rider_pose_l
+	motorcycle_rider_pose_r
+}
+
+snowmobile_player
+{
+	player_snowmobile_left_arm
+	{
+		player_snowmobile_drive_left_arm
+		{
+			player_snowmobile_drive_turn_left2right_L
+			player_snowmobile_drive_turn_right2left_L
+		}
+		
+		player_snowmobile_shoot_left_arm
+		{
+			player_snowmobile_gun_fire
+			player_snowmobile_gun_idle
+			
+			player_snowmobile_gun_pullout_root
+			{
+				player_snowmobile_gun_pullout_L
+				player_snowmobile_gun_pullout
+				player_snowmobile_gun_pullout_R
+			}
+			
+			player_snowmobile_gun_putaway_root
+			{
+				player_snowmobile_gun_putaway_L
+				player_snowmobile_gun_putaway
+				player_snowmobile_gun_putaway_R
+			}
+			
+			player_snowmobile_gun_reload
+		}
+	}
+	
+	player_snowmobile_right_arm
+	{
+		player_snowmobile_drive_turn_left2right_R
+		player_snowmobile_drive_turn_right2left_R
+	}
+	
+	snowmobile_glock
+	{
+		snowmobile_glock_fire
+		snowmobile_glock_last_fire
+		snowmobile_glock_reload
+	}
+
+	player_snowmobile_drive_rpm_min
+	player_snowmobile_drive_rpm_max
+	
+	player_snowmobile_drive_speedometer_0
+	player_snowmobile_drive_speedometer_90
+	player_snowmobile_drive_speedometer_180
+
+	player_snowmobile_drive_throttle_add : additive
+	{
+		player_snowmobile_drive_throttle
+	}
+	
+	player_snowmobile_drive_throttle_add_left : additive
+	{
+		player_snowmobile_drive_throttle_left
+	}
+	
+	player_snowmobile_drive_throttle_add_right : additive
+	{
+		player_snowmobile_drive_throttle_right
+	}
+
+	zodiac_waterfall_add_left : additive
+	{
+		AFchase_waterfall_player_zodiac_add_L
+	}
+	zodiac_waterfall_add_right : additive
+	{
+		AFchase_waterfall_player_zodiac_add_R
+	}
+
+
+	player_sleeve_pose
+	player_sleeve_flapping
+}
+
+
+rotate_X_R
+rotate_X_L
+rotate_Y_R
+rotate_Y_L
+rotate_Z_R
+rotate_Z_L
+
+rotation
+{
+	rotate_body_X_R
+	rotate_body_X_L
+	rotate_body_Y_R
+	rotate_body_Y_L
+	rotate_body_Z_R
+	rotate_body_Z_L
+}
+
+humvee_antennas_idle_movement
+humvee_antennas_jerk_left
+humvee_antennas_jerk_right
+
+humvee
+{
+	humvee_50cal_driving_idle_forward
+	humvee_50cal_driving_idle_backward
+}
+
+humvee_antenna_additive : additive
+{
+	humvee_antenna_L_rotate_360
+	humvee_antenna_R_rotate_360
+}
+
+
+suburban
+{
+	player_suburban_minigun_fire2idle_L
+	player_suburban_minigun_fire2idle_R
+	player_suburban_minigun_idle_L
+	player_suburban_minigun_idle_R
+	player_suburban_minigun_idle2fire_L
+	player_suburban_minigun_idle2fire_R	
+}
+
+predator
+{
+	predator_flyby
+}
+
+
+cliffhanger
+{
+	cliff_jeep_crash
+}
+
+antonov
+{
+	paratrooper_jet_opendoors
+}
+
+oilrig
+{
+	oilrig_sub_1
+	oilrig_sub_2
+	oilrig_SDV_1
+	oilrig_SDV_2
+	oilrig_civ_escape_zodiac_A
+	oilrig_civ_escape_zodiac_B
+}
+
+suburban_playermove_window_l_in
+suburban_playermove_window_l_out
+suburban_playermove_window_r_in
+suburban_playermove_window_r_out
+
+roadkill_orders_hummer
+
+gulag_F15_intro_1
+gulag_F15_intro_2
+gulag_missile_intro_1
+gulag_missile_intro_2
+gulag_eject_seat_intro
+gulag_missile_F15_1_A
+gulag_missile_F15_1_B
+gulag_missile_F15_2_A
+gulag_missile_F15_2_B
+
+vehicle_80s_sedan1_flattire_LF
+vehicle_80s_sedan1_flattire_LB
+vehicle_80s_sedan1_flattire_RF
+vehicle_80s_sedan1_flattire_RB
+vehicle_80s_sedan1_destroy
+
+paradrop_cargo_vehicle
+
+favela_van_shootout_van
+favela_opening_cardoor_open
+favela_run_and_wave_cardoor
+
+invasion_opening_hummer2
+invasion_opening_hummer1
+invasion_opening_BTR
+invasion_btr_crash_btr
+invasion_btr_crash_squashedcar
+
+favela_ending_car
+
+favela_escape_ending_chopper_open_back_door
+favela_escape_ending_chopper_in
+favela_escape_ending_chopper_loop
+favela_escape_ending_chopper_flying_away
+
+contingency_btr_slide
+
+zodiac_price_left_aim_4
+zodiac_price_left_aim_5
+zodiac_price_left_aim_6
+zodiac_price_right_aim_4
+zodiac_price_right_aim_5
+zodiac_price_right_aim_6
+
+sa15_radar_spinup
+sa15_radar_spinloop
+sa15_radar_spindown
+sa15_turret_scanloop
+
+training_humvee_door
+
+estate_chopper_sequence_pavelow
+
+airport_ending_open_doors
+airport_ending_close_doors
+
+russian_swat_van_driver_getout_door

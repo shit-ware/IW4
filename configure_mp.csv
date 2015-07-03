@@ -1,0 +1,71 @@
+# The file is broken into the CPU section followed by the GPU section.,,,,,,,,,,,,,
+"# The first two columns of the CPU section must be ""cpu mhz"" then ""sys mb"".",,,,,,,,,,,,,
+"# The first column of the GPU section must be ""gpu"".  This triggers the start of the GPU section.",,,,,,,,,,,,,
+# Each subsequent column header in both sections is a dvar name.,,,,,,,,,,,,,
+"# In the CPU section, each dvar gets the value listed in its column for the row of the system settings that most closely match the current machine, without going over",,,,,,,,,,,,,
+"# In the GPU section, each dvar gets the value listed in its column for the row of the first GPU string to match.",,,,,,,,,,,,,
+"# For GPU names, spaces are treated as wildcards that match any sequence of 0 or more non-numeric characters.  You can use * to match 0 or more of any character, or ? to match any single character.",,,,,,,,,,,,,
+
+
+
+
+cpu ghz,sys mb,ai_corpseCount,ragdoll_enable,fx_marks,r_lodScaleSkinned,r_lodBiasSkinned,r_lodScaleRigid,r_lodBiasRigid,r_drawWater,snd_khz,snd_enableEq,ragdoll_max_simulating,r_fastSkin
+
+0,128,8,0,0,1,0,1,0,0,22,1,8,1
+5.5,128,16,1,1,1,0,1,0,1,22,1,8,1
+8,128,16,1,1,1,0,1,0,1,22,1,16,0
+
+0,1024,8,0,0,1,0,1,0,0,44,1,8,1
+5.5,1024,16,1,1,1,0,1,0,1,44,1,8,1
+8,1024,16,1,1,1,0,1,0,1,44,1,16,0
+
+
+
+gpu,r_rendererPreference,r_mode,sm_enable,sm_sunShadowScaleLocked,r_zfeather,cg_laserlight,r_glow_allowed,r_distortion,r_aaSamples,r_specular,r_dof_enable,r_altModelLightingUpdate,r_dlightlimit
+
+GeForce 62*,Default,640x480,0,0,0,0,0,0,1,0,0,1,0
+GeForce 71*,Default,640x480,0,0,0,0,0,0,1,0,0,1,0
+GeForce 72*,Default,640x480,0,0,0,0,0,0,1,0,0,1,0
+GeForce 73*,Default,640x480,0,0,0,0,0,0,1,0,0,1,0
+Radeon X13*,Default,640x480,0,0,0,0,0,0,1,0,0,0,0
+Radeon X15*,Default,640x480,0,0,0,0,0,0,1,0,0,0,0
+Radeon X16*,Default,640x480,0,0,0,0,0,0,1,0,0,0,0
+Radeon HD 43*,Default,640x480,0,0,0,0,0,0,1,0,0,0,0
+Radeon HD 45*,Default,640x480,0,0,0,0,0,0,1,0,0,0,0
+
+GeForce 66*,Default,640x480,0,0,0,0,0,0,1,0,0,1,0
+GeForce 68* XT,Default,640x480,0,0,0,0,0,0,1,0,0,1,0
+GeForce 68* LE,Default,640x480,0,0,0,0,0,0,1,0,0,1,0
+GeForce 75*,Default,640x480,0,0,0,0,0,0,1,0,0,1,0
+Radeon HD 24*,Default,640x480,0,0,0,0,0,0,1,0,0,0,0
+
+GeForce 68* GT,Default,800x600,0,0,0,0,0,0,2,0,0,1,4
+
+GeForce 68*,Default,640x480,0,0,0,0,0,0,2,0,0,1,4
+GeForce 76*,Default,640x480,0,0,0,0,0,0,2,0,0,1,4
+GeForce 84*,Default,640x480,0,0,0,0,0,0,2,0,0,1,4
+GeForce 85*,Default,640x480,0,0,0,0,0,0,2,0,0,1,4
+GeForce 86*,Default,640x480,0,0,0,0,0,0,2,0,0,1,4
+Radeon X18*,Default,640x480,0,0,0,0,0,0,2,0,0,0,4
+Radeon HD 26*,Default,640x480,0,0,0,0,0,0,2,0,0,0,4
+
+GeForce 6*,Default,640x480,0,0,0,0,0,0,2,0,0,1,4
+
+Quadro FX 1*,Default,800x600,0,0,0,0,0,0,2,0,0,1,4
+
+GeForce 78* GT,Default,800x600,1,0,0,0,0,1,2,0,1,1,4
+GeForce 79* GT,Default,800x600,1,0,0,0,0,1,2,0,1,1,4
+Radeon X19*,Default,800x600,1,0,0,0,0,1,2,0,1,0,4
+Radeon X1*,Default,800x600,1,0,0,0,0,1,2,0,1,0,4
+Radeon X2*,Default,800x600,1,0,0,0,0,1,2,0,1,0,4
+
+GeForce 7*,Default,800x600,0,0,0,0,0,0,2,0,0,1,4
+
+Quadro FX 3*,Default,1024x768,1,1,1,1,1,1,2,1,1,1,4
+Quadro FX 4*,Default,1024x768,1,1,1,1,1,1,2,1,1,1,4
+GeForce 88*,Default,1024x768,1,1,1,1,1,1,2,1,1,1,4
+GeForce 8*,Default,1024x768,1,1,1,1,1,1,2,1,1,1,4
+GeForce,Default,1024x768,1,1,1,1,1,1,2,1,1,1,4
+Radeon HD 29*,Default,1024x768,1,1,1,1,1,1,2,1,1,0,4
+Radeon,Default,1024x768,1,1,1,1,1,1,2,1,1,0,4
+*,Default,1024x768,1,1,1,1,1,1,2,1,1,1,4

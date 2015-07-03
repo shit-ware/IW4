@@ -1,0 +1,4 @@
+main()
+{
+	animscripts\scripted::main();
+}

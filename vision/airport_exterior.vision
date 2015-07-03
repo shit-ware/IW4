@@ -1,0 +1,41 @@
+r_glow                    "1"
+r_glowRadius0             "8.91149"
+r_glowBloomCutoff         "0.545483"
+r_glowBloomDesaturation   "0.730852"
+r_glowBloomIntensity0     "0.546023"
+ 
+r_filmEnable              "1"
+r_filmContrast            "1.35908"
+r_filmBrightness          "0.0931446"
+r_filmDesaturation        "-0.951305"
+r_filmDesaturationDark    "-0.726516"
+r_filmInvert              "0"
+r_filmLightTint           "1.68896 1.54233 1.38717"
+r_filmMediumTint          "0.766125 0.855269 0.886339"
+r_filmDarkTint            "1.02512 1.21192 1.20317"
+ 
+r_primaryLightUseTweaks              "0"
+r_primaryLightTweakDiffuseStrength   "1"
+r_primaryLightTweakSpecularStrength  "1"
+
+/*
+r_glow                    "0"
+r_glowRadius0             "5.6888"
+r_glowBloomCutoff         "0.733208"
+r_glowBloomDesaturation   "0.506667"
+r_glowBloomIntensity0     "0.358447"
+ 
+r_filmEnable              "1"
+r_filmContrast            "1.15443"
+r_filmBrightness          "0.0931446"
+r_filmDesaturation        "0.277479"
+r_filmDesaturationDark    "-0.726516"
+r_filmInvert              "0"
+r_filmLightTint           "1.25209 1.14019 1.03762"
+r_filmMediumTint          "0.859626 0.83273 0.874669"
+r_filmDarkTint            "0.695629 0.82253 0.727364"
+ 
+r_primaryLightUseTweaks              "0"
+r_primaryLightTweakDiffuseStrength   "1"
+r_primaryLightTweakSpecularStrength  "1"
+*/

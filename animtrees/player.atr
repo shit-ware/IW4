@@ -1,0 +1,286 @@
+gulag_rappel_player
+
+boneyard
+{
+	boneyard_player_steer_straight
+	boneyard_player_steer_right
+	boneyard_player_steer_left
+	boneyard_player_evac
+	boneyard_player_enter_UAZ
+	boneyard_player_grab_wheel
+	boneyard_player_UAZ_stand
+	boneyard_player_UAZ_sit
+}
+
+
+
+knockdown
+{
+	player_view_dog_knockdown
+}
+knockdown_late
+{
+	player_view_dog_knockdown_late
+}
+
+player_view_dog_knockdown_saved
+player_view_dog_knockdown_neck_snap
+player_view_dog_knockdown_neck_miss
+player_view_dog_knockdown_laststand
+
+ISS_player_rotate
+ISS_player_float_away
+ISS_player_idle
+
+coup_opening_playerview
+coup_opening_playerview_idle
+coup_opening_playerview_idle_bumpy
+coup_opening_playerview_idle_static
+coup_opening_playerview_idle_normal
+coup_opening_playerview_idle_smooth
+coup_ending_drag_playerview
+coup_ending_player
+coup_ending_zakhaev_intro_playerview
+hunted_opening_player
+hunted_opening_player_idle
+sniper_escape_player_getup
+sniper_escape_player_putdown
+sniper_escape_player_rappel
+launchfacility_a_player_rappel
+airlift_player_getout
+airlift_player_putdown
+cargoship_ch46_rescue_load_player
+cargoship_explosion_player
+jeepride_drag_player
+jeepride_player_pickup_player
+blackout_bh_evac_player
+sniper_escape_crash_pickup_player
+player_lockerroom_fight_attack
+player_lockerroom_fight_miss
+player_lockerroom_fight_start
+oilrig_sub_A_idle_player
+oilrig_sub_A_disembark_player
+oilrig_underwater_kill_player
+cliffhanger_crash_rescue_player
+cliffhanger_capture_player
+
+player_afchase_ending_gun_drop
+player_afchase_ending_gun_kick
+player_afchase_walkoff
+player_afchase_ending_knife_moment
+player_afchase_ending_monologue
+player_afchase_ending_monologue_long
+player_afchase_ending_turnbuckle
+player_afchase_ending_turnbuckle_alt
+player_afchase_ending_wakeup
+player_afchase_ending_wakeup_end
+
+player_afchase_ending_gun_crawl_00
+player_afchase_ending_gun_crawl_01
+player_afchase_ending_gun_crawl_02
+player_afchase_ending_gun_crawl_03
+player_afchase_ending_gun_crawl_04
+player_afchase_ending_gun_crawl_05
+player_afchase_ending_gun_crawl_06
+player_afchase_ending_gun_crawl_idle_00
+player_afchase_ending_gun_crawl_idle_01
+player_afchase_ending_gun_crawl_idle_02
+player_afchase_ending_gun_crawl_idle_03
+player_afchase_ending_gun_crawl_idle_04
+player_afchase_ending_gun_crawl_idle_05
+player_afchase_ending_gun_crawl_idle_06
+
+player_afchase_ending_knife_grab_01
+player_afchase_ending_knife_grab_02
+player_afchase_ending_knife_grab_03
+player_afchase_ending_knife_passout
+player_afchase_ending_knife_pull_01
+player_afchase_ending_knife_pull_02
+player_afchase_ending_knife_pull_03
+
+player_afchase_ending_knife_pullout_2_flip
+player_afchase_ending_knife_pullout_2_flip_idle
+player_afchase_ending_knife_throw
+player_afchase_ending_knife_throw_kill
+player_afchase_ending_knife_throw_soon
+
+player_pull_additive : additive
+{
+	player_afchase_ending_knife_pull_02_add
+	player_afchase_ending_knife_pull_03_add
+}
+
+afgan_caves_player_rappel_animatic
+afgan_caves_player_rappel_hookup
+afgan_caves_player_rappel_end_kill
+
+cave_rappel
+{
+	cave_rappel_close
+	{
+		afgan_caves_player_rappel_close
+	}
+	cave_rappel_far
+	{
+		afgan_caves_player_rappel_far
+	}
+}
+
+zodiac_player_idle
+
+
+
+gulag_end_animatic_player
+gulag_end_animatic_player_2
+gulag_end_evac_player
+gulag_end_evac_player_hookup
+gulag_end_evac_player_idle
+gulag_end_buried_player
+gulag_rescueA_player
+gulag_rescueB_player
+gulag_rescueB_player_idle
+gulag_rescueB_player_intro
+gulag_rescueB_player_reshoot
+gulag_rescueB_player_reshootB
+
+
+roadkill_hummer_player_getin
+
+
+dcburning_BHrescue_player_animatic
+dcburning_BHrescue_player_grabclip_animatic
+dcburning_BHrescue_player_wakeup
+dcburning_BHrescue_player_takeammo
+
+airport_ending_mid_player
+airport_ending_alt_player
+
+invasion_opening_hummer2_player
+
+favela_opening_playerview_down
+favela_opening_playerview_downidle
+favela_opening_playerview_up
+favela_opening_playerview_death
+
+player_favela_escape_bigjump
+player_favela_escape_bigjump_getup
+favela_escape_ending_player_catch_rope
+
+cliffhanger_bigjump
+{
+	slide_both_in
+	{
+		player_icepicker_bigjump_slide_both_in
+	}
+	slide_both_out
+	{
+		player_icepicker_bigjump_slide_both_out
+	}
+	slide_left
+	{
+		player_icepicker_bigjump_slide_left_in
+	}
+	slide_right
+	{
+		player_icepicker_bigjump_slide_right_in		
+	}
+}
+
+
+player_icepicker_climbup_from_left
+player_icepicker_climbup_from_right
+
+player_climb
+{
+	
+	climb_root
+	{
+
+			
+		player_icepicker_bigjump
+		player_icepicker_bigjump_end_getup
+	
+		player_icepicker_drop_down_start
+		player_icepicker_drop_down_end
+		player_icepicker_start_climb_up_left
+		player_icepicker_start_climb_up_left_early
+		player_icepicker_start_climb_up_right
+		player_icepicker_start_climb_up_right_early
+
+		player_icepicker_left_high_stab_a
+		player_icepicker_left_fall
+		player_icepicker_left_fall_small
+
+		player_icepicker_left_high_settle_a
+
+		player_icepicker_left_high_stab_fail_a
+		
+		player_icepicker_right_high_stab_fail_a
+
+		player_icepicker_right_high_stab_a
+		player_icepicker_right_fall
+		player_icepicker_right_fall_small
+
+		player_icepicker_right_high_settle_a
+
+		
+
+		
+		climb_idle : loopsync
+		{
+			player_icepicker_right_idle
+			player_icepicker_left_idle
+		}
+	}
+
+	climb_sleeve : loopsync
+	{
+		player_sleeve_flapping
+	}
+	
+	
+	climb_wrist : additive
+	{
+		player_icepicker_left_high_wrist_in
+		player_icepicker_left_high_wrist_out
+		player_icepicker_right_high_wrist_in
+		player_icepicker_right_high_wrist_out
+	}
+	
+	climb_left_additive : additive	
+	{
+		player_icepicker_left_high_stab_out 
+		player_icepicker_left_high_stab_in
+	}
+	climb_right_additive : additive	
+	{
+		player_icepicker_right_high_stab_in
+		player_icepicker_right_high_stab_out
+	}
+	
+	climb_right_vertical_corrector : additive
+	{
+	}
+	climb_left_vertical_corrector : additive
+	{
+	}
+}
+
+pres_crash_player_crash
+
+
+motorcycle_player
+{
+	motorcycle_player_pose_f
+	motorcycle_player_pose_f_fast
+	motorcycle_player_pose_lean_l
+	motorcycle_player_pose_lean_r
+	motorcycle_player_pose_turn_r
+	motorcycle_player_pose_turn_l
+}
+
+estate_drag_player
+estate_chopper_sequence_player	
+estate_body_toss_player
+DCemp_player_flare_wave
+roadkill_intro_pickup_player

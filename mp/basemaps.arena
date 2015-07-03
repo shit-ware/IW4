@@ -1,0 +1,191 @@
+{
+	map			"mp_invasion"
+	longname	"MPUI_INVASION"
+	gametype	"dm war sab sab2 dom sd sd2 hc thc ctf koth dd oneflag gtnw"
+    description "MPUI_DESC_MAP_INVASION"
+    mapimage    "preview_mp_invasion"
+	mapoverlay  "compass_overlay_map_blank"
+    allieschar  "us_army"
+    axischar    "opforce_composite"
+    environment	"urban"
+}
+
+{
+	map			"mp_highrise"
+	longname	"MPUI_HIGHRISE"
+	gametype	"dm war sab sab2 dom sd sd2 hc thc ctf koth dd oneflag gtnw"
+    description "MPUI_DESC_MAP_HIGHRISE"
+    mapimage    "preview_mp_highrise"
+	mapoverlay  "compass_overlay_map_blank"
+	allieschar  "us_army"
+    axischar    "opforce_airborne"
+    environment	"urban"
+}
+
+{
+	map			"mp_checkpoint"
+	longname	"MPUI_CHECKPOINT"
+	gametype	"dm war sab sab2 dom sd sd2 hc thc ctf koth dd oneflag gtnw"
+    description "MPUI_DESC_MAP_checkpoint"
+    mapimage    "preview_mp_checkpoint"
+	mapoverlay  "compass_overlay_map_blank"
+    allieschar  "seals_udt"
+    axischar    "opforce_composite"
+    environment	"urban"
+}
+
+{
+	map			"mp_nightshift"
+	longname	"MPUI_RAID"
+	gametype	"dm war sab sab2 dom sd sd2 hc thc ctf koth dd oneflag gtnw"
+    description "MPUI_DESC_MAP_nightshift"
+    mapimage    "preview_mp_nightshift"
+	mapoverlay  "compass_overlay_map_blank"
+    allieschar  "us_army"
+    axischar    "opforce_airborne"
+    environment	"urban"
+}
+
+{
+	map			"mp_favela"
+	longname	"MPUI_FAVELA"
+	gametype	"dm war sab sab2 dom sd sd2 hc thc ctf koth dd oneflag gtnw"
+    description "MPUI_DESC_MAP_favela"
+    mapimage    "preview_mp_favela"
+	mapoverlay  "compass_overlay_map_blank"
+    allieschar  "socom_141_desert"
+    axischar    "militia"
+    environment	"urban"
+}
+
+{
+	map			"mp_quarry"
+	longname	"MPUI_QUARRY"
+	gametype	"dm war sab sab2 dom sd sd2 hc thc ctf koth dd oneflag gtnw"
+    description "MPUI_DESC_MAP_quarry"
+    mapimage    "preview_mp_quarry"
+	mapoverlay  "compass_overlay_map_blank"
+    allieschar  "socom_141_desert"
+    axischar    "militia"
+    environment	"desert"
+}
+
+{
+	map			"mp_brecourt"
+	longname	"MPUI_WASTELAND"
+	gametype	"dm war sab sab2 dom sd sd2 hc thc ctf koth dd oneflag gtnw"
+    description "MPUI_DESC_MAP_BRECOURT"
+    mapimage    "preview_mp_brecourt"
+	mapoverlay  "compass_overlay_map_blank"
+    allieschar  "socom_141_forest"
+    axischar    "opforce_airborne"
+    environment	"forest"
+}
+
+{
+	map			"mp_derail"
+	longname	"MPUI_DERAIL"
+	gametype	"dm war sab sab2 dom sd sd2 hc thc ctf koth dd oneflag gtnw"
+    description "MPUI_DESC_MAP_DERAIL"
+    mapimage    "preview_mp_derail"
+	mapoverlay  "compass_overlay_map_blank"
+    allieschar  "socom_141_arctic"
+    axischar    "opforce_arctic"
+    environment	"arctic"
+}
+
+{
+	map			"mp_subbase"
+	longname	"MPUI_SUBBASE"
+	gametype	"dm war sab sab2 dom sd sd2 hc thc ctf koth dd oneflag gtnw"
+    description "MPUI_DESC_MAP_SUBBASE"
+    mapimage    "preview_mp_subbase"
+	mapoverlay  "compass_overlay_map_blank"
+    allieschar  "seals_udt"
+    axischar    "opforce_arctic"
+    environment	"urban"
+}
+
+{
+	map			"mp_underpass"
+	longname	"MPUI_UNDERPASS"
+	gametype	"dm war sab sab2 dom sd sd2 hc thc ctf koth dd oneflag gtnw"
+    description "MPUI_DESC_MAP_UNDERPASS"
+    mapimage    "preview_mp_underpass"
+	mapoverlay  "compass_overlay_map_blank"
+    allieschar  "socom_141_forest"
+    axischar    "militia"
+    environment	"forest"
+}
+
+{
+	map			"mp_estate"
+	longname	"MPUI_ESTATE"
+	gametype	"dm war sab sab2 dom sd sd2 hc thc ctf koth dd oneflag gtnw"
+    description "MPUI_DESC_MAP_ESTATE"
+    mapimage    "preview_mp_estate"
+	mapoverlay  "compass_overlay_map_blank"
+    allieschar  "socom_141_forest"
+    axischar    "opforce_airborne"
+    environment	"forest"
+}
+
+{
+	map			"mp_rundown"
+	longname	"MPUI_RUNDOWN"
+	gametype	"dm war sab sab2 dom sd sd2 hc thc ctf koth dd oneflag gtnw"
+    description "MPUI_DESC_MAP_RUNDOWN"
+    mapimage    "preview_mp_rundown"
+	mapoverlay  "compass_overlay_map_blank"
+    allieschar  "socom_141_desert"
+    axischar    "militia"
+    environment	"desert"
+}
+
+{
+	map			"mp_boneyard"
+	longname	"MPUI_BONEYARD"
+	gametype	"dm war sab sab2 dom sd sd2 hc thc ctf koth dd oneflag gtnw"
+    description "MPUI_DESC_MAP_BONEYARD"
+    mapimage    "preview_mp_boneyard"
+	mapoverlay  "compass_overlay_map_blank"
+    allieschar  "socom_141_desert"
+    axischar    "opforce_composite"
+    environment	"desert"
+}
+
+{
+	map			"mp_afghan"
+	longname	"MPUI_AFGHAN"
+	gametype	"dm war sab sab2 dom sd sd2 hc thc ctf koth dd oneflag gtnw"
+    description "MPUI_DESC_MAP_AFGHAN"
+    mapimage    "preview_mp_afghan"
+	mapoverlay  "compass_overlay_map_blank"
+    allieschar  "socom_141_desert"
+    axischar    "opforce_composite"
+    environment	"desert"
+}
+
+{
+	map			"mp_terminal"
+	longname	"MPUI_TERMINAL"
+	gametype	"dm war sab sab2 dom sd sd2 hc thc ctf koth dd oneflag gtnw"
+    description "MPUI_DESC_MAP_TERMINAL"
+    mapimage    "preview_mp_terminal"
+	mapoverlay  "compass_overlay_map_blank"
+    allieschar  "us_army"
+    axischar    "opforce_airborne"
+    environment	"urban"
+}
+
+{
+	map			"mp_rust"
+	longname	"MPUI_RUST"
+	gametype	"dm war sab sab2 dom sd sd2 hc thc ctf koth dd oneflag gtnw"
+    description "MPUI_DESC_MAP_RUST"
+    mapimage    "preview_mp_rust"
+	mapoverlay  "compass_overlay_map_blank"
+    allieschar  "socom_141_desert"
+    axischar    "opforce_composite"
+    environment	"desert"
+}

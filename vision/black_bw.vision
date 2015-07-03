@@ -1,0 +1,18 @@
+r_glow						"0"
+r_glowRadius0				"0"
+r_glowRadius1				"0"
+r_glowBloomCutoff			"0"
+r_glowBloomDesaturation		"0"
+r_glowBloomIntensity0		"0"
+r_glowBloomIntensity1		"0"
+r_glowSkyBleedIntensity0	"0"
+r_glowSkyBleedIntensity1	"0"
+
+r_filmEnable				"1"
+r_filmContrast				"0"
+r_filmBrightness			"-1"
+r_filmDesaturation			"1"
+r_filmInvert				"0"
+r_filmLightTint				"1 1 1"
+r_filmDarkTint				"1 1 1"
+
