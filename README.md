@@ -11,7 +11,7 @@ Menu files make up a large portion of what you see in the main menus in Call of 
 other CoDs.
 
 # What is not included?
-FastFiles and maps. The archives are big and the map archives don't have a large code base.
+FastFiles. The archives are big and the map archives don't have a large code base.
 The exe files, the dll files, and video files. 
 
 # Missing things?
