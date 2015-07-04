@@ -1,0 +1,18 @@
+/********************************************
+*          dumped by: aerosoul94            *
+*********************************************/
+
+{
+	menuDef
+	{
+		name "changeclass_opfor"
+		rect 0 0 0 0 0 0
+		forecolor 1 1 1 1
+		onOpen
+		{
+			setLocalVarString "ui_team" ( "opfor" );
+			open "changeclass";
+			close self;
+		}
+	}
+}

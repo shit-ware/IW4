@@ -1,0 +1,17 @@
+/********************************************
+*          dumped by: aerosoul94            *
+*********************************************/
+
+{
+	menuDef
+	{
+		name "perk_display"
+		rect 0 0 640 1 1 0
+		forecolor 1 1 1 1
+		onOpen
+		{
+			setLocalVarInt "ui_show_perks" ( milliseconds( ) );
+			close self;
+		}
+	}
+}

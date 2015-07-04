@@ -1,0 +1,18 @@
+/********************************************
+*          dumped by: aerosoul94            *
+*********************************************/
+
+{
+	menuDef
+	{
+		name "ac130timer"
+		rect 0 0 640 1 1 0
+		decoration
+		forecolor 1 1 1 1
+		onOpen
+		{
+			setLocalVarInt "ui_ac130timer" ( milliseconds( ) + ( dvarint( "ui_ac130usetime" ) * 1000 ) + 3000 );
+			close self;
+		}
+	}
+}

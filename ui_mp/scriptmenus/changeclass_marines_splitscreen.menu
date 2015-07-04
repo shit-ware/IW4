@@ -1,0 +1,25 @@
+/********************************************
+*          dumped by: aerosoul94            *
+*********************************************/
+
+{
+	menuDef
+	{
+		name "changeclass_marines_splitscreen"
+		rect 0 0 0 0 0 0
+		forecolor 1 1 1 1
+		onOpen
+		{
+			setLocalVarString "ui_team" ( "marines" );
+			if ( getplayerdata( "customClasses" , 0 , "inUse" ) || getplayerdata( "customClasses" , 1 , "inUse" ) || getplayerdata( "customClasses" , 2 , "inUse" ) || getplayerdata( "customClasses" , 3 , "inUse" ) || getplayerdata( "customClasses" , 4 , "inUse" ) || getplayerdata( "customClasses" , 5 , "inUse" ) || getplayerdata( "customClasses" , 6 , "inUse" ) || getplayerdata( "customClasses" , 7 , "inUse" ) || getplayerdata( "customClasses" , 8 , "inUse" ) || getplayerdata( "customClasses" , 9 , "inUse" ) )
+			{
+				open "changeclass_custom_splitscreen";
+			}
+			else
+			{
+				open "changeclass_defaults_splitscreen";
+			}
+			close self;
+		}
+	}
+}

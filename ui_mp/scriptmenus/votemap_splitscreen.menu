@@ -1,0 +1,945 @@
+/********************************************
+*          dumped by: aerosoul94            *
+*********************************************/
+
+{
+	menuDef
+	{
+		name "votemap_splitscreen"
+		rect 0 0 640 480 0 0
+		forecolor 1 1 1 1
+		focuscolor 1 1 1 1
+		blurWorld 6
+		onOpen
+		{
+			show "maps";
+			setfocus "maps_focus";
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0 0 0 0.5
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 110 640 150 4 0
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "gradient_top"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -640 0 2560 121 0 0
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.1412 0.1412 0.1412 1
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 160 120 320 224 0 0
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.1412 0.1412 0.1412 1
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 320 160 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 0.8 0.4 1
+			textfont 1
+			textalign 1
+			textscale 0.5833
+			text "NEXT MAP"
+		}
+		itemDef
+		{
+			name "maps_focus"
+			rect 320 200 0 0 0 0
+			group "maps"
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			type 1
+			textfont 1
+			textalign 1
+			textscale 0.4583
+			text "Crash"
+			dvarTest "g_gametype"
+			showDvar { "war" }
+			action
+			{
+				play "mouse_click";
+				scriptmenuresponse 0;
+				hide "maps";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef
+		{
+			rect 320 220 0 0 0 0
+			group "maps"
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			type 1
+			textfont 1
+			textalign 1
+			textscale 0.4583
+			text "NAME_PIPELINE"
+			dvarTest "g_gametype"
+			showDvar { "war" }
+			action
+			{
+				play "mouse_click";
+				scriptmenuresponse "VALUE_PIPELINE";
+				hide "maps";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef
+		{
+			name "maps_focus"
+			rect 320 200 0 0 0 0
+			group "maps"
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			type 1
+			textfont 1
+			textalign 1
+			textscale 0.4583
+			text "Crash"
+			dvarTest "g_gametype"
+			showDvar { "sab" }
+			action
+			{
+				play "mouse_click";
+				scriptmenuresponse 0;
+				hide "maps";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef
+		{
+			rect 320 220 0 0 0 0
+			group "maps"
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			type 1
+			textfont 1
+			textalign 1
+			textscale 0.4583
+			text "Facility"
+			dvarTest "g_gametype"
+			showDvar { "sab" }
+			action
+			{
+				play "mouse_click";
+				scriptmenuresponse 1;
+				hide "maps";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef
+		{
+			name "maps_focus"
+			rect 320 200 0 0 0 0
+			group "maps"
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			type 1
+			textfont 1
+			textalign 1
+			textscale 0.4583
+			text "Facility"
+			dvarTest "g_gametype"
+			showDvar { "dom" }
+			action
+			{
+				play "mouse_click";
+				scriptmenuresponse 1;
+				hide "maps";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef
+		{
+			rect 320 220 0 0 0 0
+			group "maps"
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			type 1
+			textfont 1
+			textalign 1
+			textscale 0.4583
+			text "Strike"
+			dvarTest "g_gametype"
+			showDvar { "dom" }
+			action
+			{
+				play "mouse_click";
+				scriptmenuresponse 2;
+				hide "maps";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef
+		{
+			rect 320 240 0 0 0 0
+			group "maps"
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			type 1
+			textfont 1
+			textalign 1
+			textscale 0.4583
+			text "Palace"
+			dvarTest "g_gametype"
+			showDvar { "dom" }
+			action
+			{
+				play "mouse_click";
+				scriptmenuresponse 3;
+				hide "maps";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef
+		{
+			name "maps_focus"
+			rect 320 200 0 0 0 0
+			group "maps"
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			type 1
+			textfont 1
+			textalign 1
+			textscale 0.4583
+			text "Backlot"
+			dvarTest "g_gametype"
+			showDvar { "sd" }
+			action
+			{
+				play "mouse_click";
+				scriptmenuresponse 4;
+				hide "maps";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef
+		{
+			rect 320 220 0 0 0 0
+			group "maps"
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			type 1
+			textfont 1
+			textalign 1
+			textscale 0.4583
+			text "City Streets"
+			dvarTest "g_gametype"
+			showDvar { "sd" }
+			action
+			{
+				play "mouse_click";
+				scriptmenuresponse 5;
+				hide "maps";
+			}
+			onFocus
+			{
+				play "mouse_over";
+			}
+		}
+		itemDef
+		{
+			rect 260 260 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Crash"
+			dvarTest "ui_votemap1"
+			showDvar { 0 }
+		}
+		itemDef
+		{
+			rect 260 260 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Facility"
+			dvarTest "ui_votemap1"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect 260 260 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Strike"
+			dvarTest "ui_votemap1"
+			showDvar { 2 }
+		}
+		itemDef
+		{
+			rect 260 260 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Palace"
+			dvarTest "ui_votemap1"
+			showDvar { 3 }
+		}
+		itemDef
+		{
+			rect 260 260 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Backlot"
+			dvarTest "ui_votemap1"
+			showDvar { 4 }
+		}
+		itemDef
+		{
+			rect 260 260 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "NAME_PIPELINE"
+			dvarTest "ui_votemap1"
+			showDvar { "VALUE_PIPELINE" }
+		}
+		itemDef
+		{
+			rect 260 260 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "City Streets"
+			dvarTest "ui_votemap1"
+			showDvar { 5 }
+		}
+		itemDef
+		{
+			rect 260 260 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Argun"
+			dvarTest "ui_votemap1"
+			showDvar { "VALUE_ARGUN" }
+		}
+		itemDef
+		{
+			rect 260 260 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Convoy"
+			dvarTest "ui_votemap1"
+			showDvar { "VALUE_CONVOY" }
+		}
+		itemDef
+		{
+			rect 260 260 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Dusk"
+			dvarTest "ui_votemap1"
+			showDvar { "VALUE_DUSK" }
+		}
+		itemDef
+		{
+			rect 260 280 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Crash"
+			dvarTest "ui_votemap2"
+			showDvar { 0 }
+		}
+		itemDef
+		{
+			rect 260 280 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Facility"
+			dvarTest "ui_votemap2"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect 260 280 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Strike"
+			dvarTest "ui_votemap2"
+			showDvar { 2 }
+		}
+		itemDef
+		{
+			rect 260 280 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Palace"
+			dvarTest "ui_votemap2"
+			showDvar { 3 }
+		}
+		itemDef
+		{
+			rect 260 280 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Backlot"
+			dvarTest "ui_votemap2"
+			showDvar { 4 }
+		}
+		itemDef
+		{
+			rect 260 280 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "NAME_PIPELINE"
+			dvarTest "ui_votemap2"
+			showDvar { "VALUE_PIPELINE" }
+		}
+		itemDef
+		{
+			rect 260 280 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "City Streets"
+			dvarTest "ui_votemap2"
+			showDvar { 5 }
+		}
+		itemDef
+		{
+			rect 260 280 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Argun"
+			dvarTest "ui_votemap2"
+			showDvar { "VALUE_ARGUN" }
+		}
+		itemDef
+		{
+			rect 260 280 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Convoy"
+			dvarTest "ui_votemap2"
+			showDvar { "VALUE_CONVOY" }
+		}
+		itemDef
+		{
+			rect 260 280 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Dusk"
+			dvarTest "ui_votemap2"
+			showDvar { "VALUE_DUSK" }
+		}
+		itemDef
+		{
+			rect 260 300 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Crash"
+			dvarTest "ui_votemap3"
+			showDvar { 0 }
+		}
+		itemDef
+		{
+			rect 260 300 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Facility"
+			dvarTest "ui_votemap3"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect 260 300 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Strike"
+			dvarTest "ui_votemap3"
+			showDvar { 2 }
+		}
+		itemDef
+		{
+			rect 260 300 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Palace"
+			dvarTest "ui_votemap3"
+			showDvar { 3 }
+		}
+		itemDef
+		{
+			rect 260 300 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Backlot"
+			dvarTest "ui_votemap3"
+			showDvar { 4 }
+		}
+		itemDef
+		{
+			rect 260 300 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "NAME_PIPELINE"
+			dvarTest "ui_votemap3"
+			showDvar { "VALUE_PIPELINE" }
+		}
+		itemDef
+		{
+			rect 260 300 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "City Streets"
+			dvarTest "ui_votemap3"
+			showDvar { 5 }
+		}
+		itemDef
+		{
+			rect 260 300 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Argun"
+			dvarTest "ui_votemap3"
+			showDvar { "VALUE_ARGUN" }
+		}
+		itemDef
+		{
+			rect 260 300 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Convoy"
+			dvarTest "ui_votemap3"
+			showDvar { "VALUE_CONVOY" }
+		}
+		itemDef
+		{
+			rect 260 300 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Dusk"
+			dvarTest "ui_votemap3"
+			showDvar { "VALUE_DUSK" }
+		}
+		itemDef
+		{
+			rect 260 320 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Crash"
+			dvarTest "ui_votemap4"
+			showDvar { 0 }
+		}
+		itemDef
+		{
+			rect 260 320 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Facility"
+			dvarTest "ui_votemap4"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect 260 320 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Strike"
+			dvarTest "ui_votemap4"
+			showDvar { 2 }
+		}
+		itemDef
+		{
+			rect 260 320 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Palace"
+			dvarTest "ui_votemap4"
+			showDvar { 3 }
+		}
+		itemDef
+		{
+			rect 260 320 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Backlot"
+			dvarTest "ui_votemap4"
+			showDvar { 4 }
+		}
+		itemDef
+		{
+			rect 260 320 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "NAME_PIPELINE"
+			dvarTest "ui_votemap4"
+			showDvar { "VALUE_PIPELINE" }
+		}
+		itemDef
+		{
+			rect 260 320 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "City Streets"
+			dvarTest "ui_votemap4"
+			showDvar { 5 }
+		}
+		itemDef
+		{
+			rect 260 320 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Argun"
+			dvarTest "ui_votemap4"
+			showDvar { "VALUE_ARGUN" }
+		}
+		itemDef
+		{
+			rect 260 320 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Convoy"
+			dvarTest "ui_votemap4"
+			showDvar { "VALUE_CONVOY" }
+		}
+		itemDef
+		{
+			rect 260 320 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Dusk"
+			dvarTest "ui_votemap4"
+			showDvar { "VALUE_DUSK" }
+		}
+		itemDef
+		{
+			rect 260 340 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Crash"
+			dvarTest "ui_votemap5"
+			showDvar { 0 }
+		}
+		itemDef
+		{
+			rect 260 340 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Facility"
+			dvarTest "ui_votemap5"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect 260 340 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Strike"
+			dvarTest "ui_votemap5"
+			showDvar { 2 }
+		}
+		itemDef
+		{
+			rect 260 340 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Palace"
+			dvarTest "ui_votemap5"
+			showDvar { 3 }
+		}
+		itemDef
+		{
+			rect 260 340 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Backlot"
+			dvarTest "ui_votemap5"
+			showDvar { 4 }
+		}
+		itemDef
+		{
+			rect 260 340 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "NAME_PIPELINE"
+			dvarTest "ui_votemap5"
+			showDvar { "VALUE_PIPELINE" }
+		}
+		itemDef
+		{
+			rect 260 340 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "City Streets"
+			dvarTest "ui_votemap5"
+			showDvar { 5 }
+		}
+		itemDef
+		{
+			rect 260 340 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Argun"
+			dvarTest "ui_votemap5"
+			showDvar { "VALUE_ARGUN" }
+		}
+		itemDef
+		{
+			rect 260 340 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Convoy"
+			dvarTest "ui_votemap5"
+			showDvar { "VALUE_CONVOY" }
+		}
+		itemDef
+		{
+			rect 260 340 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textscale 0.4583
+			text "Dusk"
+			dvarTest "ui_votemap5"
+			showDvar { "VALUE_DUSK" }
+		}
+		itemDef
+		{
+			rect 380 260 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textalign 2
+			textscale 0.4583
+			dvar "ui_votecount1"
+		}
+		itemDef
+		{
+			rect 380 280 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textalign 2
+			textscale 0.4583
+			dvar "ui_votecount2"
+		}
+		itemDef
+		{
+			rect 380 300 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textalign 2
+			textscale 0.4583
+			dvar "ui_votecount3"
+		}
+		itemDef
+		{
+			rect 380 320 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textalign 2
+			textscale 0.4583
+			dvar "ui_votecount4"
+		}
+		itemDef
+		{
+			rect 380 340 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textalign 2
+			textscale 0.4583
+			dvar "ui_votecount5"
+		}
+	}
+}

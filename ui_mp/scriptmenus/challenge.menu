@@ -1,0 +1,396 @@
+/********************************************
+*          dumped by: aerosoul94            *
+*********************************************/
+
+{
+	menuDef
+	{
+		name "challenge"
+		rect 0 0 640 1 1 0
+		decoration
+		forecolor 1 1 1 1
+		exp rect y ( ( dvarbool( "camera_thirdPerson" ) ) * ( 0 - 40 ) * ( ! ( dvarbool( "splitscreen" ) ) ) )
+		onOpen
+		{
+			lerp "alpha" "from" 0 "to" 1 "over" "0.15";
+			close "splash";
+			close "defcon";
+			close "killstreak_pickup";
+			close "killstreak";
+			close "perk_challenge";
+			close "promotion";
+			setLocalVarString "splashRef" ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 0 ) );
+			if ( tablelookup( "mp/allChallengesTable.csv" , 0 , localvarstring( "splashRef" ) , 1 ) == "" )
+			{
+				setLocalVarString "splashRef" ( "" );
+				close self;
+			}
+		}
+		onRequestClose
+		{
+			if ( localvarstring( "splashRef" ) != "" )
+			{
+				lerp "alpha" "from" 1 "to" 0 "over" "0.15";
+			}
+		}
+		itemDef
+		{
+			name "challenge_title_tiered"
+			rect 0 -110 0 0 2 2
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			decodeEffect 16777216
+			textfont 6
+			textalign 1
+			textscale 0.7
+			textstyle 3
+			exp glowcolor r ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 5 ) )
+			exp glowcolor g ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 6 ) )
+			exp glowcolor b ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 7 ) )
+			exp glowcolor a ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 8 ) )
+			visible when ( ( ! ( dvarbool( "splitscreen" ) ) ) && ( int( max( getplayerdata( "challengeState" , localvarstring( "splashRef" ) ) , 1 ) ) - 1 ) > 0 )
+			exp text ( locstring( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , localvarstring( "splashRef" ) , 1 ) ) + locstring( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , localvarstring( "splashRef" ) , 3 ) + "_" + ( int( max( getplayerdata( "challengeState" , localvarstring( "splashRef" ) ) , 1 ) ) - 1 ) ) )
+		}
+		itemDef
+		{
+			name "challenge_description"
+			rect 0 -90 0 0 2 2
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			decodeEffect 16777216
+			textalign 1
+			textscale 0.375
+			textstyle 3
+			visible when ( ( ! ( dvarbool( "splitscreen" ) ) ) )
+			exp text ( getsplashdescription( 0 ) )
+		}
+		itemDef
+		{
+			name "challenge_title_tiered_ss"
+			rect 0 -135 0 0 2 2
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			decodeEffect 16777216
+			textfont 6
+			textalign 1
+			textscale 0.729165
+			textstyle 3
+			exp glowcolor r ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 5 ) )
+			exp glowcolor g ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 6 ) )
+			exp glowcolor b ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 7 ) )
+			exp glowcolor a ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 8 ) )
+			visible when ( ( dvarbool( "splitscreen" ) ) && ( int( max( getplayerdata( "challengeState" , localvarstring( "splashRef" ) ) , 1 ) ) - 1 ) > 0 )
+			exp text ( locstring( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , localvarstring( "splashRef" ) , 1 ) ) + locstring( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , localvarstring( "splashRef" ) , 3 ) + "_" + ( int( max( getplayerdata( "challengeState" , localvarstring( "splashRef" ) ) , 1 ) ) - 1 ) ) )
+		}
+	}
+	menuDef
+	{
+		name "perk_challenge"
+		rect 0 0 640 1 1 0
+		decoration
+		forecolor 1 1 1 1
+		exp rect y ( ( dvarbool( "camera_thirdPerson" ) ) * ( 0 - 40 ) * ( ! ( dvarbool( "splitscreen" ) ) ) )
+		onOpen
+		{
+			lerp "alpha" "from" 0 "to" 1 "over" "0.2";
+			lerp "scale" "from" 0 "to" 1 "over" "0.2";
+			lerp y "from" - "100" "to" 0 "over" "0.2";
+			close "splash";
+			close "challenge";
+			close "defcon";
+			close "killstreak_pickup";
+			close "killstreak";
+			close "promotion";
+			setLocalVarString "splashRef" ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 0 ) );
+			setLocalVarString "challengeRef" ( tablelookup( "mp/unlockTable.csv" , 3 , localvarstring( "splashRef" ) + "_" + ( int( max( getplayerdata( "challengeState" , localvarstring( "splashRef" ) ) , 1 ) ) - 1 ) , 0 ) );
+			if ( localvarstring( "challengeRef" ) != "" )
+			{
+				setLocalVarString "perkRef" ( tablelookup( "mp/perkTable.csv" , 8 , localvarstring( "challengeRef" ) , 1 ) );
+				setLocalVarString "perkUpgradeRef" ( tablelookup( "mp/perkTable.csv" , 1 , localvarstring( "perkRef" ) , 8 ) );
+			}
+			else
+			{
+				setLocalVarString "perkRef" ( "" );
+				setLocalVarString "perkUpgradeRef" ( "" );
+			}
+			setLocalVarInt "challenge_update_time" ( milliseconds( ) );
+		}
+		onRequestClose
+		{
+			lerp "alpha" "from" 1 "to" 0 "over" "0.15";
+		}
+		itemDef
+		{
+			name "challenge_title_tiered"
+			rect 0 -110 0 0 2 2
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			glowColor 0.75 0.35 0 1
+			textfont 6
+			textalign 1
+			textscale 0.7
+			textstyle 3
+			visible when ( ( ! ( dvarbool( "splitscreen" ) ) ) && ( int( max( getplayerdata( "challengeState" , localvarstring( "splashRef" ) ) , 1 ) ) - 1 ) > 0 )
+			exp text ( locstring( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , localvarstring( "splashRef" ) , 1 ) ) + locstring( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , localvarstring( "splashRef" ) , 3 ) + "_" + ( int( max( getplayerdata( "challengeState" , localvarstring( "splashRef" ) ) , 1 ) ) - 1 ) ) )
+		}
+		itemDef
+		{
+			name "challenge_description"
+			rect 0 -90 0 0 2 2
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			decodeEffect 16777216
+			textalign 1
+			textscale 0.375
+			textstyle 3
+			visible when ( ( ! ( dvarbool( "splitscreen" ) ) ) )
+			exp text ( getsplashdescription( 0 ) )
+		}
+		itemDef
+		{
+			name "challenge_icon"
+			rect 40 -190 48 48 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( 0 - 24 - 64 ) + ( min( max( ( milliseconds( ) - localvarint( "challenge_update_time" ) + 400 ) / 250 , 0 ) , 1 ) * 128 ) )
+			exp forecolor a ( min( max( ( milliseconds( ) - localvarint( "challenge_update_time" ) + 400 ) / 250 , 0 ) , 1 ) )
+			visible when ( ( ! ( dvarbool( "splitscreen" ) ) ) && localvarstring( "perkUpgradeRef" ) != "" && isitemunlocked( localvarstring( "perkUpgradeRef" ) ) )
+			exp material ( tablelookup( "mp/perkTable.csv" , 1 , localvarstring( "perkUpgradeRef" ) , 3 ) )
+		}
+		itemDef
+		{
+			rect -24 -190 16 48 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0.15
+			background "summary_arrow"
+			textscale 0.55
+			exp rect x ( ( 0 - 8 - 64 ) + ( min( max( ( milliseconds( ) - localvarint( "challenge_update_time" ) + 400 ) / 250 , 0 ) , 1 ) * 48 ) )
+			exp forecolor a ( 0.35 * min( max( ( milliseconds( ) - localvarint( "challenge_update_time" ) + 400 ) / 250 , 0 ) , 1 ) )
+			visible when ( ( ! ( dvarbool( "splitscreen" ) ) ) && localvarstring( "perkUpgradeRef" ) != "" && isitemunlocked( localvarstring( "perkUpgradeRef" ) ) )
+		}
+		itemDef
+		{
+			rect -8 -190 16 48 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0.2
+			background "summary_arrow"
+			textscale 0.55
+			exp rect x ( ( 0 - 8 - 64 ) + ( min( max( ( milliseconds( ) - localvarint( "challenge_update_time" ) + 400 ) / 250 , 0 ) , 1 ) * 64 ) )
+			exp forecolor a ( 0.45 * min( max( ( milliseconds( ) - localvarint( "challenge_update_time" ) + 400 ) / 250 , 0 ) , 1 ) )
+			visible when ( ( ! ( dvarbool( "splitscreen" ) ) ) && localvarstring( "perkUpgradeRef" ) != "" && isitemunlocked( localvarstring( "perkUpgradeRef" ) ) )
+		}
+		itemDef
+		{
+			rect 8 -190 16 48 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0.25
+			background "summary_arrow"
+			textscale 0.55
+			exp rect x ( ( 0 - 8 - 64 ) + ( min( max( ( milliseconds( ) - localvarint( "challenge_update_time" ) + 400 ) / 250 , 0 ) , 1 ) * 80 ) )
+			exp forecolor a ( 0.55 * min( max( ( milliseconds( ) - localvarint( "challenge_update_time" ) + 400 ) / 250 , 0 ) , 1 ) )
+			visible when ( ( ! ( dvarbool( "splitscreen" ) ) ) && localvarstring( "perkUpgradeRef" ) != "" && isitemunlocked( localvarstring( "perkUpgradeRef" ) ) )
+		}
+		itemDef
+		{
+			name "challenge_icon"
+			rect -40 -190 48 48 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( 0 - 24 ) - ( min( max( ( milliseconds( ) - localvarint( "challenge_update_time" ) + 250 ) / 150 , 0 ) , 1 ) * 64 ) )
+			visible when ( ( ! ( dvarbool( "splitscreen" ) ) ) && localvarstring( "perkUpgradeRef" ) != "" && isitemunlocked( localvarstring( "perkUpgradeRef" ) ) )
+			exp material ( tablelookup( "mp/perkTable.csv" , 1 , localvarstring( "perkRef" ) , 3 ) )
+		}
+		itemDef
+		{
+			name "challenge_title_tiered_ss"
+			rect 0 -135 0 0 2 2
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			glowColor 0.75 0.35 0 1
+			textfont 6
+			textalign 1
+			textscale 0.729165
+			textstyle 3
+			visible when ( ( dvarbool( "splitscreen" ) ) && ( int( max( getplayerdata( "challengeState" , localvarstring( "splashRef" ) ) , 1 ) ) - 1 ) > 0 )
+			exp text ( locstring( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , localvarstring( "splashRef" ) , 1 ) ) + locstring( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , localvarstring( "splashRef" ) , 3 ) + "_" + ( int( max( getplayerdata( "challengeState" , localvarstring( "splashRef" ) ) , 1 ) ) - 1 ) ) )
+		}
+		itemDef
+		{
+			name "challenge_icon_ss"
+			rect 0 -135 60 60 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 0 - 20 - 56 ) * 1.5 ) + ( min( max( ( milliseconds( ) - localvarint( "challenge_update_time" ) + 400 ) / 250 , 0 ) , 1 ) * ( 112 * 1.5 ) ) )
+			exp forecolor a ( min( max( ( milliseconds( ) - localvarint( "challenge_update_time" ) + 400 ) / 250 , 0 ) , 1 ) )
+			visible when ( ( dvarbool( "splitscreen" ) ) && ( ! ( dvarbool( "camera_thirdPerson" ) ) ) && localvarstring( "perkUpgradeRef" ) != "" && isitemunlocked( localvarstring( "perkUpgradeRef" ) ) )
+			exp material ( tablelookup( "mp/perkTable.csv" , 1 , localvarstring( "perkUpgradeRef" ) , 3 ) )
+		}
+		itemDef
+		{
+			rect 0 -135 16.5 60 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0.15
+			background "summary_arrow"
+			textscale 0.55
+			exp rect x ( ( ( 0 - 6 - 64 ) * 1.5 ) + ( min( max( ( milliseconds( ) - localvarint( "challenge_update_time" ) + 400 ) / 250 , 0 ) , 1 ) * ( 48 * 1.5 ) ) )
+			exp forecolor a ( 0.35 * min( max( ( milliseconds( ) - localvarint( "challenge_update_time" ) + 400 ) / 250 , 0 ) , 1 ) )
+			visible when ( ( dvarbool( "splitscreen" ) ) && ( ! ( dvarbool( "camera_thirdPerson" ) ) ) && localvarstring( "perkUpgradeRef" ) != "" && isitemunlocked( localvarstring( "perkUpgradeRef" ) ) )
+		}
+		itemDef
+		{
+			rect 0 -135 16.5 60 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0.2
+			background "summary_arrow"
+			textscale 0.55
+			exp rect x ( ( ( 0 - 6 - 64 ) * 1.5 ) + ( min( max( ( milliseconds( ) - localvarint( "challenge_update_time" ) + 400 ) / 250 , 0 ) , 1 ) * ( 64 * 1.5 ) ) )
+			exp forecolor a ( 0.45 * min( max( ( milliseconds( ) - localvarint( "challenge_update_time" ) + 400 ) / 250 , 0 ) , 1 ) )
+			visible when ( ( dvarbool( "splitscreen" ) ) && ( ! ( dvarbool( "camera_thirdPerson" ) ) ) && localvarstring( "perkUpgradeRef" ) != "" && isitemunlocked( localvarstring( "perkUpgradeRef" ) ) )
+		}
+		itemDef
+		{
+			rect 0 -135 16.5 60 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0.25
+			background "summary_arrow"
+			textscale 0.55
+			exp rect x ( ( ( 0 - 6 - 64 ) * 1.5 ) + ( min( max( ( milliseconds( ) - localvarint( "challenge_update_time" ) + 400 ) / 250 , 0 ) , 1 ) * ( 80 * 1.5 ) ) )
+			exp forecolor a ( 0.55 * min( max( ( milliseconds( ) - localvarint( "challenge_update_time" ) + 400 ) / 250 , 0 ) , 1 ) )
+			visible when ( ( dvarbool( "splitscreen" ) ) && ( ! ( dvarbool( "camera_thirdPerson" ) ) ) && localvarstring( "perkUpgradeRef" ) != "" && isitemunlocked( localvarstring( "perkUpgradeRef" ) ) )
+		}
+		itemDef
+		{
+			name "challenge_icon_ss"
+			rect 0 -135 60 60 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 0 - 20 ) * 1.5 ) - ( min( max( ( milliseconds( ) - localvarint( "challenge_update_time" ) + 250 ) / 150 , 0 ) , 1 ) * ( 56 * 1.5 ) ) )
+			visible when ( ( dvarbool( "splitscreen" ) ) && ( ! ( dvarbool( "camera_thirdPerson" ) ) ) && localvarstring( "perkUpgradeRef" ) != "" && isitemunlocked( localvarstring( "perkUpgradeRef" ) ) )
+			exp material ( tablelookup( "mp/perkTable.csv" , 1 , localvarstring( "perkRef" ) , 3 ) )
+		}
+	}
+	menuDef
+	{
+		name "promotion"
+		rect 0 0 640 1 1 0
+		decoration
+		forecolor 1 1 1 1
+		exp rect y ( ( ( dvarbool( "camera_thirdPerson" ) ) || ( ! ( inkillcam( ) ) ) ) * ( 0 - 40 ) * ( ! ( dvarbool( "splitscreen" ) ) ) )
+		onOpen
+		{
+			lerp "alpha" "from" 0 "to" 1 "over" "0.15";
+			close "splash";
+			close "challenge";
+			close "defcon";
+			close "killstreak_pickup";
+			close "killstreak";
+			close "perk_challenge";
+		}
+		onRequestClose
+		{
+			lerp "alpha" "from" 1 "to" 0 "over" "0.15";
+		}
+		itemDef
+		{
+			name "promotion_text"
+			rect 0 -120 0 0 2 2
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			glowColor 0.25 0.75 0.25 1
+			decodeEffect 16777216
+			textfont 6
+			textalign 1
+			textscale 0.6
+			textstyle 3
+			text "@RANK_PROMOTED"
+			visible when ( ( ! ( dvarbool( "splitscreen" ) ) ) )
+		}
+		itemDef
+		{
+			name "promotion_rank_text"
+			rect 0 -100 0 0 2 2
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			glowColor 0.25 0.75 0.25 1
+			decodeEffect 16777216
+			textfont 6
+			textalign 1
+			textscale 0.48611
+			textstyle 3
+			visible when ( ( ! ( dvarbool( "splitscreen" ) ) ) )
+			exp text ( "@" + tablelookup( "mp/ranktable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 5 ) )
+		}
+		itemDef
+		{
+			name "promotion_rank_icon"
+			rect -24 -100 48 48 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( ( ! ( dvarbool( "splitscreen" ) ) ) )
+			exp material ( tablelookup( "mp/rankIconTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , getplayerdata( "prestige" ) + 1 ) )
+		}
+		itemDef
+		{
+			name "promotion_rank_text_ss"
+			rect 0 -135 0 0 2 2
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			glowColor 0.25 0.75 0.25 1
+			decodeEffect 16777216
+			textfont 6
+			textalign 1
+			textscale 0.729165
+			textstyle 3
+			visible when ( ( dvarbool( "splitscreen" ) ) )
+			exp text ( "@" + tablelookup( "mp/ranktable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 5 ) )
+		}
+		itemDef
+		{
+			name "promotion_rank_icon_ss"
+			rect -30 -135 60 60 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( ( dvarbool( "splitscreen" ) ) && ( ! ( dvarbool( "camera_thirdPerson" ) ) ) )
+			exp material ( tablelookup( "mp/rankIconTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , getplayerdata( "prestige" ) + 1 ) )
+		}
+	}
+}

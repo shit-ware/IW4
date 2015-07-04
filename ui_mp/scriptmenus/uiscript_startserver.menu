@@ -1,0 +1,18 @@
+/********************************************
+*          dumped by: aerosoul94            *
+*********************************************/
+
+{
+	menuDef
+	{
+		name "uiscript_startserver"
+		rect 0 0 640 480 0 0
+		forecolor 1 1 1 1
+		fullscreen 1
+		onOpen
+		{
+			uiScript "StartServer";
+			close "uiscript_startserver";
+		}
+	}
+}

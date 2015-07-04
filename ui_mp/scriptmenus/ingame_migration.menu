@@ -1,0 +1,255 @@
+/********************************************
+*          dumped by: aerosoul94            *
+*********************************************/
+
+{
+	menuDef
+	{
+		name "ingame_migration"
+		rect 0 0 640 480 0 0
+		forecolor 1 1 1 1
+		focuscolor 1 1 1 1
+		blurWorld 3
+		onOpen
+		{
+			setdvar "ui_SaveLoadVisible" 0;
+			setLocalVarInt "migration_time_start" ( milliseconds( ) );
+			setLocalVarBool "ishost" ( 0 );
+			focusfirst;
+		}
+		onClose
+		{
+		}
+		onEsc
+		{
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			decoration
+			visible 1
+			background "white"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0
+			background "mockup_bg_glow"
+			textscale 0.55
+			exp forecolor a ( ( ( sin( milliseconds( ) / 1500 ) + 1 ) * 0.25 ) + 0.25 )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0
+			background "mockup_bg_glow"
+			textscale 0.55
+			exp forecolor a ( ( ( sin( milliseconds( ) / 480 ) + 1 ) * 0.25 ) + 0.25 )
+		}
+		itemDef
+		{
+			rect 0 0 272 28 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 6
+			textalignx -60
+			textscale 0.5
+			text "@MENU_HOST_MIGRATION"
+		}
+		itemDef
+		{
+			rect -100 20 200 0 2 1
+			decoration
+			visible 1
+			forecolor 1 0.8 0.4 1
+			textfont 3
+			textalign 1
+			textaligny 38
+			textscale 0.375
+			visible when ( ( sin( milliseconds( ) * 0.005 ) + 1 ) * 0.5 <= 0.25 && !localvarbool( "ishost" ) )
+			exp text ( getmigrationstatus( ) + "   " )
+		}
+		itemDef
+		{
+			rect -100 20 200 0 2 1
+			decoration
+			visible 1
+			forecolor 1 0.8 0.4 1
+			textfont 3
+			textalign 1
+			textaligny 38
+			textscale 0.375
+			visible when ( ( sin( milliseconds( ) * 0.005 ) + 1 ) * 0.5 > 0.25 && ( sin( milliseconds( ) * 0.005 ) + 1 ) * 0.5 <= 0.5 && !localvarbool( "ishost" ) )
+			exp text ( getmigrationstatus( ) + ".  " )
+		}
+		itemDef
+		{
+			rect -100 20 200 0 2 1
+			decoration
+			visible 1
+			forecolor 1 0.8 0.4 1
+			textfont 3
+			textalign 1
+			textaligny 38
+			textscale 0.375
+			visible when ( ( sin( milliseconds( ) * 0.005 ) + 1 ) * 0.5 > 0.5 && ( sin( milliseconds( ) * 0.005 ) + 1 ) * 0.5 <= 0.75 && !localvarbool( "ishost" ) )
+			exp text ( getmigrationstatus( ) + ".. " )
+		}
+		itemDef
+		{
+			rect -100 20 200 0 2 1
+			decoration
+			visible 1
+			forecolor 1 0.8 0.4 1
+			textfont 3
+			textalign 1
+			textaligny 38
+			textscale 0.375
+			visible when ( ( sin( milliseconds( ) * 0.005 ) + 1 ) * 0.5 > 0.75 && !localvarbool( "ishost" ) )
+			exp text ( getmigrationstatus( ) + "..." )
+		}
+		itemDef
+		{
+			rect -100 20 200 0 2 1
+			decoration
+			visible 1
+			forecolor 1 0.8 0.4 1
+			textfont 3
+			textalign 1
+			textaligny 38
+			textscale 0.375
+			visible when ( ( sin( milliseconds( ) * 0.005 ) + 1 ) * 0.5 <= 0.25 && localvarbool( "ishost" ) )
+			exp text ( locstring( "@MENU_UPLOADING_STATS" ) + "..." )
+		}
+		itemDef
+		{
+			rect -100 20 200 0 2 1
+			decoration
+			visible 1
+			forecolor 1 0.8 0.4 1
+			textfont 3
+			textalign 1
+			textaligny 38
+			textscale 0.375
+			visible when ( ( sin( milliseconds( ) * 0.005 ) + 1 ) * 0.5 > 0.25 && ( sin( milliseconds( ) * 0.005 ) + 1 ) * 0.5 <= 0.5 && localvarbool( "ishost" ) )
+			exp text ( locstring( "@MENU_UPLOADING_STATS" ) + "..." )
+		}
+		itemDef
+		{
+			rect -100 20 200 0 2 1
+			decoration
+			visible 1
+			forecolor 1 0.8 0.4 1
+			textfont 3
+			textalign 1
+			textaligny 38
+			textscale 0.375
+			visible when ( ( sin( milliseconds( ) * 0.005 ) + 1 ) * 0.5 > 0.5 && ( sin( milliseconds( ) * 0.005 ) + 1 ) * 0.5 <= 0.75 && localvarbool( "ishost" ) )
+			exp text ( locstring( "@MENU_UPLOADING_STATS" ) + "..." )
+		}
+		itemDef
+		{
+			rect -100 20 200 0 2 1
+			decoration
+			visible 1
+			forecolor 1 0.8 0.4 1
+			textfont 3
+			textalign 1
+			textaligny 38
+			textscale 0.375
+			visible when ( ( sin( milliseconds( ) * 0.005 ) + 1 ) * 0.5 > 0.75 && localvarbool( "ishost" ) )
+			exp text ( locstring( "@MENU_UPLOADING_STATS" ) + "..." )
+		}
+		itemDef
+		{
+			rect -100 0 100 600 1 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.6 0.8 0.5
+			textscale 0.55
+			dvarTest "ui_safearea"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect 0 -600 100 600 3 3
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.6 0.8 0.5
+			textscale 0.55
+			dvarTest "ui_safearea"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect -900 -100 900 100 3 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.6 0.8 0.5
+			textscale 0.55
+			dvarTest "ui_safearea"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect 0 0 900 100 1 3
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.6 0.8 0.5
+			textscale 0.55
+			dvarTest "ui_safearea"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect 390 56 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textscale 0.375
+			visible when ( dvarstring( "ui_debug_localVarString" ) != "" )
+			exp text ( dvarstring( "ui_debug_localVarString" ) + ": " + localvarstring( dvarstring( "ui_debug_localVarString" ) ) )
+		}
+		itemDef
+		{
+			rect 390 72 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textscale 0.375
+			visible when ( dvarstring( "ui_debug_localVarInt" ) != "" )
+			exp text ( dvarstring( "ui_debug_localVarInt" ) + ": " + localvarint( dvarstring( "ui_debug_localVarInt" ) ) )
+		}
+		itemDef
+		{
+			rect 390 72 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textscale 0.375
+			visible when ( dvarstring( "ui_debug_localVarBool" ) != "" )
+			exp text ( dvarstring( "ui_debug_localVarBool" ) + ": " + localvarbool( dvarstring( "ui_debug_localVarBool" ) ) )
+		}
+	}
+}

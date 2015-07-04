@@ -1,0 +1,4732 @@
+/********************************************
+*          dumped by: aerosoul94            *
+*********************************************/
+
+{
+	menuDef
+	{
+		name "ingame_controls"
+		rect 0 0 640 480 0 0
+		legacySplitScreenScale
+		forecolor 1 1 1 1
+		focuscolor 1 1 1 1
+		blurWorld 4.66667
+		execKey "BUTTON_START"
+		{
+			close self;
+			exec "updategamerprofile";
+		}
+		onOpen
+		{
+			exec "hidehud";
+			setdvar "ui_allow_controlschange" 0;
+			execnow "profile_menuDvarsSetup; resetViewport" ;;
+		}
+		onClose
+		{
+			execnow "profile_menuDvarsFinish; resetViewport";
+			exec "showhud";
+			setdvar "ui_allow_controlschange" 1;
+		}
+		onEsc
+		{
+			exec "showhud";
+			scriptmenuresponse "back";
+			exec "updategamerprofile";
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			decoration
+			visible 1
+			background "white"
+			textscale 0.55
+			visible when ( !localvarbool( "ui_adjusting_brightness" ) )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0
+			background "mockup_bg_glow"
+			textscale 0.55
+			exp forecolor a ( ( ( sin( milliseconds( ) / 1500 ) + 1 ) * 0.25 ) + 0.25 )
+			visible when ( !localvarbool( "ui_adjusting_brightness" ) )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0
+			background "mockup_bg_glow"
+			textscale 0.55
+			exp forecolor a ( ( ( sin( milliseconds( ) / 480 ) + 1 ) * 0.25 ) + 0.25 )
+			visible when ( !localvarbool( "ui_adjusting_brightness" ) )
+		}
+		itemDef
+		{
+			rect 0 0 272 28 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 6
+			textalignx -60
+			textscale 0.5
+			text "@MENU_OPTIONS_UPPER_CASE"
+		}
+		itemDef
+		{
+			rect 0 290 212 18 1 1
+			decoration
+			autowrapped
+			visible 1
+			forecolor 1 1 1 0.65
+			textfont 3
+			textalign 6
+			textscale 0.375
+			exp text ( localvarstring( "ui_options_hint_text" ) )
+		}
+		itemDef
+		{
+			rect -64 28 336 20 1 1
+			group "mw2_button"
+			style 1
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@MENU_THUMBSTICK_LAYOUT_CAPS"
+			action
+			{
+				play "mouse_click";
+				close "ingame_controls";
+				open "ingamecontrols_thumbstick";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				setLocalVarString "ui_options_hint_text" ( "@PLATFORM_OPTIONS_STICK_LAYOUT_DESC" );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect 248 28 128 20 1 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 0.65
+			backcolor 1 1 1 0
+			background "white"
+			textfont 3
+			textalign 4
+			textscale 0.375
+			text "@MENU_DEFAULT"
+			visible when ( getprofiledata( "gpadSticksConfig" ) == "thumbstick_default" )
+		}
+		itemDef
+		{
+			rect 248 28 128 20 1 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 0.65
+			backcolor 1 1 1 0
+			background "white"
+			textfont 3
+			textalign 4
+			textscale 0.375
+			text "@MENU_SOUTHPAW"
+			visible when ( getprofiledata( "gpadSticksConfig" ) == "thumbstick_southpaw" )
+		}
+		itemDef
+		{
+			rect 248 28 128 20 1 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 0.65
+			backcolor 1 1 1 0
+			background "white"
+			textfont 3
+			textalign 4
+			textscale 0.375
+			text "@MENU_LEGACY"
+			visible when ( getprofiledata( "gpadSticksConfig" ) == "thumbstick_legacy" )
+		}
+		itemDef
+		{
+			rect 248 28 128 20 1 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 0.65
+			backcolor 1 1 1 0
+			background "white"
+			textfont 3
+			textalign 4
+			textscale 0.375
+			text "@MENU_LEGACY_SOUTHPAW"
+			visible when ( getprofiledata( "gpadSticksConfig" ) == "thumbstick_legacysouthpaw" )
+		}
+		itemDef
+		{
+			rect -64 48 336 20 1 1
+			group "mw2_button"
+			style 1
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@MENU_BUTTON_LAYOUT_CAPS"
+			action
+			{
+				play "mouse_click";
+				close "ingame_controls";
+				open "ingamecontrols_buttons";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				setLocalVarString "ui_options_hint_text" ( "@PLATFORM_OPTIONS_BUTTON_LAYOUT_DESC" );
+				if ( getprofiledata( "gpadButtonsConfig" ) == "buttons_default_alt" || getprofiledata( "gpadButtonsConfig" ) == "buttons_tactical_alt" || getprofiledata( "gpadButtonsConfig" ) == "buttons_lefty_alt" )
+				{
+					setLocalVarBool "ui_buttons_page" ( 1 );
+				}
+				else
+				{
+					setLocalVarBool "ui_buttons_page" ( 0 );
+				}
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect 248 48 128 20 1 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 0.65
+			backcolor 1 1 1 0
+			background "white"
+			textfont 3
+			textalign 4
+			textscale 0.375
+			text "@MENU_DEFAULT"
+			visible when ( getprofiledata( "gpadButtonsConfig" ) == "buttons_default" )
+		}
+		itemDef
+		{
+			rect 248 48 128 20 1 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 0.65
+			backcolor 1 1 1 0
+			background "white"
+			textfont 3
+			textalign 4
+			textscale 0.375
+			text "@MENU_TACTICAL"
+			visible when ( getprofiledata( "gpadButtonsConfig" ) == "buttons_tactical" )
+		}
+		itemDef
+		{
+			rect 248 48 128 20 1 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 0.65
+			backcolor 1 1 1 0
+			background "white"
+			textfont 3
+			textalign 4
+			textscale 0.375
+			text "@MENU_LEFTY"
+			visible when ( getprofiledata( "gpadButtonsConfig" ) == "buttons_lefty" )
+		}
+		itemDef
+		{
+			rect 248 48 128 20 1 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 0.65
+			backcolor 1 1 1 0
+			background "white"
+			textfont 3
+			textalign 4
+			textscale 0.375
+			text "@MENU_DEFAULT_ALT"
+			visible when ( getprofiledata( "gpadButtonsConfig" ) == "buttons_default_alt" )
+		}
+		itemDef
+		{
+			rect 248 48 128 20 1 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 0.65
+			backcolor 1 1 1 0
+			background "white"
+			textfont 3
+			textalign 4
+			textscale 0.375
+			text "@MENU_TACTICAL_ALT"
+			visible when ( getprofiledata( "gpadButtonsConfig" ) == "buttons_tactical_alt" )
+		}
+		itemDef
+		{
+			rect 248 48 128 20 1 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 0.65
+			backcolor 1 1 1 0
+			background "white"
+			textfont 3
+			textalign 4
+			textscale 0.375
+			text "@MENU_LEFTY_ALT"
+			visible when ( getprofiledata( "gpadButtonsConfig" ) == "buttons_lefty_alt" )
+		}
+		itemDef
+		{
+			rect -64 68 336 20 1 1
+			group "mw2_button"
+			style 1
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@MENU_LOOK_SENSITIVITY_CAPS"
+			action
+			{
+				play "mouse_click";
+				close "ingame_controls";
+				open "ingamecontrols_sensitivity";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				setLocalVarString "ui_options_hint_text" ( "@PLATFORM_OPTIONS_SENSITIVITY_DESC" );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect 248 68 128 20 1 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 0.65
+			backcolor 1 1 1 0
+			background "white"
+			textfont 3
+			textalign 4
+			textscale 0.375
+			text "@MENU_LOW"
+			visible when ( getprofiledata( "viewSensitivity" ) == 0.6 )
+		}
+		itemDef
+		{
+			rect 248 68 128 20 1 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 0.65
+			backcolor 1 1 1 0
+			background "white"
+			textfont 3
+			textalign 4
+			textscale 0.375
+			text "@MENU_MEDIUM"
+			visible when ( getprofiledata( "viewSensitivity" ) == 1 )
+		}
+		itemDef
+		{
+			rect 248 68 128 20 1 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 0.65
+			backcolor 1 1 1 0
+			background "white"
+			textfont 3
+			textalign 4
+			textscale 0.375
+			text "@MENU_HIGH"
+			visible when ( getprofiledata( "viewSensitivity" ) == 1.8 )
+		}
+		itemDef
+		{
+			rect 248 68 128 20 1 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 0.65
+			backcolor 1 1 1 0
+			background "white"
+			textfont 3
+			textalign 4
+			textscale 0.375
+			text "@MENU_CUSTOM"
+			visible when ( getprofiledata( "viewSensitivity" ) != 0.6 && getprofiledata( "viewSensitivity" ) != 1 && getprofiledata( "viewSensitivity" ) != 1.8 )
+		}
+		itemDef
+		{
+			rect -64 88 336 20 1 1
+			group "mw2_button"
+			style 1
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@MENU_LOOK_INVERSION_CAPS"
+			action
+			{
+				play "mouse_click";
+				exec "profile_toggleInvertedPitch";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				setLocalVarString "ui_options_hint_text" ( "@PLATFORM_OPTIONS_LOOK_INVERSION_DESC" );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect 248 88 128 20 1 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 0.65
+			backcolor 1 1 1 0
+			background "white"
+			textfont 3
+			textalign 4
+			textscale 0.375
+			text "@MENU_ENABLED"
+			visible when ( getprofiledata( "invertedPitch" ) )
+		}
+		itemDef
+		{
+			rect 248 88 128 20 1 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 0.65
+			backcolor 1 1 1 0
+			background "white"
+			textfont 3
+			textalign 4
+			textscale 0.375
+			text "@MENU_DISABLED"
+			visible when ( !getprofiledata( "invertedPitch" ) )
+		}
+		itemDef
+		{
+			rect -64 108 336 20 1 1
+			group "mw2_button"
+			style 1
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@MENU_CONTROLLER_VIBRATION_CAPS"
+			action
+			{
+				play "mouse_click";
+				exec "profile_toggleRumble";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				setLocalVarString "ui_options_hint_text" ( "@PLATFORM_OPTIONS_VIBRATION_DESC" );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect 248 108 128 20 1 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 0.65
+			backcolor 1 1 1 0
+			background "white"
+			textfont 3
+			textalign 4
+			textscale 0.375
+			text "@MENU_ENABLED"
+			visible when ( getprofiledata( "rumble" ) )
+		}
+		itemDef
+		{
+			rect 248 108 128 20 1 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 0.65
+			backcolor 1 1 1 0
+			background "white"
+			textfont 3
+			textalign 4
+			textscale 0.375
+			text "@MENU_DISABLED"
+			visible when ( !getprofiledata( "rumble" ) )
+		}
+		itemDef
+		{
+			rect 0 128 216 1 1 1
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0.65
+			background "gradient_fadein"
+			textscale 0.55
+		}
+		itemDef
+		{
+			name "button_safearea_adjusted_horizontal"
+			rect -64 128 336 20 1 1
+			group "mw2_button"
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@MENU_HUD_MARGIN_HORIZONTAL_CAPS"
+			action
+			{
+				play "mouse_click";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			name "slider_safearea_adjusted_horizontal"
+			rect 248 128 128 20 1 1
+			visible 1
+			forecolor 1 1 1 1
+			type 10
+			textscale 0.55
+			dvarFloat "profileMenuOption_safeAreaHorz" 0.85 0.85 1
+			action
+			{
+				exec "profile_menuDvarsFinish; wait; wait; resetViewport";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setItemColor "button_safearea_adjusted_horizontal" backcolor 0 0 0 1;
+				show "safe_area_demo";
+				show "safe_area_demo_lr";
+				setLocalVarString "ui_options_hint_text" ( "@PLATFORM_OPTIONS_HORIZONTAL_MARGIN_DESC" );
+			}
+			leaveFocus
+			{
+				setItemColor "button_safearea_adjusted_horizontal" backcolor 0 0 0 "0.0";
+				hide "safe_area_demo";
+				hide "safe_area_demo_lr";
+			}
+		}
+		itemDef
+		{
+			name "button_safearea_adjusted_vertical"
+			rect -64 148 336 20 1 1
+			group "mw2_button"
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@MENU_HUD_MARGIN_VERTICAL_CAPS"
+			action
+			{
+				play "mouse_click";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			name "slider_safearea_adjusted_vertical"
+			rect 248 148 128 20 1 1
+			visible 1
+			forecolor 1 1 1 1
+			type 10
+			textscale 0.55
+			dvarFloat "profileMenuOption_safeAreaVert" 0.85 0.85 1
+			action
+			{
+				exec "profile_menuDvarsFinish; wait; wait; resetViewport";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setItemColor "button_safearea_adjusted_vertical" backcolor 0 0 0 1;
+				show "safe_area_demo";
+				show "safe_area_demo_tb";
+				setLocalVarString "ui_options_hint_text" ( "@PLATFORM_OPTIONS_VERTICAL_MARGIN_DESC" );
+			}
+			leaveFocus
+			{
+				setItemColor "button_safearea_adjusted_vertical" backcolor 0 0 0 "0.0";
+				hide "safe_area_demo";
+				hide "safe_area_demo_tb";
+			}
+		}
+		itemDef
+		{
+			rect -100 0 100 600 8 8
+			group "safe_area_demo"
+			style 1
+			decoration
+			forecolor 1 1 1 1
+			backcolor 0.4 0.45 0.5 0.5
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 -64 -32 128 8 2
+			group "safe_area_demo_lr"
+			style 3
+			decoration
+			forecolor 1 1 1 1
+			background "summary_arrow"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 -600 100 600 10 10
+			group "safe_area_demo"
+			style 1
+			decoration
+			forecolor 1 1 1 1
+			backcolor 0.4 0.45 0.5 0.5
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -32 -64 32 128 10 2
+			group "safe_area_demo_lr"
+			style 3
+			decoration
+			forecolor 1 1 1 1
+			background "summary_arrow"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -2000 -100 2000 100 10 8
+			group "safe_area_demo"
+			style 1
+			decoration
+			forecolor 1 1 1 1
+			backcolor 0.4 0.45 0.5 0.5
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -64 0 128 32 2 8
+			group "safe_area_demo_tb"
+			style 3
+			decoration
+			forecolor 1 1 1 1
+			background "summary_arrow_up"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 0 2000 100 8 10
+			group "safe_area_demo"
+			style 1
+			decoration
+			forecolor 1 1 1 1
+			backcolor 0.4 0.45 0.5 0.5
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -64 -32 128 -32 2 10
+			group "safe_area_demo_tb"
+			style 3
+			decoration
+			forecolor 1 1 1 1
+			background "summary_arrow_up"
+			textscale 0.55
+		}
+		itemDef
+		{
+			name "button_snd_volume"
+			rect -64 168 336 20 1 1
+			group "mw2_button"
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@MENU_VOLUME_CAPS"
+			action
+			{
+				play "mouse_click";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			name "slider_snd_volume"
+			rect 248 168 128 20 1 1
+			visible 1
+			forecolor 1 1 1 1
+			type 10
+			textscale 0.55
+			dvarFloat "profileMenuOption_volume" 0.8 0 0.8
+			action
+			{
+				play "volume_adjust";
+				execnow "profile_menuDvarsFinish" ;;
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setItemColor "button_snd_volume" backcolor 0 0 0 1;
+				setLocalVarString "ui_options_hint_text" ( "@PLATFORM_OPTIONS_GAME_VOLUME_DESC" );
+			}
+			leaveFocus
+			{
+				setItemColor "button_snd_volume" backcolor 0 0 0 "0.0";
+			}
+		}
+		itemDef
+		{
+			name "button_ps3_voiceSpeakerGain"
+			rect -64 188 336 20 1 1
+			group "mw2_button"
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@MENU_VOICE_VOLUME_CAPS"
+			action
+			{
+				play "mouse_click";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			name "slider_ps3_voiceSpeakerGain"
+			rect 248 188 128 20 1 1
+			visible 1
+			forecolor 1 1 1 1
+			type 10
+			textscale 0.55
+			dvarFloat "ps3_voiceSpeakerGain" 1.5 0 4
+			onFocus
+			{
+				play "mouse_over";
+				setItemColor "button_ps3_voiceSpeakerGain" backcolor 0 0 0 1;
+				setLocalVarString "ui_options_hint_text" ( "@PLATFORM_OPTIONS_VOICE_DESC" );
+			}
+			leaveFocus
+			{
+				setItemColor "button_ps3_voiceSpeakerGain" backcolor 0 0 0 "0.0";
+			}
+		}
+		itemDef
+		{
+			name "button_r_gamma"
+			rect -64 208 336 20 1 1
+			group "mw2_button"
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@MENU_BRIGHTNESS_CAPS"
+			action
+			{
+				play "mouse_click";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			name "slider_r_gamma"
+			rect 248 208 128 20 1 1
+			visible 1
+			forecolor 1 1 1 1
+			type 10
+			textscale 0.55
+			dvarFloat "profileMenuOption_blacklevel" 0 0.2 -0.4
+			action
+			{
+				execnow "profile_menuDvarsFinish" ;;
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setItemColor "button_r_gamma" backcolor 0 0 0 1;
+				setLocalVarBool "ui_adjusting_brightness" ( 1 );
+				show "brightness_demo";
+				setLocalVarString "ui_options_hint_text" ( "@MENU_BRIGHTNESS_DESC1" );
+			}
+			leaveFocus
+			{
+				setLocalVarBool "ui_adjusting_brightness" ( 0 );
+				setItemColor "button_r_gamma" backcolor 0 0 0 "0.0";
+				hide "brightness_demo";
+			}
+		}
+		itemDef
+		{
+			rect 0 268 0 80 3 1
+			group "brightness_demo"
+			decoration
+			autowrapped
+			forecolor 1 1 1 0.65
+			textfont 3
+			textalign 5
+			textscale 0.375
+			text "@MENU_BRIGHTNESS_DESC2"
+			exp rect x ( 0 - ( 160 + dvarbool( "widescreen" ) * 160 ) )
+			exp rect w ( 160 + dvarbool( "widescreen" ) * 160 )
+		}
+		itemDef
+		{
+			rect 0 28 0 80 3 1
+			group "brightness_demo"
+			style 1
+			decoration
+			autowrapped
+			forecolor 0 0 0 1
+			backcolor 0 0 0 1
+			background "white"
+			textfont 2
+			textalign 9
+			textscale 0.5833
+			text "@MENU_BRIGHTNESS_NOT_VISIBLE"
+			exp rect x ( 0 - ( 160 + dvarbool( "widescreen" ) * 160 ) )
+			exp rect w ( 160 + dvarbool( "widescreen" ) * 160 )
+			exp backcolor rgb ( ( ( ( 0.08 - 0.06 ) ) - dvarfloat( "profileMenuOption_blacklevel" ) ) / ( 1 - dvarfloat( "profileMenuOption_blacklevel" ) ) )
+		}
+		itemDef
+		{
+			rect 0 108 0 80 3 1
+			group "brightness_demo"
+			style 1
+			decoration
+			autowrapped
+			forecolor 0 0 0 1
+			backcolor 0 0 0 1
+			background "white"
+			textfont 2
+			textalign 9
+			textscale 0.5833
+			text "@MENU_BRIGHTNESS_BARELY_VISIBLE"
+			exp rect x ( 0 - ( 160 + dvarbool( "widescreen" ) * 160 ) )
+			exp rect w ( 160 + dvarbool( "widescreen" ) * 160 )
+			exp backcolor rgb ( ( ( ( 0.125 - 0.06 ) ) - dvarfloat( "profileMenuOption_blacklevel" ) ) / ( 1 - dvarfloat( "profileMenuOption_blacklevel" ) ) )
+		}
+		itemDef
+		{
+			rect 0 188 0 80 3 1
+			group "brightness_demo"
+			style 1
+			decoration
+			autowrapped
+			forecolor 0 0 0 1
+			backcolor 0 0 0 1
+			background "white"
+			textfont 2
+			textalign 9
+			textscale 0.5833
+			text "@MENU_BRIGHTNESS_EASILY_VISIBLE"
+			exp rect x ( 0 - ( 160 + dvarbool( "widescreen" ) * 160 ) )
+			exp rect w ( 160 + dvarbool( "widescreen" ) * 160 )
+			exp backcolor rgb ( ( ( ( 0.25 - 0.06 ) ) - dvarfloat( "profileMenuOption_blacklevel" ) ) / ( 1 - dvarfloat( "profileMenuOption_blacklevel" ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 272 22 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 10
+			textalignx -41
+			textaligny -1
+			textscale 0.28
+			text "@PLATFORM_UI_SELECTBUTTON"
+			exp rect y ( getfocuseditemy( ) )
+			visible when ( localvarbool( "ui_menuAButton" ) && !localvarbool( "ui_centerPopup" ) )
+		}
+		itemDef
+		{
+			rect -64 -20 336 24 1 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 6
+			textalignx -30
+			textscale 0.375
+			text "@PLATFORM_BACK_CAPS"
+		}
+		itemDef
+		{
+			rect -100 0 100 600 1 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.6 0.8 0.5
+			textscale 0.55
+			dvarTest "ui_safearea"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect 0 -600 100 600 3 3
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.6 0.8 0.5
+			textscale 0.55
+			dvarTest "ui_safearea"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect -900 -100 900 100 3 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.6 0.8 0.5
+			textscale 0.55
+			dvarTest "ui_safearea"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect 0 0 900 100 1 3
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.6 0.8 0.5
+			textscale 0.55
+			dvarTest "ui_safearea"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect 390 56 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textscale 0.375
+			visible when ( dvarstring( "ui_debug_localVarString" ) != "" )
+			exp text ( dvarstring( "ui_debug_localVarString" ) + ": " + localvarstring( dvarstring( "ui_debug_localVarString" ) ) )
+		}
+		itemDef
+		{
+			rect 390 72 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textscale 0.375
+			visible when ( dvarstring( "ui_debug_localVarInt" ) != "" )
+			exp text ( dvarstring( "ui_debug_localVarInt" ) + ": " + localvarint( dvarstring( "ui_debug_localVarInt" ) ) )
+		}
+		itemDef
+		{
+			rect 390 72 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textscale 0.375
+			visible when ( dvarstring( "ui_debug_localVarBool" ) != "" )
+			exp text ( dvarstring( "ui_debug_localVarBool" ) + ": " + localvarbool( dvarstring( "ui_debug_localVarBool" ) ) )
+		}
+	}
+	menuDef
+	{
+		name "ingamecontrols_thumbstick"
+		rect 0 0 640 480 0 0
+		legacySplitScreenScale
+		forecolor 1 1 1 1
+		focuscolor 1 1 1 1
+		blurWorld 4.66667
+		execKey "BUTTON_START"
+		{
+			close self;
+			exec "updategamerprofile";
+		}
+		onOpen
+		{
+			exec "hidehud";
+			setdvar "ui_allow_controlschange" 0;
+		}
+		onClose
+		{
+			exec "showhud";
+			setdvar "ui_allow_controlschange" 1;
+		}
+		onEsc
+		{
+			close "ingamecontrols_thumbstick";
+			open "ingame_controls";
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			decoration
+			visible 1
+			background "white"
+			textscale 0.55
+			visible when ( !localvarbool( "ui_adjusting_brightness" ) )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0
+			background "mockup_bg_glow"
+			textscale 0.55
+			exp forecolor a ( ( ( sin( milliseconds( ) / 1500 ) + 1 ) * 0.25 ) + 0.25 )
+			visible when ( !localvarbool( "ui_adjusting_brightness" ) )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0
+			background "mockup_bg_glow"
+			textscale 0.55
+			exp forecolor a ( ( ( sin( milliseconds( ) / 480 ) + 1 ) * 0.25 ) + 0.25 )
+			visible when ( !localvarbool( "ui_adjusting_brightness" ) )
+		}
+		itemDef
+		{
+			rect 0 0 272 28 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 6
+			textalignx -60
+			textscale 0.5
+			text "@MENU_STICK_LAYOUT_CAP"
+		}
+		itemDef
+		{
+			rect 150 95 350 350 0 0
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "ps3_controller_top"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 240 280 90 90 0 0
+			group "controls_thumbstick_set1"
+			style 3
+			decoration
+			forecolor 1 1 1 1
+			background "xenon_stick_move"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 322 280 90 90 0 0
+			group "controls_thumbstick_set1"
+			style 3
+			decoration
+			forecolor 1 1 1 1
+			background "xenon_stick_turn"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 412 315 0 0 0 0
+			group "controls_thumbstick_set1"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			textstyle 6
+			text "@MENU_ROTATE_LEFT_RIGHT"
+		}
+		itemDef
+		{
+			rect 367 375 0 0 0 0
+			group "controls_thumbstick_set1"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 5
+			textscale 0.375
+			textstyle 6
+			text "@MENU_LOOK_UP_DOWN"
+		}
+		itemDef
+		{
+			rect 285 375 0 0 0 0
+			group "controls_thumbstick_set1"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 5
+			textscale 0.375
+			textstyle 6
+			text "@MENU_MOVE_FORWARD_BACK"
+		}
+		itemDef
+		{
+			rect 235 315 0 0 0 0
+			group "controls_thumbstick_set1"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+			textstyle 6
+			text "@MENU_STRAFE_LEFT_RIGHT"
+		}
+		itemDef
+		{
+			rect 240 280 90 90 0 0
+			group "controls_thumbstick_set2"
+			style 3
+			decoration
+			forecolor 1 1 1 1
+			background "xenon_stick_turn"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 322 280 90 90 0 0
+			group "controls_thumbstick_set2"
+			style 3
+			decoration
+			forecolor 1 1 1 1
+			background "xenon_stick_move"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 412 315 0 0 0 0
+			group "controls_thumbstick_set2"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			textstyle 6
+			text "@MENU_STRAFE_LEFT_RIGHT"
+		}
+		itemDef
+		{
+			rect 367 375 0 0 0 0
+			group "controls_thumbstick_set2"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 5
+			textscale 0.375
+			textstyle 6
+			text "@MENU_MOVE_FORWARD_BACK"
+		}
+		itemDef
+		{
+			rect 285 375 0 0 0 0
+			group "controls_thumbstick_set2"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 5
+			textscale 0.375
+			textstyle 6
+			text "@MENU_LOOK_UP_DOWN"
+		}
+		itemDef
+		{
+			rect 235 315 0 0 0 0
+			group "controls_thumbstick_set2"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+			textstyle 6
+			text "@MENU_ROTATE_LEFT_RIGHT"
+		}
+		itemDef
+		{
+			rect 240 280 90 90 0 0
+			group "controls_thumbstick_set3"
+			style 3
+			decoration
+			forecolor 1 1 1 1
+			background "xenon_stick_move_turn"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 322 280 90 90 0 0
+			group "controls_thumbstick_set3"
+			style 3
+			decoration
+			forecolor 1 1 1 1
+			background "xenon_stick_move_look"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 412 315 0 0 0 0
+			group "controls_thumbstick_set3"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			textstyle 6
+			text "@MENU_STRAFE_LEFT_RIGHT"
+		}
+		itemDef
+		{
+			rect 367 375 0 0 0 0
+			group "controls_thumbstick_set3"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 5
+			textscale 0.375
+			textstyle 6
+			text "@MENU_LOOK_UP_DOWN"
+		}
+		itemDef
+		{
+			rect 285 375 0 0 0 0
+			group "controls_thumbstick_set3"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 5
+			textscale 0.375
+			textstyle 6
+			text "@MENU_MOVE_FORWARD_BACK"
+		}
+		itemDef
+		{
+			rect 235 315 0 0 0 0
+			group "controls_thumbstick_set3"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+			textstyle 6
+			text "@MENU_ROTATE_LEFT_RIGHT"
+		}
+		itemDef
+		{
+			rect 240 280 90 90 0 0
+			group "controls_thumbstick_set4"
+			style 3
+			decoration
+			forecolor 1 1 1 1
+			background "xenon_stick_move_look"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 322 280 90 90 0 0
+			group "controls_thumbstick_set4"
+			style 3
+			decoration
+			forecolor 1 1 1 1
+			background "xenon_stick_move_turn"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 412 315 0 0 0 0
+			group "controls_thumbstick_set4"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			textstyle 6
+			text "@MENU_ROTATE_LEFT_RIGHT"
+		}
+		itemDef
+		{
+			rect 367 375 0 0 0 0
+			group "controls_thumbstick_set4"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 5
+			textscale 0.375
+			textstyle 6
+			text "@MENU_MOVE_FORWARD_BACK"
+		}
+		itemDef
+		{
+			rect 285 375 0 0 0 0
+			group "controls_thumbstick_set4"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 5
+			textscale 0.375
+			textstyle 6
+			text "@MENU_LOOK_UP_DOWN"
+		}
+		itemDef
+		{
+			rect 235 315 0 0 0 0
+			group "controls_thumbstick_set4"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+			textstyle 6
+			text "@MENU_STRAFE_LEFT_RIGHT"
+		}
+		itemDef
+		{
+			rect -64 28 336 20 1 1
+			group "mw2_button"
+			style 1
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@MENU_DEFAULT"
+			action
+			{
+				play "mouse_click";
+				exec "profile_setSticksConfig thumbstick_default";
+				close "ingamecontrols_thumbstick";
+				open "ingame_controls";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				show "controls_thumbstick_set1";
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+				hide "controls_thumbstick_set1";
+			}
+		}
+		itemDef
+		{
+			rect -64 48 336 20 1 1
+			group "mw2_button"
+			style 1
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@MENU_SOUTHPAW"
+			action
+			{
+				play "mouse_click";
+				exec "profile_setSticksConfig thumbstick_southpaw";
+				close "ingamecontrols_thumbstick";
+				open "ingame_controls";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				show "controls_thumbstick_set2";
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+				hide "controls_thumbstick_set2";
+			}
+		}
+		itemDef
+		{
+			rect -64 68 336 20 1 1
+			group "mw2_button"
+			style 1
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@MENU_LEGACY"
+			action
+			{
+				play "mouse_click";
+				exec "profile_setSticksConfig thumbstick_legacy";
+				close "ingamecontrols_thumbstick";
+				open "ingame_controls";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				show "controls_thumbstick_set3";
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+				hide "controls_thumbstick_set3";
+			}
+		}
+		itemDef
+		{
+			rect -64 88 336 20 1 1
+			group "mw2_button"
+			style 1
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@MENU_LEGACY_SOUTHPAW"
+			action
+			{
+				play "mouse_click";
+				exec "profile_setSticksConfig thumbstick_legacysouthpaw";
+				close "ingamecontrols_thumbstick";
+				open "ingame_controls";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				show "controls_thumbstick_set4";
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+				hide "controls_thumbstick_set4";
+			}
+		}
+		itemDef
+		{
+			rect 0 0 272 22 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 10
+			textalignx -41
+			textaligny -1
+			textscale 0.28
+			text "@PLATFORM_UI_SELECTBUTTON"
+			exp rect y ( getfocuseditemy( ) )
+			visible when ( localvarbool( "ui_menuAButton" ) && !localvarbool( "ui_centerPopup" ) )
+		}
+		itemDef
+		{
+			rect -64 -20 336 24 1 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 6
+			textalignx -30
+			textscale 0.375
+			text "@PLATFORM_BACK_CAPS"
+		}
+		itemDef
+		{
+			rect -100 0 100 600 1 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.6 0.8 0.5
+			textscale 0.55
+			dvarTest "ui_safearea"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect 0 -600 100 600 3 3
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.6 0.8 0.5
+			textscale 0.55
+			dvarTest "ui_safearea"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect -900 -100 900 100 3 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.6 0.8 0.5
+			textscale 0.55
+			dvarTest "ui_safearea"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect 0 0 900 100 1 3
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.6 0.8 0.5
+			textscale 0.55
+			dvarTest "ui_safearea"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect 390 56 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textscale 0.375
+			visible when ( dvarstring( "ui_debug_localVarString" ) != "" )
+			exp text ( dvarstring( "ui_debug_localVarString" ) + ": " + localvarstring( dvarstring( "ui_debug_localVarString" ) ) )
+		}
+		itemDef
+		{
+			rect 390 72 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textscale 0.375
+			visible when ( dvarstring( "ui_debug_localVarInt" ) != "" )
+			exp text ( dvarstring( "ui_debug_localVarInt" ) + ": " + localvarint( dvarstring( "ui_debug_localVarInt" ) ) )
+		}
+		itemDef
+		{
+			rect 390 72 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textscale 0.375
+			visible when ( dvarstring( "ui_debug_localVarBool" ) != "" )
+			exp text ( dvarstring( "ui_debug_localVarBool" ) + ": " + localvarbool( dvarstring( "ui_debug_localVarBool" ) ) )
+		}
+	}
+	menuDef
+	{
+		name "ingamecontrols_buttons"
+		rect 0 0 640 480 0 0
+		legacySplitScreenScale
+		forecolor 1 1 1 1
+		focuscolor 1 1 1 1
+		blurWorld 4.66667
+		execKey "BUTTON_START"
+		{
+			close self;
+			exec "updategamerprofile";
+		}
+		onOpen
+		{
+			exec "hidehud" setdvar "ui_allow_controlschange" 0;
+			if ( getprofiledata( "gpadButtonsConfig" ) == "buttons_default_alt" || getprofiledata( "gpadButtonsConfig" ) == "buttons_tactical_alt" || getprofiledata( "gpadButtonsConfig" ) == "buttons_lefty_alt" )
+			{
+				setLocalVarBool "ui_buttons_page" ( 1 );
+			}
+			else
+			{
+				setLocalVarBool "ui_buttons_page" ( 0 );
+			}
+			if ( getprofiledata( "gpadButtonsConfig" ) == "buttons_default" )
+			{
+				setfocus "buttons_1";
+			}
+			if ( getprofiledata( "gpadButtonsConfig" ) == "buttons_tactical" )
+			{
+				setfocus "buttons_2";
+			}
+			if ( getprofiledata( "gpadButtonsConfig" ) == "buttons_lefty" )
+			{
+				setfocus "buttons_3";
+			}
+			if ( getprofiledata( "gpadButtonsConfig" ) == "buttons_default_alt" )
+			{
+				setfocus "buttons_4";
+			}
+			if ( getprofiledata( "gpadButtonsConfig" ) == "buttons_tactical_alt" )
+			{
+				setfocus "buttons_5";
+			}
+			if ( getprofiledata( "gpadButtonsConfig" ) == "buttons_lefty_alt" )
+			{
+				setfocus "buttons_6";
+			}
+		}
+		onClose
+		{
+			exec "showhud";
+			setdvar "ui_allow_controlschange" 1;
+		}
+		onEsc
+		{
+			close "ingamecontrols_buttons";
+			open "ingame_controls";
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			decoration
+			visible 1
+			background "white"
+			textscale 0.55
+			visible when ( !localvarbool( "ui_adjusting_brightness" ) )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0
+			background "mockup_bg_glow"
+			textscale 0.55
+			exp forecolor a ( ( ( sin( milliseconds( ) / 1500 ) + 1 ) * 0.25 ) + 0.25 )
+			visible when ( !localvarbool( "ui_adjusting_brightness" ) )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0
+			background "mockup_bg_glow"
+			textscale 0.55
+			exp forecolor a ( ( ( sin( milliseconds( ) / 480 ) + 1 ) * 0.25 ) + 0.25 )
+			visible when ( !localvarbool( "ui_adjusting_brightness" ) )
+		}
+		itemDef
+		{
+			rect 0 0 272 28 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 6
+			textalignx -60
+			textscale 0.5
+			text "@MENU_BUTTON_LAYOUT_CAP"
+		}
+		itemDef
+		{
+			rect 147 120 350 350 0 0
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "ps3_controller_top"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 147 120 350 350 0 0
+			group "controls_buttons_set1"
+			style 3
+			decoration
+			forecolor 1 1 1 1
+			background "ps3_controller_lines_classic_mp"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 147 120 350 350 0 0
+			group "controls_buttons_set2"
+			style 3
+			decoration
+			forecolor 1 1 1 1
+			background "ps3_controller_lines_classic_mp"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 147 120 350 350 0 0
+			group "controls_buttons_set3"
+			style 3
+			decoration
+			forecolor 1 1 1 1
+			background "ps3_controller_lines_classic_mp"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 147 120 350 350 0 0
+			group "controls_buttons_set4"
+			style 3
+			decoration
+			forecolor 1 1 1 1
+			background "ps3_controller_lines_classic_mp"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 147 120 350 350 0 0
+			group "controls_buttons_set5"
+			style 3
+			decoration
+			forecolor 1 1 1 1
+			background "ps3_controller_lines_classic_mp"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 147 120 350 350 0 0
+			group "controls_buttons_set6"
+			style 3
+			decoration
+			forecolor 1 1 1 1
+			background "ps3_controller_lines_classic_mp"
+			textscale 0.55
+		}
+		itemDef
+		{
+			name "scoreboard"
+			rect 279 180 38 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_SCOREBOARD"
+			visible when ( dvarbool( "ui_multiplayer" ) && !localvarbool( "ui_buttons_more_focused" ) )
+		}
+		itemDef
+		{
+			name "scoreboard"
+			rect 279 180 38 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_NOT_USED"
+			visible when ( !dvarbool( "ui_multiplayer" ) && !localvarbool( "ui_buttons_more_focused" ) )
+		}
+		itemDef
+		{
+			rect 459 348 0 0 0 0
+			group "controls_buttons_set1"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_JUMP"
+		}
+		itemDef
+		{
+			rect 454 303 0 0 0 0
+			group "controls_buttons_set1"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_CROUCH_PRONE"
+		}
+		itemDef
+		{
+			rect 458 326 0 0 0 0
+			group "controls_buttons_set1"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_USE_RELOAD"
+		}
+		itemDef
+		{
+			rect 449 278 0 0 0 0
+			group "controls_buttons_set1"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_SWITCH_WEAPON"
+		}
+		itemDef
+		{
+			rect 445 214 0 0 0 0
+			group "controls_buttons_set1"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_USE_EQUIPMENT"
+		}
+		itemDef
+		{
+			rect 209 214 0 0 0 0
+			group "controls_buttons_set1"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+			text "@MENU_THROW_SPECIAL_GRENADE"
+		}
+		itemDef
+		{
+			rect 175 300 0 0 0 0
+			group "controls_buttons_set1"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+		}
+		itemDef
+		{
+			rect 171 333 0 0 0 0
+			group "controls_buttons_set1"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+		}
+		itemDef
+		{
+			rect 175 300 0 0 0 0
+			group "controls_buttons_set1"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+		}
+		itemDef
+		{
+			rect 167 318 0 0 0 0
+			group "controls_buttons_set1"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+		}
+		itemDef
+		{
+			rect 201 235 0 0 0 0
+			group "controls_buttons_set1"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+			text "@MENU_AIM_DOWN_SIGHT"
+		}
+		itemDef
+		{
+			rect 452 235 0 0 0 0
+			group "controls_buttons_set1"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_FIRE_WEAPON"
+		}
+		itemDef
+		{
+			rect 307 203 0 0 0 0
+			group "controls_buttons_set1"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_OBJECTIVES_MENU"
+		}
+		itemDef
+		{
+			rect 247 212 0 0 0 0
+			group "controls_buttons_set1"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+		}
+		itemDef
+		{
+			rect 217 338 0 0 0 0
+			group "controls_buttons_set1"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+			text "@MENU_SPRINT_HOLD_BREATH"
+		}
+		itemDef
+		{
+			rect 327 394 0 0 0 0
+			group "controls_buttons_set1"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_MELEE_ATTACK"
+		}
+		itemDef
+		{
+			rect 459 348 0 0 0 0
+			group "controls_buttons_set2"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_JUMP"
+		}
+		itemDef
+		{
+			rect 454 303 0 0 0 0
+			group "controls_buttons_set2"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_MELEE_ATTACK"
+		}
+		itemDef
+		{
+			rect 458 326 0 0 0 0
+			group "controls_buttons_set2"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_USE_RELOAD"
+		}
+		itemDef
+		{
+			rect 449 278 0 0 0 0
+			group "controls_buttons_set2"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_SWITCH_WEAPON"
+		}
+		itemDef
+		{
+			rect 445 214 0 0 0 0
+			group "controls_buttons_set2"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_USE_EQUIPMENT"
+		}
+		itemDef
+		{
+			rect 209 214 0 0 0 0
+			group "controls_buttons_set2"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+			text "@MENU_THROW_SPECIAL_GRENADE"
+		}
+		itemDef
+		{
+			rect 175 300 0 0 0 0
+			group "controls_buttons_set2"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+		}
+		itemDef
+		{
+			rect 171 333 0 0 0 0
+			group "controls_buttons_set2"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+		}
+		itemDef
+		{
+			rect 175 300 0 0 0 0
+			group "controls_buttons_set2"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+		}
+		itemDef
+		{
+			rect 167 318 0 0 0 0
+			group "controls_buttons_set2"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+		}
+		itemDef
+		{
+			rect 201 235 0 0 0 0
+			group "controls_buttons_set2"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+			text "@MENU_AIM_DOWN_SIGHT"
+		}
+		itemDef
+		{
+			rect 452 235 0 0 0 0
+			group "controls_buttons_set2"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_FIRE_WEAPON"
+		}
+		itemDef
+		{
+			rect 307 203 0 0 0 0
+			group "controls_buttons_set2"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_OBJECTIVES_MENU"
+		}
+		itemDef
+		{
+			rect 247 212 0 0 0 0
+			group "controls_buttons_set2"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+		}
+		itemDef
+		{
+			rect 217 338 0 0 0 0
+			group "controls_buttons_set2"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+			text "@MENU_SPRINT_HOLD_BREATH"
+		}
+		itemDef
+		{
+			rect 327 394 0 0 0 0
+			group "controls_buttons_set2"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_CROUCH_PRONE"
+		}
+		itemDef
+		{
+			rect 459 348 0 0 0 0
+			group "controls_buttons_set3"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_JUMP"
+		}
+		itemDef
+		{
+			rect 454 303 0 0 0 0
+			group "controls_buttons_set3"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_CROUCH_PRONE"
+		}
+		itemDef
+		{
+			rect 458 326 0 0 0 0
+			group "controls_buttons_set3"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_USE_RELOAD"
+		}
+		itemDef
+		{
+			rect 449 278 0 0 0 0
+			group "controls_buttons_set3"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_SWITCH_WEAPON"
+		}
+		itemDef
+		{
+			rect 445 214 0 0 0 0
+			group "controls_buttons_set3"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_THROW_SPECIAL_GRENADE"
+		}
+		itemDef
+		{
+			rect 209 214 0 0 0 0
+			group "controls_buttons_set3"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+			text "@MENU_USE_EQUIPMENT"
+		}
+		itemDef
+		{
+			rect 175 300 0 0 0 0
+			group "controls_buttons_set3"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+		}
+		itemDef
+		{
+			rect 171 333 0 0 0 0
+			group "controls_buttons_set3"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+		}
+		itemDef
+		{
+			rect 175 300 0 0 0 0
+			group "controls_buttons_set3"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+		}
+		itemDef
+		{
+			rect 167 318 0 0 0 0
+			group "controls_buttons_set3"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+		}
+		itemDef
+		{
+			rect 201 235 0 0 0 0
+			group "controls_buttons_set3"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+			text "@MENU_FIRE_WEAPON"
+		}
+		itemDef
+		{
+			rect 452 235 0 0 0 0
+			group "controls_buttons_set3"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_AIM_DOWN_SIGHT"
+		}
+		itemDef
+		{
+			rect 307 203 0 0 0 0
+			group "controls_buttons_set3"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_OBJECTIVES_MENU"
+		}
+		itemDef
+		{
+			rect 247 212 0 0 0 0
+			group "controls_buttons_set3"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+		}
+		itemDef
+		{
+			rect 217 338 0 0 0 0
+			group "controls_buttons_set3"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+			text "@MENU_MELEE_ATTACK"
+		}
+		itemDef
+		{
+			rect 327 394 0 0 0 0
+			group "controls_buttons_set3"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_SPRINT_HOLD_BREATH"
+		}
+		itemDef
+		{
+			rect 459 348 0 0 0 0
+			group "controls_buttons_set4"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_JUMP"
+		}
+		itemDef
+		{
+			rect 454 303 0 0 0 0
+			group "controls_buttons_set4"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_CROUCH_PRONE"
+		}
+		itemDef
+		{
+			rect 458 326 0 0 0 0
+			group "controls_buttons_set4"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_USE_RELOAD"
+		}
+		itemDef
+		{
+			rect 449 278 0 0 0 0
+			group "controls_buttons_set4"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_SWITCH_WEAPON"
+		}
+		itemDef
+		{
+			rect 445 214 0 0 0 0
+			group "controls_buttons_set4"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_FIRE_WEAPON"
+		}
+		itemDef
+		{
+			rect 209 214 0 0 0 0
+			group "controls_buttons_set4"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+			text "@MENU_AIM_DOWN_SIGHT"
+		}
+		itemDef
+		{
+			rect 175 300 0 0 0 0
+			group "controls_buttons_set4"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+		}
+		itemDef
+		{
+			rect 171 333 0 0 0 0
+			group "controls_buttons_set4"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+		}
+		itemDef
+		{
+			rect 175 300 0 0 0 0
+			group "controls_buttons_set4"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+		}
+		itemDef
+		{
+			rect 167 318 0 0 0 0
+			group "controls_buttons_set4"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+		}
+		itemDef
+		{
+			rect 201 235 0 0 0 0
+			group "controls_buttons_set4"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+			text "@MENU_THROW_SPECIAL_GRENADE"
+		}
+		itemDef
+		{
+			rect 452 235 0 0 0 0
+			group "controls_buttons_set4"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_USE_EQUIPMENT"
+		}
+		itemDef
+		{
+			rect 307 203 0 0 0 0
+			group "controls_buttons_set4"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_OBJECTIVES_MENU"
+		}
+		itemDef
+		{
+			rect 247 212 0 0 0 0
+			group "controls_buttons_set4"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+		}
+		itemDef
+		{
+			rect 217 338 0 0 0 0
+			group "controls_buttons_set4"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+			text "@MENU_SPRINT_HOLD_BREATH"
+		}
+		itemDef
+		{
+			rect 327 394 0 0 0 0
+			group "controls_buttons_set4"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_MELEE_ATTACK"
+		}
+		itemDef
+		{
+			rect 459 348 0 0 0 0
+			group "controls_buttons_set5"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_JUMP"
+		}
+		itemDef
+		{
+			rect 454 303 0 0 0 0
+			group "controls_buttons_set5"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_MELEE_ATTACK"
+		}
+		itemDef
+		{
+			rect 458 326 0 0 0 0
+			group "controls_buttons_set5"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_USE_RELOAD"
+		}
+		itemDef
+		{
+			rect 449 278 0 0 0 0
+			group "controls_buttons_set5"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_SWITCH_WEAPON"
+		}
+		itemDef
+		{
+			rect 445 214 0 0 0 0
+			group "controls_buttons_set5"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_FIRE_WEAPON"
+		}
+		itemDef
+		{
+			rect 209 214 0 0 0 0
+			group "controls_buttons_set5"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+			text "@MENU_AIM_DOWN_SIGHT"
+		}
+		itemDef
+		{
+			rect 175 300 0 0 0 0
+			group "controls_buttons_set5"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+		}
+		itemDef
+		{
+			rect 171 333 0 0 0 0
+			group "controls_buttons_set5"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+		}
+		itemDef
+		{
+			rect 175 300 0 0 0 0
+			group "controls_buttons_set5"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+		}
+		itemDef
+		{
+			rect 167 318 0 0 0 0
+			group "controls_buttons_set5"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+		}
+		itemDef
+		{
+			rect 201 235 0 0 0 0
+			group "controls_buttons_set5"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+			text "@MENU_THROW_SPECIAL_GRENADE"
+		}
+		itemDef
+		{
+			rect 452 235 0 0 0 0
+			group "controls_buttons_set5"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_USE_EQUIPMENT"
+		}
+		itemDef
+		{
+			rect 307 203 0 0 0 0
+			group "controls_buttons_set5"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_OBJECTIVES_MENU"
+		}
+		itemDef
+		{
+			rect 247 212 0 0 0 0
+			group "controls_buttons_set5"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+		}
+		itemDef
+		{
+			rect 217 338 0 0 0 0
+			group "controls_buttons_set5"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+			text "@MENU_SPRINT_HOLD_BREATH"
+		}
+		itemDef
+		{
+			rect 327 394 0 0 0 0
+			group "controls_buttons_set5"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_CROUCH_PRONE"
+		}
+		itemDef
+		{
+			rect 459 348 0 0 0 0
+			group "controls_buttons_set6"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_JUMP"
+		}
+		itemDef
+		{
+			rect 454 303 0 0 0 0
+			group "controls_buttons_set6"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_CROUCH_PRONE"
+		}
+		itemDef
+		{
+			rect 458 326 0 0 0 0
+			group "controls_buttons_set6"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_USE_RELOAD"
+		}
+		itemDef
+		{
+			rect 449 278 0 0 0 0
+			group "controls_buttons_set6"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_SWITCH_WEAPON"
+		}
+		itemDef
+		{
+			rect 445 214 0 0 0 0
+			group "controls_buttons_set6"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_AIM_DOWN_SIGHT"
+		}
+		itemDef
+		{
+			rect 209 214 0 0 0 0
+			group "controls_buttons_set6"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+			text "@MENU_FIRE_WEAPON"
+		}
+		itemDef
+		{
+			rect 175 300 0 0 0 0
+			group "controls_buttons_set6"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+		}
+		itemDef
+		{
+			rect 171 333 0 0 0 0
+			group "controls_buttons_set6"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+		}
+		itemDef
+		{
+			rect 175 300 0 0 0 0
+			group "controls_buttons_set6"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+		}
+		itemDef
+		{
+			rect 167 318 0 0 0 0
+			group "controls_buttons_set6"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+		}
+		itemDef
+		{
+			rect 201 235 0 0 0 0
+			group "controls_buttons_set6"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+			text "@MENU_USE_EQUIPMENT"
+		}
+		itemDef
+		{
+			rect 452 235 0 0 0 0
+			group "controls_buttons_set6"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_THROW_SPECIAL_GRENADE"
+		}
+		itemDef
+		{
+			rect 307 203 0 0 0 0
+			group "controls_buttons_set6"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_OBJECTIVES_MENU"
+		}
+		itemDef
+		{
+			rect 247 212 0 0 0 0
+			group "controls_buttons_set6"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+		}
+		itemDef
+		{
+			rect 217 338 0 0 0 0
+			group "controls_buttons_set6"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 6
+			textscale 0.375
+			text "@MENU_MELEE_ATTACK"
+		}
+		itemDef
+		{
+			rect 327 394 0 0 0 0
+			group "controls_buttons_set6"
+			decoration
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.375
+			text "@MENU_SPRINT_HOLD_BREATH"
+		}
+		itemDef
+		{
+			name "buttons_1"
+			rect -64 28 336 20 1 1
+			group "mw2_button"
+			style 1
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@MENU_DEFAULT"
+			visible when ( localvarbool( "ui_buttons_page" ) == 0 )
+			action
+			{
+				play "mouse_click";
+				exec "profile_setButtonsConfig buttons_default";
+				close "ingamecontrols_buttons";
+				open "ingame_controls";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				show "controls_buttons_set1";
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+				hide "controls_buttons_set1";
+			}
+		}
+		itemDef
+		{
+			name "buttons_2"
+			rect -64 48 336 20 1 1
+			group "mw2_button"
+			style 1
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@MENU_TACTICAL"
+			visible when ( localvarbool( "ui_buttons_page" ) == 0 )
+			action
+			{
+				play "mouse_click";
+				exec "profile_setButtonsConfig buttons_tactical";
+				close "ingamecontrols_buttons";
+				open "ingame_controls";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				show "controls_buttons_set2";
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+				hide "controls_buttons_set2";
+			}
+		}
+		itemDef
+		{
+			name "buttons_3"
+			rect -64 68 336 20 1 1
+			group "mw2_button"
+			style 1
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@MENU_LEFTY"
+			visible when ( localvarbool( "ui_buttons_page" ) == 0 )
+			action
+			{
+				play "mouse_click";
+				exec "profile_setButtonsConfig buttons_lefty";
+				close "ingamecontrols_buttons";
+				open "ingame_controls";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				show "controls_buttons_set3";
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+				hide "controls_buttons_set3";
+			}
+		}
+		itemDef
+		{
+			rect -64 88 336 20 1 1
+			group "mw2_button"
+			style 1
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@MENU_MORE"
+			action
+			{
+				play "mouse_click";
+				if ( localvarbool( "ui_buttons_page" ) )
+				{
+					setLocalVarBool "ui_buttons_page" ( 0 );
+				}
+				else
+				{
+					setLocalVarBool "ui_buttons_page" ( 1 );
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				setLocalVarBool "ui_buttons_more_focused" ( 1 );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+				setLocalVarBool "ui_buttons_more_focused" ( 0 );
+			}
+		}
+		itemDef
+		{
+			name "buttons_4"
+			rect -64 28 336 20 1 1
+			group "mw2_button"
+			style 1
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@MENU_DEFAULT_ALT"
+			visible when ( localvarbool( "ui_buttons_page" ) == 1 )
+			action
+			{
+				play "mouse_click";
+				exec "profile_setButtonsConfig buttons_default_alt";
+				close "ingamecontrols_buttons";
+				open "ingame_controls";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				show "controls_buttons_set4";
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+				hide "controls_buttons_set4";
+			}
+		}
+		itemDef
+		{
+			name "buttons_5"
+			rect -64 48 336 20 1 1
+			group "mw2_button"
+			style 1
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@MENU_TACTICAL_ALT"
+			visible when ( localvarbool( "ui_buttons_page" ) == 1 )
+			action
+			{
+				play "mouse_click";
+				exec "profile_setButtonsConfig buttons_tactical_alt";
+				close "ingamecontrols_buttons";
+				open "ingame_controls";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				show "controls_buttons_set5";
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+				hide "controls_buttons_set5";
+			}
+		}
+		itemDef
+		{
+			name "buttons_6"
+			rect -64 68 336 20 1 1
+			group "mw2_button"
+			style 1
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@MENU_LEFTY_ALT"
+			visible when ( localvarbool( "ui_buttons_page" ) == 1 )
+			action
+			{
+				play "mouse_click";
+				exec "profile_setButtonsConfig buttons_lefty_alt";
+				close "ingamecontrols_buttons";
+				open "ingame_controls";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				show "controls_buttons_set6";
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+				hide "controls_buttons_set6";
+			}
+		}
+		itemDef
+		{
+			rect 0 0 272 22 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 10
+			textalignx -41
+			textaligny -1
+			textscale 0.28
+			text "@PLATFORM_UI_SELECTBUTTON"
+			exp rect y ( getfocuseditemy( ) )
+			visible when ( localvarbool( "ui_menuAButton" ) && !localvarbool( "ui_centerPopup" ) )
+		}
+		itemDef
+		{
+			rect -64 -20 336 24 1 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 6
+			textalignx -30
+			textscale 0.375
+			text "@PLATFORM_BACK_CAPS"
+		}
+		itemDef
+		{
+			rect -100 0 100 600 1 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.6 0.8 0.5
+			textscale 0.55
+			dvarTest "ui_safearea"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect 0 -600 100 600 3 3
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.6 0.8 0.5
+			textscale 0.55
+			dvarTest "ui_safearea"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect -900 -100 900 100 3 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.6 0.8 0.5
+			textscale 0.55
+			dvarTest "ui_safearea"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect 0 0 900 100 1 3
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.6 0.8 0.5
+			textscale 0.55
+			dvarTest "ui_safearea"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect 390 56 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textscale 0.375
+			visible when ( dvarstring( "ui_debug_localVarString" ) != "" )
+			exp text ( dvarstring( "ui_debug_localVarString" ) + ": " + localvarstring( dvarstring( "ui_debug_localVarString" ) ) )
+		}
+		itemDef
+		{
+			rect 390 72 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textscale 0.375
+			visible when ( dvarstring( "ui_debug_localVarInt" ) != "" )
+			exp text ( dvarstring( "ui_debug_localVarInt" ) + ": " + localvarint( dvarstring( "ui_debug_localVarInt" ) ) )
+		}
+		itemDef
+		{
+			rect 390 72 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textscale 0.375
+			visible when ( dvarstring( "ui_debug_localVarBool" ) != "" )
+			exp text ( dvarstring( "ui_debug_localVarBool" ) + ": " + localvarbool( dvarstring( "ui_debug_localVarBool" ) ) )
+		}
+	}
+	menuDef
+	{
+		name "ingamecontrols_sensitivity"
+		rect 0 0 640 480 0 0
+		legacySplitScreenScale
+		forecolor 1 1 1 1
+		focuscolor 1 1 1 1
+		blurWorld 4.66667
+		execKey "BUTTON_START"
+		{
+			close self;
+			exec "updategamerprofile";
+		}
+		onOpen
+		{
+			setfocus "sensitivity_medium";
+			exec "hidehud" setdvar "ui_allow_controlschange" 0;
+		}
+		onClose
+		{
+			exec "showhud";
+			setdvar "ui_allow_controlschange" 1;
+		}
+		onEsc
+		{
+			close "ingamecontrols_sensitivity";
+			open "ingame_controls";
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			decoration
+			visible 1
+			background "white"
+			textscale 0.55
+			visible when ( !localvarbool( "ui_adjusting_brightness" ) )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0
+			background "mockup_bg_glow"
+			textscale 0.55
+			exp forecolor a ( ( ( sin( milliseconds( ) / 1500 ) + 1 ) * 0.25 ) + 0.25 )
+			visible when ( !localvarbool( "ui_adjusting_brightness" ) )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0
+			background "mockup_bg_glow"
+			textscale 0.55
+			exp forecolor a ( ( ( sin( milliseconds( ) / 480 ) + 1 ) * 0.25 ) + 0.25 )
+			visible when ( !localvarbool( "ui_adjusting_brightness" ) )
+		}
+		itemDef
+		{
+			rect 0 0 272 28 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 6
+			textalignx -60
+			textscale 0.5
+			text "@MENU_SENSITIVITY_CAP"
+		}
+		itemDef
+		{
+			rect -64 28 336 20 1 1
+			group "mw2_button"
+			style 1
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@MENU_LOW"
+			action
+			{
+				play "mouse_click";
+				exec "exec viewSensitivity_low" close "ingamecontrols_sensitivity";
+				open "ingame_controls";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect -64 48 336 20 1 1
+			group "mw2_button"
+			style 1
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@MENU_MEDIUM"
+			action
+			{
+				play "mouse_click";
+				exec "exec viewSensitivity_med" close "ingamecontrols_sensitivity";
+				open "ingame_controls";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect -64 68 336 20 1 1
+			group "mw2_button"
+			style 1
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@MENU_HIGH"
+			action
+			{
+				play "mouse_click";
+				exec "exec viewSensitivity_high" close "ingamecontrols_sensitivity";
+				open "ingame_controls";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			name "sensitivity_custom"
+			rect -64 88 336 20 1 1
+			group "mw2_button"
+			style 1
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@MENU_CUSTOM"
+			action
+			{
+				play "mouse_click";
+				close "ingamecontrols_sensitivity";
+				open "ingamecontrols_sensitivity_custom";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect 0 0 272 22 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 10
+			textalignx -41
+			textaligny -1
+			textscale 0.28
+			text "@PLATFORM_UI_SELECTBUTTON"
+			exp rect y ( getfocuseditemy( ) )
+			visible when ( localvarbool( "ui_menuAButton" ) && !localvarbool( "ui_centerPopup" ) )
+		}
+		itemDef
+		{
+			rect -64 -20 336 24 1 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 6
+			textalignx -30
+			textscale 0.375
+			text "@PLATFORM_BACK_CAPS"
+		}
+		itemDef
+		{
+			rect -100 0 100 600 1 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.6 0.8 0.5
+			textscale 0.55
+			dvarTest "ui_safearea"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect 0 -600 100 600 3 3
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.6 0.8 0.5
+			textscale 0.55
+			dvarTest "ui_safearea"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect -900 -100 900 100 3 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.6 0.8 0.5
+			textscale 0.55
+			dvarTest "ui_safearea"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect 0 0 900 100 1 3
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.6 0.8 0.5
+			textscale 0.55
+			dvarTest "ui_safearea"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect 390 56 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textscale 0.375
+			visible when ( dvarstring( "ui_debug_localVarString" ) != "" )
+			exp text ( dvarstring( "ui_debug_localVarString" ) + ": " + localvarstring( dvarstring( "ui_debug_localVarString" ) ) )
+		}
+		itemDef
+		{
+			rect 390 72 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textscale 0.375
+			visible when ( dvarstring( "ui_debug_localVarInt" ) != "" )
+			exp text ( dvarstring( "ui_debug_localVarInt" ) + ": " + localvarint( dvarstring( "ui_debug_localVarInt" ) ) )
+		}
+		itemDef
+		{
+			rect 390 72 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textscale 0.375
+			visible when ( dvarstring( "ui_debug_localVarBool" ) != "" )
+			exp text ( dvarstring( "ui_debug_localVarBool" ) + ": " + localvarbool( dvarstring( "ui_debug_localVarBool" ) ) )
+		}
+	}
+	menuDef
+	{
+		name "ingamecontrols_sensitivity_custom"
+		rect 0 0 640 480 0 0
+		legacySplitScreenScale
+		forecolor 1 1 1 1
+		focuscolor 1 1 1 1
+		blurWorld 4.66667
+		execKey "BUTTON_START"
+		{
+			close self;
+			exec "updategamerprofile";
+		}
+		onOpen
+		{
+			setfocus "sensitivity_medium";
+			if ( getprofiledata( "viewSensitivity" ) == 0.6 )
+			{
+				setfocus "sens_1";
+			}
+			if ( getprofiledata( "viewSensitivity" ) == 1 )
+			{
+				setfocus "sens_2";
+			}
+			if ( getprofiledata( "viewSensitivity" ) == 1.4 )
+			{
+				setfocus "sens_3";
+			}
+			if ( getprofiledata( "viewSensitivity" ) == 1.8 )
+			{
+				setfocus "sens_4";
+			}
+			if ( getprofiledata( "viewSensitivity" ) == 2 )
+			{
+				setfocus "sens_5";
+			}
+			if ( getprofiledata( "viewSensitivity" ) == 2.2 )
+			{
+				setfocus "sens_6";
+			}
+			if ( getprofiledata( "viewSensitivity" ) == 2.6 )
+			{
+				setfocus "sens_7";
+			}
+			if ( getprofiledata( "viewSensitivity" ) == 3 )
+			{
+				setfocus "sens_8";
+			}
+			if ( getprofiledata( "viewSensitivity" ) == 3.5 )
+			{
+				setfocus "sens_9";
+			}
+			if ( getprofiledata( "viewSensitivity" ) == 4 )
+			{
+				setfocus "sens_10";
+			}
+			exec "hidehud" setdvar "ui_allow_controlschange" 0;
+		}
+		onClose
+		{
+			exec "showhud";
+			setdvar "ui_allow_controlschange" 1;
+		}
+		onEsc
+		{
+			close "ingamecontrols_sensitivity_custom";
+			open "ingamecontrols_sensitivity";
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			decoration
+			visible 1
+			background "white"
+			textscale 0.55
+			visible when ( !localvarbool( "ui_adjusting_brightness" ) )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0
+			background "mockup_bg_glow"
+			textscale 0.55
+			exp forecolor a ( ( ( sin( milliseconds( ) / 1500 ) + 1 ) * 0.25 ) + 0.25 )
+			visible when ( !localvarbool( "ui_adjusting_brightness" ) )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0
+			background "mockup_bg_glow"
+			textscale 0.55
+			exp forecolor a ( ( ( sin( milliseconds( ) / 480 ) + 1 ) * 0.25 ) + 0.25 )
+			visible when ( !localvarbool( "ui_adjusting_brightness" ) )
+		}
+		itemDef
+		{
+			rect 0 0 272 28 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 6
+			textalignx -60
+			textscale 0.5
+			text "@MENU_SENSITIVITY_CUSTOM_CAP"
+		}
+		itemDef
+		{
+			name "sens_1"
+			rect -64 28 336 20 1 1
+			group "mw2_button"
+			style 1
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			exp text ( locstring( "@MENU_SENSITIVITY_LOW_N" , 1 ) )
+			action
+			{
+				play "mouse_click";
+				exec "profile_setViewSensitivity 0.6";
+				close "ingamecontrols_sensitivity_custom";
+				open "ingame_controls";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			name "sens_2"
+			rect -64 48 336 20 1 1
+			group "mw2_button"
+			style 1
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			exp text ( locstring( "@MENU_SENSITIVITY_MEDIUM_N" , 2 ) )
+			action
+			{
+				play "mouse_click";
+				exec "profile_setViewSensitivity 1";
+				close "ingamecontrols_sensitivity_custom";
+				open "ingame_controls";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			name "sens_3"
+			rect -64 68 336 20 1 1
+			group "mw2_button"
+			style 1
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			exp text ( 3 )
+			action
+			{
+				play "mouse_click";
+				exec "profile_setViewSensitivity 1.4";
+				close "ingamecontrols_sensitivity_custom";
+				open "ingame_controls";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			name "sens_4"
+			rect -64 88 336 20 1 1
+			group "mw2_button"
+			style 1
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			exp text ( locstring( "@MENU_SENSITIVITY_HIGH_N" , 4 ) )
+			action
+			{
+				play "mouse_click";
+				exec "profile_setViewSensitivity 1.8";
+				close "ingamecontrols_sensitivity_custom";
+				open "ingame_controls";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			name "sens_5"
+			rect -64 108 336 20 1 1
+			group "mw2_button"
+			style 1
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			exp text ( 5 )
+			action
+			{
+				play "mouse_click";
+				exec "profile_setViewSensitivity 2.0";
+				close "ingamecontrols_sensitivity_custom";
+				open "ingame_controls";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect -64 128 336 20 1 1
+			group "mw2_button"
+			style 1
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			exp text ( 6 )
+			action
+			{
+				play "mouse_click";
+				exec "profile_setViewSensitivity 2.2";
+				close "ingamecontrols_sensitivity_custom";
+				open "ingame_controls";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			name "sens_7"
+			rect -64 148 336 20 1 1
+			group "mw2_button"
+			style 1
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			exp text ( locstring( "@MENU_SENSITIVITY_VERY_HIGH_N" , 7 ) )
+			action
+			{
+				play "mouse_click";
+				exec "profile_setViewSensitivity 2.6";
+				close "ingamecontrols_sensitivity_custom";
+				open "ingame_controls";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			name "sens_8"
+			rect -64 168 336 20 1 1
+			group "mw2_button"
+			style 1
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			exp text ( 8 )
+			action
+			{
+				play "mouse_click";
+				exec "profile_setViewSensitivity 3.0";
+				close "ingamecontrols_sensitivity_custom";
+				open "ingame_controls";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			name "sens_9"
+			rect -64 188 336 20 1 1
+			group "mw2_button"
+			style 1
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			exp text ( 9 )
+			action
+			{
+				play "mouse_click";
+				exec "profile_setViewSensitivity 3.5";
+				close "ingamecontrols_sensitivity_custom";
+				open "ingame_controls";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			name "sens_10"
+			rect -64 208 336 20 1 1
+			group "mw2_button"
+			style 1
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			exp text ( locstring( "@MENU_SENSITIVITY_INSANE_N" , 10 ) )
+			action
+			{
+				play "mouse_click";
+				exec "profile_setViewSensitivity 4.0";
+				close "ingamecontrols_sensitivity_custom";
+				open "ingame_controls";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect 0 0 272 22 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 10
+			textalignx -41
+			textaligny -1
+			textscale 0.28
+			text "@PLATFORM_UI_SELECTBUTTON"
+			exp rect y ( getfocuseditemy( ) )
+			visible when ( localvarbool( "ui_menuAButton" ) && !localvarbool( "ui_centerPopup" ) )
+		}
+		itemDef
+		{
+			rect -64 -20 336 24 1 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 6
+			textalignx -30
+			textscale 0.375
+			text "@PLATFORM_BACK_CAPS"
+		}
+		itemDef
+		{
+			rect -100 0 100 600 1 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.6 0.8 0.5
+			textscale 0.55
+			dvarTest "ui_safearea"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect 0 -600 100 600 3 3
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.6 0.8 0.5
+			textscale 0.55
+			dvarTest "ui_safearea"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect -900 -100 900 100 3 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.6 0.8 0.5
+			textscale 0.55
+			dvarTest "ui_safearea"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect 0 0 900 100 1 3
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.6 0.8 0.5
+			textscale 0.55
+			dvarTest "ui_safearea"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect 390 56 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textscale 0.375
+			visible when ( dvarstring( "ui_debug_localVarString" ) != "" )
+			exp text ( dvarstring( "ui_debug_localVarString" ) + ": " + localvarstring( dvarstring( "ui_debug_localVarString" ) ) )
+		}
+		itemDef
+		{
+			rect 390 72 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textscale 0.375
+			visible when ( dvarstring( "ui_debug_localVarInt" ) != "" )
+			exp text ( dvarstring( "ui_debug_localVarInt" ) + ": " + localvarint( dvarstring( "ui_debug_localVarInt" ) ) )
+		}
+		itemDef
+		{
+			rect 390 72 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textscale 0.375
+			visible when ( dvarstring( "ui_debug_localVarBool" ) != "" )
+			exp text ( dvarstring( "ui_debug_localVarBool" ) + ": " + localvarbool( dvarstring( "ui_debug_localVarBool" ) ) )
+		}
+	}
+	menuDef
+	{
+		name "ingamecontrols_brightness"
+		rect 0 0 640 480 0 0
+		legacySplitScreenScale
+		forecolor 1 1 1 1
+		focuscolor 1 1 1 1
+		execKey "BUTTON_START"
+		{
+			close self;
+			exec "updategamerprofile";
+		}
+		onOpen
+		{
+			execnow "profile_menuDvarsSetup; resetViewport";
+			exec "hidehud" setdvar "ui_allow_controlschange" 0;
+		}
+		onClose
+		{
+			execnow "profile_menuDvarsFinish; resetViewport";
+			exec "showhud";
+			setdvar "ui_allow_controlschange" 1;
+		}
+		onEsc
+		{
+			close "ingamecontrols_brightness";
+			open "ingame_controls";
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( dvarbool( "hiDef" ) )
+		}
+		itemDef
+		{
+			rect 0 0 854 75 4 0
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "gradient_top"
+			textscale 0.55
+			visible when ( dvarbool( "hiDef" ) )
+		}
+		itemDef
+		{
+			rect 0 400 854 75 4 0
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "gradient_bottom"
+			textscale 0.55
+			visible when ( dvarbool( "hiDef" ) )
+		}
+		itemDef
+		{
+			rect 0 0 272 28 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 6
+			textalignx -60
+			textscale 0.5
+			text "@MENU_BRIGHTNESS_CAP"
+		}
+		itemDef
+		{
+			rect -88 36 -20 40 2 1
+			group "safe_area_demo_lr"
+			style 3
+			decoration
+			visible 1
+			forecolor 0 0 0 0.35
+			background "summary_arrow"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 68 36 20 40 2 1
+			group "safe_area_demo_lr"
+			style 3
+			decoration
+			visible 1
+			forecolor 0 0 0 0.35
+			background "summary_arrow"
+			textscale 0.55
+		}
+		itemDef
+		{
+			name "slider_r_gamma"
+			rect -160 48 320 20 2 1
+			visible 1
+			forecolor 1 1 1 1
+			type 10
+			textalign 5
+			textscale 0.55
+			dvarFloat "profileMenuOption_blacklevel" 0 0.2 -0.4
+			action
+			{
+				execnow "profile_menuDvarsFinish" ;;
+				setLocalVarBool "ui_brightness_adjusted" ( 1 );
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setItemColor "button_r_gamma" backcolor 0 0 0 1;
+				setLocalVarString "ui_options_hint_text" ( "@MENU_BRIGHTNESS_DESC1" );
+			}
+			leaveFocus
+			{
+				setItemColor "button_r_gamma" backcolor 0 0 0 "0.0";
+			}
+		}
+		itemDef
+		{
+			rect -160 368 320 20 2 1
+			group "brightness_demo"
+			decoration
+			autowrapped
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textscale 0.375
+			textstyle 3
+			text "@PLATFORM_UI_PRESS_TO_CONTINUE"
+			visible when ( localvarbool( "ui_brightness_adjusted" ) )
+		}
+		itemDef
+		{
+			rect -160 88 320 20 2 1
+			group "brightness_demo"
+			decoration
+			autowrapped
+			visible 1
+			forecolor 1 1 1 0.65
+			textfont 3
+			textalign 5
+			textscale 0.375
+			textstyle 3
+			text "@MENU_BRIGHTNESS_DESC1"
+		}
+		itemDef
+		{
+			rect -160 108 320 20 2 1
+			group "brightness_demo"
+			decoration
+			autowrapped
+			visible 1
+			forecolor 1 1 1 0.65
+			textfont 3
+			textalign 5
+			textscale 0.375
+			textstyle 3
+			text "@MENU_BRIGHTNESS_DESC2"
+			visible when ( dvarbool( "hiDef" ) )
+		}
+		itemDef
+		{
+			rect -150 154 285 60 2 1
+			style 1
+			decoration
+			visible 1
+			forecolor 0 0 0 1
+			backcolor 0 0 0 1
+			textscale 0.55
+			exp backcolor rgb ( ( ( ( 0.08 - 0.06 ) ) - dvarfloat( "profileMenuOption_blacklevel" ) ) / ( 1 - dvarfloat( "profileMenuOption_blacklevel" ) ) )
+			exp material ( "white" )
+		}
+		itemDef
+		{
+			rect -150 214 285 60 2 1
+			style 1
+			decoration
+			visible 1
+			forecolor 0 0 0 1
+			backcolor 0 0 0 1
+			textscale 0.55
+			exp backcolor rgb ( ( ( ( 0.125 - 0.06 ) ) - dvarfloat( "profileMenuOption_blacklevel" ) ) / ( 1 - dvarfloat( "profileMenuOption_blacklevel" ) ) )
+			exp material ( "white" )
+		}
+		itemDef
+		{
+			rect -150 274 285 60 2 1
+			style 1
+			decoration
+			visible 1
+			forecolor 0 0 0 1
+			backcolor 0 0 0 1
+			textscale 0.55
+			exp backcolor rgb ( ( ( ( 0.25 - 0.06 ) ) - dvarfloat( "profileMenuOption_blacklevel" ) ) / ( 1 - dvarfloat( "profileMenuOption_blacklevel" ) ) )
+			exp material ( "white" )
+		}
+		itemDef
+		{
+			rect -150 154 300 60 2 1
+			decoration
+			visible 1
+			forecolor 0 0 0 1
+			type 1
+			textfont 2
+			textalign 9
+			textscale 0.5833
+			exp text ( "@MENU_BRIGHTNESS_NOT_VISIBLE" )
+		}
+		itemDef
+		{
+			rect -150 214 300 60 2 1
+			decoration
+			visible 1
+			forecolor 0 0 0 1
+			type 1
+			textfont 2
+			textalign 9
+			textscale 0.5833
+			exp text ( "@MENU_BRIGHTNESS_BARELY_VISIBLE" )
+		}
+		itemDef
+		{
+			rect -150 274 300 60 2 1
+			decoration
+			visible 1
+			forecolor 0 0 0 1
+			type 1
+			textfont 2
+			textalign 9
+			textscale 0.5833
+			exp text ( "@MENU_BRIGHTNESS_EASILY_VISIBLE" )
+		}
+		itemDef
+		{
+			rect -100 0 100 600 1 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.6 0.8 0.5
+			textscale 0.55
+			dvarTest "ui_safearea"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect 0 -600 100 600 3 3
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.6 0.8 0.5
+			textscale 0.55
+			dvarTest "ui_safearea"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect -900 -100 900 100 3 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.6 0.8 0.5
+			textscale 0.55
+			dvarTest "ui_safearea"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect 0 0 900 100 1 3
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.6 0.8 0.5
+			textscale 0.55
+			dvarTest "ui_safearea"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect 390 56 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textscale 0.375
+			visible when ( dvarstring( "ui_debug_localVarString" ) != "" )
+			exp text ( dvarstring( "ui_debug_localVarString" ) + ": " + localvarstring( dvarstring( "ui_debug_localVarString" ) ) )
+		}
+		itemDef
+		{
+			rect 390 72 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textscale 0.375
+			visible when ( dvarstring( "ui_debug_localVarInt" ) != "" )
+			exp text ( dvarstring( "ui_debug_localVarInt" ) + ": " + localvarint( dvarstring( "ui_debug_localVarInt" ) ) )
+		}
+		itemDef
+		{
+			rect 390 72 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textscale 0.375
+			visible when ( dvarstring( "ui_debug_localVarBool" ) != "" )
+			exp text ( dvarstring( "ui_debug_localVarBool" ) + ": " + localvarbool( dvarstring( "ui_debug_localVarBool" ) ) )
+		}
+	}
+}

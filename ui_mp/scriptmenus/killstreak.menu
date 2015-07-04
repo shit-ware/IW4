@@ -1,0 +1,233 @@
+/********************************************
+*          dumped by: aerosoul94            *
+*********************************************/
+
+{
+	menuDef
+	{
+		name "killstreak"
+		rect 0 0 640 1 1 0
+		decoration
+		forecolor 1 1 1 1
+		exp rect y ( ( dvarbool( "camera_thirdPerson" ) ) * ( 0 - 40 ) * ( ! ( dvarbool( "splitscreen" ) ) ) )
+		onOpen
+		{
+			lerp "alpha" "from" 0 "to" 1 "over" "0.15";
+			lerp x "from" - "640" "to" 0 "over" "0.15";
+			setLocalVarString "tempName" ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 0 ) );
+			setLocalVarString "ui_ksHint" ( localvarstring( "tempName" ) );
+			close "splash";
+			close "challenge";
+			close "defcon";
+			close "killstreak_pickup";
+			close "perk_challenge";
+			close "promotion";
+		}
+		onRequestClose
+		{
+			lerp x "from" 0 "to" "640" "over" "0.15";
+			lerp "alpha" "from" 1 "to" 0 "over" "0.15";
+		}
+		itemDef
+		{
+			name "killstreak_title"
+			rect 0 -110 0 0 2 2
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 1
+			textscale 0.5833
+			textstyle 3
+			exp glowcolor r ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 5 ) )
+			exp glowcolor g ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 6 ) )
+			exp glowcolor b ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 7 ) )
+			exp glowcolor a ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 8 ) )
+			visible when ( ( ! ( dvarbool( "splitscreen" ) ) ) )
+			exp text ( getsplashtext( 0 ) )
+		}
+		itemDef
+		{
+			name "killstreak_description"
+			rect 0 -90 0 0 2 2
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textalign 1
+			textscale 0.375
+			textstyle 3
+			visible when ( ( ! ( dvarbool( "splitscreen" ) ) ) )
+			exp text ( getsplashdescription( 0 ) )
+		}
+		itemDef
+		{
+			name "killstreak_icon"
+			rect -24 -190 48 48 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( ( ! ( dvarbool( "splitscreen" ) ) ) && ( ! ( dvarbool( "camera_thirdPerson" ) ) ) && ( ! ( inkillcam( ) ) ) )
+			exp material ( tablelookup( "mp/killstreakTable.csv" , 1 , localvarstring( "tempName" ) , 14 ) )
+		}
+		itemDef
+		{
+			name "killstreak_title_ss"
+			rect 0 -135 0 0 2 2
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 1
+			textscale 0.87495
+			textstyle 3
+			exp glowcolor r ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 5 ) )
+			exp glowcolor g ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 6 ) )
+			exp glowcolor b ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 7 ) )
+			exp glowcolor a ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 8 ) )
+			visible when ( ( dvarbool( "splitscreen" ) ) )
+			exp text ( getsplashtext( 0 ) )
+		}
+		itemDef
+		{
+			name "killstreak_icon_ss"
+			rect -20 -135 40 40 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( ( dvarbool( "splitscreen" ) ) && ( ! ( dvarbool( "camera_thirdPerson" ) ) ) && ( ! ( inkillcam( ) ) ) )
+			exp material ( tablelookup( "mp/killstreakTable.csv" , 1 , localvarstring( "tempName" ) , 14 ) )
+		}
+	}
+	menuDef
+	{
+		name "killstreak_hint"
+		rect 0 0 640 1 1 0
+		decoration
+		forecolor 1 1 1 1
+		onOpen
+		{
+			lerp "alpha" "from" 0 "to" 1 "over" "0.15";
+		}
+		onRequestClose
+		{
+			lerp x "from" 0 "to" "400" "over" "1.0";
+			lerp y "from" 0 "to" "400" "over" "1.0";
+			lerp "alpha" "from" 1 "to" 0 "over" "1.0";
+		}
+		itemDef
+		{
+			name "killstreak_icon"
+			rect -24 -190 48 48 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect y ( - 190 + ( ( dvarbool( "camera_thirdPerson" ) ) * 40 ) )
+			visible when ( ( ! ( dvarbool( "splitscreen" ) ) ) && ( ! ( dvarbool( "camera_thirdPerson" ) ) ) && ( ! ( inkillcam( ) ) ) && !ui_active( ) )
+			exp material ( tablelookup( "mp/killstreakTable.csv" , 1 , localvarstring( "ui_ksHint" ) , 16 ) )
+		}
+	}
+	menuDef
+	{
+		name "killstreak_pickup"
+		rect 0 0 640 1 1 0
+		decoration
+		forecolor 1 1 1 1
+		exp rect y ( ( dvarbool( "camera_thirdPerson" ) ) * ( 0 - 40 ) * ( ! ( dvarbool( "splitscreen" ) ) ) )
+		onOpen
+		{
+			lerp "alpha" "from" 0 "to" 1 "over" "0.15";
+			lerp y "from" "480" "to" 0 "over" "0.15";
+			setLocalVarString "tempName" ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 0 ) );
+			close "splash";
+			close "challenge";
+			close "defcon";
+			close "killstreak";
+			close "perk_challenge";
+			close "promotion";
+		}
+		onRequestClose
+		{
+			lerp y "from" 0 "to" - "480" "over" "0.15";
+			lerp "alpha" "from" 1 "to" 0 "over" "0.15";
+		}
+		itemDef
+		{
+			name "killstreak_title"
+			rect 0 -110 0 0 2 2
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 1
+			textscale 0.5833
+			textstyle 3
+			exp glowcolor r ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 5 ) )
+			exp glowcolor g ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 6 ) )
+			exp glowcolor b ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 7 ) )
+			exp glowcolor a ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 8 ) )
+			visible when ( ( ! ( dvarbool( "splitscreen" ) ) ) )
+			exp text ( getsplashtext( 0 ) )
+		}
+		itemDef
+		{
+			name "killstreak_description"
+			rect 0 -90 0 0 2 2
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textalign 1
+			textscale 0.375
+			textstyle 3
+			visible when ( ( ! ( dvarbool( "splitscreen" ) ) ) )
+			exp text ( getsplashdescription( 0 ) )
+		}
+		itemDef
+		{
+			name "killstreak_icon"
+			rect -24 -190 48 48 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( ( ! ( dvarbool( "splitscreen" ) ) ) && ( ! ( dvarbool( "camera_thirdPerson" ) ) ) && ( ! ( inkillcam( ) ) ) )
+			exp material ( getsplashmaterial( 0 ) )
+		}
+		itemDef
+		{
+			name "killstreak_title_ss"
+			rect 0 -135 0 0 2 2
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 1
+			textscale 0.87495
+			textstyle 3
+			exp glowcolor r ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 5 ) )
+			exp glowcolor g ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 6 ) )
+			exp glowcolor b ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 7 ) )
+			exp glowcolor a ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 8 ) )
+			visible when ( ( dvarbool( "splitscreen" ) ) )
+			exp text ( getsplashtext( 0 ) )
+		}
+		itemDef
+		{
+			name "killstreak_icon_ss"
+			rect -30 -135 60 60 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( ( dvarbool( "splitscreen" ) ) && ( ! ( dvarbool( "camera_thirdPerson" ) ) ) && ( ! ( inkillcam( ) ) ) )
+			exp material ( getsplashmaterial( 0 ) )
+		}
+	}
+}

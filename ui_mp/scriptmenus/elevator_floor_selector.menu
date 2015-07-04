@@ -1,0 +1,671 @@
+/********************************************
+*          dumped by: aerosoul94            *
+*********************************************/
+
+{
+	menuDef
+	{
+		name "elevator_floor_selector"
+		rect -46 -64 92 128 2 2
+		style 1
+		border 5
+		bordersize 2
+		popup
+		visible 1
+		forecolor 1 1 1 1
+		focuscolor 1 1 1 1
+		execKey "BUTTON_START"
+		{
+			scriptmenuresponse "none";
+			close "elevator_floor_selector";
+		}
+		onOpen
+		{
+			setLocalVarBool "ui_centerPopup" ( 1 );
+		}
+		onClose
+		{
+			play "mouse_click";
+			setLocalVarBool "ui_centerPopup" ( 0 );
+		}
+		onEsc
+		{
+			setLocalVarBool "ui_centerPopup" ( 0 );
+			close self;
+			scriptmenuresponse "none";
+		}
+		itemDef
+		{
+			rect -44 -62 88 124 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 0.2 0.2 0.25 0.8
+			background "white"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -42 -58 79.5 18 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 0.9 0.9 1 0.07
+			textscale 0.55
+			visible when ( dvarint( "player_current_floor" ) != 3 )
+			exp material ( "gradient_fadein" )
+		}
+		itemDef
+		{
+			rect 37.5 -58 4.5 18 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 0.9 0.9 1 0.07
+			background "button_highlight_end"
+			textscale 0.55
+			visible when ( dvarint( "player_current_floor" ) != 3 )
+		}
+		itemDef
+		{
+			rect -42 -58 79.5 18 2 2
+			style 3
+			bordersize 2
+			decoration
+			visible 1
+			forecolor 0.9 0.95 1 0.25
+			bordercolor 0.8 0.95 1 0.4
+			background "gradient_fadein"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 1 && localvarstring( "ui_choicegroup" ) == "popmenu" )
+		}
+		itemDef
+		{
+			rect 37.5 -58 4.5 18 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 0.9 0.95 1 0.25
+			background "button_highlight_end"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 1 && localvarstring( "ui_choicegroup" ) == "popmenu" )
+		}
+		itemDef
+		{
+			rect -44 -57 84 18 2 2
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 10
+			textaligny -1
+			textscale 0.3
+			text "@PLATFORM_UI_SELECTBUTTON"
+			visible when ( localvarint( "ui_highlight" ) == 1 && localvarstring( "ui_choicegroup" ) == "popmenu" && 1 )
+		}
+		itemDef
+		{
+			rect -42 -58 84 18 2 2
+			visible 1
+			forecolor 0.69 0.69 0.69 1
+			type 1
+			textfont 1
+			textalign 10
+			textalignx -22
+			textscale 0.375
+			textstyle 6
+			visible when ( dvarint( "player_current_floor" ) != 3 )
+			exp text ( "(    4    )" )
+			action
+			{
+				play "mouse_click";
+				scriptmenuresponse 3;
+				close "elevator_floor_selector" ;;
+			}
+			onFocus
+			{
+				play "mouse_submenu_over";
+				setLocalVarInt "ui_highlight" ( 1 );
+				setLocalVarString "ui_choicegroup" ( "popmenu" );
+			}
+			leaveFocus
+			{
+				setLocalVarInt "ui_highlight" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect -42 -58 79.5 18 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 0.9 0.9 1 0.07
+			textscale 0.55
+			visible when ( dvarint( "player_current_floor" ) == 3 )
+			exp material ( "gradient_fadein" )
+		}
+		itemDef
+		{
+			rect 37.5 -58 4.5 18 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 0.9 0.9 1 0.07
+			background "button_highlight_end"
+			textscale 0.55
+			visible when ( dvarint( "player_current_floor" ) == 3 )
+		}
+		itemDef
+		{
+			rect -42 -58 84 18 2 2
+			decoration
+			visible 1
+			forecolor 0.5 0.5 0.5 0.5
+			textfont 1
+			textalign 10
+			textalignx -22
+			textscale 0.375
+			textstyle 6
+			visible when ( dvarint( "player_current_floor" ) == 3 )
+			exp text ( "(    4    )" )
+		}
+		itemDef
+		{
+			rect -42 -38 79.5 18 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 0.9 0.9 1 0.07
+			textscale 0.55
+			visible when ( dvarint( "player_current_floor" ) != 2 )
+			exp material ( "gradient_fadein" )
+		}
+		itemDef
+		{
+			rect 37.5 -38 4.5 18 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 0.9 0.9 1 0.07
+			background "button_highlight_end"
+			textscale 0.55
+			visible when ( dvarint( "player_current_floor" ) != 2 )
+		}
+		itemDef
+		{
+			rect -42 -38 79.5 18 2 2
+			style 3
+			bordersize 2
+			decoration
+			visible 1
+			forecolor 0.9 0.95 1 0.25
+			bordercolor 0.8 0.95 1 0.4
+			background "gradient_fadein"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 2 && localvarstring( "ui_choicegroup" ) == "popmenu" )
+		}
+		itemDef
+		{
+			rect 37.5 -38 4.5 18 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 0.9 0.95 1 0.25
+			background "button_highlight_end"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 2 && localvarstring( "ui_choicegroup" ) == "popmenu" )
+		}
+		itemDef
+		{
+			rect -44 -37 84 18 2 2
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 10
+			textaligny -1
+			textscale 0.3
+			text "@PLATFORM_UI_SELECTBUTTON"
+			visible when ( localvarint( "ui_highlight" ) == 2 && localvarstring( "ui_choicegroup" ) == "popmenu" && 1 )
+		}
+		itemDef
+		{
+			rect -42 -38 84 18 2 2
+			visible 1
+			forecolor 0.69 0.69 0.69 1
+			type 1
+			textfont 1
+			textalign 10
+			textalignx -22
+			textscale 0.375
+			textstyle 6
+			visible when ( dvarint( "player_current_floor" ) != 2 )
+			exp text ( "(    3    )" )
+			action
+			{
+				play "mouse_click";
+				scriptmenuresponse 2;
+				close "elevator_floor_selector" ;;
+			}
+			onFocus
+			{
+				play "mouse_submenu_over";
+				setLocalVarInt "ui_highlight" ( 2 );
+				setLocalVarString "ui_choicegroup" ( "popmenu" );
+			}
+			leaveFocus
+			{
+				setLocalVarInt "ui_highlight" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect -42 -38 79.5 18 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 0.9 0.9 1 0.07
+			textscale 0.55
+			visible when ( dvarint( "player_current_floor" ) == 2 )
+			exp material ( "gradient_fadein" )
+		}
+		itemDef
+		{
+			rect 37.5 -38 4.5 18 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 0.9 0.9 1 0.07
+			background "button_highlight_end"
+			textscale 0.55
+			visible when ( dvarint( "player_current_floor" ) == 2 )
+		}
+		itemDef
+		{
+			rect -42 -38 84 18 2 2
+			decoration
+			visible 1
+			forecolor 0.5 0.5 0.5 0.5
+			textfont 1
+			textalign 10
+			textalignx -22
+			textscale 0.375
+			textstyle 6
+			visible when ( dvarint( "player_current_floor" ) == 2 )
+			exp text ( "(    3    )" )
+		}
+		itemDef
+		{
+			rect -42 -18 79.5 18 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 0.9 0.9 1 0.07
+			textscale 0.55
+			visible when ( dvarint( "player_current_floor" ) != 1 )
+			exp material ( "gradient_fadein" )
+		}
+		itemDef
+		{
+			rect 37.5 -18 4.5 18 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 0.9 0.9 1 0.07
+			background "button_highlight_end"
+			textscale 0.55
+			visible when ( dvarint( "player_current_floor" ) != 1 )
+		}
+		itemDef
+		{
+			rect -42 -18 79.5 18 2 2
+			style 3
+			bordersize 2
+			decoration
+			visible 1
+			forecolor 0.9 0.95 1 0.25
+			bordercolor 0.8 0.95 1 0.4
+			background "gradient_fadein"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 3 && localvarstring( "ui_choicegroup" ) == "popmenu" )
+		}
+		itemDef
+		{
+			rect 37.5 -18 4.5 18 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 0.9 0.95 1 0.25
+			background "button_highlight_end"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 3 && localvarstring( "ui_choicegroup" ) == "popmenu" )
+		}
+		itemDef
+		{
+			rect -44 -17 84 18 2 2
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 10
+			textaligny -1
+			textscale 0.3
+			text "@PLATFORM_UI_SELECTBUTTON"
+			visible when ( localvarint( "ui_highlight" ) == 3 && localvarstring( "ui_choicegroup" ) == "popmenu" && 1 )
+		}
+		itemDef
+		{
+			rect -42 -18 84 18 2 2
+			visible 1
+			forecolor 0.69 0.69 0.69 1
+			type 1
+			textfont 1
+			textalign 10
+			textalignx -22
+			textscale 0.375
+			textstyle 6
+			visible when ( dvarint( "player_current_floor" ) != 1 )
+			exp text ( "(    2    )" )
+			action
+			{
+				play "mouse_click";
+				scriptmenuresponse 1;
+				close "elevator_floor_selector" ;;
+			}
+			onFocus
+			{
+				play "mouse_submenu_over";
+				setLocalVarInt "ui_highlight" ( 3 );
+				setLocalVarString "ui_choicegroup" ( "popmenu" );
+			}
+			leaveFocus
+			{
+				setLocalVarInt "ui_highlight" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect -42 -18 79.5 18 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 0.9 0.9 1 0.07
+			textscale 0.55
+			visible when ( dvarint( "player_current_floor" ) == 1 )
+			exp material ( "gradient_fadein" )
+		}
+		itemDef
+		{
+			rect 37.5 -18 4.5 18 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 0.9 0.9 1 0.07
+			background "button_highlight_end"
+			textscale 0.55
+			visible when ( dvarint( "player_current_floor" ) == 1 )
+		}
+		itemDef
+		{
+			rect -42 -18 84 18 2 2
+			decoration
+			visible 1
+			forecolor 0.5 0.5 0.5 0.5
+			textfont 1
+			textalign 10
+			textalignx -22
+			textscale 0.375
+			textstyle 6
+			visible when ( dvarint( "player_current_floor" ) == 1 )
+			exp text ( "(    2    )" )
+		}
+		itemDef
+		{
+			rect -42 2 79.5 18 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 0.9 0.9 1 0.07
+			textscale 0.55
+			visible when ( dvarint( "player_current_floor" ) != 0 )
+			exp material ( "gradient_fadein" )
+		}
+		itemDef
+		{
+			rect 37.5 2 4.5 18 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 0.9 0.9 1 0.07
+			background "button_highlight_end"
+			textscale 0.55
+			visible when ( dvarint( "player_current_floor" ) != 0 )
+		}
+		itemDef
+		{
+			rect -42 2 79.5 18 2 2
+			style 3
+			bordersize 2
+			decoration
+			visible 1
+			forecolor 0.9 0.95 1 0.25
+			bordercolor 0.8 0.95 1 0.4
+			background "gradient_fadein"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 4 && localvarstring( "ui_choicegroup" ) == "popmenu" )
+		}
+		itemDef
+		{
+			rect 37.5 2 4.5 18 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 0.9 0.95 1 0.25
+			background "button_highlight_end"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 4 && localvarstring( "ui_choicegroup" ) == "popmenu" )
+		}
+		itemDef
+		{
+			rect -44 3 84 18 2 2
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 10
+			textaligny -1
+			textscale 0.3
+			text "@PLATFORM_UI_SELECTBUTTON"
+			visible when ( localvarint( "ui_highlight" ) == 4 && localvarstring( "ui_choicegroup" ) == "popmenu" && 1 )
+		}
+		itemDef
+		{
+			rect -42 2 84 18 2 2
+			visible 1
+			forecolor 0.69 0.69 0.69 1
+			type 1
+			textfont 1
+			textalign 10
+			textalignx -22
+			textscale 0.375
+			textstyle 6
+			visible when ( dvarint( "player_current_floor" ) != 0 )
+			exp text ( "(    1    )" )
+			action
+			{
+				play "mouse_click";
+				scriptmenuresponse 0;
+				close "elevator_floor_selector" ;;
+			}
+			onFocus
+			{
+				play "mouse_submenu_over";
+				setLocalVarInt "ui_highlight" ( 4 );
+				setLocalVarString "ui_choicegroup" ( "popmenu" );
+			}
+			leaveFocus
+			{
+				setLocalVarInt "ui_highlight" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect -42 2 79.5 18 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 0.9 0.9 1 0.07
+			textscale 0.55
+			visible when ( dvarint( "player_current_floor" ) == 0 )
+			exp material ( "gradient_fadein" )
+		}
+		itemDef
+		{
+			rect 37.5 2 4.5 18 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 0.9 0.9 1 0.07
+			background "button_highlight_end"
+			textscale 0.55
+			visible when ( dvarint( "player_current_floor" ) == 0 )
+		}
+		itemDef
+		{
+			rect -42 2 84 18 2 2
+			decoration
+			visible 1
+			forecolor 0.5 0.5 0.5 0.5
+			textfont 1
+			textalign 10
+			textalignx -22
+			textscale 0.375
+			textstyle 6
+			visible when ( dvarint( "player_current_floor" ) == 0 )
+			exp text ( "(    1    )" )
+		}
+		itemDef
+		{
+			rect -42 22 79.5 18 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 0.9 0.9 1 0.07
+			textscale 0.55
+			visible when ( 1 )
+			exp material ( "gradient_fadein" )
+		}
+		itemDef
+		{
+			rect 37.5 22 4.5 18 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 0.9 0.9 1 0.07
+			background "button_highlight_end"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect -42 22 84 18 2 2
+			decoration
+			visible 1
+			forecolor 0.5 0.5 0.5 0.5
+			textfont 1
+			textalign 10
+			textalignx -22
+			textscale 0.375
+			textstyle 6
+			visible when ( 1 )
+			exp text ( "(   B1  )" )
+		}
+		itemDef
+		{
+			rect -42 42 79.5 18 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 0.9 0.9 1 0.07
+			textscale 0.55
+			exp material ( "gradient_fadein" )
+		}
+		itemDef
+		{
+			rect 37.5 42 4.5 18 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 0.9 0.9 1 0.07
+			background "button_highlight_end"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -42 42 79.5 18 2 2
+			style 3
+			bordersize 2
+			decoration
+			visible 1
+			forecolor 0.9 0.95 1 0.25
+			bordercolor 0.8 0.95 1 0.4
+			background "gradient_fadein"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 6 && localvarstring( "ui_choicegroup" ) == "popmenu" )
+		}
+		itemDef
+		{
+			rect 37.5 42 4.5 18 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 0.9 0.95 1 0.25
+			background "button_highlight_end"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 6 && localvarstring( "ui_choicegroup" ) == "popmenu" )
+		}
+		itemDef
+		{
+			rect -44 43 84 18 2 2
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 10
+			textaligny -1
+			textscale 0.3
+			text "@PLATFORM_UI_SELECTBUTTON"
+			visible when ( localvarint( "ui_highlight" ) == 6 && localvarstring( "ui_choicegroup" ) == "popmenu" && 1 )
+		}
+		itemDef
+		{
+			rect -42 42 84 18 2 2
+			visible 1
+			forecolor 0.69 0.69 0.69 1
+			type 1
+			textfont 1
+			textalign 10
+			textalignx -22
+			textscale 0.375
+			textstyle 6
+			exp text ( "Cancel" )
+			action
+			{
+				play "mouse_click";
+				scriptmenuresponse "none";
+				close "elevator_floor_selector";
+				close "elevator_floor_selector" ;;
+			}
+			onFocus
+			{
+				play "mouse_submenu_over";
+				setLocalVarInt "ui_highlight" ( 6 );
+				setLocalVarString "ui_choicegroup" ( "popmenu" );
+			}
+			leaveFocus
+			{
+				setLocalVarInt "ui_highlight" ( 0 );
+			}
+		}
+	}
+}

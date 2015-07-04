@@ -1,0 +1,688 @@
+/********************************************
+*          dumped by: aerosoul94            *
+*********************************************/
+
+{
+	menuDef
+	{
+		name "team_marinesopfor_splitscreen"
+		rect 0 0 640 480 0 0
+		legacySplitScreenScale
+		forecolor 1 1 1 1
+		focuscolor 1 1 1 1
+		blurWorld 7
+		execKey "BUTTON_START"
+		{
+			close self;
+		}
+		onOpen
+		{
+			setfocus "team_choose_auto";
+		}
+		onEsc
+		{
+			scriptmenuresponse "back";
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			decoration
+			visible 1
+			background "white"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0
+			background "mockup_bg_glow"
+			textscale 0.55
+			exp forecolor a ( ( ( sin( milliseconds( ) / 1500 ) + 1 ) * 0.25 ) + 0.25 )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0
+			background "mockup_bg_glow"
+			textscale 0.55
+			exp forecolor a ( ( ( sin( milliseconds( ) / 480 ) + 1 ) * 0.25 ) + 0.25 )
+		}
+		itemDef
+		{
+			rect 0 0 272 22 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 4
+			textalignx 4
+			textscale 0.5
+			text "@MENU_CHOOSE_TEAM_CAPS"
+		}
+		itemDef
+		{
+			rect -178 22 336 20 1 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0 0 0 1
+			background "menu_button_selection_bar"
+			textfont 1
+			textalign 10
+			textalignx -41
+			textscale 0.28
+			text "@PLATFORM_UI_SELECTBUTTON"
+			exp rect y ( getfocuseditemy( ) )
+			exp forecolor a ( 1 * localvarbool( "ui_menuAButton" ) )
+			visible when ( !localvarint( "ui_centerPopup" ) )
+		}
+		itemDef
+		{
+			name "fullmap_border"
+			rect -136 41 136 136 3 1
+			border 1
+			bordersize 0.666667
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			bordercolor 1 1 1 0.35
+			textscale 0.55
+			visible when ( ( !isempjammed( ) ) )
+		}
+		itemDef
+		{
+			rect -136 41 136 136 3 1
+			style 3
+			decoration
+			visible 1
+			forecolor 0.89 0.98 0.95 0.05
+			background "minimap_scanlines"
+			textscale 0.55
+			visible when ( ( !isempjammed( ) ) )
+		}
+		itemDef
+		{
+			name "fullmap_map"
+			rect -136 41 136 136 3 1
+			ownerdraw 181
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "compass_map_default"
+			type 8
+			textscale 0.55
+			visible when ( ( !isempjammed( ) ) )
+		}
+		itemDef
+		{
+			name "fullmap_friendlies"
+			rect -136 41 136 136 3 1
+			ownerdraw 185
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			type 8
+			textscale 0.55
+			exp forecolor a ( 1 - radarjamintensity( ) )
+			visible when ( ( !isempjammed( ) ) )
+		}
+		itemDef
+		{
+			name "fullmap_enemies"
+			rect -136 41 136 136 3 1
+			ownerdraw 188
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			type 8
+			textscale 0.55
+			exp forecolor a ( 1 - radarjamintensity( ) )
+			visible when ( ( !isempjammed( ) ) )
+		}
+		itemDef
+		{
+			name "fullmap_objectives"
+			rect -136 41 136 136 3 1
+			ownerdraw 182
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "objective_line"
+			type 8
+			textscale 0.55
+			visible when ( ( !isempjammed( ) ) )
+		}
+		itemDef
+		{
+			name "fullmap_sentries"
+			rect -136 41 136 136 3 1
+			ownerdraw 189
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			type 8
+			textscale 0.55
+			exp forecolor a ( 1 - radarjamintensity( ) )
+			visible when ( ( !isempjammed( ) ) )
+		}
+		itemDef
+		{
+			name "fullmap_player"
+			rect -136 41 136 136 3 1
+			ownerdraw 183
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "compassping_player"
+			type 8
+			textscale 0.55
+			exp forecolor a ( 1 - radarjamintensity( ) )
+			visible when ( ( !isempjammed( ) ) )
+		}
+		itemDef
+		{
+			rect -136 41 136 136 3 1
+			style 3
+			decoration
+			visible 1
+			forecolor 0.64 0.74 0.71 1
+			background "white"
+			textscale 0.55
+			exp forecolor a ( radarjamintensity( ) )
+			visible when ( radarisjammed( ) && ( !isempjammed( ) ) )
+		}
+		itemDef
+		{
+			rect -136 41 136 136 3 1
+			style 3
+			decoration
+			visible 1
+			forecolor 0.89 0.98 0.95 1
+			background "ac130_overlay_grain"
+			textscale 0.55
+			exp forecolor a ( radarjamintensity( ) )
+			visible when ( radarisjammed( ) && ( !isempjammed( ) ) )
+		}
+		itemDef
+		{
+			rect -136 41 136 136 3 1
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "stencil_base"
+			textscale 0.55
+			visible when ( ( !isempjammed( ) ) )
+		}
+		itemDef
+		{
+			rect -136 41 136 136 3 1
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "scanlines_stencil"
+			textscale 0.55
+			exp rect y ( ( 41 - 136 ) + ( ( 136 * 2 ) * ( 1 - ( ( milliseconds( ) % 4000 ) / 4000 ) ) ) )
+			visible when ( ( !isempjammed( ) ) )
+		}
+		itemDef
+		{
+			rect -136 41 136 136 3 1
+			style 3
+			decoration
+			visible 1
+			forecolor 0.89 0.98 0.95 1
+			background "stencil_fill"
+			textscale 0.55
+			visible when ( ( !isempjammed( ) ) )
+		}
+		itemDef
+		{
+			rect -136 41 -136 132 3 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 0.1
+			background "gradient_fadein"
+			textscale 0.55
+			visible when ( ( !isempjammed( ) ) )
+		}
+		itemDef
+		{
+			rect -136 24 -136 17 3 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0 0 0 0.35
+			background "gradient_fadein"
+			textfont 3
+			textalign 4
+			textalignx 4
+			textaligny -1
+			textscale 0.375
+			exp text ( gametypename( ) )
+		}
+		itemDef
+		{
+			rect -136 0 -136 17 3 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0 0 0 0.35
+			background "gradient_fadein"
+			textfont 3
+			textalign 4
+			textalignx 4
+			textaligny -1
+			textscale 0.375
+			exp rect y ( 41 + ( 136 * ( !isempjammed( ) ) ) )
+			exp text ( getmapname( ) )
+		}
+		itemDef
+		{
+			rect 28 -84 72 72 8 10
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0.5
+			textscale 0.55
+			visible when ( localvarstring( "ui_team" ) == "marines" )
+			exp material ( dvarstring( "g_TeamIcon_Allies" ) )
+		}
+		itemDef
+		{
+			rect 28 -84 72 72 8 10
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0.5
+			textscale 0.55
+			visible when ( localvarstring( "ui_team" ) == "opfor" )
+			exp material ( dvarstring( "g_TeamIcon_Axis" ) )
+		}
+		itemDef
+		{
+			rect 28 -84 72 72 8 10
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0.5
+			textscale 0.55
+			visible when ( team( "name" ) == "TEAM_FREE" && localvarstring( "ui_team" ) == "marines" )
+			exp material ( dvarstring( "g_TeamIcon_Allies" ) )
+		}
+		itemDef
+		{
+			rect 28 -84 72 72 8 10
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0.5
+			textscale 0.55
+			visible when ( team( "name" ) == "TEAM_FREE" && localvarstring( "ui_team" ) == "opfor" )
+			exp material ( dvarstring( "g_TeamIcon_Axis" ) )
+		}
+		itemDef
+		{
+			rect -66 100 64 64 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 0
+			textfont 6
+			textscale 0.4583
+			textstyle 6
+			visible when ( team( "name" ) == "TEAM_ALLIES" )
+			exp text ( "@" + dvarstring( "g_TeamName_Allies" ) )
+		}
+		itemDef
+		{
+			rect -66 100 64 64 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 0
+			textfont 6
+			textscale 0.4583
+			textstyle 6
+			visible when ( team( "name" ) == "TEAM_FREE" && localvarstring( "ui_team" ) == "marines" )
+			exp text ( "@" + dvarstring( "g_TeamName_Allies" ) )
+		}
+		itemDef
+		{
+			rect -66 100 64 64 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 0
+			textfont 6
+			textscale 0.4583
+			textstyle 6
+			visible when ( team( "name" ) == "TEAM_AXIS" )
+			exp text ( "@" + dvarstring( "g_TeamName_Axis" ) )
+		}
+		itemDef
+		{
+			rect -66 100 64 64 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 0
+			textfont 6
+			textscale 0.4583
+			textstyle 6
+			visible when ( team( "name" ) == "TEAM_FREE" && localvarstring( "ui_team" ) == "opfor" )
+			exp text ( "@" + dvarstring( "g_TeamName_Axis" ) )
+		}
+		itemDef
+		{
+			name "team_choose_axis"
+			rect -178 22 336 20 1 1
+			style 1
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			disabled when ( team( "name" ) == "TEAM_AXIS" )
+			exp text ( "@" + dvarstring( "g_TeamName_Axis" ) )
+			action
+			{
+				play "mouse_click";
+				scriptmenuresponse "axis";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+			}
+			leaveFocus
+			{
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			name "team_choose_allies"
+			rect -178 42 336 20 1 1
+			style 1
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			disabled when ( team( "name" ) == "TEAM_ALLIES" )
+			exp text ( "@" + dvarstring( "g_TeamName_Allies" ) )
+			action
+			{
+				play "mouse_click";
+				scriptmenuresponse "allies";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+			}
+			leaveFocus
+			{
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			name "team_choose_auto"
+			rect -178 62 336 20 1 1
+			style 1
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@MPUI_AUTOASSIGN"
+			action
+			{
+				play "mouse_click";
+				scriptmenuresponse "autoassign";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+			}
+			leaveFocus
+			{
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect -178 82 280 1 1 1
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0.65
+			background "gradient_fadein"
+			textscale 0.55
+		}
+		itemDef
+		{
+			name "team_choose_spectator"
+			rect -178 82 336 20 1 1
+			style 1
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@MPUI_SPECTATOR"
+			visible when ( team( "name" ) != "TEAM_SPECTATOR" && dvarbool( "scr_game_spectatetype" ) )
+			disabled when ( team( "name" ) == "TEAM_SPECTATOR" || !dvarbool( "scr_game_spectatetype" ) )
+			action
+			{
+				play "mouse_click";
+				scriptmenuresponse "spectator";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+			}
+			leaveFocus
+			{
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect -178 102 280 1 1 1
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0.65
+			background "gradient_fadein"
+			textscale 0.55
+			visible when ( team( "name" ) != "TEAM_SPECTATOR" && dvarbool( "scr_game_spectatetype" ) )
+		}
+		itemDef
+		{
+			name "team_endgame"
+			rect -178 82 336 20 1 1
+			style 1
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@MENU_END_GAME"
+			visible when ( team( "name" ) == "TEAM_SPECTATOR" && dvarbool( "scr_game_spectatetype" ) )
+			disabled when ( ( dvarint( "scr_gameended" ) ) )
+			action
+			{
+				play "mouse_click";
+				open "popup_endgame_splitscreen";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+			}
+			leaveFocus
+			{
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			name "team_endgame"
+			rect -178 102 336 20 1 1
+			style 1
+			visible 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@MENU_END_GAME"
+			visible when ( team( "name" ) != "TEAM_SPECTATOR" && dvarbool( "scr_game_spectatetype" ) )
+			disabled when ( ( dvarint( "scr_gameended" ) ) )
+			action
+			{
+				play "mouse_click";
+				open "popup_endgame_splitscreen";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+			}
+			leaveFocus
+			{
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect -100 0 100 600 1 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.6 0.8 0.5
+			textscale 0.55
+			dvarTest "ui_safearea"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect 0 -600 100 600 3 3
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.6 0.8 0.5
+			textscale 0.55
+			dvarTest "ui_safearea"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect -900 -100 900 100 3 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.6 0.8 0.5
+			textscale 0.55
+			dvarTest "ui_safearea"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect 0 0 900 100 1 3
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.6 0.8 0.5
+			textscale 0.55
+			dvarTest "ui_safearea"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect 390 56 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textscale 0.375
+			visible when ( dvarstring( "ui_debug_localVarString" ) != "" )
+			exp text ( dvarstring( "ui_debug_localVarString" ) + ": " + localvarstring( dvarstring( "ui_debug_localVarString" ) ) )
+		}
+		itemDef
+		{
+			rect 390 72 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textscale 0.375
+			visible when ( dvarstring( "ui_debug_localVarInt" ) != "" )
+			exp text ( dvarstring( "ui_debug_localVarInt" ) + ": " + localvarint( dvarstring( "ui_debug_localVarInt" ) ) )
+		}
+		itemDef
+		{
+			rect 390 72 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textscale 0.375
+			visible when ( dvarstring( "ui_debug_localVarBool" ) != "" )
+			exp text ( dvarstring( "ui_debug_localVarBool" ) + ": " + localvarbool( dvarstring( "ui_debug_localVarBool" ) ) )
+		}
+	}
+}

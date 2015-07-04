@@ -1,0 +1,373 @@
+/********************************************
+*          dumped by: aerosoul94            *
+*********************************************/
+
+{
+	menuDef
+	{
+		name "endgameupdate"
+		rect 0 0 640 4 4 0
+		popup
+		forecolor 1 1 1 1
+		onOpen
+		{
+		}
+		onRequestClose
+		{
+			lerp "alpha" "from" 1 "to" 0 "over" "0.5";
+		}
+		itemDef
+		{
+			rect -250 0 500 480 2 4
+			style 3
+			decoration
+			visible 1
+			forecolor 0 0 0 1
+			background "line_horizontal_scorebar"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 0 0 0 0 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 6
+			textalign 5
+			textscale 0.48611
+			text "@RANK_PROMOTED"
+			visible when ( dvarbool( "ui_promotion" ) )
+		}
+		itemDef
+		{
+			rect 0 20 0 0 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			glowColor 0.25 0.75 0.25 1
+			textfont 6
+			textalign 5
+			textscale 0.48611
+			visible when ( dvarbool( "ui_promotion" ) )
+			exp text ( "@" + tablelookup( "mp/ranktable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 5 ) )
+		}
+		itemDef
+		{
+			rect -24 50 48 48 2 1
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( dvarbool( "ui_promotion" ) )
+			exp material ( tablelookup( "mp/rankIconTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , getplayerdata( "prestige" ) + 1 ) )
+		}
+		itemDef
+		{
+			rect 0 130 0 0 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 6
+			textalign 5
+			textscale 0.48611
+			text "@MP_CHALLENGE_COMPLETED"
+			exp rect y ( dvarbool( "ui_promotion" ) * 120 )
+			visible when ( dvarstring( "ui_challenge_1_ref" ) != "" && dvarstring( "ui_challenge_2_ref" ) == "" )
+		}
+		itemDef
+		{
+			rect 0 130 0 0 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 6
+			textalign 5
+			textscale 0.48611
+			text "@MP_CHALLENGES_COMPLETED"
+			exp rect y ( dvarbool( "ui_promotion" ) * 120 )
+			visible when ( dvarstring( "ui_challenge_1_ref" ) != "" && dvarstring( "ui_challenge_2_ref" ) != "" )
+		}
+		itemDef
+		{
+			rect 0 0 0 0 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			glowColor 0.25 0.75 0.25 1
+			textfont 6
+			textalign 5
+			textscale 0.48611
+			exp rect y ( ( 50 ) + dvarbool( "ui_promotion" ) * 100 )
+			visible when ( dvarstring( "ui_challenge_1_ref" ) != "" && 1 )
+			exp text ( locstring( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_1_ref" ) , 1 ) ) + locstring( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_1_ref" ) , 3 ) + "_" + ( int( max( getplayerdata( "challengeState" , dvarstring( "ui_challenge_1_ref" ) ) , 1 ) ) - 1 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 0 0 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textscale 0.375
+			exp rect y ( ( 50 ) + 20 + dvarbool( "ui_promotion" ) * 100 )
+			visible when ( dvarstring( "ui_challenge_1_ref" ) != "" && "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_1_ref" ) , 3 ) != "@CHALLENGE_BLANK" && 1 )
+			exp text ( locstring( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_1_ref" ) , 2 ) , ( int( tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_1_ref" ) , 6 + ( ( int( max( getplayerdata( "challengeState" , dvarstring( "ui_challenge_1_ref" ) ) , 1 ) ) - 1 - 1 ) * 2 ) ) ) ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 0 0 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textscale 0.375
+			exp rect y ( ( 50 ) + 20 + dvarbool( "ui_promotion" ) * 100 )
+			visible when ( dvarstring( "ui_challenge_1_ref" ) != "" && "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_1_ref" ) , 3 ) == "@CHALLENGE_BLANK" && 1 )
+			exp text ( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_1_ref" ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 0 0 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			glowColor 0.25 0.75 0.25 1
+			textfont 6
+			textalign 5
+			textscale 0.48611
+			exp rect y ( ( 100 ) + dvarbool( "ui_promotion" ) * 100 )
+			visible when ( dvarstring( "ui_challenge_2_ref" ) != "" && 1 )
+			exp text ( locstring( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_2_ref" ) , 1 ) ) + locstring( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_2_ref" ) , 3 ) + "_" + ( int( max( getplayerdata( "challengeState" , dvarstring( "ui_challenge_2_ref" ) ) , 1 ) ) - 1 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 0 0 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textscale 0.375
+			exp rect y ( ( 100 ) + 20 + dvarbool( "ui_promotion" ) * 100 )
+			visible when ( dvarstring( "ui_challenge_2_ref" ) != "" && "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_2_ref" ) , 3 ) != "@CHALLENGE_BLANK" && 1 )
+			exp text ( locstring( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_2_ref" ) , 2 ) , ( int( tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_2_ref" ) , 6 + ( ( int( max( getplayerdata( "challengeState" , dvarstring( "ui_challenge_2_ref" ) ) , 1 ) ) - 1 - 1 ) * 2 ) ) ) ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 0 0 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textscale 0.375
+			exp rect y ( ( 100 ) + 20 + dvarbool( "ui_promotion" ) * 100 )
+			visible when ( dvarstring( "ui_challenge_2_ref" ) != "" && "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_2_ref" ) , 3 ) == "@CHALLENGE_BLANK" && 1 )
+			exp text ( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_2_ref" ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 0 0 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			glowColor 0.25 0.75 0.25 1
+			textfont 6
+			textalign 5
+			textscale 0.48611
+			exp rect y ( ( 150 ) + dvarbool( "ui_promotion" ) * 100 )
+			visible when ( dvarstring( "ui_challenge_3_ref" ) != "" && 1 )
+			exp text ( locstring( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_3_ref" ) , 1 ) ) + locstring( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_3_ref" ) , 3 ) + "_" + ( int( max( getplayerdata( "challengeState" , dvarstring( "ui_challenge_3_ref" ) ) , 1 ) ) - 1 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 0 0 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textscale 0.375
+			exp rect y ( ( 150 ) + 20 + dvarbool( "ui_promotion" ) * 100 )
+			visible when ( dvarstring( "ui_challenge_3_ref" ) != "" && "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_3_ref" ) , 3 ) != "@CHALLENGE_BLANK" && 1 )
+			exp text ( locstring( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_3_ref" ) , 2 ) , ( int( tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_3_ref" ) , 6 + ( ( int( max( getplayerdata( "challengeState" , dvarstring( "ui_challenge_3_ref" ) ) , 1 ) ) - 1 - 1 ) * 2 ) ) ) ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 0 0 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textscale 0.375
+			exp rect y ( ( 150 ) + 20 + dvarbool( "ui_promotion" ) * 100 )
+			visible when ( dvarstring( "ui_challenge_3_ref" ) != "" && "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_3_ref" ) , 3 ) == "@CHALLENGE_BLANK" && 1 )
+			exp text ( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_3_ref" ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 0 0 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			glowColor 0.25 0.75 0.25 1
+			textfont 6
+			textalign 5
+			textscale 0.48611
+			exp rect y ( ( 200 ) + dvarbool( "ui_promotion" ) * 100 )
+			visible when ( dvarstring( "ui_challenge_4_ref" ) != "" && 1 )
+			exp text ( locstring( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_4_ref" ) , 1 ) ) + locstring( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_4_ref" ) , 3 ) + "_" + ( int( max( getplayerdata( "challengeState" , dvarstring( "ui_challenge_4_ref" ) ) , 1 ) ) - 1 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 0 0 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textscale 0.375
+			exp rect y ( ( 200 ) + 20 + dvarbool( "ui_promotion" ) * 100 )
+			visible when ( dvarstring( "ui_challenge_4_ref" ) != "" && "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_4_ref" ) , 3 ) != "@CHALLENGE_BLANK" && 1 )
+			exp text ( locstring( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_4_ref" ) , 2 ) , ( int( tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_4_ref" ) , 6 + ( ( int( max( getplayerdata( "challengeState" , dvarstring( "ui_challenge_4_ref" ) ) , 1 ) ) - 1 - 1 ) * 2 ) ) ) ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 0 0 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textscale 0.375
+			exp rect y ( ( 200 ) + 20 + dvarbool( "ui_promotion" ) * 100 )
+			visible when ( dvarstring( "ui_challenge_4_ref" ) != "" && "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_4_ref" ) , 3 ) == "@CHALLENGE_BLANK" && 1 )
+			exp text ( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_4_ref" ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 0 0 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			glowColor 0.25 0.75 0.25 1
+			textfont 6
+			textalign 5
+			textscale 0.48611
+			exp rect y ( ( 250 ) + dvarbool( "ui_promotion" ) * 100 )
+			visible when ( dvarstring( "ui_challenge_5_ref" ) != "" && 1 )
+			exp text ( locstring( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_5_ref" ) , 1 ) ) + locstring( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_5_ref" ) , 3 ) + "_" + ( int( max( getplayerdata( "challengeState" , dvarstring( "ui_challenge_5_ref" ) ) , 1 ) ) - 1 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 0 0 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textscale 0.375
+			exp rect y ( ( 250 ) + 20 + dvarbool( "ui_promotion" ) * 100 )
+			visible when ( dvarstring( "ui_challenge_5_ref" ) != "" && "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_5_ref" ) , 3 ) != "@CHALLENGE_BLANK" && 1 )
+			exp text ( locstring( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_5_ref" ) , 2 ) , ( int( tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_5_ref" ) , 6 + ( ( int( max( getplayerdata( "challengeState" , dvarstring( "ui_challenge_5_ref" ) ) , 1 ) ) - 1 - 1 ) * 2 ) ) ) ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 0 0 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textscale 0.375
+			exp rect y ( ( 250 ) + 20 + dvarbool( "ui_promotion" ) * 100 )
+			visible when ( dvarstring( "ui_challenge_5_ref" ) != "" && "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_5_ref" ) , 3 ) == "@CHALLENGE_BLANK" && 1 )
+			exp text ( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_5_ref" ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 0 0 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			glowColor 0.25 0.75 0.25 1
+			textfont 6
+			textalign 5
+			textscale 0.48611
+			exp rect y ( ( 300 ) + dvarbool( "ui_promotion" ) * 100 )
+			visible when ( dvarstring( "ui_challenge_6_ref" ) != "" && !dvarbool( "ui_promotion" ) )
+			exp text ( locstring( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_6_ref" ) , 1 ) ) + locstring( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_6_ref" ) , 3 ) + "_" + ( int( max( getplayerdata( "challengeState" , dvarstring( "ui_challenge_6_ref" ) ) , 1 ) ) - 1 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 0 0 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textscale 0.375
+			exp rect y ( ( 300 ) + 20 + dvarbool( "ui_promotion" ) * 100 )
+			visible when ( dvarstring( "ui_challenge_6_ref" ) != "" && "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_6_ref" ) , 3 ) != "@CHALLENGE_BLANK" && !dvarbool( "ui_promotion" ) )
+			exp text ( locstring( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_6_ref" ) , 2 ) , ( int( tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_6_ref" ) , 6 + ( ( int( max( getplayerdata( "challengeState" , dvarstring( "ui_challenge_6_ref" ) ) , 1 ) ) - 1 - 1 ) * 2 ) ) ) ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 0 0 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textscale 0.375
+			exp rect y ( ( 300 ) + 20 + dvarbool( "ui_promotion" ) * 100 )
+			visible when ( dvarstring( "ui_challenge_6_ref" ) != "" && "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_6_ref" ) , 3 ) == "@CHALLENGE_BLANK" && !dvarbool( "ui_promotion" ) )
+			exp text ( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_6_ref" ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 0 0 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			glowColor 0.25 0.75 0.25 1
+			textfont 6
+			textalign 5
+			textscale 0.48611
+			exp rect y ( ( 350 ) + dvarbool( "ui_promotion" ) * 100 )
+			visible when ( dvarstring( "ui_challenge_7_ref" ) != "" && !dvarbool( "ui_promotion" ) )
+			exp text ( locstring( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_7_ref" ) , 1 ) ) + locstring( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_7_ref" ) , 3 ) + "_" + ( int( max( getplayerdata( "challengeState" , dvarstring( "ui_challenge_7_ref" ) ) , 1 ) ) - 1 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 0 0 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textscale 0.375
+			exp rect y ( ( 350 ) + 20 + dvarbool( "ui_promotion" ) * 100 )
+			visible when ( dvarstring( "ui_challenge_7_ref" ) != "" && "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_7_ref" ) , 3 ) != "@CHALLENGE_BLANK" && !dvarbool( "ui_promotion" ) )
+			exp text ( locstring( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_7_ref" ) , 2 ) , ( int( tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_7_ref" ) , 6 + ( ( int( max( getplayerdata( "challengeState" , dvarstring( "ui_challenge_7_ref" ) ) , 1 ) ) - 1 - 1 ) * 2 ) ) ) ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 0 0 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textscale 0.375
+			exp rect y ( ( 350 ) + 20 + dvarbool( "ui_promotion" ) * 100 )
+			visible when ( dvarstring( "ui_challenge_7_ref" ) != "" && "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_7_ref" ) , 3 ) == "@CHALLENGE_BLANK" && !dvarbool( "ui_promotion" ) )
+			exp text ( "@" + tablelookup( "mp/allChallengesTable.csv" , 0 , dvarstring( "ui_challenge_7_ref" ) , 2 ) )
+		}
+	}
+}

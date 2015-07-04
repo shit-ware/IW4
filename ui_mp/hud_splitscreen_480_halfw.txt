@@ -1,0 +1,2153 @@
+/********************************************
+*          dumped by: aerosoul94            *
+*********************************************/
+
+{
+	menuDef
+	{
+		name "healthoverlay_splitquarter"
+		rect 0 0 640 480 4 4
+		visible 1
+		forecolor 1 1 1 1
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			ownerdraw 112
+			visible 1
+			forecolor 1 1 1 1
+			background "splatter_alt"
+			type 8
+			textscale 0.55
+			visible when ( ! ( weaponname( ) == "heli_remote_mp" ) && ! ( ( weaponname( ) == "ac130_105mm_mp" ) || ( weaponname( ) == "ac130_40mm_mp" ) || ( weaponname( ) == "ac130_25mm_mp" ) ) && ( ! ( ( spectatingclient( ) ) && dvarbool( "cg_thirdPersonSpectator" ) ) ) )
+		}
+	}
+	menuDef
+	{
+		name "hud_splitscreen"
+		rect 0 0 640 480 4 4
+		visible 1
+		forecolor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			decoration
+			visible 1
+			forecolor 0.9 1 1 0.3
+			background "ac130_overlay_grain"
+			textscale 0.55
+			visible when ( scopedthermal( ) && ( ! ( ( spectatingclient( ) ) && dvarbool( "cg_thirdPersonSpectator" ) ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "ballistic_overlay"
+			textscale 0.55
+			visible when ( ( getperk( "equipment" ) == "_specialty_blastshield" && ( ( ! ( dvarint( "scr_gameended" ) ) ) || inkillcam( ) ) ) && !( weaponname( ) == "heli_remote_mp" ) && ! ( ( weaponname( ) == "ac130_105mm_mp" ) || ( weaponname( ) == "ac130_40mm_mp" ) || ( weaponname( ) == "ac130_25mm_mp" ) ) && !missilecam( ) )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			decoration
+			visible 1
+			forecolor 0.9 1 1 0.3
+			background "ac130_overlay_grain"
+			textscale 0.55
+			visible when ( isempjammed( ) )
+		}
+		itemDef
+		{
+			rect 0 -40 10 10 9 9
+			visible 1
+			forecolor 1 1 1 1
+			type 19
+			textfont 1
+			textalign 1
+			textscale 0.375
+			textstyle 3
+			gamemsgwindowindex 1
+			gamemsgwindowmode 1
+			visible when ( ( ! ( inkillcam( ) ) ) && ( ! ( ui_active( ) ) ) )
+		}
+	}
+	menuDef
+	{
+		name "missilecam_hud_ss"
+		rect 0 0 640 480 0 0
+		visible 1
+		forecolor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		visible when ( missilecam( ) )
+		itemDef
+		{
+			rect -320 -240 640 480 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0.3
+			background "missilecam_reticle"
+			textscale 0.55
+		}
+	}
+	menuDef
+	{
+		name "ac130_hud_ss"
+		rect 0 0 640 480 0 0
+		visible 1
+		forecolor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		visible when ( ( ( weaponname( ) == "ac130_105mm_mp" ) || ( weaponname( ) == "ac130_40mm_mp" ) || ( weaponname( ) == "ac130_25mm_mp" ) ) && !inkillcamnpc( ) && ( ! ( ui_active( ) ) ) )
+		itemDef
+		{
+			rect -200 154 100 0 2 2
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textalign 9
+			textscale 0.9375
+			text "@AC130_HUD_WEAPON_105MM"
+			exp forecolor a ( 1 - ( ( weaponname( ) == "ac130_105mm_mp" ) * ( ( sin( milliseconds( ) / 90 ) ) * 0.65 ) ) )
+			visible when ( ( weaponname( ) == "ac130_105mm_mp" ) )
+		}
+		itemDef
+		{
+			rect -200 154 100 0 2 2
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textalign 9
+			textscale 0.9375
+			text "@AC130_HUD_WEAPON_40MM"
+			exp forecolor a ( 1 - ( ( weaponname( ) == "ac130_40mm_mp" ) * ( ( sin( milliseconds( ) / 90 ) ) * 0.65 ) ) )
+			visible when ( ( weaponname( ) == "ac130_40mm_mp" ) )
+		}
+		itemDef
+		{
+			rect -200 154 100 0 2 2
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textalign 9
+			textscale 0.9375
+			text "@AC130_HUD_WEAPON_25MM"
+			exp forecolor a ( 1 - ( ( weaponname( ) == "ac130_25mm_mp" ) * ( ( sin( milliseconds( ) / 90 ) ) * 0.65 ) ) )
+			visible when ( ( weaponname( ) == "ac130_25mm_mp" ) )
+		}
+		itemDef
+		{
+			rect 100 154 100 0 2 2
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textalign 9
+			textscale 0.9375
+			visible when ( ( max( 0 , ( localvarint( "ui_ac130timer" ) - milliseconds( ) ) / 1000 ) ) > 0 )
+			exp text ( secondsascountdown( ( max( 0 , ( localvarint( "ui_ac130timer" ) - milliseconds( ) ) / 1000 ) ) ) )
+		}
+		itemDef
+		{
+			rect 0 110 0 0 2 2
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textalign 9
+			textscale 0.9375
+			text "@AC130_RELOADING"
+			exp forecolor a ( 1 - ( ( sin( milliseconds( ) / 90 ) ) * 0.65 ) )
+			visible when ( isreloading( ) )
+		}
+		itemDef
+		{
+			rect -280 -210 560 420 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "ac130_overlay_105mm"
+			textscale 0.55
+			exp forecolor a ( 1 - ( ( ( ( sin( milliseconds( ) / 90 ) ) * 0.65 ) ) * isreloading( ) ) )
+			visible when ( ( weaponname( ) == "ac130_105mm_mp" ) )
+		}
+		itemDef
+		{
+			rect -320 -240 640 480 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "ac130_overlay_40mm"
+			textscale 0.55
+			exp forecolor a ( 1 - ( ( ( ( sin( milliseconds( ) / 90 ) ) * 0.65 ) ) * isreloading( ) ) )
+			visible when ( ( weaponname( ) == "ac130_40mm_mp" ) )
+		}
+		itemDef
+		{
+			rect -320 -240 640 480 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "ac130_overlay_25mm"
+			textscale 0.55
+			exp forecolor a ( 1 - ( ( ( ( sin( milliseconds( ) / 90 ) ) * 0.65 ) ) * isreloading( ) ) )
+			visible when ( ( weaponname( ) == "ac130_25mm_mp" ) )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			decoration
+			visible 1
+			forecolor 0.9 1 1 0.3
+			background "ac130_overlay_grain"
+			textscale 0.55
+		}
+	}
+	menuDef
+	{
+		name "remote_chopper_overlay_ss"
+		rect 0 0 640 480 0 0
+		visible 1
+		forecolor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		visible when ( ( weaponname( ) == "heli_remote_mp" ) && ( ! ( ui_active( ) ) ) )
+		itemDef
+		{
+			rect -200 -190 400 20 2 2
+			ownerdraw 145
+			decoration
+			visible 1
+			forecolor 1 1 1 0.65
+			background "viper_heading_mp"
+			type 8
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -427 -240 854 480 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0.65
+			background "viper_overlay_mp"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -32 -32 40 40 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0.325
+			background "viper_locked_box"
+			textscale 0.55
+			exp rect x ( - 32 + ( sin( milliseconds( ) / 420 ) * 100 ) )
+			exp rect y ( - 32 + ( sin( milliseconds( ) / 490 ) * 100 ) )
+			visible when ( !weaplockblink( 11 ) )
+		}
+		itemDef
+		{
+			rect -20 -20 64 64 5 5
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0.65
+			background "viper_locking_box"
+			textscale 0.55
+			exp rect x ( weaplockscreenposx( ) - 32 )
+			exp rect y ( weaplockscreenposy( ) - 42 )
+			visible when ( weaplockblink( 0 ) )
+		}
+		itemDef
+		{
+			rect -20 -20 64 64 5 5
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "viper_locked_box"
+			textscale 0.55
+			exp rect x ( weaplockscreenposx( ) - 32 )
+			exp rect y ( weaplockscreenposy( ) - 42 )
+			visible when ( weaplockblink( 5 ) && weaplocked( ) )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0.5
+			background "javelin_overlay_grain"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0.65
+			background "nightvision_overlay_goggles"
+			textscale 0.55
+		}
+		itemDef
+		{
+			name "VehicleWeaponReticle"
+			rect -320 -240 640 480 0 0
+			ownerdraw 190
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			type 8
+			textscale 0.55
+		}
+	}
+	menuDef
+	{
+		name "weaponjavelinhud_mp_ss"
+		rect 0 0 960 480 2 2
+		visible 1
+		forecolor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		visible when ( ( adsjavelin( ) ) && ( ! ( ( spectatingclient( ) ) && dvarbool( "cg_thirdPersonSpectator" ) ) ) )
+		itemDef
+		{
+			name "target_line_horz_bg_ss"
+			rect 0 0 4000 4 5 5
+			style 3
+			decoration
+			visible 1
+			forecolor 0.25 0.25 0.25 0.95
+			background "white"
+			textscale 0.55
+			exp rect y ( weaplockscreenposy( ) - 1 )
+			visible when ( weaplockblink( 15 ) )
+		}
+		itemDef
+		{
+			name "target_line_vert_bg_ss"
+			rect 0 0 6 4000 5 5
+			style 3
+			decoration
+			visible 1
+			forecolor 0.25 0.25 0.25 0.95
+			background "white"
+			textscale 0.55
+			exp rect x ( weaplockscreenposx( ) - 2 )
+			visible when ( weaplockblink( 15 ) )
+		}
+		itemDef
+		{
+			name "target_line_horz_ss"
+			rect 0 239 4000 2 5 5
+			style 3
+			decoration
+			visible 1
+			forecolor 0.95 1 0.95 0.95
+			background "white"
+			textscale 0.55
+			exp rect y ( weaplockscreenposy( )
+			visible when ( weaplockblink( 15 ) )
+		}
+		itemDef
+		{
+			name "target_line_vert_ss"
+			rect 319 0 2 4000 5 5
+			style 3
+			decoration
+			visible 1
+			forecolor 0.95 1 0.95 0.95
+			background "white"
+			textscale 0.55
+			exp rect x ( weaplockscreenposx( )
+			visible when ( weaplockblink( 15 ) )
+		}
+		itemDef
+		{
+			name "prompt_tooCloseWarning_ss"
+			rect 0 -60 0 0 2 2
+			decoration
+			visible 1
+			forecolor 1 0.6 0.65 1
+			textfont 6
+			textalign 9
+			textscale 0.4583
+			textstyle 3
+			text "@MP_TOO_CLOSE_NOFIRE"
+			visible when ( ( weaplocking( ) || weaplocked( ) ) && weaplocktooclose( ) )
+		}
+		itemDef
+		{
+			name "prompt_tooCloseWarningPreLock_ss"
+			rect 0 -60 0 0 2 2
+			decoration
+			visible 1
+			forecolor 1 0.6 0.65 1
+			textfont 6
+			textalign 9
+			textscale 0.4583
+			textstyle 3
+			text "@MP_TOO_CLOSE_NOLOCK"
+			visible when ( !weaplocking( ) && !weaplocked( ) && weaplocktooclose( ) )
+		}
+		itemDef
+		{
+			name "prompt_holdForTarget_ss"
+			rect 0 -60 0 0 2 2
+			decoration
+			visible 1
+			forecolor 0.95 1 0.95 1
+			textfont 6
+			textalign 9
+			textscale 0.4583
+			textstyle 3
+			visible when ( !weaplocking( ) && !weaplocked( ) && !weaplocktooclose( ) )
+		}
+		itemDef
+		{
+			name "prompt_test_ss"
+			rect 0 60 0 0 2 2
+			decoration
+			forecolor 1 1 1 1
+			textfont 6
+			textalign 9
+			textscale 0.4583
+			textstyle 3
+			exp text ( ( sin( milliseconds( ) / 90 ) ) )
+		}
+		itemDef
+		{
+			name "javelinlockbox"
+			rect -40 -20 80 40 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 0.95 1 0.95 0.95
+			background "hud_javelin_lock_box"
+			textscale 0.55
+			exp rect x ( - 40 + ( sin( milliseconds( ) / 90 ) ) * 2 )
+			exp rect y ( - 20 + ( sin( milliseconds( ) / 90 ) ) * 1 )
+			exp rect w ( 80 + ( sin( milliseconds( ) / 90 ) ) * 4 )
+			exp rect h ( 40 + ( sin( milliseconds( ) / 90 ) ) * 2 )
+			visible when ( !weaplocking( ) && !weaplocked( ) )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			decoration
+			visible 1
+			forecolor 0.9 1 1 0.3
+			background "ac130_overlay_grain"
+			textscale 0.55
+		}
+		itemDef
+		{
+			name "WeaponJavelinBG_mp"
+			rect -427 -240 854 480 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "hud_javelin_bg"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -1281 -240 854 480 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "black"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 427 -240 854 480 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "black"
+			textscale 0.55
+		}
+		itemDef
+		{
+			name "javelinlockon"
+			rect 154 -198 64 64 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "hud_javelin_lock_on"
+			textscale 0.55
+			visible when ( weaplockblink( 4.5 ) )
+		}
+		itemDef
+		{
+			name "javelincluon"
+			rect -300 -28 64 64 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "hud_javelin_clu_on"
+			textscale 0.55
+			visible when ( weaplockblink( 0 ) && !weapattacktop( ) && !weapattackdirect( ) )
+		}
+		itemDef
+		{
+			name "javelintopoff"
+			rect 228 -124 64 64 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "hud_javelin_top_on"
+			textscale 0.55
+			visible when ( weapattacktop( ) )
+		}
+		itemDef
+		{
+			name "javelindiroff"
+			rect 228 -28 64 64 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "hud_javelin_dir_on"
+			textscale 0.55
+			visible when ( weapattackdirect( ) )
+		}
+		itemDef
+		{
+			name "javelinday"
+			rect -226 -198 64 64 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "hud_javelin_day_on"
+			textscale 0.55
+			visible when ( !player( "nightvision" ) )
+		}
+		itemDef
+		{
+			name "javelinnight"
+			rect -300 -125 64 64 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "hud_javelin_night_on"
+			textscale 0.55
+			visible when ( player( "nightvision" ) )
+		}
+		itemDef
+		{
+			name "javelinrocket_on"
+			rect 30 144 64 64 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "hud_javelin_rocket_on"
+			textscale 0.55
+			visible when ( player( "clipammo" ) )
+		}
+		itemDef
+		{
+			name "javelinnorocket_on"
+			rect 154 144 64 64 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "hud_javelin_norocket_on"
+			textscale 0.55
+			visible when ( !player( "clipammo" ) )
+		}
+	}
+	menuDef
+	{
+		name "hud_splitquarter"
+		rect 0 0 640 480 4 4
+		visible 1
+		forecolor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		itemDef
+		{
+			rect 0 -50 40 40 9 10
+			ownerdraw 80
+			visible 1
+			forecolor 1 1 1 1
+			type 8
+			textscale 0.5625
+			textstyle 3
+			visible when ( ( ( ! ( ui_active( ) ) ) && ( ! ( dvarbool( "g_hardcore" ) ) ) && ( ! ( spectatingclient( ) ) ) && ( ! ( inkillcam( ) ) ) && ( ! ( dvarint( "scr_gameended" ) ) ) && ( ! ( flashbanged( ) ) ) && ( ! ( ( weaponname( ) == "killstreak_ac130_mp" ) || ( weaponname( ) == "killstreak_helicopter_minigun_mp" ) || ( weaponname( ) == "killstreak_predator_missile_mp" ) || ( ( weaponname( ) == "ac130_105mm_mp" ) || ( weaponname( ) == "ac130_40mm_mp" ) || ( weaponname( ) == "ac130_25mm_mp" ) ) || ( adsjavelin( ) ) || ( weaponname( ) == "heli_remote_mp" ) || missilecam( ) ) ) ) )
+		}
+		itemDef
+		{
+			rect 0 -86 40 40 9 10
+			ownerdraw 72
+			visible 1
+			forecolor 1 1 1 1
+			type 8
+			textscale 0.5625
+			textstyle 3
+			visible when ( ( ( ! ( ui_active( ) ) ) && ( ! ( dvarbool( "g_hardcore" ) ) ) && ( ! ( spectatingclient( ) ) ) && ( ! ( inkillcam( ) ) ) && ( ! ( dvarint( "scr_gameended" ) ) ) && ( ! ( flashbanged( ) ) ) && ( ! ( ( weaponname( ) == "killstreak_ac130_mp" ) || ( weaponname( ) == "killstreak_helicopter_minigun_mp" ) || ( weaponname( ) == "killstreak_predator_missile_mp" ) || ( ( weaponname( ) == "ac130_105mm_mp" ) || ( weaponname( ) == "ac130_40mm_mp" ) || ( weaponname( ) == "ac130_25mm_mp" ) ) || ( adsjavelin( ) ) || ( weaponname( ) == "heli_remote_mp" ) || missilecam( ) ) ) ) )
+		}
+		itemDef
+		{
+			rect 0 -130 0 0 2 2
+			ownerdraw 113
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			type 8
+			textfont 1
+			textscale 0.68745
+			textstyle 3
+			visible when ( ( ! ( ui_active( ) ) ) && ( ! ( spectatingclient( ) ) ) )
+		}
+		itemDef
+		{
+			rect -100 20 200 0 2 8
+			visible 1
+			forecolor 1 1 1 0.65
+			textalign 9
+			textscale 0.5625
+			textstyle 3
+			text "@CGAME_FOLLOWING"
+			visible when ( ( ! ( inkillcam( ) ) ) && ( spectatingclient( ) || spectatingfree( ) ) && ( ! ( ui_active( ) ) ) && ( ! ( dvarint( "scr_gameended" ) ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 120 5 8 8
+			ownerdraw 61
+			visible 1
+			forecolor 1 1 1 0.65
+			type 8
+			textalign 4
+			textscale 0.5625
+			textstyle 3
+			visible when ( ( ! ( inkillcam( ) ) ) && ( spectatingclient( ) || spectatingfree( ) ) && ( ! ( ui_active( ) ) ) && ( ! ( dvarint( "scr_gameended" ) ) ) )
+		}
+	}
+	menuDef
+	{
+		name "minimap_480_splitquarter"
+		rect 0 0 150 150 8 8
+		hiddenDuringFlashbang
+		hiddenDuringScope
+		visible 1
+		forecolor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		visible when ( ( ( ! ( ui_active( ) ) ) && ( ! ( spectatingclient( ) ) ) && ( ! ( flashbanged( ) ) ) && ( ! ( ( ( weaponname( ) == "killstreak_ac130_mp" ) || ( weaponname( ) == "killstreak_helicopter_minigun_mp" ) || ( weaponname( ) == "killstreak_predator_missile_mp" ) || ( ( weaponname( ) == "ac130_105mm_mp" ) || ( weaponname( ) == "ac130_40mm_mp" ) || ( weaponname( ) == "ac130_25mm_mp" ) ) || ( adsjavelin( ) ) || ( weaponname( ) == "heli_remote_mp" ) || missilecam( ) ) || ( getperk( "equipment" ) == "_specialty_blastshield" && ( ( ! ( dvarint( "scr_gameended" ) ) ) || inkillcam( ) ) ) ) ) && ( ! ( scoped( ) ) ) && ( ! ( selecting_location( ) ) ) && ( !isempjammed( ) ) && ( ( ! ( dvarbool( "g_hardcore" ) ) ) || radarisenabled( ) || dvarint( "g_compassShowEnemies" ) ) && ( ! ( dvarint( "scr_gameended" ) ) ) ) && ( ! ( milliseconds( ) - localvarint( "ui_show_killedBy" ) < 4000 || ( inkillcam( ) ) ) ) && ( ! ( selecting_location( ) ) ) && ( ! ( spectatingfree( ) ) ) )
+		itemDef
+		{
+			name "minimap_ticker_background"
+			rect 0 0 150 18 8 8
+			style 3
+			visible 1
+			forecolor 0 0 0 0.65
+			background "minimap_ticker_bg"
+			textscale 0.55
+		}
+		itemDef
+		{
+			name "minimap_ticker"
+			rect 0 0 100 10 8 8
+			ownerdraw 146
+			visible 1
+			forecolor 1 1 1 1
+			background "minimap_tickertape_mp"
+			type 8
+			textscale 0.55
+		}
+		itemDef
+		{
+			name "minimap_border"
+			rect 0 18 150 150 8 8
+			border 1
+			bordersize 1.5
+			visible 1
+			forecolor 1 1 1 1
+			bordercolor 1 1 1 0.35
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 18 150 150 8 8
+			style 3
+			visible 1
+			forecolor 0.89 0.98 0.95 0.05
+			background "minimap_scanlines"
+			textscale 0.55
+		}
+		itemDef
+		{
+			name "minimap_map"
+			rect 0 12 100 100 8 8
+			ownerdraw 159
+			visible 1
+			forecolor 1 1 1 1
+			background "compass_map_default"
+			type 8
+			textscale 0.55
+		}
+		itemDef
+		{
+			name "minimap_friendlies"
+			rect 0 12 100 100 8 8
+			ownerdraw 158
+			visible 1
+			forecolor 1 1 1 1
+			type 8
+			textscale 0.55
+			exp forecolor a ( 1 - radarjamintensity( ) )
+		}
+		itemDef
+		{
+			name "minimap_objectives"
+			rect 0 12 100 100 8 8
+			ownerdraw 152
+			visible 1
+			forecolor 1 1 1 1
+			background "objective_line"
+			type 8
+			textscale 0.55
+		}
+		itemDef
+		{
+			name "minimap_enemies"
+			rect 0 12 100 100 8 8
+			ownerdraw 175
+			visible 1
+			forecolor 1 1 1 1
+			type 8
+			textscale 0.55
+			exp forecolor a ( 1 - radarjamintensity( ) )
+		}
+		itemDef
+		{
+			name "minimap_vehicles"
+			rect 0 12 100 100 8 8
+			ownerdraw 155
+			visible 1
+			forecolor 1 1 1 1
+			type 8
+			textscale 0.55
+			exp forecolor a ( 1 - radarjamintensity( ) )
+		}
+		itemDef
+		{
+			name "minimap_planes"
+			rect 0 12 100 100 8 8
+			ownerdraw 156
+			visible 1
+			forecolor 1 1 1 1
+			type 8
+			textscale 0.55
+			exp forecolor a ( 1 - radarjamintensity( ) )
+		}
+		itemDef
+		{
+			name "minimap_sentries"
+			rect 0 12 100 100 8 8
+			ownerdraw 165
+			visible 1
+			forecolor 1 1 1 1
+			type 8
+			textscale 0.55
+			exp forecolor a ( 1 - radarjamintensity( ) )
+		}
+		itemDef
+		{
+			name "minimap_player"
+			rect 0 12 100 100 8 8
+			ownerdraw 150
+			visible 1
+			forecolor 1 1 1 1
+			background "compassping_player"
+			type 8
+			textscale 0.55
+			exp forecolor a ( 1 - radarjamintensity( ) )
+		}
+		itemDef
+		{
+			rect 0 18 150 150 8 8
+			style 3
+			visible 1
+			forecolor 0.64 0.74 0.71 1
+			background "white"
+			textscale 0.55
+			exp forecolor a ( radarjamintensity( ) )
+			visible when ( radarisjammed( ) )
+		}
+		itemDef
+		{
+			rect 0 18 150 150 8 8
+			style 3
+			visible 1
+			forecolor 0.89 0.98 0.95 1
+			background "ac130_overlay_grain"
+			textscale 0.55
+			exp forecolor a ( radarjamintensity( ) )
+			visible when ( radarisjammed( ) )
+		}
+		itemDef
+		{
+			rect 0 18 150 150 8 8
+			style 3
+			visible 1
+			forecolor 1 1 1 1
+			background "stencil_base"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 18 150 150 8 8
+			style 3
+			visible 1
+			forecolor 1 1 1 1
+			background "scanlines_stencil"
+			textscale 0.55
+			exp rect y ( ( ( 0 * 0.5 ) + ( 12 * 1.5 ) - ( 100 * 1.5 ) ) + ( ( ( 100 * 1.5 ) * 2 ) * ( 1 - ( ( milliseconds( ) % 4000 ) / 4000 ) ) ) )
+		}
+		itemDef
+		{
+			rect 0 18 150 150 8 8
+			style 3
+			visible 1
+			forecolor 0.89 0.98 0.95 1
+			background "stencil_fill"
+			textscale 0.55
+		}
+	}
+	menuDef
+	{
+		name "scorebar_480_splitquarter"
+		rect 0 -20 640 480 8 8
+		legacySplitScreenScale
+		visible 1
+		forecolor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		visible when ( ( ( ! ( ui_active( ) ) ) && ( ! ( dvarbool( "g_hardcore" ) ) ) && ( ! ( flashbanged( ) ) ) && ( ! ( ( weaponname( ) == "killstreak_ac130_mp" ) || ( weaponname( ) == "killstreak_helicopter_minigun_mp" ) || ( weaponname( ) == "killstreak_predator_missile_mp" ) || ( ( weaponname( ) == "ac130_105mm_mp" ) || ( weaponname( ) == "ac130_40mm_mp" ) || ( weaponname( ) == "ac130_25mm_mp" ) ) || ( adsjavelin( ) ) || ( weaponname( ) == "heli_remote_mp" ) || missilecam( ) ) ) && ( !isempjammed( ) ) && ( ! ( dvarint( "scr_gameended" ) ) ) ) && !inkillcam( ) && ! ( selecting_location( ) ) )
+		itemDef
+		{
+			rect 0 -48 48 48 8 10
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( team( "name" ) == "TEAM_AXIS" || ( team( "name" ) == "TEAM_FREE" && ( localvarstring( "ui_team" ) == "opfor" ) ) )
+			exp material ( dvarstring( "g_TeamIcon_Axis" ) + "_fade" )
+		}
+		itemDef
+		{
+			rect 0 -48 48 48 8 10
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( team( "name" ) == "TEAM_ALLIES" || ( team( "name" ) == "TEAM_FREE" && ( localvarstring( "ui_team" ) == "marines" ) ) )
+			exp material ( dvarstring( "g_TeamIcon_Allies" ) + "_fade" )
+		}
+		itemDef
+		{
+			rect 8 -88 32 32 8 10
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0.5
+			textscale 0.55
+			visible when ( ( dvarint( "ui_bomb_timer" ) ) > 0 && ( dvarint( "ui_bomb_timer" ) ) < 4 )
+			exp material ( "hud_suitcase_bomb" )
+		}
+		itemDef
+		{
+			rect 4 -60 0 0 8 10
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textscale 0.3333
+			textstyle 7
+			visible when ( ( int( timeleft( ) - ( ( dvarint( "ui_timelimit" ) ) ) * 0.5 * 60 * ( ( dvarint( "ui_halftime" ) ) && ( timeleft( ) + 1 > ( ( dvarint( "ui_timelimit" ) ) ) * 60 * 0.5 ) ) ) ) ) ) >= 60 && !dvarint( "ui_bomb_timer" ) )
+			exp text ( secondsascountdown( ( int( timeleft( ) - ( ( dvarint( "ui_timelimit" ) ) ) * 0.5 * 60 * ( ( dvarint( "ui_halftime" ) ) && ( timeleft( ) + 1 > ( ( dvarint( "ui_timelimit" ) ) ) * 60 * 0.5 ) ) ) ) ) ) ) )
+		}
+		itemDef
+		{
+			rect 4 -60 0 0 8 10
+			decoration
+			visible 1
+			forecolor 0.85 0.5 0 1
+			glowColor 0.75 0.55 0 1
+			textfont 10
+			textalign 4
+			textscale 0.3333
+			textstyle 7
+			visible when ( ( int( timeleft( ) - ( ( dvarint( "ui_timelimit" ) ) ) * 0.5 * 60 * ( ( dvarint( "ui_halftime" ) ) && ( timeleft( ) + 1 > ( ( dvarint( "ui_timelimit" ) ) ) * 60 * 0.5 ) ) ) ) ) ) >= 30 && ( int( timeleft( ) - ( ( dvarint( "ui_timelimit" ) ) ) * 0.5 * 60 * ( ( dvarint( "ui_halftime" ) ) && ( timeleft( ) + 1 > ( ( dvarint( "ui_timelimit" ) ) ) * 60 * 0.5 ) ) ) ) ) ) < 60 && !dvarint( "ui_bomb_timer" ) )
+			exp text ( secondsascountdown( ( int( timeleft( ) - ( ( dvarint( "ui_timelimit" ) ) ) * 0.5 * 60 * ( ( dvarint( "ui_halftime" ) ) && ( timeleft( ) + 1 > ( ( dvarint( "ui_timelimit" ) ) ) * 60 * 0.5 ) ) ) ) ) ) ) )
+		}
+		itemDef
+		{
+			rect 4 -60 0 0 8 10
+			decoration
+			visible 1
+			forecolor 0.85 0.4 0.4 1
+			glowColor 1 0.25 0 1
+			textfont 10
+			textalign 4
+			textscale 0.3333
+			textstyle 7
+			visible when ( ( ( int( timeleft( ) - ( ( dvarint( "ui_timelimit" ) ) ) * 0.5 * 60 * ( ( dvarint( "ui_halftime" ) ) && ( timeleft( ) + 1 > ( ( dvarint( "ui_timelimit" ) ) ) * 60 * 0.5 ) ) ) ) ) ) >= 0 && ( int( timeleft( ) - ( ( dvarint( "ui_timelimit" ) ) ) * 0.5 * 60 * ( ( dvarint( "ui_halftime" ) ) && ( timeleft( ) + 1 > ( ( dvarint( "ui_timelimit" ) ) ) * 60 * 0.5 ) ) ) ) ) ) < 30 ) || dvarint( "ui_bomb_timer" ) == 1 )
+			exp text ( secondsascountdown( ( int( timeleft( ) - ( ( dvarint( "ui_timelimit" ) ) ) * 0.5 * 60 * ( ( dvarint( "ui_halftime" ) ) && ( timeleft( ) + 1 > ( ( dvarint( "ui_timelimit" ) ) ) * 60 * 0.5 ) ) ) ) ) ) ) + "." + ( 9 - int( ( milliseconds( ) / 100 ) % 10 ) ) )
+		}
+		itemDef
+		{
+			rect 8 -116 32 32 8 10
+			decoration
+			visible 1
+			forecolor 1 1 1 0.65
+			textfont 10
+			textalign 4
+			textscale 0.3333
+			textstyle 3
+			visible when ( dvarint( "ui_bomb_timer" ) == 2 )
+			exp text ( "@MPUI_BOMBPLANTED" )
+		}
+		itemDef
+		{
+			rect 8 -116 32 32 8 10
+			decoration
+			visible 1
+			forecolor 1 1 1 0.65
+			textfont 10
+			textalign 4
+			textscale 0.3333
+			textstyle 3
+			visible when ( dvarint( "ui_bomb_timer" ) == 3 )
+			exp text ( "@MPUI_BOMBSPLANTED" )
+		}
+		itemDef
+		{
+			rect 60 -24 1 1 8 10
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 12
+			textscale 0.3333
+			textstyle 7
+			visible when ( ( team( "name" ) != "TEAM_SPECTATOR" ) )
+			exp text ( ( ( team( "score" ) * ( ! ( ( team( "name" ) ) == "TEAM_FREE" ) ) ) + ( ( player( "score" ) ) * ( ( team( "name" ) ) == "TEAM_FREE" ) ) ) )
+		}
+		itemDef
+		{
+			rect 60 -24 1 1 8 10
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textscale 0.3333
+			textstyle 7
+			visible when ( ( team( "name" ) != "TEAM_SPECTATOR" ) )
+			exp text ( ( ( otherteam( "score" ) * ( ! ( ( team( "name" ) ) == "TEAM_FREE" ) ) ) + ( ( ( ( ( player( "score" ) ) == ( scoreatrank( 1 ) ) ) * ( scoreatrank( 2 ) ) ) + ( ( ( player( "score" ) ) != ( scoreatrank( 1 ) ) ) * ( scoreatrank( 1 ) ) ) ) * ( ( team( "name" ) ) == "TEAM_FREE" ) ) ) )
+		}
+		itemDef
+		{
+			rect 45 -39 18 18 8 10
+			style 3
+			decoration
+			visible 1
+			forecolor 0.63 0.86 0.6 1
+			background "hud_teamcaret"
+			textscale 0.55
+			visible when ( ( team( "name" ) != "TEAM_SPECTATOR" ) )
+		}
+	}
+	menuDef
+	{
+		name "weaponbar480_splitquarter"
+		rect 0 -20 640 480 4 4
+		legacySplitScreenScale
+		visible 1
+		forecolor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		visible when ( ( ( ! ( ui_active( ) ) ) && ( ! ( dvarbool( "g_hardcore" ) ) ) && ( ! ( flashbanged( ) ) ) && ( ! ( ( weaponname( ) == "killstreak_ac130_mp" ) || ( weaponname( ) == "killstreak_helicopter_minigun_mp" ) || ( weaponname( ) == "killstreak_predator_missile_mp" ) || ( ( weaponname( ) == "ac130_105mm_mp" ) || ( weaponname( ) == "ac130_40mm_mp" ) || ( weaponname( ) == "ac130_25mm_mp" ) ) || ( adsjavelin( ) ) || ( weaponname( ) == "heli_remote_mp" ) || missilecam( ) ) ) && ( !isempjammed( ) ) && ( ! ( dvarint( "scr_gameended" ) ) ) ) && ! ( selecting_location( ) ) && ( ! ( spectatingfree( ) ) ) )
+		itemDef
+		{
+			rect -50 -4 37 1 10 10
+			ownerdraw 119
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			type 8
+			textfont 9
+			textscale 0.5833
+			textstyle 3
+			visible when ( ( player( "stockAmmo" ) ) < 100 )
+		}
+		itemDef
+		{
+			rect -41 -7 37 1 10 10
+			ownerdraw 119
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			type 8
+			textfont 9
+			textscale 0.437475
+			textstyle 3
+			visible when ( ( player( "stockAmmo" ) ) >= 100 )
+		}
+		itemDef
+		{
+			rect -48 -7 37 1 10 10
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textscale 0.437475
+			textstyle 3
+			text "|"
+			visible when ( ! ( weaponname( ) == "riotshield_mp" ) )
+		}
+		itemDef
+		{
+			rect -91 -4 37 1 10 10
+			decoration
+			visible 1
+			forecolor 0.7 0.4 0.4 1
+			textfont 9
+			textalign 2
+			textscale 0.5833
+			textstyle 3
+			visible when ( ( player( "clipAmmo" ) ) == 0 && ! ( player( "clipammo_left" ) ) && ! ( weaponname( ) == "riotshield_mp" ) )
+			exp text ( ( player( "clipAmmo" ) ) )
+		}
+		itemDef
+		{
+			rect -91 -4 37 1 10 10
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 2
+			textscale 0.5833
+			textstyle 3
+			visible when ( ( player( "clipAmmo" ) ) > 0 && ( player( "clipAmmo" ) ) < 100 && ! ( weaponname( ) == "riotshield_mp" ) )
+			exp text ( ( player( "clipAmmo" ) ) )
+		}
+		itemDef
+		{
+			rect -91 -7 37 1 10 10
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 2
+			textscale 0.437475
+			textstyle 3
+			visible when ( ( player( "clipAmmo" ) ) >= 100 && ! ( weaponname( ) == "riotshield_mp" ) )
+			exp text ( ( player( "clipAmmo" ) ) )
+		}
+		itemDef
+		{
+			rect -127 -7 37 1 10 10
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 2
+			textscale 0.437475
+			textstyle 3
+			text "+"
+			visible when ( ( player( "clipammo_left" ) ) != 0 && ( player( "clipAmmo" ) ) > 0 )
+		}
+		itemDef
+		{
+			rect -141 -4 37 1 10 10
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 2
+			textscale 0.5833
+			textstyle 3
+			visible when ( ( player( "clipammo_left" ) ) > 0 && ( player( "clipammo_left" ) ) < 100 )
+			exp text ( ( player( "clipammo_left" ) ) )
+		}
+		itemDef
+		{
+			rect -141 -7 37 1 10 10
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 2
+			textscale 0.437475
+			textstyle 3
+			visible when ( ( player( "clipammo_left" ) ) >= 100 )
+			exp text ( ( player( "clipammo_left" ) ) )
+		}
+		itemDef
+		{
+			name "offhandFragIcon"
+			rect -22.6667 -44 18.6667 18.6667 10 10
+			ownerdraw 103
+			decoration
+			visible 1
+			forecolor 0.75 0.75 0.75 1
+			type 8
+			textscale 0.55
+			visible when ( ( player( "fragAmmo" ) ) > 1 )
+		}
+		itemDef
+		{
+			name "offhandFragIcon"
+			rect -18.6667 -44 18.6667 18.6667 10 10
+			ownerdraw 103
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			type 8
+			textscale 0.55
+			visible when ( ( player( "fragAmmo" ) ) )
+		}
+		itemDef
+		{
+			name "offhandSmokeIcon"
+			rect -48 -44 18.6667 18.6667 10 10
+			ownerdraw 104
+			decoration
+			visible 1
+			forecolor 0.5 0.5 0.5 1
+			type 8
+			textscale 0.55
+			visible when ( ( player( "smokeAmmo" ) ) > 2 )
+		}
+		itemDef
+		{
+			name "offhandSmokeIcon"
+			rect -44 -44 18.6667 18.6667 10 10
+			ownerdraw 104
+			decoration
+			visible 1
+			forecolor 0.75 0.75 0.75 1
+			type 8
+			textscale 0.55
+			visible when ( ( player( "smokeAmmo" ) ) > 1 )
+		}
+		itemDef
+		{
+			name "offhandSmokeIcon"
+			rect -40 -44 18.6667 18.6667 10 10
+			ownerdraw 104
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			type 8
+			textscale 0.55
+			visible when ( ( player( "smokeAmmo" ) ) )
+		}
+		itemDef
+		{
+			name "lowammowarning"
+			rect -50 -18.6667 100 100 2 2
+			ownerdraw 120
+			decoration
+			visible 1
+			forecolor 1 1 1 0.65
+			type 8
+			textfont 9
+			textalign 9
+			textscale 0.3333
+			textstyle 3
+			visible when ( ( ! ( inkillcam( ) ) ) && ( ! ( spectatingclient( ) ) ) )
+		}
+	}
+	menuDef
+	{
+		name "dpad_480_splitquarter"
+		rect 0 0 640 480 4 4
+		legacySplitScreenScale
+		visible 1
+		forecolor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		visible when ( ( ( ! ( ui_active( ) ) ) && ( ! ( dvarbool( "g_hardcore" ) ) ) && ( ! ( flashbanged( ) ) ) && ( ! ( ( weaponname( ) == "killstreak_ac130_mp" ) || ( weaponname( ) == "killstreak_helicopter_minigun_mp" ) || ( weaponname( ) == "killstreak_predator_missile_mp" ) || ( ( weaponname( ) == "ac130_105mm_mp" ) || ( weaponname( ) == "ac130_40mm_mp" ) || ( weaponname( ) == "ac130_25mm_mp" ) ) || ( adsjavelin( ) ) || ( weaponname( ) == "heli_remote_mp" ) || missilecam( ) ) ) && ( !isempjammed( ) ) && ( ! ( dvarint( "scr_gameended" ) ) ) ) && ! ( selecting_location( ) ) && ( ! ( spectatingfree( ) ) ) )
+		itemDef
+		{
+			rect -58 -76 32 32 10 10
+			ownerdraw 173
+			visible 1
+			forecolor 1 1 1 1
+			type 8
+			textfont 10
+			textalign 2
+			textalignx -21
+			textaligny -6
+			textscale 0.3333
+			textstyle 3
+		}
+		itemDef
+		{
+			rect -28 -74 28 28 10 10
+			ownerdraw 174
+			visible 1
+			forecolor 1 1 1 1
+			type 8
+			textfont 10
+			textalignx -40
+			textscale 0.3333
+			textstyle 3
+		}
+	}
+	menuDef
+	{
+		name "xpbar_480_splitquarter"
+		rect 0 0 640 480 8 8
+		legacySplitScreenScale
+		visible 1
+		forecolor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		visible when ( ( ( ! ( ui_active( ) ) ) && ( ! ( dvarbool( "g_hardcore" ) ) ) && ( ! ( flashbanged( ) ) ) && ( ! ( ( weaponname( ) == "killstreak_ac130_mp" ) || ( weaponname( ) == "killstreak_helicopter_minigun_mp" ) || ( weaponname( ) == "killstreak_predator_missile_mp" ) || ( ( weaponname( ) == "ac130_105mm_mp" ) || ( weaponname( ) == "ac130_40mm_mp" ) || ( weaponname( ) == "ac130_25mm_mp" ) ) || ( adsjavelin( ) ) || ( weaponname( ) == "heli_remote_mp" ) || missilecam( ) ) ) && ( !isempjammed( ) ) && ( ! ( dvarint( "scr_gameended" ) ) ) ) && !inkillcam( ) && ! ( selecting_location( ) ) && ( ! ( spectatingclient( ) || spectatingfree( ) ) ) )
+		itemDef
+		{
+			rect 0 -8 0 8 8 10
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "480splitquarter_xpbar_empty"
+			textscale 0.55
+			exp rect w ( ( ( ( 640 + ( 213.333 * dvarbool( "widescreen" ) ) ) * getadjustedsafeareahorizontal( ) ) * 0.5 ) )
+		}
+		itemDef
+		{
+			rect 0 -8 640 8 4 10
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "xpbar_stencilbase"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 -8 0 8 8 10
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "480splitquarter_xpbar_outlineglow"
+			textscale 0.55
+			exp rect w ( ( ( ( 640 + ( 213.333 * dvarbool( "widescreen" ) ) ) * getadjustedsafeareahorizontal( ) ) * 0.5 ) )
+		}
+		itemDef
+		{
+			rect 0 -8 0 8 8 10
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0.85
+			background "480splitquarter_xpbar_solid"
+			textscale 0.55
+			exp rect x ( ( ( ( ( ( min( ( getplayerdata( "restXPGoal" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) , 0.9999 ) ) * 0.95 ) + 0.005 + int( ( min( ( getplayerdata( "restXPGoal" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) , 0.9999 ) ) * 10 ) * 0.005 ) * ( ( ( 640 + ( 213.333 * dvarbool( "widescreen" ) ) ) * getadjustedsafeareahorizontal( ) ) ) ) * 0.5 ) - ( ( ( 640 + ( 213.333 * dvarbool( "widescreen" ) ) ) * getadjustedsafeareahorizontal( ) ) * 0.5 ) )
+			exp rect w ( ( ( ( 640 + ( 213.333 * dvarbool( "widescreen" ) ) ) * getadjustedsafeareahorizontal( ) ) * 0.5 ) )
+		}
+		itemDef
+		{
+			rect 0 -8 0 8 8 10
+			style 3
+			decoration
+			visible 1
+			forecolor 1 0.65 0 1
+			background "xpbar_solidfill"
+			textscale 0.55
+			exp rect x ( ( ( ( ( ( min( ( getplayerdata( "restXPGoal" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) , 0.9999 ) ) * 0.95 ) + 0.005 + int( ( min( ( getplayerdata( "restXPGoal" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) , 0.9999 ) ) * 10 ) * 0.005 ) * ( ( ( 640 + ( 213.333 * dvarbool( "widescreen" ) ) ) * getadjustedsafeareahorizontal( ) ) ) ) * 0.5 ) - ( ( ( 640 + ( 213.333 * dvarbool( "widescreen" ) ) ) * getadjustedsafeareahorizontal( ) ) * 0.5 ) )
+			exp rect w ( ( ( ( 640 + ( 213.333 * dvarbool( "widescreen" ) ) ) * getadjustedsafeareahorizontal( ) ) * 0.5 ) )
+			visible when ( ( min( ( getplayerdata( "restXPGoal" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) , 0.9999 ) ) > ( min( ( getplayerdata( "experience" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) , 0.9999 ) ) )
+		}
+		itemDef
+		{
+			rect 0 -8 0 8 8 10
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "splitscreen_xpbar_caprest"
+			textscale 0.55
+			exp rect x ( ( ( ( ( ( min( ( getplayerdata( "restXPGoal" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) , 0.9999 ) ) * 0.95 ) + 0.005 + int( ( min( ( getplayerdata( "restXPGoal" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) , 0.9999 ) ) * 10 ) * 0.005 ) * ( ( ( 640 + ( 213.333 * dvarbool( "widescreen" ) ) ) * getadjustedsafeareahorizontal( ) ) ) ) * 0.5 ) - ( ( 16 / ( 1 + ( 0.5 * dvarbool( "widescreen" ) ) ) ) * getadjustedsafeareahorizontal( ) ) )
+			exp rect w ( ( ( 16 / ( 1 + ( 0.5 * dvarbool( "widescreen" ) ) ) ) * getadjustedsafeareahorizontal( ) ) )
+			visible when ( ( min( ( getplayerdata( "restXPGoal" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) , 0.9999 ) ) > ( min( ( getplayerdata( "experience" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) , 0.9999 ) ) )
+		}
+		itemDef
+		{
+			rect 0 -8 640 8 4 10
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "xpbar_stencilbase"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 -8 0 8 8 10
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "480splitquarter_xpbar"
+			textscale 0.55
+			exp rect w ( ( ( ( 640 + ( 213.333 * dvarbool( "widescreen" ) ) ) * getadjustedsafeareahorizontal( ) ) * 0.5 ) )
+		}
+		itemDef
+		{
+			rect 0 -8 0 8 8 10
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "480splitquarter_xpbar_fade"
+			textscale 0.55
+			exp rect x ( ( ( ( ( ( min( ( getplayerdata( "experience" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) , 0.9999 ) ) * 0.95 ) + 0.005 + int( ( min( ( getplayerdata( "experience" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) , 0.9999 ) ) * 10 ) * 0.005 ) * ( ( ( 640 + ( 213.333 * dvarbool( "widescreen" ) ) ) * getadjustedsafeareahorizontal( ) ) ) ) * 0.5 ) - ( ( ( 640 + ( 213.333 * dvarbool( "widescreen" ) ) ) * getadjustedsafeareahorizontal( ) ) * 0.5 ) )
+			exp rect w ( ( ( ( 640 + ( 213.333 * dvarbool( "widescreen" ) ) ) * getadjustedsafeareahorizontal( ) ) * 0.5 ) )
+		}
+		itemDef
+		{
+			rect 0 -8 0 8 8 10
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "xpbar_restfill"
+			textscale 0.55
+			exp rect x ( ( ( ( ( ( min( ( getplayerdata( "experience" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) , 0.9999 ) ) * 0.95 ) + 0.005 + int( ( min( ( getplayerdata( "experience" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) , 0.9999 ) ) * 10 ) * 0.005 ) * ( ( ( 640 + ( 213.333 * dvarbool( "widescreen" ) ) ) * getadjustedsafeareahorizontal( ) ) ) ) * 0.5 ) - ( ( ( 640 + ( 213.333 * dvarbool( "widescreen" ) ) ) * getadjustedsafeareahorizontal( ) ) * 0.5 ) )
+			exp rect w ( ( ( ( 640 + ( 213.333 * dvarbool( "widescreen" ) ) ) * getadjustedsafeareahorizontal( ) ) * 0.5 ) )
+			visible when ( ( min( ( getplayerdata( "restXPGoal" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) , 0.9999 ) ) > ( min( ( getplayerdata( "experience" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) , 0.9999 ) ) )
+		}
+		itemDef
+		{
+			rect 0 -8 0 8 8 10
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "xpbar_xpfill"
+			textscale 0.55
+			exp rect x ( ( ( ( ( ( min( ( getplayerdata( "experience" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) , 0.9999 ) ) * 0.95 ) + 0.005 + int( ( min( ( getplayerdata( "experience" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) , 0.9999 ) ) * 10 ) * 0.005 ) * ( ( ( 640 + ( 213.333 * dvarbool( "widescreen" ) ) ) * getadjustedsafeareahorizontal( ) ) ) ) * 0.5 ) - ( ( ( 640 + ( 213.333 * dvarbool( "widescreen" ) ) ) * getadjustedsafeareahorizontal( ) ) * 0.5 ) )
+			exp rect w ( ( ( ( 640 + ( 213.333 * dvarbool( "widescreen" ) ) ) * getadjustedsafeareahorizontal( ) ) * 0.5 ) )
+			visible when ( ( min( ( getplayerdata( "restXPGoal" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) , 0.9999 ) ) <= ( min( ( getplayerdata( "experience" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) , 0.9999 ) ) )
+		}
+		itemDef
+		{
+			rect 0 -8 0 8 8 10
+			style 3
+			decoration
+			visible 1
+			forecolor 0 0 0 1
+			background "splitscreen_xpbar_capshadow"
+			textscale 0.55
+			exp rect x ( ( ( ( ( ( min( ( getplayerdata( "experience" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) , 0.9999 ) ) * 0.95 ) + 0.005 + int( ( min( ( getplayerdata( "experience" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) , 0.9999 ) ) * 10 ) * 0.005 ) * ( ( ( 640 + ( 213.333 * dvarbool( "widescreen" ) ) ) * getadjustedsafeareahorizontal( ) ) ) ) * 0.5 ) - ( ( 16 / ( 1 + ( 0.5 * dvarbool( "widescreen" ) ) ) ) * getadjustedsafeareahorizontal( ) ) )
+			exp rect w ( ( ( 16 / ( 1 + ( 0.5 * dvarbool( "widescreen" ) ) ) ) * getadjustedsafeareahorizontal( ) ) )
+			visible when ( ( min( ( getplayerdata( "experience" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) , 0.9999 ) ) >= 0.005 )
+		}
+		itemDef
+		{
+			rect 0 -8 0 8 8 10
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "480splitquarter_xpbar_outline"
+			textscale 0.55
+			exp rect w ( ( ( ( 640 + ( 213.333 * dvarbool( "widescreen" ) ) ) * getadjustedsafeareahorizontal( ) ) * 0.5 ) )
+		}
+		itemDef
+		{
+			rect 0 -8 0 8 8 10
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 0.55
+			background "480splitquarter_xpbar_solid"
+			textscale 0.55
+			exp rect x ( ( ( ( ( ( min( ( getplayerdata( "experience" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) , 0.9999 ) ) * 0.95 ) + 0.005 + int( ( min( ( getplayerdata( "experience" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) , 0.9999 ) ) * 10 ) * 0.005 ) * ( ( ( 640 + ( 213.333 * dvarbool( "widescreen" ) ) ) * getadjustedsafeareahorizontal( ) ) ) ) * 0.5 ) - ( ( ( 640 + ( 213.333 * dvarbool( "widescreen" ) ) ) * getadjustedsafeareahorizontal( ) ) * 0.5 ) )
+			exp rect w ( ( ( ( 640 + ( 213.333 * dvarbool( "widescreen" ) ) ) * getadjustedsafeareahorizontal( ) ) * 0.5 ) )
+		}
+		itemDef
+		{
+			rect 0 -8 0 8 8 10
+			style 3
+			decoration
+			visible 1
+			forecolor 0.541176 0.937255 0.984314 1
+			background "xpbar_solidfill"
+			textscale 0.55
+			exp rect x ( ( ( ( ( ( min( ( getplayerdata( "experience" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) , 0.9999 ) ) * 0.95 ) + 0.005 + int( ( min( ( getplayerdata( "experience" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) , 0.9999 ) ) * 10 ) * 0.005 ) * ( ( ( 640 + ( 213.333 * dvarbool( "widescreen" ) ) ) * getadjustedsafeareahorizontal( ) ) ) ) * 0.5 ) - ( ( ( 640 + ( 213.333 * dvarbool( "widescreen" ) ) ) * getadjustedsafeareahorizontal( ) ) * 0.5 ) )
+			exp rect w ( ( ( ( 640 + ( 213.333 * dvarbool( "widescreen" ) ) ) * getadjustedsafeareahorizontal( ) ) * 0.5 ) )
+			visible when ( ( min( ( getplayerdata( "restXPGoal" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) , 0.9999 ) ) > ( min( ( getplayerdata( "experience" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) , 0.9999 ) ) )
+		}
+		itemDef
+		{
+			rect 0 -8 0 8 8 10
+			style 3
+			decoration
+			visible 1
+			forecolor 0.913725 0.780392 0.458824 1
+			background "xpbar_solidfill"
+			textscale 0.55
+			exp rect x ( ( ( ( ( ( min( ( getplayerdata( "experience" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) , 0.9999 ) ) * 0.95 ) + 0.005 + int( ( min( ( getplayerdata( "experience" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) , 0.9999 ) ) * 10 ) * 0.005 ) * ( ( ( 640 + ( 213.333 * dvarbool( "widescreen" ) ) ) * getadjustedsafeareahorizontal( ) ) ) ) * 0.5 ) - ( ( ( 640 + ( 213.333 * dvarbool( "widescreen" ) ) ) * getadjustedsafeareahorizontal( ) ) * 0.5 ) )
+			exp rect w ( ( ( ( 640 + ( 213.333 * dvarbool( "widescreen" ) ) ) * getadjustedsafeareahorizontal( ) ) * 0.5 ) )
+			visible when ( ( min( ( getplayerdata( "restXPGoal" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) , 0.9999 ) ) <= ( min( ( getplayerdata( "experience" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) , 0.9999 ) ) )
+		}
+		itemDef
+		{
+			rect 0 -8 0 8 8 10
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "480splitquarter_xpbar_shadow"
+			textscale 0.55
+			exp rect w ( ( ( ( 640 + ( 213.333 * dvarbool( "widescreen" ) ) ) * getadjustedsafeareahorizontal( ) ) * 0.5 ) )
+		}
+		itemDef
+		{
+			rect 0 -8 0 8 8 10
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "480splitquarter_xpbar_solid"
+			textscale 0.55
+			exp rect x ( ( ( ( ( ( min( ( getplayerdata( "experience" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) , 0.9999 ) ) * 0.95 ) + 0.005 + int( ( min( ( getplayerdata( "experience" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) , 0.9999 ) ) * 10 ) * 0.005 ) * ( ( ( 640 + ( 213.333 * dvarbool( "widescreen" ) ) ) * getadjustedsafeareahorizontal( ) ) ) ) * 0.5 ) - ( ( ( 640 + ( 213.333 * dvarbool( "widescreen" ) ) ) * getadjustedsafeareahorizontal( ) ) * 0.5 ) )
+			exp rect w ( ( ( ( 640 + ( 213.333 * dvarbool( "widescreen" ) ) ) * getadjustedsafeareahorizontal( ) ) * 0.5 ) )
+		}
+		itemDef
+		{
+			rect 0 -8 0 8 8 10
+			style 3
+			decoration
+			visible 1
+			forecolor 0 0 0 1
+			background "xpbar_solidfill"
+			textscale 0.55
+			exp rect x ( ( ( ( ( ( min( ( getplayerdata( "experience" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) , 0.9999 ) ) * 0.95 ) + 0.005 + int( ( min( ( getplayerdata( "experience" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) ) ) , 0.9999 ) ) * 10 ) * 0.005 ) * ( ( ( 640 + ( 213.333 * dvarbool( "widescreen" ) ) ) * getadjustedsafeareahorizontal( ) ) ) ) * 0.5 ) - ( ( ( 640 + ( 213.333 * dvarbool( "widescreen" ) ) ) * getadjustedsafeareahorizontal( ) ) * 0.5 ) )
+			exp rect w ( ( ( ( 640 + ( 213.333 * dvarbool( "widescreen" ) ) ) * getadjustedsafeareahorizontal( ) ) * 0.5 ) )
+		}
+	}
+	menuDef
+	{
+		name "targetmap_splitscreen"
+		rect 0 0 0 0 0 0
+		visible 1
+		forecolor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		visible when ( ( selecting_location( ) ) && ( ! ( spectatingclient( ) ) ) )
+		itemDef
+		{
+			name "targetmap_border"
+			rect 0 0 0 0 9 9
+			border 1
+			bordersize 0.666667
+			visible 1
+			forecolor 1 1 1 1
+			bordercolor 1 1 1 0.35
+			textscale 0.55
+			exp rect x ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) ) * 0.5 ) )
+			exp rect y ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) ) * 0.5 ) )
+			exp rect h ( ( ( 480 * getadjustedsafeareavertical( ) ) ) )
+			exp rect w ( ( ( 480 * getadjustedsafeareavertical( ) ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 0 0 9 9
+			style 3
+			visible 1
+			forecolor 0.89 0.98 0.95 0.05
+			background "minimap_scanlines"
+			textscale 0.55
+			exp rect x ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) ) * 0.5 ) )
+			exp rect y ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) ) * 0.5 ) )
+			exp rect h ( ( ( 480 * getadjustedsafeareavertical( ) ) ) )
+			exp rect w ( ( ( 480 * getadjustedsafeareavertical( ) ) ) )
+		}
+		itemDef
+		{
+			name "targetmap_map"
+			rect 0 0 0 0 9 9
+			ownerdraw 181
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "compass_map_default"
+			type 8
+			textscale 0.55
+			exp rect x ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) ) * 0.5 ) )
+			exp rect y ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) ) * 0.5 ) )
+			exp rect h ( ( ( 480 * getadjustedsafeareavertical( ) ) ) )
+			exp rect w ( ( ( 480 * getadjustedsafeareavertical( ) ) ) )
+		}
+		itemDef
+		{
+			name "targetmap_friendlies"
+			rect 0 0 0 0 9 9
+			ownerdraw 185
+			visible 1
+			forecolor 1 1 1 1
+			type 8
+			textscale 0.55
+			exp rect x ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) ) * 0.5 ) )
+			exp rect y ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) ) * 0.5 ) )
+			exp rect h ( ( ( 480 * getadjustedsafeareavertical( ) ) ) )
+			exp rect w ( ( ( 480 * getadjustedsafeareavertical( ) ) ) )
+			exp forecolor a ( 1 - radarjamintensity( ) )
+		}
+		itemDef
+		{
+			name "targetmap_enemies"
+			rect 0 0 0 0 9 9
+			ownerdraw 188
+			visible 1
+			forecolor 1 1 1 1
+			type 8
+			textscale 0.55
+			exp rect x ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) ) * 0.5 ) )
+			exp rect y ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) ) * 0.5 ) )
+			exp rect h ( ( ( 480 * getadjustedsafeareavertical( ) ) ) )
+			exp rect w ( ( ( 480 * getadjustedsafeareavertical( ) ) ) )
+			exp forecolor a ( 1 - radarjamintensity( ) )
+		}
+		itemDef
+		{
+			name "targetmap_objectives"
+			rect 0 0 0 0 9 9
+			ownerdraw 182
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "objective_line"
+			type 8
+			textscale 0.55
+			exp rect x ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) ) * 0.5 ) )
+			exp rect y ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) ) * 0.5 ) )
+			exp rect h ( ( ( 480 * getadjustedsafeareavertical( ) ) ) )
+			exp rect w ( ( ( 480 * getadjustedsafeareavertical( ) ) ) )
+		}
+		itemDef
+		{
+			name "targetmap_sentries"
+			rect 0 0 0 0 9 9
+			ownerdraw 189
+			visible 1
+			forecolor 1 1 1 1
+			type 8
+			textscale 0.55
+			exp rect x ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) ) * 0.5 ) )
+			exp rect y ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) ) * 0.5 ) )
+			exp rect h ( ( ( 480 * getadjustedsafeareavertical( ) ) ) )
+			exp rect w ( ( ( 480 * getadjustedsafeareavertical( ) ) ) )
+			exp forecolor a ( 1 - radarjamintensity( ) )
+		}
+		itemDef
+		{
+			name "targetmap_player"
+			rect 0 0 0 0 9 9
+			ownerdraw 183
+			visible 1
+			forecolor 1 1 1 1
+			background "compassping_player"
+			type 8
+			textscale 0.55
+			exp rect x ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) ) * 0.5 ) )
+			exp rect y ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) ) * 0.5 ) )
+			exp rect h ( ( ( 480 * getadjustedsafeareavertical( ) ) ) )
+			exp rect w ( ( ( 480 * getadjustedsafeareavertical( ) ) ) )
+			exp forecolor a ( 1 - radarjamintensity( ) )
+		}
+		itemDef
+		{
+			rect 0 0 0 0 9 9
+			style 3
+			decoration
+			visible 1
+			forecolor 0.64 0.74 0.71 1
+			background "white"
+			textscale 0.55
+			exp rect x ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) ) * 0.5 ) )
+			exp rect y ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) ) * 0.5 ) )
+			exp rect h ( ( ( 480 * getadjustedsafeareavertical( ) ) ) )
+			exp rect w ( ( ( 480 * getadjustedsafeareavertical( ) ) ) )
+			exp forecolor a ( radarjamintensity( ) )
+			visible when ( radarisjammed( ) )
+		}
+		itemDef
+		{
+			rect 0 0 0 0 9 9
+			style 3
+			decoration
+			visible 1
+			forecolor 0.89 0.98 0.95 1
+			background "ac130_overlay_grain"
+			textscale 0.55
+			exp rect x ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) ) * 0.5 ) )
+			exp rect y ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) ) * 0.5 ) )
+			exp rect h ( ( ( 480 * getadjustedsafeareavertical( ) ) ) )
+			exp rect w ( ( ( 480 * getadjustedsafeareavertical( ) ) ) )
+			exp forecolor a ( radarjamintensity( ) )
+			visible when ( radarisjammed( ) )
+		}
+		itemDef
+		{
+			rect 0 0 0 0 9 9
+			style 3
+			visible 1
+			forecolor 1 1 1 1
+			background "stencil_base"
+			textscale 0.55
+			exp rect x ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) ) * 0.5 ) )
+			exp rect y ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) ) * 0.5 ) )
+			exp rect h ( ( ( 480 * getadjustedsafeareavertical( ) ) ) )
+			exp rect w ( ( ( 480 * getadjustedsafeareavertical( ) ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 0 0 9 9
+			style 3
+			visible 1
+			forecolor 1 1 1 1
+			background "scanlines_stencil"
+			textscale 0.55
+			exp rect x ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) ) * 0.5 ) )
+			exp rect y ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) ) * 1.5 ) + ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) ) * 2 ) * ( 1 - ( ( milliseconds( ) % 4000 ) / 4000 ) ) ) )
+			exp rect h ( ( ( 480 * getadjustedsafeareavertical( ) ) ) )
+			exp rect w ( ( ( 480 * getadjustedsafeareavertical( ) ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 0 0 9 9
+			style 3
+			visible 1
+			forecolor 0.89 0.98 0.95 1
+			background "stencil_fill"
+			textscale 0.55
+			exp rect x ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) ) * 0.5 ) )
+			exp rect y ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) ) * 0.5 ) )
+			exp rect h ( ( ( 480 * getadjustedsafeareavertical( ) ) ) )
+			exp rect w ( ( ( 480 * getadjustedsafeareavertical( ) ) ) )
+		}
+		itemDef
+		{
+			name "targetmap_locator"
+			rect 0 0 0 0 9 9
+			ownerdraw 186
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "compass_map_default"
+			type 8
+			textscale 0.55
+			exp rect x ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) ) * 0.5 ) )
+			exp rect y ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) ) * 0.5 ) )
+			exp rect h ( ( ( 480 * getadjustedsafeareavertical( ) ) ) )
+			exp rect w ( ( ( 480 * getadjustedsafeareavertical( ) ) ) )
+		}
+		itemDef
+		{
+			rect 0 36 0 0 9 8
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 1
+			textscale 0.75
+			textstyle 3
+			exp text ( "@" + tablelookup( "mp/killstreakTable.csv" , 12 , weaponname( ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 0 0 9 10
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textalign 1
+			textscale 0.6
+			textstyle 3
+			text "@PLATFORM_USE_BUTTONMOVE_TO_POSITION"
+			exp rect y ( 0 - ( 24 * 1.5 ) - ( ( 20 * 1.5 ) * selecting_direction( ) ) )
+		}
+		itemDef
+		{
+			rect 0 -36 0 0 9 10
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textalign 1
+			textscale 0.6
+			textstyle 3
+			text "@PLATFORM_USE_BUTTONLOOK_TO_AIM"
+			visible when ( selecting_direction( ) )
+		}
+		itemDef
+		{
+			rect 0 -6 0 0 9 10
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textalign 1
+			textscale 0.6
+			textstyle 3
+			text "@PLATFORM_PRESS_BUTTON_TO_CONFIRM_TARGET"
+		}
+	}
+	menuDef
+	{
+		name "killcam_splitscreen"
+		rect 0 0 640 480 4 4
+		visible 1
+		forecolor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		visible when ( ( inkillcam( ) ) )
+		itemDef
+		{
+			rect 0 -144 640 216 4 8
+			style 3
+			decoration
+			visible 1
+			forecolor 0.49 0.05 0.03 0.5
+			background "white"
+			textscale 0.55
+			visible when ( ( ! ( dvarint( "scr_gameended" ) ) ) && ( ( ! ( ui_active( ) ) ) || ( ( ui_active( ) ) && ( menuisopen( "scoreboard" ) ) ) ) )
+		}
+		itemDef
+		{
+			rect 0 -89 640 216 4 10
+			style 3
+			decoration
+			visible 1
+			forecolor 0.49 0.05 0.03 0.5
+			background "white"
+			textscale 0.55
+			visible when ( ( ! ( dvarint( "scr_gameended" ) ) ) && ( ( ! ( ui_active( ) ) ) || ( ( ui_active( ) ) && ( menuisopen( "scoreboard" ) ) ) ) )
+		}
+		itemDef
+		{
+			rect 0 -114 640 216 4 8
+			style 3
+			decoration
+			visible 1
+			forecolor 0.49 0.05 0.03 0.5
+			background "killcam_blur"
+			textscale 0.55
+			visible when ( ( ! ( dvarint( "scr_gameended" ) ) ) && ( ui_active( ) ) && ( ! ( menuisopen( "scoreboard" ) ) ) )
+		}
+		itemDef
+		{
+			rect 0 -119 640 -216 4 10
+			style 3
+			decoration
+			visible 1
+			forecolor 0.49 0.05 0.03 0.5
+			background "killcam_blur"
+			textscale 0.55
+			visible when ( ( ! ( dvarint( "scr_gameended" ) ) ) && ( ui_active( ) ) && ( ! ( menuisopen( "scoreboard" ) ) ) )
+		}
+		itemDef
+		{
+			rect 0 -144 640 216 4 8
+			style 3
+			decoration
+			visible 1
+			forecolor 0 0 0 0.5
+			background "white"
+			textscale 0.55
+			visible when ( ( dvarint( "scr_gameended" ) ) && ( ( ! ( ui_active( ) ) ) || ( ( ui_active( ) ) && ( menuisopen( "scoreboard" ) ) ) ) )
+		}
+		itemDef
+		{
+			rect 0 -89 640 216 4 10
+			style 3
+			decoration
+			visible 1
+			forecolor 0 0 0 0.5
+			background "white"
+			textscale 0.55
+			visible when ( ( dvarint( "scr_gameended" ) ) && ( ( ! ( ui_active( ) ) ) || ( ( ui_active( ) ) && ( menuisopen( "scoreboard" ) ) ) ) )
+		}
+		itemDef
+		{
+			rect 0 -114 640 216 4 8
+			style 3
+			decoration
+			visible 1
+			forecolor 0 0 0 0.5
+			background "killcam_blur"
+			textscale 0.55
+			visible when ( ( dvarint( "scr_gameended" ) ) && ( ui_active( ) ) && ( ! ( menuisopen( "scoreboard" ) ) ) )
+		}
+		itemDef
+		{
+			rect 0 -119 640 -216 4 10
+			style 3
+			decoration
+			visible 1
+			forecolor 0 0 0 0.5
+			background "killcam_blur"
+			textscale 0.55
+			visible when ( ( dvarint( "scr_gameended" ) ) && ( ui_active( ) ) && ( ! ( menuisopen( "scoreboard" ) ) ) )
+		}
+		itemDef
+		{
+			rect 0 55 1 1 9 8
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 1
+			textaligny 6
+			textscale 1.125
+			textstyle 3
+			text "@MP_KILLCAM"
+			visible when ( ( ! ( dvarint( "scr_gameended" ) ) ) && ( ! ( ui_active( ) ) ) )
+		}
+		itemDef
+		{
+			rect 0 55 1 1 2 8
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 1
+			textscale 0.8
+			textstyle 3
+			text "@MP_FINAL_KILLCAM"
+			visible when ( ( dvarint( "scr_gameended" ) ) == 1 && ( ! ( ui_active( ) ) ) )
+		}
+		itemDef
+		{
+			rect 0 55 1 1 2 8
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 1
+			textscale 0.8
+			textstyle 3
+			text "@MP_ROUND_KILLCAM"
+			visible when ( ( dvarint( "scr_gameended" ) ) == 2 && ( ! ( ui_active( ) ) ) )
+		}
+	}
+	menuDef
+	{
+		name "playercard_youkilled_480_splitquarter"
+		rect 0 0 640 480 4 4
+		legacySplitScreenScale
+		visible 1
+		forecolor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		visible when ( ( ( ( ! ( ui_active( ) ) ) && ( ! ( dvarbool( "g_hardcore" ) ) ) && ( ! ( flashbanged( ) ) ) && ( ! ( ( weaponname( ) == "killstreak_ac130_mp" ) || ( weaponname( ) == "killstreak_helicopter_minigun_mp" ) || ( weaponname( ) == "killstreak_predator_missile_mp" ) || ( ( weaponname( ) == "ac130_105mm_mp" ) || ( weaponname( ) == "ac130_40mm_mp" ) || ( weaponname( ) == "ac130_25mm_mp" ) ) || ( adsjavelin( ) ) || ( weaponname( ) == "heli_remote_mp" ) || missilecam( ) ) ) && ( !isempjammed( ) ) && ( ! ( dvarint( "scr_gameended" ) ) ) ) && ( milliseconds( ) - localvarint( "ui_show_youKilled" ) < 2500 && ( ! ( milliseconds( ) - localvarint( "ui_show_killedBy" ) < 4000 || ( inkillcam( ) ) ) ) ) && ( ! ( inkillcam( ) ) ) ) && !dvarbool( "ui_hide_playercards" ) && ! ( milliseconds( ) - localvarint( "ui_show_killedBy" ) < 4000 || ( inkillcam( ) ) ) && ! ( inkillcam( ) ) )
+		exp rect y ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_show_youKilled" ) ) / 150 ) , 1 ) , 0 ) * ( 180 ) ) + ( min( max( ( milliseconds( ) - localvarint( "ui_show_youKilled" ) + 2350 ) / 150 , 0 ) , 1 ) * ( 180 ) ) )
+		itemDef
+		{
+			rect 0 0 138.667 32 9 10
+			style 3
+			decoration
+			visible 1
+			forecolor 0 0 0 0.25
+			background "white"
+			textscale 0.55
+			exp rect x ( ( 0 - ( 104 / 1.5 ) ) )
+			exp rect y ( ( - 48 ) )
+			visible when ( ( getplayercardinfo( 0 , 0 , 8 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 138.667 32 9 10
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "cardtitle_208x48"
+			textscale 0.55
+			exp rect x ( ( 0 - ( 104 / 1.5 ) ) )
+			exp rect y ( ( - 48 ) )
+			visible when ( ( getplayercardinfo( 0 , 0 , 8 ) != 0 ) && ( dvarbool( "hiDef" ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 138.667 32 9 10
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "cardtitle_140x32"
+			textscale 0.55
+			exp rect x ( ( 0 - ( 104 / 1.5 ) ) )
+			exp rect y ( ( - 48 ) )
+			visible when ( ( getplayercardinfo( 0 , 0 , 8 ) != 0 ) && ( ! ( dvarbool( "hiDef" ) ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 106.667 21.3333 9 10
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.31875
+			textstyle 8
+			exp rect x ( 0 - ( 104 / 1.5 ) )
+			exp rect y ( - 48 - ( 2 / 1.5 ) )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 0 , 8 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 0 , 8 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 0 , 8 ) , 5 ) )
+			visible when ( ( getplayercardinfo( 0 , 0 , 8 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 0 , 8 ) , 1 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 0 , 8 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 106.667 12 9 10
+			decoration
+			visible 1
+			forecolor 0.6 0.8 0.6 1
+			textfont 10
+			textalign 4
+			textalignx 5.33333
+			textscale 0.2222
+			textstyle 8
+			exp rect x ( 0 - ( 104 / 1.5 ) )
+			exp rect y ( ( - 48 ) + ( 28 / 1.5 ) )
+			visible when ( ( ( getplayercardinfo( 0 , 0 , 8 ) != 0 ) && ( getplayercardinfo( 6 , 0 , 8 ) && getplayercardinfo( 6 , 0 , 8 ) == ( ( ( team( "name" ) == "TEAM_AXIS" ) * 1 ) + ( ( team( "name" ) == "TEAM_ALLIES" ) * 2 ) ) ) ) )
+			exp text ( getplayercardinfo( 8 , 0 , 8 ) )
+		}
+		itemDef
+		{
+			rect 0 0 106.667 12 9 10
+			decoration
+			visible 1
+			forecolor 0.8 0.35 0.4 1
+			textfont 10
+			textalign 4
+			textalignx 5.33333
+			textscale 0.2222
+			textstyle 8
+			exp rect x ( 0 - ( 104 / 1.5 ) )
+			exp rect y ( ( - 48 ) + ( 28 / 1.5 ) )
+			visible when ( ( ( getplayercardinfo( 0 , 0 , 8 ) != 0 ) && ( !getplayercardinfo( 6 , 0 , 8 ) || getplayercardinfo( 6 , 0 , 8 ) != ( ( ( team( "name" ) == "TEAM_AXIS" ) * 1 ) + ( ( team( "name" ) == "TEAM_ALLIES" ) * 2 ) ) ) ) )
+			exp text ( getplayercardinfo( 8 , 0 , 8 ) )
+		}
+		itemDef
+		{
+			rect 0 0 32 32 9 10
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( 0 - ( 104 / 1.5 ) ) + ( 160 / 1.5 ) )
+			exp rect y ( ( - 48 ) )
+			visible when ( ( getplayercardinfo( 0 , 0 , 8 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 0 , 8 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 138.667 13.3333 9 10
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			glowColor 1 0.8 0.6 1
+			textfont 6
+			textalign 5
+			textscale 0.25
+			textstyle 8
+			exp rect x ( ( 0 - ( 104 / 1.5 ) ) )
+			exp rect y ( ( - 48 ) + ( 0 - ( 20 / 1.5 ) ) )
+			visible when ( ( getplayercardinfo( 0 , 0 , 8 ) != 0 ) )
+			exp text ( "@MP_YOU_KILLED" )
+		}
+	}
+	menuDef
+	{
+		name "playercard_killedby_480_splitquarter"
+		rect 0 0 640 480 4 4
+		legacySplitScreenScale
+		visible 1
+		forecolor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		visible when ( ( ! ( ui_active( ) ) ) && ( ( milliseconds( ) - localvarint( "ui_show_killedBy" ) < 4000 || ( inkillcam( ) ) ) || ( inkillcam( ) ) ) )
+		exp rect y ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_show_killedBy" ) ) / 150 ) , 1 ) , 0 ) * ( 180 ) ) )
+		itemDef
+		{
+			rect 0 0 138.667 32 9 10
+			style 3
+			decoration
+			visible 1
+			forecolor 0 0 0 0.25
+			background "white"
+			textscale 0.55
+			exp rect x ( ( 0 - ( 104 / 1.5 ) ) )
+			exp rect y ( ( 0 - ( 89 / 2 ) ) )
+			visible when ( ( getplayercardinfo( 0 , 0 , 7 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 138.667 32 9 10
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "cardtitle_208x48"
+			textscale 0.55
+			exp rect x ( ( 0 - ( 104 / 1.5 ) ) )
+			exp rect y ( ( 0 - ( 89 / 2 ) ) )
+			visible when ( ( getplayercardinfo( 0 , 0 , 7 ) != 0 ) && ( dvarbool( "hiDef" ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 138.667 32 9 10
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "cardtitle_140x32"
+			textscale 0.55
+			exp rect x ( ( 0 - ( 104 / 1.5 ) ) )
+			exp rect y ( ( 0 - ( 89 / 2 ) ) )
+			visible when ( ( getplayercardinfo( 0 , 0 , 7 ) != 0 ) && ( ! ( dvarbool( "hiDef" ) ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 106.667 21.3333 9 10
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.31875
+			textstyle 8
+			exp rect x ( 0 - ( 104 / 1.5 ) )
+			exp rect y ( 0 - ( 89 / 2 ) - ( 2 / 1.5 ) )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 0 , 7 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 0 , 7 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 0 , 7 ) , 5 ) )
+			visible when ( ( getplayercardinfo( 0 , 0 , 7 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 0 , 7 ) , 1 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 0 , 7 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 106.667 12 9 10
+			decoration
+			visible 1
+			forecolor 0.6 0.8 0.6 1
+			textfont 10
+			textalign 4
+			textalignx 5.33333
+			textscale 0.2222
+			textstyle 8
+			exp rect x ( 0 - ( 104 / 1.5 ) )
+			exp rect y ( ( 0 - ( 89 / 2 ) ) + ( 28 / 1.5 ) )
+			visible when ( ( ( getplayercardinfo( 0 , 0 , 7 ) != 0 ) && ( getplayercardinfo( 6 , 0 , 7 ) && getplayercardinfo( 6 , 0 , 7 ) == ( ( ( team( "name" ) == "TEAM_AXIS" ) * 1 ) + ( ( team( "name" ) == "TEAM_ALLIES" ) * 2 ) ) ) ) )
+			exp text ( getplayercardinfo( 8 , 0 , 7 ) )
+		}
+		itemDef
+		{
+			rect 0 0 106.667 12 9 10
+			decoration
+			visible 1
+			forecolor 0.8 0.35 0.4 1
+			textfont 10
+			textalign 4
+			textalignx 5.33333
+			textscale 0.2222
+			textstyle 8
+			exp rect x ( 0 - ( 104 / 1.5 ) )
+			exp rect y ( ( 0 - ( 89 / 2 ) ) + ( 28 / 1.5 ) )
+			visible when ( ( ( getplayercardinfo( 0 , 0 , 7 ) != 0 ) && ( !getplayercardinfo( 6 , 0 , 7 ) || getplayercardinfo( 6 , 0 , 7 ) != ( ( ( team( "name" ) == "TEAM_AXIS" ) * 1 ) + ( ( team( "name" ) == "TEAM_ALLIES" ) * 2 ) ) ) ) )
+			exp text ( getplayercardinfo( 8 , 0 , 7 ) )
+		}
+		itemDef
+		{
+			rect 0 0 32 32 9 10
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( 0 - ( 104 / 1.5 ) ) + ( 160 / 1.5 ) )
+			exp rect y ( ( 0 - ( 89 / 2 ) ) )
+			visible when ( ( getplayercardinfo( 0 , 0 , 7 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 0 , 7 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 138.667 13.3333 9 10
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			glowColor 1 0.8 0.6 1
+			textfont 6
+			textalign 5
+			textscale 0.25
+			textstyle 8
+			exp rect x ( ( 0 - ( 104 / 1.5 ) ) )
+			exp rect y ( ( 0 - ( 89 / 2 ) ) + ( 0 - ( 20 / 1.5 ) ) + ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_show_killedBy" ) ) / ( 1150 / 1.5 ) ) , 1 ) , 0 ) * 5000 ) )
+			visible when ( ( getplayercardinfo( 0 , 0 , 7 ) != 0 ) && ( ! ( dvarint( "scr_gameended" ) ) ) )
+			exp text ( "@MP_KILLED_BY" )
+		}
+	}
+}

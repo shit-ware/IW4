@@ -1,0 +1,46 @@
+/********************************************
+*          dumped by: aerosoul94            *
+*********************************************/
+
+{
+	menuDef
+	{
+		name "dirt_effect_center"
+		rect 0 0 640 480 8 10
+		decoration
+		forecolor 1 1 1 1
+		onOpen
+		{
+			lerp "alpha" "from" 0 "to" 1 "over" "0.020";
+			lerp "scale" "from" ".3" "to" 1 "over" "0.1";
+			lerp y "from" "100" "to" 0 "over" "0.08";
+			setLocalVarInt "dirt_update_time" ( milliseconds( ) + 200 );
+		}
+		onRequestClose
+		{
+			lerp "alpha" "from" 1 "to" 0 "over" "1.0";
+		}
+		itemDef
+		{
+			rect -682.667 -341.333 1365.33 682.667 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "fullscreen_dirt_bottom"
+			textscale 0.55
+			exp forecolor a ( min( ( localvarint( "dirt_update_time" ) - milliseconds( ) ) / 200 , 1 ) )
+		}
+		itemDef
+		{
+			rect -682.667 -341.333 1365.33 682.667 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "fullscreen_dirt_bottom_b"
+			textscale 0.55
+			visible when ( milliseconds( ) > localvarint( "dirt_update_time" ) )
+		}
+	}
+}

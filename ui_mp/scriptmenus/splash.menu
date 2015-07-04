@@ -1,0 +1,446 @@
+/********************************************
+*          dumped by: aerosoul94            *
+*********************************************/
+
+{
+	menuDef
+	{
+		name "splash"
+		rect 0 0 640 1 1 0
+		decoration
+		forecolor 1 1 1 1
+		exp rect y ( ( dvarbool( "camera_thirdPerson" ) ) * ( 0 - 40 ) * ( ! ( dvarbool( "splitscreen" ) ) ) )
+		onOpen
+		{
+			lerp "scale" "from" "10" "to" 1 "over" "0.15";
+			lerp "alpha" "from" 0 "to" 1 "over" "0.15";
+			setLocalVarInt "defcon_update_time" ( milliseconds( ) + 1000 );
+			close "challenge";
+			close "defcon";
+			close "killstreak_pickup";
+			close "killstreak";
+			close "perk_challenge";
+			close "promotion";
+		}
+		onRequestClose
+		{
+			lerp "scale" "from" 1 "to" "10" "over" "0.15";
+			lerp "alpha" "from" 1 "to" 0 "over" "0.15";
+		}
+		itemDef
+		{
+			name "splash_title"
+			rect 0 -110 0 0 2 2
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 4
+			textalign 1
+			textscale 0.48611
+			textstyle 3
+			exp glowcolor r ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 5 ) )
+			exp glowcolor g ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 6 ) )
+			exp glowcolor b ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 7 ) )
+			exp glowcolor a ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 8 ) )
+			visible when ( ( ! ( dvarbool( "splitscreen" ) ) ) )
+			exp text ( getsplashtext( 0 ) )
+		}
+		itemDef
+		{
+			name "splash_description"
+			rect 0 -90 0 0 2 2
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textalign 1
+			textscale 0.375
+			textstyle 3
+			visible when ( ( ! ( dvarbool( "splitscreen" ) ) ) )
+			exp text ( getsplashdescription( 0 ) )
+		}
+		itemDef
+		{
+			name "splash_icon"
+			rect -24 -180 48 48 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( ( ! ( dvarbool( "splitscreen" ) ) ) && splashhasicon( 0 ) )
+			exp material ( getsplashmaterial( 0 ) )
+		}
+		itemDef
+		{
+			name "splash_title_ss"
+			rect 0 -135 0 0 2 2
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 4
+			textalign 1
+			textscale 0.729165
+			textstyle 3
+			exp glowcolor r ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 5 ) )
+			exp glowcolor g ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 6 ) )
+			exp glowcolor b ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 7 ) )
+			exp glowcolor a ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 8 ) )
+			visible when ( ( dvarbool( "splitscreen" ) ) )
+			exp text ( getsplashtext( 0 ) )
+		}
+		itemDef
+		{
+			name "splash_icon_ss"
+			rect -36 -135 72 72 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( ( dvarbool( "splitscreen" ) ) && ( ! ( dvarbool( "camera_thirdPerson" ) ) ) && splashhasicon( 0 ) )
+			exp material ( getsplashmaterial( 0 ) )
+		}
+	}
+	menuDef
+	{
+		name "playercard_splash"
+		rect 0 0 640 1 1 0
+		decoration
+		legacySplitScreenScale
+		forecolor 1 1 1 1
+		onOpen
+		{
+			if ( !dvarbool( "ui_hide_playercards" ) )
+			{
+				play "mp_card_slide";
+				setLocalVarInt "callout_update_time" ( milliseconds( ) + 1500 );
+				lerp x "from" "600" "to" 0 "over" "0.15";
+			}
+		}
+		onRequestClose
+		{
+			if ( !dvarbool( "ui_hide_playercards" ) )
+			{
+				lerp x "from" 0 "to" "600" "over" "0.15";
+			}
+		}
+		itemDef
+		{
+			rect 0 0 208 48 10 8
+			style 3
+			decoration
+			visible 1
+			forecolor 0 0 0 0.25
+			background "white"
+			textscale 0.55
+			exp rect x ( ( 0 - 212 ) )
+			exp rect y ( ( 28 ) )
+			visible when ( ( getplayercardinfo( 0 , 0 , 5 ) != 0 ) && ( ! ( dvarbool( "splitscreen" ) ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 10 8
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "cardtitle_248x48"
+			textfont 6
+			textalign 4
+			textaligny -20
+			textscale 0.375
+			textstyle 7
+			exp rect x ( ( 0 - 212 ) )
+			exp rect y ( ( 28 ) )
+			visible when ( ( getplayercardinfo( 0 , 0 , 5 ) != 0 ) && ( ! ( dvarbool( "splitscreen" ) ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 10 8
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			textstyle 8
+			exp rect x ( 0 - 212 )
+			exp rect y ( 28 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 0 , 5 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 0 , 5 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 0 , 5 ) , 5 ) )
+			visible when ( ( getplayercardinfo( 0 , 0 , 5 ) != 0 ) && ( ! ( dvarbool( "splitscreen" ) ) ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 0 , 5 ) , 1 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 0 , 5 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 10 8
+			decoration
+			visible 1
+			forecolor 0.6 0.8 0.6 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			textstyle 8
+			exp rect x ( 0 - 212 )
+			exp rect y ( ( 28 ) + 28 )
+			visible when ( ( ( getplayercardinfo( 0 , 0 , 5 ) != 0 ) && ( getplayercardinfo( 6 , 0 , 5 ) && getplayercardinfo( 6 , 0 , 5 ) == ( ( ( team( "name" ) == "TEAM_AXIS" ) * 1 ) + ( ( team( "name" ) == "TEAM_ALLIES" ) * 2 ) ) ) ) && ( ! ( dvarbool( "splitscreen" ) ) ) )
+			exp text ( getplayercardinfo( 8 , 0 , 5 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 10 8
+			decoration
+			visible 1
+			forecolor 0.8 0.35 0.4 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			textstyle 8
+			exp rect x ( 0 - 212 )
+			exp rect y ( ( 28 ) + 28 )
+			visible when ( ( ( getplayercardinfo( 0 , 0 , 5 ) != 0 ) && ( !getplayercardinfo( 6 , 0 , 5 ) || getplayercardinfo( 6 , 0 , 5 ) != ( ( ( team( "name" ) == "TEAM_AXIS" ) * 1 ) + ( ( team( "name" ) == "TEAM_ALLIES" ) * 2 ) ) ) ) && ( ! ( dvarbool( "splitscreen" ) ) ) )
+			exp text ( getplayercardinfo( 8 , 0 , 5 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 10 8
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( 0 - 212 ) + 160 )
+			exp rect y ( ( 28 ) )
+			visible when ( ( getplayercardinfo( 0 , 0 , 5 ) != 0 ) && ( ! ( dvarbool( "splitscreen" ) ) ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 0 , 5 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 20 10 8
+			style 3
+			decoration
+			visible 1
+			forecolor 0 0 0 0.25
+			background "white"
+			textscale 0.55
+			exp rect x ( ( 0 - 212 ) )
+			exp rect y ( ( 28 ) + 48 )
+			exp forecolor a ( max( min( ( 1 - ( milliseconds( ) - localvarint( "callout_update_time" ) ) / 150 ) , 1 ) , 0 ) * 0.25 )
+			visible when ( ( getplayercardinfo( 0 , 0 , 5 ) != 0 ) && ( ! ( dvarbool( "splitscreen" ) ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 20 10 8
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "cardtitle_248x20"
+			textscale 0.55
+			exp rect x ( ( 0 - 212 ) )
+			exp rect y ( ( 28 ) + 48 )
+			exp backcolor a ( max( min( ( 1 - ( milliseconds( ) - localvarint( "callout_update_time" ) ) / 150 ) , 1 ) , 0 ) * 0.65 )
+			visible when ( ( getplayercardinfo( 0 , 0 , 5 ) != 0 ) && ( ! ( dvarbool( "splitscreen" ) ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 20 10 8
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textalignx 8
+			textscale 0.375
+			textstyle 7
+			exp rect x ( ( 0 - 212 ) )
+			exp rect y ( ( 28 ) + 48 )
+			exp forecolor a ( max( min( ( 1 - ( milliseconds( ) - localvarint( "callout_update_time" ) ) / 150 ) , 1 ) , 0 ) )
+			visible when ( ( getplayercardinfo( 0 , 0 , 5 ) != 0 ) && ( ! ( dvarbool( "splitscreen" ) ) ) && getplayercardinfo( 9 , 0 , 5 ) != "" )
+			exp text ( "[" + getplayercardinfo( 9 , 0 , 5 ) + "]" )
+		}
+		itemDef
+		{
+			rect 0 0 20 20 10 8
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( 0 - 212 ) + 164 )
+			exp rect y ( ( 28 ) + 48 )
+			exp forecolor a ( max( min( ( 1 - ( milliseconds( ) - localvarint( "callout_update_time" ) ) / 150 ) , 1 ) , 0 ) )
+			exp backcolor a ( max( min( ( 1 - ( milliseconds( ) - localvarint( "callout_update_time" ) ) / 150 ) , 1 ) , 0 ) )
+			visible when ( ( getplayercardinfo( 0 , 0 , 5 ) != 0 ) && ( getplayercardinfo( 4 , 0 , 5 ) >= 0 ) && ( ! ( dvarbool( "splitscreen" ) ) ) )
+			exp material ( tablelookup( "mp/rankIconTable.csv" , 0 , getplayercardinfo( 4 , 0 , 5 ) , ( getplayercardinfo( 5 , 0 , 5 ) + 1 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 20 20 10 8
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textalignx 20
+			textscale 0.375
+			textstyle 7
+			exp rect x ( ( 0 - 212 ) + 164 )
+			exp rect y ( ( 28 ) + 48 )
+			exp forecolor a ( max( min( ( 1 - ( milliseconds( ) - localvarint( "callout_update_time" ) ) / 150 ) , 1 ) , 0 ) )
+			visible when ( ( getplayercardinfo( 0 , 0 , 5 ) != 0 ) && ( getplayercardinfo( 4 , 0 , 5 ) >= 0 ) && ( ! ( dvarbool( "splitscreen" ) ) ) )
+			exp text ( tablelookup( "mp/rankTable.csv" , 0 , getplayercardinfo( 4 , 0 , 5 ) , 14 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 20 10 8
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			glowColor 1 0.8 0.6 1
+			textfont 6
+			textalign 4
+			textalignx 8
+			textscale 0.375
+			textstyle 8
+			exp rect x ( ( 0 - 212 ) + ( max( min( ( 1 - ( milliseconds( ) - localvarint( "callout_update_time" ) ) / 150 ) , 1 ) , 0 ) * 500 ) )
+			exp rect y ( ( 28 ) + 47 )
+			visible when ( ( getplayercardinfo( 0 , 0 , 5 ) != 0 ) && ( ! ( dvarbool( "splitscreen" ) ) ) )
+			exp text ( getsplashdescription( 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 138.667 32 10 8
+			style 3
+			decoration
+			visible 1
+			forecolor 0 0 0 0.25
+			background "white"
+			textscale 0.55
+			exp rect x ( ( 0 - ( 208 / 1.5 ) ) )
+			exp rect y ( ( 0 ) )
+			visible when ( ( getplayercardinfo( 0 , 0 , 5 ) != 0 ) && ( dvarbool( "splitscreen" ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 138.667 32 10 8
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "cardtitle_208x48"
+			textscale 0.55
+			exp rect x ( ( 0 - ( 208 / 1.5 ) ) )
+			exp rect y ( ( 0 ) )
+			visible when ( ( getplayercardinfo( 0 , 0 , 5 ) != 0 ) && ( dvarbool( "splitscreen" ) ) && ( dvarbool( "hiDef" ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 138.667 32 10 8
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "cardtitle_140x32"
+			textscale 0.55
+			exp rect x ( ( 0 - ( 208 / 1.5 ) ) )
+			exp rect y ( ( 0 ) )
+			visible when ( ( getplayercardinfo( 0 , 0 , 5 ) != 0 ) && ( dvarbool( "splitscreen" ) ) && ( ! ( dvarbool( "hiDef" ) ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 106.667 21.3333 10 8
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.31875
+			textstyle 8
+			exp rect x ( 0 - ( 208 / 1.5 ) )
+			exp rect y ( 0 - ( 2 / 1.5 ) )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 0 , 5 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 0 , 5 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 0 , 5 ) , 5 ) )
+			visible when ( ( getplayercardinfo( 0 , 0 , 5 ) != 0 ) && ( dvarbool( "splitscreen" ) ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 0 , 5 ) , 1 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 0 , 5 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 106.667 12 10 8
+			decoration
+			visible 1
+			forecolor 0.6 0.8 0.6 1
+			textfont 10
+			textalign 4
+			textalignx 5.33333
+			textscale 0.2222
+			textstyle 8
+			exp rect x ( 0 - ( 208 / 1.5 ) )
+			exp rect y ( ( 0 ) + ( 28 / 1.5 ) )
+			visible when ( ( ( getplayercardinfo( 0 , 0 , 5 ) != 0 ) && ( getplayercardinfo( 6 , 0 , 5 ) && getplayercardinfo( 6 , 0 , 5 ) == ( ( ( team( "name" ) == "TEAM_AXIS" ) * 1 ) + ( ( team( "name" ) == "TEAM_ALLIES" ) * 2 ) ) ) ) && ( dvarbool( "splitscreen" ) ) )
+			exp text ( getplayercardinfo( 8 , 0 , 5 ) )
+		}
+		itemDef
+		{
+			rect 0 0 106.667 12 10 8
+			decoration
+			visible 1
+			forecolor 0.8 0.35 0.4 1
+			textfont 10
+			textalign 4
+			textalignx 5.33333
+			textscale 0.2222
+			textstyle 8
+			exp rect x ( 0 - ( 208 / 1.5 ) )
+			exp rect y ( ( 0 ) + ( 28 / 1.5 ) )
+			visible when ( ( ( getplayercardinfo( 0 , 0 , 5 ) != 0 ) && ( !getplayercardinfo( 6 , 0 , 5 ) || getplayercardinfo( 6 , 0 , 5 ) != ( ( ( team( "name" ) == "TEAM_AXIS" ) * 1 ) + ( ( team( "name" ) == "TEAM_ALLIES" ) * 2 ) ) ) ) && ( dvarbool( "splitscreen" ) ) )
+			exp text ( getplayercardinfo( 8 , 0 , 5 ) )
+		}
+		itemDef
+		{
+			rect 0 0 32 32 10 8
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( 0 - ( 208 / 1.5 ) ) + ( 160 / 1.5 ) )
+			exp rect y ( ( 0 ) )
+			visible when ( ( getplayercardinfo( 0 , 0 , 5 ) != 0 ) && ( dvarbool( "splitscreen" ) ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 0 , 5 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 138.667 13.3333 10 8
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			glowColor 1 0.8 0.6 1
+			textfont 6
+			textalign 4
+			textalignx 5.33333
+			textscale 0.25
+			textstyle 8
+			exp rect x ( ( 0 - ( 208 / 1.5 ) ) + ( max( min( ( 1 - ( milliseconds( ) - localvarint( "callout_update_time" ) ) / ( 150 / 1.5 ) ) , 1 ) , 0 ) * 500 ) )
+			exp rect y ( ( 0 ) + ( 47 / 1.5 ) )
+			visible when ( ( getplayercardinfo( 0 , 0 , 5 ) != 0 ) && ( dvarbool( "splitscreen" ) ) )
+			exp text ( getsplashdescription( 1 ) )
+		}
+	}
+}

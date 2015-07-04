@@ -1,0 +1,27 @@
+/********************************************
+*          dumped by: aerosoul94            *
+*********************************************/
+
+{
+	menuDef
+	{
+		name "killedby_card_display"
+		rect 0 0 640 1 1 0
+		decoration
+		forecolor 1 1 1 1
+		onOpen
+		{
+			setLocalVarInt "ui_show_killedBy" ( milliseconds( ) );
+			setLocalVarInt "ui_show_youKilled" ( 0 );
+			if ( getperk( "perk4" ) == "specialty_copycat" )
+			{
+				setLocalVarInt "ui_show_copyCat" ( 1 );
+			}
+			else
+			{
+				setLocalVarInt "ui_show_copyCat" ( 0 );
+			}
+			close self;
+		}
+	}
+}

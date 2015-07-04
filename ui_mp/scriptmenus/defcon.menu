@@ -1,0 +1,71 @@
+/********************************************
+*          dumped by: aerosoul94            *
+*********************************************/
+
+{
+	menuDef
+	{
+		name "defcon"
+		rect 0 0 640 1 1 0
+		decoration
+		forecolor 1 1 1 1
+		onOpen
+		{
+			lerp "scale" "from" "10" "to" 1 "over" "0.15";
+			lerp "alpha" "from" 0 "to" 1 "over" "0.15";
+			setLocalVarInt "defcon_update_time" ( milliseconds( ) + 1000 );
+			setLocalVarString "ui_defcon_splashMaterial" ( getsplashmaterial( 0 ) );
+			close "splash";
+			close "challenge";
+			close "killstreak_pickup";
+			close "killstreak";
+			close "perk_challenge";
+		}
+		onRequestClose
+		{
+			lerp "scale" "from" 1 "to" "10" "over" "0.15";
+			lerp "alpha" "from" 1 "to" 0 "over" "0.15";
+		}
+		itemDef
+		{
+			name "defcon_title"
+			rect 0 -134 0 0 2 2
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 1
+			textscale 0.5833
+			textstyle 3
+			exp glowcolor r ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 5 ) )
+			exp glowcolor g ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 6 ) )
+			exp glowcolor b ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 7 ) )
+			exp glowcolor a ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 8 ) )
+			exp text ( getsplashtext( 0 ) )
+		}
+		itemDef
+		{
+			name "defcon_description"
+			rect 0 -90 0 0 2 2
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textalign 1
+			textscale 0.375
+			textstyle 3
+			visible when ( ( ! ( dvarbool( "splitscreen" ) ) ) )
+			exp text ( getsplashdescription( 0 ) )
+		}
+		itemDef
+		{
+			name "defcon_icon"
+			rect -62.5 -130 125 14 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp material ( localvarstring( "ui_defcon_splashMaterial" ) )
+		}
+	}
+}

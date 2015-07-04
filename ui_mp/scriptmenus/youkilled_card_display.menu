@@ -1,0 +1,18 @@
+/********************************************
+*          dumped by: aerosoul94            *
+*********************************************/
+
+{
+	menuDef
+	{
+		name "youkilled_card_display"
+		rect 0 0 640 1 1 0
+		decoration
+		forecolor 1 1 1 1
+		onOpen
+		{
+			setLocalVarInt "ui_show_youKilled" ( milliseconds( ) );
+			close self;
+		}
+	}
+}

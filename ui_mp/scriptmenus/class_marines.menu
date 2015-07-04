@@ -1,0 +1,17 @@
+/********************************************
+*          dumped by: aerosoul94            *
+*********************************************/
+
+{
+	menuDef
+	{
+		name "class_marines"
+		rect 0 0 0 0 0 0
+		forecolor 1 1 1 1
+		onOpen
+		{
+			setLocalVarString "ui_team" ( "marines" );
+			open "class" close self;
+		}
+	}
+}

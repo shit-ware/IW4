@@ -1,0 +1,33 @@
+/********************************************
+*          dumped by: aerosoul94            *
+*********************************************/
+
+{
+	menuDef
+	{
+		name "dirt_effect_left"
+		rect 0 0 640 480 8 8
+		decoration
+		forecolor 1 1 1 1
+		onOpen
+		{
+			lerp "alpha" "from" 0 "to" 1 "over" "0.05";
+			lerp "scale" "from" 0 "to" 1 "over" "0.05";
+			lerp x "from" - "1000" "to" 0 "over" "0.05";
+		}
+		onRequestClose
+		{
+			lerp "alpha" "from" 1 "to" 0 "over" "1.0";
+		}
+		itemDef
+		{
+			rect -682.667 -341.333 1365.33 682.667 2 2
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "fullscreen_dirt_left"
+			textscale 0.55
+		}
+	}
+}

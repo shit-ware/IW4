@@ -1,0 +1,385 @@
+/********************************************
+*          dumped by: aerosoul94            *
+*********************************************/
+
+{
+	menuDef
+	{
+		name "scoreboard"
+		rect 0 0 640 480 0 0
+		forecolor 1 1 1 1
+		onEsc
+		{
+			close "scoreboard";
+		}
+		itemDef
+		{
+			rect 0 3 -640 22 4 1
+			style 3
+			decoration
+			visible 1
+			forecolor 0.5 0.5 0.5 0.75
+			background "gradient_fadein"
+			textscale 0.55
+			visible when ( !dvarint( "splitscreen" ) )
+		}
+		itemDef
+		{
+			rect 0 -4 36 36 1 1
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( team( "name" ) == "TEAM_ALLIES" && !dvarint( "splitscreen" ) )
+			exp material ( dvarstring( "g_TeamIcon_Allies" ) )
+		}
+		itemDef
+		{
+			rect 0 -4 36 36 1 1
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( team( "name" ) == "TEAM_SPECTATOR" && !dvarint( "splitscreen" ) )
+			exp material ( dvarstring( "g_TeamIcon_Allies" ) )
+		}
+		itemDef
+		{
+			rect 0 -4 36 36 1 1
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( team( "name" ) == "TEAM_AXIS" && !dvarint( "splitscreen" ) )
+			exp material ( dvarstring( "g_TeamIcon_Axis" ) )
+		}
+		itemDef
+		{
+			rect 0 -4 36 36 1 1
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( team( "name" ) == "TEAM_FREE" && !dvarint( "splitscreen" ) )
+			exp material ( dvarstring( "g_TeamIcon_Allies" ) )
+		}
+		itemDef
+		{
+			rect 36 22 1 1 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textscale 0.3333
+			textstyle 3
+			visible when ( ( team( "name" ) == "TEAM_ALLIES" || team( "name" ) == "TEAM_AXIS" ) && !dvarint( "splitscreen" ) )
+			exp text ( team( "score" ) )
+		}
+		itemDef
+		{
+			rect 36 22 1 1 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textscale 0.3333
+			textstyle 3
+			visible when ( team( "name" ) == "TEAM_FREE" && !dvarint( "splitscreen" ) )
+			exp text ( player( "score" ) )
+		}
+		itemDef
+		{
+			rect 95 -4 36 36 1 1
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( team( "name" ) == "TEAM_AXIS" && !dvarint( "splitscreen" ) )
+			exp material ( dvarstring( "g_TeamIcon_Allies" ) )
+		}
+		itemDef
+		{
+			rect 95 -4 36 36 1 1
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( team( "name" ) == "TEAM_SPECTATOR" && !dvarint( "splitscreen" ) )
+			exp material ( dvarstring( "g_TeamIcon_Axis" ) )
+		}
+		itemDef
+		{
+			rect 95 -4 36 36 1 1
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( team( "name" ) == "TEAM_ALLIES" && !dvarint( "splitscreen" ) )
+			exp material ( dvarstring( "g_TeamIcon_Axis" ) )
+		}
+		itemDef
+		{
+			rect 134 22 1 1 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textscale 0.3333
+			textstyle 3
+			visible when ( ( team( "name" ) == "TEAM_ALLIES" || team( "name" ) == "TEAM_AXIS" ) && !dvarint( "splitscreen" ) )
+			exp text ( otherteam( "score" ) )
+		}
+		itemDef
+		{
+			rect 0 22 0 0 9 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 1
+			textscale 0.375
+			textstyle 3
+			exp rect x ( ( !dvarbool( "widescreen" ) * 64 ) )
+			visible when ( ( team( "name" ) == "TEAM_ALLIES" || team( "name" ) == "TEAM_AXIS" ) && team( "score" ) > otherteam( "score" ) && timeleft( ) % 8 > 3 && !dvarint( "splitscreen" ) && !dvarint( "ui_bomb_timer" ) )
+			exp text ( locstring( "@MENU_SCORE_WINNING_WITH" , team( "score" ) , dvarint( "ui_scorelimit" ) ) )
+		}
+		itemDef
+		{
+			rect 0 22 0 0 9 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 1
+			textscale 0.375
+			textstyle 3
+			exp rect x ( ( !dvarbool( "widescreen" ) * 64 ) )
+			visible when ( ( team( "name" ) == "TEAM_ALLIES" || team( "name" ) == "TEAM_AXIS" ) && team( "score" ) < otherteam( "score" ) && timeleft( ) % 8 > 3 && !dvarint( "splitscreen" ) && !dvarint( "ui_bomb_timer" ) )
+			exp text ( locstring( "@MENU_SCORE_LOSING_WITH" , team( "score" ) , dvarint( "ui_scorelimit" ) ) )
+		}
+		itemDef
+		{
+			rect 0 22 0 0 9 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 1
+			textscale 0.375
+			textstyle 3
+			exp rect x ( ( !dvarbool( "widescreen" ) * 64 ) )
+			visible when ( ( team( "name" ) == "TEAM_ALLIES" || team( "name" ) == "TEAM_AXIS" ) && team( "score" ) == otherteam( "score" ) && timeleft( ) % 8 > 3 && !dvarint( "splitscreen" ) && !dvarint( "ui_bomb_timer" ) )
+			exp text ( locstring( "@MENU_SCORE_TIED_WITH" , team( "score" ) , dvarint( "ui_scorelimit" ) ) )
+		}
+		itemDef
+		{
+			rect 0 22 0 0 9 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 1
+			textscale 0.3333
+			textstyle 3
+			exp rect x ( ( !dvarbool( "widescreen" ) * 64 ) )
+			visible when ( ( dvarint( "ui_bomb_timer" ) || timeleft( ) % 8 < 4 || timeleft( ) < 0 ) && !dvarint( "splitscreen" ) )
+			exp text ( gametypename( ) )
+		}
+		itemDef
+		{
+			rect 0 32 0 0 9 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 1
+			textscale 0.6666
+			textstyle 3
+			visible when ( ( team( "name" ) == "TEAM_ALLIES" || team( "name" ) == "TEAM_AXIS" ) && team( "score" ) > otherteam( "score" ) && timeleft( ) % 8 > 3 && dvarint( "splitscreen" ) )
+			exp text ( locstring( "@MENU_SCORE_WINNING_WITH" , team( "score" ) , dvarint( "ui_scorelimit" ) ) )
+		}
+		itemDef
+		{
+			rect 0 32 0 0 9 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 1
+			textscale 0.6666
+			textstyle 3
+			visible when ( ( team( "name" ) == "TEAM_ALLIES" || team( "name" ) == "TEAM_AXIS" ) && team( "score" ) < otherteam( "score" ) && timeleft( ) % 8 > 3 && dvarint( "splitscreen" ) )
+			exp text ( locstring( "@MENU_SCORE_LOSING_WITH" , team( "score" ) , dvarint( "ui_scorelimit" ) ) )
+		}
+		itemDef
+		{
+			rect 0 32 0 0 9 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 1
+			textscale 0.6666
+			textstyle 3
+			visible when ( ( team( "name" ) == "TEAM_ALLIES" || team( "name" ) == "TEAM_AXIS" ) && team( "score" ) == otherteam( "score" ) && timeleft( ) % 8 > 3 && dvarint( "splitscreen" ) )
+			exp text ( locstring( "@MENU_SCORE_TIED_WITH" , team( "score" ) , dvarint( "ui_scorelimit" ) ) )
+		}
+		itemDef
+		{
+			rect 0 32 0 0 9 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 1
+			textscale 0.6666
+			textstyle 3
+			visible when ( ( timeleft( ) % 8 < 4 || timeleft( ) < 0 ) && dvarint( "splitscreen" ) )
+			exp text ( gametypename( ) )
+		}
+		itemDef
+		{
+			rect 36 22 1 1 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textscale 0.3333
+			textstyle 3
+			visible when ( team( "name" ) == "TEAM_SPECTATOR" && !dvarbool( "splitscreen" ) )
+			exp text ( marinesfield( "score" ) )
+		}
+		itemDef
+		{
+			rect 134 22 1 1 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textscale 0.3333
+			textstyle 3
+			visible when ( team( "name" ) == "TEAM_SPECTATOR" && !dvarbool( "splitscreen" ) )
+			exp text ( opforfield( "score" ) )
+		}
+		itemDef
+		{
+			rect 0 22 1 1 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 2
+			textscale 0.3333
+			textstyle 3
+			visible when ( timeleft( ) >= 30 && !dvarint( "splitscreen" ) && !dvarint( "ui_bomb_timer" ) )
+			exp text ( secondsascountdown( timeleft( ) ) )
+		}
+		itemDef
+		{
+			rect 0 22 1 1 3 1
+			decoration
+			visible 1
+			forecolor 1 0.75 0 1
+			textfont 10
+			textalign 2
+			textscale 0.3333
+			textstyle 3
+			visible when ( timeleft( ) >= 10 && timeleft( ) < 30 && !dvarint( "splitscreen" ) && !dvarint( "ui_bomb_timer" ) )
+			exp text ( secondsascountdown( timeleft( ) ) )
+		}
+		itemDef
+		{
+			rect 0 22 1 1 3 1
+			decoration
+			visible 1
+			forecolor 1 0.5 0 1
+			textfont 10
+			textalign 2
+			textscale 0.3333
+			textstyle 3
+			visible when ( timeleft( ) >= 0 && timeleft( ) < 10 && !dvarint( "splitscreen" ) && !dvarint( "ui_bomb_timer" ) )
+			exp text ( secondsascountdown( timeleft( ) ) )
+		}
+		itemDef
+		{
+			rect 0 225 640 60 4 0
+			style 3
+			decoration
+			visible 1
+			forecolor 0 0 0 1
+			background "line_horizontal_scorebar"
+			textscale 0.55
+			exp forecolor a ( scoreboardexternalmutenotice( ) )
+			visible when ( !dvarint( "splitscreen" ) )
+		}
+		itemDef
+		{
+			rect 0 225 640 2 4 0
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "line_horizontal_scorebar"
+			textscale 0.55
+			exp forecolor a ( scoreboardexternalmutenotice( ) )
+			visible when ( !dvarint( "splitscreen" ) )
+		}
+		itemDef
+		{
+			rect 0 285 640 2 4 0
+			style 3
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			background "line_horizontal_scorebar"
+			textscale 0.55
+			exp forecolor a ( scoreboardexternalmutenotice( ) )
+			visible when ( !dvarint( "splitscreen" ) )
+		}
+		itemDef
+		{
+			rect 320 264 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 1
+			textscale 0.4583
+			textstyle 3
+			text "@XBOXLIVE_EXTERNALMUTE_TITLE"
+			exp forecolor a ( scoreboardexternalmutenotice( ) )
+		}
+	}
+	menuDef
+	{
+		name "popup_unmutable"
+		rect 0 0 640 480 0 0
+		style 1
+		popup
+		visible 1
+		forecolor 1 1 1 1
+		focuscolor 1 1 1 1
+		onEsc
+		{
+			close "popup_unmutable";
+		}
+		itemDef
+		{
+			rect 320 254 0 0 0 0
+			decoration
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			textfont 1
+			textalign 1
+			textscale 0.4583
+			text "@MENU_DOWNLOADING"
+		}
+	}
+}

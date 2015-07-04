@@ -1,0 +1,358 @@
+/********************************************
+*          dumped by: aerosoul94            *
+*********************************************/
+
+{
+	menuDef
+	{
+		name "background_systemlink"
+		rect 0 0 640 480 0 0
+		style 1
+		forecolor 1 1 1 1
+		focuscolor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		onOpen
+		{
+			uiScript "UpdateFilter";
+			setfocus "serverlist";
+		}
+		onEsc
+		{
+			scriptmenuresponse "popMenu";
+			close "background_systemlink";
+			open "background_main";
+		}
+		itemDef
+		{
+			rect 48 36 544 408 0 0
+			style 1
+			decoration
+			forecolor 1 1 1 1
+			backcolor 1 0 0 0.5
+			textscale 0.55
+		}
+		itemDef
+		{
+			name "select"
+			rect 415 422 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.4583
+			text "@PLATFORM_SELECT"
+			visible when ( !menuisopen( "menu_xboxlive_party" ) )
+		}
+		itemDef
+		{
+			name "cancel"
+			rect 505 422 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.4583
+			text "@PLATFORM_BACK"
+		}
+		itemDef
+		{
+			name "refresh"
+			rect 200 438 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textscale 0.4583
+			text "@PLATFORM_REFRESH"
+		}
+		itemDef
+		{
+			name "refresh"
+			rect 200 438 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			type 1
+			textscale 0.55
+			execKey "BUTTON_X"
+			{
+				play "mouse_click";
+				uiScript "RefreshServers";
+			}
+		}
+		itemDef
+		{
+			name "creategame"
+			rect 290 438 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textscale 0.4583
+			text "@PLATFORM_CREATEGAME"
+		}
+		itemDef
+		{
+			name "creategame"
+			rect 290 438 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			type 1
+			textscale 0.55
+			execKey "BUTTON_Y"
+			{
+				play "mouse_click";
+				close "background_systemlink";
+				scriptmenuresponse "gamesetup_systemlink";
+			}
+		}
+		itemDef
+		{
+			rect 51 64 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textscale 0.4583
+			text "@MENU_HOST_NAME"
+		}
+		itemDef
+		{
+			rect 260 64 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textscale 0.4583
+			text "@MENU_MAP_NAME"
+		}
+		itemDef
+		{
+			rect 432 64 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textscale 0.4583
+			text "@MENU_NUMPLAYERS"
+		}
+		itemDef
+		{
+			rect 513 64 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textscale 0.4583
+			text "@MENU_TYPE1"
+		}
+		itemDef
+		{
+			rect 256 66 1 349 0 0
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 0.5
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 428 66 1 349 0 0
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 0.5
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 510 66 1 349 0 0
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 0.5
+			textscale 0.55
+		}
+		itemDef
+		{
+			name "serverlist"
+			rect 45 63 564 352 0 0
+			style 1
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			outlinecolor 0.19 0.3 0.2 0.45
+			type 6
+			textfont 1
+			textalignx 1
+			textscale 0.4583
+			feeder 2
+			elementwidth 120
+			elementheight 18
+//			numcol			xpos	xwidth	textlen	  alignment
+			columns 4		0		35		40		  0
+							209		45		25		  0
+							381		5		10		  0
+							462		20		10		  0
+			noscrollbars
+			doubleclick
+			{
+				uiScript "JoinServer";
+				close "background_systemlink";
+			}
+		}
+		itemDef
+		{
+			rect -100 0 100 600 1 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.6 0.8 0.5
+			textscale 0.55
+			dvarTest "ui_safearea"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect 0 -600 100 600 3 3
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.6 0.8 0.5
+			textscale 0.55
+			dvarTest "ui_safearea"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect -900 -100 900 100 3 1
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.6 0.8 0.5
+			textscale 0.55
+			dvarTest "ui_safearea"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect 0 0 900 100 1 3
+			style 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.6 0.8 0.5
+			textscale 0.55
+			dvarTest "ui_safearea"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect 390 56 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textscale 0.375
+			visible when ( dvarstring( "ui_debug_localVarString" ) != "" )
+			exp text ( dvarstring( "ui_debug_localVarString" ) + ": " + localvarstring( dvarstring( "ui_debug_localVarString" ) ) )
+		}
+		itemDef
+		{
+			rect 390 72 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textscale 0.375
+			visible when ( dvarstring( "ui_debug_localVarInt" ) != "" )
+			exp text ( dvarstring( "ui_debug_localVarInt" ) + ": " + localvarint( dvarstring( "ui_debug_localVarInt" ) ) )
+		}
+		itemDef
+		{
+			rect 390 72 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textscale 0.375
+			visible when ( dvarstring( "ui_debug_localVarBool" ) != "" )
+			exp text ( dvarstring( "ui_debug_localVarBool" ) + ": " + localvarbool( dvarstring( "ui_debug_localVarBool" ) ) )
+		}
+	}
+	menuDef
+	{
+		name "background_systemlink_setup"
+		rect 0 0 640 480 0 0
+		style 1
+		forecolor 1 1 1 1
+		focuscolor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		onOpen
+		{
+			execnow "set ui_mapname mp_argun" execnow "set ui_mapname_text @MPUI_ARGUN" execnow "set ui_gametype war" execnow "set ui_gametype_text @MPUI_WAR";
+		}
+		onEsc
+		{
+			exec "splitscreencontrols";
+			close "background_systemlink_setup";
+			open "background_systemlink";
+		}
+		itemDef
+		{
+			rect 48 36 544 408 0 0
+			style 1
+			decoration
+			forecolor 1 1 1 1
+			backcolor 1 0 0 0.5
+			textscale 0.55
+		}
+		itemDef
+		{
+			name "select"
+			rect 415 422 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.4583
+			text "@PLATFORM_SELECT"
+			visible when ( !menuisopen( "menu_xboxlive_party" ) )
+		}
+		itemDef
+		{
+			name "cancel"
+			rect 505 422 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 4
+			textscale 0.4583
+			text "@PLATFORM_BACK"
+		}
+		itemDef
+		{
+			rect 48 40 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 0.8 0.4 1
+			textfont 1
+			textscale 0.5833
+			text "SYSTEMLINK GAME SETUP"
+		}
+	}
+}
