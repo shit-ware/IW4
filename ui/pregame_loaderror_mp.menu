@@ -1,0 +1,159 @@
+{
+	menuDef
+	{
+		name pregame_loaderror_mp
+		fullscreen 0
+		rect 0 0 640 480
+		style 1
+		border 0
+		ownerdraw 0
+		ownerdrawFlag 0
+		borderSize 0
+		foreColor 1 1 1 1
+		backColor 1 1 1 0
+		borderColor 0 0 0 0
+		outlineColor 0 0 0 0
+		fadeCycle 0
+		fadeClamp 0
+		fadeAmount 0
+		fadeInAmount 0
+		blurWorld 6
+		onOpen
+		{
+			"setdvar" "ui_SaveLoadVisible" 0;
+		}
+		onClose
+		{
+			"uiScript" "clearError";
+		}
+		focusColor 1 1 1 1
+		itemDef
+		{
+			rect -107 0 854 480
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0.2 0.2 0.2 0.5
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			name profile
+			rect 40 40 560 400
+			style 0
+			border 0
+			ownerdraw 264
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 8
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			name errorinfo
+			rect 120 142 400 255
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 0.2 0.2 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			autoWrapped 
+			type 0
+			align 0
+			textAlign 5
+			textAlignX 0
+			textAlignY 0
+			textScale 0.8
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			dvar com_errorMessage
+		}
+		itemDef
+		{
+			rect 0 388 640 45
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 1
+			align 0
+			textAlign 5
+			textAlignX 0
+			textAlignY 4
+			textScale 0.5833
+			textStyle 0
+			textFont 0
+			feeder 0
+			text "@MENU_PRESS_START"
+			visible 1
+		}
+		itemDef
+		{
+			rect -128 0 896 480
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 0
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			action
+			{
+				"uiScript" "clearLoadErrorsSummary";
+			}
+		}
+	}
+}

@@ -1,0 +1,2900 @@
+{
+	menuDef
+	{
+		name levels_game
+		fullscreen 1
+		rect 0 0 640 480
+		style 0
+		border 0
+		ownerdraw 0
+		ownerdrawFlag 0
+		borderSize 0
+		foreColor 1 1 1 1
+		backColor 0 0 0 0
+		borderColor 0 0 0 0
+		outlineColor 0 0 0 0
+		soundLoop music_mainmenu_mp
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		fadeInAmount 0
+		blurWorld 0
+		onOpen
+		{
+			"focusFirst";
+		}
+		onESC
+		{
+			"close" "self";
+		}
+		focusColor 1 1 1 1
+		itemDef
+		{
+			rect -107 0 854 480
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background animbg_blur_back
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -107 0 1708 480
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background animbg_blur_fogscroll
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp (null) (null) ( ( - 107 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) )  )
+		}
+		itemDef
+		{
+			rect -107 0 854 480
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background animbg_blur_front
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -120 -32 378 64
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 0.95 0.175
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 258 -32 16 -64
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 0.95 0.175
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 56 448 528 40
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 0.95 0.175
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 584 448 16 64
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 0.95 0.175
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 40 448 -16 64
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 0.95 0.175
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -120 464 160 32
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 0.95 0.175
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 600 464 160 32
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 0.95 0.175
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			name back
+			rect -250 -26 40 20 2 3
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 18
+			textScale 0.375
+			textStyle 3
+			textFont 1
+			feeder 0
+			text "@MENU_BACK"
+			visible 1
+			mouseEnter
+			{
+				"play" "mouse_over";
+			}
+			action
+			{
+				"play" "mouse_click";
+				"close" "self";
+				"open" "main_text";
+			}
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 48 40 0 0
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 0.8 0.4 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 4
+			textAlignX -36
+			textAlignY -36
+			textScale 0.5833
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			exp text ( "Game Levels"  )
+		}
+		itemDef
+		{
+			rect 45 40 292.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+		}
+		itemDef
+		{
+			rect 337.5 40 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 45 40 292.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 2
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0.8 0.95 1 0.4
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 1 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 337.5 40 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 1 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 45 40 298 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "levels"  );
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"setdvar" "ui_load_level" "trainer";
+				"open" "popmenu_difficulty";
+			}
+			exp text ( "Desert Training (McCord/Jake)"  )
+		}
+		itemDef
+		{
+			rect 45 64 292.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+		}
+		itemDef
+		{
+			rect 337.5 64 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 45 64 292.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 2
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0.8 0.95 1 0.4
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 2 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 337.5 64 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 2 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 45 64 298 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "levels"  );
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"setdvar" "ui_load_level" "roadkill";
+				"open" "popmenu_difficulty";
+			}
+			exp text ( "Roadkill (Royce/Mackey)"  )
+		}
+		itemDef
+		{
+			rect 45 88 292.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+		}
+		itemDef
+		{
+			rect 337.5 88 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 45 88 292.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 2
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0.8 0.95 1 0.4
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 3 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 337.5 88 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 3 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 45 88 298 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "levels"  );
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"setdvar" "ui_load_level" "cliffhanger";
+				"open" "popmenu_difficulty";
+			}
+			exp text ( "Cliffhanger (Mackey/Zied)"  )
+		}
+		itemDef
+		{
+			rect 45 112 292.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+		}
+		itemDef
+		{
+			rect 337.5 112 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 45 112 292.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 2
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0.8 0.95 1 0.4
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 4 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 337.5 112 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 4 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 45 112 298 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "levels"  );
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"setdvar" "ui_load_level" "airport";
+				"open" "popmenu_difficulty";
+			}
+			exp text ( "Airport (Mo)"  )
+		}
+		itemDef
+		{
+			rect 45 136 292.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+		}
+		itemDef
+		{
+			rect 337.5 136 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 45 136 292.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 2
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0.8 0.95 1 0.4
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 5 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 337.5 136 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 5 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 45 136 298 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "levels"  );
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"setdvar" "ui_load_level" "favela";
+				"open" "popmenu_difficulty";
+			}
+			exp text ( "Favela (Chad)"  )
+		}
+		itemDef
+		{
+			rect 45 160 292.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+		}
+		itemDef
+		{
+			rect 337.5 160 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 45 160 292.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 2
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0.8 0.95 1 0.4
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 6 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 337.5 160 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 6 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 45 160 298 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "levels"  );
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"setdvar" "ui_load_level" "invasion";
+				"open" "popmenu_difficulty";
+			}
+			exp text ( "Invasion (Zied)"  )
+		}
+		itemDef
+		{
+			rect 45 184 292.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+		}
+		itemDef
+		{
+			rect 337.5 184 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 45 184 292.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 2
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0.8 0.95 1 0.4
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 7 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 337.5 184 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 7 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 45 184 298 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "levels"  );
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"setdvar" "ui_load_level" "favela_escape";
+				"open" "popmenu_difficulty";
+			}
+			exp text ( "Favela Escape (Porter/Sean)"  )
+		}
+		itemDef
+		{
+			rect 45 208 292.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+		}
+		itemDef
+		{
+			rect 337.5 208 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 45 208 292.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 2
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0.8 0.95 1 0.4
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 8 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 337.5 208 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 8 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 45 208 298 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "levels"  );
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"setdvar" "ui_load_level" "arcadia";
+				"open" "popmenu_difficulty";
+			}
+			exp text ( "Arcadia (Rocket/Chad)"  )
+		}
+		itemDef
+		{
+			rect 45 232 292.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+		}
+		itemDef
+		{
+			rect 337.5 232 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 45 232 292.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 2
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0.8 0.95 1 0.4
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 9 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 337.5 232 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 9 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 45 232 298 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "levels"  );
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"setdvar" "ui_load_level" "oilrig";
+				"open" "popmenu_difficulty";
+			}
+			exp text ( "Oilrig (Jake)"  )
+		}
+		itemDef
+		{
+			rect 45 256 292.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+		}
+		itemDef
+		{
+			rect 337.5 256 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 45 256 292.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 2
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0.8 0.95 1 0.4
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 10 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 337.5 256 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 10 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 45 256 298 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "levels"  );
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"setdvar" "ui_load_level" "gulag";
+				"open" "popmenu_difficulty";
+			}
+			exp text ( "Gulag (McCord/Mackey)"  )
+		}
+		itemDef
+		{
+			rect 45 280 292.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+		}
+		itemDef
+		{
+			rect 337.5 280 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 45 280 292.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 2
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0.8 0.95 1 0.4
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 11 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 337.5 280 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 11 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 45 280 298 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "levels"  );
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"setdvar" "ui_load_level" "dcburning";
+				"open" "popmenu_difficulty";
+			}
+			exp text ( "DC Burning (McCord/Jake)"  )
+		}
+		itemDef
+		{
+			rect 45 304 292.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+		}
+		itemDef
+		{
+			rect 337.5 304 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 45 304 292.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 2
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0.8 0.95 1 0.4
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 12 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 337.5 304 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 12 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 45 304 298 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "levels"  );
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"setdvar" "ui_load_level" "contingency";
+				"open" "popmenu_difficulty";
+			}
+			exp text ( "Contingency (Julian/Zied)"  )
+		}
+		itemDef
+		{
+			rect 45 328 292.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+		}
+		itemDef
+		{
+			rect 337.5 328 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 45 328 292.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 2
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0.8 0.95 1 0.4
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 13 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 337.5 328 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 13 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 45 328 298 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "levels"  );
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"setdvar" "ui_load_level" "dcemp";
+				"open" "popmenu_difficulty";
+			}
+			exp text ( "DC EMP (Mo/Rocket/McCord)"  )
+		}
+		itemDef
+		{
+			rect 45 352 292.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+		}
+		itemDef
+		{
+			rect 337.5 352 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 45 352 292.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 2
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0.8 0.95 1 0.4
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 14 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 337.5 352 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 14 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 45 352 298 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "levels"  );
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"setdvar" "ui_load_level" "estate";
+				"open" "popmenu_difficulty";
+			}
+			exp text ( "Estate (Steve/Julian)"  )
+		}
+		itemDef
+		{
+			rect 325 40 292.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+		}
+		itemDef
+		{
+			rect 617.5 40 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 325 40 292.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 2
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0.8 0.95 1 0.4
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 15 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 617.5 40 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 15 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 325 40 298 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "levels"  );
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"setdvar" "ui_load_level" "boneyard";
+				"open" "popmenu_difficulty";
+			}
+			exp text ( "Boneyard (Ned/Roger)"  )
+		}
+		itemDef
+		{
+			rect 325 64 292.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+		}
+		itemDef
+		{
+			rect 617.5 64 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 325 64 292.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 2
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0.8 0.95 1 0.4
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 16 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 617.5 64 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 16 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 325 64 298 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "levels"  );
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"setdvar" "ui_load_level" "af_caves";
+				"open" "popmenu_difficulty";
+			}
+			exp text ( "Afghan Caves (Ned)"  )
+		}
+		itemDef
+		{
+			rect 325 88 292.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+		}
+		itemDef
+		{
+			rect 617.5 88 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 325 88 292.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 2
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0.8 0.95 1 0.4
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 17 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 617.5 88 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 17 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 325 88 298 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "levels"  );
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"setdvar" "ui_load_level" "af_chase";
+				"open" "popmenu_difficulty";
+			}
+			exp text ( "Afghan Chase (Dionne/Nate)"  )
+		}
+		itemDef
+		{
+			rect 325 112 292.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+		}
+		itemDef
+		{
+			rect 617.5 112 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 325 112 292.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 2
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0.8 0.95 1 0.4
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 18 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 617.5 112 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 18 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 325 112 298 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "levels"  );
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"setdvar" "ui_load_level" "ending";
+				"exec" "devmap ending";
+			}
+			exp text ( "Character Museum"  )
+		}
+	}
+}

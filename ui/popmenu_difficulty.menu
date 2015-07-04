@@ -1,0 +1,1012 @@
+{
+	menuDef
+	{
+		name popmenu_difficulty
+		fullscreen 0
+		rect -150 -102 300 204 2 2
+		style 1
+		border 0
+		ownerdraw 0
+		ownerdrawFlag 0
+		borderSize 0
+		foreColor 1 1 1 1
+		backColor 1 1 1 1
+		borderColor 0 0 0 0
+		outlineColor 0 0 0 0
+		background white
+		exp rect Y ( 0 - ( 24 + 9 * 20 ) / 2  )
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		fadeInAmount 0
+		blurWorld 0
+		onOpen
+		{
+			"setfocusbydvar" "g_gameskill";
+			"exec" "set splitscreen 0";
+		}
+		onESC
+		{
+			"close" "self";
+		}
+		focusColor 1 1 1 1
+		popup 
+		outOfBoundsClick 
+		allowedBinding +talk
+		itemDef
+		{
+			rect -1004 -582 3416 1920 2 2
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0.35
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -854 -480
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -1004 -582 3416 1920 2 2
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 1 1 1 1
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -854 -480
+			background xpbar_stencilbase
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -427 -102 854 204 2 2
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0.5 0.5 0.5 1
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -277 0
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -150 -102 1708 480 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.75
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			background mw2_popup_bg_fogstencil
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp (null) (null) ( ( 0 - ( 854 - 300 ) * 0.500000 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) )  )
+		}
+		itemDef
+		{
+			rect -150 -102 -1708 -480 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.85 0.85 0.85 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			background mw2_popup_bg_fogscroll
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp (null) (null) ( ( 0 - ( 854 - 300 ) * 0.500000 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) )  )
+		}
+		itemDef
+		{
+			rect -427 -102 854 0 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -277 0
+			background mockup_popup_bg_stencilfill
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp (null) (null) ( ( 24 + 9 * 20 )  )
+		}
+		itemDef
+		{
+			rect -150 -102 -1708 -480 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.75
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			background mw2_popup_bg_fogstencil
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp (null) (null) ( ( 0 - ( 854 - 300 ) * 0.500000 ) + ( 0 - 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) )  )
+		}
+		itemDef
+		{
+			rect -150 -102 -1708 -480 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.85 0.85 0.85 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			background mw2_popup_bg_fogscroll
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp (null) (null) ( ( 0 - ( 854 - 300 ) * 0.500000 ) + ( 0 - 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) )  )
+		}
+		itemDef
+		{
+			rect -491 -166 64 64 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -341 -64
+			background drop_shadow_tl
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect -427 -166 854 64 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -277 -64
+			background drop_shadow_t
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 427 -166 64 64 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 577 -64
+			background drop_shadow_tr
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 427 -102 64 204 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 577 0
+			background drop_shadow_r
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 427 102 64 64 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 577 204
+			background drop_shadow_br
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect -427 102 854 64 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -277 204
+			background drop_shadow_b
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect -491 102 64 64 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -341 204
+			background drop_shadow_bl
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect -491 -102 64 204 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -341 0
+			background drop_shadow_l
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect -150 -102 300 24 2 2
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 4
+			textAlignX 4
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 9
+			feeder 0
+			text "@MENU_SELECT_DIFFICULTY"
+			visible 1
+		}
+		itemDef
+		{
+			rect -146 10 292 42 2 2
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 4 112
+			decoration 
+			autoWrapped 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MENU_REGULAR_DESC_3" ) + "
+" + locstring( "@MENU_REGULAR_DESC_4" )  )
+			visible when ( localvarstring( "ui_highlighted_diff" ) == "newgame_easy"  )
+		}
+		itemDef
+		{
+			rect -146 10 292 42 2 2
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 4 112
+			decoration 
+			autoWrapped 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MENU_SKILLED_DESC" ) + "
+" + locstring( "@MENU_SKILLED_DESC_2" )  )
+			visible when ( localvarstring( "ui_highlighted_diff" ) == "newgame_regular"  )
+		}
+		itemDef
+		{
+			rect -146 10 292 42 2 2
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 4 112
+			decoration 
+			autoWrapped 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( "@MENU_HARDENED_DESC"  )
+			visible when ( localvarstring( "ui_highlighted_diff" ) == "newgame_hardened"  )
+		}
+		itemDef
+		{
+			rect -146 10 292 42 2 2
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 4 112
+			decoration 
+			autoWrapped 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( "@MENU_VETERAN_DESC"  )
+			visible when ( localvarstring( "ui_highlighted_diff" ) == "newgame_veteran"  )
+		}
+		itemDef
+		{
+			rect -146 62 292 42 2 2
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.65 0.65 0.65 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 4 164
+			background gradient_fadein
+			decoration 
+			autoWrapped 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_WARNING_CHECKPOINT_RESET2"
+			visible 1
+			visible when ( dvarbool(static)( 40 )  )
+		}
+		itemDef
+		{
+			name newgame_easy
+			rect -146 -78 292 20 2 2
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 4 24
+			background popup_button_selection_bar_flipped
+			group mw2_popup_button
+			type 1
+			align 0
+			textAlign 4
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_RECRUIT_CAPS"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_popup_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_popupAButton 1;
+				"play" "mouse_over";
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_popupAButton 1;
+				setLocalVarString ui_highlighted_diff "newgame_easy"  );
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 1 1 1 0;
+				setLocalVarBool ui_popupAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"exec" "profile_difficultySave 0";
+				"setdvar" "g_gameskill" 0;
+				"setdvar" "g_gameskill_player_1" 0;
+				"setdvar" "g_gameskill_player_2" 0;
+				"close" "self";
+				"execondvarstringvalue" "ui_load_level" "trainer" "devmap trainer";
+				"execondvarstringvalue" "ui_load_level" "ai_testbed" "devmap ai_testbed";
+				"execondvarstringvalue" "ui_load_level" "sentry" "devmap sentry";
+				"execondvarstringvalue" "ui_load_level" "firingrange" "devmap firingrange";
+				"execondvarstringvalue" "ui_load_level" "toy_test" "devmap toy_test";
+				"execondvarstringvalue" "ui_load_level" "toy_destructible_vehicles" "devmap toy_destructible_vehicles";
+				"execondvarstringvalue" "ui_load_level" "slowmo_breach" "devmap slowmo_breach";
+				"execondvarstringvalue" "ui_load_level" "oilrig" "devmap oilrig";
+				"execondvarstringvalue" "ui_load_level" "cliffhanger" "devmap cliffhanger";
+				"execondvarstringvalue" "ui_load_level" "bridge" "devmap bridge";
+				"execondvarstringvalue" "ui_load_level" "dcburning" "devmap dcburning";
+				"execondvarstringvalue" "ui_load_level" "invasion" "devmap invasion";
+				"execondvarstringvalue" "ui_load_level" "ghillie_enemies_test" "devmap ghillie_enemies_test";
+				"execondvarstringvalue" "ui_load_level" "ai_riotshield" "devmap ai_riotshield";
+				"execondvarstringvalue" "ui_load_level" "ai_melee" "devmap ai_melee";
+				"execondvarstringvalue" "ui_load_level" "ai_battlechatter" "devmap ai_battlechatter";
+				"execondvarstringvalue" "ui_load_level" "gulag" "devmap gulag";
+				"execondvarstringvalue" "ui_load_level" "airport" "devmap airport";
+				"execondvarstringvalue" "ui_load_level" "bigcity_destroyed" "devmap bigcity_destroyed";
+				"execondvarstringvalue" "ui_load_level" "glass_shatter_test" "devmap glass_shatter_test";
+				"execondvarstringvalue" "ui_load_level" "model_previewer_outsourced" "devmap model_previewer_outsourced";
+				"execondvarstringvalue" "ui_load_level" "model_previewer03" "devmap model_previewer03";
+				"execondvarstringvalue" "ui_load_level" "model_previewer04" "devmap model_previewer04";
+				"execondvarstringvalue" "ui_load_level" "roadkill" "devmap roadkill";
+				"execondvarstringvalue" "ui_load_level" "favela" "devmap favela";
+				"execondvarstringvalue" "ui_load_level" "favela_escape" "devmap favela_escape";
+				"execondvarstringvalue" "ui_load_level" "arcadia" "devmap arcadia";
+				"execondvarstringvalue" "ui_load_level" "contingency" "devmap contingency";
+				"execondvarstringvalue" "ui_load_level" "estate" "devmap estate";
+				"execondvarstringvalue" "ui_load_level" "boneyard" "devmap boneyard";
+				"execondvarstringvalue" "ui_load_level" "af_caves" "devmap af_caves";
+				"execondvarstringvalue" "ui_load_level" "af_chase" "devmap af_chase";
+				"execondvarstringvalue" "ui_load_level" "interior_concept" "devmap interior_concept";
+				"execondvarstringvalue" "ui_load_level" "roadkill_demo" "devmap roadkill_demo";
+				"execondvarstringvalue" "ui_load_level" "character_room" "devmap character_room";
+				"execondvarstringvalue" "ui_load_level" "dcemp" "devmap dcemp";
+				"execondvarstringvalue" "ui_load_level" "dc_whitehouse" "devmap dc_whitehouse";
+				"execondvarstringvalue" "ui_load_level" "co_village" "devmap co_village";
+			}
+		}
+		itemDef
+		{
+			name newgame_regular
+			rect -146 -58 292 20 2 2
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 4 44
+			background popup_button_selection_bar_flipped
+			group mw2_popup_button
+			type 1
+			align 0
+			textAlign 4
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_REGULAR_CAPS"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_popup_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_popupAButton 1;
+				"play" "mouse_over";
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_popupAButton 1;
+				setLocalVarString ui_highlighted_diff "newgame_regular"  );
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 1 1 1 0;
+				setLocalVarBool ui_popupAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"exec" "profile_difficultySave 1";
+				"setdvar" "g_gameskill" 1;
+				"setdvar" "g_gameskill_player_1" 1;
+				"setdvar" "g_gameskill_player_2" 1;
+				"close" "self";
+				"execondvarstringvalue" "ui_load_level" "trainer" "devmap trainer";
+				"execondvarstringvalue" "ui_load_level" "ai_testbed" "devmap ai_testbed";
+				"execondvarstringvalue" "ui_load_level" "sentry" "devmap sentry";
+				"execondvarstringvalue" "ui_load_level" "firingrange" "devmap firingrange";
+				"execondvarstringvalue" "ui_load_level" "toy_test" "devmap toy_test";
+				"execondvarstringvalue" "ui_load_level" "toy_destructible_vehicles" "devmap toy_destructible_vehicles";
+				"execondvarstringvalue" "ui_load_level" "slowmo_breach" "devmap slowmo_breach";
+				"execondvarstringvalue" "ui_load_level" "oilrig" "devmap oilrig";
+				"execondvarstringvalue" "ui_load_level" "cliffhanger" "devmap cliffhanger";
+				"execondvarstringvalue" "ui_load_level" "bridge" "devmap bridge";
+				"execondvarstringvalue" "ui_load_level" "dcburning" "devmap dcburning";
+				"execondvarstringvalue" "ui_load_level" "invasion" "devmap invasion";
+				"execondvarstringvalue" "ui_load_level" "ghillie_enemies_test" "devmap ghillie_enemies_test";
+				"execondvarstringvalue" "ui_load_level" "ai_riotshield" "devmap ai_riotshield";
+				"execondvarstringvalue" "ui_load_level" "ai_melee" "devmap ai_melee";
+				"execondvarstringvalue" "ui_load_level" "ai_battlechatter" "devmap ai_battlechatter";
+				"execondvarstringvalue" "ui_load_level" "gulag" "devmap gulag";
+				"execondvarstringvalue" "ui_load_level" "airport" "devmap airport";
+				"execondvarstringvalue" "ui_load_level" "bigcity_destroyed" "devmap bigcity_destroyed";
+				"execondvarstringvalue" "ui_load_level" "glass_shatter_test" "devmap glass_shatter_test";
+				"execondvarstringvalue" "ui_load_level" "model_previewer_outsourced" "devmap model_previewer_outsourced";
+				"execondvarstringvalue" "ui_load_level" "model_previewer03" "devmap model_previewer03";
+				"execondvarstringvalue" "ui_load_level" "model_previewer04" "devmap model_previewer04";
+				"execondvarstringvalue" "ui_load_level" "roadkill" "devmap roadkill";
+				"execondvarstringvalue" "ui_load_level" "favela" "devmap favela";
+				"execondvarstringvalue" "ui_load_level" "favela_escape" "devmap favela_escape";
+				"execondvarstringvalue" "ui_load_level" "arcadia" "devmap arcadia";
+				"execondvarstringvalue" "ui_load_level" "contingency" "devmap contingency";
+				"execondvarstringvalue" "ui_load_level" "estate" "devmap estate";
+				"execondvarstringvalue" "ui_load_level" "boneyard" "devmap boneyard";
+				"execondvarstringvalue" "ui_load_level" "af_caves" "devmap af_caves";
+				"execondvarstringvalue" "ui_load_level" "af_chase" "devmap af_chase";
+				"execondvarstringvalue" "ui_load_level" "interior_concept" "devmap interior_concept";
+				"execondvarstringvalue" "ui_load_level" "roadkill_demo" "devmap roadkill_demo";
+				"execondvarstringvalue" "ui_load_level" "character_room" "devmap character_room";
+				"execondvarstringvalue" "ui_load_level" "dcemp" "devmap dcemp";
+				"execondvarstringvalue" "ui_load_level" "dc_whitehouse" "devmap dc_whitehouse";
+				"execondvarstringvalue" "ui_load_level" "co_village" "devmap co_village";
+			}
+		}
+		itemDef
+		{
+			name newgame_hardened
+			rect -146 -38 292 20 2 2
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 4 64
+			background popup_button_selection_bar_flipped
+			group mw2_popup_button
+			type 1
+			align 0
+			textAlign 4
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_HARDENED_CAPS"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_popup_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_popupAButton 1;
+				"play" "mouse_over";
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_popupAButton 1;
+				setLocalVarString ui_highlighted_diff "newgame_hardened"  );
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 1 1 1 0;
+				setLocalVarBool ui_popupAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"exec" "profile_difficultySave 2";
+				"setdvar" "g_gameskill" 2;
+				"setdvar" "g_gameskill_player_1" 2;
+				"setdvar" "g_gameskill_player_2" 2;
+				"close" "self";
+				"execondvarstringvalue" "ui_load_level" "trainer" "devmap trainer";
+				"execondvarstringvalue" "ui_load_level" "ai_testbed" "devmap ai_testbed";
+				"execondvarstringvalue" "ui_load_level" "sentry" "devmap sentry";
+				"execondvarstringvalue" "ui_load_level" "firingrange" "devmap firingrange";
+				"execondvarstringvalue" "ui_load_level" "toy_test" "devmap toy_test";
+				"execondvarstringvalue" "ui_load_level" "toy_destructible_vehicles" "devmap toy_destructible_vehicles";
+				"execondvarstringvalue" "ui_load_level" "slowmo_breach" "devmap slowmo_breach";
+				"execondvarstringvalue" "ui_load_level" "oilrig" "devmap oilrig";
+				"execondvarstringvalue" "ui_load_level" "cliffhanger" "devmap cliffhanger";
+				"execondvarstringvalue" "ui_load_level" "bridge" "devmap bridge";
+				"execondvarstringvalue" "ui_load_level" "dcburning" "devmap dcburning";
+				"execondvarstringvalue" "ui_load_level" "invasion" "devmap invasion";
+				"execondvarstringvalue" "ui_load_level" "ghillie_enemies_test" "devmap ghillie_enemies_test";
+				"execondvarstringvalue" "ui_load_level" "ai_riotshield" "devmap ai_riotshield";
+				"execondvarstringvalue" "ui_load_level" "ai_melee" "devmap ai_melee";
+				"execondvarstringvalue" "ui_load_level" "ai_battlechatter" "devmap ai_battlechatter";
+				"execondvarstringvalue" "ui_load_level" "gulag" "devmap gulag";
+				"execondvarstringvalue" "ui_load_level" "airport" "devmap airport";
+				"execondvarstringvalue" "ui_load_level" "bigcity_destroyed" "devmap bigcity_destroyed";
+				"execondvarstringvalue" "ui_load_level" "glass_shatter_test" "devmap glass_shatter_test";
+				"execondvarstringvalue" "ui_load_level" "model_previewer_outsourced" "devmap model_previewer_outsourced";
+				"execondvarstringvalue" "ui_load_level" "model_previewer03" "devmap model_previewer03";
+				"execondvarstringvalue" "ui_load_level" "model_previewer04" "devmap model_previewer04";
+				"execondvarstringvalue" "ui_load_level" "roadkill" "devmap roadkill";
+				"execondvarstringvalue" "ui_load_level" "favela" "devmap favela";
+				"execondvarstringvalue" "ui_load_level" "favela_escape" "devmap favela_escape";
+				"execondvarstringvalue" "ui_load_level" "arcadia" "devmap arcadia";
+				"execondvarstringvalue" "ui_load_level" "contingency" "devmap contingency";
+				"execondvarstringvalue" "ui_load_level" "estate" "devmap estate";
+				"execondvarstringvalue" "ui_load_level" "boneyard" "devmap boneyard";
+				"execondvarstringvalue" "ui_load_level" "af_caves" "devmap af_caves";
+				"execondvarstringvalue" "ui_load_level" "af_chase" "devmap af_chase";
+				"execondvarstringvalue" "ui_load_level" "interior_concept" "devmap interior_concept";
+				"execondvarstringvalue" "ui_load_level" "roadkill_demo" "devmap roadkill_demo";
+				"execondvarstringvalue" "ui_load_level" "character_room" "devmap character_room";
+				"execondvarstringvalue" "ui_load_level" "dcemp" "devmap dcemp";
+				"execondvarstringvalue" "ui_load_level" "dc_whitehouse" "devmap dc_whitehouse";
+				"execondvarstringvalue" "ui_load_level" "co_village" "devmap co_village";
+			}
+		}
+		itemDef
+		{
+			name newgame_veteran
+			rect -146 -18 292 20 2 2
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 4 84
+			background popup_button_selection_bar_flipped
+			group mw2_popup_button
+			type 1
+			align 0
+			textAlign 4
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_VETERAN_CAPS"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_popup_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_popupAButton 1;
+				"play" "mouse_over";
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_popupAButton 1;
+				setLocalVarString ui_highlighted_diff "newgame_veteran"  );
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 1 1 1 0;
+				setLocalVarBool ui_popupAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"exec" "profile_difficultySave 3";
+				"setdvar" "g_gameskill" 3;
+				"setdvar" "g_gameskill_player_1" 3;
+				"setdvar" "g_gameskill_player_2" 3;
+				"close" "self";
+				"execondvarstringvalue" "ui_load_level" "trainer" "devmap trainer";
+				"execondvarstringvalue" "ui_load_level" "ai_testbed" "devmap ai_testbed";
+				"execondvarstringvalue" "ui_load_level" "sentry" "devmap sentry";
+				"execondvarstringvalue" "ui_load_level" "firingrange" "devmap firingrange";
+				"execondvarstringvalue" "ui_load_level" "toy_test" "devmap toy_test";
+				"execondvarstringvalue" "ui_load_level" "toy_destructible_vehicles" "devmap toy_destructible_vehicles";
+				"execondvarstringvalue" "ui_load_level" "slowmo_breach" "devmap slowmo_breach";
+				"execondvarstringvalue" "ui_load_level" "oilrig" "devmap oilrig";
+				"execondvarstringvalue" "ui_load_level" "cliffhanger" "devmap cliffhanger";
+				"execondvarstringvalue" "ui_load_level" "bridge" "devmap bridge";
+				"execondvarstringvalue" "ui_load_level" "dcburning" "devmap dcburning";
+				"execondvarstringvalue" "ui_load_level" "invasion" "devmap invasion";
+				"execondvarstringvalue" "ui_load_level" "ghillie_enemies_test" "devmap ghillie_enemies_test";
+				"execondvarstringvalue" "ui_load_level" "ai_riotshield" "devmap ai_riotshield";
+				"execondvarstringvalue" "ui_load_level" "ai_melee" "devmap ai_melee";
+				"execondvarstringvalue" "ui_load_level" "ai_battlechatter" "devmap ai_battlechatter";
+				"execondvarstringvalue" "ui_load_level" "gulag" "devmap gulag";
+				"execondvarstringvalue" "ui_load_level" "airport" "devmap airport";
+				"execondvarstringvalue" "ui_load_level" "bigcity_destroyed" "devmap bigcity_destroyed";
+				"execondvarstringvalue" "ui_load_level" "glass_shatter_test" "devmap glass_shatter_test";
+				"execondvarstringvalue" "ui_load_level" "model_previewer_outsourced" "devmap model_previewer_outsourced";
+				"execondvarstringvalue" "ui_load_level" "model_previewer03" "devmap model_previewer03";
+				"execondvarstringvalue" "ui_load_level" "model_previewer04" "devmap model_previewer04";
+				"execondvarstringvalue" "ui_load_level" "roadkill" "devmap roadkill";
+				"execondvarstringvalue" "ui_load_level" "favela" "devmap favela";
+				"execondvarstringvalue" "ui_load_level" "favela_escape" "devmap favela_escape";
+				"execondvarstringvalue" "ui_load_level" "arcadia" "devmap arcadia";
+				"execondvarstringvalue" "ui_load_level" "contingency" "devmap contingency";
+				"execondvarstringvalue" "ui_load_level" "estate" "devmap estate";
+				"execondvarstringvalue" "ui_load_level" "boneyard" "devmap boneyard";
+				"execondvarstringvalue" "ui_load_level" "af_caves" "devmap af_caves";
+				"execondvarstringvalue" "ui_load_level" "af_chase" "devmap af_chase";
+				"execondvarstringvalue" "ui_load_level" "interior_concept" "devmap interior_concept";
+				"execondvarstringvalue" "ui_load_level" "roadkill_demo" "devmap roadkill_demo";
+				"execondvarstringvalue" "ui_load_level" "character_room" "devmap character_room";
+				"execondvarstringvalue" "ui_load_level" "dcemp" "devmap dcemp";
+				"execondvarstringvalue" "ui_load_level" "dc_whitehouse" "devmap dc_whitehouse";
+				"execondvarstringvalue" "ui_load_level" "co_village" "devmap co_village";
+			}
+		}
+	}
+}

@@ -1,0 +1,536 @@
+{
+	menuDef
+	{
+		name save_load_menu
+		fullscreen 0
+		rect 0 0 640 480
+		style 1
+		border 0
+		ownerdraw 0
+		ownerdrawFlag 0
+		borderSize 0
+		foreColor 1 1 1 1
+		backColor 0 0 0 0
+		borderColor 0 0 0 0
+		outlineColor 0 0 0 0
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		fadeInAmount 0
+		blurWorld 0
+		onOpen
+		{
+			"uiScript" "loadSavegames" "setdvar" "ui_savegameListAutosave" 1;
+			"uiScript" "update" "ui_savegameListAutosave" "execOnDvarIntValue" "cl_paused" 0 "set ui_hidesave 1";
+			"execOnDvarIntValue" "cl_paused" 1 "set ui_hidesave 0";
+			"setdvar" "ui_background" "background_american_w";
+			"setdvar" "ui_logo_show" 1;
+			"setdvar" "ui_version_show" 0;
+			"setdvar" "ui_separator_show" 1;
+			"setdvar" "ui_background_gradient_show" 0;
+		}
+		onESC
+		{
+			"close" "save_load_menu";
+			"open" "main";
+		}
+		focusColor 1 1 1 1
+		itemDef
+		{
+			name window
+			rect 378 130 240 300
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0.6
+			borderColor 0.5 0.5 0.5 0.5
+			outlineColor 0 0 0 0
+			decoration 
+			group ingamebox4
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			name window
+			rect 400 150 192 144
+			style 0
+			border 1
+			ownerdraw 258
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0.1 0.1 0.1 0.5
+			borderColor 0.5 0.5 0.5 0.5
+			outlineColor 0 0 0 0
+			decoration 
+			group ingamebox3
+			type 8
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			name window
+			rect 377 130 256 192
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0
+			backColor 0.1 0.1 0.1 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			group ingamebox3
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			action
+			{
+				"uiScript" "Loadgame";
+			}
+		}
+		itemDef
+		{
+			name mapname
+			rect 378 290 240 30
+			style 0
+			border 0
+			ownerdraw 262
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 1 1 1 0.25
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			autoWrapped 
+			type 8
+			align 0
+			textAlign 1
+			textAlignX -5
+			textAlignY 10
+			textScale 0.25
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			name mapinfo
+			rect 378 320 230 70
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 1 1 1 0.25
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			autoWrapped 
+			type 0
+			align 0
+			textAlign 1
+			textAlignX 0
+			textAlignY 10
+			textScale 0.25
+			textStyle 6
+			textFont 1
+			feeder 0
+			text "savegameinfo"
+			visible 1
+		}
+		itemDef
+		{
+			name window
+			rect 20 75 325 325
+			style 1
+			border 1
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0.6
+			borderColor 0.5 0.5 0.5 0.5
+			outlineColor 0 0 0 0
+			decoration 
+			group grpControlbutton
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			name window2
+			rect 24 130 317 20
+			style 1
+			border 1
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 1 1 0.3 0.3
+			borderColor 0.1 0.1 0.1 0.2
+			outlineColor 0 0 0 0
+			decoration 
+			group grpControlbutton
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			name savemain
+			rect 125 90 40 14
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 1
+			align 0
+			textAlign 0
+			textAlignX 6
+			textAlignY 12
+			textScale 0.3
+			textStyle 6
+			textFont 1
+			feeder 0
+			text "@MENU_SAVEGAMELIST"
+			visible 1
+		}
+		itemDef
+		{
+			name levelbar
+			rect 90 134 100 20
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 1
+			textAlignX -25
+			textAlignY 12
+			textScale 0.23
+			textStyle 6
+			textFont 1
+			feeder 0
+			text "@MENU_NAME"
+			visible 1
+			mouseEnter
+			{
+				"play" "mouse_over";
+			}
+			action
+			{
+				"play" "mouse_click";
+				"uiScript" "SavegameSort" 0;
+			}
+		}
+		itemDef
+		{
+			name levelbar
+			rect 230 134 100 20
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 1
+			textAlignX 0
+			textAlignY 12
+			textScale 0.23
+			textStyle 6
+			textFont 1
+			feeder 0
+			text "@MENU_DATE"
+			visible 1
+			mouseEnter
+			{
+				"play" "mouse_over";
+			}
+			action
+			{
+				"play" "mouse_click";
+				"uiScript" "SavegameSort" 1;
+			}
+		}
+		itemDef
+		{
+			name savegamelist
+			rect 24 150 319 200
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.9
+			backColor 0 0 0.05 0.4
+			borderColor 0 0 0 0
+			outlineColor 0.9 0.9 0.9 0.2
+			type 6
+			align 0
+			textAlign 1
+			textAlignX 0
+			textAlignY 10
+			textScale 0.23
+			textStyle 0
+			textFont 0
+			feeder 16
+			visible 1
+			mouseEnter
+			{
+				"setitemcolor" "savegamelist" "bordercolor" ".7" 0 0 1;
+			}
+			mouseExit
+			{
+				"setitemcolor" "savegamelist" "bordercolor" ".5" ".5" ".5" ".5";
+			}
+			elementWidth 120
+			elementHeight 14
+			elementType 0
+			columns 2
+			2	65	22
+			162	40	21
+		}
+		itemDef
+		{
+			name savename
+			rect 24 350 317 18
+			style 1
+			border 1
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 0.9 1
+			backColor 0 0 0 0
+			borderColor 0.5 0.5 0.5 0.5
+			outlineColor 1 0.5 0.5 0.5
+			group loadsavegroup
+			type 16
+			align 0
+			textAlign 0
+			textAlignX 10
+			textAlignY 14
+			textScale 0.25
+			textStyle 0
+			textFont 0
+			feeder 0
+			text "@MENU_SAVEAS"
+			visible 1
+			mouseEnter
+			{
+				"setitemcolor" "loadname" "backcolor" ".3" ".5" ".2" ".25" "play" "mouse_over";
+			}
+			mouseExit
+			{
+				"setitemcolor" "loadname" "backcolor" 0 0 0 ".25";
+			}
+			action
+			{
+				"play" "mouse_click";
+				"uiScript" "Savegame";
+			}
+			dvar ui_savegame
+		}
+		itemDef
+		{
+			name back
+			rect 30 375 60 20
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 0.95 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 1
+			textAlignX 0
+			textAlignY 15
+			textScale 0.3
+			textStyle 3
+			textFont 1
+			feeder 0
+			text "@MENU_BACK"
+			visible 1
+			mouseEnter
+			{
+				"play" "mouse_over";
+			}
+			action
+			{
+				"play" "mouse_click";
+				"close" "save_load_menu";
+				"open" "main";
+			}
+		}
+		itemDef
+		{
+			name del
+			rect 113 375 60 20
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 0.95 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 1
+			textAlignX 0
+			textAlignY 15
+			textScale 0.3
+			textStyle 3
+			textFont 1
+			feeder 0
+			text "@MENU_DELETE"
+			visible 1
+			mouseEnter
+			{
+				"play" "mouse_over";
+			}
+			action
+			{
+				"play" "mouse_click";
+				"open" "save_del_sure_popmenu";
+			}
+		}
+		itemDef
+		{
+			name load
+			rect 196 375 60 20
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 0.95 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 1
+			textAlignX 0
+			textAlignY 15
+			textScale 0.3
+			textStyle 3
+			textFont 1
+			feeder 0
+			text "@MENU_LOAD"
+			visible 1
+			mouseEnter
+			{
+				"play" "mouse_over";
+			}
+			action
+			{
+				"play" "mouse_click";
+				"open" "load_sure_popmenu";
+			}
+		}
+		itemDef
+		{
+			name save
+			rect 276 375 60 20
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 0.95 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 1
+			textAlignX 0
+			textAlignY 15
+			textScale 0.3
+			textStyle 3
+			textFont 1
+			feeder 0
+			text "@MENU_SAVE"
+			visible 1
+			mouseEnter
+			{
+				"play" "mouse_over";
+			}
+			action
+			{
+				"play" "mouse_click";
+				"close" "save_load_menu";
+				"close" "main";
+				"uiScript" "Savegame";
+			}
+		}
+	}
+}

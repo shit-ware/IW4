@@ -1,0 +1,771 @@
+{
+	menuDef
+	{
+		name pausedmenu
+		fullscreen 0
+		rect 0 0 640 480 4 4
+		style 0
+		border 0
+		ownerdraw 0
+		ownerdrawFlag 0
+		borderSize 0
+		foreColor 1 1 1 1
+		backColor 0 0 0 0
+		borderColor 0 0 0 0
+		outlineColor 0 0 0 0
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		fadeInAmount 0
+		blurWorld 0
+		onOpen
+		{
+			"showMenu" "pausedbkgnd" "showMenu" "objectiveinfo" "showMenu" "overheadmap";
+			setLocalVarInt ui_ingame 1;
+			"focusfirst";
+		}
+		onClose
+		{
+			"hideMenu" "pausedbkgnd" "hideMenu" "objectiveinfo" "hideMenu" "overheadmap";
+		}
+		onESC
+		{
+			"close" "pausedmenu";
+		}
+		focusColor 1 1 1 1
+		allowedBinding pause
+		itemDef
+		{
+			name pausedMsg
+			rect -160 13 160 40 10 8
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 4
+			textAlignX 0
+			textAlignY 0
+			textScale 0.5
+			textStyle 0
+			textFont 9
+			feeder 0
+			text "@MENU_PAUSED_CAP"
+			visible 1
+			visible when ( !dvarbool(static)( 23 )  )
+			exp (null) (null) ( 13 + ( ( dvarbool(static)( 12 ) ) || ( dvarstring(static)( 21 ) == "ending" && dvarstring(static)( 22 ) == "free" ) ) * 24  )
+		}
+		itemDef
+		{
+			name resumegame
+			rect -200 48 336 20 10 8
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background popup_button_selection_bar
+			group paused_buttons
+			type 1
+			align 0
+			textAlign 4
+			textAlignX 40
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_RESUME_CREDITS"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+				"play" "mouse_over";
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+				"setItemColor" "paused_buttons" "backcolor" 0 0 0 "0.0";
+			}
+			action
+			{
+				"play" "mouse_click";
+				"play" "mouse_click";
+				"close" "pausedmenu";
+			}
+			visible when ( ( dvarstring(static)( 21 ) == "ending" && ( ( dvarstring(static)( 22 ) == "credits_2" ) || ( dvarstring(static)( 22 ) == "credits_black" ) ) )  )
+			exp (null) (null) ( ( 28 + 1 * 20 ) + ( ( dvarbool(static)( 12 ) ) || ( dvarstring(static)( 21 ) == "ending" && dvarstring(static)( 22 ) == "free" ) ) * 24  )
+		}
+		itemDef
+		{
+			name resumegame
+			rect -200 48 336 20 10 8
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background popup_button_selection_bar
+			group paused_buttons
+			type 1
+			align 0
+			textAlign 4
+			textAlignX 40
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_RESUMEGAME"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+				"play" "mouse_over";
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+				"setItemColor" "paused_buttons" "backcolor" 0 0 0 "0.0";
+			}
+			action
+			{
+				"play" "mouse_click";
+				"play" "mouse_click";
+				"close" "pausedmenu";
+			}
+			visible when ( !( dvarstring(static)( 21 ) == "ending" && ( ( dvarstring(static)( 22 ) == "credits_2" ) || ( dvarstring(static)( 22 ) == "credits_black" ) ) )  )
+			exp (null) (null) ( ( 28 + 1 * 20 ) + ( ( dvarbool(static)( 12 ) ) || ( dvarstring(static)( 21 ) == "ending" && dvarstring(static)( 22 ) == "free" ) ) * 24  )
+		}
+		itemDef
+		{
+			name credits_quit
+			rect -200 68 336 20 10 8
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background popup_button_selection_bar
+			group paused_buttons
+			type 1
+			align 0
+			textAlign 4
+			textAlignX 40
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@PLATFORM_QUIT"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+				"play" "mouse_over";
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+				"setItemColor" "paused_buttons" "backcolor" 0 0 0 "0.0";
+			}
+			action
+			{
+				"play" "mouse_click";
+				"play" "mouse_click";
+				"setdvar" "credits_active" 0;
+				"close" "pausedmenu";
+				"exec" "disconnect";
+			}
+			visible when ( ( dvarstring(static)( 21 ) == "ending" && ( ( dvarstring(static)( 22 ) == "credits_2" ) || ( dvarstring(static)( 22 ) == "credits_black" ) ) )  )
+			exp (null) (null) ( ( 28 + 2 * 20 ) + ( ( dvarbool(static)( 12 ) ) || ( dvarstring(static)( 21 ) == "ending" && dvarstring(static)( 22 ) == "free" ) ) * 24  )
+		}
+		itemDef
+		{
+			rect -200 68 336 20 10 8
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background popup_button_selection_bar
+			group paused_buttons
+			type 1
+			align 0
+			textAlign 4
+			textAlignX 40
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_OPTIONS"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+				"play" "mouse_over";
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+				"setItemColor" "paused_buttons" "backcolor" 0 0 0 "0.0";
+			}
+			action
+			{
+				"play" "mouse_click";
+				"play" "mouse_click";
+				"execnow" "set ui_allow_graphic_change 1";
+				"open" "pc_options_video";
+				"close" "pausedmenu";
+			}
+			visible when ( !( dvarstring(static)( 21 ) == "ending" && ( ( dvarstring(static)( 22 ) == "credits_2" ) || ( dvarstring(static)( 22 ) == "credits_black" ) ) )  )
+			exp (null) (null) ( ( 28 + 2 * 20 ) + ( ( dvarbool(static)( 12 ) ) || ( dvarstring(static)( 21 ) == "ending" && dvarstring(static)( 22 ) == "free" ) ) * 24  )
+		}
+		itemDef
+		{
+			name difficulty_locked
+			rect -200 88 336 20 10 8
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.5 0.5 0.5 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background popup_button_selection_bar
+			decoration 
+			group paused_buttons
+			type 1
+			align 0
+			textAlign 4
+			textAlignX 40
+			textAlignY 0
+			textScale 0.375
+			textStyle 3
+			textFont 3
+			feeder 0
+			text "@MENU_LOWER_DIFFICULTY"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+				"play" "mouse_over";
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+			}
+			visible when ( !( dvarstring(static)( 21 ) == "ending" && ( ( dvarstring(static)( 22 ) == "credits_2" ) || ( dvarstring(static)( 22 ) == "credits_black" ) ) ) && ( ( dvarint(static)( 8 ) == 0 ) || ( dvarstring(static)( 21 ) == "trainer" ) ) && !( ( dvarbool(static)( 12 ) ) || ( dvarstring(static)( 21 ) == "ending" && dvarstring(static)( 22 ) == "free" ) )  )
+			exp (null) (null) ( ( 28 + 3 * 20 ) + ( ( dvarbool(static)( 12 ) ) || ( dvarstring(static)( 21 ) == "ending" && dvarstring(static)( 22 ) == "free" ) ) * 24  )
+		}
+		itemDef
+		{
+			name difficulty
+			rect -200 88 336 20 10 8
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background popup_button_selection_bar
+			group paused_buttons
+			type 1
+			align 0
+			textAlign 4
+			textAlignX 40
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_LOWER_DIFFICULTY"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+				"play" "mouse_over";
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+				"setItemColor" "paused_buttons" "backcolor" 0 0 0 "0.0";
+			}
+			action
+			{
+				"play" "mouse_click";
+				"play" "mouse_click";
+				"open" "ingame_difficulty";
+			}
+			visible when ( !( dvarstring(static)( 21 ) == "ending" && ( ( dvarstring(static)( 22 ) == "credits_2" ) || ( dvarstring(static)( 22 ) == "credits_black" ) ) ) && ( dvarint(static)( 8 ) > 0 ) && ( dvarstring(static)( 21 ) != "trainer" ) && !( ( dvarbool(static)( 12 ) ) || ( dvarstring(static)( 21 ) == "ending" && dvarstring(static)( 22 ) == "free" ) )  )
+			exp (null) (null) ( ( 28 + 3 * 20 ) + ( ( dvarbool(static)( 12 ) ) || ( dvarstring(static)( 21 ) == "ending" && dvarstring(static)( 22 ) == "free" ) ) * 24  )
+		}
+		itemDef
+		{
+			name last_checkpoint
+			rect -200 108 336 20 10 8
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background popup_button_selection_bar
+			group paused_buttons
+			type 1
+			align 0
+			textAlign 4
+			textAlignX 40
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_LAST_CHECKPOINT"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+				"play" "mouse_over";
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+				"setItemColor" "paused_buttons" "backcolor" 0 0 0 "0.0";
+			}
+			action
+			{
+				"play" "mouse_click";
+				"open" "last_checkpoint_warning";
+				"close" "pausedmenu";
+			}
+			visible when ( !( dvarstring(static)( 21 ) == "ending" && ( ( dvarstring(static)( 22 ) == "credits_2" ) || ( dvarstring(static)( 22 ) == "credits_black" ) ) ) && ( !dvarbool(static)( 24 ) && !dvarbool(static)( 23 ) && !( dvarbool(static)( 12 ) ) ) && !( ( dvarbool(static)( 12 ) ) || ( dvarstring(static)( 21 ) == "ending" && dvarstring(static)( 22 ) == "free" ) )  )
+			exp (null) (null) ( ( 28 + 4 * 20 ) + ( ( dvarbool(static)( 12 ) ) || ( dvarstring(static)( 21 ) == "ending" && dvarstring(static)( 22 ) == "free" ) ) * 24  )
+		}
+		itemDef
+		{
+			name last_checkpoint_locked
+			rect -200 108 336 20 10 8
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.5 0.5 0.5 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background popup_button_selection_bar
+			decoration 
+			group paused_buttons
+			type 1
+			align 0
+			textAlign 4
+			textAlignX 40
+			textAlignY 0
+			textScale 0.375
+			textStyle 3
+			textFont 3
+			feeder 0
+			text "@MENU_LAST_CHECKPOINT"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+			}
+			visible when ( !( dvarstring(static)( 21 ) == "ending" && ( ( dvarstring(static)( 22 ) == "credits_2" ) || ( dvarstring(static)( 22 ) == "credits_black" ) ) ) && !( !dvarbool(static)( 24 ) && !dvarbool(static)( 23 ) && !( dvarbool(static)( 12 ) ) ) && !( ( dvarbool(static)( 12 ) ) || ( dvarstring(static)( 21 ) == "ending" && dvarstring(static)( 22 ) == "free" ) )  )
+			exp (null) (null) ( ( 28 + 4 * 20 ) + ( ( dvarbool(static)( 12 ) ) || ( dvarstring(static)( 21 ) == "ending" && dvarstring(static)( 22 ) == "free" ) ) * 24  )
+		}
+		itemDef
+		{
+			name restartlevel
+			rect -200 128 336 20 10 8
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background popup_button_selection_bar
+			group paused_buttons
+			type 1
+			align 0
+			textAlign 4
+			textAlignX 40
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_RESTART_MISSION"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+				"play" "mouse_over";
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+				"setItemColor" "paused_buttons" "backcolor" 0 0 0 "0.0";
+			}
+			action
+			{
+				"play" "mouse_click";
+				"play" "mouse_click";
+				"close" "pausedmenu";
+				"open" "restart_warning";
+			}
+			visible when ( !( dvarstring(static)( 21 ) == "ending" && ( ( dvarstring(static)( 22 ) == "credits_2" ) || ( dvarstring(static)( 22 ) == "credits_black" ) ) )  )
+			exp (null) (null) ( ( 28 + 5 * 20 ) - ( ( dvarbool(static)( 12 ) ) || ( dvarstring(static)( 21 ) == "ending" && dvarstring(static)( 22 ) == "free" ) ) * 16  )
+		}
+		itemDef
+		{
+			name saveandquit
+			rect -200 148 336 20 10 8
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 1
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background popup_button_selection_bar
+			group paused_buttons
+			type 1
+			align 0
+			textAlign 4
+			textAlignX 40
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@PLATFORM_SAVE_AND_QUIT"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+				"play" "mouse_over";
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+				"setItemColor" "paused_buttons" "backcolor" 0 0 0 "0.0";
+			}
+			action
+			{
+				"play" "mouse_click";
+				"play" "mouse_click";
+				"close" "pausedmenu";
+				"open" "savegame_warning";
+			}
+			visible when ( !( dvarstring(static)( 21 ) == "ending" && dvarstring(static)( 22 ) == "free" ) && !( dvarstring(static)( 21 ) == "ending" && ( ( dvarstring(static)( 22 ) == "credits_2" ) || ( dvarstring(static)( 22 ) == "credits_black" ) ) ) && ( !dvarbool(static)( 24 ) && !dvarbool(static)( 23 ) && !( dvarbool(static)( 12 ) ) ) && savegameavailable( )  )
+			exp (null) (null) ( ( 28 + 6 * 20 ) - ( ( dvarbool(static)( 12 ) ) || ( dvarstring(static)( 21 ) == "ending" && dvarstring(static)( 22 ) == "free" ) ) * 16  )
+		}
+		itemDef
+		{
+			name arcade_quit
+			rect -200 148 336 20 10 8
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background popup_button_selection_bar
+			group paused_buttons
+			type 1
+			align 0
+			textAlign 4
+			textAlignX 40
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@PLATFORM_QUIT"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+				"play" "mouse_over";
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+				"setItemColor" "paused_buttons" "backcolor" 0 0 0 "0.0";
+			}
+			action
+			{
+				"play" "mouse_click";
+				"play" "mouse_click";
+				"close" "pausedmenu";
+				"open" "savegame_warning_arcade";
+			}
+			visible when ( !( dvarstring(static)( 21 ) == "ending" && dvarstring(static)( 22 ) == "free" ) && !( !dvarbool(static)( 24 ) && !dvarbool(static)( 23 ) && !( dvarbool(static)( 12 ) ) )  )
+			exp (null) (null) ( ( 28 + 6 * 20 ) - ( ( dvarbool(static)( 12 ) ) || ( dvarstring(static)( 21 ) == "ending" && dvarstring(static)( 22 ) == "free" ) ) * 16  )
+		}
+		itemDef
+		{
+			name quit
+			rect -200 148 336 20 10 8
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background popup_button_selection_bar
+			group paused_buttons
+			type 1
+			align 0
+			textAlign 4
+			textAlignX 40
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@PLATFORM_QUIT"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+				"play" "mouse_over";
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+				"setItemColor" "paused_buttons" "backcolor" 0 0 0 "0.0";
+			}
+			action
+			{
+				"play" "mouse_click";
+				"play" "mouse_click";
+				"close" "pausedmenu";
+				"open" "savegame_warning_noprofile";
+			}
+			visible when ( ( dvarstring(static)( 21 ) == "ending" && dvarstring(static)( 22 ) == "free" ) || ( !( dvarstring(static)( 21 ) == "ending" && ( ( dvarstring(static)( 22 ) == "credits_2" ) || ( dvarstring(static)( 22 ) == "credits_black" ) ) ) && ( !dvarbool(static)( 24 ) && !dvarbool(static)( 23 ) && !( dvarbool(static)( 12 ) ) ) && !savegameavailable( ) )  )
+			exp (null) (null) ( ( 28 + 6 * 20 ) - ( ( dvarbool(static)( 12 ) ) || ( dvarstring(static)( 21 ) == "ending" && dvarstring(static)( 22 ) == "free" ) ) * 16  )
+		}
+		itemDef
+		{
+			name skip_airport
+			rect -200 168 336 20 10 8
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background popup_button_selection_bar
+			group paused_buttons
+			type 1
+			align 0
+			textAlign 4
+			textAlignX 40
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_SP_SKIP_MISSION"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+				setLocalVarFloat ui_popupYPos 0.000000;
+				"play" "mouse_over";
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+				"setItemColor" "paused_buttons" "backcolor" 0 0 0 "0.0";
+			}
+			action
+			{
+				"play" "mouse_click";
+				"play" "mouse_click";
+				"close" "pausedmenu";
+				"open" "offensive_skip_popup_confirm";
+			}
+			visible when ( dvarstring(static)( 21 ) == "airport"  )
+			exp (null) (null) ( ( 28 + 7 * 20 ) - ( ( dvarbool(static)( 12 ) ) || ( dvarstring(static)( 21 ) == "ending" && dvarstring(static)( 22 ) == "free" ) ) * 16  )
+		}
+	}
+}

@@ -1,0 +1,50 @@
+{
+	menuDef
+	{
+		name motion tracker test
+		fullscreen 0
+		rect 0 0 109 109 8 8
+		style 0
+		border 0
+		ownerdraw 0
+		ownerdrawFlag 0
+		borderSize 0
+		foreColor 1 1 1 1
+		backColor 0 0 0 0
+		borderColor 0 0 0 0
+		outlineColor 0 0 0 0
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		fadeInAmount 0
+		visible when ( dvarbool(static)( 16 )  )
+		blurWorld 0
+		focusColor 0 0 0 0
+		visible 
+		itemDef
+		{
+			rect 5.5 5 89.5 89.5 8 8
+			style 0
+			border 0
+			ownerdraw 153
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background compassping_friendly
+			decoration 
+			type 8
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+	}
+}

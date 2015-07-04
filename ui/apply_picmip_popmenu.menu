@@ -1,0 +1,34 @@
+{
+	menuDef
+	{
+		name apply_picmip_popmenu
+		fullscreen 0
+		rect 0 0 640 480
+		style 0
+		border 0
+		ownerdraw 0
+		ownerdrawFlag 0
+		borderSize 0
+		foreColor 1 1 1 1
+		backColor 0 0 0 0
+		borderColor 0 0 0 0
+		outlineColor 0 0 0 0
+		fadeCycle 0
+		fadeClamp 0
+		fadeAmount 0
+		fadeInAmount 0
+		blurWorld 0
+		onOpen
+		{
+			"execnow" "setfromdvar r_picmip ui_r_picmip";
+			"execnow" "setfromdvar r_picmip_bump ui_r_picmip_bump";
+			"execnow" "setfromdvar r_picmip_spec ui_r_picmip_spec";
+			"execnow" "setfromdvar r_picmip_manual ui_r_picmip_manual";
+			"exec" "wait;
+			wait;
+			r_applyPicmip";
+			"close" "apply_picmip_popmenu";
+		}
+		focusColor 1 1 1 1
+	}
+}

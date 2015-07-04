@@ -1,0 +1,2299 @@
+{
+	menuDef
+	{
+		name coop_eog_summary2
+		fullscreen 0
+		rect -230 -123 460 246 2 9
+		style 1
+		border 0
+		ownerdraw 0
+		ownerdrawFlag 0
+		borderSize 0
+		foreColor 1 1 1 1
+		backColor 1 1 1 1
+		borderColor 0 0 0 0
+		outlineColor 0 0 0 0
+		background white
+		fadeCycle 0
+		fadeClamp 0
+		fadeAmount 0
+		fadeInAmount 0
+		blurWorld 0
+		onOpen
+		{
+			"play" "so_ingame_summary";
+			setLocalVarInt timer_mark 1;
+			"lerp" "alpha" "from" 0 "to" 1 "over" "0.25";
+			"lerp" y "from" "320" "to" - "123" "over" "0.25";
+			"exec" "stopControllerRumble";
+			if ( dvarbool(static)( 5 )  )
+			{
+				if ( dvarint(static)( 48 ) != ""  )
+				{
+					setLocalVarString ui_first_popup "eog_notify_noreward_coop2"  );
+					"open" "eog_notify_noreward_coop2";
+				}
+				else
+				{
+					if ( dvarint(static)( 49 ) != ""  )
+					{
+						setLocalVarString ui_first_popup "eog_notify_newstars_coop2"  );
+						"open" "eog_notify_newstars_coop2";
+					}
+					else
+					{
+						if ( dvarstring(static)( 50 ) != ""  )
+						{
+							setLocalVarString ui_first_popup "eog_notify_unlock_coop2"  );
+							"open" "eog_notify_unlock_coop2";
+						}
+						else
+						{
+							if ( dvarint(static)( 51 ) != ""  )
+							{
+								setLocalVarString ui_first_popup "eog_notify_besttime_coop2"  );
+								"open" "eog_notify_besttime_coop2";
+							}
+						}
+						if ( dvarstring(static)( 50 ) != ""  )					}
+					if ( dvarint(static)( 49 ) != ""  )				}
+				if ( dvarint(static)( 48 ) != ""  )			}
+			else
+			{
+				"setfocus" "try_again";
+			}
+			if ( dvarbool(static)( 5 )  )		}
+		onClose
+		{
+		}
+		onESC
+		{
+			if ( ( milliseconds( ) - localvarint( "timer_mark" ) ) / 1000 > 1  )
+			{
+				"exec" "set cl_paused 0";
+				"close" "self";
+				"closeForAllPlayers" "coop_eog_summary";
+				"closeForAllPlayers" "eog_notify_newstars_coop1" "closeForAllPlayers" "eog_notify_unlock_coop1" "closeForAllPlayers" "eog_notify_besttime_coop1" "closeForAllPlayers" "eog_notify_noreward_coop1" "exec" "fast_restart";
+			}
+		}
+		focusColor 1 1 1 1
+		popup 
+		legacySplitScreenScale 
+		visible 
+		execKey "¨"
+		{
+		}
+		execKey "§"
+		{
+			if ( ( milliseconds( ) - localvarint( "timer_mark" ) ) / 1000 > 1  )
+			{
+				"exec" "set cl_paused 0";
+				"close" "self";
+				"closeForAllPlayers" "coop_eog_summary";
+				"closeForAllPlayers" "eog_notify_newstars_coop1" "closeForAllPlayers" "eog_notify_unlock_coop1" "closeForAllPlayers" "eog_notify_besttime_coop1" "closeForAllPlayers" "eog_notify_noreward_coop1" "exec" "fast_restart";
+			}
+		}
+		execKeyInt 2
+		{
+			if ( ( milliseconds( ) - localvarint( "timer_mark" ) ) / 1000 > 1  )
+			{
+				"exec" "set cl_paused 0";
+				"close" "self";
+				"exec" "disconnect_noMessage";
+			}
+		}
+		execKeyInt 14
+		{
+		}
+		itemDef
+		{
+			rect -1084 -603 3416 1920 2 9
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0.1
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -854 -480
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -1084 -603 3416 1920 2 9
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 1 1 1 1
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -854 -480
+			background xpbar_stencilbase
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -630 -123 1600 246 2 9
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0.5 0.5 0.5 1
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -400 0
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( !dvarbool(static)( 3 ) && !dvarbool(static)( 4 )  )
+		}
+		itemDef
+		{
+			rect -230 -123 460 246 2 9
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0.5 0.5 0.5 1
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( dvarbool(static)( 3 ) || dvarbool(static)( 4 )  )
+		}
+		itemDef
+		{
+			rect -230 -123 1708 480 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.75
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			background mw2_popup_bg_fogstencil
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp (null) (null) ( ( 0 - ( 460 - 460 ) * 0.500000 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) )  )
+		}
+		itemDef
+		{
+			rect -230 -123 -1708 -480 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.85 0.85 0.85 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			background mw2_popup_bg_fogscroll
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp (null) (null) ( ( 0 - ( 460 - 460 ) * 0.500000 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) )  )
+		}
+		itemDef
+		{
+			rect -230 -123 460 0 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			background mockup_popup_bg_stencilfill
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp (null) (null) ( 246  )
+		}
+		itemDef
+		{
+			rect -230 -123 -1708 -480 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.75
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			background mw2_popup_bg_fogstencil
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp (null) (null) ( ( 0 - ( 460 - 460 ) * 0.500000 ) + ( 0 - 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) )  )
+		}
+		itemDef
+		{
+			rect -230 -123 -1708 -480 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.85 0.85 0.85 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			background mw2_popup_bg_fogscroll
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp (null) (null) ( ( 0 - ( 460 - 460 ) * 0.500000 ) + ( 0 - 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) )  )
+		}
+		itemDef
+		{
+			rect -294 -187 64 64 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -64 -64
+			background drop_shadow_tl
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect -230 -187 460 64 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 -64
+			background drop_shadow_t
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 230 -187 64 64 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 460 -64
+			background drop_shadow_tr
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 230 -123 64 246 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 460 0
+			background drop_shadow_r
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 230 123 64 64 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 460 246
+			background drop_shadow_br
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect -230 123 460 64 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 246
+			background drop_shadow_b
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect -294 123 64 64 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -64 246
+			background drop_shadow_bl
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect -294 -123 64 246 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -64 0
+			background drop_shadow_l
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect -630 -123 1600 28 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 0.35
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -400 0
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( !dvarbool(static)( 3 ) && !dvarbool(static)( 4 )  )
+		}
+		itemDef
+		{
+			rect -230 -123 460 28 2 9
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0.35
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( dvarbool(static)( 3 ) || dvarbool(static)( 4 )  )
+		}
+		itemDef
+		{
+			rect -230 -123 460 28 2 9
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 0.8 0.4 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 9
+			textAlignX 0
+			textAlignY 0
+			textScale 0.65
+			textStyle 0
+			textFont 9
+			feeder 0
+			text "@SPECIAL_OPS_UI_MISSION_SUCCESS"
+			visible 1
+			visible when ( dvarbool(static)( 5 ) && dvarstring(static)( 52 ) == ""  )
+		}
+		itemDef
+		{
+			rect -230 -123 460 28 2 9
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 0.8 0.4 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 9
+			textAlignX 0
+			textAlignY 0
+			textScale 0.65
+			textStyle 0
+			textFont 9
+			feeder 0
+			visible 1
+			exp text ( dvarstring(static)( 52 )  )
+			visible when ( dvarbool(static)( 5 ) && dvarstring(static)( 52 ) != ""  )
+		}
+		itemDef
+		{
+			rect -230 -123 460 28 2 9
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 0.45 0.45 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 9
+			textAlignX 0
+			textAlignY 0
+			textScale 0.65
+			textStyle 0
+			textFont 9
+			feeder 0
+			text "@SPECIAL_OPS_UI_MISSION_FAILED"
+			visible 1
+			visible when ( !dvarbool(static)( 5 )  )
+		}
+		itemDef
+		{
+			rect -166 -75 32 32 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 64 48
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "hud_grenadeicon"  )
+			visible when ( dvarbool(static)( 11 ) && !dvarbool(static)( 5 )  )
+		}
+		itemDef
+		{
+			rect -166 -91 32 16 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 64 32
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "hud_grenadepointer"  )
+			visible when ( dvarbool(static)( 11 ) && !dvarbool(static)( 5 )  )
+		}
+		itemDef
+		{
+			rect -166 -95 64 64 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 64 28
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "hud_burningbarrelicon"  )
+			visible when ( dvarbool(static)( 12 ) && !dvarbool(static)( 5 )  )
+		}
+		itemDef
+		{
+			rect -166 -95 64 64 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 64 28
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "hud_destructibledeathicon"  )
+			visible when ( dvarbool(static)( 13 ) && !dvarbool(static)( 5 )  )
+		}
+		itemDef
+		{
+			rect -166 -95 64 64 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 64 28
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "hud_burningcaricon"  )
+			visible when ( dvarbool(static)( 14 ) && !dvarbool(static)( 5 )  )
+		}
+		itemDef
+		{
+			rect -166 -95 64 64 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 64 28
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "hud_dog_melee"  )
+			visible when ( dvarbool(static)( 15 ) && !dvarbool(static)( 5 )  )
+		}
+		itemDef
+		{
+			rect -166 -95 64 64 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 64 28
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "death_friendly_fire"  )
+			visible when ( dvarbool(static)( 16 ) && !dvarbool(static)( 5 )  )
+		}
+		itemDef
+		{
+			rect -166 -95 64 64 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 64 28
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "death_juggernaut"  )
+			visible when ( dvarbool(static)( 17 ) && !dvarbool(static)( 5 )  )
+		}
+		itemDef
+		{
+			rect -166 -83 32 32 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 64 40
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "hud_show_timer"  )
+			visible when ( dvarbool(static)( 18 ) && !dvarbool(static)( 5 )  )
+		}
+		itemDef
+		{
+			rect -162 -91 24 12 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 0 0.75
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 68 32
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "hud_offscreenobjectivepointer"  )
+			visible when ( dvarbool(static)( 19 ) && !dvarbool(static)( 5 )  )
+		}
+		itemDef
+		{
+			rect -166 -75 32 32 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 0 0.75
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 64 48
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "hint_health"  )
+			visible when ( dvarbool(static)( 19 ) && !dvarbool(static)( 5 )  )
+		}
+		itemDef
+		{
+			rect -166 -87 48 48 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.635 0.929 0.604 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 64 36
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "coop_player_location_rotated"  )
+			visible when ( dvarbool(static)( 20 ) && !dvarbool(static)( 5 )  )
+		}
+		itemDef
+		{
+			rect -170 -87 40 40 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 60 36
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "icon_objective_onscreen"  )
+			visible when ( dvarbool(static)( 21 ) && !dvarbool(static)( 5 )  )
+		}
+		itemDef
+		{
+			rect -166 -83 48 24 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 64 40
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "objective_onscreen_arrow"  )
+			visible when ( dvarbool(static)( 22 ) && !dvarbool(static)( 5 )  )
+		}
+		itemDef
+		{
+			rect -166 -79 20 20 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 64 44
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "difficulty_star"  )
+			visible when ( dvarbool(static)( 23 ) && !dvarbool(static)( 5 )  )
+		}
+		itemDef
+		{
+			rect -144 -79 20 20 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 86 44
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "difficulty_star"  )
+			visible when ( dvarbool(static)( 23 ) && !dvarbool(static)( 5 )  )
+		}
+		itemDef
+		{
+			rect -122 -79 20 20 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 108 44
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "difficulty_star"  )
+			visible when ( dvarbool(static)( 23 ) && !dvarbool(static)( 5 )  )
+		}
+		itemDef
+		{
+			rect -166 -83 32 32 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 64 40
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "hud_icon_claymore"  )
+			visible when ( dvarbool(static)( 24 ) && !dvarbool(static)( 5 )  )
+		}
+		itemDef
+		{
+			rect -166 -95 64 64 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 64 28
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "stance_prone"  )
+			visible when ( dvarbool(static)( 25 ) && !dvarbool(static)( 5 )  )
+		}
+		itemDef
+		{
+			rect -166 -91 332 54 2 9
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 64 32
+			decoration 
+			autoWrapped 
+			type 21
+			align 0
+			textAlign 5
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp text ( dvarstring(static)( 26 )  )
+			visible when ( !dvarbool(static)( 5 ) && !dvarbool(static)( 11 ) && !dvarbool(static)( 12 ) && !dvarbool(static)( 13 ) && !dvarbool(static)( 14 ) && !dvarbool(static)( 15 ) && !dvarbool(static)( 18 ) && !dvarbool(static)( 16 ) && !dvarbool(static)( 17 ) && !dvarbool(static)( 19 ) && !dvarbool(static)( 20 ) && !dvarbool(static)( 21 ) && !dvarbool(static)( 22 ) && !dvarbool(static)( 23 ) && !dvarbool(static)( 24 ) && !dvarbool(static)( 25 )  )
+		}
+		itemDef
+		{
+			rect -134 -91 300 54 2 9
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 96 32
+			decoration 
+			autoWrapped 
+			type 21
+			align 0
+			textAlign 5
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp text ( dvarstring(static)( 26 )  )
+			visible when ( !dvarbool(static)( 5 ) && ( dvarbool(static)( 11 ) || dvarbool(static)( 18 ) || dvarbool(static)( 19 ) || dvarbool(static)( 20 ) || dvarbool(static)( 21 ) || dvarbool(static)( 22 ) || dvarbool(static)( 24 ) )  )
+		}
+		itemDef
+		{
+			rect -102 -91 268 54 2 9
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 128 32
+			decoration 
+			autoWrapped 
+			type 21
+			align 0
+			textAlign 5
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp text ( dvarstring(static)( 26 )  )
+			visible when ( !dvarbool(static)( 5 ) && ( dvarbool(static)( 12 ) || dvarbool(static)( 13 ) || dvarbool(static)( 14 ) || dvarbool(static)( 15 ) || dvarbool(static)( 16 ) || dvarbool(static)( 17 ) || dvarbool(static)( 23 ) || dvarbool(static)( 25 ) )  )
+		}
+		itemDef
+		{
+			rect -166 -123 -166 20 2 9
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.8 0.8 0.8 1
+			backColor 0 0 0 0.35
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 64 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 8
+			textAlignX 6
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 9
+			feeder 0
+			visible 1
+			exp text ( "@SPECIAL_OPS_UI_TIME"  )
+			visible when ( !dvarbool(static)( 27 ) && ( dvarbool(static)( 28 ) || dvarbool(static)( 3 ) )  )
+			exp (null) (null) ( 124 + 0 * 38 - ( dvarbool(static)( 5 ) * 56 + ( !dvarbool(static)( 5 ) ) * ( dvarbool(static)( 4 ) || dvarbool(static)( 3 ) ) * 32 )  )
+			exp (null) (null) ( ( - 400 * ( max ( ( localvarint( "timer_mark" ) + 150 ) - ( milliseconds( ) - 150 * ( 0 + 1 ) ) , 0 ) ) / 150 ) ) + 64  )
+		}
+		itemDef
+		{
+			rect 0 -123 166 20 2 9
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.7 1 0.65 1
+			backColor 0 0 0 0.35
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 230 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 10
+			textAlignX -6
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( dvarstring(static)( 29 )  )
+			visible when ( !dvarbool(static)( 27 ) && ( dvarbool(static)( 28 ) || dvarbool(static)( 3 ) )  )
+			exp (null) (null) ( 124 + 0 * 38 - ( dvarbool(static)( 5 ) * 56 + ( !dvarbool(static)( 5 ) ) * ( dvarbool(static)( 4 ) || dvarbool(static)( 3 ) ) * 32 )  )
+			exp (null) (null) ( 400 * ( max ( ( localvarint( "timer_mark" ) + 150 ) - ( milliseconds( ) - 150 * ( 0 + 1 ) ) , 0 ) ) / 150 ) + 230  )
+		}
+		itemDef
+		{
+			rect -166 -123 -166 20 2 9
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.8 0.8 0.8 1
+			backColor 0 0 0 0.35
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 64 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 8
+			textAlignX 6
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 9
+			feeder 0
+			visible 1
+			exp text ( "@SPECIAL_OPS_UI_KILLS"  )
+			visible when ( !dvarbool(static)( 27 ) && ( dvarbool(static)( 28 ) || dvarbool(static)( 3 ) )  )
+			exp (null) (null) ( 124 + 1 * 38 - ( dvarbool(static)( 5 ) * 56 + ( !dvarbool(static)( 5 ) ) * ( dvarbool(static)( 4 ) || dvarbool(static)( 3 ) ) * 32 )  )
+			exp (null) (null) ( ( - 400 * ( max ( ( localvarint( "timer_mark" ) + 150 ) - ( milliseconds( ) - 150 * ( 1 + 1 ) ) , 0 ) ) / 150 ) ) + 64  )
+		}
+		itemDef
+		{
+			rect 0 -123 166 20 2 9
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.7 1 0.65 1
+			backColor 0 0 0 0.35
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 230 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 10
+			textAlignX -6
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( dvarint(static)( 32 )  )
+			visible when ( !dvarbool(static)( 27 ) && ( dvarbool(static)( 28 ) || dvarbool(static)( 3 ) )  )
+			exp (null) (null) ( 124 + 1 * 38 - ( dvarbool(static)( 5 ) * 56 + ( !dvarbool(static)( 5 ) ) * ( dvarbool(static)( 4 ) || dvarbool(static)( 3 ) ) * 32 )  )
+			exp (null) (null) ( 400 * ( max ( ( localvarint( "timer_mark" ) + 150 ) - ( milliseconds( ) - 150 * ( 1 + 1 ) ) , 0 ) ) / 150 ) + 230  )
+		}
+		itemDef
+		{
+			rect -166 -123 -166 20 2 9
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.8 0.8 0.8 1
+			backColor 0 0 0 0.35
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 64 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 8
+			textAlignX 6
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 9
+			feeder 0
+			visible 1
+			exp text ( "@SPECIAL_OPS_UI_DIFFICULTY"  )
+			visible when ( !dvarbool(static)( 27 ) && ( dvarbool(static)( 28 ) || dvarbool(static)( 3 ) )  )
+			exp (null) (null) ( 124 + 2 * 38 - ( dvarbool(static)( 5 ) * 56 + ( !dvarbool(static)( 5 ) ) * ( dvarbool(static)( 4 ) || dvarbool(static)( 3 ) ) * 32 )  )
+			exp (null) (null) ( ( - 400 * ( max ( ( localvarint( "timer_mark" ) + 150 ) - ( milliseconds( ) - 150 * ( 2 + 1 ) ) , 0 ) ) / 150 ) ) + 64  )
+		}
+		itemDef
+		{
+			rect 0 -123 166 20 2 9
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.7 1 0.65 1
+			backColor 0 0 0 0.35
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 230 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 10
+			textAlignX -6
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( dvarstring(static)( 33 )  )
+			visible when ( !dvarbool(static)( 27 ) && ( dvarbool(static)( 28 ) || dvarbool(static)( 3 ) )  )
+			exp (null) (null) ( 124 + 2 * 38 - ( dvarbool(static)( 5 ) * 56 + ( !dvarbool(static)( 5 ) ) * ( dvarbool(static)( 4 ) || dvarbool(static)( 3 ) ) * 32 )  )
+			exp (null) (null) ( 400 * ( max ( ( localvarint( "timer_mark" ) + 150 ) - ( milliseconds( ) - 150 * ( 2 + 1 ) ) , 0 ) ) / 150 ) + 230  )
+		}
+		itemDef
+		{
+			rect -166 -123 -166 19 2 9
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.8 0.8 0.8 1
+			backColor 0 0 0 0.35
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 64 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 8
+			textAlignX 6
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 9
+			feeder 0
+			visible 1
+			exp text ( "@SPECIAL_OPS_UI_TIME"  )
+			visible when ( ( "@SPECIAL_OPS_UI_TIME" != "" || dvarstring(static)( 29 ) != "" ) && !dvarbool(static)( 27 ) && dvarbool(static)( 4 ) && !dvarbool(static)( 3 )  )
+			exp (null) (null) ( 124 + 0 * 21 - ( dvarbool(static)( 5 ) * 56 + ( !dvarbool(static)( 5 ) ) * ( dvarbool(static)( 4 ) || dvarbool(static)( 3 ) ) * 32 )  )
+			exp (null) (null) ( ( - 400 * ( max ( ( localvarint( "timer_mark" ) + 150 ) - ( milliseconds( ) - 150 * ( 0 + 1 ) ) , 0 ) ) / 150 ) ) + 64  )
+		}
+		itemDef
+		{
+			rect 0 -123 166 19 2 9
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.7 1 0.65 1
+			backColor 0 0 0 0.35
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 230 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 10
+			textAlignX -6
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( dvarstring(static)( 29 )  )
+			visible when ( ( "@SPECIAL_OPS_UI_TIME" != "" || dvarstring(static)( 29 ) != "" ) && !dvarbool(static)( 27 ) && dvarbool(static)( 4 ) && !dvarbool(static)( 3 )  )
+			exp (null) (null) ( 124 + 0 * 21 - ( dvarbool(static)( 5 ) * 56 + ( !dvarbool(static)( 5 ) ) * ( dvarbool(static)( 4 ) || dvarbool(static)( 3 ) ) * 32 )  )
+			exp (null) (null) ( 400 * ( max ( ( localvarint( "timer_mark" ) + 150 ) - ( milliseconds( ) - 150 * ( 0 + 1 ) ) , 0 ) ) / 150 ) + 230  )
+		}
+		itemDef
+		{
+			rect -166 -123 -166 19 2 9
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.8 0.8 0.8 1
+			backColor 0 0 0 0.35
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 64 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 8
+			textAlignX 6
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 9
+			feeder 0
+			visible 1
+			exp text ( "@SPECIAL_OPS_UI_KILLS"  )
+			visible when ( ( "@SPECIAL_OPS_UI_KILLS" != "" || dvarint(static)( 32 ) != "" ) && !dvarbool(static)( 27 ) && dvarbool(static)( 4 ) && !dvarbool(static)( 3 )  )
+			exp (null) (null) ( 124 + 1 * 21 - ( dvarbool(static)( 5 ) * 56 + ( !dvarbool(static)( 5 ) ) * ( dvarbool(static)( 4 ) || dvarbool(static)( 3 ) ) * 32 )  )
+			exp (null) (null) ( ( - 400 * ( max ( ( localvarint( "timer_mark" ) + 150 ) - ( milliseconds( ) - 150 * ( 1 + 1 ) ) , 0 ) ) / 150 ) ) + 64  )
+		}
+		itemDef
+		{
+			rect 0 -123 166 19 2 9
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.7 1 0.65 1
+			backColor 0 0 0 0.35
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 230 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 10
+			textAlignX -6
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( dvarint(static)( 32 )  )
+			visible when ( ( "@SPECIAL_OPS_UI_KILLS" != "" || dvarint(static)( 32 ) != "" ) && !dvarbool(static)( 27 ) && dvarbool(static)( 4 ) && !dvarbool(static)( 3 )  )
+			exp (null) (null) ( 124 + 1 * 21 - ( dvarbool(static)( 5 ) * 56 + ( !dvarbool(static)( 5 ) ) * ( dvarbool(static)( 4 ) || dvarbool(static)( 3 ) ) * 32 )  )
+			exp (null) (null) ( 400 * ( max ( ( localvarint( "timer_mark" ) + 150 ) - ( milliseconds( ) - 150 * ( 1 + 1 ) ) , 0 ) ) / 150 ) + 230  )
+		}
+		itemDef
+		{
+			rect -166 -123 -166 19 2 9
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.8 0.8 0.8 1
+			backColor 0 0 0 0.35
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 64 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 8
+			textAlignX 6
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 9
+			feeder 0
+			visible 1
+			exp text ( "@SPECIAL_OPS_UI_DIFFICULTY"  )
+			visible when ( ( "@SPECIAL_OPS_UI_DIFFICULTY" != "" || dvarstring(static)( 33 ) != "" ) && !dvarbool(static)( 27 ) && dvarbool(static)( 4 ) && !dvarbool(static)( 3 )  )
+			exp (null) (null) ( 124 + 2 * 21 - ( dvarbool(static)( 5 ) * 56 + ( !dvarbool(static)( 5 ) ) * ( dvarbool(static)( 4 ) || dvarbool(static)( 3 ) ) * 32 )  )
+			exp (null) (null) ( ( - 400 * ( max ( ( localvarint( "timer_mark" ) + 150 ) - ( milliseconds( ) - 150 * ( 2 + 1 ) ) , 0 ) ) / 150 ) ) + 64  )
+		}
+		itemDef
+		{
+			rect 0 -123 166 19 2 9
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.7 1 0.65 1
+			backColor 0 0 0 0.35
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 230 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 10
+			textAlignX -6
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( dvarstring(static)( 33 )  )
+			visible when ( ( "@SPECIAL_OPS_UI_DIFFICULTY" != "" || dvarstring(static)( 33 ) != "" ) && !dvarbool(static)( 27 ) && dvarbool(static)( 4 ) && !dvarbool(static)( 3 )  )
+			exp (null) (null) ( 124 + 2 * 21 - ( dvarbool(static)( 5 ) * 56 + ( !dvarbool(static)( 5 ) ) * ( dvarbool(static)( 4 ) || dvarbool(static)( 3 ) ) * 32 )  )
+			exp (null) (null) ( 400 * ( max ( ( localvarint( "timer_mark" ) + 150 ) - ( milliseconds( ) - 150 * ( 2 + 1 ) ) , 0 ) ) / 150 ) + 230  )
+		}
+		itemDef
+		{
+			rect -166 -123 -166 19 2 9
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.8 0.8 0.8 1
+			backColor 0 0 0 0.35
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 64 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 8
+			textAlignX 6
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 9
+			feeder 0
+			visible 1
+			exp text ( ""  )
+			visible when ( ( "" != "" || "" != "" ) && !dvarbool(static)( 27 ) && dvarbool(static)( 4 ) && !dvarbool(static)( 3 )  )
+			exp (null) (null) ( 124 + 3 * 21 - ( dvarbool(static)( 5 ) * 56 + ( !dvarbool(static)( 5 ) ) * ( dvarbool(static)( 4 ) || dvarbool(static)( 3 ) ) * 32 )  )
+			exp (null) (null) ( ( - 400 * ( max ( ( localvarint( "timer_mark" ) + 150 ) - ( milliseconds( ) - 150 * ( 3 + 1 ) ) , 0 ) ) / 150 ) ) + 64  )
+		}
+		itemDef
+		{
+			rect 0 -123 166 19 2 9
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.7 1 0.65 1
+			backColor 0 0 0 0.35
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 230 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 10
+			textAlignX -6
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( ""  )
+			visible when ( ( "" != "" || "" != "" ) && !dvarbool(static)( 27 ) && dvarbool(static)( 4 ) && !dvarbool(static)( 3 )  )
+			exp (null) (null) ( 124 + 3 * 21 - ( dvarbool(static)( 5 ) * 56 + ( !dvarbool(static)( 5 ) ) * ( dvarbool(static)( 4 ) || dvarbool(static)( 3 ) ) * 32 )  )
+			exp (null) (null) ( 400 * ( max ( ( localvarint( "timer_mark" ) + 150 ) - ( milliseconds( ) - 150 * ( 3 + 1 ) ) , 0 ) ) / 150 ) + 230  )
+		}
+		itemDef
+		{
+			rect -166 -123 -166 19 2 9
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.8 0.8 0.8 1
+			backColor 0 0 0 0.35
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 64 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 8
+			textAlignX 6
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 9
+			feeder 0
+			visible 1
+			exp text ( "@SPECIAL_OPS_UI_KILLS_OTHER"  )
+			visible when ( ( "@SPECIAL_OPS_UI_KILLS_OTHER" != "" || dvarint(static)( 30 ) != "" ) && !dvarbool(static)( 27 ) && dvarbool(static)( 4 ) && !dvarbool(static)( 3 )  )
+			exp (null) (null) ( 124 + 4 * 21 - ( dvarbool(static)( 5 ) * 56 + ( !dvarbool(static)( 5 ) ) * ( dvarbool(static)( 4 ) || dvarbool(static)( 3 ) ) * 32 )  )
+			exp (null) (null) ( ( - 400 * ( max ( ( localvarint( "timer_mark" ) + 150 ) - ( milliseconds( ) - 150 * ( 4 + 1 ) ) , 0 ) ) / 150 ) ) + 64  )
+		}
+		itemDef
+		{
+			rect 0 -123 166 19 2 9
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.7 1 0.65 1
+			backColor 0 0 0 0.35
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 230 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 10
+			textAlignX -6
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( dvarint(static)( 30 )  )
+			visible when ( ( "@SPECIAL_OPS_UI_KILLS_OTHER" != "" || dvarint(static)( 30 ) != "" ) && !dvarbool(static)( 27 ) && dvarbool(static)( 4 ) && !dvarbool(static)( 3 )  )
+			exp (null) (null) ( 124 + 4 * 21 - ( dvarbool(static)( 5 ) * 56 + ( !dvarbool(static)( 5 ) ) * ( dvarbool(static)( 4 ) || dvarbool(static)( 3 ) ) * 32 )  )
+			exp (null) (null) ( 400 * ( max ( ( localvarint( "timer_mark" ) + 150 ) - ( milliseconds( ) - 150 * ( 4 + 1 ) ) , 0 ) ) / 150 ) + 230  )
+		}
+		itemDef
+		{
+			rect -166 -123 -166 19 2 9
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.8 0.8 0.8 1
+			backColor 0 0 0 0.35
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 64 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 8
+			textAlignX 6
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 9
+			feeder 0
+			visible 1
+			exp text ( "@SPECIAL_OPS_UI_DIFFICULTY_OTHER"  )
+			visible when ( ( "@SPECIAL_OPS_UI_DIFFICULTY_OTHER" != "" || dvarstring(static)( 31 ) != "" ) && !dvarbool(static)( 27 ) && dvarbool(static)( 4 ) && !dvarbool(static)( 3 )  )
+			exp (null) (null) ( 124 + 5 * 21 - ( dvarbool(static)( 5 ) * 56 + ( !dvarbool(static)( 5 ) ) * ( dvarbool(static)( 4 ) || dvarbool(static)( 3 ) ) * 32 )  )
+			exp (null) (null) ( ( - 400 * ( max ( ( localvarint( "timer_mark" ) + 150 ) - ( milliseconds( ) - 150 * ( 5 + 1 ) ) , 0 ) ) / 150 ) ) + 64  )
+		}
+		itemDef
+		{
+			rect 0 -123 166 19 2 9
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.7 1 0.65 1
+			backColor 0 0 0 0.35
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 230 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 10
+			textAlignX -6
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( dvarstring(static)( 31 )  )
+			visible when ( ( "@SPECIAL_OPS_UI_DIFFICULTY_OTHER" != "" || dvarstring(static)( 31 ) != "" ) && !dvarbool(static)( 27 ) && dvarbool(static)( 4 ) && !dvarbool(static)( 3 )  )
+			exp (null) (null) ( 124 + 5 * 21 - ( dvarbool(static)( 5 ) * 56 + ( !dvarbool(static)( 5 ) ) * ( dvarbool(static)( 4 ) || dvarbool(static)( 3 ) ) * 32 )  )
+			exp (null) (null) ( 400 * ( max ( ( localvarint( "timer_mark" ) + 150 ) - ( milliseconds( ) - 150 * ( 5 + 1 ) ) , 0 ) ) / 150 ) + 230  )
+		}
+		itemDef
+		{
+			rect -166 -123 -166 19 2 9
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.8 0.8 0.8 1
+			backColor 0 0 0 0.35
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 64 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 8
+			textAlignX 6
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 9
+			feeder 0
+			visible 1
+			exp text ( dvarstring(static)( 53 )  )
+			visible when ( ( dvarstring(static)( 53 ) != "" || dvarstring(static)( 54 ) != "" ) && dvarbool(static)( 27 )  )
+			exp (null) (null) ( 124 + 0 * 21 - ( dvarbool(static)( 5 ) * 56 + ( !dvarbool(static)( 5 ) ) * ( dvarbool(static)( 4 ) || dvarbool(static)( 3 ) ) * 32 )  )
+			exp (null) (null) ( ( - 400 * ( max ( ( localvarint( "timer_mark" ) + 150 ) - ( milliseconds( ) - 150 * ( 0 + 1 ) ) , 0 ) ) / 150 ) ) + 64  )
+		}
+		itemDef
+		{
+			rect 0 -123 166 19 2 9
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.7 1 0.65 1
+			backColor 0 0 0 0.35
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 230 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 10
+			textAlignX -6
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( dvarstring(static)( 54 )  )
+			visible when ( ( dvarstring(static)( 53 ) != "" || dvarstring(static)( 54 ) != "" ) && dvarbool(static)( 27 )  )
+			exp (null) (null) ( 124 + 0 * 21 - ( dvarbool(static)( 5 ) * 56 + ( !dvarbool(static)( 5 ) ) * ( dvarbool(static)( 4 ) || dvarbool(static)( 3 ) ) * 32 )  )
+			exp (null) (null) ( 400 * ( max ( ( localvarint( "timer_mark" ) + 150 ) - ( milliseconds( ) - 150 * ( 0 + 1 ) ) , 0 ) ) / 150 ) + 230  )
+		}
+		itemDef
+		{
+			rect -166 -123 -166 19 2 9
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.8 0.8 0.8 1
+			backColor 0 0 0 0.35
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 64 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 8
+			textAlignX 6
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 9
+			feeder 0
+			visible 1
+			exp text ( dvarstring(static)( 55 )  )
+			visible when ( ( dvarstring(static)( 55 ) != "" || dvarstring(static)( 56 ) != "" ) && dvarbool(static)( 27 )  )
+			exp (null) (null) ( 124 + 1 * 21 - ( dvarbool(static)( 5 ) * 56 + ( !dvarbool(static)( 5 ) ) * ( dvarbool(static)( 4 ) || dvarbool(static)( 3 ) ) * 32 )  )
+			exp (null) (null) ( ( - 400 * ( max ( ( localvarint( "timer_mark" ) + 150 ) - ( milliseconds( ) - 150 * ( 1 + 1 ) ) , 0 ) ) / 150 ) ) + 64  )
+		}
+		itemDef
+		{
+			rect 0 -123 166 19 2 9
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.7 1 0.65 1
+			backColor 0 0 0 0.35
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 230 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 10
+			textAlignX -6
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( dvarstring(static)( 56 )  )
+			visible when ( ( dvarstring(static)( 55 ) != "" || dvarstring(static)( 56 ) != "" ) && dvarbool(static)( 27 )  )
+			exp (null) (null) ( 124 + 1 * 21 - ( dvarbool(static)( 5 ) * 56 + ( !dvarbool(static)( 5 ) ) * ( dvarbool(static)( 4 ) || dvarbool(static)( 3 ) ) * 32 )  )
+			exp (null) (null) ( 400 * ( max ( ( localvarint( "timer_mark" ) + 150 ) - ( milliseconds( ) - 150 * ( 1 + 1 ) ) , 0 ) ) / 150 ) + 230  )
+		}
+		itemDef
+		{
+			rect -166 -123 -166 19 2 9
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.8 0.8 0.8 1
+			backColor 0 0 0 0.35
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 64 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 8
+			textAlignX 6
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 9
+			feeder 0
+			visible 1
+			exp text ( dvarstring(static)( 57 )  )
+			visible when ( ( dvarstring(static)( 57 ) != "" || dvarstring(static)( 58 ) != "" ) && dvarbool(static)( 27 )  )
+			exp (null) (null) ( 124 + 2 * 21 - ( dvarbool(static)( 5 ) * 56 + ( !dvarbool(static)( 5 ) ) * ( dvarbool(static)( 4 ) || dvarbool(static)( 3 ) ) * 32 )  )
+			exp (null) (null) ( ( - 400 * ( max ( ( localvarint( "timer_mark" ) + 150 ) - ( milliseconds( ) - 150 * ( 2 + 1 ) ) , 0 ) ) / 150 ) ) + 64  )
+		}
+		itemDef
+		{
+			rect 0 -123 166 19 2 9
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.7 1 0.65 1
+			backColor 0 0 0 0.35
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 230 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 10
+			textAlignX -6
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( dvarstring(static)( 58 )  )
+			visible when ( ( dvarstring(static)( 57 ) != "" || dvarstring(static)( 58 ) != "" ) && dvarbool(static)( 27 )  )
+			exp (null) (null) ( 124 + 2 * 21 - ( dvarbool(static)( 5 ) * 56 + ( !dvarbool(static)( 5 ) ) * ( dvarbool(static)( 4 ) || dvarbool(static)( 3 ) ) * 32 )  )
+			exp (null) (null) ( 400 * ( max ( ( localvarint( "timer_mark" ) + 150 ) - ( milliseconds( ) - 150 * ( 2 + 1 ) ) , 0 ) ) / 150 ) + 230  )
+		}
+		itemDef
+		{
+			rect -166 -123 -166 19 2 9
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.8 0.8 0.8 1
+			backColor 0 0 0 0.35
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 64 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 8
+			textAlignX 6
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 9
+			feeder 0
+			visible 1
+			exp text ( dvarstring(static)( 59 )  )
+			visible when ( ( dvarstring(static)( 59 ) != "" || dvarstring(static)( 60 ) != "" ) && dvarbool(static)( 27 )  )
+			exp (null) (null) ( 124 + 3 * 21 - ( dvarbool(static)( 5 ) * 56 + ( !dvarbool(static)( 5 ) ) * ( dvarbool(static)( 4 ) || dvarbool(static)( 3 ) ) * 32 )  )
+			exp (null) (null) ( ( - 400 * ( max ( ( localvarint( "timer_mark" ) + 150 ) - ( milliseconds( ) - 150 * ( 3 + 1 ) ) , 0 ) ) / 150 ) ) + 64  )
+		}
+		itemDef
+		{
+			rect 0 -123 166 19 2 9
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.7 1 0.65 1
+			backColor 0 0 0 0.35
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 230 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 10
+			textAlignX -6
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( dvarstring(static)( 60 )  )
+			visible when ( ( dvarstring(static)( 59 ) != "" || dvarstring(static)( 60 ) != "" ) && dvarbool(static)( 27 )  )
+			exp (null) (null) ( 124 + 3 * 21 - ( dvarbool(static)( 5 ) * 56 + ( !dvarbool(static)( 5 ) ) * ( dvarbool(static)( 4 ) || dvarbool(static)( 3 ) ) * 32 )  )
+			exp (null) (null) ( 400 * ( max ( ( localvarint( "timer_mark" ) + 150 ) - ( milliseconds( ) - 150 * ( 3 + 1 ) ) , 0 ) ) / 150 ) + 230  )
+		}
+		itemDef
+		{
+			rect -166 -123 -166 19 2 9
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.8 0.8 0.8 1
+			backColor 0 0 0 0.35
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 64 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 8
+			textAlignX 6
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 9
+			feeder 0
+			visible 1
+			exp text ( dvarstring(static)( 61 )  )
+			visible when ( ( dvarstring(static)( 61 ) != "" || dvarstring(static)( 62 ) != "" ) && dvarbool(static)( 27 )  )
+			exp (null) (null) ( 124 + 4 * 21 - ( dvarbool(static)( 5 ) * 56 + ( !dvarbool(static)( 5 ) ) * ( dvarbool(static)( 4 ) || dvarbool(static)( 3 ) ) * 32 )  )
+			exp (null) (null) ( ( - 400 * ( max ( ( localvarint( "timer_mark" ) + 150 ) - ( milliseconds( ) - 150 * ( 4 + 1 ) ) , 0 ) ) / 150 ) ) + 64  )
+		}
+		itemDef
+		{
+			rect 0 -123 166 19 2 9
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.7 1 0.65 1
+			backColor 0 0 0 0.35
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 230 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 10
+			textAlignX -6
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( dvarstring(static)( 62 )  )
+			visible when ( ( dvarstring(static)( 61 ) != "" || dvarstring(static)( 62 ) != "" ) && dvarbool(static)( 27 )  )
+			exp (null) (null) ( 124 + 4 * 21 - ( dvarbool(static)( 5 ) * 56 + ( !dvarbool(static)( 5 ) ) * ( dvarbool(static)( 4 ) || dvarbool(static)( 3 ) ) * 32 )  )
+			exp (null) (null) ( 400 * ( max ( ( localvarint( "timer_mark" ) + 150 ) - ( milliseconds( ) - 150 * ( 4 + 1 ) ) , 0 ) ) / 150 ) + 230  )
+		}
+		itemDef
+		{
+			rect -166 -123 -166 19 2 9
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.8 0.8 0.8 1
+			backColor 0 0 0 0.35
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 64 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 8
+			textAlignX 6
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 9
+			feeder 0
+			visible 1
+			exp text ( dvarstring(static)( 63 )  )
+			visible when ( ( dvarstring(static)( 63 ) != "" || dvarstring(static)( 64 ) != "" ) && dvarbool(static)( 27 )  )
+			exp (null) (null) ( 124 + 5 * 21 - ( dvarbool(static)( 5 ) * 56 + ( !dvarbool(static)( 5 ) ) * ( dvarbool(static)( 4 ) || dvarbool(static)( 3 ) ) * 32 )  )
+			exp (null) (null) ( ( - 400 * ( max ( ( localvarint( "timer_mark" ) + 150 ) - ( milliseconds( ) - 150 * ( 5 + 1 ) ) , 0 ) ) / 150 ) ) + 64  )
+		}
+		itemDef
+		{
+			rect 0 -123 166 19 2 9
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.7 1 0.65 1
+			backColor 0 0 0 0.35
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 230 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 10
+			textAlignX -6
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( dvarstring(static)( 64 )  )
+			visible when ( ( dvarstring(static)( 63 ) != "" || dvarstring(static)( 64 ) != "" ) && dvarbool(static)( 27 )  )
+			exp (null) (null) ( 124 + 5 * 21 - ( dvarbool(static)( 5 ) * 56 + ( !dvarbool(static)( 5 ) ) * ( dvarbool(static)( 4 ) || dvarbool(static)( 3 ) ) * 32 )  )
+			exp (null) (null) ( 400 * ( max ( ( localvarint( "timer_mark" ) + 150 ) - ( milliseconds( ) - 150 * ( 5 + 1 ) ) , 0 ) ) / 150 ) + 230  )
+		}
+		itemDef
+		{
+			name main_menu
+			rect -166 -123 166 19 2 9
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 64 0
+			background white
+			type 1
+			align 0
+			textAlign 9
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 0
+			feeder 0
+			text "@SPECIAL_OPS_UI_RETURN_TO_SPECIALOPS"
+			visible 1
+			onFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 0;
+			}
+			mouseEnter
+			{
+				"play" "mouse_over";
+			}
+			action
+			{
+				if ( ( milliseconds( ) - localvarint( "timer_mark" ) ) / 1000 > 1  )
+				{
+					"exec" "set cl_paused 0";
+					"close" "self";
+					"exec" "disconnect_noMessage";
+				}
+			}
+			exp (null) (null) ( 124 + 5 * 21 + 26  )
+			exp (null) (null) ( 64  )
+		}
+		itemDef
+		{
+			name try_again
+			rect -166 -123 166 19 2 9
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 64 0
+			background white
+			type 1
+			align 0
+			textAlign 9
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 0
+			feeder 0
+			text "@SPECIAL_OPS_UI_PLAY_AGAIN"
+			visible 1
+			onFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 0;
+			}
+			mouseEnter
+			{
+				"play" "mouse_over";
+			}
+			action
+			{
+				if ( ( milliseconds( ) - localvarint( "timer_mark" ) ) / 1000 > 1  )
+				{
+					"exec" "set cl_paused 0";
+					"close" "self";
+					"closeForAllPlayers" "coop_eog_summary";
+					"closeForAllPlayers" "eog_notify_newstars_coop1" "closeForAllPlayers" "eog_notify_unlock_coop1" "closeForAllPlayers" "eog_notify_besttime_coop1" "closeForAllPlayers" "eog_notify_noreward_coop1" "exec" "fast_restart";
+				}
+			}
+			exp (null) (null) ( 124 + 5 * 21 + 26  )
+			exp (null) (null) ( 230  )
+		}
+	}
+}

@@ -1,0 +1,1023 @@
+{
+	menuDef
+	{
+		name popmenu_specialops_difficulty
+		fullscreen 0
+		rect -150 -82 300 164 2 2
+		style 1
+		border 0
+		ownerdraw 0
+		ownerdrawFlag 0
+		borderSize 0
+		foreColor 1 1 1 1
+		backColor 1 1 1 1
+		borderColor 0 0 0 0
+		outlineColor 0 0 0 0
+		background white
+		exp rect Y ( 0 - ( 24 + 7 * 20 ) / 2  )
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		fadeInAmount 0
+		blurWorld 0
+		onOpen
+		{
+			"setfocusbydvar" "g_gameskill";
+		}
+		onESC
+		{
+			"close" "self";
+		}
+		focusColor 1 1 1 1
+		popup 
+		outOfBoundsClick 
+		allowedBinding +talk
+		itemDef
+		{
+			rect -1004 -562 3416 1920 2 2
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0.35
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -854 -480
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -1004 -562 3416 1920 2 2
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 1 1 1 1
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -854 -480
+			background xpbar_stencilbase
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -427 -82 854 164 2 2
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0.5 0.5 0.5 1
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -277 0
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -1092.62 -82 1708 480 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.75
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			background mw2_popup_bg_fogstencil
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp (null) (null) ( ( 0 - ( 854 - 300 ) * 0.500000 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) )  )
+		}
+		itemDef
+		{
+			rect -1092.62 -82 -1708 -480 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.85 0.85 0.85 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			background mw2_popup_bg_fogscroll
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp (null) (null) ( ( 0 - ( 854 - 300 ) * 0.500000 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) )  )
+		}
+		itemDef
+		{
+			rect -427 -82 854 164 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -277 0
+			background mockup_popup_bg_stencilfill
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp (null) (null) ( ( 24 + 7 * 20 )  )
+		}
+		itemDef
+		{
+			rect -653.054 -82 -1708 -480 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.75
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			background mw2_popup_bg_fogstencil
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp (null) (null) ( ( 0 - ( 854 - 300 ) * 0.500000 ) + ( 0 - 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) )  )
+		}
+		itemDef
+		{
+			rect -653.054 -82 -1708 -480 2 9
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.85 0.85 0.85 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			background mw2_popup_bg_fogscroll
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp (null) (null) ( ( 0 - ( 854 - 300 ) * 0.500000 ) + ( 0 - 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) )  )
+		}
+		itemDef
+		{
+			rect -491 -146 64 64 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -341 -64
+			background drop_shadow_tl
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect -427 -146 854 64 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -277 -64
+			background drop_shadow_t
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 427 -146 64 64 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 577 -64
+			background drop_shadow_tr
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 427 -82 64 164 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 577 0
+			background drop_shadow_r
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 427 82 64 64 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 577 164
+			background drop_shadow_br
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect -427 82 854 64 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -277 164
+			background drop_shadow_b
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect -491 82 64 64 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -341 164
+			background drop_shadow_bl
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect -491 -82 64 164 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -341 0
+			background drop_shadow_l
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect -150 -82 300 24 2 2
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 4
+			textAlignX 4
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 9
+			feeder 0
+			text "@MENU_SELECT_DIFFICULTY"
+			visible 1
+		}
+		itemDef
+		{
+			rect -146 30 292 42 2 2
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 4 112
+			decoration 
+			autoWrapped 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MENU_REGULAR_DESC_3" ) + "
+" + locstring( "@MENU_REGULAR_DESC_4" )  )
+			visible when ( localvarstring( "ui_highlighted_diff" ) == "newgame_easy"  )
+		}
+		itemDef
+		{
+			rect -146 30 292 42 2 2
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 4 112
+			decoration 
+			autoWrapped 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MENU_SKILLED_DESC" ) + "
+" + locstring( "@MENU_SKILLED_DESC_2" )  )
+			visible when ( localvarstring( "ui_highlighted_diff" ) == "newgame_regular"  )
+		}
+		itemDef
+		{
+			rect -146 30 292 42 2 2
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 4 112
+			decoration 
+			autoWrapped 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( "@MENU_HARDENED_DESC"  )
+			visible when ( localvarstring( "ui_highlighted_diff" ) == "newgame_hardened"  )
+		}
+		itemDef
+		{
+			rect -146 30 292 42 2 2
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 4 112
+			decoration 
+			autoWrapped 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( "@MENU_VETERAN_DESC"  )
+			visible when ( localvarstring( "ui_highlighted_diff" ) == "newgame_veteran"  )
+		}
+		itemDef
+		{
+			name newgame_regular
+			rect -146 -58 292 20 2 2
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 4 24
+			background popup_button_selection_bar_flipped
+			group mw2_popup_button
+			type 1
+			align 0
+			textAlign 4
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_REGULAR_CAPS"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_popup_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_popupAButton 1;
+				"play" "mouse_over";
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_popupAButton 1;
+				setLocalVarString ui_highlighted_diff "newgame_regular"  );
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 1 1 1 0;
+				setLocalVarBool ui_popupAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"setdvar" "g_gameskill" 1;
+				"setdvar" "g_gameskill_player_1" 1;
+				"setdvar" "g_gameskill_player_2" 1;
+				"close" "self";
+				"execondvarstringvalue" "ui_load_so_level" "so_demo_so_bridge" "devmap so_demo_so_bridge";
+				"execondvarstringvalue" "ui_load_so_level" "so_crossing_so_bridge" "devmap so_crossing_so_bridge";
+				"execondvarstringvalue" "ui_load_so_level" "so_timed_so_quicky" "devmap so_timed_so_quicky";
+				"execondvarstringvalue" "ui_load_so_level" "so_killspree_invasion" "devmap so_killspree_invasion";
+				"execondvarstringvalue" "ui_load_so_level" "so_assault_oilrig" "devmap so_assault_oilrig";
+				"execondvarstringvalue" "ui_load_so_level" "so_ac130_co_hunted" "devmap so_ac130_co_hunted";
+				"execondvarstringvalue" "ui_load_so_level" "so_killspree_favela" "devmap so_killspree_favela";
+				"execondvarstringvalue" "ui_load_so_level" "so_showers_gulag" "devmap so_showers_gulag";
+				"execondvarstringvalue" "ui_load_so_level" "so_defense_invasion" "devmap so_defense_invasion";
+				"execondvarstringvalue" "ui_load_so_level" "so_escape_airport" "devmap so_escape_airport";
+				"execondvarstringvalue" "ui_load_so_level" "so_forest_contingency" "devmap so_forest_contingency";
+				"execondvarstringvalue" "ui_load_so_level" "so_hidden_so_ghillies" "devmap so_hidden_so_ghillies";
+				"execondvarstringvalue" "ui_load_so_level" "so_killspree_trainer" "devmap so_killspree_trainer";
+				"execondvarstringvalue" "ui_load_so_level" "so_sabotage_cliffhanger" "devmap so_sabotage_cliffhanger";
+				"execondvarstringvalue" "ui_load_so_level" "so_snowrace1_cliffhanger" "devmap so_snowrace1_cliffhanger";
+				"execondvarstringvalue" "ui_load_so_level" "so_snowrace2_cliffhanger" "devmap so_snowrace2_cliffhanger";
+				"execondvarstringvalue" "ui_load_so_level" "so_defuse_favela_escape" "devmap so_defuse_favela_escape";
+				"execondvarstringvalue" "ui_load_so_level" "so_takeover_estate" "devmap so_takeover_estate";
+				"execondvarstringvalue" "ui_load_so_level" "so_takeover_oilrig" "devmap so_takeover_oilrig";
+				"execondvarstringvalue" "ui_load_so_level" "so_intel_boneyard" "devmap so_intel_boneyard";
+				"execondvarstringvalue" "ui_load_so_level" "so_juggernauts_favela" "devmap so_juggernauts_favela";
+				"execondvarstringvalue" "ui_load_so_level" "so_download_arcadia" "devmap so_download_arcadia";
+				"execondvarstringvalue" "ui_load_so_level" "so_rooftop_contingency" "devmap so_rooftop_contingency";
+				"execondvarstringvalue" "ui_load_so_level" "so_chopper_invasion" "devmap so_chopper_invasion";
+			}
+		}
+		itemDef
+		{
+			name newgame_hardened
+			rect -146 -38 292 20 2 2
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 1
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 4 44
+			background popup_button_selection_bar_flipped
+			group mw2_popup_button
+			type 1
+			align 0
+			textAlign 4
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_HARDENED_CAPS"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_popup_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_popupAButton 1;
+				"play" "mouse_over";
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_popupAButton 1;
+				setLocalVarString ui_highlighted_diff "newgame_hardened"  );
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 1 1 1 0;
+				setLocalVarBool ui_popupAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"setdvar" "g_gameskill" 2;
+				"setdvar" "g_gameskill_player_1" 2;
+				"setdvar" "g_gameskill_player_2" 2;
+				"close" "self";
+				"execondvarstringvalue" "ui_load_so_level" "so_demo_so_bridge" "devmap so_demo_so_bridge";
+				"execondvarstringvalue" "ui_load_so_level" "so_crossing_so_bridge" "devmap so_crossing_so_bridge";
+				"execondvarstringvalue" "ui_load_so_level" "so_timed_so_quicky" "devmap so_timed_so_quicky";
+				"execondvarstringvalue" "ui_load_so_level" "so_killspree_invasion" "devmap so_killspree_invasion";
+				"execondvarstringvalue" "ui_load_so_level" "so_assault_oilrig" "devmap so_assault_oilrig";
+				"execondvarstringvalue" "ui_load_so_level" "so_ac130_co_hunted" "devmap so_ac130_co_hunted";
+				"execondvarstringvalue" "ui_load_so_level" "so_killspree_favela" "devmap so_killspree_favela";
+				"execondvarstringvalue" "ui_load_so_level" "so_showers_gulag" "devmap so_showers_gulag";
+				"execondvarstringvalue" "ui_load_so_level" "so_defense_invasion" "devmap so_defense_invasion";
+				"execondvarstringvalue" "ui_load_so_level" "so_escape_airport" "devmap so_escape_airport";
+				"execondvarstringvalue" "ui_load_so_level" "so_forest_contingency" "devmap so_forest_contingency";
+				"execondvarstringvalue" "ui_load_so_level" "so_hidden_so_ghillies" "devmap so_hidden_so_ghillies";
+				"execondvarstringvalue" "ui_load_so_level" "so_killspree_trainer" "devmap so_killspree_trainer";
+				"execondvarstringvalue" "ui_load_so_level" "so_sabotage_cliffhanger" "devmap so_sabotage_cliffhanger";
+				"execondvarstringvalue" "ui_load_so_level" "so_snowrace1_cliffhanger" "devmap so_snowrace1_cliffhanger";
+				"execondvarstringvalue" "ui_load_so_level" "so_snowrace2_cliffhanger" "devmap so_snowrace2_cliffhanger";
+				"execondvarstringvalue" "ui_load_so_level" "so_defuse_favela_escape" "devmap so_defuse_favela_escape";
+				"execondvarstringvalue" "ui_load_so_level" "so_takeover_estate" "devmap so_takeover_estate";
+				"execondvarstringvalue" "ui_load_so_level" "so_takeover_oilrig" "devmap so_takeover_oilrig";
+				"execondvarstringvalue" "ui_load_so_level" "so_intel_boneyard" "devmap so_intel_boneyard";
+				"execondvarstringvalue" "ui_load_so_level" "so_juggernauts_favela" "devmap so_juggernauts_favela";
+				"execondvarstringvalue" "ui_load_so_level" "so_download_arcadia" "devmap so_download_arcadia";
+				"execondvarstringvalue" "ui_load_so_level" "so_rooftop_contingency" "devmap so_rooftop_contingency";
+				"execondvarstringvalue" "ui_load_so_level" "so_chopper_invasion" "devmap so_chopper_invasion";
+			}
+		}
+		itemDef
+		{
+			name newgame_veteran
+			rect -146 -18 292 20 2 2
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 4 64
+			background popup_button_selection_bar_flipped
+			group mw2_popup_button
+			type 1
+			align 0
+			textAlign 4
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_VETERAN_CAPS"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_popup_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_popupAButton 1;
+				"play" "mouse_over";
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_popupAButton 1;
+				setLocalVarString ui_highlighted_diff "newgame_veteran"  );
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 1 1 1 0;
+				setLocalVarBool ui_popupAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"setdvar" "g_gameskill" 3;
+				"setdvar" "g_gameskill_player_1" 3;
+				"setdvar" "g_gameskill_player_2" 3;
+				"close" "self";
+				"execondvarstringvalue" "ui_load_so_level" "so_demo_so_bridge" "devmap so_demo_so_bridge";
+				"execondvarstringvalue" "ui_load_so_level" "so_crossing_so_bridge" "devmap so_crossing_so_bridge";
+				"execondvarstringvalue" "ui_load_so_level" "so_timed_so_quicky" "devmap so_timed_so_quicky";
+				"execondvarstringvalue" "ui_load_so_level" "so_killspree_invasion" "devmap so_killspree_invasion";
+				"execondvarstringvalue" "ui_load_so_level" "so_assault_oilrig" "devmap so_assault_oilrig";
+				"execondvarstringvalue" "ui_load_so_level" "so_ac130_co_hunted" "devmap so_ac130_co_hunted";
+				"execondvarstringvalue" "ui_load_so_level" "so_killspree_favela" "devmap so_killspree_favela";
+				"execondvarstringvalue" "ui_load_so_level" "so_showers_gulag" "devmap so_showers_gulag";
+				"execondvarstringvalue" "ui_load_so_level" "so_defense_invasion" "devmap so_defense_invasion";
+				"execondvarstringvalue" "ui_load_so_level" "so_escape_airport" "devmap so_escape_airport";
+				"execondvarstringvalue" "ui_load_so_level" "so_forest_contingency" "devmap so_forest_contingency";
+				"execondvarstringvalue" "ui_load_so_level" "so_hidden_so_ghillies" "devmap so_hidden_so_ghillies";
+				"execondvarstringvalue" "ui_load_so_level" "so_killspree_trainer" "devmap so_killspree_trainer";
+				"execondvarstringvalue" "ui_load_so_level" "so_sabotage_cliffhanger" "devmap so_sabotage_cliffhanger";
+				"execondvarstringvalue" "ui_load_so_level" "so_snowrace1_cliffhanger" "devmap so_snowrace1_cliffhanger";
+				"execondvarstringvalue" "ui_load_so_level" "so_snowrace2_cliffhanger" "devmap so_snowrace2_cliffhanger";
+				"execondvarstringvalue" "ui_load_so_level" "so_defuse_favela_escape" "devmap so_defuse_favela_escape";
+				"execondvarstringvalue" "ui_load_so_level" "so_takeover_estate" "devmap so_takeover_estate";
+				"execondvarstringvalue" "ui_load_so_level" "so_takeover_oilrig" "devmap so_takeover_oilrig";
+				"execondvarstringvalue" "ui_load_so_level" "so_intel_boneyard" "devmap so_intel_boneyard";
+				"execondvarstringvalue" "ui_load_so_level" "so_juggernauts_favela" "devmap so_juggernauts_favela";
+				"execondvarstringvalue" "ui_load_so_level" "so_download_arcadia" "devmap so_download_arcadia";
+				"execondvarstringvalue" "ui_load_so_level" "so_rooftop_contingency" "devmap so_rooftop_contingency";
+				"execondvarstringvalue" "ui_load_so_level" "so_chopper_invasion" "devmap so_chopper_invasion";
+			}
+		}
+		itemDef
+		{
+			rect 94 -55 14 14 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 244 27
+			background difficulty_star
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "difficulty_star"  )
+			visible when ( 1  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 94 -35 14 14 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 244 47
+			background difficulty_star
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "difficulty_star"  )
+			visible when ( 1  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 81 -35 14 14 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 231 47
+			background difficulty_star
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "difficulty_star"  )
+			visible when ( 1  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 94 -15 14 14 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 244 67
+			background difficulty_star
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "difficulty_star"  )
+			visible when ( 1  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 81 -15 14 14 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 231 67
+			background difficulty_star
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "difficulty_star"  )
+			visible when ( 1  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 68 -15 14 14 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 218 67
+			background difficulty_star
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "difficulty_star"  )
+			visible when ( 1  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+	}
+}

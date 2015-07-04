@@ -1,0 +1,51 @@
+{
+	menuDef
+	{
+		name holdbreathhint
+		fullscreen 0
+		rect 0 -130 0 0 2 2
+		style 0
+		border 0
+		ownerdraw 0
+		ownerdrawFlag 0
+		borderSize 0
+		foreColor 1 1 1 1
+		backColor 0 0 0 0
+		borderColor 0 0 0 0
+		outlineColor 0 0 0 0
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		fadeInAmount 0
+		visible when ( !adsjavelin( )  )
+		blurWorld 0
+		focusColor 0 0 0 0
+		visible 
+		itemDef
+		{
+			name chRect
+			rect 0 -130 0 0 2 2
+			style 0
+			border 0
+			ownerdraw 71
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			decoration 
+			type 8
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.4583
+			textStyle 3
+			textFont 0
+			feeder 0
+			visible 1
+		}
+	}
+}

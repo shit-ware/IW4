@@ -1,0 +1,84 @@
+{
+	menuDef
+	{
+		name savegameinfo
+		fullscreen 0
+		rect 0 0 0 0 1 1
+		style 0
+		border 0
+		ownerdraw 0
+		ownerdrawFlag 0
+		borderSize 0
+		foreColor 1 1 1 1
+		backColor 0 0 0 0
+		borderColor 0 0 0 0
+		outlineColor 0 0 0 0
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		fadeInAmount 0
+		blurWorld 0
+		onOpen
+		{
+			"saveDelay";
+			"writeSave";
+		}
+		onClose
+		{
+			"uiScript" "saveComplete";
+		}
+		focusColor 1 1 1 1
+		itemDef
+		{
+			name backdrop
+			rect -1 -1 1 1 1 1
+			style 0
+			border 0
+			ownerdraw 101
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 0.75
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 8
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			name savingMsg
+			rect 40 46 128 20 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 0.8 0.4 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.5833
+			textStyle 0
+			textFont 9
+			feeder 0
+			text "@CGAME_NOW_SAVING"
+			visible 1
+			visible when ( dvarbool(static)( 36 )  )
+		}
+	}
+}

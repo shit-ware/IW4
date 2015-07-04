@@ -1,0 +1,1379 @@
+{
+	menuDef
+	{
+		name pc_options_advanced_video
+		fullscreen 0
+		rect 0 0 640 480
+		style 0
+		border 0
+		ownerdraw 0
+		ownerdrawFlag 0
+		borderSize 0
+		foreColor 1 1 1 1
+		backColor 0 0 0 0
+		borderColor 0 0 0 0
+		outlineColor 0 0 0 0
+		fadeCycle 0
+		fadeClamp 0
+		fadeAmount 0
+		fadeInAmount 0
+		blurWorld 0
+		onOpen
+		{
+			"ExecNow" "profile_menuDvarsSetup;
+			resetViewport";
+			setLocalVarBool ui_hideBack 1;
+		}
+		onClose
+		{
+			"ExecNow" "profile_menuDvarsFinish;
+			resetViewport";
+			setLocalVarBool ui_hideBack 1;
+			"execondvarintvalue" "r_lodScaleRigid" 2 "set r_lodScaleSkinned 4;
+			set r_lodBiasSkinned -200;
+			set r_lodBiasRigid -100";
+			"execondvarintvalue" "r_lodScaleRigid" 1 "set r_lodScaleSkinned 1;
+			set r_lodBiasSkinned 0;
+			set r_lodBiasRigid 0";
+			"open" "pc_options_video";
+		}
+		onESC
+		{
+			"close" "self";
+		}
+		focusColor 1 1 1 1
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background black
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 0 0 1708 480
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background mw2_main_cloud_overlay
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+			exp (null) (null) ( ( 0 - 107 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) )  )
+		}
+		itemDef
+		{
+			rect 0 0 -1708 -480
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background mw2_main_cloud_overlay
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+			exp (null) (null) ( ( - 107 + 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) )  )
+		}
+		itemDef
+		{
+			rect -427 -240 854 480 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background mw2_main_sp_image
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( dvarstring(static)( 2 ) == "sp"  )
+		}
+		itemDef
+		{
+			rect -427 -240 854 480 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background mw2_main_co_image
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( dvarstring(static)( 2 ) == "so"  )
+		}
+		itemDef
+		{
+			rect -427 -240 854 480 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background mw2_main_mp_image
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( dvarstring(static)( 2 ) == "mp"  )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background mockup_bg_glow
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( !!  )
+			exp (null) (null) ( ( ( sin milliseconds( ) / 1500 ) + 1 ) * 0.250000 ) + 0.250000  )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background mockup_bg_glow
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( !!  )
+			exp (null) (null) ( ( ( sin milliseconds( ) / 480 ) + 1 ) * 0.250000 ) + 0.250000  )
+		}
+		itemDef
+		{
+			rect 232 0 344 28 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 5
+			textAlignX 0
+			textAlignY 0
+			textScale 0.5
+			textStyle 0
+			textFont 9
+			feeder 0
+			text "@MENU_ADVANCED_VIDEO"
+			visible 1
+		}
+		itemDef
+		{
+			rect 232 28 344 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_setting_selection_bar
+			type 12
+			align 0
+			textAlign 4
+			textAlignX 180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 1 "play" "mouse_over";
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 0;
+			}
+			action
+			{
+				"play" "mouse_click";
+				setLocalVarBool ui_showApply 1;
+			}
+			dvar ui_r_aspectratio
+			visible when ( 1  )
+			disabled when ( (  )
+		}
+		itemDef
+		{
+			rect 232 28 344 20 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX -180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_ASPECT_RATIO"
+			visible 1
+			visible when ( 1  )
+			disabled when ( (  )
+		}
+		itemDef
+		{
+			rect 232 48 344 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_setting_selection_bar
+			type 12
+			align 0
+			textAlign 4
+			textAlignX 180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 1 "play" "mouse_over";
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 0;
+			}
+			action
+			{
+				"play" "mouse_click";
+				setLocalVarBool ui_showApply 1;
+			}
+			dvar ui_r_aasamples
+			visible when ( 1  )
+			disabled when ( (  )
+		}
+		itemDef
+		{
+			rect 232 48 344 20 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX -180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_ANTIALIASING"
+			visible 1
+			visible when ( 1  )
+			disabled when ( (  )
+		}
+		itemDef
+		{
+			rect 232 68 344 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_setting_selection_bar
+			type 13
+			align 0
+			textAlign 4
+			textAlignX 180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 1 "play" "mouse_over";
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 0;
+			}
+			action
+			{
+				"play" "mouse_click";
+				setLocalVarBool ui_showApply 1;
+			}
+			dvar ui_r_displayRefresh
+			visible when ( 1  )
+			disabled when ( (  )
+		}
+		itemDef
+		{
+			rect 232 68 344 20 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX -180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_SCREEN_REFRESH_RATE"
+			visible 1
+			visible when ( 1  )
+			disabled when ( (  )
+		}
+		itemDef
+		{
+			rect 232 88 344 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_setting_selection_bar
+			type 11
+			align 0
+			textAlign 4
+			textAlignX 180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 1 "play" "mouse_over";
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 0;
+			}
+			action
+			{
+				"play" "mouse_click";
+				setLocalVarBool ui_showApply 1;
+			}
+			dvar ui_r_vsync
+			visible when ( 1  )
+			disabled when ( (  )
+		}
+		itemDef
+		{
+			rect 232 88 344 20 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX -180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_SYNC_EVERY_FRAME"
+			visible 1
+			visible when ( 1  )
+			disabled when ( (  )
+		}
+		itemDef
+		{
+			rect 216 108 -292 1 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background line_horizontal
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 232 108 344 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_setting_selection_bar
+			type 11
+			align 0
+			textAlign 4
+			textAlignX 180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 1 "play" "mouse_over";
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 0;
+			}
+			action
+			{
+				"play" "mouse_click";
+			}
+			dvar sm_enable
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 232 108 344 20 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX -180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_SHADOWS"
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 232 128 344 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_setting_selection_bar
+			type 11
+			align 0
+			textAlign 4
+			textAlignX 180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 1 "play" "mouse_over";
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 0;
+			}
+			action
+			{
+				"play" "mouse_click";
+			}
+			dvar r_specular
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 232 128 344 20 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX -180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_SPECULAR_MAP"
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 232 148 344 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_setting_selection_bar
+			type 11
+			align 0
+			textAlign 4
+			textAlignX 180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 1 "play" "mouse_over";
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 0;
+			}
+			action
+			{
+				"play" "mouse_click";
+			}
+			dvar r_dof_enable
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 232 148 344 20 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX -180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_DOF"
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 216 168 -292 1 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background line_horizontal
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 232 168 344 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_setting_selection_bar
+			type 11
+			align 0
+			textAlign 4
+			textAlignX 180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 1 "play" "mouse_over";
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 0;
+			}
+			action
+			{
+				"play" "mouse_click";
+			}
+			dvar r_zfeather
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 232 168 344 20 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX -180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_ZFEATHER_SMOKE"
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 232 188 344 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_setting_selection_bar
+			type 11
+			align 0
+			textAlign 4
+			textAlignX 180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 1 "play" "mouse_over";
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 0;
+			}
+			action
+			{
+				"play" "mouse_click";
+			}
+			dvar ragdoll_enable
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 232 188 344 20 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX -180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_RAGDOLL"
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 232 208 344 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_setting_selection_bar
+			type 11
+			align 0
+			textAlign 4
+			textAlignX 180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 1 "play" "mouse_over";
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 0;
+			}
+			action
+			{
+				"play" "mouse_click";
+			}
+			dvar fx_marks
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 232 208 344 20 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX -180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_BULLET_IMPACTS"
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 216 228 -292 1 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background line_horizontal
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 232 228 344 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_setting_selection_bar
+			type 12
+			align 0
+			textAlign 4
+			textAlignX 180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 1 "play" "mouse_over";
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 0;
+			}
+			action
+			{
+				"play" "mouse_click";
+				setLocalVarBool ui_showPicApply 1;
+			}
+			dvar ui_r_picmip_manual
+			visible when ( 1  )
+			disabled when ( (  )
+		}
+		itemDef
+		{
+			rect 232 228 344 20 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX -180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_TEXTURE_QUALITY"
+			visible 1
+			visible when ( 1  )
+			disabled when ( (  )
+		}
+		itemDef
+		{
+			rect 232 248 344 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_setting_selection_bar
+			type 12
+			align 0
+			textAlign 4
+			textAlignX 180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 1 "play" "mouse_over";
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 0;
+			}
+			action
+			{
+				"play" "mouse_click";
+				setLocalVarBool ui_showPicApply 1;
+			}
+			dvar ui_r_picmip
+			visible when ( dvarint(static)( 10 )  )
+			disabled when ( (  )
+		}
+		itemDef
+		{
+			rect 232 248 344 20 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX -180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_TEXTURE_RESOLUTION"
+			visible 1
+			visible when ( dvarint(static)( 10 )  )
+			disabled when ( (  )
+		}
+		itemDef
+		{
+			rect 232 268 344 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_setting_selection_bar
+			type 12
+			align 0
+			textAlign 4
+			textAlignX 180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 1 "play" "mouse_over";
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 0;
+			}
+			action
+			{
+				"play" "mouse_click";
+				setLocalVarBool ui_showPicApply 1;
+			}
+			dvar ui_r_picmip_bump
+			visible when ( dvarint(static)( 10 )  )
+			disabled when ( (  )
+		}
+		itemDef
+		{
+			rect 232 268 344 20 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX -180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_NORMAL_MAP_RESOLUTION"
+			visible 1
+			visible when ( dvarint(static)( 10 )  )
+			disabled when ( (  )
+		}
+		itemDef
+		{
+			rect 232 288 344 20 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_setting_selection_bar
+			type 12
+			align 0
+			textAlign 4
+			textAlignX 180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 1 "play" "mouse_over";
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 0;
+			}
+			action
+			{
+				"play" "mouse_click";
+				setLocalVarBool ui_showPicApply 1;
+			}
+			dvar ui_r_picmip_spec
+			visible when ( dvarint(static)( 10 )  )
+			disabled when ( (  )
+		}
+		itemDef
+		{
+			rect 232 288 344 20 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 6
+			textAlignX -180
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@MENU_SPECULAR_MAP_RESOLUTION"
+			visible 1
+			visible when ( dvarint(static)( 10 )  )
+			disabled when ( (  )
+		}
+		itemDef
+		{
+			rect -64 -20 336 20 1 3
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_button_selection_bar
+			group mw2_button
+			type 1
+			align 0
+			textAlign 6
+			textAlignX -60
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@PLATFORM_BACK_CAPS"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"play" "mouse_click";
+				"escape" "self";
+			}
+			visible when ( "@PLATFORM_BACK_CAPS" == "@PLATFORM_BACK_CAPS"  )
+		}
+		itemDef
+		{
+			rect -64 -20 336 20 1 3
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background menu_button_selection_bar
+			group mw2_button
+			type 1
+			align 0
+			textAlign 6
+			textAlignX -60
+			textAlignY 0
+			textScale 0.375
+			textStyle 0
+			textFont 3
+			feeder 0
+			text "@PLATFORM_BACK_CAPS"
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				if ( dvarstring(static)( 2 ) != "mp"  )
+				{
+					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+				}
+				"setItemColor" "self" "backcolor" 0 0 0 1;
+				setLocalVarBool ui_menuAButton 1;
+			}
+			leaveFocus
+			{
+				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
+				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
+				setLocalVarBool ui_menuAButton 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"play" "mouse_click";
+				"open" "popup_summary";
+			}
+			visible when ( "@PLATFORM_BACK_CAPS" == "@PLATFORM_GAME_SUMMARY_CAPS"  )
+		}
+	}
+}

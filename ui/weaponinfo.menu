@@ -1,0 +1,441 @@
+{
+	menuDef
+	{
+		name weaponinfo
+		fullscreen 0
+		rect 2 -20 640 480 4 4
+		style 0
+		border 0
+		ownerdraw 0
+		ownerdrawFlag 0
+		borderSize 0
+		foreColor 1 1 1 1
+		backColor 0 0 0 0
+		borderColor 0 0 0 0
+		outlineColor 0 0 0 0
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		fadeInAmount 0
+		visible when ( !( player( "number" ) + 1 == dvarint(static)( 4 ) ) && ( dvarbool(static)( 5 ) == 0 ) && ( dvarstring(static)( 6 ) != "on" ) && !flashbanged( ) && !usingvehicle( ) && !ui_active( ) && !( gamemsgwndactive( 2 ) ) && ( dvarint(static)( 7 ) == 0 )  )
+		blurWorld 0
+		focusColor 0 0 0 0
+		visible 
+		itemDef
+		{
+			name weaponbar_line
+			rect -347.333 -74.6667 261.333 56 10 10
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.0142857
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -349.333 -54.6667
+			background hud_weaponbar_line
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+			exp (null) (null) ( hudfade( "weapon" )  )
+		}
+		itemDef
+		{
+			rect -131.333 -32.6667 37.3333 0.666667 10 10
+			style 0
+			border 0
+			ownerdraw 119
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.0142857
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -133.333 -12.6667
+			decoration 
+			type 8
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.437475
+			textStyle 6
+			textFont 9
+			feeder 0
+			visible 1
+			exp (null) (null) ( hudfade( "weapon" )  )
+		}
+		itemDef
+		{
+			name offhandSmokeIcon
+			rect -148.667 -32 18.6667 18.6667 10 10
+			style 0
+			border 0
+			ownerdraw 104
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.7 0.7 0.7 0.0142857
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -150.667 -12
+			decoration 
+			type 8
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( > 3  )
+			exp (null) (null) ( hudfade( "weapon" )  )
+		}
+		itemDef
+		{
+			name offhandSmokeIcon
+			rect -155.333 -32 18.6667 18.6667 10 10
+			style 0
+			border 0
+			ownerdraw 104
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.7 0.7 0.7 0.0142857
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -157.333 -12
+			decoration 
+			type 8
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( > 2  )
+			exp (null) (null) ( hudfade( "weapon" )  )
+		}
+		itemDef
+		{
+			name offhandSmokeIcon
+			rect -162 -32 18.6667 18.6667 10 10
+			style 0
+			border 0
+			ownerdraw 104
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.7 0.7 0.7 0.0142857
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -164 -12
+			decoration 
+			type 8
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( > 1  )
+			exp (null) (null) ( hudfade( "weapon" )  )
+		}
+		itemDef
+		{
+			name offhandSmokeIcon
+			rect -168.667 -32 18.6667 18.6667 10 10
+			style 0
+			border 0
+			ownerdraw 104
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.0142857
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -170.667 -12
+			decoration 
+			type 8
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( (  )
+			exp (null) (null) ( hudfade( "weapon" )  )
+		}
+		itemDef
+		{
+			name offhandSmokeIcon
+			rect -168.667 -32 18.6667 18.6667 10 10
+			style 0
+			border 0
+			ownerdraw 104
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.5 0.3 0.3 0
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -170.667 -12
+			decoration 
+			type 8
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( == 0  )
+			exp (null) (null) ( hudfade( "weapon" )  )
+		}
+		itemDef
+		{
+			name offhandFragIcon
+			rect -100.667 -32 18.6667 18.6667 10 10
+			style 0
+			border 0
+			ownerdraw 103
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.7 0.7 0.7 0.0142857
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -102.667 -12
+			decoration 
+			type 8
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( > 3  )
+			exp (null) (null) ( hudfade( "weapon" )  )
+		}
+		itemDef
+		{
+			name offhandFragIcon
+			rect -107.333 -32 18.6667 18.6667 10 10
+			style 0
+			border 0
+			ownerdraw 103
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.7 0.7 0.7 0.0142857
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -109.333 -12
+			decoration 
+			type 8
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( > 2  )
+			exp (null) (null) ( hudfade( "weapon" )  )
+		}
+		itemDef
+		{
+			name offhandFragIcon
+			rect -114 -32 18.6667 18.6667 10 10
+			style 0
+			border 0
+			ownerdraw 103
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.7 0.7 0.7 0.0142857
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -116 -12
+			decoration 
+			type 8
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( > 1  )
+			exp (null) (null) ( hudfade( "weapon" )  )
+		}
+		itemDef
+		{
+			name offhandFragIcon
+			rect -120.667 -32 18.6667 18.6667 10 10
+			style 0
+			border 0
+			ownerdraw 103
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.0142857
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -122.667 -12
+			decoration 
+			type 8
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( (  )
+			exp (null) (null) ( hudfade( "weapon" )  )
+		}
+		itemDef
+		{
+			name offhandFragIcon
+			rect -120.667 -32 18.6667 18.6667 10 10
+			style 0
+			border 0
+			ownerdraw 103
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.5 0.3 0.3 0
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -122.667 -12
+			decoration 
+			type 8
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( == 0  )
+			exp (null) (null) ( hudfade( "weapon" )  )
+		}
+		itemDef
+		{
+			name clipGraphic
+			rect -135.333 -40 0 0 10 10
+			style 0
+			border 0
+			ownerdraw 117
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.00928571
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -137.333 -20
+			decoration 
+			type 8
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp (null) (null) ( hudfade( "weapon" ) * 0.650000  )
+		}
+		itemDef
+		{
+			name clipGraphic
+			rect -135.333 -46 0 0 10 10
+			style 0
+			border 0
+			ownerdraw 121
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.00928571
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -137.333 -26
+			decoration 
+			type 8
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp (null) (null) ( hudfade( "weapon" ) * 0.650000  )
+		}
+		itemDef
+		{
+			rect -103.333 -52.6667 37.3333 0.666667 10 10
+			style 0
+			border 0
+			ownerdraw 81
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -105.333 -32.6667
+			decoration 
+			type 8
+			align 0
+			textAlign 2
+			textAlignX 0
+			textAlignY 0
+			textScale 0.3333
+			textStyle 3
+			textFont 10
+			feeder 0
+			visible 1
+			visible when ( 1  )
+			exp (null) (null) ( hudfade( "weaponName" )  )
+		}
+	}
+}

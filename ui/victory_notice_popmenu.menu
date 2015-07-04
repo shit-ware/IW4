@@ -1,0 +1,336 @@
+{
+	menuDef
+	{
+		name victory_notice_popmenu
+		fullscreen 0
+		rect 204 140 235 135
+		style 1
+		border 1
+		ownerdraw 0
+		ownerdrawFlag 0
+		borderSize 0
+		foreColor 1 1 1 1
+		backColor 0 0 0 0
+		borderColor 0 0 0 0
+		outlineColor 0 0 0 0
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		fadeInAmount 0.002
+		blurWorld 0
+		onOpen
+		{
+			"setfocus" "ok";
+		}
+		onESC
+		{
+			"close" "victory_notice_popmenu";
+		}
+		focusColor 1 1 1 1
+		popup 
+		itemDef
+		{
+			name window
+			rect 204 142 235 135
+			style 1
+			border 1
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0.5
+			borderColor 0.5 0.5 0.5 0.5
+			outlineColor 0 0 0 0
+			origin 0 2
+			decoration 
+			group grpControlbutton
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+		}
+		itemDef
+		{
+			name backimage2fade
+			rect -128 -22 896 484
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0 0 0 0.3
+			backColor 0 0 0 0.3
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -332 -162
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			name window2
+			rect 206 143 231 20
+			style 1
+			border 1
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 1 1 0.3 0.3
+			borderColor 0.1 0.1 0.1 0.2
+			outlineColor 0 0 0 0
+			origin 2 3
+			decoration 
+			group grpControlbutton
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+		}
+		itemDef
+		{
+			name backimage2fade
+			rect 54 142 535 150
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin -150 2
+			background popmenu_bg
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			name confirm
+			rect 330 165 110 20
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 0.8 0.4 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 126 25
+			decoration 
+			type 0
+			align 0
+			textAlign 1
+			textAlignX -62
+			textAlignY 5
+			textScale 0.5
+			textStyle 3
+			textFont 0
+			feeder 0
+			text "@MENU_CONGRATULATIONS"
+			visible 1
+		}
+		itemDef
+		{
+			rect 271 175 200 100
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.4823 0.4823 0.4823 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 67 35
+			decoration 
+			autoWrapped 
+			type 1
+			align 0
+			textAlign 1
+			textAlignX -50
+			textAlignY 19
+			textScale 0.3
+			textStyle 0
+			textFont 1
+			feeder 0
+			text "@MENU_VICTORY_BRITISH_UNLOCKED"
+			visible 1
+		}
+		itemDef
+		{
+			rect 271 175 200 100
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.4823 0.4823 0.4823 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 67 35
+			decoration 
+			autoWrapped 
+			type 1
+			align 0
+			textAlign 1
+			textAlignX -50
+			textAlignY 19
+			textScale 0.3
+			textStyle 0
+			textFont 1
+			feeder 0
+			text "@MENU_VICTORY_AMERICAN_UNLOCKED"
+			visible 1
+		}
+		itemDef
+		{
+			rect 271 175 200 100
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.4823 0.4823 0.4823 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 67 35
+			decoration 
+			autoWrapped 
+			type 1
+			align 0
+			textAlign 1
+			textAlignX -50
+			textAlignY 19
+			textScale 0.3
+			textStyle 0
+			textFont 1
+			feeder 0
+			text "@MENU_VICTORY_BRITISH_COMPLETED"
+			visible 1
+		}
+		itemDef
+		{
+			rect 271 175 200 100
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.4823 0.4823 0.4823 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 67 35
+			decoration 
+			autoWrapped 
+			type 1
+			align 0
+			textAlign 1
+			textAlignX -50
+			textAlignY 19
+			textScale 0.3
+			textStyle 0
+			textFont 1
+			feeder 0
+			text "@MENU_VICTORY_RUSSIAIN_COMPLETED"
+			visible 1
+		}
+		itemDef
+		{
+			rect 271 175 200 100
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.4823 0.4823 0.4823 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 67 35
+			decoration 
+			autoWrapped 
+			type 1
+			align 0
+			textAlign 1
+			textAlignX -50
+			textAlignY 19
+			textScale 0.3
+			textStyle 0
+			textFont 1
+			feeder 0
+			text "@MENU_VICTORY_AMERICAN_RUSSIAN"
+			visible 1
+		}
+		itemDef
+		{
+			name ok
+			rect 294 255 60 30
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.4823 0.4823 0.4823 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 90 115
+			type 1
+			align 0
+			textAlign 1
+			textAlignX 0
+			textAlignY 21
+			textScale 0.4583
+			textStyle 3
+			textFont 1
+			feeder 0
+			text "@MENU_OK"
+			visible 1
+			mouseEnter
+			{
+				"play" "mouse_over";
+			}
+			action
+			{
+				"play" "mouse_click";
+				"setdvar" "ui_showpopup" 0;
+				"close" "victory_notice_popmenu";
+			}
+		}
+	}
+}

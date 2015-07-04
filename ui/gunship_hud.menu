@@ -1,0 +1,310 @@
+{
+	menuDef
+	{
+		name gunship_hud
+		fullscreen 0
+		rect 0 0 640 480
+		style 0
+		border 0
+		ownerdraw 0
+		ownerdrawFlag 0
+		borderSize 0
+		foreColor 1 1 1 1
+		backColor 0 0 0 0
+		borderColor 0 0 0 0
+		outlineColor 0 0 0 0
+		exp rect X ( ( ( sin milliseconds( ) / 30 ) ) * dvarfloat(static)( 17 ) )  )
+		exp rect Y ( ( ( cos milliseconds( ) / 20 ) ) * dvarfloat(static)( 17 ) )  )
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		fadeInAmount 0
+		visible when ( ( ( weaponname( ) == "viper_20mm" ) || ( weaponname( ) == "viper_hydra" ) || ( weaponname( ) == "viper_hellfire" ) || ( weaponname( ) == "viper_tow" ) ) && !( dvarbool(static)( 18 ) == 1 )  )
+		blurWorld 0
+		focusColor 0 0 0 0
+		visible 
+		itemDef
+		{
+			rect 0 -30 100 30 8 10
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.7
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 8
+			textAlignX 0
+			textAlignY 0
+			textScale 0.45
+			textStyle 3
+			textFont 0
+			feeder 0
+			text "@GUNSHIP_20MM"
+			visible 1
+			visible when ( ( weaponname( ) == "viper_20mm" )  )
+		}
+		itemDef
+		{
+			rect 0 -30 100 30 8 10
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.7
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 8
+			textAlignX 0
+			textAlignY 0
+			textScale 0.45
+			textStyle 3
+			textFont 0
+			feeder 0
+			text "@GUNSHIP_HYDRA"
+			visible 1
+			visible when ( ( weaponname( ) == "viper_hydra" )  )
+		}
+		itemDef
+		{
+			rect 0 -30 100 30 8 10
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.7
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 8
+			textAlignX 0
+			textAlignY 0
+			textScale 0.45
+			textStyle 3
+			textFont 0
+			feeder 0
+			text "@GUNSHIP_HELLFIRE"
+			visible 1
+			visible when ( ( weaponname( ) == "viper_hellfire" )  )
+		}
+		itemDef
+		{
+			rect 0 -30 100 30 8 10
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.7
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 8
+			textAlignX 0
+			textAlignY 0
+			textScale 0.45
+			textStyle 3
+			textFont 0
+			feeder 0
+			text "@GUNSHIP_TOW"
+			visible 1
+			visible when ( ( weaponname( ) == "viper_tow" )  )
+		}
+		itemDef
+		{
+			rect -100 50 100 30 10 8
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.7
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 10
+			textAlignX 0
+			textAlignY 0
+			textScale 0.45
+			textStyle 3
+			textFont 0
+			feeder 0
+			text "@GUNSHIP_HUD_RIGHT_BLOCK"
+			visible 1
+		}
+		itemDef
+		{
+			rect -50 -30 100 30 9 10
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.7
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 9
+			textAlignX 0
+			textAlignY 0
+			textScale 0.45
+			textStyle 3
+			textFont 0
+			feeder 0
+			text "@GUNSHIP_HUD_BOTTOM_BLOCK"
+			visible 1
+		}
+		itemDef
+		{
+			rect -427 -240 854 480 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background gunship_overlay_20mm
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( weaponname( ) == "viper_20mm" )  )
+		}
+		itemDef
+		{
+			rect -427 -240 854 480 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background gunship_overlay_hydra
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( weaponname( ) == "viper_hydra" )  )
+		}
+		itemDef
+		{
+			rect -427 -240 854 480 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background gunship_overlay_hellfire
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( weaponname( ) == "viper_hellfire" )  )
+		}
+		itemDef
+		{
+			rect -427 -240 854 480 2 2
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background gunship_overlay_tow
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( weaponname( ) == "viper_tow" )  )
+		}
+		itemDef
+		{
+			rect -200 0 400 32 2 8
+			style 0
+			border 0
+			ownerdraw 145
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background viper_heading
+			decoration 
+			type 8
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+	}
+}

@@ -1,0 +1,1754 @@
+{
+	menuDef
+	{
+		name briefing
+		fullscreen 0
+		rect 0 0 640 480
+		style 1
+		border 0
+		ownerdraw 0
+		ownerdrawFlag 0
+		borderSize 0
+		foreColor 1 1 1 1
+		backColor 0 0 0 0
+		borderColor 0 0 0 0
+		outlineColor 0 0 0 0
+		fadeCycle 0
+		fadeClamp 0
+		fadeAmount 0
+		fadeInAmount 0
+		blurWorld 0
+		focusColor 1 1 1 1
+		itemDef
+		{
+			rect -107 0 854 480
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 1
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background mw2_main_background
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( dvarbool(static)( 8 )  )
+		}
+		itemDef
+		{
+			rect -267.879 0 1708 480
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			background mw2_main_cloud_overlay
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( dvarbool(static)( 8 )  )
+			exp (null) (null) ( ( 0 - 107 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) )  )
+		}
+		itemDef
+		{
+			rect -767.945 0 -1708 -480
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			origin 0 0
+			background mw2_main_cloud_overlay
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( dvarbool(static)( 8 )  )
+			exp (null) (null) ( ( - 107 + 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) )  )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.308643
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background mockup_bg_glow
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( dvarbool(static)( 8 )  )
+			exp (null) (null) ( ( ( sin milliseconds( ) / 1500 ) + 1 ) * 0.250000 ) + 0.250000  )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.266724
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background mockup_bg_glow
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( dvarbool(static)( 8 )  )
+			exp (null) (null) ( ( ( sin milliseconds( ) / 480 ) + 1 ) * 0.250000 ) + 0.250000  )
+		}
+		itemDef
+		{
+			rect -426.667 -240 853.333 480 2 2
+			style 1
+			border 0
+			ownerdraw 277
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 1 1 1 1
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background cinematic
+			decoration 
+			type 8
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -750 -200 600 800 2 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 1 1 1 1
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background black
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( dvarbool(static)( 8 )  )
+		}
+		itemDef
+		{
+			rect -150 -200 300 800 2 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 1 1 1 1
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background gradient
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( dvarbool(static)( 8 )  )
+		}
+		itemDef
+		{
+			name level_name
+			rect 24 -122 281 92 1 3
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			autoWrapped 
+			type 0
+			align 0
+			textAlign 4
+			textAlignX 0
+			textAlignY -30
+			textScale 0.5833
+			textStyle 3
+			textFont 0
+			feeder 0
+			visible 1
+			exp text ( "@" + tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 9 ) , 2 )  )
+			visible when ( dvarbool(static)( 8 ) && !dvarbool(static)( 10 )  )
+			exp (null) (null) ( ( 0 - 122 ) - 30 * ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 9 ) , 15 ) != "" )  )
+		}
+		itemDef
+		{
+			name level_name
+			rect 24 -122 281 92 1 3
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			autoWrapped 
+			type 0
+			align 0
+			textAlign 4
+			textAlignX 0
+			textAlignY -30
+			textScale 0.5833
+			textStyle 3
+			textFont 0
+			feeder 0
+			visible 1
+			exp text ( "@" + tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 11 ) , 2 )  )
+			visible when ( dvarbool(static)( 8 ) && dvarbool(static)( 10 )  )
+			exp (null) (null) ( ( 0 - 122 ) - 30 * ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 11 ) , 15 ) != "" )  )
+		}
+		itemDef
+		{
+			name level_desc
+			rect 24 -122 281 92 1 3
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			autoWrapped 
+			type 0
+			align 0
+			textAlign 4
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 3
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@" + tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 9 ) , 3 ) )  )
+			visible when ( dvarbool(static)( 8 ) && !dvarbool(static)( 10 )  )
+			exp (null) (null) ( ( 0 - 122 ) - 30 * ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 9 ) , 15 ) != "" )  )
+		}
+		itemDef
+		{
+			name level_desc
+			rect 24 -122 281 92 1 3
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			autoWrapped 
+			type 0
+			align 0
+			textAlign 4
+			textAlignX 0
+			textAlignY 0
+			textScale 0.375
+			textStyle 3
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@" + tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 11 ) , 3 ) )  )
+			visible when ( dvarbool(static)( 8 ) && dvarbool(static)( 10 )  )
+			exp (null) (null) ( ( 0 - 122 ) - 30 * ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 11 ) , 15 ) != "" )  )
+		}
+		itemDef
+		{
+			rect 24 -122 281 92 1 3
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background difficulty_star
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1 && !dvarbool(static)( 10 ) && dvarbool(static)( 8 ) && 1 && ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 9 ) , 15 ) != "" )  )
+			exp (null) (null) ( ( 0 - 122 ) + 43 + 0 * 18  )
+			exp (null) (null) ( 24 + 0 * 14  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 24 -122 281 92 1 3
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background difficulty_star_empty
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1 && !dvarbool(static)( 10 ) && dvarbool(static)( 8 ) && !1 && ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 9 ) , 15 ) != "" )  )
+			exp (null) (null) ( ( 0 - 122 ) + 43 + 0 * 18  )
+			exp (null) (null) ( 24 + 0 * 14  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 24 -122 281 92 1 3
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background difficulty_star
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1 && !dvarbool(static)( 10 ) && dvarbool(static)( 8 ) && 0 && ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 9 ) , 15 ) != "" )  )
+			exp (null) (null) ( ( 0 - 122 ) + 43 + 0 * 18  )
+			exp (null) (null) ( 24 + 1 * 14  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 24 -122 281 92 1 3
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background difficulty_star_empty
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1 && !dvarbool(static)( 10 ) && dvarbool(static)( 8 ) && !0 && ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 9 ) , 15 ) != "" )  )
+			exp (null) (null) ( ( 0 - 122 ) + 43 + 0 * 18  )
+			exp (null) (null) ( 24 + 1 * 14  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 24 -122 281 92 1 3
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background difficulty_star
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1 && !dvarbool(static)( 10 ) && dvarbool(static)( 8 ) && 0 && ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 9 ) , 15 ) != "" )  )
+			exp (null) (null) ( ( 0 - 122 ) + 43 + 0 * 18  )
+			exp (null) (null) ( 24 + 2 * 14  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 24 -122 281 92 1 3
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background difficulty_star_empty
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1 && !dvarbool(static)( 10 ) && dvarbool(static)( 8 ) && !0 && ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 9 ) , 15 ) != "" )  )
+			exp (null) (null) ( ( 0 - 122 ) + 43 + 0 * 18  )
+			exp (null) (null) ( 24 + 2 * 14  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 24 -122 281 92 1 3
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background difficulty_star
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1 && !dvarbool(static)( 10 ) && dvarbool(static)( 8 ) && 1 && ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 9 ) , 15 ) != "" )  )
+			exp (null) (null) ( ( 0 - 122 ) + 43 + 1 * 18  )
+			exp (null) (null) ( 24 + 0 * 14  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 24 -122 281 92 1 3
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background difficulty_star_empty
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1 && !dvarbool(static)( 10 ) && dvarbool(static)( 8 ) && !1 && ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 9 ) , 15 ) != "" )  )
+			exp (null) (null) ( ( 0 - 122 ) + 43 + 1 * 18  )
+			exp (null) (null) ( 24 + 0 * 14  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 24 -122 281 92 1 3
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background difficulty_star
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1 && !dvarbool(static)( 10 ) && dvarbool(static)( 8 ) && 1 && ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 9 ) , 15 ) != "" )  )
+			exp (null) (null) ( ( 0 - 122 ) + 43 + 1 * 18  )
+			exp (null) (null) ( 24 + 1 * 14  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 24 -122 281 92 1 3
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background difficulty_star_empty
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1 && !dvarbool(static)( 10 ) && dvarbool(static)( 8 ) && !1 && ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 9 ) , 15 ) != "" )  )
+			exp (null) (null) ( ( 0 - 122 ) + 43 + 1 * 18  )
+			exp (null) (null) ( 24 + 1 * 14  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 24 -122 281 92 1 3
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background difficulty_star
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1 && !dvarbool(static)( 10 ) && dvarbool(static)( 8 ) && 0 && ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 9 ) , 15 ) != "" )  )
+			exp (null) (null) ( ( 0 - 122 ) + 43 + 1 * 18  )
+			exp (null) (null) ( 24 + 2 * 14  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 24 -122 281 92 1 3
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background difficulty_star_empty
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1 && !dvarbool(static)( 10 ) && dvarbool(static)( 8 ) && !0 && ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 9 ) , 15 ) != "" )  )
+			exp (null) (null) ( ( 0 - 122 ) + 43 + 1 * 18  )
+			exp (null) (null) ( 24 + 2 * 14  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 24 -122 281 92 1 3
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background difficulty_star
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1 && !dvarbool(static)( 10 ) && dvarbool(static)( 8 ) && 1 && ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 9 ) , 15 ) != "" )  )
+			exp (null) (null) ( ( 0 - 122 ) + 43 + 2 * 18  )
+			exp (null) (null) ( 24 + 0 * 14  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 24 -122 281 92 1 3
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background difficulty_star_empty
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1 && !dvarbool(static)( 10 ) && dvarbool(static)( 8 ) && !1 && ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 9 ) , 15 ) != "" )  )
+			exp (null) (null) ( ( 0 - 122 ) + 43 + 2 * 18  )
+			exp (null) (null) ( 24 + 0 * 14  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 24 -122 281 92 1 3
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background difficulty_star
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1 && !dvarbool(static)( 10 ) && dvarbool(static)( 8 ) && 1 && ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 9 ) , 15 ) != "" )  )
+			exp (null) (null) ( ( 0 - 122 ) + 43 + 2 * 18  )
+			exp (null) (null) ( 24 + 1 * 14  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 24 -122 281 92 1 3
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background difficulty_star_empty
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1 && !dvarbool(static)( 10 ) && dvarbool(static)( 8 ) && !1 && ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 9 ) , 15 ) != "" )  )
+			exp (null) (null) ( ( 0 - 122 ) + 43 + 2 * 18  )
+			exp (null) (null) ( 24 + 1 * 14  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 24 -122 281 92 1 3
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background difficulty_star
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1 && !dvarbool(static)( 10 ) && dvarbool(static)( 8 ) && 1 && ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 9 ) , 15 ) != "" )  )
+			exp (null) (null) ( ( 0 - 122 ) + 43 + 2 * 18  )
+			exp (null) (null) ( 24 + 2 * 14  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 24 -122 281 92 1 3
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background difficulty_star_empty
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1 && !dvarbool(static)( 10 ) && dvarbool(static)( 8 ) && !1 && ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 9 ) , 15 ) != "" )  )
+			exp (null) (null) ( ( 0 - 122 ) + 43 + 2 * 18  )
+			exp (null) (null) ( 24 + 2 * 14  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			name level_desc
+			rect 24 -122 281 92 1 3
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 4
+			textAlignX 46
+			textAlignY 0
+			textScale 0.375
+			textStyle 3
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@" + tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 9 ) , 15 ) )  )
+			visible when ( dvarbool(static)( 8 ) && !dvarbool(static)( 10 ) && ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 9 ) , 15 ) != "" )  )
+			exp (null) (null) ( 24 - ( !1 ) * 46  )
+			exp (null) (null) ( ( 0 - 122 ) + 70 - 30 * ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 9 ) , 15 ) != "" )  )
+			exp (null) (null) ( 281 + 50  )
+		}
+		itemDef
+		{
+			rect 24 -122 281 92 1 3
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background difficulty_star
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1 && dvarbool(static)( 10 ) && dvarbool(static)( 8 ) && 1 && ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 11 ) , 15 ) != "" )  )
+			exp (null) (null) ( ( 0 - 122 ) + 43 + 0 * 18  )
+			exp (null) (null) ( 24 + 0 * 14  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 24 -122 281 92 1 3
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background difficulty_star_empty
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1 && dvarbool(static)( 10 ) && dvarbool(static)( 8 ) && !1 && ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 11 ) , 15 ) != "" )  )
+			exp (null) (null) ( ( 0 - 122 ) + 43 + 0 * 18  )
+			exp (null) (null) ( 24 + 0 * 14  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 24 -122 281 92 1 3
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background difficulty_star
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1 && dvarbool(static)( 10 ) && dvarbool(static)( 8 ) && 0 && ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 11 ) , 15 ) != "" )  )
+			exp (null) (null) ( ( 0 - 122 ) + 43 + 0 * 18  )
+			exp (null) (null) ( 24 + 1 * 14  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 24 -122 281 92 1 3
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background difficulty_star_empty
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1 && dvarbool(static)( 10 ) && dvarbool(static)( 8 ) && !0 && ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 11 ) , 15 ) != "" )  )
+			exp (null) (null) ( ( 0 - 122 ) + 43 + 0 * 18  )
+			exp (null) (null) ( 24 + 1 * 14  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 24 -122 281 92 1 3
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background difficulty_star
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1 && dvarbool(static)( 10 ) && dvarbool(static)( 8 ) && 0 && ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 11 ) , 15 ) != "" )  )
+			exp (null) (null) ( ( 0 - 122 ) + 43 + 0 * 18  )
+			exp (null) (null) ( 24 + 2 * 14  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 24 -122 281 92 1 3
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background difficulty_star_empty
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1 && dvarbool(static)( 10 ) && dvarbool(static)( 8 ) && !0 && ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 11 ) , 15 ) != "" )  )
+			exp (null) (null) ( ( 0 - 122 ) + 43 + 0 * 18  )
+			exp (null) (null) ( 24 + 2 * 14  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 24 -122 281 92 1 3
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background difficulty_star
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1 && dvarbool(static)( 10 ) && dvarbool(static)( 8 ) && 1 && ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 11 ) , 15 ) != "" )  )
+			exp (null) (null) ( ( 0 - 122 ) + 43 + 1 * 18  )
+			exp (null) (null) ( 24 + 0 * 14  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 24 -122 281 92 1 3
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background difficulty_star_empty
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1 && dvarbool(static)( 10 ) && dvarbool(static)( 8 ) && !1 && ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 11 ) , 15 ) != "" )  )
+			exp (null) (null) ( ( 0 - 122 ) + 43 + 1 * 18  )
+			exp (null) (null) ( 24 + 0 * 14  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 24 -122 281 92 1 3
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background difficulty_star
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1 && dvarbool(static)( 10 ) && dvarbool(static)( 8 ) && 1 && ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 11 ) , 15 ) != "" )  )
+			exp (null) (null) ( ( 0 - 122 ) + 43 + 1 * 18  )
+			exp (null) (null) ( 24 + 1 * 14  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 24 -122 281 92 1 3
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background difficulty_star_empty
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1 && dvarbool(static)( 10 ) && dvarbool(static)( 8 ) && !1 && ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 11 ) , 15 ) != "" )  )
+			exp (null) (null) ( ( 0 - 122 ) + 43 + 1 * 18  )
+			exp (null) (null) ( 24 + 1 * 14  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 24 -122 281 92 1 3
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background difficulty_star
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1 && dvarbool(static)( 10 ) && dvarbool(static)( 8 ) && 0 && ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 11 ) , 15 ) != "" )  )
+			exp (null) (null) ( ( 0 - 122 ) + 43 + 1 * 18  )
+			exp (null) (null) ( 24 + 2 * 14  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 24 -122 281 92 1 3
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background difficulty_star_empty
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1 && dvarbool(static)( 10 ) && dvarbool(static)( 8 ) && !0 && ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 11 ) , 15 ) != "" )  )
+			exp (null) (null) ( ( 0 - 122 ) + 43 + 1 * 18  )
+			exp (null) (null) ( 24 + 2 * 14  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 24 -122 281 92 1 3
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background difficulty_star
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1 && dvarbool(static)( 10 ) && dvarbool(static)( 8 ) && 1 && ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 11 ) , 15 ) != "" )  )
+			exp (null) (null) ( ( 0 - 122 ) + 43 + 2 * 18  )
+			exp (null) (null) ( 24 + 0 * 14  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 24 -122 281 92 1 3
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background difficulty_star_empty
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1 && dvarbool(static)( 10 ) && dvarbool(static)( 8 ) && !1 && ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 11 ) , 15 ) != "" )  )
+			exp (null) (null) ( ( 0 - 122 ) + 43 + 2 * 18  )
+			exp (null) (null) ( 24 + 0 * 14  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 24 -122 281 92 1 3
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background difficulty_star
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1 && dvarbool(static)( 10 ) && dvarbool(static)( 8 ) && 1 && ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 11 ) , 15 ) != "" )  )
+			exp (null) (null) ( ( 0 - 122 ) + 43 + 2 * 18  )
+			exp (null) (null) ( 24 + 1 * 14  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 24 -122 281 92 1 3
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background difficulty_star_empty
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1 && dvarbool(static)( 10 ) && dvarbool(static)( 8 ) && !1 && ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 11 ) , 15 ) != "" )  )
+			exp (null) (null) ( ( 0 - 122 ) + 43 + 2 * 18  )
+			exp (null) (null) ( 24 + 1 * 14  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 24 -122 281 92 1 3
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background difficulty_star
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1 && dvarbool(static)( 10 ) && dvarbool(static)( 8 ) && 1 && ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 11 ) , 15 ) != "" )  )
+			exp (null) (null) ( ( 0 - 122 ) + 43 + 2 * 18  )
+			exp (null) (null) ( 24 + 2 * 14  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			rect 24 -122 281 92 1 3
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background difficulty_star_empty
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1 && dvarbool(static)( 10 ) && dvarbool(static)( 8 ) && !1 && ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 11 ) , 15 ) != "" )  )
+			exp (null) (null) ( ( 0 - 122 ) + 43 + 2 * 18  )
+			exp (null) (null) ( 24 + 2 * 14  )
+			exp (null) (null) ( 14  )
+			exp (null) (null) ( 14  )
+		}
+		itemDef
+		{
+			name level_desc
+			rect 24 -122 281 92 1 3
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.65
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 4
+			textAlignX 46
+			textAlignY 0
+			textScale 0.375
+			textStyle 3
+			textFont 3
+			feeder 0
+			visible 1
+			exp text ( locstring( "@" + tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 11 ) , 15 ) )  )
+			visible when ( dvarbool(static)( 8 ) && dvarbool(static)( 10 ) && ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 11 ) , 15 ) != "" )  )
+			exp (null) (null) ( 24 - ( !1 ) * 46  )
+			exp (null) (null) ( ( 0 - 122 ) + 70 - 30 * ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 11 ) , 15 ) != "" )  )
+			exp (null) (null) ( 281 + 50  )
+		}
+		itemDef
+		{
+			rect 24 -122 274 2 1 3
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0.2 0.2 0.2 1
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( dvarbool(static)( 8 ) && !dvarbool(static)( 10 )  )
+			exp (null) (null) ( ( 0 - 122 ) - 30 * ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 9 ) , 15 ) != "" )  )
+		}
+		itemDef
+		{
+			name loadbar
+			rect 24 -122 274 2 1 3
+			style 6
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.7
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( dvarbool(static)( 8 ) && !dvarbool(static)( 10 )  )
+			exp (null) (null) ( ( 0 - 122 ) - 30 * ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 9 ) , 15 ) != "" )  )
+		}
+		itemDef
+		{
+			rect 24 -122 274 2 1 3
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0.2 0.2 0.2 1
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( dvarbool(static)( 8 ) && dvarbool(static)( 10 )  )
+			exp (null) (null) ( ( 0 - 122 ) - 30 * ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 11 ) , 15 ) != "" )  )
+		}
+		itemDef
+		{
+			name loadbar
+			rect 24 -122 274 2 1 3
+			style 6
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.7
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( dvarbool(static)( 8 ) && dvarbool(static)( 10 )  )
+			exp (null) (null) ( ( 0 - 122 ) - 30 * ( tablelookup( "sp/specOpsTable.csv" , 1 , dvarstring(static)( 11 ) , 15 ) != "" )  )
+		}
+		itemDef
+		{
+			rect -128 -64 128 64 3 3
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background logo_iw
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( dvarbool(static)( 8 )  )
+		}
+		itemDef
+		{
+			rect -250 346 500 0 2 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			autoWrapped 
+			type 0
+			align 0
+			textAlign 5
+			textAlignX 0
+			textAlignY 0
+			textScale 0.38
+			textStyle 3
+			textFont 0
+			feeder 0
+			text "xXÃ;"
+			visible 1
+		}
+		itemDef
+		{
+			name profile
+			rect 40 40 560 400
+			style 0
+			border 0
+			ownerdraw 264
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 8
+			align 1
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 192 430 256 2
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0.2 0.2 0.2 1
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( !dvarbool(static)( 8 )  )
+		}
+		itemDef
+		{
+			name loadbar
+			rect 192 430 256 2
+			style 6
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( !dvarbool(static)( 8 )  )
+		}
+	}
+}

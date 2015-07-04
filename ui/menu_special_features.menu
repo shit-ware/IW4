@@ -1,0 +1,2811 @@
+{
+	menuDef
+	{
+		name menu_special_features
+		fullscreen 0
+		rect 0 0 640 480
+		style 0
+		border 0
+		ownerdraw 0
+		ownerdrawFlag 0
+		borderSize 0
+		foreColor 1 1 1 1
+		backColor 0 0 0 0
+		borderColor 0 0 0 0
+		outlineColor 0 0 0 0
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		fadeInAmount 0
+		blurWorld 4.8
+		onOpen
+		{
+			"exec" "hidehud";
+		}
+		onClose
+		{
+			"exec" "showhud";
+		}
+		onESC
+		{
+			"open" "main_options";
+			"close" "self";
+		}
+		focusColor 1 1 1 1
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0.75
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -120 -32 378 64
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 0.95 0.175
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 258 -32 16 -64
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 0.95 0.175
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 56 448 528 40
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 0.95 0.175
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 584 448 16 64
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 0.95 0.175
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 40 448 -16 64
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 0.95 0.175
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -120 464 160 32
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 0.95 0.175
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 600 464 160 32
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 0.95 0.175
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			name back
+			rect -250 -26 40 20 2 3
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 18
+			textScale 0.375
+			textStyle 3
+			textFont 1
+			feeder 0
+			text "@MENU_BACK"
+			visible 1
+			mouseEnter
+			{
+				"play" "mouse_over";
+			}
+			action
+			{
+				"play" "mouse_click";
+				"close" "self";
+				"open" "main_options";
+			}
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 48 40 0 0
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 0.8 0.4 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 4
+			textAlignX -36
+			textAlignY -36
+			textScale 0.5833
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			exp text ( "@MENU_CHEATS"  )
+		}
+		itemDef
+		{
+			rect 14 64 360 40 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 0.8 0.4 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			autoWrapped 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 16
+			textScale 0.4583
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp text ( "@MENU_CHEATS_HOWTO"  )
+			visible when ( getprofiledata( "highestMission" ) ( ) < 20  )
+		}
+		itemDef
+		{
+			rect 0 34 261.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+			visible when ( ( getprofiledata( "cheatPoints" ) < int "2" ) || dvarstring(static)( 21 ) == "ac130" ) && getprofiledata( "highestMission" ) ( ) >= 20  )
+		}
+		itemDef
+		{
+			rect 261.5 34 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( getprofiledata( "cheatPoints" ) < int "2" ) || dvarstring(static)( 21 ) == "ac130" ) && getprofiledata( "highestMission" ) ( ) >= 20  )
+		}
+		itemDef
+		{
+			rect 0 34 267 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.5 0.5 0.5 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			exp text ( "@MENU_CHEATS_NAME1"  )
+			visible when ( ( getprofiledata( "cheatPoints" ) < int "2" ) || dvarstring(static)( 21 ) == "ac130" ) && getprofiledata( "highestMission" ) ( ) >= 20  )
+		}
+		itemDef
+		{
+			rect 0 34 267 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "special_features"  );
+				"exec" "set ui_hint_text @MENU_CHEATS_UNLOCK1";
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+				"exec" "set ui_hint_text @NULL_EMPTY";
+			}
+			action
+			{
+				"play" "mouse_click";
+			}
+			exp text ( ""  )
+			visible when ( getprofiledata( "cheatPoints" ) < int "2" ) && getprofiledata( "highestMission" ) ( ) >= 20  )
+		}
+		itemDef
+		{
+			rect 0 34 261.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 2
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0.8 0.95 1 0.4
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 1 && localvarstring( "ui_choicegroup" ) == "special_features"  )
+		}
+		itemDef
+		{
+			rect 261.5 34 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 1 && localvarstring( "ui_choicegroup" ) == "special_features"  )
+		}
+		itemDef
+		{
+			rect 0 34 261.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+			visible when ( getprofiledata( "cheatPoints" ) >= int "2" ) && getprofiledata( "highestMission" ) ( ) >= 20 && dvarstring(static)( 21 ) != "ac130"  )
+		}
+		itemDef
+		{
+			rect 261.5 34 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( getprofiledata( "cheatPoints" ) >= int "2" ) && getprofiledata( "highestMission" ) ( ) >= 20 && dvarstring(static)( 21 ) != "ac130"  )
+		}
+		itemDef
+		{
+			rect 0 34 267 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			exp text ( "@MENU_CHEATS_NAME1"  )
+			visible when ( getprofiledata( "cheatPoints" ) >= int "2" ) && getprofiledata( "highestMission" ) ( ) >= 20 && dvarstring(static)( 21 ) != "ac130"  )
+		}
+		itemDef
+		{
+			rect 0 34 387 22 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 12
+			align 0
+			textAlign 8
+			textAlignX 291
+			textAlignY 0
+			textScale 0.4
+			textStyle 3
+			textFont 0
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "special_features"  );
+				"exec" "set ui_hint_text @MENU_CHEATS_DESC1";
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+				"exec" "set ui_hint_text @NULL_EMPTY";
+			}
+			action
+			{
+				"play" "mouse_click";
+				"scriptMenuResponse" "sf_use_bw";
+				"exec" "set sf_use_chaplin 0";
+			}
+			dvar sf_use_bw
+			visible when ( getprofiledata( "cheatPoints" ) >= int "2" ) && getprofiledata( "highestMission" ) ( ) >= 20 && dvarstring(static)( 21 ) != "ac130"  )
+		}
+		itemDef
+		{
+			rect 0 58 261.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+			visible when ( ( getprofiledata( "cheatPoints" ) < int "4" ) || dvarstring(static)( 21 ) == "ac130" ) && getprofiledata( "highestMission" ) ( ) >= 20  )
+		}
+		itemDef
+		{
+			rect 261.5 58 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( getprofiledata( "cheatPoints" ) < int "4" ) || dvarstring(static)( 21 ) == "ac130" ) && getprofiledata( "highestMission" ) ( ) >= 20  )
+		}
+		itemDef
+		{
+			rect 0 58 267 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.5 0.5 0.5 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			exp text ( "@MENU_CHEATS_NAME2"  )
+			visible when ( ( getprofiledata( "cheatPoints" ) < int "4" ) || dvarstring(static)( 21 ) == "ac130" ) && getprofiledata( "highestMission" ) ( ) >= 20  )
+		}
+		itemDef
+		{
+			rect 0 58 267 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "special_features"  );
+				"exec" "set ui_hint_text @MENU_CHEATS_UNLOCK2";
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+				"exec" "set ui_hint_text @NULL_EMPTY";
+			}
+			action
+			{
+				"play" "mouse_click";
+			}
+			exp text ( ""  )
+			visible when ( getprofiledata( "cheatPoints" ) < int "4" ) && getprofiledata( "highestMission" ) ( ) >= 20  )
+		}
+		itemDef
+		{
+			rect 0 58 261.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 2
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0.8 0.95 1 0.4
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 2 && localvarstring( "ui_choicegroup" ) == "special_features"  )
+		}
+		itemDef
+		{
+			rect 261.5 58 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 2 && localvarstring( "ui_choicegroup" ) == "special_features"  )
+		}
+		itemDef
+		{
+			rect 0 58 261.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+			visible when ( getprofiledata( "cheatPoints" ) >= int "4" ) && getprofiledata( "highestMission" ) ( ) >= 20 && dvarstring(static)( 21 ) != "ac130"  )
+		}
+		itemDef
+		{
+			rect 261.5 58 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( getprofiledata( "cheatPoints" ) >= int "4" ) && getprofiledata( "highestMission" ) ( ) >= 20 && dvarstring(static)( 21 ) != "ac130"  )
+		}
+		itemDef
+		{
+			rect 0 58 267 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			exp text ( "@MENU_CHEATS_NAME2"  )
+			visible when ( getprofiledata( "cheatPoints" ) >= int "4" ) && getprofiledata( "highestMission" ) ( ) >= 20 && dvarstring(static)( 21 ) != "ac130"  )
+		}
+		itemDef
+		{
+			rect 0 58 387 22 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 12
+			align 0
+			textAlign 8
+			textAlignX 291
+			textAlignY 0
+			textScale 0.4
+			textStyle 3
+			textFont 0
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "special_features"  );
+				"exec" "set ui_hint_text @MENU_CHEATS_DESC2";
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+				"exec" "set ui_hint_text @NULL_EMPTY";
+			}
+			action
+			{
+				"play" "mouse_click";
+				"scriptMenuResponse" "sf_use_invert";
+				"exec" "set sf_use_chaplin 0";
+			}
+			dvar sf_use_invert
+			visible when ( getprofiledata( "cheatPoints" ) >= int "4" ) && getprofiledata( "highestMission" ) ( ) >= 20 && dvarstring(static)( 21 ) != "ac130"  )
+		}
+		itemDef
+		{
+			rect 0 82 261.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+			visible when ( ( getprofiledata( "cheatPoints" ) < int "6" ) || dvarstring(static)( 21 ) == "ac130" ) && getprofiledata( "highestMission" ) ( ) >= 20  )
+		}
+		itemDef
+		{
+			rect 261.5 82 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( getprofiledata( "cheatPoints" ) < int "6" ) || dvarstring(static)( 21 ) == "ac130" ) && getprofiledata( "highestMission" ) ( ) >= 20  )
+		}
+		itemDef
+		{
+			rect 0 82 267 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.5 0.5 0.5 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			exp text ( "@MENU_CHEATS_NAME3"  )
+			visible when ( ( getprofiledata( "cheatPoints" ) < int "6" ) || dvarstring(static)( 21 ) == "ac130" ) && getprofiledata( "highestMission" ) ( ) >= 20  )
+		}
+		itemDef
+		{
+			rect 0 82 267 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "special_features"  );
+				"exec" "set ui_hint_text @MENU_CHEATS_UNLOCK3";
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+				"exec" "set ui_hint_text @NULL_EMPTY";
+			}
+			action
+			{
+				"play" "mouse_click";
+			}
+			exp text ( ""  )
+			visible when ( getprofiledata( "cheatPoints" ) < int "6" ) && getprofiledata( "highestMission" ) ( ) >= 20  )
+		}
+		itemDef
+		{
+			rect 0 82 261.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 2
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0.8 0.95 1 0.4
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 3 && localvarstring( "ui_choicegroup" ) == "special_features"  )
+		}
+		itemDef
+		{
+			rect 261.5 82 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 3 && localvarstring( "ui_choicegroup" ) == "special_features"  )
+		}
+		itemDef
+		{
+			rect 0 82 261.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+			visible when ( getprofiledata( "cheatPoints" ) >= int "6" ) && getprofiledata( "highestMission" ) ( ) >= 20 && dvarstring(static)( 21 ) != "ac130"  )
+		}
+		itemDef
+		{
+			rect 261.5 82 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( getprofiledata( "cheatPoints" ) >= int "6" ) && getprofiledata( "highestMission" ) ( ) >= 20 && dvarstring(static)( 21 ) != "ac130"  )
+		}
+		itemDef
+		{
+			rect 0 82 267 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			exp text ( "@MENU_CHEATS_NAME3"  )
+			visible when ( getprofiledata( "cheatPoints" ) >= int "6" ) && getprofiledata( "highestMission" ) ( ) >= 20 && dvarstring(static)( 21 ) != "ac130"  )
+		}
+		itemDef
+		{
+			rect 0 82 387 22 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 12
+			align 0
+			textAlign 8
+			textAlignX 291
+			textAlignY 0
+			textScale 0.4
+			textStyle 3
+			textFont 0
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "special_features"  );
+				"exec" "set ui_hint_text @MENU_CHEATS_DESC3";
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+				"exec" "set ui_hint_text @NULL_EMPTY";
+			}
+			action
+			{
+				"play" "mouse_click";
+				"scriptMenuResponse" "sf_use_contrast";
+				"exec" "set sf_use_chaplin 0";
+			}
+			dvar sf_use_contrast
+			visible when ( getprofiledata( "cheatPoints" ) >= int "6" ) && getprofiledata( "highestMission" ) ( ) >= 20 && dvarstring(static)( 21 ) != "ac130"  )
+		}
+		itemDef
+		{
+			rect 0 106 261.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+			visible when ( ( getprofiledata( "cheatPoints" ) < int "8" ) || dvarstring(static)( 21 ) == "ac130" ) && getprofiledata( "highestMission" ) ( ) >= 20  )
+		}
+		itemDef
+		{
+			rect 261.5 106 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( getprofiledata( "cheatPoints" ) < int "8" ) || dvarstring(static)( 21 ) == "ac130" ) && getprofiledata( "highestMission" ) ( ) >= 20  )
+		}
+		itemDef
+		{
+			rect 0 106 267 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.5 0.5 0.5 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			exp text ( "@MENU_CHEATS_NAME4"  )
+			visible when ( ( getprofiledata( "cheatPoints" ) < int "8" ) || dvarstring(static)( 21 ) == "ac130" ) && getprofiledata( "highestMission" ) ( ) >= 20  )
+		}
+		itemDef
+		{
+			rect 0 106 267 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "special_features"  );
+				"exec" "set ui_hint_text @MENU_CHEATS_UNLOCK4";
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+				"exec" "set ui_hint_text @NULL_EMPTY";
+			}
+			action
+			{
+				"play" "mouse_click";
+			}
+			exp text ( ""  )
+			visible when ( getprofiledata( "cheatPoints" ) < int "8" ) && getprofiledata( "highestMission" ) ( ) >= 20  )
+		}
+		itemDef
+		{
+			rect 0 106 261.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 2
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0.8 0.95 1 0.4
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 4 && localvarstring( "ui_choicegroup" ) == "special_features"  )
+		}
+		itemDef
+		{
+			rect 261.5 106 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 4 && localvarstring( "ui_choicegroup" ) == "special_features"  )
+		}
+		itemDef
+		{
+			rect 0 106 261.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+			visible when ( getprofiledata( "cheatPoints" ) >= int "8" ) && getprofiledata( "highestMission" ) ( ) >= 20 && dvarstring(static)( 21 ) != "ac130"  )
+		}
+		itemDef
+		{
+			rect 261.5 106 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( getprofiledata( "cheatPoints" ) >= int "8" ) && getprofiledata( "highestMission" ) ( ) >= 20 && dvarstring(static)( 21 ) != "ac130"  )
+		}
+		itemDef
+		{
+			rect 0 106 267 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			exp text ( "@MENU_CHEATS_NAME4"  )
+			visible when ( getprofiledata( "cheatPoints" ) >= int "8" ) && getprofiledata( "highestMission" ) ( ) >= 20 && dvarstring(static)( 21 ) != "ac130"  )
+		}
+		itemDef
+		{
+			rect 0 106 387 22 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 12
+			align 0
+			textAlign 8
+			textAlignX 291
+			textAlignY 0
+			textScale 0.4
+			textStyle 3
+			textFont 0
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "special_features"  );
+				"exec" "set ui_hint_text @MENU_CHEATS_DESC4";
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+				"exec" "set ui_hint_text @NULL_EMPTY";
+			}
+			action
+			{
+				"play" "mouse_click";
+				"scriptMenuResponse" "sf_use_chaplin";
+				"exec" "set sf_use_bw 0;
+				set sf_use_invert 0;
+				set sf_use_contrast 0;
+				set sf_use_slowmo 0";
+			}
+			dvar sf_use_chaplin
+			visible when ( getprofiledata( "cheatPoints" ) >= int "8" ) && getprofiledata( "highestMission" ) ( ) >= 20 && dvarstring(static)( 21 ) != "ac130"  )
+		}
+		itemDef
+		{
+			rect 0 130 261.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+			visible when ( ( getprofiledata( "cheatPoints" ) < int "10" ) || dvarstring(static)( 21 ) == "" ) && getprofiledata( "highestMission" ) ( ) >= 20  )
+		}
+		itemDef
+		{
+			rect 261.5 130 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( getprofiledata( "cheatPoints" ) < int "10" ) || dvarstring(static)( 21 ) == "" ) && getprofiledata( "highestMission" ) ( ) >= 20  )
+		}
+		itemDef
+		{
+			rect 0 130 267 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.5 0.5 0.5 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			exp text ( "@MENU_CHEATS_NAME5"  )
+			visible when ( ( getprofiledata( "cheatPoints" ) < int "10" ) || dvarstring(static)( 21 ) == "" ) && getprofiledata( "highestMission" ) ( ) >= 20  )
+		}
+		itemDef
+		{
+			rect 0 130 267 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "special_features"  );
+				"exec" "set ui_hint_text @MENU_CHEATS_UNLOCK5";
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+				"exec" "set ui_hint_text @NULL_EMPTY";
+			}
+			action
+			{
+				"play" "mouse_click";
+			}
+			exp text ( ""  )
+			visible when ( getprofiledata( "cheatPoints" ) < int "10" ) && getprofiledata( "highestMission" ) ( ) >= 20  )
+		}
+		itemDef
+		{
+			rect 0 130 261.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 2
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0.8 0.95 1 0.4
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 5 && localvarstring( "ui_choicegroup" ) == "special_features"  )
+		}
+		itemDef
+		{
+			rect 261.5 130 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 5 && localvarstring( "ui_choicegroup" ) == "special_features"  )
+		}
+		itemDef
+		{
+			rect 0 130 261.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+			visible when ( getprofiledata( "cheatPoints" ) >= int "10" ) && getprofiledata( "highestMission" ) ( ) >= 20 && dvarstring(static)( 21 ) != ""  )
+		}
+		itemDef
+		{
+			rect 261.5 130 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( getprofiledata( "cheatPoints" ) >= int "10" ) && getprofiledata( "highestMission" ) ( ) >= 20 && dvarstring(static)( 21 ) != ""  )
+		}
+		itemDef
+		{
+			rect 0 130 267 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			exp text ( "@MENU_CHEATS_NAME5"  )
+			visible when ( getprofiledata( "cheatPoints" ) >= int "10" ) && getprofiledata( "highestMission" ) ( ) >= 20 && dvarstring(static)( 21 ) != ""  )
+		}
+		itemDef
+		{
+			rect 0 130 387 22 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 12
+			align 0
+			textAlign 8
+			textAlignX 291
+			textAlignY 0
+			textScale 0.4
+			textStyle 3
+			textFont 0
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "special_features"  );
+				"exec" "set ui_hint_text @MENU_CHEATS_DESC5";
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+				"exec" "set ui_hint_text @NULL_EMPTY";
+			}
+			action
+			{
+				"play" "mouse_click";
+				"scriptMenuResponse" "sf_use_clustergrenade";
+			}
+			dvar sf_use_clustergrenade
+			visible when ( getprofiledata( "cheatPoints" ) >= int "10" ) && getprofiledata( "highestMission" ) ( ) >= 20 && dvarstring(static)( 21 ) != ""  )
+		}
+		itemDef
+		{
+			rect 0 154 261.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+			visible when ( ( getprofiledata( "cheatPoints" ) < int "15" ) || dvarstring(static)( 21 ) == "" ) && getprofiledata( "highestMission" ) ( ) >= 20  )
+		}
+		itemDef
+		{
+			rect 261.5 154 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( getprofiledata( "cheatPoints" ) < int "15" ) || dvarstring(static)( 21 ) == "" ) && getprofiledata( "highestMission" ) ( ) >= 20  )
+		}
+		itemDef
+		{
+			rect 0 154 267 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.5 0.5 0.5 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			exp text ( "@MENU_CHEATS_NAME6"  )
+			visible when ( ( getprofiledata( "cheatPoints" ) < int "15" ) || dvarstring(static)( 21 ) == "" ) && getprofiledata( "highestMission" ) ( ) >= 20  )
+		}
+		itemDef
+		{
+			rect 0 154 267 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "special_features"  );
+				"exec" "set ui_hint_text @MENU_CHEATS_UNLOCK6";
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+				"exec" "set ui_hint_text @NULL_EMPTY";
+			}
+			action
+			{
+				"play" "mouse_click";
+			}
+			exp text ( ""  )
+			visible when ( getprofiledata( "cheatPoints" ) < int "15" ) && getprofiledata( "highestMission" ) ( ) >= 20  )
+		}
+		itemDef
+		{
+			rect 0 154 261.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 2
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0.8 0.95 1 0.4
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 6 && localvarstring( "ui_choicegroup" ) == "special_features"  )
+		}
+		itemDef
+		{
+			rect 261.5 154 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 6 && localvarstring( "ui_choicegroup" ) == "special_features"  )
+		}
+		itemDef
+		{
+			rect 0 154 261.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+			visible when ( getprofiledata( "cheatPoints" ) >= int "15" ) && getprofiledata( "highestMission" ) ( ) >= 20 && dvarstring(static)( 21 ) != ""  )
+		}
+		itemDef
+		{
+			rect 261.5 154 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( getprofiledata( "cheatPoints" ) >= int "15" ) && getprofiledata( "highestMission" ) ( ) >= 20 && dvarstring(static)( 21 ) != ""  )
+		}
+		itemDef
+		{
+			rect 0 154 267 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			exp text ( "@MENU_CHEATS_NAME6"  )
+			visible when ( getprofiledata( "cheatPoints" ) >= int "15" ) && getprofiledata( "highestMission" ) ( ) >= 20 && dvarstring(static)( 21 ) != ""  )
+		}
+		itemDef
+		{
+			rect 0 154 387 22 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 12
+			align 0
+			textAlign 8
+			textAlignX 291
+			textAlignY 0
+			textScale 0.4
+			textStyle 3
+			textFont 0
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "special_features"  );
+				"exec" "set ui_hint_text @MENU_CHEATS_DESC6";
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+				"exec" "set ui_hint_text @NULL_EMPTY";
+			}
+			action
+			{
+				"play" "mouse_click";
+				"scriptMenuResponse" "sf_use_tire_explosion";
+			}
+			dvar sf_use_tire_explosion
+			visible when ( getprofiledata( "cheatPoints" ) >= int "15" ) && getprofiledata( "highestMission" ) ( ) >= 20 && dvarstring(static)( 21 ) != ""  )
+		}
+		itemDef
+		{
+			rect 0 178 261.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+			visible when ( ( getprofiledata( "cheatPoints" ) < int "20" ) || dvarstring(static)( 21 ) == "" ) && getprofiledata( "highestMission" ) ( ) >= 20  )
+		}
+		itemDef
+		{
+			rect 261.5 178 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( getprofiledata( "cheatPoints" ) < int "20" ) || dvarstring(static)( 21 ) == "" ) && getprofiledata( "highestMission" ) ( ) >= 20  )
+		}
+		itemDef
+		{
+			rect 0 178 267 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.5 0.5 0.5 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			exp text ( "@MENU_CHEATS_NAME7"  )
+			visible when ( ( getprofiledata( "cheatPoints" ) < int "20" ) || dvarstring(static)( 21 ) == "" ) && getprofiledata( "highestMission" ) ( ) >= 20  )
+		}
+		itemDef
+		{
+			rect 0 178 267 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "special_features"  );
+				"exec" "set ui_hint_text @MENU_CHEATS_UNLOCK7";
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+				"exec" "set ui_hint_text @NULL_EMPTY";
+			}
+			action
+			{
+				"play" "mouse_click";
+			}
+			exp text ( ""  )
+			visible when ( getprofiledata( "cheatPoints" ) < int "20" ) && getprofiledata( "highestMission" ) ( ) >= 20  )
+		}
+		itemDef
+		{
+			rect 0 178 261.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 2
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0.8 0.95 1 0.4
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 7 && localvarstring( "ui_choicegroup" ) == "special_features"  )
+		}
+		itemDef
+		{
+			rect 261.5 178 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 7 && localvarstring( "ui_choicegroup" ) == "special_features"  )
+		}
+		itemDef
+		{
+			rect 0 178 261.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+			visible when ( getprofiledata( "cheatPoints" ) >= int "20" ) && getprofiledata( "highestMission" ) ( ) >= 20 && dvarstring(static)( 21 ) != ""  )
+		}
+		itemDef
+		{
+			rect 261.5 178 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( getprofiledata( "cheatPoints" ) >= int "20" ) && getprofiledata( "highestMission" ) ( ) >= 20 && dvarstring(static)( 21 ) != ""  )
+		}
+		itemDef
+		{
+			rect 0 178 267 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			exp text ( "@MENU_CHEATS_NAME7"  )
+			visible when ( getprofiledata( "cheatPoints" ) >= int "20" ) && getprofiledata( "highestMission" ) ( ) >= 20 && dvarstring(static)( 21 ) != ""  )
+		}
+		itemDef
+		{
+			rect 0 178 387 22 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 12
+			align 0
+			textAlign 8
+			textAlignX 291
+			textAlignY 0
+			textScale 0.4
+			textStyle 3
+			textFont 0
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "special_features"  );
+				"exec" "set ui_hint_text @MENU_CHEATS_DESC7";
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+				"exec" "set ui_hint_text @NULL_EMPTY";
+			}
+			action
+			{
+				"play" "mouse_click";
+				"scriptMenuResponse" "sf_use_slowmo";
+				"exec" "set sf_use_chaplin 0";
+			}
+			dvar sf_use_slowmo
+			visible when ( getprofiledata( "cheatPoints" ) >= int "20" ) && getprofiledata( "highestMission" ) ( ) >= 20 && dvarstring(static)( 21 ) != ""  )
+		}
+		itemDef
+		{
+			rect 0 202 261.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+			visible when ( ( getprofiledata( "cheatPoints" ) < int "30" ) || dvarstring(static)( 21 ) == "" ) && getprofiledata( "highestMission" ) ( ) >= 20  )
+		}
+		itemDef
+		{
+			rect 261.5 202 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( ( getprofiledata( "cheatPoints" ) < int "30" ) || dvarstring(static)( 21 ) == "" ) && getprofiledata( "highestMission" ) ( ) >= 20  )
+		}
+		itemDef
+		{
+			rect 0 202 267 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.5 0.5 0.5 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			exp text ( "@MENU_CHEATS_NAME8"  )
+			visible when ( ( getprofiledata( "cheatPoints" ) < int "30" ) || dvarstring(static)( 21 ) == "" ) && getprofiledata( "highestMission" ) ( ) >= 20  )
+		}
+		itemDef
+		{
+			rect 0 202 267 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "special_features"  );
+				"exec" "set ui_hint_text @MENU_CHEATS_UNLOCK8";
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+				"exec" "set ui_hint_text @NULL_EMPTY";
+			}
+			action
+			{
+				"play" "mouse_click";
+			}
+			exp text ( ""  )
+			visible when ( getprofiledata( "cheatPoints" ) < int "30" ) && getprofiledata( "highestMission" ) ( ) >= 20  )
+		}
+		itemDef
+		{
+			rect 0 202 261.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 2
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0.8 0.95 1 0.4
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 8 && localvarstring( "ui_choicegroup" ) == "special_features"  )
+		}
+		itemDef
+		{
+			rect 261.5 202 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 8 && localvarstring( "ui_choicegroup" ) == "special_features"  )
+		}
+		itemDef
+		{
+			rect 0 202 261.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+			visible when ( getprofiledata( "cheatPoints" ) >= int "30" ) && getprofiledata( "highestMission" ) ( ) >= 20 && dvarstring(static)( 21 ) != ""  )
+		}
+		itemDef
+		{
+			rect 261.5 202 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( getprofiledata( "cheatPoints" ) >= int "30" ) && getprofiledata( "highestMission" ) ( ) >= 20 && dvarstring(static)( 21 ) != ""  )
+		}
+		itemDef
+		{
+			rect 0 202 267 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			exp text ( "@MENU_CHEATS_NAME8"  )
+			visible when ( getprofiledata( "cheatPoints" ) >= int "30" ) && getprofiledata( "highestMission" ) ( ) >= 20 && dvarstring(static)( 21 ) != ""  )
+		}
+		itemDef
+		{
+			rect 0 202 387 22 1 1
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 12
+			align 0
+			textAlign 8
+			textAlignX 291
+			textAlignY 0
+			textScale 0.4
+			textStyle 3
+			textFont 0
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "special_features"  );
+				"exec" "set ui_hint_text @MENU_CHEATS_DESC8";
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+				"exec" "set ui_hint_text @NULL_EMPTY";
+			}
+			action
+			{
+				"play" "mouse_click";
+				"scriptMenuResponse" "sf_use_ignoreammo";
+			}
+			dvar sf_use_ignoreammo
+			visible when ( getprofiledata( "cheatPoints" ) >= int "30" ) && getprofiledata( "highestMission" ) ( ) >= 20 && dvarstring(static)( 21 ) != ""  )
+		}
+		itemDef
+		{
+			rect 2 246 10 10 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background ui_arrow_right
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( getprofiledata( "highestMission" ) ( ) >= 20  )
+		}
+		itemDef
+		{
+			rect 14 244 360 40 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 16
+			textScale 0.375
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp text ( dvarstring(static)( 37 )  )
+			visible when ( getprofiledata( "highestMission" ) ( ) >= 20  )
+		}
+		itemDef
+		{
+			rect 2 266 10 10 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background ui_arrow_right
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 14 264 360 40 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 16
+			textScale 0.375
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MENU_CHEAT_POINTS_LEVEL" , dvarint(static)( 27 ) , dvarint(static)( 28 ) )  )
+		}
+		itemDef
+		{
+			rect 2 286 10 10 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background ui_arrow_right
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 14 284 360 40 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 16
+			textScale 0.375
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp text ( locstring( "@MENU_CHEAT_POINTS" , getprofiledata( "cheatPoints" ) )  )
+		}
+	}
+}

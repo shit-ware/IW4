@@ -1,0 +1,1912 @@
+{
+	menuDef
+	{
+		name levels_game_coop
+		fullscreen 1
+		rect 0 0 640 480
+		style 0
+		border 0
+		ownerdraw 0
+		ownerdrawFlag 0
+		borderSize 0
+		foreColor 1 1 1 1
+		backColor 0 0 0 0
+		borderColor 0 0 0 0
+		outlineColor 0 0 0 0
+		soundLoop music_mainmenu_mp
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		fadeInAmount 0
+		blurWorld 0
+		onOpen
+		{
+			"focusFirst";
+		}
+		onESC
+		{
+			"close" "self";
+		}
+		focusColor 1 1 1 1
+		itemDef
+		{
+			rect -107 0 854 480
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background animbg_blur_back
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -107 0 1708 480
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background animbg_blur_fogscroll
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp (null) (null) ( ( - 107 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) )  )
+		}
+		itemDef
+		{
+			rect -107 0 854 480
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background animbg_blur_front
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -120 -32 378 64
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 0.95 0.175
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 258 -32 16 -64
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 0.95 0.175
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 56 448 528 40
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 0.95 0.175
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 584 448 16 64
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 0.95 0.175
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 40 448 -16 64
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 0.95 0.175
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect -120 464 160 32
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 0.95 0.175
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			rect 600 464 160 32
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 0.95 0.175
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background white
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+		}
+		itemDef
+		{
+			name back
+			rect -250 -26 40 20 2 3
+			style 1
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 1 1 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 18
+			textScale 0.375
+			textStyle 3
+			textFont 1
+			feeder 0
+			text "@MENU_BACK"
+			visible 1
+			mouseEnter
+			{
+				"play" "mouse_over";
+			}
+			action
+			{
+				"play" "mouse_click";
+				"close" "self";
+				"open" "main_text";
+			}
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 48 40 0 0
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 1 0.8 0.4 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 4
+			textAlignX -36
+			textAlignY -36
+			textScale 0.5833
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			exp text ( "Co-op Missions"  )
+		}
+		itemDef
+		{
+			rect 18 40 234.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 252.5 40 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 18 40 234.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 2
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0.8 0.95 1 0.4
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 1 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 252.5 40 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 1 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 18 40 240 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "levels"  );
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"setdvar" "ui_load_level" "co_blackout";
+				"setdvar" "coop_mapName" "co_blackout";
+				"open" "format_select";
+			}
+			exp text ( "Blackout"  )
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 18 40 234.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+			visible when ( 0  )
+		}
+		itemDef
+		{
+			rect 252.5 40 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 0  )
+		}
+		itemDef
+		{
+			rect 18 40 240 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.5 0.5 0.5 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			exp text ( "Blackout"  )
+			visible when ( 0  )
+		}
+		itemDef
+		{
+			rect 18 64 234.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 252.5 64 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 18 64 234.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 2
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0.8 0.95 1 0.4
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 2 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 252.5 64 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 2 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 18 64 240 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "levels"  );
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"setdvar" "ui_load_level" "co_armada";
+				"setdvar" "coop_mapName" "co_armada";
+				"open" "format_select";
+			}
+			exp text ( "Armada"  )
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 18 64 234.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+			visible when ( 0  )
+		}
+		itemDef
+		{
+			rect 252.5 64 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 0  )
+		}
+		itemDef
+		{
+			rect 18 64 240 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.5 0.5 0.5 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			exp text ( "Armada"  )
+			visible when ( 0  )
+		}
+		itemDef
+		{
+			rect 18 88 234.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 252.5 88 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 18 88 234.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 2
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0.8 0.95 1 0.4
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 3 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 252.5 88 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 3 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 18 88 240 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "levels"  );
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"setdvar" "ui_load_level" "co_crossfire";
+				"setdvar" "coop_mapName" "co_crossfire";
+				"open" "format_select";
+			}
+			exp text ( "Crossfire"  )
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 18 88 234.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+			visible when ( 0  )
+		}
+		itemDef
+		{
+			rect 252.5 88 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 0  )
+		}
+		itemDef
+		{
+			rect 18 88 240 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.5 0.5 0.5 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			exp text ( "Crossfire"  )
+			visible when ( 0  )
+		}
+		itemDef
+		{
+			rect 18 112 234.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 252.5 112 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 18 112 234.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 2
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0.8 0.95 1 0.4
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 4 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 252.5 112 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 4 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 18 112 240 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "levels"  );
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"setdvar" "ui_load_level" "co_overgrown";
+				"setdvar" "coop_mapName" "co_overgrown";
+				"open" "format_select";
+			}
+			exp text ( "Overgrown"  )
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 18 112 234.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+			visible when ( 0  )
+		}
+		itemDef
+		{
+			rect 252.5 112 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 0  )
+		}
+		itemDef
+		{
+			rect 18 112 240 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.5 0.5 0.5 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			exp text ( "Overgrown"  )
+			visible when ( 0  )
+		}
+		itemDef
+		{
+			rect 18 136 234.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 252.5 136 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 18 136 234.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 2
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0.8 0.95 1 0.4
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 5 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 252.5 136 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 5 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 18 136 240 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "levels"  );
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"setdvar" "ui_load_level" "co_hunted";
+				"setdvar" "coop_mapName" "co_hunted";
+				"open" "format_select";
+			}
+			exp text ( "Hunted/AC-130"  )
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 18 136 234.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+			visible when ( 0  )
+		}
+		itemDef
+		{
+			rect 252.5 136 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 0  )
+		}
+		itemDef
+		{
+			rect 18 136 240 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.5 0.5 0.5 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			exp text ( "Hunted/AC-130"  )
+			visible when ( 0  )
+		}
+		itemDef
+		{
+			rect 18 160 234.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 252.5 160 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 18 160 234.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 2
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0.8 0.95 1 0.4
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 6 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 252.5 160 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 6 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 18 160 240 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "levels"  );
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"setdvar" "ui_load_level" "co_launchfacility_a";
+				"setdvar" "coop_mapName" "co_launchfacility_a";
+				"open" "format_select";
+			}
+			exp text ( "Launchfacility A"  )
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 18 160 234.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+			visible when ( 0  )
+		}
+		itemDef
+		{
+			rect 252.5 160 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 0  )
+		}
+		itemDef
+		{
+			rect 18 160 240 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.5 0.5 0.5 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			exp text ( "Launchfacility A"  )
+			visible when ( 0  )
+		}
+		itemDef
+		{
+			rect 18 184 234.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 252.5 184 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 18 184 234.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 2
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0.8 0.95 1 0.4
+			outlineColor 0 0 0 0
+			background gradient_fadein
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 7 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 252.5 184 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.95 1 0.35
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( localvarint( "ui_highlight" ) == 7 && localvarstring( "ui_choicegroup" ) == "levels"  )
+		}
+		itemDef
+		{
+			rect 18 184 240 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.69 0.69 0.69 1
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			type 1
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			onFocus
+			{
+				"play" "mouse_over";
+				setLocalVarInt ui_highlight 1;
+				setLocalVarString ui_choicegroup "levels"  );
+			}
+			leaveFocus
+			{
+				setLocalVarInt ui_highlight 1;
+			}
+			action
+			{
+				"play" "mouse_click";
+				"setdvar" "ui_load_level" "co_airplane";
+				"setdvar" "coop_mapName" "co_airplane";
+				"open" "format_select";
+			}
+			exp text ( "Airplane"  )
+			visible when ( 1  )
+		}
+		itemDef
+		{
+			rect 18 184 234.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			exp material ( "gradient_fadein"  )
+			visible when ( 0  )
+		}
+		itemDef
+		{
+			rect 252.5 184 5.5 22 1 1
+			style 3
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.9 0.9 1 0.07
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			background button_highlight_end
+			decoration 
+			type 0
+			align 0
+			textAlign 0
+			textAlignX 0
+			textAlignY 0
+			textScale 0.55
+			textStyle 0
+			textFont 0
+			feeder 0
+			visible 1
+			visible when ( 0  )
+		}
+		itemDef
+		{
+			rect 18 184 240 22 1 1
+			style 0
+			border 0
+			ownerdraw 0
+			ownerdrawFlag 0
+			borderSize 0
+			foreColor 0.5 0.5 0.5 0.5
+			backColor 0 0 0 0
+			borderColor 0 0 0 0
+			outlineColor 0 0 0 0
+			decoration 
+			type 0
+			align 0
+			textAlign 10
+			textAlignX -10
+			textAlignY 0
+			textScale 0.4
+			textStyle 6
+			textFont 1
+			feeder 0
+			visible 1
+			exp text ( "Airplane"  )
+			visible when ( 0  )
+		}
+	}
+}
