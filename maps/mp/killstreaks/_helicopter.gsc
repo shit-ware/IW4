@@ -803,7 +803,7 @@ makeGunShip()
 	wait ( 0.5 );
 
 	mgTurret = spawnTurret( "misc_turret", self.origin, "pavelow_minigun_mp" );
-	mgTurret.lifeId = 0;
+	mgTurret.lifeId = self.lifeId;
 	mgTurret linkTo( self, "tag_gunner_left", ( 0,0,0 ), ( 0,0,0) );
 	mgTurret setModel( "weapon_minigun" );
 	mgTurret.owner = self.owner;
@@ -815,7 +815,7 @@ makeGunShip()
  	self.mgTurretLeft SetDefaultDropPitch( 0 );
 
 	mgTurret = spawnTurret( "misc_turret", self.origin, "pavelow_minigun_mp" );
-	mgTurret.lifeId = 0;
+	mgTurret.lifeId = self.lifeId;
 	mgTurret linkTo( self, "tag_gunner_right", ( 0,0,0 ), ( 0,0,0) );
 	mgTurret setModel( "weapon_minigun" );
 	mgTurret.owner = self.owner;

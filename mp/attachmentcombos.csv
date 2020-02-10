@@ -1,0 +1,15 @@
+no,reflex,acog,thermal,grip,gl,shotgun,heartbeat,silencer,akimbo,fmj,rof,xmags,eotech,tactical
+reflex,no,no,no,,,,,,no,,,,no,no
+acog,no,no,no,,,,,,no,,,,no,no
+thermal,no,no,no,,,,,,no,,,,no,no
+grip,,,,no,no,no,,,no,,,,,no
+gl,,,,no,no,no,,,no,,,,,no
+shotgun,,,,no,no,no,,,no,,,,,no
+heartbeat,,,,,,,no,,no,,,,,no
+silencer,,,,,,,,no,,,,,,
+akimbo,no,no,no,no,no,no,no,,no,,,,no,no
+fmj,,,,,,,,,,no,,,,
+rof,,,,,,,,,,,no,,,
+xmags,,,,,,,,,,,,no,,
+eotech,no,no,no,,,,,,no,,,,no,
+tactical,no,no,no,no,no,no,no,,no,,,,,no

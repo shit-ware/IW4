@@ -952,7 +952,7 @@ ch_kills( data, time )
 			{
 				player processChallenge( "ch_carbomb" );
 			}
-			else if ( isStrStart( data.sWeapon, "rpg_" ) )
+			else if ( isStrStart( data.sWeapon, "rpg_" ) || isStrStart( data.sWeapon, "at4_" ) )
 			{
 				if ( player.explosiveKills[expId] > 1 )
 					player processChallenge( "ch_multirpg" );

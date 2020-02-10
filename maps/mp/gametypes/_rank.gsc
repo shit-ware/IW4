@@ -627,7 +627,7 @@ incRankXP( amount )
 		return;
 	
 	xp = self getRankXP();
-	newXp = (xp + amount);
+	newXp = (int( min( xp, getRankInfoMaxXP( level.maxRank ) ) ) + amount);
 	
 	if ( self.pers["rank"] == level.maxRank && newXp >= getRankInfoMaxXP( level.maxRank ) )
 		newXp = getRankInfoMaxXP( level.maxRank );

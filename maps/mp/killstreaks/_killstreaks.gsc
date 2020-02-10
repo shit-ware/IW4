@@ -265,7 +265,7 @@ killstreakUsePressed()
 	}
 	
 	self usedKillstreak( streakName, awardXp );
-	self shuffleKillStreaksFILO( streakName );	
+	self shuffleKillStreaksFILO( streakName, kID );	
 	self giveOwnedKillstreakItem();		
 
 	return ( true );
@@ -273,7 +273,7 @@ killstreakUsePressed()
 
 
 //this overwrites killstreak at index 0 and decrements all other killstreaks (FCLS style)
-shuffleKillStreaksFILO( streakName )
+shuffleKillStreaksFILO( streakName, kID )
 {
 	self _setActionSlot( 4, "" );
 
@@ -283,6 +283,9 @@ shuffleKillStreaksFILO( streakName )
 	for ( i = 0; i < arraySize; i++ )
 	{
 		if ( self.pers["killstreaks"][i].streakName != streakName )
+			continue;
+			
+		if ( isDefined( kID ) && self.pers["killstreaks"][i].kID != kID )
 			continue;
 			
 		streakIndex = i;
@@ -423,6 +426,7 @@ killstreakUseWaiter()
 finishDeathWaiter()
 {
 	self endon ( "disconnect" );
+	level endon ( "game_ended" );
 	
 	self waittill ( "death" );
 	wait ( 0.05 );

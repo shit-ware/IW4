@@ -105,4 +105,4 @@
 105,flagsreturned,award_thebomb,MPUI_FLAG_RETURNER,MPUI_MOST_FLAGS_RETURNED,1,0,count,
 106,flagscarried,award_thebomb,MPUI_FLAG_RUNNER,MPUI_MOST_FLAGS_CARRIED,1,0,count,
 107,flagcarrierkills,award_thebomb,MPUI_FLAG_NEUTRALIZER,MPUI_MOST_FLAG_CARRIER_KILLS,1,0,count,
-108,killsasflagcarrier,award_thebomb,MPUI_DOUBLE_THREAT,MPUI_MOST_KILLS_AS_FLAG_CARRIER,1,0,count,last_award,,, 
+108,killsasflagcarrier,award_thebomb,MPUI_DOUBLE_THREAT,MPUI_MOST_KILLS_AS_FLAG_CARRIER,1,0,count,last_award

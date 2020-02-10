@@ -189,3 +189,125 @@
     axischar    "opforce_composite"
     environment	"desert"
 }
+
+{
+	map			"mp_storm"
+	longname	"PATCH_STORM"
+	gametype	"dm war sab sab2 dom sd sd2 hc thc ctf koth"
+    description "PATCH_DESC_MAP_STORM"
+    mapimage    "preview_mp_storm"
+	mapoverlay  "compass_overlay_map_blank"
+    allieschar  "socom_141_desert"
+    axischar    "opforce_airborne"
+    environment	"urban"
+}
+
+{
+	map			"mp_compact"
+	longname	"PATCH_COMPACT"
+	gametype	"dm war sab sab2 dom sd sd2 hc thc ctf koth"
+    description "PATCH_DESC_MAP_COMPACT"
+    mapimage    "preview_mp_compact"
+	mapoverlay  "compass_overlay_map_blank"
+    allieschar  "socom_141_arctic"
+    axischar    "opforce_arctic"
+    environment	"urban"
+}
+
+{
+	map			"mp_complex"
+	longname	"PATCH_COMPLEX"
+	gametype	"dm war sab sab2 dom sd sd2 hc thc ctf koth"
+    description "PATCH_DESC_MAP_COMPLEX"
+    mapimage    "preview_mp_complex"
+	mapoverlay  "compass_overlay_map_blank"
+    allieschar  "us_army"
+    axischar    "opforce_airborne"
+    environment	"urban"
+}
+
+{
+	map			"mp_crash"
+	longname	"MPUI_CRASH"
+	gametype	"dm war sab sab2 dom sd sd2 hc thc ctf koth"
+    description "MPUI_DESC_MAP_CRASH"
+    mapimage    "preview_mp_crash"
+	mapoverlay  "compass_overlay_map_blank"
+    allieschar  "socom_141_desert"
+    axischar    "opforce_composite"
+    environment	"urban"
+}
+
+{
+	map			"mp_overgrown"
+	longname	"MPUI_OVERGROWN"
+	gametype	"dm war sab sab2 dom sd sd2 hc thc ctf koth"
+    description "MPUI_DESC_MAP_OVERGROWN"
+    mapimage    "preview_mp_overgrown"
+	mapoverlay  "compass_overlay_map_blank"
+    allieschar  "socom_141_forest"
+    axischar    "opforce_airborne"
+    environment	"forest"
+}
+
+
+{
+	map			"mp_abandon"
+	longname	"PATCH_ABANDON"
+	gametype	"dm war sab sab2 dom sd sd2 hc thc ctf koth"
+    description "PATCH_DESC_MAP_ABANDON"
+    mapimage    "preview_mp_abandon"
+	mapoverlay  "compass_overlay_map_blank"
+    allieschar  "socom_141_desert"
+    axischar    "militia"
+    environment	"urban"
+}
+
+{
+	map			"mp_fuel2"
+	longname	"PATCH_FUEL2"
+	gametype	"dm war sab sab2 dom sd sd2 hc thc ctf koth"
+    description "PATCH_DESC_MAP_FUEL2"
+    mapimage    "preview_mp_fuel2"
+	mapoverlay  "compass_overlay_map_blank"
+    allieschar  "us_army"
+    axischar    "opforce_composite"
+    environment	"desert"
+}
+
+{
+	map			"mp_trailerpark"
+	longname	"PATCH_TRAILERPARK"
+	gametype	"dm war sab sab2 dom sd sd2 hc thc ctf koth"
+    description "PATCH_DESC_MAP_TRAILERPARK"
+    mapimage    "preview_mp_trailerpark"
+	mapoverlay  "compass_overlay_map_blank"
+    allieschar  "us_army"
+    axischar    "opforce_composite"
+    environment	"urban"
+}
+
+{
+	map			"mp_vacant"
+	longname	"PATCH_VACANT"
+	gametype	"dm war sab sab2 dom sd sd2 hc thc ctf koth"
+    description "PATCH_DESC_MAP_VACANT"
+    mapimage    "preview_mp_vacant"
+	mapoverlay  "compass_overlay_map_blank"
+    allieschar  "us_army"
+    axischar    "opforce_airborne"
+    environment	"urban"
+}
+
+{
+	map			"mp_strike"
+	longname	"PATCH_STRIKE"
+	gametype	"dm war sab sab2 dom sd sd2 hc thc ctf koth"
+    description "PATCH_DESC_MAP_STRIKE"
+    mapimage    "preview_mp_strike"
+	mapoverlay  "compass_overlay_map_blank"
+    allieschar  "us_army"
+    axischar    "opforce_composite"
+    environment	"desert"
+}
+

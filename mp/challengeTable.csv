@@ -9,7 +9,7 @@
 9,CHALLENGE_REVENGE_CAPS,CHALLENGE_REVENGE_CHALLENGES,,mp/challenges/ChallengeTable_Revenge.csv,10,#,
 10,CHALLENGE_ELITE_CAPS,CHALLENGE_ELITE_CHALLENGES,,mp/challenges/ChallengeTable_Elite.csv,11,#,
 11,CHALLENGE_INTIMIDATION_CAPS,CHALLENGE_INTIMIDATION_CHALLENGES,,mp/challenges/ChallengeTable_Killer.csv,12,#,
-12,CHALLENGE_PRESTIGE_CAPS,CHALLENGE_PRESTIGE_CHALLENGES,,mp/challenges/ChallengeTable_Prestige.csv,13,#,1,
+12,CHALLENGE_PRESTIGE_CAPS,CHALLENGE_PRESTIGE_CHALLENGES,,mp/challenges/ChallengeTable_Prestige.csv,13,#,1
 20,CHALLENGE_SECRET_CAPS,CHALLENGE_SECRET_CHALLENGES,,mp/challenges/ChallengeTable_Secret.csv,,#,
 21,WEAPON_AA12,,,mp/challenges/aa12_challenges.csv,,aa12,
 22,WEAPON_AK47,,,mp/challenges/ak47_challenges.csv,,ak47,
