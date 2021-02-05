@@ -11,9 +11,6 @@
 		backcolor 1 1 1 1
 		background "white"
 		focuscolor 1 1 1 1
-		fadeCycle 1
-		fadeClamp 1
-		fadeAmount 0.1
 		allowedBinding "+talk"
 		exp rect y ( 0 - ( 24 + 9 * 20 ) / 2 )
 		onOpen
@@ -228,7 +225,7 @@
 			textfont 3
 			textalign 4
 			textscale 0.375
-			exp text ( "@MENU_PRESTIGE_RESET_WARNING2" )
+			exp text ( "@PATCH_PRESTIGE_RESET_WARNING2" )
 			action
 			{
 				play "mouse_click";

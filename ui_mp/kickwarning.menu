@@ -11,9 +11,6 @@
 		backcolor 1 1 1 1
 		background "white"
 		focuscolor 1 1 1 1
-		fadeCycle 1
-		fadeClamp 1
-		fadeAmount 0.1
 		onOpen
 		{
 			setLocalVarInt "ui_centerPopup" ( 1 );

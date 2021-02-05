@@ -7,9 +7,6 @@
 		forecolor 1 1 1 1
 		focuscolor 1 1 1 1
 		fullscreen 1
-		fadeCycle 1
-		fadeClamp 1
-		fadeAmount 0.1
 		allowedBinding "+talk"
 		
 		{
@@ -523,7 +520,7 @@
 				setLocalVarBool "ui_menuAButton" ( 1 );
 				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
 				;;
-				setLocalVarString "ui_hint_text" ( "@MPUI_DESC_BARRACKS" );
+				setLocalVarString "ui_hint_text" ( "@PATCH_DESC_BARRACKS" );
 			}
 			leaveFocus
 			{
@@ -618,6 +615,7 @@
 			textalign 6
 			textalignx -60
 			textscale 0.375
+			visible when ( getlocalizednattype( ) != locstring( "@NETWORK_STRICT" ) )
 			exp text ( locstring( "@NETWORK_YOURNATTYPE" ) + " " + getlocalizednattype( ) )
 			action
 			{
@@ -641,6 +639,61 @@
 				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
 				setLocalVarBool "ui_menuAButton" ( 0 );
 			}
+		}
+		itemDef
+		{
+			name "nattype"
+			rect -64 188 336 20 1 1
+			decoration
+			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			visible when ( getlocalizednattype( ) == locstring( "@NETWORK_STRICT" ) )
+			exp text ( locstring( "@NETWORK_YOURNATTYPE" ) + " ^1" + getlocalizednattype( ) )
+			action
+			{
+				play "mouse_click";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			name "nathint"
+			rect 0 240 212 18 1 1
+			decoration
+			autowrapped
+			visible 1
+			forecolor 1 1 1 1
+			type 1
+			textalign 2
+			textscale 0.2916
+			visible when ( getlocalizednattype( ) == locstring( "@NETWORK_STRICT" ) )
+			exp text ( "@PATCH_STRICTHINT" )
 		}
 		itemDef
 		{
@@ -867,11 +920,11 @@
 		itemDef
 		{
 			name "partyList"
-			rect -272 28 272 380 3 1
+			rect -272 27 272 380 3 1
 			visible 1
 			forecolor 1 1 1 1
 			type 6
-			textaligny -4
+			textaligny -2
 			textscale 0.375
 			feeder 25
 			elementWidth 272
@@ -881,7 +934,7 @@
 			noscrollbars
 			doubleClick
 			{
-				play "mouse_click" open "player_popup";
+				play "mouse_click" open "player_popup_party";
 			}
 		}
 		itemDef
@@ -898,12 +951,12 @@
 		}
 		itemDef
 		{
-			rect -272 28 272 380 3 1
+			rect -272 27 272 380 3 1
 			decoration
 			visible 1
 			forecolor 1 1 1 1
 			type 6
-			textaligny -4
+			textaligny -2
 			textscale 0.375
 			feeder 40
 			elementWidth 272
@@ -1018,12 +1071,12 @@
 		}
 		itemDef
 		{
-			rect -272 28 272 380 3 1
+			rect -272 27 272 380 3 1
 			decoration
 			visible 1
 			forecolor 1 1 1 1
 			type 6
-			textaligny -4
+			textaligny -2
 			textscale 0.375
 			feeder 26
 			elementWidth 272
@@ -1064,7 +1117,7 @@
 		}
 		itemDef
 		{
-			rect 0 220 212 18 1 1
+			rect 0 152 212 18 1 1
 			decoration
 			autowrapped
 			visible 1
@@ -1074,6 +1127,19 @@
 			textscale 0.375
 			visible when ( !localvarbool( "ui_centerPopup" ) && !localvarbool( "ui_leftPopup" ) )
 			exp text ( localvarstring( "ui_hint_text" ) )
+		}
+		itemDef
+		{
+			name "map_pack_warning"
+			rect -272 -150 272 20 3 3
+			decoration
+			autowrapped
+			visible 1
+			forecolor 1 0.45098 0.501961 1
+			textaligny 16
+			textscale 0.375
+			visible when ( partyismissingmappack( ) )
+			exp text ( partymissingmappackerror( ) )
 		}
 		itemDef
 		{

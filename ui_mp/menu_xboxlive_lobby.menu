@@ -7,9 +7,6 @@
 		forecolor 1 1 1 1
 		focuscolor 1 1 1 1
 		fullscreen 1
-		fadeCycle 1
-		fadeClamp 1
-		fadeAmount 0.1
 		allowedBinding "+talk"
 		
 		{
@@ -416,7 +413,7 @@
 				setLocalVarBool "ui_menuAButton" ( 1 );
 				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
 				;;
-				setLocalVarString "ui_hint_text" ( "@MPUI_DESC_BARRACKS" );
+				setLocalVarString "ui_hint_text" ( "@PATCH_DESC_BARRACKS" );
 			}
 			leaveFocus
 			{
@@ -1440,11 +1437,11 @@
 		itemDef
 		{
 			name "lobbyList"
-			rect -272 28 272 380 3 1
+			rect -272 27 272 380 3 1
 			visible 1
 			forecolor 1 1 1 1
 			type 6
-			textaligny -4
+			textaligny -2
 			textscale 0.375
 			feeder 48
 			elementWidth 272
@@ -1454,18 +1451,18 @@
 			noscrollbars
 			doubleClick
 			{
-				play "mouse_click" open "player_popup";
+				play "mouse_click" open "player_popup_publiclobby";
 			}
 			visible when ( !( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) ) )
 		}
 		itemDef
 		{
-			rect -272 28 272 380 3 1
+			rect -272 27 272 380 3 1
 			decoration
 			visible 1
 			forecolor 1 1 1 1
 			type 6
-			textaligny -4
+			textaligny -2
 			textscale 0.375
 			feeder 18
 			elementWidth 272
@@ -1477,12 +1474,12 @@
 		}
 		itemDef
 		{
-			rect -272 28 272 380 3 1
+			rect -272 27 272 380 3 1
 			decoration
 			visible 1
 			forecolor 1 1 1 1
 			type 6
-			textaligny -4
+			textaligny -2
 			textscale 0.375
 			feeder 31
 			elementWidth 272
@@ -1494,12 +1491,12 @@
 		}
 		itemDef
 		{
-			rect -272 28 272 380 3 1
+			rect -272 27 272 380 3 1
 			decoration
 			visible 1
 			forecolor 1 1 1 1
 			type 6
-			textaligny 176
+			textaligny 178
 			textscale 0.375
 			feeder 33
 			elementWidth 272
@@ -1511,13 +1508,13 @@
 		}
 		itemDef
 		{
-			rect -272 28 272 380 3 1
+			rect -272 27 272 380 3 1
 			decoration
 			visible 1
 			forecolor 1 1 1 1
 			type 6
 			textalignx 20
-			textaligny -4
+			textaligny -2
 			textscale 0.375
 			feeder 39
 			elementWidth 272
@@ -1530,13 +1527,13 @@
 		}
 		itemDef
 		{
-			rect -272 28 272 380 3 1
+			rect -272 27 272 380 3 1
 			decoration
 			visible 1
 			forecolor 1 1 1 1
 			type 6
 			textalignx 20
-			textaligny -4
+			textaligny -2
 			textscale 0.375
 			feeder 42
 			elementWidth 272
@@ -1549,13 +1546,13 @@
 		}
 		itemDef
 		{
-			rect -272 208 272 380 3 1
+			rect -272 207 272 380 3 1
 			decoration
 			visible 1
 			forecolor 1 1 1 1
 			type 6
 			textalignx 20
-			textaligny -4
+			textaligny -2
 			textscale 0.375
 			feeder 41
 			elementWidth 272
@@ -1568,12 +1565,12 @@
 		}
 		itemDef
 		{
-			rect -272 28 272 380 3 1
+			rect -272 27 272 380 3 1
 			decoration
 			visible 1
 			forecolor 1 1 1 0.65
 			type 6
-			textaligny -4
+			textaligny -2
 			textscale 0.375
 			feeder 35
 			elementWidth 272
@@ -1585,12 +1582,12 @@
 		}
 		itemDef
 		{
-			rect -272 28 272 380 3 1
+			rect -272 27 272 380 3 1
 			decoration
 			visible 1
 			forecolor 1 1 1 0.65
 			type 6
-			textaligny -4
+			textaligny -2
 			textscale 0.375
 			feeder 36
 			elementWidth 272
@@ -1602,12 +1599,12 @@
 		}
 		itemDef
 		{
-			rect -272 28 272 380 3 1
+			rect -272 27 272 380 3 1
 			decoration
 			visible 1
 			forecolor 1 1 1 0.65
 			type 6
-			textaligny 176
+			textaligny 178
 			textscale 0.375
 			feeder 37
 			elementWidth 272
@@ -1619,12 +1616,12 @@
 		}
 		itemDef
 		{
-			rect -272 28 272 380 3 1
+			rect -272 27 272 380 3 1
 			decoration
 			visible 1
 			forecolor 1 1 1 1
 			type 6
-			textaligny -4
+			textaligny -2
 			textscale 0.375
 			feeder 45
 			elementWidth 272
@@ -1636,12 +1633,12 @@
 		}
 		itemDef
 		{
-			rect -272 28 272 380 3 1
+			rect -272 27 272 380 3 1
 			decoration
 			visible 1
 			forecolor 1 1 1 1
 			type 6
-			textaligny -4
+			textaligny -2
 			textscale 0.375
 			feeder 46
 			elementWidth 272
@@ -1653,12 +1650,12 @@
 		}
 		itemDef
 		{
-			rect -272 28 272 380 3 1
+			rect -272 27 272 380 3 1
 			decoration
 			visible 1
 			forecolor 1 1 1 1
 			type 6
-			textaligny 176
+			textaligny 178
 			textscale 0.375
 			feeder 47
 			elementWidth 272
@@ -1773,7 +1770,7 @@
 		}
 		itemDef
 		{
-			rect -272 28 272 380 3 1
+			rect -272 27 272 380 3 1
 			decoration
 			visible 1
 			forecolor 1 1 1 1
@@ -1790,7 +1787,7 @@
 		}
 		itemDef
 		{
-			rect -272 28 272 380 3 1
+			rect -272 27 272 380 3 1
 			decoration
 			visible 1
 			forecolor 1 1 1 1
@@ -1807,7 +1804,7 @@
 		}
 		itemDef
 		{
-			rect -272 208 272 380 3 1
+			rect -272 207 272 380 3 1
 			decoration
 			visible 1
 			forecolor 1 1 1 1

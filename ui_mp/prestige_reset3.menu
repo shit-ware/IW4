@@ -11,9 +11,6 @@
 		backcolor 1 1 1 1
 		background "white"
 		focuscolor 1 1 1 1
-		fadeCycle 1
-		fadeClamp 1
-		fadeAmount 0.1
 		allowedBinding "+talk"
 		exp rect y ( 0 - ( 24 + 9 * 20 ) / 2 )
 		onOpen

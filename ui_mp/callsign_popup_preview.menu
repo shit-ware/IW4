@@ -9,9 +9,6 @@
 		forecolor 1 1 1 1
 		backcolor 1 1 1 0
 		focuscolor 1 1 1 1
-		fadeCycle 1
-		fadeClamp 1
-		fadeAmount 0.1
 		onOpen
 		{
 			lerp x "from" "300" "to" 0 "over" "0.15";

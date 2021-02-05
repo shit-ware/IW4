@@ -11,9 +11,6 @@
 		backcolor 1 1 1 1
 		background "white"
 		focuscolor 1 1 1 1
-		fadeCycle 1
-		fadeClamp 1
-		fadeAmount 0.1
 		allowedBinding "+talk"
 		exp rect y ( localvarfloat( "ui_popup_gamesetup_ypos" ) )
 		exp rect w ( 24 + ( 4 ) * 20 )
@@ -30,7 +27,7 @@
 			{
 				exec "set ui_useonlinestats_button_name @PLATFORM_USEONLINESTATS_FALSE";
 			}
-			if ( dvarstring( "sv_privateClients" ) == dvarstring( "party_maxPlayers" ) )
+			if ( dvarstring( "sv_privateClients" ) == dvarstring( "party_maxplayers" ) )
 			{
 				exec "set ui_jip_button_name @MPUI_JOININPROGRESS_NOT_ALLOWED";
 			}
@@ -437,7 +434,7 @@
 		}
 		itemDef
 		{
-			name "settings_joininprogress"
+			name "settings_setpassword"
 			rect 0 84 336 20 0 0
 			visible 1
 			group "mw2_popup_button"
@@ -450,21 +447,13 @@
 			textalign 6
 			textalignx -60
 			textscale 0.375
+			text "@MENU_IWNET_CHANGE_PASSWORD"
 			visible when ( dvarbool( "xblive_privatematch" ) )
-			exp text ( dvarstring( "ui_jip_button_name" ) )
+			disabled when ( !privatepartyhost( ) )
 			action
 			{
 				play "mouse_click";
-				execnow "xtogprivateslots;
-				xsessionupdate;";
-				if ( dvarstring( "sv_privateClients" ) == dvarstring( "party_maxPlayers" ) )
-				{
-					exec "set ui_jip_button_name @MPUI_JOININPROGRESS_NOT_ALLOWED";
-				}
-				else
-				{
-					exec "set ui_jip_button_name @MPUI_JOININPROGRESS_ALLOWED";
-				}
+				open "popup_serverpassword";
 			}
 			onFocus
 			{
@@ -475,7 +464,7 @@
 				}
 				setItemColor self backcolor 0 0 0 1;
 				setLocalVarBool "ui_popupAButton" ( 1 );
-				exec "set ui_hint_text @MPUI_DESC_PRIVATE_JIP";
+				exec "set ui_hint_text @MENU_IWNET_CHANGE_PASSWORD";
 			}
 			leaveFocus
 			{

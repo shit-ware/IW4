@@ -122,7 +122,7 @@
 		}
 		itemDef
 		{
-			name "button_autoupdate"
+			name "button_download_content"
 			rect -64 28 336 20 1 1
 			visible 1
 			group "mw2_button"
@@ -135,42 +135,14 @@
 			textalign 6
 			textalignx -60
 			textscale 0.375
-			text "@MENU_AUTO_UPDATE"
-			visible when ( dvarbool( "cl_updateAvailable" ) && !localvarbool( "ui_hideBack" ) )
+			text "@PATCH_DOWNLOAD_CONTENT_CAPS"
+			visible when ( anynewmappacks( ) )
 			action
 			{
 				play "mouse_click";
-				setdvar "ui_opensummary" 0;
-				if ( issplitscreenonlinepossible( ) )
-				{
-					execnow "splitscreencontrols";
-					exec "xrequirelivesignin";
-					setdvar "systemlink" 0;
-					setdvar "splitscreen" 1;
-					setdvar "onlinegame" 1;
-					exec "exec default_xboxlive.cfg";
-					exec "party_maxplayers 9";
-					exec "xblive_privatematch 0";
-					exec "xblive_rankedmatch 0";
-					setdvar "ui_mptype" 0;
-					exec "resetSplitscreenSignIn";
-					open "menu_splitscreensignin";
-				}
-				else
-				{
-					execnow "nosplitscreen";
-					exec "xrequirelivesignin";
-					setdvar "systemlink" 0;
-					setdvar "splitscreen" 0;
-					setdvar "onlinegame" 1;
-					exec "exec default_xboxlive.cfg";
-					exec "party_maxplayers 9";
-					exec "xblive_privatematch 0";
-					exec "xblive_rankedmatch 0";
-					exec "xstartprivateparty";
-					setdvar "ui_mptype" 0;
-					open "menu_xboxlive";
-				}
+				execnow "nosplitscreen";
+				exec "xshowmarketplace";
+				exec "splitscreencontrols";
 			}
 			onFocus
 			{
@@ -183,7 +155,6 @@
 				setLocalVarBool "ui_menuAButton" ( 1 );
 				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
 				;;
-				open "auconfirm";
 			}
 			leaveFocus
 			{
@@ -191,6 +162,17 @@
 				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
 				setLocalVarBool "ui_menuAButton" ( 0 );
 			}
+		}
+		itemDef
+		{
+			rect 232 28 40 20 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new"
+			textscale 0.55
+			visible when ( anynewmappacks( ) )
 		}
 		itemDef
 		{

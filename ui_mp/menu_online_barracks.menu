@@ -7,9 +7,6 @@
 		forecolor 1 1 1 1
 		focuscolor 1 1 1 1
 		fullscreen 1
-		fadeCycle 1
-		fadeClamp 1
-		fadeAmount 0.1
 		onOpen
 		{
 			focusfirst;

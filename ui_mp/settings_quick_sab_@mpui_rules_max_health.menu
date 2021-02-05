@@ -8,9 +8,6 @@
 		style 1
 		forecolor 1 1 1 1
 		focuscolor 1 1 1 1
-		fadeCycle 1
-		fadeClamp 1
-		fadeAmount 0.1
 		exp rect y ( localvarint( "ui_popupYPos" ) )
 		onOpen
 		{

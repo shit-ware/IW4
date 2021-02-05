@@ -11,13 +11,10 @@
 			execnow "profile_menuDvarsSetup;
 			resetViewport";
 			setLocalVarBool "ui_hideBack" ( 1 );
-			if ( !localvarint( "ui_showApply" ) )
+			if ( !localvarint( "ui_showApply" ) && !localvarint( "ui_showPicApply" ) )
 			{
 				exec "exec options_graphics.cfg";
 			}
-			execOnDvarFloatValue "r_zfeather" 0 "set ui_zfeather 0";
-			execOnDvarFloatValue "r_zfeather" 1 "set ui_zfeather 1";
-			execOnDvarFloatValue "r_depthPrepassModels" 1 "set ui_zfeather 2";
 			execnow "profile_menuDvarsSetup;
 			resetViewport";
 		}
@@ -26,8 +23,6 @@
 			execnow "profile_menuDvarsFinish;
 			resetViewport";
 			setLocalVarBool "ui_hideBack" ( 0 );
-			execOnDvarIntValue "ui_zfeather" 0 "set r_zfeather 0;set r_depthPrepassModels 0";
-			execOnDvarIntValue "ui_zfeather" 1 "set r_zfeather 1;set r_depthPrepassModels 0";
 			execOnDvarIntValue "r_lodScaleRigid" 2 "set r_lodScaleSkinned 4;
 			set r_lodBiasSkinned -200;
 			set r_lodBiasRigid -100";
@@ -38,12 +33,20 @@
 		onEsc
 		{
 			close self;
-			if ( localvarbool( "ui_showApply" ) || localvarbool( "ui_showAudioApply" ) )
+			if ( !( menuisopen( "pc_options_advanced_video" ) || menuisopen( "pc_options_video" ) || menuisopen( "pc_options_Audio" ) || menuisopen( "pc_options_controls" ) || menuisopen( "pc_options_voice" ) ) && localvarbool( "ui_showPicApply" ) && !localvarbool( "ui_showApply" ) && !localvarbool( "ui_showAudioApply" ) )
 			{
-				if ( !menuisopen( "pc_options_advanced_video" ) && !menuisopen( "pc_options_video" ) && !menuisopen( "pc_options_Audio" ) && !menuisopen( "pc_options_controls" ) && !menuisopen( "pc_options_voice" ) )
-				{
-					open "all_restart_popmenu";
-				}
+				execnow "setfromdvar r_picmip ui_r_picmip";
+				execnow "setfromdvar r_picmip_bump ui_r_picmip_bump";
+				execnow "setfromdvar r_picmip_spec ui_r_picmip_spec";
+				execnow "setfromdvar r_picmip_manual ui_r_picmip_manual";
+				exec "wait;
+				wait;
+				r_applyPicmip";
+				setLocalVarBool "ui_showPicApply" ( 0 );
+			}
+			if ( !( menuisopen( "pc_options_advanced_video" ) || menuisopen( "pc_options_video" ) || menuisopen( "pc_options_Audio" ) || menuisopen( "pc_options_controls" ) || menuisopen( "pc_options_voice" ) ) && localvarbool( "ui_showApply" ) || localvarbool( "ui_showAudioApply" ) )
+			{
+				open "all_restart_popmenu";
 			}
 			execnow "profile_menuDvarsFinish;
 			resetViewport";
@@ -561,8 +564,19 @@
 				play "mouse_click";
 				play "mouse_click";
 				"escape" self;
-				if ( !menuisopen( "pc_options_advanced_video" ) && !menuisopen( "pc_options_video" ) && !menuisopen( "pc_options_Audio" ) && !menuisopen( "pc_options_controls" ) && !menuisopen( "pc_options_voice" ) )
+				if ( !( menuisopen( "pc_options_advanced_video" ) || menuisopen( "pc_options_video" ) || menuisopen( "pc_options_Audio" ) || menuisopen( "pc_options_controls" ) || menuisopen( "pc_options_voice" ) ) )
 				{
+					if ( localvarbool( "ui_showPicApply" ) && !localvarbool( "ui_showApply" ) )
+					{
+						execnow "setfromdvar r_picmip ui_r_picmip";
+						execnow "setfromdvar r_picmip_bump ui_r_picmip_bump";
+						execnow "setfromdvar r_picmip_spec ui_r_picmip_spec";
+						execnow "setfromdvar r_picmip_manual ui_r_picmip_manual";
+						exec "wait;
+						wait;
+						r_applyPicmip";
+						setLocalVarBool "ui_showPicApply" ( 0 );
+					}
 					if ( localvarbool( "ui_showApply" ) || localvarbool( "ui_showAudioApply" ) )
 					{
 						open "all_restart_popmenu";
