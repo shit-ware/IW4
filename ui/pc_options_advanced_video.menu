@@ -5,25 +5,17 @@
 		rect 0 0 640 480 0 0
 		forecolor 1 1 1 1
 		focuscolor 1 1 1 1
-		fadeCycle 1
-		fadeClamp 1
-		fadeAmount 0.1
 		onOpen
 		{
 			execnow "profile_menuDvarsSetup;
 			resetViewport";
 			setLocalVarBool "ui_hideBack" ( 1 );
-			execOnDvarFloatValue "r_zfeather" 0 "set ui_zfeather 0";
-			execOnDvarFloatValue "r_zfeather" 1 "set ui_zfeather 1";
-			execOnDvarFloatValue "r_depthPrepassModels" 1 "set ui_zfeather 2";
 		}
 		onClose
 		{
 			execnow "profile_menuDvarsFinish;
 			resetViewport";
 			setLocalVarBool "ui_hideBack" ( 0 );
-			execOnDvarIntValue "ui_zfeather" 0 "set r_zfeather 0;set r_depthPrepassModels 0";
-			execOnDvarIntValue "ui_zfeather" 1 "set r_zfeather 1;set r_depthPrepassModels 0";
 			execOnDvarIntValue "r_lodScaleRigid" 2 "set r_lodScaleSkinned 4;
 			set r_lodBiasSkinned -200;
 			set r_lodBiasRigid -100";
@@ -499,24 +491,18 @@
 			visible 1
 			style 1
 			forecolor 1 1 1 1
-			disablecolor 0.6 0.55 0.55 1
 			background "menu_setting_selection_bar"
-			type 12
+			type 11
 			textfont 3
 			textalign 4
 			textalignx 180
 			textscale 0.375
-			dvar "ui_zfeather"
-			dvarFloatList { "@MENU_NO" 0 "@MENU_YES" 1 }
+			dvar "r_zfeather"
 			visible when ( 1 )
-			disabled when ( ( ( dvarstring( "gameMode" ) == "so" && ( dvarbool( "cl_ingame" ) || dvarbool( "sv_running" ) || inlobby( ) )
- ) || ( dvarstring( "gameMode" ) == "mp" && ( dvarbool( "cl_ingame" ) || dvarbool( "sv_running" ) || inlobby( ) )
- ) )
- )
 			action
 			{
 				play "mouse_click";
-				setLocalVarBool "ui_showApply" ( 1 );
+				;;
 			}
 			onFocus
 			{
@@ -533,17 +519,12 @@
 			decoration
 			visible 1
 			forecolor 1 1 1 1
-			disablecolor 0.6 0.55 0.55 1
 			textfont 3
 			textalign 6
 			textalignx -180
 			textscale 0.375
 			text "@MENU_ZFEATHER_SMOKE"
 			visible when ( 1 )
-			disabled when ( ( ( dvarstring( "gameMode" ) == "so" && ( dvarbool( "cl_ingame" ) || dvarbool( "sv_running" ) || inlobby( ) )
- ) || ( dvarstring( "gameMode" ) == "mp" && ( dvarbool( "cl_ingame" ) || dvarbool( "sv_running" ) || inlobby( ) )
- ) )
- )
 		}
 		itemDef
 		{
@@ -661,7 +642,7 @@
 			action
 			{
 				play "mouse_click";
-				setLocalVarBool "ui_showApply" ( 1 );
+				setLocalVarBool "ui_showPicApply" ( 1 );
 			}
 			onFocus
 			{
@@ -696,6 +677,7 @@
 			visible 1
 			style 1
 			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
 			background "menu_setting_selection_bar"
 			type 12
 			textfont 3
@@ -705,10 +687,14 @@
 			dvar "ui_r_picmip"
 			dvarFloatList { "@MENU_LOW" 3 "@MENU_NORMAL" 2 "@MENU_HIGH" 1 "@MENU_EXTRA" 0 }
 			visible when ( dvarstring( "ui_r_picmip_manual" ) )
+			disabled when ( ( ( dvarstring( "gameMode" ) == "so" && ( dvarbool( "cl_ingame" ) || dvarbool( "sv_running" ) || inlobby( ) )
+ ) || ( dvarstring( "gameMode" ) == "mp" && ( dvarbool( "cl_ingame" ) || dvarbool( "sv_running" ) || inlobby( ) )
+ ) )
+ )
 			action
 			{
 				play "mouse_click";
-				setLocalVarBool "ui_showApply" ( 1 );
+				setLocalVarBool "ui_showPicApply" ( 1 );
 			}
 			onFocus
 			{
@@ -725,12 +711,17 @@
 			decoration
 			visible 1
 			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
 			textfont 3
 			textalign 6
 			textalignx -180
 			textscale 0.375
 			text "@MENU_TEXTURE_RESOLUTION"
 			visible when ( dvarstring( "ui_r_picmip_manual" ) )
+			disabled when ( ( ( dvarstring( "gameMode" ) == "so" && ( dvarbool( "cl_ingame" ) || dvarbool( "sv_running" ) || inlobby( ) )
+ ) || ( dvarstring( "gameMode" ) == "mp" && ( dvarbool( "cl_ingame" ) || dvarbool( "sv_running" ) || inlobby( ) )
+ ) )
+ )
 		}
 		itemDef
 		{
@@ -738,6 +729,7 @@
 			visible 1
 			style 1
 			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
 			background "menu_setting_selection_bar"
 			type 12
 			textfont 3
@@ -747,10 +739,14 @@
 			dvar "ui_r_picmip_bump"
 			dvarFloatList { "@MENU_LOW" 3 "@MENU_NORMAL" 2 "@MENU_HIGH" 1 "@MENU_EXTRA" 0 }
 			visible when ( dvarstring( "ui_r_picmip_manual" ) )
+			disabled when ( ( ( dvarstring( "gameMode" ) == "so" && ( dvarbool( "cl_ingame" ) || dvarbool( "sv_running" ) || inlobby( ) )
+ ) || ( dvarstring( "gameMode" ) == "mp" && ( dvarbool( "cl_ingame" ) || dvarbool( "sv_running" ) || inlobby( ) )
+ ) )
+ )
 			action
 			{
 				play "mouse_click";
-				setLocalVarBool "ui_showApply" ( 1 );
+				setLocalVarBool "ui_showPicApply" ( 1 );
 			}
 			onFocus
 			{
@@ -767,12 +763,17 @@
 			decoration
 			visible 1
 			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
 			textfont 3
 			textalign 6
 			textalignx -180
 			textscale 0.375
 			text "@MENU_NORMAL_MAP_RESOLUTION"
 			visible when ( dvarstring( "ui_r_picmip_manual" ) )
+			disabled when ( ( ( dvarstring( "gameMode" ) == "so" && ( dvarbool( "cl_ingame" ) || dvarbool( "sv_running" ) || inlobby( ) )
+ ) || ( dvarstring( "gameMode" ) == "mp" && ( dvarbool( "cl_ingame" ) || dvarbool( "sv_running" ) || inlobby( ) )
+ ) )
+ )
 		}
 		itemDef
 		{
@@ -780,6 +781,7 @@
 			visible 1
 			style 1
 			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
 			background "menu_setting_selection_bar"
 			type 12
 			textfont 3
@@ -789,10 +791,14 @@
 			dvar "ui_r_picmip_spec"
 			dvarFloatList { "@MENU_LOW" 3 "@MENU_NORMAL" 2 "@MENU_HIGH" 1 "@MENU_EXTRA" 0 }
 			visible when ( dvarstring( "ui_r_picmip_manual" ) )
+			disabled when ( ( ( dvarstring( "gameMode" ) == "so" && ( dvarbool( "cl_ingame" ) || dvarbool( "sv_running" ) || inlobby( ) )
+ ) || ( dvarstring( "gameMode" ) == "mp" && ( dvarbool( "cl_ingame" ) || dvarbool( "sv_running" ) || inlobby( ) )
+ ) )
+ )
 			action
 			{
 				play "mouse_click";
-				setLocalVarBool "ui_showApply" ( 1 );
+				setLocalVarBool "ui_showPicApply" ( 1 );
 			}
 			onFocus
 			{
@@ -809,12 +815,17 @@
 			decoration
 			visible 1
 			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
 			textfont 3
 			textalign 6
 			textalignx -180
 			textscale 0.375
 			text "@MENU_SPECULAR_MAP_RESOLUTION"
 			visible when ( dvarstring( "ui_r_picmip_manual" ) )
+			disabled when ( ( ( dvarstring( "gameMode" ) == "so" && ( dvarbool( "cl_ingame" ) || dvarbool( "sv_running" ) || inlobby( ) )
+ ) || ( dvarstring( "gameMode" ) == "mp" && ( dvarbool( "cl_ingame" ) || dvarbool( "sv_running" ) || inlobby( ) )
+ ) )
+ )
 		}
 		itemDef
 		{

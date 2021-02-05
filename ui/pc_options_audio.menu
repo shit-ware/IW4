@@ -5,9 +5,6 @@
 		rect 0 0 640 480 0 0
 		forecolor 1 1 1 1
 		focuscolor 1 1 1 1
-		fadeCycle 1
-		fadeClamp 1
-		fadeAmount 0.1
 		blurWorld 7
 		onOpen
 		{
@@ -28,12 +25,20 @@
 		onEsc
 		{
 			close self;
-			if ( localvarbool( "ui_showApply" ) || localvarbool( "ui_showAudioApply" ) )
+			if ( !( menuisopen( "pc_options_advanced_video" ) || menuisopen( "pc_options_video" ) || menuisopen( "pc_options_Audio" ) || menuisopen( "pc_options_controls" ) || menuisopen( "pc_options_voice" ) ) && localvarbool( "ui_showPicApply" ) && !localvarbool( "ui_showApply" ) && !localvarbool( "ui_showAudioApply" ) )
 			{
-				if ( !menuisopen( "pc_options_advanced_video" ) && !menuisopen( "pc_options_video" ) && !menuisopen( "pc_options_Audio" ) && !menuisopen( "pc_options_controls" ) && !menuisopen( "pc_options_voice" ) )
-				{
-					open "all_restart_popmenu";
-				}
+				execnow "setfromdvar r_picmip ui_r_picmip";
+				execnow "setfromdvar r_picmip_bump ui_r_picmip_bump";
+				execnow "setfromdvar r_picmip_spec ui_r_picmip_spec";
+				execnow "setfromdvar r_picmip_manual ui_r_picmip_manual";
+				exec "wait;
+				wait;
+				r_applyPicmip";
+				setLocalVarBool "ui_showPicApply" ( 0 );
+			}
+			if ( !( menuisopen( "pc_options_advanced_video" ) || menuisopen( "pc_options_video" ) || menuisopen( "pc_options_Audio" ) || menuisopen( "pc_options_controls" ) || menuisopen( "pc_options_voice" ) ) && localvarbool( "ui_showApply" ) || localvarbool( "ui_showAudioApply" ) )
+			{
+				open "all_restart_popmenu";
 			}
 			execnow "profile_menuDvarsFinish;
 			resetViewport";
@@ -551,8 +556,19 @@
 				play "mouse_click";
 				play "mouse_click";
 				"escape" self;
-				if ( !menuisopen( "pc_options_advanced_video" ) && !menuisopen( "pc_options_video" ) && !menuisopen( "pc_options_Audio" ) && !menuisopen( "pc_options_controls" ) && !menuisopen( "pc_options_voice" ) )
+				if ( !( menuisopen( "pc_options_advanced_video" ) || menuisopen( "pc_options_video" ) || menuisopen( "pc_options_Audio" ) || menuisopen( "pc_options_controls" ) || menuisopen( "pc_options_voice" ) ) )
 				{
+					if ( localvarbool( "ui_showPicApply" ) && !localvarbool( "ui_showApply" ) )
+					{
+						execnow "setfromdvar r_picmip ui_r_picmip";
+						execnow "setfromdvar r_picmip_bump ui_r_picmip_bump";
+						execnow "setfromdvar r_picmip_spec ui_r_picmip_spec";
+						execnow "setfromdvar r_picmip_manual ui_r_picmip_manual";
+						exec "wait;
+						wait;
+						r_applyPicmip";
+						setLocalVarBool "ui_showPicApply" ( 0 );
+					}
 					if ( localvarbool( "ui_showApply" ) || localvarbool( "ui_showAudioApply" ) )
 					{
 						open "all_restart_popmenu";
@@ -574,6 +590,89 @@
 				setItemColor self backcolor 0 0 0 "0.0";
 				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
 				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect 232 88 344 20 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			background "menu_setting_selection_bar"
+			textfont 3
+			textalign 4
+			textalignx 180
+			textscale 0.375
+			text "@MENU_DISABLED"
+			exp forecolor a ( !int( getprofiledata( "subtitles" ) ) )
+			visible when ( !dvarbool( "ui_multiplayer" ) )
+			action
+			{
+				play "mouse_click";
+			}
+			onFocus
+			{
+				setItemColor self backcolor 0 0 0 1 play "mouse_over";
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 0;
+			}
+		}
+		itemDef
+		{
+			rect 232 88 344 20 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			background "menu_setting_selection_bar"
+			textfont 3
+			textalign 4
+			textalignx 180
+			textscale 0.375
+			text "@MENU_ENABLED"
+			exp forecolor a ( int( getprofiledata( "subtitles" ) ) )
+			visible when ( !dvarbool( "ui_multiplayer" ) )
+			action
+			{
+				play "mouse_click";
+			}
+			onFocus
+			{
+				setItemColor self backcolor 0 0 0 1 play "mouse_over";
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 0;
+			}
+		}
+		itemDef
+		{
+			rect 232 88 344 20 1 1
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			background "menu_setting_selection_bar"
+			type 1
+			textfont 3
+			textalign 4
+			textalignx 180
+			textscale 0.375
+			visible when ( !dvarbool( "ui_multiplayer" ) )
+			action
+			{
+				play "mouse_click";
+				exec "profile_toggleSubtitles";
+			}
+			onFocus
+			{
+				setItemColor self backcolor 0 0 0 1 play "mouse_over";
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 0;
 			}
 		}
 		itemDef
@@ -668,6 +767,19 @@
  ) || ( dvarstring( "gameMode" ) == "mp" && ( dvarbool( "cl_ingame" ) || dvarbool( "sv_running" ) || inlobby( ) )
  ) )
  )
+		}
+		itemDef
+		{
+			rect 232 88 344 20 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 6
+			textalignx -180
+			textscale 0.375
+			text "@MENU_SUBTITLES"
+			visible when ( !dvarbool( "ui_multiplayer" ) )
 		}
 	}
 }

@@ -5,12 +5,8 @@
 		rect 0 0 640 480 0 0
 		forecolor 1 1 1 1
 		focuscolor 1 1 1 1
-		fadeCycle 1
-		fadeClamp 1
-		fadeAmount 0.1
 		onOpen
 		{
-			setLocalVarBool "ui_showApply" ( 0 );
 			execnow "setfromdvar r_picmip ui_r_picmip";
 			execnow "setfromdvar r_picmip_bump ui_r_picmip_bump";
 			execnow "setfromdvar r_picmip_spec ui_r_picmip_spec";
@@ -19,7 +15,6 @@
 			wait;
 			r_applyPicmip";
 			close "apply_picmip_popmenu";
-			open "options_video";
 		}
 	}
 }
