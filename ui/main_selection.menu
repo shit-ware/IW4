@@ -1,1620 +1,914 @@
 {
 	menuDef
 	{
-		name main_selection
+		name "main_selection"
+		rect 0 0 640 480 0 0
+		forecolor 1 1 1 1
+		focuscolor 1 1 1 1
 		fullscreen 1
-		rect 0 0 640 480
-		style 0
-		border 0
-		ownerdraw 0
-		ownerdrawFlag 0
-		borderSize 0
-		foreColor 1 1 1 1
-		backColor 0 0 0 0
-		borderColor 0 0 0 0
-		outlineColor 0 0 0 0
-		soundLoop music_opening
 		fadeCycle 1
 		fadeClamp 1
 		fadeAmount 0.1
-		fadeInAmount 0
-		blurWorld 0
 		onOpen
 		{
-			setLocalVarInt ui_sp_stat_progression_easy 1;
-			setLocalVarInt ui_sp_stat_progression_easy 128;
-			setLocalVarInt ui_sp_stat_progression_easy 132;
-			"setdvar" "ui_test" "none";
-			if ( localvarstring( "ui_setfocus_to" ) == "game_mp"  )
+			setLocalVarInt "ui_sp_stat_progression_easy" ( 0 );
+			setLocalVarInt "ui_sp_stat_progression_easy" ( ( ( int( getcharbyindex( getprofiledata( "missionHighestDifficulty" ) , 0 ) ) >= 1 ) + ( int( getcharbyindex( getprofiledata( "missionHighestDifficulty" ) , 1 ) ) >= 1 ) + ( int( getcharbyindex( getprofiledata( "missionHighestDifficulty" ) , 2 ) ) >= 1 ) + ( int( getcharbyindex( getprofiledata( "missionHighestDifficulty" ) , 3 ) ) >= 1 ) + ( int( getcharbyindex( getprofiledata( "missionHighestDifficulty" ) , 4 ) ) >= 1 ) + ( int( getcharbyindex( getprofiledata( "missionHighestDifficulty" ) , 5 ) ) >= 1 ) + ( int( getcharbyindex( getprofiledata( "missionHighestDifficulty" ) , 6 ) ) >= 1 ) + ( int( getcharbyindex( getprofiledata( "missionHighestDifficulty" ) , 7 ) ) >= 1 ) + ( int( getcharbyindex( getprofiledata( "missionHighestDifficulty" ) , 8 ) ) >= 1 ) ) );
+			;;
+			setLocalVarInt "ui_sp_stat_progression_easy" ( localvarint( "ui_sp_stat_progression_easy" ) + ( ( int( getcharbyindex( getprofiledata( "missionHighestDifficulty" ) , 9 ) ) >= 1 ) + ( int( getcharbyindex( getprofiledata( "missionHighestDifficulty" ) , 10 ) ) >= 1 ) + ( int( getcharbyindex( getprofiledata( "missionHighestDifficulty" ) , 11 ) ) >= 1 ) + ( int( getcharbyindex( getprofiledata( "missionHighestDifficulty" ) , 12 ) ) >= 1 ) + ( int( getcharbyindex( getprofiledata( "missionHighestDifficulty" ) , 13 ) ) >= 1 ) + ( int( getcharbyindex( getprofiledata( "missionHighestDifficulty" ) , 14 ) ) >= 1 ) + ( int( getcharbyindex( getprofiledata( "missionHighestDifficulty" ) , 15 ) ) >= 1 ) + ( int( getcharbyindex( getprofiledata( "missionHighestDifficulty" ) , 16 ) ) >= 1 ) + ( int( getcharbyindex( getprofiledata( "missionHighestDifficulty" ) , 17 ) ) >= 1 ) ) );
+			;
+			setdvar "ui_test" "none";
+			if ( localvarstring( "ui_setfocus_to" ) == "game_mp" )
 			{
-				"setdvar" "ui_test" "game_mp";
-				"setfocus" "game_mp";
+				setdvar "ui_test" "game_mp";
+				setfocus "game_mp";
 			}
-			if ( localvarstring( "ui_setfocus_to" ) == "game_so"  )
+			if ( localvarstring( "ui_setfocus_to" ) == "game_so" )
 			{
-				"setdvar" "ui_test" "game_so";
-				"setfocus" "game_so";
+				setdvar "ui_test" "game_so";
+				setfocus "game_so";
 			}
-			if ( localvarstring( "ui_setfocus_to" ) != "game_so" && localvarstring( "ui_setfocus_to" ) != "game_mp"  )
+			if ( localvarstring( "ui_setfocus_to" ) != "game_so" && localvarstring( "ui_setfocus_to" ) != "game_mp" )
 			{
-				"setdvar" "ui_test" "game_sp";
-				"setfocus" "game_sp";
+				setdvar "ui_test" "game_sp";
+				setfocus "game_sp";
 			}
-			if ( !getprofiledata( "hasEverPlayed_MainMenu" )  )
+			if ( !getprofiledata( "hasEverPlayed_MainMenu" ) )
 			{
-				setLocalVarBool ui_show_recommendation 1;
-				"open" "offensive_warning";
+				setLocalVarBool "ui_show_recommendation" ( 1 );
+				open "offensive_warning";
 			}
 		}
 		onClose
 		{
+			;;
 		}
-		onESC
+		onEsc
 		{
-			if ( localvarint( "ui_highlighted_game" ) == 1  )
+			if ( localvarint( "ui_highlighted_game" ) == 1 )
 			{
-				setLocalVarString ui_setfocus_to "game_so"  );
+				setLocalVarString "ui_setfocus_to" ( "game_so" );
 			}
-			if ( localvarint( "ui_highlighted_game" ) == 2  )
+			if ( localvarint( "ui_highlighted_game" ) == 2 )
 			{
-				setLocalVarString ui_setfocus_to "game_sp"  );
+				setLocalVarString "ui_setfocus_to" ( "game_sp" );
 			}
-			if ( localvarint( "ui_highlighted_game" ) == 3  )
+			if ( localvarint( "ui_highlighted_game" ) == 3 )
 			{
-				setLocalVarString ui_setfocus_to "game_mp"  );
+				setLocalVarString "ui_setfocus_to" ( "game_mp" );
 			}
-		}
-		focusColor 1 1 1 1
-		itemDef
-		{
-			rect 0 0 640 480 4 4
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background mw2_main_background
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-		}
-		itemDef
-		{
-			rect 0 0 1708 480
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0.5
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background mw2_main_cloud_overlay
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			exp (null) (null) ( ( 0 - 107 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) )  )
-		}
-		itemDef
-		{
-			rect 0 0 -1708 -480
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0.5
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background mw2_main_cloud_overlay
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			exp (null) (null) ( ( - 107 + 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) )  )
-		}
-		itemDef
-		{
-			rect -427 -240 854 480 2 2
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background mw2_main_co_image
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			visible when ( localvarint( "ui_highlighted_game" ) == 1  )
-		}
-		itemDef
-		{
-			rect -427 -240 854 480 2 2
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background mw2_main_sp_image
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			visible when ( localvarint( "ui_highlighted_game" ) == 2  )
-		}
-		itemDef
-		{
-			rect -427 -240 854 480 2 2
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background mw2_main_mp_image
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			visible when ( localvarint( "ui_highlighted_game" ) == 3  )
 		}
 		itemDef
 		{
 			rect 0 0 640 480 4 4
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background mockup_bg_glow
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp (null) (null) ( ( ( sin milliseconds( ) / 1500 ) + 1 ) * 0.250000 ) + 0.250000  )
+			style 3
+			forecolor 1 1 1 1
+			background "mw2_main_background"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 0 1708 480 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.5
+			background "mw2_main_cloud_overlay"
+			textscale 0.55
+			exp rect x ( ( 0 - 107 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 -1708 -480 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.5
+			background "mw2_main_cloud_overlay"
+			textscale 0.55
+			exp rect x ( ( - 107 + 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) ) )
+		}
+		itemDef
+		{
+			rect -427 -240 854 480 2 2
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "mw2_main_co_image"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlighted_game" ) == 1 )
+		}
+		itemDef
+		{
+			rect -427 -240 854 480 2 2
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "mw2_main_sp_image"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlighted_game" ) == 2 )
+		}
+		itemDef
+		{
+			rect -427 -240 854 480 2 2
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "mw2_main_mp_image"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlighted_game" ) == 3 )
 		}
 		itemDef
 		{
 			rect 0 0 640 480 4 4
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background mockup_bg_glow
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp (null) (null) ( ( ( sin milliseconds( ) / 480 ) + 1 ) * 0.250000 ) + 0.250000  )
+			style 3
+			forecolor 1 1 1 0
+			background "mockup_bg_glow"
+			textscale 0.55
+			exp forecolor a ( ( ( sin( milliseconds( ) / 1500 ) + 1 ) * 0.25 ) + 0.25 )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0
+			background "mockup_bg_glow"
+			textscale 0.55
+			exp forecolor a ( ( ( sin( milliseconds( ) / 480 ) + 1 ) * 0.25 ) + 0.25 )
 		}
 		itemDef
 		{
 			rect -256 -198 512 128 2 2
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background logo_cod2
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "logo_cod2"
+			textscale 0.55
 		}
 		itemDef
 		{
 			rect 0 186 0 0 2 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background levelshot_mw2_game_so_blur
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( 1  )
-			exp (null) (null) ( ( 1 - 2.500000 ) * ( 200 ) + 2  )
-			exp (null) (null) ( ( 200 ) - 4  )
-			exp (null) (null) ( 111  )
+			style 3
+			forecolor 1 1 1 1
+			background "levelshot_mw2_game_so_blur"
+			textscale 0.55
+			exp rect x ( ( 1 - 2.5 ) * ( 200 ) + 2 )
+			exp rect w ( ( 200 ) - 4 )
+			exp rect h ( 111 )
+			visible when ( 1 )
 		}
 		itemDef
 		{
 			rect 0 186 0 0 2 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background levelshot_mw2_game_sp_blur
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( 1  )
-			exp (null) (null) ( ( 2 - 2.500000 ) * ( 200 ) + 2  )
-			exp (null) (null) ( ( 200 ) - 4  )
-			exp (null) (null) ( 111  )
+			style 3
+			forecolor 1 1 1 1
+			background "levelshot_mw2_game_sp_blur"
+			textscale 0.55
+			exp rect x ( ( 2 - 2.5 ) * ( 200 ) + 2 )
+			exp rect w ( ( 200 ) - 4 )
+			exp rect h ( 111 )
+			visible when ( 1 )
 		}
 		itemDef
 		{
 			rect 0 186 0 0 2 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background levelshot_mw2_game_mp_blur
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( 1  )
-			exp (null) (null) ( ( 3 - 2.500000 ) * ( 200 ) + 2  )
-			exp (null) (null) ( ( 200 ) - 4  )
-			exp (null) (null) ( 111  )
+			style 3
+			forecolor 1 1 1 1
+			background "levelshot_mw2_game_mp_blur"
+			textscale 0.55
+			exp rect x ( ( 3 - 2.5 ) * ( 200 ) + 2 )
+			exp rect w ( ( 200 ) - 4 )
+			exp rect h ( 111 )
+			visible when ( 1 )
 		}
 		itemDef
 		{
 			rect 0 170 640 156 4 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 0.2
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background white
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( 1  )
+			style 3
+			forecolor 0 0 0 0.2
+			background "white"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
 			rect 0 170 0 156 2 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.5 0.5 0.5 0.65
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background white
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( 1  )
-			exp (null) (null) ( ( 0 - 2.500000 ) * ( 200 ) + 2  )
-			exp (null) (null) ( ( 200 ) - 4  )
+			style 3
+			forecolor 0.5 0.5 0.5 0.65
+			background "white"
+			textscale 0.55
+			exp rect x ( ( 0 - 2.5 ) * ( 200 ) + 2 )
+			exp rect w ( ( 200 ) - 4 )
+			visible when ( 1 )
 		}
 		itemDef
 		{
 			rect 0 170 0 156 2 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.5 0.5 0.5 0.65
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background white
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( 1  )
-			exp (null) (null) ( ( 1 - 2.500000 ) * ( 200 ) + 2  )
-			exp (null) (null) ( ( 200 ) - 4  )
+			style 3
+			forecolor 0.5 0.5 0.5 0.65
+			background "white"
+			textscale 0.55
+			exp rect x ( ( 1 - 2.5 ) * ( 200 ) + 2 )
+			exp rect w ( ( 200 ) - 4 )
+			visible when ( 1 )
 		}
 		itemDef
 		{
 			rect 0 170 0 156 2 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.5 0.5 0.5 0.65
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background white
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( 1  )
-			exp (null) (null) ( ( 2 - 2.500000 ) * ( 200 ) + 2  )
-			exp (null) (null) ( ( 200 ) - 4  )
+			style 3
+			forecolor 0.5 0.5 0.5 0.65
+			background "white"
+			textscale 0.55
+			exp rect x ( ( 2 - 2.5 ) * ( 200 ) + 2 )
+			exp rect w ( ( 200 ) - 4 )
+			visible when ( 1 )
 		}
 		itemDef
 		{
 			rect 0 170 0 156 2 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.5 0.5 0.5 0.65
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background white
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( 1  )
-			exp (null) (null) ( ( 3 - 2.500000 ) * ( 200 ) + 2  )
-			exp (null) (null) ( ( 200 ) - 4  )
+			style 3
+			forecolor 0.5 0.5 0.5 0.65
+			background "white"
+			textscale 0.55
+			exp rect x ( ( 3 - 2.5 ) * ( 200 ) + 2 )
+			exp rect w ( ( 200 ) - 4 )
+			visible when ( 1 )
 		}
 		itemDef
 		{
 			rect 0 170 0 156 2 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.5 0.5 0.5 0.65
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background white
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( 1  )
-			exp (null) (null) ( ( 4 - 2.500000 ) * ( 200 ) + 2  )
-			exp (null) (null) ( ( 200 ) - 4  )
+			style 3
+			forecolor 0.5 0.5 0.5 0.65
+			background "white"
+			textscale 0.55
+			exp rect x ( ( 4 - 2.5 ) * ( 200 ) + 2 )
+			exp rect w ( ( 200 ) - 4 )
+			visible when ( 1 )
 		}
 		itemDef
 		{
 			rect -32 138 32 32 4 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background drop_shadow_tl
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( 1  )
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_tl"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
 			rect 0 138 640 32 4 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background drop_shadow_t
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( 1  )
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_t"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
 			rect 640 138 32 32 4 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background drop_shadow_tr
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( 1  )
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_tr"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
 			rect 640 170 32 156 4 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background drop_shadow_r
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( 1  )
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_r"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
 			rect 640 326 32 32 4 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background drop_shadow_br
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( 1  )
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_br"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
 			rect 0 326 640 32 4 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background drop_shadow_b
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( 1  )
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_b"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
 			rect -32 326 32 32 4 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background drop_shadow_bl
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( 1  )
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_bl"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
 			rect -32 170 32 156 4 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background drop_shadow_l
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( 1  )
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_l"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
 			rect 0 346 640 24 4 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background line_horizontal
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( 1  )
+			style 3
+			forecolor 0 0 0 1
+			background "line_horizontal"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
 			rect -320 346 640 24 2 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0.75
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 13
-			textAlignX 0
-			textAlignY -4
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
+			decoration
 			visible 1
-			exp text ( localvarstring( "ui_game_desc" )  )
-			visible when ( 1  )
+			forecolor 1 1 1 0.75
+			textfont 3
+			textalign 13
+			textaligny -4
+			textscale 0.375
+			visible when ( 1 )
+			exp text ( localvarstring( "ui_game_desc" ) )
 		}
 		itemDef
 		{
 			rect 0 170 0 156 2 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.2 0.2 0.2 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background white
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( ( localvarint( "ui_highlighted_game" ) == 1 )  )
-			exp (null) (null) ( ( 1 - 2.500000 ) * ( 200 ) + 2  )
-			exp (null) (null) ( ( 200 ) - 4  )
+			style 3
+			forecolor 0.2 0.2 0.2 1
+			background "white"
+			textscale 0.55
+			exp rect x ( ( 1 - 2.5 ) * ( 200 ) + 2 )
+			exp rect w ( ( 200 ) - 4 )
+			visible when ( ( localvarint( "ui_highlighted_game" ) == 1 ) )
 		}
 		itemDef
 		{
 			rect 0 186 0 0 2 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background levelshot_mw2_game_so
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( ( localvarint( "ui_highlighted_game" ) == 1 )  )
-			exp (null) (null) ( ( 1 - 2.500000 ) * ( 200 ) + 2  )
-			exp (null) (null) ( ( 200 ) - 4  )
-			exp (null) (null) ( 111  )
+			style 3
+			forecolor 1 1 1 1
+			background "levelshot_mw2_game_so"
+			textscale 0.55
+			exp rect x ( ( 1 - 2.5 ) * ( 200 ) + 2 )
+			exp rect w ( ( 200 ) - 4 )
+			exp rect h ( 111 )
+			visible when ( ( localvarint( "ui_highlighted_game" ) == 1 ) )
 		}
 		itemDef
 		{
 			rect 0 170 0 -40 2 1
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 1
-			align 0
-			textAlign 5
-			textAlignX 0
-			textAlignY -1
-			textScale 0.33
-			textStyle 0
-			textFont 9
-			feeder 0
-			text "@MENU_SP_CAMPAIGN"
+			decoration
 			visible 1
-			visible when ( "game_so" == "game_sp"  )
-			exp (null) (null) ( ( - ( 200 - "LOCAL_BAND_BUTTON_WIDTH_SD_DELTA" * ( !dvarbool(static)( 3 ) ) ) * 1.500000 ) + ( 1 - 1 ) * ( 200 - "LOCAL_BAND_BUTTON_WIDTH_SD_DELTA" * ( !dvarbool(static)( 3 ) ) ) + 2  )
-			exp (null) (null) ( 200 - "LOCAL_BAND_BUTTON_WIDTH_SD_DELTA" * ( !dvarbool(static)( 3 ) )  )
-			exp (null) (null) ( 1  )
+			style 1
+			forecolor 1 1 1 1
+			type 1
+			textfont 9
+			textalign 5
+			textaligny -1
+			textscale 0.33
+			text "@MENU_SP_CAMPAIGN"
+			exp rect x ( ( - ( 200 - "LOCAL_BAND_BUTTON_WIDTH_SD_DELTA" * ( !dvarbool( "hidef" ) ) ) * 1.5 ) + ( 1 - 1 ) * ( 200 - "LOCAL_BAND_BUTTON_WIDTH_SD_DELTA" * ( !dvarbool( "hidef" ) ) ) + 2 )
+			exp rect w ( 200 - "LOCAL_BAND_BUTTON_WIDTH_SD_DELTA" * ( !dvarbool( "hidef" ) ) )
+			exp forecolor a ( 1 )
+			visible when ( "game_so" == "game_sp" )
 		}
 		itemDef
 		{
 			rect 0 0 0 -40 2 1
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 1
-			align 0
-			textAlign 5
-			textAlignX 0
-			textAlignY 0
-			textScale 0.33
-			textStyle 6
-			textFont 9
-			feeder 0
-			text "@MENU_SP_FOR_THE_RECORD"
+			decoration
 			visible 1
-			visible when ( "game_so" == "game_sp" && localvarint( "ui_highlighted_game" ) == 2  )
-			exp (null) (null) ( 170 + 108 - ( !dvarbool(static)( 3 ) ) * 12  )
-			exp (null) (null) ( ( - ( 200 - "LOCAL_BAND_BUTTON_WIDTH_SD_DELTA" * ( !dvarbool(static)( 3 ) ) ) * 1.500000 ) + ( 1 - 1 ) * ( 200 - "LOCAL_BAND_BUTTON_WIDTH_SD_DELTA" * ( !dvarbool(static)( 3 ) ) ) + 2  )
-			exp (null) (null) ( 200 - "LOCAL_BAND_BUTTON_WIDTH_SD_DELTA" * ( !dvarbool(static)( 3 ) )  )
-			exp (null) (null) ( 1  )
+			style 1
+			forecolor 1 1 1 1
+			type 1
+			textfont 9
+			textalign 5
+			textscale 0.33
+			text "@MENU_SP_FOR_THE_RECORD"
+			exp rect y ( 170 + 108 - ( !dvarbool( "hidef" ) ) * 12 )
+			exp rect x ( ( - ( 200 - "LOCAL_BAND_BUTTON_WIDTH_SD_DELTA" * ( !dvarbool( "hidef" ) ) ) * 1.5 ) + ( 1 - 1 ) * ( 200 - "LOCAL_BAND_BUTTON_WIDTH_SD_DELTA" * ( !dvarbool( "hidef" ) ) ) + 2 )
+			exp rect w ( 200 - "LOCAL_BAND_BUTTON_WIDTH_SD_DELTA" * ( !dvarbool( "hidef" ) ) )
+			exp forecolor a ( 1 )
+			visible when ( "game_so" == "game_sp" && localvarint( "ui_highlighted_game" ) == 2 )
 		}
 		itemDef
 		{
 			rect 0 170 0 -40 2 1
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 5
-			textAlignX 0
-			textAlignY -1
-			textScale 0.33
-			textStyle 0
-			textFont 9
-			feeder 0
-			text "@MENU_SP_SPECIAL_OPS_CAPS"
+			decoration
 			visible 1
-			visible when ( "game_so" != "game_sp"  )
-			exp (null) (null) ( ( 1 - 2.500000 ) * ( 200 ) + 2  )
-			exp (null) (null) ( 200  )
-			exp (null) (null) ( 1  )
+			style 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 5
+			textaligny -1
+			textscale 0.33
+			text "@MENU_SP_SPECIAL_OPS_CAPS"
+			exp rect x ( ( 1 - 2.5 ) * ( 200 ) + 2 )
+			exp rect w ( 200 )
+			exp forecolor a ( 1 )
+			visible when ( "game_so" != "game_sp" )
 		}
 		itemDef
 		{
-			name game_so
+			name "game_so"
 			rect 0 170 200 156 2 1
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			execKeyInt 31
-			{
-				"setfocus" "game_sp";
-			}
-			execKeyInt 23
-			{
-				"setfocus" "game_sp";
-			}
-			execKeyInt 30
-			{
-				"setfocus" "game_mp";
-			}
-			execKeyInt 22
-			{
-				"setfocus" "game_mp";
-			}
-			execKeyInt 29
-			{
-			}
-			execKeyInt 21
-			{
-			}
-			execKeyInt 28
-			{
-			}
-			execKeyInt 20
-			{
-			}
-			type 1
-			align 0
-			textAlign 5
-			textAlignX 0
-			textAlignY 0
-			textScale 0.33
-			textStyle 0
-			textFont 9
-			feeder 0
 			visible 1
-			onFocus
+			style 1
+			forecolor 1 1 1 1
+			type 1
+			textfont 9
+			textalign 5
+			textscale 0.33
+			exp rect x ( ( 1 - 2.5 ) * ( 200 ) + 2 )
+			
 			{
-				"play" "mouse_over";
-				setLocalVarInt ui_highlighted_game 1;
-				setLocalVarString ui_game_desc "@MENU_SP_DESC_SPECIALOPS"  );
+				setfocus "game_sp";
+			}
+			
+			{
+				setfocus "game_sp";
+			}
+			
+			{
+				setfocus "game_mp";
+			}
+			
+			{
+				setfocus "game_mp";
+			}
+			
+			{
+				;;
+			}
+			
+			{
+				;;
+			}
+			
+			{
+				;;
+			}
+			
+			{
+				;;
 			}
 			action
 			{
-				if ( localvarbool( "ui_show_recommendation" )  )
+				if ( localvarbool( "ui_show_recommendation" ) )
 				{
-					"open" "popmenu_recommendation_so";
+					open "popmenu_recommendation_so";
 				}
 				else
 				{
-					"open" "main_specops";
+					open "main_specops";
 				}
-				if ( localvarbool( "ui_show_recommendation" )  )			}
-			exp (null) (null) ( ( 1 - 2.500000 ) * ( 200 ) + 2  )
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarInt "ui_highlighted_game" ( 1 );
+				setLocalVarString "ui_game_desc" ( "@MENU_SP_DESC_SPECIALOPS" );
+			}
 		}
 		itemDef
 		{
 			rect 0 170 0 156 2 1
+			decoration
+			visible 1
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.75 0.75 0.75 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 13
-			textAlignX 0
-			textAlignY -1
-			textScale 0.33
-			textStyle 0
-			textFont 9
-			feeder 0
-			visible 1
-			exp text ( locstring( "@MENU_SP_COMPLETION_PERCENT" , int getprofiledata( "percentCompleteSO" ) * 100 / 69 ) )  )
-			visible when ( 1 && localvarint( "ui_highlighted_game" ) == 1  )
-			exp (null) (null) ( ( 1 - 2.500000 ) * ( 200 ) + 2  )
-			exp (null) (null) ( 200 - 6  )
+			forecolor 0.75 0.75 0.75 1
+			textfont 9
+			textalign 13
+			textaligny -1
+			textscale 0.33
+			exp rect x ( ( 1 - 2.5 ) * ( 200 ) + 2 )
+			exp rect w ( 200 - 6 )
+			visible when ( 1 && localvarint( "ui_highlighted_game" ) == 1 )
+			exp text ( locstring( "@MENU_SP_COMPLETION_PERCENT" , int( getprofiledata( "percentCompleteSO" ) * 100 / 69 ) ) )
 		}
 		itemDef
 		{
 			rect 0 170 0 156 2 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.2 0.2 0.2 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background white
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( ( localvarint( "ui_highlighted_game" ) == 2 )  )
-			exp (null) (null) ( ( 2 - 2.500000 ) * ( 200 ) + 2  )
-			exp (null) (null) ( ( 200 ) - 4  )
+			style 3
+			forecolor 0.2 0.2 0.2 1
+			background "white"
+			textscale 0.55
+			exp rect x ( ( 2 - 2.5 ) * ( 200 ) + 2 )
+			exp rect w ( ( 200 ) - 4 )
+			visible when ( ( localvarint( "ui_highlighted_game" ) == 2 ) )
 		}
 		itemDef
 		{
 			rect 0 186 0 0 2 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background levelshot_mw2_game_sp
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( ( localvarint( "ui_highlighted_game" ) == 2 )  )
-			exp (null) (null) ( ( 2 - 2.500000 ) * ( 200 ) + 2  )
-			exp (null) (null) ( ( 200 ) - 4  )
-			exp (null) (null) ( 111  )
+			style 3
+			forecolor 1 1 1 1
+			background "levelshot_mw2_game_sp"
+			textscale 0.55
+			exp rect x ( ( 2 - 2.5 ) * ( 200 ) + 2 )
+			exp rect w ( ( 200 ) - 4 )
+			exp rect h ( 111 )
+			visible when ( ( localvarint( "ui_highlighted_game" ) == 2 ) )
 		}
 		itemDef
 		{
 			rect 0 170 0 -40 2 1
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 1
-			align 0
-			textAlign 5
-			textAlignX 0
-			textAlignY -1
-			textScale 0.33
-			textStyle 0
-			textFont 9
-			feeder 0
-			text "@MENU_SP_CAMPAIGN"
+			decoration
 			visible 1
-			visible when ( "game_sp" == "game_sp"  )
-			exp (null) (null) ( ( - ( 200 - "LOCAL_BAND_BUTTON_WIDTH_SD_DELTA" * ( !dvarbool(static)( 3 ) ) ) * 1.500000 ) + ( 2 - 1 ) * ( 200 - "LOCAL_BAND_BUTTON_WIDTH_SD_DELTA" * ( !dvarbool(static)( 3 ) ) ) + 2  )
-			exp (null) (null) ( 200 - "LOCAL_BAND_BUTTON_WIDTH_SD_DELTA" * ( !dvarbool(static)( 3 ) )  )
-			exp (null) (null) ( 1  )
+			style 1
+			forecolor 1 1 1 1
+			type 1
+			textfont 9
+			textalign 5
+			textaligny -1
+			textscale 0.33
+			text "@MENU_SP_CAMPAIGN"
+			exp rect x ( ( - ( 200 - "LOCAL_BAND_BUTTON_WIDTH_SD_DELTA" * ( !dvarbool( "hidef" ) ) ) * 1.5 ) + ( 2 - 1 ) * ( 200 - "LOCAL_BAND_BUTTON_WIDTH_SD_DELTA" * ( !dvarbool( "hidef" ) ) ) + 2 )
+			exp rect w ( 200 - "LOCAL_BAND_BUTTON_WIDTH_SD_DELTA" * ( !dvarbool( "hidef" ) ) )
+			exp forecolor a ( 1 )
+			visible when ( "game_sp" == "game_sp" )
 		}
 		itemDef
 		{
 			rect 0 0 0 -40 2 1
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 1
-			align 0
-			textAlign 5
-			textAlignX 0
-			textAlignY 0
-			textScale 0.33
-			textStyle 6
-			textFont 9
-			feeder 0
-			text "@MENU_SP_FOR_THE_RECORD"
+			decoration
 			visible 1
-			visible when ( "game_sp" == "game_sp" && localvarint( "ui_highlighted_game" ) == 2  )
-			exp (null) (null) ( 170 + 108 - ( !dvarbool(static)( 3 ) ) * 12  )
-			exp (null) (null) ( ( - ( 200 - "LOCAL_BAND_BUTTON_WIDTH_SD_DELTA" * ( !dvarbool(static)( 3 ) ) ) * 1.500000 ) + ( 2 - 1 ) * ( 200 - "LOCAL_BAND_BUTTON_WIDTH_SD_DELTA" * ( !dvarbool(static)( 3 ) ) ) + 2  )
-			exp (null) (null) ( 200 - "LOCAL_BAND_BUTTON_WIDTH_SD_DELTA" * ( !dvarbool(static)( 3 ) )  )
-			exp (null) (null) ( 1  )
+			style 1
+			forecolor 1 1 1 1
+			type 1
+			textfont 9
+			textalign 5
+			textscale 0.33
+			text "@MENU_SP_FOR_THE_RECORD"
+			exp rect y ( 170 + 108 - ( !dvarbool( "hidef" ) ) * 12 )
+			exp rect x ( ( - ( 200 - "LOCAL_BAND_BUTTON_WIDTH_SD_DELTA" * ( !dvarbool( "hidef" ) ) ) * 1.5 ) + ( 2 - 1 ) * ( 200 - "LOCAL_BAND_BUTTON_WIDTH_SD_DELTA" * ( !dvarbool( "hidef" ) ) ) + 2 )
+			exp rect w ( 200 - "LOCAL_BAND_BUTTON_WIDTH_SD_DELTA" * ( !dvarbool( "hidef" ) ) )
+			exp forecolor a ( 1 )
+			visible when ( "game_sp" == "game_sp" && localvarint( "ui_highlighted_game" ) == 2 )
 		}
 		itemDef
 		{
 			rect 0 170 0 -40 2 1
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 5
-			textAlignX 0
-			textAlignY -1
-			textScale 0.33
-			textStyle 0
-			textFont 9
-			feeder 0
-			text ""
+			decoration
 			visible 1
-			visible when ( "game_sp" != "game_sp"  )
-			exp (null) (null) ( ( 2 - 2.500000 ) * ( 200 ) + 2  )
-			exp (null) (null) ( 200  )
-			exp (null) (null) ( 1  )
+			style 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 5
+			textaligny -1
+			textscale 0.33
+			exp rect x ( ( 2 - 2.5 ) * ( 200 ) + 2 )
+			exp rect w ( 200 )
+			exp forecolor a ( 1 )
+			visible when ( "game_sp" != "game_sp" )
 		}
 		itemDef
 		{
-			name game_sp
+			name "game_sp"
 			rect 0 170 200 156 2 1
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			execKeyInt 31
-			{
-				"setfocus" "game_mp";
-			}
-			execKeyInt 23
-			{
-				"setfocus" "game_mp";
-			}
-			execKeyInt 30
-			{
-				"setfocus" "game_so";
-			}
-			execKeyInt 22
-			{
-				"setfocus" "game_so";
-			}
-			execKeyInt 29
-			{
-			}
-			execKeyInt 21
-			{
-			}
-			execKeyInt 28
-			{
-			}
-			execKeyInt 20
-			{
-			}
-			type 1
-			align 0
-			textAlign 5
-			textAlignX 0
-			textAlignY 0
-			textScale 0.33
-			textStyle 0
-			textFont 9
-			feeder 0
 			visible 1
-			onFocus
+			style 1
+			forecolor 1 1 1 1
+			type 1
+			textfont 9
+			textalign 5
+			textscale 0.33
+			exp rect x ( ( 2 - 2.5 ) * ( 200 ) + 2 )
+			
 			{
-				"play" "mouse_over";
-				setLocalVarInt ui_highlighted_game 1;
-				setLocalVarString ui_game_desc "@MENU_SP_DESC_SINGLEPLAYER"  );
+				setfocus "game_mp";
+			}
+			
+			{
+				setfocus "game_mp";
+			}
+			
+			{
+				setfocus "game_so";
+			}
+			
+			{
+				setfocus "game_so";
+			}
+			
+			{
+				;;
+			}
+			
+			{
+				;;
+			}
+			
+			{
+				;;
+			}
+			
+			{
+				;;
 			}
 			action
 			{
-				if ( !getprofiledata( "hasEverPlayed_SP" )  )
+				if ( !getprofiledata( "hasEverPlayed_SP" ) )
 				{
-					"setGameMode" "sp";
-					"setdvar" "specialops" 0;
-					"setdvar" "ui_version_show" 0;
-					"exec" "select_save_device";
-					"execnow" "Updatedvarsfromprofile";
-					"exec" "profile_difficultyLoad";
-					"exec" "set nextmap devmap trainer;
+					setGameMode "sp";
+					setdvar "specialops" 0;
+					setdvar "ui_version_show" 0;
+					exec "select_save_device";
+					execnow "Updatedvarsfromprofile";
+					exec "profile_difficultyLoad";
+					exec "set nextmap devmap trainer;
 					unskippablecinematic intro_credits_load";
 				}
 				else
 				{
-					"open" "main_text";
+					open "main_text";
 				}
-				if ( !getprofiledata( "hasEverPlayed_SP" )  )			}
-			exp (null) (null) ( ( 2 - 2.500000 ) * ( 200 ) + 2  )
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarInt "ui_highlighted_game" ( 2 );
+				setLocalVarString "ui_game_desc" ( "@MENU_SP_DESC_SINGLEPLAYER" );
+			}
 		}
 		itemDef
 		{
 			rect 0 170 0 156 2 1
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.75 0.75 0.75 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 13
-			textAlignX 0
-			textAlignY -1
-			textScale 0.33
-			textStyle 0
-			textFont 9
-			feeder 0
+			decoration
 			visible 1
-			exp text ( locstring( "@MENU_SP_COMPLETION_DOT_PERCENT" , int ( getprofiledata( "percentCompleteSP" ) / 100 ) ) , int ( ( getprofiledata( "percentCompleteSP" ) / 100 ) * 10 ) % 10 ) )  )
-			visible when ( ( int ( ( getprofiledata( "percentCompleteSP" ) / 100 ) * 10 ) % 10 ) != 0 && int ( ( localvarint( "ui_sp_stat_progression_easy" ) / 18 ) * 100 ) ) >= 100 ) && localvarint( "ui_highlighted_game" ) == 2  )
-			exp (null) (null) ( ( 2 - 2.500000 ) * ( 200 ) + 2  )
-			exp (null) (null) ( 200 - 6  )
-		}
-		itemDef
-		{
-			rect 0 170 0 156 2 1
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.75 0.75 0.75 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 13
-			textAlignX 0
-			textAlignY -1
-			textScale 0.33
-			textStyle 0
-			textFont 9
-			feeder 0
-			visible 1
-			exp text ( locstring( "@MENU_SP_COMPLETION_PERCENT" , int ( getprofiledata( "percentCompleteSP" ) / 100 ) ) )  )
-			visible when ( ( int ( ( getprofiledata( "percentCompleteSP" ) / 100 ) * 10 ) % 10 ) == 0 && int ( ( localvarint( "ui_sp_stat_progression_easy" ) / 18 ) * 100 ) ) >= 100 ) && localvarint( "ui_highlighted_game" ) == 2  )
-			exp (null) (null) ( ( 2 - 2.500000 ) * ( 200 ) + 2  )
-			exp (null) (null) ( 200 - 6  )
+			forecolor 0.75 0.75 0.75 1
+			textfont 9
+			textalign 13
+			textaligny -1
+			textscale 0.33
+			exp rect x ( ( 2 - 2.5 ) * ( 200 ) + 2 )
+			exp rect w ( 200 - 6 )
+			visible when ( ( int( ( ( getprofiledata( "percentCompleteSP" ) / 100 ) * 10 ) % 10 ) != 0 && int( ( ( localvarint( "ui_sp_stat_progression_easy" ) / 18 ) * 100 ) ) >= 100 ) && localvarint( "ui_highlighted_game" ) == 2 )
+			exp text ( locstring( "@MENU_SP_COMPLETION_DOT_PERCENT" , int( ( getprofiledata( "percentCompleteSP" ) / 100 ) ) , int( ( ( getprofiledata( "percentCompleteSP" ) / 100 ) * 10 ) % 10 ) ) )
 		}
 		itemDef
 		{
 			rect 0 170 0 156 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 0.75 0.75 0.75 1
+			textfont 9
+			textalign 13
+			textaligny -1
+			textscale 0.33
+			exp rect x ( ( 2 - 2.5 ) * ( 200 ) + 2 )
+			exp rect w ( 200 - 6 )
+			visible when ( ( int( ( ( getprofiledata( "percentCompleteSP" ) / 100 ) * 10 ) % 10 ) == 0 && int( ( ( localvarint( "ui_sp_stat_progression_easy" ) / 18 ) * 100 ) ) >= 100 ) && localvarint( "ui_highlighted_game" ) == 2 )
+			exp text ( locstring( "@MENU_SP_COMPLETION_PERCENT" , int( ( getprofiledata( "percentCompleteSP" ) / 100 ) ) ) )
+		}
+		itemDef
+		{
+			rect 0 170 0 156 2 1
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.2 0.2 0.2 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background white
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			visible when ( ( localvarint( "ui_highlighted_game" ) == 3 )  )
-			exp (null) (null) ( ( 3 - 2.500000 ) * ( 200 ) + 2  )
-			exp (null) (null) ( ( 200 ) - 4  )
+			forecolor 0.2 0.2 0.2 1
+			background "white"
+			textscale 0.55
+			exp rect x ( ( 3 - 2.5 ) * ( 200 ) + 2 )
+			exp rect w ( ( 200 ) - 4 )
+			visible when ( ( localvarint( "ui_highlighted_game" ) == 3 ) )
 		}
 		itemDef
 		{
 			rect 0 186 0 0 2 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background levelshot_mw2_game_mp
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( ( localvarint( "ui_highlighted_game" ) == 3 )  )
-			exp (null) (null) ( ( 3 - 2.500000 ) * ( 200 ) + 2  )
-			exp (null) (null) ( ( 200 ) - 4  )
-			exp (null) (null) ( 111  )
+			style 3
+			forecolor 1 1 1 1
+			background "levelshot_mw2_game_mp"
+			textscale 0.55
+			exp rect x ( ( 3 - 2.5 ) * ( 200 ) + 2 )
+			exp rect w ( ( 200 ) - 4 )
+			exp rect h ( 111 )
+			visible when ( ( localvarint( "ui_highlighted_game" ) == 3 ) )
 		}
 		itemDef
 		{
 			rect 0 170 0 -40 2 1
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 1
-			align 0
-			textAlign 5
-			textAlignX 0
-			textAlignY -1
-			textScale 0.33
-			textStyle 0
-			textFont 9
-			feeder 0
-			text "@MENU_SP_CAMPAIGN"
+			decoration
 			visible 1
-			visible when ( "game_mp" == "game_sp"  )
-			exp (null) (null) ( ( - ( 200 - "LOCAL_BAND_BUTTON_WIDTH_SD_DELTA" * ( !dvarbool(static)( 3 ) ) ) * 1.500000 ) + ( 3 - 1 ) * ( 200 - "LOCAL_BAND_BUTTON_WIDTH_SD_DELTA" * ( !dvarbool(static)( 3 ) ) ) + 2  )
-			exp (null) (null) ( 200 - "LOCAL_BAND_BUTTON_WIDTH_SD_DELTA" * ( !dvarbool(static)( 3 ) )  )
-			exp (null) (null) ( 1  )
+			style 1
+			forecolor 1 1 1 1
+			type 1
+			textfont 9
+			textalign 5
+			textaligny -1
+			textscale 0.33
+			text "@MENU_SP_CAMPAIGN"
+			exp rect x ( ( - ( 200 - "LOCAL_BAND_BUTTON_WIDTH_SD_DELTA" * ( !dvarbool( "hidef" ) ) ) * 1.5 ) + ( 3 - 1 ) * ( 200 - "LOCAL_BAND_BUTTON_WIDTH_SD_DELTA" * ( !dvarbool( "hidef" ) ) ) + 2 )
+			exp rect w ( 200 - "LOCAL_BAND_BUTTON_WIDTH_SD_DELTA" * ( !dvarbool( "hidef" ) ) )
+			exp forecolor a ( 1 )
+			visible when ( "game_mp" == "game_sp" )
 		}
 		itemDef
 		{
 			rect 0 0 0 -40 2 1
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 1
-			align 0
-			textAlign 5
-			textAlignX 0
-			textAlignY 0
-			textScale 0.33
-			textStyle 6
-			textFont 9
-			feeder 0
-			text "@MENU_SP_FOR_THE_RECORD"
+			decoration
 			visible 1
-			visible when ( "game_mp" == "game_sp" && localvarint( "ui_highlighted_game" ) == 2  )
-			exp (null) (null) ( 170 + 108 - ( !dvarbool(static)( 3 ) ) * 12  )
-			exp (null) (null) ( ( - ( 200 - "LOCAL_BAND_BUTTON_WIDTH_SD_DELTA" * ( !dvarbool(static)( 3 ) ) ) * 1.500000 ) + ( 3 - 1 ) * ( 200 - "LOCAL_BAND_BUTTON_WIDTH_SD_DELTA" * ( !dvarbool(static)( 3 ) ) ) + 2  )
-			exp (null) (null) ( 200 - "LOCAL_BAND_BUTTON_WIDTH_SD_DELTA" * ( !dvarbool(static)( 3 ) )  )
-			exp (null) (null) ( 1  )
+			style 1
+			forecolor 1 1 1 1
+			type 1
+			textfont 9
+			textalign 5
+			textscale 0.33
+			text "@MENU_SP_FOR_THE_RECORD"
+			exp rect y ( 170 + 108 - ( !dvarbool( "hidef" ) ) * 12 )
+			exp rect x ( ( - ( 200 - "LOCAL_BAND_BUTTON_WIDTH_SD_DELTA" * ( !dvarbool( "hidef" ) ) ) * 1.5 ) + ( 3 - 1 ) * ( 200 - "LOCAL_BAND_BUTTON_WIDTH_SD_DELTA" * ( !dvarbool( "hidef" ) ) ) + 2 )
+			exp rect w ( 200 - "LOCAL_BAND_BUTTON_WIDTH_SD_DELTA" * ( !dvarbool( "hidef" ) ) )
+			exp forecolor a ( 1 )
+			visible when ( "game_mp" == "game_sp" && localvarint( "ui_highlighted_game" ) == 2 )
 		}
 		itemDef
 		{
 			rect 0 170 0 -40 2 1
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 5
-			textAlignX 0
-			textAlignY -1
-			textScale 0.33
-			textStyle 0
-			textFont 9
-			feeder 0
-			text "@MENU_MULTIPLAYER_CAPS"
+			decoration
 			visible 1
-			visible when ( "game_mp" != "game_sp"  )
-			exp (null) (null) ( ( 3 - 2.500000 ) * ( 200 ) + 2  )
-			exp (null) (null) ( 200  )
-			exp (null) (null) ( 1  )
+			style 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 5
+			textaligny -1
+			textscale 0.33
+			text "@MENU_MULTIPLAYER_CAPS"
+			exp rect x ( ( 3 - 2.5 ) * ( 200 ) + 2 )
+			exp rect w ( 200 )
+			exp forecolor a ( 1 )
+			visible when ( "game_mp" != "game_sp" )
 		}
 		itemDef
 		{
-			name game_mp
+			name "game_mp"
 			rect 0 170 200 156 2 1
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			execKeyInt 31
-			{
-				"setfocus" "game_so";
-			}
-			execKeyInt 23
-			{
-				"setfocus" "game_so";
-			}
-			execKeyInt 30
-			{
-				"setfocus" "game_sp";
-			}
-			execKeyInt 22
-			{
-				"setfocus" "game_sp";
-			}
-			execKeyInt 29
-			{
-			}
-			execKeyInt 21
-			{
-			}
-			execKeyInt 28
-			{
-			}
-			execKeyInt 20
-			{
-			}
-			type 1
-			align 0
-			textAlign 5
-			textAlignX 0
-			textAlignY 0
-			textScale 0.33
-			textStyle 0
-			textFont 9
-			feeder 0
 			visible 1
-			onFocus
+			style 1
+			forecolor 1 1 1 1
+			type 1
+			textfont 9
+			textalign 5
+			textscale 0.33
+			exp rect x ( ( 3 - 2.5 ) * ( 200 ) + 2 )
+			
 			{
-				"play" "mouse_over";
-				setLocalVarInt ui_highlighted_game 1;
-				setLocalVarString ui_game_desc "@MENU_SP_DESC_MULTIPLAYER"  );
+				setfocus "game_so";
+			}
+			
+			{
+				setfocus "game_so";
+			}
+			
+			{
+				setfocus "game_sp";
+			}
+			
+			{
+				setfocus "game_sp";
+			}
+			
+			{
+				;;
+			}
+			
+			{
+				;;
+			}
+			
+			{
+				;;
+			}
+			
+			{
+				;;
 			}
 			action
 			{
-				if ( localvarbool( "ui_show_recommendation" )  )
+				if ( localvarbool( "ui_show_recommendation" ) )
 				{
-					"open" "popmenu_recommendation_mp";
+					open "popmenu_recommendation_mp";
 				}
 				else
 				{
-					"uiScript" "startMultiplayer";
+					uiScript "startMultiplayer";
 				}
-				if ( localvarbool( "ui_show_recommendation" )  )			}
-			exp (null) (null) ( ( 3 - 2.500000 ) * ( 200 ) + 2  )
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarInt "ui_highlighted_game" ( 3 );
+				setLocalVarString "ui_game_desc" ( "@MENU_SP_DESC_MULTIPLAYER" );
+			}
 		}
 		itemDef
 		{
 			rect 0 170 0 156 2 1
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.75 0.75 0.75 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 13
-			textAlignX 0
-			textAlignY -1
-			textScale 0.33
-			textStyle 0
-			textFont 9
-			feeder 0
+			decoration
 			visible 1
-			exp text ( locstring( "@MENU_SP_COMPLETION_PERCENT" , int getprofiledata( "percentCompleteMP" ) ) )  )
-			visible when ( 1 && localvarint( "ui_highlighted_game" ) == 3  )
-			exp (null) (null) ( ( 3 - 2.500000 ) * ( 200 ) + 2  )
-			exp (null) (null) ( 200 - 6  )
+			style 1
+			forecolor 0.75 0.75 0.75 1
+			textfont 9
+			textalign 13
+			textaligny -1
+			textscale 0.33
+			exp rect x ( ( 3 - 2.5 ) * ( 200 ) + 2 )
+			exp rect w ( 200 - 6 )
+			visible when ( 1 && localvarint( "ui_highlighted_game" ) == 3 )
+			exp text ( locstring( "@MENU_SP_COMPLETION_PERCENT" , int( getprofiledata( "percentCompleteMP" ) ) ) )
 		}
 		itemDef
 		{
-			name quit
+			name "quit"
 			rect -85 0 170 20 2 3
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background white
-			type 1
-			align 0
-			textAlign 9
-			textAlignX 0
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 9
-			feeder 0
-			text "@MENU_QUIT"
 			visible 1
-			onFocus
-			{
-				"setItemColor" "self" "backcolor" 0 0 0 1;
-			}
-			leaveFocus
-			{
-				"setItemColor" "self" "backcolor" 0 0 0 0;
-			}
+			style 1
+			forecolor 1 1 1 1
+			background "white"
+			type 1
+			textfont 9
+			textalign 9
+			textscale 0.375
+			text "@MENU_QUIT"
 			mouseEnter
 			{
-				"play" "mouse_over";
+				play "mouse_over";
 			}
 			action
 			{
-				"play" "mouse_click";
-				"open" "quit_popmenu";
+				play "mouse_click";
+				open "quit_popmenu";
+			}
+			onFocus
+			{
+				setItemColor self backcolor 0 0 0 1;
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 0;
 			}
 		}
 	}

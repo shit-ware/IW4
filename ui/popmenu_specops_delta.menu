@@ -1,3549 +1,2284 @@
 {
 	menuDef
 	{
-		name popmenu_specops_delta
-		fullscreen 1
-		rect 0 0 640 480
+		name "popmenu_specops_delta"
+		rect 0 0 640 480 0 0
 		style 1
-		border 0
-		ownerdraw 0
-		ownerdrawFlag 0
-		borderSize 0
-		foreColor 1 1 1 1
-		backColor 0 0 0 0
-		borderColor 0 0 0 0
-		outlineColor 0 0 0 0
-		soundLoop music_challenge_factory
+		forecolor 1 1 1 1
+		focuscolor 1 1 1 1
+		fullscreen 1
 		fadeCycle 1
 		fadeClamp 1
 		fadeAmount 0.1
-		fadeInAmount 0
-		blurWorld 0
 		onOpen
 		{
-			setLocalVarInt ui_star_animate_mark 1;
-			"focusfirst";
-			if ( ( dvarstring(static)( 10 ) == "so_download_arcadia" ) && dvarbool(static)( 9 )  )
+			setLocalVarInt "ui_star_animate_mark" ( milliseconds( ) );
+			;
+			focusfirst;
+			if ( ( dvarstring( "ui_last_played_level" ) == "so_download_arcadia" ) && dvarbool( "solo_play" ) )
 			{
-				"setfocus" "so_download_arcadia";
+				setfocus "so_download_arcadia";
 			}
-			if ( ( dvarstring(static)( 10 ) == "so_demo_so_bridge" ) && dvarbool(static)( 9 )  )
+			if ( ( dvarstring( "ui_last_played_level" ) == "so_demo_so_bridge" ) && dvarbool( "solo_play" ) )
 			{
-				"setfocus" "so_demo_so_bridge";
+				setfocus "so_demo_so_bridge";
 			}
-			if ( ( dvarstring(static)( 10 ) == "so_sabotage_cliffhanger" ) && dvarbool(static)( 9 )  )
+			if ( ( dvarstring( "ui_last_played_level" ) == "so_sabotage_cliffhanger" ) && dvarbool( "solo_play" ) )
 			{
-				"setfocus" "so_sabotage_cliffhanger";
+				setfocus "so_sabotage_cliffhanger";
 			}
-			if ( ( dvarstring(static)( 10 ) == "so_escape_airport" ) && dvarbool(static)( 9 )  )
+			if ( ( dvarstring( "ui_last_played_level" ) == "so_escape_airport" ) && dvarbool( "solo_play" ) )
 			{
-				"setfocus" "so_escape_airport";
+				setfocus "so_escape_airport";
 			}
-			if ( ( dvarstring(static)( 10 ) == "so_takeover_estate" ) && dvarbool(static)( 9 )  )
+			if ( ( dvarstring( "ui_last_played_level" ) == "so_takeover_estate" ) && dvarbool( "solo_play" ) )
 			{
-				"setfocus" "so_takeover_estate";
+				setfocus "so_takeover_estate";
 			}
 		}
 		onClose
 		{
+			;;
 		}
-		onESC
+		onEsc
 		{
-			"close" "self";
-			"setdvar" "ui_last_played_level" "";
-		}
-		focusColor 1 1 1 1
-		itemDef
-		{
-			rect 0 0 640 480 4 4
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background mw2_main_background
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-		}
-		itemDef
-		{
-			rect 0 0 1708 480
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0.5
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background mw2_main_cloud_overlay
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			exp (null) (null) ( ( 0 - 107 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) )  )
-		}
-		itemDef
-		{
-			rect 0 0 -1708 -480
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0.5
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background mw2_main_cloud_overlay
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			exp (null) (null) ( ( - 107 + 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) )  )
+			close self;
+			setdvar "ui_last_played_level" "";
 		}
 		itemDef
 		{
 			rect 0 0 640 480 4 4
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background mockup_bg_glow
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp (null) (null) ( ( ( sin milliseconds( ) / 1500 ) + 1 ) * 0.250000 ) + 0.250000  )
+			style 3
+			forecolor 1 1 1 1
+			background "mw2_main_background"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 0 1708 480 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.5
+			background "mw2_main_cloud_overlay"
+			textscale 0.55
+			exp rect x ( ( 0 - 107 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 -1708 -480 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.5
+			background "mw2_main_cloud_overlay"
+			textscale 0.55
+			exp rect x ( ( - 107 + 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) ) )
 		}
 		itemDef
 		{
 			rect 0 0 640 480 4 4
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background mockup_bg_glow
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp (null) (null) ( ( ( sin milliseconds( ) / 480 ) + 1 ) * 0.250000 ) + 0.250000  )
+			style 3
+			forecolor 1 1 1 0
+			background "mockup_bg_glow"
+			textscale 0.55
+			exp forecolor a ( ( ( sin( milliseconds( ) / 1500 ) + 1 ) * 0.25 ) + 0.25 )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0
+			background "mockup_bg_glow"
+			textscale 0.55
+			exp forecolor a ( ( ( sin( milliseconds( ) / 480 ) + 1 ) * 0.25 ) + 0.25 )
 		}
 		itemDef
 		{
 			rect 0 28 640 356 4 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0.15
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background white
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
+			style 3
+			forecolor 1 1 1 0.15
+			background "white"
+			textscale 0.55
 		}
 		itemDef
 		{
 			rect -126 28 633.383 356 1 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0.2
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background mw2_main_co_image
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( 1  )
+			style 3
+			forecolor 1 1 1 0.2
+			background "mw2_main_co_image"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
 			rect -32 -4 32 32 4 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background drop_shadow_tl
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( 1  )
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_tl"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
 			rect 0 -4 640 32 4 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background drop_shadow_t
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( 1  )
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_t"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
 			rect 640 -4 32 32 4 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background drop_shadow_tr
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( 1  )
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_tr"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
 			rect 640 28 32 356 4 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background drop_shadow_r
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( 1  )
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_r"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
 			rect 640 384 32 32 4 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background drop_shadow_br
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( 1  )
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_br"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
 			rect 0 384 640 32 4 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background drop_shadow_b
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( 1  )
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_b"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
 			rect -32 384 32 32 4 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background drop_shadow_bl
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( 1  )
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_bl"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
 			rect -32 28 32 356 4 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background drop_shadow_l
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( 1  )
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_l"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
 			rect -288 28 288 356 3 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.225 0.225 0.225 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background white
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
+			style 3
+			forecolor 0.225 0.225 0.225 1
+			background "white"
+			textscale 0.55
 		}
 		itemDef
 		{
-			name mapimage
+			name "mapimage"
 			rect -288 50 288 160 3 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp material ( localvarstring( "ui_so_level_levelshot" )  )
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp material ( localvarstring( "ui_so_level_levelshot" ) )
 		}
 		itemDef
 		{
-			name mapimage_gradient
+			name "mapimage_gradient"
 			rect -280 186 272 -24 3 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.7 0.7 0.7 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp material ( "gradient_top"  )
-			visible when ( 0  )
+			style 3
+			forecolor 0.7 0.7 0.7 1
+			textscale 0.55
+			visible when ( 0 )
+			exp material ( "gradient_top" )
 		}
 		itemDef
 		{
-			name mapimage_gradient
+			name "mapimage_gradient"
 			rect -280 50 272 16 3 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 0.65
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp material ( "gradient"  )
-			visible when ( 0  )
+			style 3
+			forecolor 0 0 0 0.65
+			textscale 0.55
+			visible when ( 0 )
+			exp material ( "gradient" )
 		}
 		itemDef
 		{
-			name description
+			name "description"
 			rect -280 210 272 20 3 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0.75
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			autoWrapped 
-			type 0
-			align 0
-			textAlign 4
-			textAlignX 0
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
+			decoration
+			autowrapped
 			visible 1
-			exp text ( localvarstring( "ui_so_level_desc" )  )
+			forecolor 1 1 1 0.75
+			textfont 3
+			textalign 4
+			textscale 0.375
+			exp text ( localvarstring( "ui_so_level_desc" ) )
 		}
 		itemDef
 		{
-			name total_stars
+			name "total_stars"
 			rect -21 9 13 13 3 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background difficulty_star
-			decoration 
-			type 0
-			align 0
-			textAlign 6
-			textAlignX -16
-			textAlignY -3
-			textScale 0.375
-			textStyle 0
-			textFont 9
-			feeder 0
+			decoration
 			visible 1
-			exp text ( int coopplayer( localvarint( "ui_player1_num" ) , "percentcompleteso" ) ) + "/" + ( 23 * 3 )  )
-			visible when ( 1  )
-			exp (null) (null) ( max localvarint( "ui_stars_needed" ) == 0 , min 0.250000 , max 0 , sin milliseconds( ) / 700 ) ) ) * 4 )  )
+			style 3
+			forecolor 1 1 1 1
+			background "difficulty_star"
+			textfont 9
+			textalign 6
+			textalignx -16
+			textaligny -3
+			textscale 0.375
+			exp forecolor a ( max( localvarint( "ui_stars_needed" ) == 0 , min( 0.25 , max( 0 , sin( milliseconds( ) / 700 ) ) ) * 4 ) )
+			visible when ( 1 )
+			exp text ( int( coopplayer( localvarint( "ui_player1_num" ) , "percentcompleteso" ) ) + "/" + ( 23 * 3 ) )
 		}
 		itemDef
 		{
-			name stars_needed_to_next_unlock
+			name "stars_needed_to_next_unlock"
 			rect -21 9 13 13 3 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background difficulty_star
-			decoration 
-			type 0
-			align 0
-			textAlign 6
-			textAlignX -16
-			textAlignY -3
-			textScale 0.375
-			textStyle 0
-			textFont 9
-			feeder 0
+			decoration
 			visible 1
-			exp text ( locstring( "@MENU_SP_NEXT_UNLOCK" ) + localvarint( "ui_stars_needed" )  )
-			visible when ( 1  )
-			exp (null) (null) ( ( localvarint( "ui_stars_needed" ) != 0 ) * min 0.250000 , max 0 , 0 - sin milliseconds( ) / 700 ) ) ) * 4  )
+			style 3
+			forecolor 1 1 1 1
+			background "difficulty_star"
+			textfont 9
+			textalign 6
+			textalignx -16
+			textaligny -3
+			textscale 0.375
+			exp forecolor a ( ( localvarint( "ui_stars_needed" ) != 0 ) * min( 0.25 , max( 0 , 0 - sin( milliseconds( ) / 700 ) ) ) * 4 )
+			visible when ( 1 )
+			exp text ( locstring( "@MENU_SP_NEXT_UNLOCK" ) + localvarint( "ui_stars_needed" ) )
 		}
 		itemDef
 		{
-			name name
+			name "name"
 			rect -280 28 272 160 3 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0.75
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 4
-			textAlignX -4
-			textAlignY 2
-			textScale 0.375
-			textStyle 0
-			textFont 9
-			feeder 0
+			decoration
 			visible 1
-			exp text ( "@" + tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 2 )  )
+			forecolor 1 1 1 0.75
+			textfont 9
+			textalign 4
+			textalignx -4
+			textaligny 2
+			textscale 0.375
+			exp text ( "@" + tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 2 ) )
 		}
 		itemDef
 		{
-			name opposition
+			name "opposition"
 			rect -280 272 272 20 3 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0.65
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 4
-			textAlignX 0
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 9
-			feeder 0
+			decoration
 			visible 1
-			exp text ( "@MENU_SP_OPPOSITION_FORCE"  )
+			forecolor 1 1 1 0.65
+			textfont 9
+			textalign 4
+			textscale 0.375
+			exp text ( "@MENU_SP_OPPOSITION_FORCE" )
 		}
 		itemDef
 		{
-			name cheat_indicator
+			name "cheat_indicator"
 			rect -64 -44 336 24 1 3
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 0.8 0.4 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 6
-			textAlignX -30
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 9
-			feeder 0
-			text "@MENU_CHEAT_ENABLED"
+			decoration
 			visible 1
-			visible when ( dvarbool(static)( 5 ) && dvarbool(static)( 9 )  )
+			forecolor 1 0.8 0.4 1
+			textfont 9
+			textalign 6
+			textalignx -30
+			textscale 0.375
+			text "@MENU_CHEAT_ENABLED"
+			visible when ( dvarbool( "mis_cheat" ) && dvarbool( "solo_play" ) )
 		}
 		itemDef
 		{
 			rect 0 0 272 28 1 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 6
-			textAlignX -60
-			textAlignY 0
-			textScale 0.5
-			textStyle 0
-			textFont 9
-			feeder 0
-			text "@MENU_SP_SPECIAL_OPS_CAPS"
+			decoration
 			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 6
+			textalignx -60
+			textscale 0.5
+			text "@MENU_SP_SPECIAL_OPS_CAPS"
 		}
 		itemDef
 		{
 			rect 222 0 272 28 1 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			autoWrapped 
-			type 0
-			align 0
-			textAlign 4
-			textAlignX 0
-			textAlignY 0
-			textScale 0.5
-			textStyle 0
-			textFont 9
-			feeder 0
+			decoration
+			autowrapped
 			visible 1
-			exp text ( ":"  )
-			visible when ( 0  )
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 4
+			textscale 0.5
+			visible when ( 0 )
+			exp text ( ":" )
 		}
 		itemDef
 		{
 			rect 0 0 272 28 1 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 4
-			textAlignX 226
-			textAlignY 4.5
-			textScale 0.375
-			textStyle 0
-			textFont 9
-			feeder 0
-			text "@SPECIAL_OPS_SO_BUTTON_DELTA_CAPS"
+			decoration
 			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 4
+			textalignx 226
+			textaligny 4.5
+			textscale 0.375
+			text "@SPECIAL_OPS_SO_BUTTON_DELTA_CAPS"
 		}
 		itemDef
 		{
 			rect -280 272 272 20 3 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.725 1 0.725 0.65
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			autoWrapped 
-			type 0
-			align 0
-			textAlign 6
-			textAlignX 0
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
+			autowrapped
 			visible 1
-			exp text ( "@MENU_SP_DIFF_RANKING_" + tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 )  )
-			exp (null) (null) ( localvarfloat( "ui_color_r" )  )
-			exp (null) (null) ( localvarfloat( "ui_color_g" )  )
-			exp (null) (null) ( localvarfloat( "ui_color_b" )  )
-			exp (null) (null) ( localvarfloat( "ui_color_a" )  )
+			forecolor 0.725 1 0.725 0.65
+			textalign 6
+			textscale 0.375
+			exp forecolor r ( localvarfloat( "ui_color_r" ) )
+			exp forecolor g ( localvarfloat( "ui_color_g" ) )
+			exp forecolor b ( localvarfloat( "ui_color_b" ) )
+			exp forecolor a ( localvarfloat( "ui_color_a" ) )
+			exp text ( "@MENU_SP_DIFF_RANKING_" + tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) )
 		}
 		itemDef
 		{
 			rect -280 290 272 20 3 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0.65
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			autoWrapped 
-			type 0
-			align 0
-			textAlign 4
-			textAlignX 0
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 9
-			feeder 0
+			decoration
+			autowrapped
 			visible 1
-			exp text ( "@MENU_SP_LEVEL_TYPE"  )
+			forecolor 1 1 1 0.65
+			textfont 9
+			textalign 4
+			textscale 0.375
+			exp text ( "@MENU_SP_LEVEL_TYPE" )
 		}
 		itemDef
 		{
 			rect -280 290 272 20 3 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.725 1 0.725 0.65
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			autoWrapped 
-			type 0
-			align 0
-			textAlign 6
-			textAlignX 0
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
+			autowrapped
 			visible 1
-			exp text ( "@" + tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 5 )  )
-			exp (null) (null) ( localvarfloat( "ui_color_r" )  )
-			exp (null) (null) ( localvarfloat( "ui_color_g" )  )
-			exp (null) (null) ( localvarfloat( "ui_color_b" )  )
-			exp (null) (null) ( localvarfloat( "ui_color_a" )  )
+			forecolor 0.725 1 0.725 0.65
+			textalign 6
+			textscale 0.375
+			exp forecolor r ( localvarfloat( "ui_color_r" ) )
+			exp forecolor g ( localvarfloat( "ui_color_g" ) )
+			exp forecolor b ( localvarfloat( "ui_color_b" ) )
+			exp forecolor a ( localvarfloat( "ui_color_a" ) )
+			exp text ( "@" + tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 5 ) )
 		}
 		itemDef
 		{
 			rect -280 308 272 20 3 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0.65
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			autoWrapped 
-			type 0
-			align 0
-			textAlign 4
-			textAlignX 0
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 9
-			feeder 0
+			decoration
+			autowrapped
 			visible 1
-			exp text ( "@MENU_SP_LEVEL_AVG_TIME"  )
+			forecolor 1 1 1 0.65
+			textfont 9
+			textalign 4
+			textscale 0.375
+			exp text ( "@MENU_SP_LEVEL_AVG_TIME" )
 		}
 		itemDef
 		{
 			rect -280 308 272 20 3 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.725 1 0.725 0.65
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			autoWrapped 
-			type 0
-			align 0
-			textAlign 6
-			textAlignX 0
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
+			autowrapped
 			visible 1
-			exp text ( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 7 ) + ".00"  )
-			exp (null) (null) ( localvarfloat( "ui_color_r" )  )
-			exp (null) (null) ( localvarfloat( "ui_color_g" )  )
-			exp (null) (null) ( localvarfloat( "ui_color_b" )  )
-			exp (null) (null) ( localvarfloat( "ui_color_a" )  )
+			forecolor 0.725 1 0.725 0.65
+			textalign 6
+			textscale 0.375
+			exp forecolor r ( localvarfloat( "ui_color_r" ) )
+			exp forecolor g ( localvarfloat( "ui_color_g" ) )
+			exp forecolor b ( localvarfloat( "ui_color_b" ) )
+			exp forecolor a ( localvarfloat( "ui_color_a" ) )
+			exp text ( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 7 ) + ".00" )
 		}
 		itemDef
 		{
 			rect -280 326 272 20 3 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0.65
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			autoWrapped 
-			type 0
-			align 0
-			textAlign 4
-			textAlignX 0
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 9
-			feeder 0
+			decoration
+			autowrapped
 			visible 1
-			exp text ( "@MENU_SP_LEVEL_YOUR_BEST_TIME"  )
-			visible when ( ( int getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) / 1000 ) != 0 )  )
+			forecolor 1 1 1 0.65
+			textfont 9
+			textalign 4
+			textscale 0.375
+			visible when ( ( int( getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) / 1000 ) != 0 ) )
+			exp text ( "@MENU_SP_LEVEL_YOUR_BEST_TIME" )
 		}
 		itemDef
 		{
 			rect -280 326 272 20 3 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.725 1 0.725 0.65
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			autoWrapped 
-			type 0
-			align 0
-			textAlign 6
-			textAlignX 0
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
+			autowrapped
 			visible 1
-			exp text ( "" + int int getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) / 1000 ) / 60 ) + ":" + "" + int getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) / 1000 ) % 60 + "." + "" + int ( getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) % 1000 ) / 10 )  )
-			visible when ( ( int getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) / 1000 ) != 0 ) && ( "" + int getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) / 1000 ) % 60 >= 10 && "" + int ( getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) % 1000 ) / 10 ) >= 10 ) && getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) != 0  )
-			exp (null) (null) ( localvarfloat( "ui_color_r" )  )
-			exp (null) (null) ( localvarfloat( "ui_color_g" )  )
-			exp (null) (null) ( localvarfloat( "ui_color_b" )  )
-			exp (null) (null) ( localvarfloat( "ui_color_a" )  )
+			forecolor 0.725 1 0.725 0.65
+			textalign 6
+			textscale 0.375
+			exp forecolor r ( localvarfloat( "ui_color_r" ) )
+			exp forecolor g ( localvarfloat( "ui_color_g" ) )
+			exp forecolor b ( localvarfloat( "ui_color_b" ) )
+			exp forecolor a ( localvarfloat( "ui_color_a" ) )
+			visible when ( ( int( getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) / 1000 ) != 0 ) && ( "" + int( getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) / 1000 ) % 60 >= 10 && "" + int( ( getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) % 1000 ) / 10 ) >= 10 ) && getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) != 0 )
+			exp text ( "" + int( int( getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) / 1000 ) / 60 ) + ":" + "" + int( getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) / 1000 ) % 60 + "." + "" + int( ( getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) % 1000 ) / 10 ) )
 		}
 		itemDef
 		{
 			rect -280 326 272 20 3 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.725 1 0.725 0.65
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			autoWrapped 
-			type 0
-			align 0
-			textAlign 6
-			textAlignX 0
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
+			autowrapped
 			visible 1
-			exp text ( "" + int int getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) / 1000 ) / 60 ) + ":" + "" + int getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) / 1000 ) % 60 + ".0" + "" + int ( getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) % 1000 ) / 10 )  )
-			visible when ( ( int getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) / 1000 ) != 0 ) && ( "" + int getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) / 1000 ) % 60 >= 10 && "" + int ( getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) % 1000 ) / 10 ) < 10 ) && getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) != 0  )
-			exp (null) (null) ( localvarfloat( "ui_color_r" )  )
-			exp (null) (null) ( localvarfloat( "ui_color_g" )  )
-			exp (null) (null) ( localvarfloat( "ui_color_b" )  )
-			exp (null) (null) ( localvarfloat( "ui_color_a" )  )
+			forecolor 0.725 1 0.725 0.65
+			textalign 6
+			textscale 0.375
+			exp forecolor r ( localvarfloat( "ui_color_r" ) )
+			exp forecolor g ( localvarfloat( "ui_color_g" ) )
+			exp forecolor b ( localvarfloat( "ui_color_b" ) )
+			exp forecolor a ( localvarfloat( "ui_color_a" ) )
+			visible when ( ( int( getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) / 1000 ) != 0 ) && ( "" + int( getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) / 1000 ) % 60 >= 10 && "" + int( ( getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) % 1000 ) / 10 ) < 10 ) && getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) != 0 )
+			exp text ( "" + int( int( getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) / 1000 ) / 60 ) + ":" + "" + int( getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) / 1000 ) % 60 + ".0" + "" + int( ( getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) % 1000 ) / 10 ) )
 		}
 		itemDef
 		{
 			rect -280 326 272 20 3 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.725 1 0.725 0.65
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			autoWrapped 
-			type 0
-			align 0
-			textAlign 6
-			textAlignX 0
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
+			autowrapped
 			visible 1
-			exp text ( "" + int int getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) / 1000 ) / 60 ) + ":0" + "" + int getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) / 1000 ) % 60 + "." + "" + int ( getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) % 1000 ) / 10 )  )
-			visible when ( ( int getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) / 1000 ) != 0 ) && ( "" + int getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) / 1000 ) % 60 < 10 && "" + int ( getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) % 1000 ) / 10 ) >= 10 ) && getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) != 0  )
-			exp (null) (null) ( localvarfloat( "ui_color_r" )  )
-			exp (null) (null) ( localvarfloat( "ui_color_g" )  )
-			exp (null) (null) ( localvarfloat( "ui_color_b" )  )
-			exp (null) (null) ( localvarfloat( "ui_color_a" )  )
+			forecolor 0.725 1 0.725 0.65
+			textalign 6
+			textscale 0.375
+			exp forecolor r ( localvarfloat( "ui_color_r" ) )
+			exp forecolor g ( localvarfloat( "ui_color_g" ) )
+			exp forecolor b ( localvarfloat( "ui_color_b" ) )
+			exp forecolor a ( localvarfloat( "ui_color_a" ) )
+			visible when ( ( int( getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) / 1000 ) != 0 ) && ( "" + int( getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) / 1000 ) % 60 < 10 && "" + int( ( getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) % 1000 ) / 10 ) >= 10 ) && getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) != 0 )
+			exp text ( "" + int( int( getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) / 1000 ) / 60 ) + ":0" + "" + int( getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) / 1000 ) % 60 + "." + "" + int( ( getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) % 1000 ) / 10 ) )
 		}
 		itemDef
 		{
 			rect -280 326 272 20 3 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.725 1 0.725 0.65
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			autoWrapped 
-			type 0
-			align 0
-			textAlign 6
-			textAlignX 0
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
+			autowrapped
 			visible 1
-			exp text ( "" + int int getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) / 1000 ) / 60 ) + ":0" + "" + int getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) / 1000 ) % 60 + ".0" + "" + int ( getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) % 1000 ) / 10 )  )
-			visible when ( ( int getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) / 1000 ) != 0 ) && ( "" + int getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) / 1000 ) % 60 < 10 && "" + int ( getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) % 1000 ) / 10 ) < 10 ) && getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) != 0  )
-			exp (null) (null) ( localvarfloat( "ui_color_r" )  )
-			exp (null) (null) ( localvarfloat( "ui_color_g" )  )
-			exp (null) (null) ( localvarfloat( "ui_color_b" )  )
-			exp (null) (null) ( localvarfloat( "ui_color_a" )  )
+			forecolor 0.725 1 0.725 0.65
+			textalign 6
+			textscale 0.375
+			exp forecolor r ( localvarfloat( "ui_color_r" ) )
+			exp forecolor g ( localvarfloat( "ui_color_g" ) )
+			exp forecolor b ( localvarfloat( "ui_color_b" ) )
+			exp forecolor a ( localvarfloat( "ui_color_a" ) )
+			visible when ( ( int( getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) / 1000 ) != 0 ) && ( "" + int( getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) / 1000 ) % 60 < 10 && "" + int( ( getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) % 1000 ) / 10 ) < 10 ) && getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) != 0 )
+			exp text ( "" + int( int( getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) / 1000 ) / 60 ) + ":0" + "" + int( getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) / 1000 ) % 60 + ".0" + "" + int( ( getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) % 1000 ) / 10 ) )
 		}
 		itemDef
 		{
 			rect -280 326 272 20 3 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.725 1 0.725 0.65
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			autoWrapped 
-			type 0
-			align 0
-			textAlign 6
-			textAlignX 0
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
+			autowrapped
 			visible 1
-			exp text ( "--:--"  )
-			visible when ( ( int getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) / 1000 ) != 0 ) && getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) == 0  )
-			exp (null) (null) ( localvarfloat( "ui_color_r" )  )
-			exp (null) (null) ( localvarfloat( "ui_color_g" )  )
-			exp (null) (null) ( localvarfloat( "ui_color_b" )  )
-			exp (null) (null) ( localvarfloat( "ui_color_a" )  )
+			forecolor 0.725 1 0.725 0.65
+			textalign 6
+			textscale 0.375
+			exp forecolor r ( localvarfloat( "ui_color_r" ) )
+			exp forecolor g ( localvarfloat( "ui_color_g" ) )
+			exp forecolor b ( localvarfloat( "ui_color_b" ) )
+			exp forecolor a ( localvarfloat( "ui_color_a" ) )
+			visible when ( ( int( getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) / 1000 ) != 0 ) && getprofiledata( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 9 ) ) == 0 )
+			exp text ( "--:--" )
 		}
 		itemDef
 		{
 			rect -280 362 272 20 3 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.725 1 0.725 0.65
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			autoWrapped 
-			type 0
-			align 0
-			textAlign 6
-			textAlignX 0
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
+			autowrapped
 			visible 1
-			exp text ( "@" + tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 8 )  )
-			exp (null) (null) ( localvarfloat( "ui_color_r" )  )
-			exp (null) (null) ( localvarfloat( "ui_color_g" )  )
-			exp (null) (null) ( localvarfloat( "ui_color_b" )  )
-			exp (null) (null) ( localvarfloat( "ui_color_a" )  )
+			forecolor 0.725 1 0.725 0.65
+			textalign 6
+			textscale 0.375
+			exp forecolor r ( localvarfloat( "ui_color_r" ) )
+			exp forecolor g ( localvarfloat( "ui_color_g" ) )
+			exp forecolor b ( localvarfloat( "ui_color_b" ) )
+			exp forecolor a ( localvarfloat( "ui_color_a" ) )
+			exp text ( "@" + tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 8 ) )
 		}
 		itemDef
 		{
 			rect -280 344 272 20 3 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0.65
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			autoWrapped 
-			type 0
-			align 0
-			textAlign 4
-			textAlignX 0
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 9
-			feeder 0
+			decoration
+			autowrapped
 			visible 1
-			exp text ( "@MENU_SP_IW_BEST_TIME"  )
-			visible when ( ( int getcharbyindex( coopplayer( localvarint( "ui_player1_num" ) , "missionSOHighestDifficulty" ) , int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 0 ) ) ) ) >= 4 )  )
+			forecolor 1 1 1 0.65
+			textfont 9
+			textalign 4
+			textscale 0.375
+			visible when ( ( int( getcharbyindex( coopplayer( localvarint( "ui_player1_num" ) , "missionSOHighestDifficulty" ) , int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 0 ) ) ) ) >= 4 ) )
+			exp text ( "@MENU_SP_IW_BEST_TIME" )
 		}
 		itemDef
 		{
 			rect -280 344 272 20 3 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.725 1 0.725 0.65
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			autoWrapped 
-			type 0
-			align 0
-			textAlign 6
-			textAlignX 0
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
+			autowrapped
 			visible 1
-			exp text ( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 10 )  )
-			visible when ( ( int getcharbyindex( coopplayer( localvarint( "ui_player1_num" ) , "missionSOHighestDifficulty" ) , int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 0 ) ) ) ) >= 4 )  )
-			exp (null) (null) ( localvarfloat( "ui_color_r" )  )
-			exp (null) (null) ( localvarfloat( "ui_color_g" )  )
-			exp (null) (null) ( localvarfloat( "ui_color_b" )  )
-			exp (null) (null) ( localvarfloat( "ui_color_a" )  )
+			forecolor 0.725 1 0.725 0.65
+			textalign 6
+			textscale 0.375
+			exp forecolor r ( localvarfloat( "ui_color_r" ) )
+			exp forecolor g ( localvarfloat( "ui_color_g" ) )
+			exp forecolor b ( localvarfloat( "ui_color_b" ) )
+			exp forecolor a ( localvarfloat( "ui_color_a" ) )
+			visible when ( ( int( getcharbyindex( coopplayer( localvarint( "ui_player1_num" ) , "missionSOHighestDifficulty" ) , int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 0 ) ) ) ) >= 4 ) )
+			exp text ( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 10 ) )
 		}
 		itemDef
 		{
 			rect 0 -112 272 80 1 3
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 0.5
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background line_horizontal
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			visible when ( !dvarbool(static)( 9 ) && coopplayer( 1 , "exists" )  )
+			forecolor 0 0 0 0.5
+			background "line_horizontal"
+			textscale 0.55
+			visible when ( !dvarbool( "solo_play" ) && coopplayer( 1 , "exists" ) )
 		}
 		itemDef
 		{
-			name friend_unlock
+			name "friend_unlock"
 			rect 0 -112 272 80 1 3
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 5
-			textAlignX 0
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 9
-			feeder 0
+			decoration
 			visible 1
-			exp text ( coopplayer( ( gamehost( ) || dvarbool(static)( 7 ) ) , "name" )  )
-			visible when ( !dvarbool(static)( 9 ) && coopplayer( 1 , "exists" )  )
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 5
+			textscale 0.375
+			visible when ( !dvarbool( "solo_play" ) && coopplayer( 1 , "exists" ) )
+			exp text ( coopplayer( ( gamehost( ) || dvarbool( "splitscreen" ) ) , "name" ) )
 		}
 		itemDef
 		{
-			name friend_unlock
+			name "friend_unlock"
 			rect 0 -112 272 80 1 3
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 6
-			textAlignX -140
-			textAlignY 17
-			textScale 0.375
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp text ( locstring( "@" + tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 2 ) ) + ":"  )
-			visible when ( !dvarbool(static)( 9 ) && coopplayer( 1 , "exists" )  )
+			forecolor 1 1 1 1
+			textalign 6
+			textalignx -140
+			textaligny 17
+			textscale 0.375
+			visible when ( !dvarbool( "solo_play" ) && coopplayer( 1 , "exists" ) )
+			exp text ( locstring( "@" + tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 2 ) ) + ":" )
 		}
 		itemDef
 		{
 			rect 136 -92 272 80 1 3
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp material ( "difficulty_star_empty"  )
-			visible when ( !dvarbool(static)( 9 ) && coopplayer( 1 , "exists" )  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 14  )
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect w ( 14 )
+			exp rect h ( 14 )
+			visible when ( !dvarbool( "solo_play" ) && coopplayer( 1 , "exists" ) )
+			exp material ( "difficulty_star_empty" )
 		}
 		itemDef
 		{
 			rect 136 -92 272 80 1 3
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp material ( "difficulty_star"  )
-			visible when ( !dvarbool(static)( 9 ) && coopplayer( 1 , "exists" ) && ( int getcharbyindex( coopplayer( localvarint( "ui_player2_num" ) , "missionsohighestdifficulty" ) , localvarint( "ui_so_level_offset" ) ) ) >= 2 )  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 1  )
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect w ( 14 )
+			exp rect h ( 14 )
+			exp forecolor a ( 1 )
+			visible when ( !dvarbool( "solo_play" ) && coopplayer( 1 , "exists" ) && ( int( getcharbyindex( coopplayer( localvarint( "ui_player2_num" ) , "missionsohighestdifficulty" ) , localvarint( "ui_so_level_offset" ) ) ) >= 2 ) )
+			exp material ( "difficulty_star" )
 		}
 		itemDef
 		{
 			rect 149 -92 272 80 1 3
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp material ( "difficulty_star_empty"  )
-			visible when ( !dvarbool(static)( 9 ) && coopplayer( 1 , "exists" )  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 14  )
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect w ( 14 )
+			exp rect h ( 14 )
+			visible when ( !dvarbool( "solo_play" ) && coopplayer( 1 , "exists" ) )
+			exp material ( "difficulty_star_empty" )
 		}
 		itemDef
 		{
 			rect 149 -92 272 80 1 3
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp material ( "difficulty_star"  )
-			visible when ( !dvarbool(static)( 9 ) && coopplayer( 1 , "exists" ) && ( int getcharbyindex( coopplayer( localvarint( "ui_player2_num" ) , "missionsohighestdifficulty" ) , localvarint( "ui_so_level_offset" ) ) ) >= 3 )  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 1  )
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect w ( 14 )
+			exp rect h ( 14 )
+			exp forecolor a ( 1 )
+			visible when ( !dvarbool( "solo_play" ) && coopplayer( 1 , "exists" ) && ( int( getcharbyindex( coopplayer( localvarint( "ui_player2_num" ) , "missionsohighestdifficulty" ) , localvarint( "ui_so_level_offset" ) ) ) >= 3 ) )
+			exp material ( "difficulty_star" )
 		}
 		itemDef
 		{
 			rect 162 -92 272 80 1 3
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp material ( "difficulty_star_empty"  )
-			visible when ( !dvarbool(static)( 9 ) && coopplayer( 1 , "exists" )  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 14  )
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect w ( 14 )
+			exp rect h ( 14 )
+			visible when ( !dvarbool( "solo_play" ) && coopplayer( 1 , "exists" ) )
+			exp material ( "difficulty_star_empty" )
 		}
 		itemDef
 		{
 			rect 162 -92 272 80 1 3
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			exp material ( "difficulty_star"  )
-			visible when ( !dvarbool(static)( 9 ) && coopplayer( 1 , "exists" ) && ( int getcharbyindex( coopplayer( localvarint( "ui_player2_num" ) , "missionsohighestdifficulty" ) , localvarint( "ui_so_level_offset" ) ) ) >= 4 )  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 1  )
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect w ( 14 )
+			exp rect h ( 14 )
+			exp forecolor a ( 1 )
+			visible when ( !dvarbool( "solo_play" ) && coopplayer( 1 , "exists" ) && ( int( getcharbyindex( coopplayer( localvarint( "ui_player2_num" ) , "missionsohighestdifficulty" ) , localvarint( "ui_so_level_offset" ) ) ) >= 4 ) )
+			exp material ( "difficulty_star" )
 		}
 		itemDef
 		{
-			name so_download_arcadia_gray
+			name "so_download_arcadia_gray"
 			rect -64 28 336 20 1 1
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.6 0.6 0.6 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_button_selection_bar
-			group mw2_button
-			type 1
-			align 0
-			textAlign 6
-			textAlignX -60
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
 			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 0.6 0.6 0.6 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			visible when ( ( dvarbool( "mis_cheat" ) || 1 ) && ( !iscoop( ) && int( tablelookup( "sp/specOpsTable.csv" , 1 , "so_download_arcadia" , 11 ) ) == 2 ) )
+			exp text ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 8 , 2 ) )
+			action
+			{
+				play "mouse_click";
+				if ( iscoop( ) && !gamehost( ) && !dvarbool( "splitscreen" ) )
+				{
+					open "only_host_can_choose";
+				}
+				else
+				{
+					setdvar "credits" 0;
+					setdvar "credits_active" 0;
+					setdvar "specialops" 1;
+					setdvar "ui_load_so_level" "so_download_arcadia";
+					setdvar "coop_mapName" "so_download_arcadia";
+					setdvar "ui_last_opened_group" 4;
+					setdvar "ui_last_played_level" "so_download_arcadia";
+					if ( iscoop( ) )
+					{
+						close self;
+						close "levels_challenge";
+					}
+					else
+					{
+						if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , "so_download_arcadia" , 14 ) ) == 0 )
+						{
+							exec "devmap so_download_arcadia";
+						}
+						else
+						{
+							if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , "so_download_arcadia" , 11 ) ) == 2 )
+							{
+								open "popmenu_multi_only";
+							}
+							else
+							{
+								open "popmenu_specialops_difficulty";
+							}
+						}
+					}
+				}
+			}
 			onFocus
 			{
-				"play" "mouse_over";
-				if ( dvarstring(static)( 2 ) != "mp"  )
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
 				{
-					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+					setItemColor "mw2_button" backcolor 0 0 0 0;
 				}
-				"setItemColor" "self" "backcolor" 0 0 0 1;
-				setLocalVarBool ui_menuAButton 1;
-				setLocalVarFloat ui_popupYPos 0.000000;
-				setLocalVarString ui_so_level_offset 8  );
-				setLocalVarString ui_so_level_reference tablelookup( "sp/specOpsTable.csv" , 0 , 8 , 1  );
-				setLocalVarString ui_so_level_levelshot tablelookup( "sp/specOpsTable.csv" , 0 , 8 , 4  );
-				setLocalVarString ui_so_level_desc ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 8 , 3 )  );
-				setLocalVarString ui_choicegroup "CHOICE_GROUP"  );
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) >= 4  )
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+				setLocalVarString "ui_so_level_offset" ( 8 );
+				setLocalVarString "ui_so_level_reference" ( tablelookup( "sp/specOpsTable.csv" , 0 , 8 , 1 ) );
+				;;
+				setLocalVarString "ui_so_level_levelshot" ( tablelookup( "sp/specOpsTable.csv" , 0 , 8 , 4 ) );
+				;;
+				setLocalVarString "ui_so_level_desc" ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 8 , 3 ) );
+				;;
+				setLocalVarString "ui_choicegroup" ( "CHOICE_GROUP" );
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) >= 4 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 1 );
+					setLocalVarFloat "ui_color_g" ( 0.4 );
+					setLocalVarFloat "ui_color_b" ( 0.4 );
+					setLocalVarFloat "ui_color_a" ( 0.9 );
 				}
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 3  )
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 3 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 1 );
+					setLocalVarFloat "ui_color_g" ( 0.575 );
+					setLocalVarFloat "ui_color_b" ( 0.275 );
+					setLocalVarFloat "ui_color_a" ( 0.88 );
 				}
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 2  )
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 2 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 0.85 );
+					setLocalVarFloat "ui_color_g" ( 0.85 );
+					setLocalVarFloat "ui_color_b" ( 0.35 );
+					setLocalVarFloat "ui_color_a" ( 0.85 );
 				}
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) <= 1  )
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) <= 1 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 0.6 );
+					setLocalVarFloat "ui_color_g" ( 1 );
+					setLocalVarFloat "ui_color_b" ( 0.6 );
+					setLocalVarFloat "ui_color_a" ( 0.725 );
 				}
 			}
 			leaveFocus
 			{
-				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
-				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
-				setLocalVarBool ui_menuAButton 1;
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
 			}
-			action
-			{
-				"play" "mouse_click";
-				if ( iscoop( ) && !gamehost( ) && !dvarbool(static)( 7 )  )
-				{
-					"open" "only_host_can_choose";
-				}
-				else
-				{
-					"setdvar" "credits" 0;
-					"setdvar" "credits_active" 0;
-					"setdvar" "specialops" 1;
-					"setdvar" "ui_load_so_level" "so_download_arcadia";
-					"setdvar" "coop_mapName" "so_download_arcadia";
-					"setdvar" "ui_last_opened_group" 4;
-					"setdvar" "ui_last_played_level" "so_download_arcadia";
-					if ( iscoop( )  )
-					{
-						"close" "self";
-						"close" "levels_challenge";
-					}
-					else
-					{
-						if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_download_arcadia" , 14 ) ) == 0  )
-						{
-							"exec" "devmap so_download_arcadia";
-						}
-						else
-						{
-							if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_download_arcadia" , 11 ) ) == 2  )
-							{
-								"open" "popmenu_multi_only";
-							}
-							else
-							{
-								"open" "popmenu_specialops_difficulty";
-							}
-							if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_download_arcadia" , 11 ) ) == 2  )						}
-						if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_download_arcadia" , 14 ) ) == 0  )					}
-					if ( iscoop( )  )				}
-				if ( iscoop( ) && !gamehost( ) && !dvarbool(static)( 7 )  )			}
-			exp text ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 8 , 2 )  )
-			visible when ( ( dvarbool(static)( 5 ) || 1 ) && ( !iscoop( ) && int tablelookup( "sp/specOpsTable.csv" , 1 , "so_download_arcadia" , 11 ) ) == 2 )  )
 		}
 		itemDef
 		{
-			name so_download_arcadia
+			name "so_download_arcadia"
 			rect -64 28 336 20 1 1
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_button_selection_bar
-			group mw2_button
-			type 1
-			align 0
-			textAlign 6
-			textAlignX -60
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
 			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			visible when ( ( dvarbool( "mis_cheat" ) || 1 ) && !( !iscoop( ) && int( tablelookup( "sp/specOpsTable.csv" , 1 , "so_download_arcadia" , 11 ) ) == 2 ) )
+			exp text ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 8 , 2 ) )
+			action
+			{
+				play "mouse_click";
+				if ( iscoop( ) && !gamehost( ) && !dvarbool( "splitscreen" ) )
+				{
+					open "only_host_can_choose";
+				}
+				else
+				{
+					setdvar "credits" 0;
+					setdvar "credits_active" 0;
+					setdvar "specialops" 1;
+					setdvar "ui_load_so_level" "so_download_arcadia";
+					setdvar "coop_mapName" "so_download_arcadia";
+					setdvar "ui_last_opened_group" 4;
+					setdvar "ui_last_played_level" "so_download_arcadia";
+					if ( iscoop( ) )
+					{
+						close self;
+						close "levels_challenge";
+					}
+					else
+					{
+						if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , "so_download_arcadia" , 14 ) ) == 0 )
+						{
+							exec "devmap so_download_arcadia";
+						}
+						else
+						{
+							if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , "so_download_arcadia" , 11 ) ) == 2 )
+							{
+								open "popmenu_multi_only";
+							}
+							else
+							{
+								open "popmenu_specialops_difficulty";
+							}
+						}
+					}
+				}
+			}
 			onFocus
 			{
-				"play" "mouse_over";
-				if ( dvarstring(static)( 2 ) != "mp"  )
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
 				{
-					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+					setItemColor "mw2_button" backcolor 0 0 0 0;
 				}
-				"setItemColor" "self" "backcolor" 0 0 0 1;
-				setLocalVarBool ui_menuAButton 1;
-				setLocalVarFloat ui_popupYPos 0.000000;
-				setLocalVarString ui_so_level_offset 8  );
-				setLocalVarString ui_so_level_reference tablelookup( "sp/specOpsTable.csv" , 0 , 8 , 1  );
-				setLocalVarString ui_so_level_levelshot tablelookup( "sp/specOpsTable.csv" , 0 , 8 , 4  );
-				setLocalVarString ui_so_level_desc ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 8 , 3 )  );
-				setLocalVarString ui_choicegroup "CHOICE_GROUP"  );
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) >= 4  )
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+				setLocalVarString "ui_so_level_offset" ( 8 );
+				setLocalVarString "ui_so_level_reference" ( tablelookup( "sp/specOpsTable.csv" , 0 , 8 , 1 ) );
+				;;
+				setLocalVarString "ui_so_level_levelshot" ( tablelookup( "sp/specOpsTable.csv" , 0 , 8 , 4 ) );
+				;;
+				setLocalVarString "ui_so_level_desc" ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 8 , 3 ) );
+				;;
+				setLocalVarString "ui_choicegroup" ( "CHOICE_GROUP" );
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) >= 4 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 1 );
+					setLocalVarFloat "ui_color_g" ( 0.4 );
+					setLocalVarFloat "ui_color_b" ( 0.4 );
+					setLocalVarFloat "ui_color_a" ( 0.9 );
 				}
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 3  )
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 3 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 1 );
+					setLocalVarFloat "ui_color_g" ( 0.575 );
+					setLocalVarFloat "ui_color_b" ( 0.275 );
+					setLocalVarFloat "ui_color_a" ( 0.88 );
 				}
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 2  )
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 2 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 0.85 );
+					setLocalVarFloat "ui_color_g" ( 0.85 );
+					setLocalVarFloat "ui_color_b" ( 0.35 );
+					setLocalVarFloat "ui_color_a" ( 0.85 );
 				}
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) <= 1  )
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) <= 1 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 0.6 );
+					setLocalVarFloat "ui_color_g" ( 1 );
+					setLocalVarFloat "ui_color_b" ( 0.6 );
+					setLocalVarFloat "ui_color_a" ( 0.725 );
 				}
 			}
 			leaveFocus
 			{
-				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
-				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
-				setLocalVarBool ui_menuAButton 1;
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
 			}
-			action
-			{
-				"play" "mouse_click";
-				if ( iscoop( ) && !gamehost( ) && !dvarbool(static)( 7 )  )
-				{
-					"open" "only_host_can_choose";
-				}
-				else
-				{
-					"setdvar" "credits" 0;
-					"setdvar" "credits_active" 0;
-					"setdvar" "specialops" 1;
-					"setdvar" "ui_load_so_level" "so_download_arcadia";
-					"setdvar" "coop_mapName" "so_download_arcadia";
-					"setdvar" "ui_last_opened_group" 4;
-					"setdvar" "ui_last_played_level" "so_download_arcadia";
-					if ( iscoop( )  )
-					{
-						"close" "self";
-						"close" "levels_challenge";
-					}
-					else
-					{
-						if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_download_arcadia" , 14 ) ) == 0  )
-						{
-							"exec" "devmap so_download_arcadia";
-						}
-						else
-						{
-							if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_download_arcadia" , 11 ) ) == 2  )
-							{
-								"open" "popmenu_multi_only";
-							}
-							else
-							{
-								"open" "popmenu_specialops_difficulty";
-							}
-							if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_download_arcadia" , 11 ) ) == 2  )						}
-						if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_download_arcadia" , 14 ) ) == 0  )					}
-					if ( iscoop( )  )				}
-				if ( iscoop( ) && !gamehost( ) && !dvarbool(static)( 7 )  )			}
-			exp text ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 8 , 2 )  )
-			visible when ( ( dvarbool(static)( 5 ) || 1 ) && !( !iscoop( ) && int tablelookup( "sp/specOpsTable.csv" , 1 , "so_download_arcadia" , 11 ) ) == 2 )  )
 		}
 		itemDef
 		{
 			rect 2 31 336 20 1 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp material ( "difficulty_star_empty"  )
-			visible when ( 1  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 14  )
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect w ( 14 )
+			exp rect h ( 14 )
+			visible when ( 1 )
+			exp material ( "difficulty_star_empty" )
 		}
 		itemDef
 		{
 			rect 2 31 336 20 1 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp material ( "difficulty_star"  )
-			visible when ( 1 && ( int getcharbyindex( coopplayer( localvarint( "ui_player1_num" ) , "missionSOHighestDifficulty" ) , 8 ) ) >= 2 )  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( ( int min max ( milliseconds( ) - localvarint( "ui_star_animate_mark" ) ) / 25 * ( 1 + 4 ) , 0 ) , 1 ) ) && 1 )  )
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect w ( 14 )
+			exp rect h ( 14 )
+			exp forecolor a ( ( int( min( max( ( milliseconds( ) - localvarint( "ui_star_animate_mark" ) ) / 25 * ( 1 + 4 ) , 0 ) , 1 ) ) && 1 ) )
+			visible when ( 1 && ( int( getcharbyindex( coopplayer( localvarint( "ui_player1_num" ) , "missionSOHighestDifficulty" ) , 8 ) ) >= 2 ) )
+			exp material ( "difficulty_star" )
 		}
 		itemDef
 		{
 			rect 15 31 336 20 1 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp material ( "difficulty_star_empty"  )
-			visible when ( 1  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 14  )
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect w ( 14 )
+			exp rect h ( 14 )
+			visible when ( 1 )
+			exp material ( "difficulty_star_empty" )
 		}
 		itemDef
 		{
 			rect 15 31 336 20 1 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp material ( "difficulty_star"  )
-			visible when ( 1 && ( int getcharbyindex( coopplayer( localvarint( "ui_player1_num" ) , "missionSOHighestDifficulty" ) , 8 ) ) >= 3 )  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( ( int min max ( milliseconds( ) - localvarint( "ui_star_animate_mark" ) ) / 25 * ( 1 + 8 ) , 0 ) , 1 ) ) && 1 )  )
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect w ( 14 )
+			exp rect h ( 14 )
+			exp forecolor a ( ( int( min( max( ( milliseconds( ) - localvarint( "ui_star_animate_mark" ) ) / 25 * ( 1 + 8 ) , 0 ) , 1 ) ) && 1 ) )
+			visible when ( 1 && ( int( getcharbyindex( coopplayer( localvarint( "ui_player1_num" ) , "missionSOHighestDifficulty" ) , 8 ) ) >= 3 ) )
+			exp material ( "difficulty_star" )
 		}
 		itemDef
 		{
 			rect 28 31 336 20 1 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp material ( "difficulty_star_empty"  )
-			visible when ( 1  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 14  )
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect w ( 14 )
+			exp rect h ( 14 )
+			visible when ( 1 )
+			exp material ( "difficulty_star_empty" )
 		}
 		itemDef
 		{
 			rect 28 31 336 20 1 1
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			exp material ( "difficulty_star"  )
-			visible when ( 1 && ( int getcharbyindex( coopplayer( localvarint( "ui_player1_num" ) , "missionSOHighestDifficulty" ) , 8 ) ) >= 4 )  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( ( int min max ( milliseconds( ) - localvarint( "ui_star_animate_mark" ) ) / 25 * ( 1 + 12 ) , 0 ) , 1 ) ) && 1 )  )
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect w ( 14 )
+			exp rect h ( 14 )
+			exp forecolor a ( ( int( min( max( ( milliseconds( ) - localvarint( "ui_star_animate_mark" ) ) / 25 * ( 1 + 12 ) , 0 ) , 1 ) ) && 1 ) )
+			visible when ( 1 && ( int( getcharbyindex( coopplayer( localvarint( "ui_player1_num" ) , "missionSOHighestDifficulty" ) , 8 ) ) >= 4 ) )
+			exp material ( "difficulty_star" )
 		}
 		itemDef
 		{
-			name so_demo_so_bridge_gray
+			name "so_demo_so_bridge_gray"
 			rect -64 48 336 20 1 1
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.6 0.6 0.6 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_button_selection_bar
-			group mw2_button
-			type 1
-			align 0
-			textAlign 6
-			textAlignX -60
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
 			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 0.6 0.6 0.6 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			visible when ( ( dvarbool( "mis_cheat" ) || 1 ) && ( !iscoop( ) && int( tablelookup( "sp/specOpsTable.csv" , 1 , "so_demo_so_bridge" , 11 ) ) == 2 ) )
+			exp text ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 9 , 2 ) )
+			action
+			{
+				play "mouse_click";
+				if ( iscoop( ) && !gamehost( ) && !dvarbool( "splitscreen" ) )
+				{
+					open "only_host_can_choose";
+				}
+				else
+				{
+					setdvar "credits" 0;
+					setdvar "credits_active" 0;
+					setdvar "specialops" 1;
+					setdvar "ui_load_so_level" "so_demo_so_bridge";
+					setdvar "coop_mapName" "so_demo_so_bridge";
+					setdvar "ui_last_opened_group" 4;
+					setdvar "ui_last_played_level" "so_demo_so_bridge";
+					if ( iscoop( ) )
+					{
+						close self;
+						close "levels_challenge";
+					}
+					else
+					{
+						if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , "so_demo_so_bridge" , 14 ) ) == 0 )
+						{
+							exec "devmap so_demo_so_bridge";
+						}
+						else
+						{
+							if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , "so_demo_so_bridge" , 11 ) ) == 2 )
+							{
+								open "popmenu_multi_only";
+							}
+							else
+							{
+								open "popmenu_specialops_difficulty";
+							}
+						}
+					}
+				}
+			}
 			onFocus
 			{
-				"play" "mouse_over";
-				if ( dvarstring(static)( 2 ) != "mp"  )
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
 				{
-					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+					setItemColor "mw2_button" backcolor 0 0 0 0;
 				}
-				"setItemColor" "self" "backcolor" 0 0 0 1;
-				setLocalVarBool ui_menuAButton 1;
-				setLocalVarFloat ui_popupYPos 0.000000;
-				setLocalVarString ui_so_level_offset 9  );
-				setLocalVarString ui_so_level_reference tablelookup( "sp/specOpsTable.csv" , 0 , 9 , 1  );
-				setLocalVarString ui_so_level_levelshot tablelookup( "sp/specOpsTable.csv" , 0 , 9 , 4  );
-				setLocalVarString ui_so_level_desc ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 9 , 3 )  );
-				setLocalVarString ui_choicegroup "CHOICE_GROUP"  );
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) >= 4  )
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+				setLocalVarString "ui_so_level_offset" ( 9 );
+				setLocalVarString "ui_so_level_reference" ( tablelookup( "sp/specOpsTable.csv" , 0 , 9 , 1 ) );
+				;;
+				setLocalVarString "ui_so_level_levelshot" ( tablelookup( "sp/specOpsTable.csv" , 0 , 9 , 4 ) );
+				;;
+				setLocalVarString "ui_so_level_desc" ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 9 , 3 ) );
+				;;
+				setLocalVarString "ui_choicegroup" ( "CHOICE_GROUP" );
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) >= 4 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 1 );
+					setLocalVarFloat "ui_color_g" ( 0.4 );
+					setLocalVarFloat "ui_color_b" ( 0.4 );
+					setLocalVarFloat "ui_color_a" ( 0.9 );
 				}
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 3  )
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 3 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 1 );
+					setLocalVarFloat "ui_color_g" ( 0.575 );
+					setLocalVarFloat "ui_color_b" ( 0.275 );
+					setLocalVarFloat "ui_color_a" ( 0.88 );
 				}
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 2  )
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 2 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 0.85 );
+					setLocalVarFloat "ui_color_g" ( 0.85 );
+					setLocalVarFloat "ui_color_b" ( 0.35 );
+					setLocalVarFloat "ui_color_a" ( 0.85 );
 				}
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) <= 1  )
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) <= 1 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 0.6 );
+					setLocalVarFloat "ui_color_g" ( 1 );
+					setLocalVarFloat "ui_color_b" ( 0.6 );
+					setLocalVarFloat "ui_color_a" ( 0.725 );
 				}
 			}
 			leaveFocus
 			{
-				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
-				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
-				setLocalVarBool ui_menuAButton 1;
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
 			}
-			action
-			{
-				"play" "mouse_click";
-				if ( iscoop( ) && !gamehost( ) && !dvarbool(static)( 7 )  )
-				{
-					"open" "only_host_can_choose";
-				}
-				else
-				{
-					"setdvar" "credits" 0;
-					"setdvar" "credits_active" 0;
-					"setdvar" "specialops" 1;
-					"setdvar" "ui_load_so_level" "so_demo_so_bridge";
-					"setdvar" "coop_mapName" "so_demo_so_bridge";
-					"setdvar" "ui_last_opened_group" 4;
-					"setdvar" "ui_last_played_level" "so_demo_so_bridge";
-					if ( iscoop( )  )
-					{
-						"close" "self";
-						"close" "levels_challenge";
-					}
-					else
-					{
-						if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_demo_so_bridge" , 14 ) ) == 0  )
-						{
-							"exec" "devmap so_demo_so_bridge";
-						}
-						else
-						{
-							if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_demo_so_bridge" , 11 ) ) == 2  )
-							{
-								"open" "popmenu_multi_only";
-							}
-							else
-							{
-								"open" "popmenu_specialops_difficulty";
-							}
-							if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_demo_so_bridge" , 11 ) ) == 2  )						}
-						if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_demo_so_bridge" , 14 ) ) == 0  )					}
-					if ( iscoop( )  )				}
-				if ( iscoop( ) && !gamehost( ) && !dvarbool(static)( 7 )  )			}
-			exp text ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 9 , 2 )  )
-			visible when ( ( dvarbool(static)( 5 ) || 1 ) && ( !iscoop( ) && int tablelookup( "sp/specOpsTable.csv" , 1 , "so_demo_so_bridge" , 11 ) ) == 2 )  )
 		}
 		itemDef
 		{
-			name so_demo_so_bridge
+			name "so_demo_so_bridge"
 			rect -64 48 336 20 1 1
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_button_selection_bar
-			group mw2_button
-			type 1
-			align 0
-			textAlign 6
-			textAlignX -60
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
 			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			visible when ( ( dvarbool( "mis_cheat" ) || 1 ) && !( !iscoop( ) && int( tablelookup( "sp/specOpsTable.csv" , 1 , "so_demo_so_bridge" , 11 ) ) == 2 ) )
+			exp text ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 9 , 2 ) )
+			action
+			{
+				play "mouse_click";
+				if ( iscoop( ) && !gamehost( ) && !dvarbool( "splitscreen" ) )
+				{
+					open "only_host_can_choose";
+				}
+				else
+				{
+					setdvar "credits" 0;
+					setdvar "credits_active" 0;
+					setdvar "specialops" 1;
+					setdvar "ui_load_so_level" "so_demo_so_bridge";
+					setdvar "coop_mapName" "so_demo_so_bridge";
+					setdvar "ui_last_opened_group" 4;
+					setdvar "ui_last_played_level" "so_demo_so_bridge";
+					if ( iscoop( ) )
+					{
+						close self;
+						close "levels_challenge";
+					}
+					else
+					{
+						if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , "so_demo_so_bridge" , 14 ) ) == 0 )
+						{
+							exec "devmap so_demo_so_bridge";
+						}
+						else
+						{
+							if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , "so_demo_so_bridge" , 11 ) ) == 2 )
+							{
+								open "popmenu_multi_only";
+							}
+							else
+							{
+								open "popmenu_specialops_difficulty";
+							}
+						}
+					}
+				}
+			}
 			onFocus
 			{
-				"play" "mouse_over";
-				if ( dvarstring(static)( 2 ) != "mp"  )
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
 				{
-					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+					setItemColor "mw2_button" backcolor 0 0 0 0;
 				}
-				"setItemColor" "self" "backcolor" 0 0 0 1;
-				setLocalVarBool ui_menuAButton 1;
-				setLocalVarFloat ui_popupYPos 0.000000;
-				setLocalVarString ui_so_level_offset 9  );
-				setLocalVarString ui_so_level_reference tablelookup( "sp/specOpsTable.csv" , 0 , 9 , 1  );
-				setLocalVarString ui_so_level_levelshot tablelookup( "sp/specOpsTable.csv" , 0 , 9 , 4  );
-				setLocalVarString ui_so_level_desc ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 9 , 3 )  );
-				setLocalVarString ui_choicegroup "CHOICE_GROUP"  );
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) >= 4  )
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+				setLocalVarString "ui_so_level_offset" ( 9 );
+				setLocalVarString "ui_so_level_reference" ( tablelookup( "sp/specOpsTable.csv" , 0 , 9 , 1 ) );
+				;;
+				setLocalVarString "ui_so_level_levelshot" ( tablelookup( "sp/specOpsTable.csv" , 0 , 9 , 4 ) );
+				;;
+				setLocalVarString "ui_so_level_desc" ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 9 , 3 ) );
+				;;
+				setLocalVarString "ui_choicegroup" ( "CHOICE_GROUP" );
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) >= 4 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 1 );
+					setLocalVarFloat "ui_color_g" ( 0.4 );
+					setLocalVarFloat "ui_color_b" ( 0.4 );
+					setLocalVarFloat "ui_color_a" ( 0.9 );
 				}
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 3  )
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 3 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 1 );
+					setLocalVarFloat "ui_color_g" ( 0.575 );
+					setLocalVarFloat "ui_color_b" ( 0.275 );
+					setLocalVarFloat "ui_color_a" ( 0.88 );
 				}
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 2  )
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 2 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 0.85 );
+					setLocalVarFloat "ui_color_g" ( 0.85 );
+					setLocalVarFloat "ui_color_b" ( 0.35 );
+					setLocalVarFloat "ui_color_a" ( 0.85 );
 				}
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) <= 1  )
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) <= 1 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 0.6 );
+					setLocalVarFloat "ui_color_g" ( 1 );
+					setLocalVarFloat "ui_color_b" ( 0.6 );
+					setLocalVarFloat "ui_color_a" ( 0.725 );
 				}
 			}
 			leaveFocus
 			{
-				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
-				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
-				setLocalVarBool ui_menuAButton 1;
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
 			}
-			action
-			{
-				"play" "mouse_click";
-				if ( iscoop( ) && !gamehost( ) && !dvarbool(static)( 7 )  )
-				{
-					"open" "only_host_can_choose";
-				}
-				else
-				{
-					"setdvar" "credits" 0;
-					"setdvar" "credits_active" 0;
-					"setdvar" "specialops" 1;
-					"setdvar" "ui_load_so_level" "so_demo_so_bridge";
-					"setdvar" "coop_mapName" "so_demo_so_bridge";
-					"setdvar" "ui_last_opened_group" 4;
-					"setdvar" "ui_last_played_level" "so_demo_so_bridge";
-					if ( iscoop( )  )
-					{
-						"close" "self";
-						"close" "levels_challenge";
-					}
-					else
-					{
-						if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_demo_so_bridge" , 14 ) ) == 0  )
-						{
-							"exec" "devmap so_demo_so_bridge";
-						}
-						else
-						{
-							if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_demo_so_bridge" , 11 ) ) == 2  )
-							{
-								"open" "popmenu_multi_only";
-							}
-							else
-							{
-								"open" "popmenu_specialops_difficulty";
-							}
-							if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_demo_so_bridge" , 11 ) ) == 2  )						}
-						if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_demo_so_bridge" , 14 ) ) == 0  )					}
-					if ( iscoop( )  )				}
-				if ( iscoop( ) && !gamehost( ) && !dvarbool(static)( 7 )  )			}
-			exp text ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 9 , 2 )  )
-			visible when ( ( dvarbool(static)( 5 ) || 1 ) && !( !iscoop( ) && int tablelookup( "sp/specOpsTable.csv" , 1 , "so_demo_so_bridge" , 11 ) ) == 2 )  )
 		}
 		itemDef
 		{
 			rect 2 51 336 20 1 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp material ( "difficulty_star_empty"  )
-			visible when ( 1  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 14  )
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect w ( 14 )
+			exp rect h ( 14 )
+			visible when ( 1 )
+			exp material ( "difficulty_star_empty" )
 		}
 		itemDef
 		{
 			rect 2 51 336 20 1 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp material ( "difficulty_star"  )
-			visible when ( 1 && ( int getcharbyindex( coopplayer( localvarint( "ui_player1_num" ) , "missionSOHighestDifficulty" ) , 9 ) ) >= 2 )  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( ( int min max ( milliseconds( ) - localvarint( "ui_star_animate_mark" ) ) / 25 * ( 1 + 4 ) , 0 ) , 1 ) ) && 1 )  )
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect w ( 14 )
+			exp rect h ( 14 )
+			exp forecolor a ( ( int( min( max( ( milliseconds( ) - localvarint( "ui_star_animate_mark" ) ) / 25 * ( 1 + 4 ) , 0 ) , 1 ) ) && 1 ) )
+			visible when ( 1 && ( int( getcharbyindex( coopplayer( localvarint( "ui_player1_num" ) , "missionSOHighestDifficulty" ) , 9 ) ) >= 2 ) )
+			exp material ( "difficulty_star" )
 		}
 		itemDef
 		{
 			rect 15 51 336 20 1 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp material ( "difficulty_star_empty"  )
-			visible when ( 1  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 14  )
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect w ( 14 )
+			exp rect h ( 14 )
+			visible when ( 1 )
+			exp material ( "difficulty_star_empty" )
 		}
 		itemDef
 		{
 			rect 15 51 336 20 1 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp material ( "difficulty_star"  )
-			visible when ( 1 && ( int getcharbyindex( coopplayer( localvarint( "ui_player1_num" ) , "missionSOHighestDifficulty" ) , 9 ) ) >= 3 )  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( ( int min max ( milliseconds( ) - localvarint( "ui_star_animate_mark" ) ) / 25 * ( 1 + 8 ) , 0 ) , 1 ) ) && 1 )  )
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect w ( 14 )
+			exp rect h ( 14 )
+			exp forecolor a ( ( int( min( max( ( milliseconds( ) - localvarint( "ui_star_animate_mark" ) ) / 25 * ( 1 + 8 ) , 0 ) , 1 ) ) && 1 ) )
+			visible when ( 1 && ( int( getcharbyindex( coopplayer( localvarint( "ui_player1_num" ) , "missionSOHighestDifficulty" ) , 9 ) ) >= 3 ) )
+			exp material ( "difficulty_star" )
 		}
 		itemDef
 		{
 			rect 28 51 336 20 1 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp material ( "difficulty_star_empty"  )
-			visible when ( 1  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 14  )
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect w ( 14 )
+			exp rect h ( 14 )
+			visible when ( 1 )
+			exp material ( "difficulty_star_empty" )
 		}
 		itemDef
 		{
 			rect 28 51 336 20 1 1
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			exp material ( "difficulty_star"  )
-			visible when ( 1 && ( int getcharbyindex( coopplayer( localvarint( "ui_player1_num" ) , "missionSOHighestDifficulty" ) , 9 ) ) >= 4 )  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( ( int min max ( milliseconds( ) - localvarint( "ui_star_animate_mark" ) ) / 25 * ( 1 + 12 ) , 0 ) , 1 ) ) && 1 )  )
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect w ( 14 )
+			exp rect h ( 14 )
+			exp forecolor a ( ( int( min( max( ( milliseconds( ) - localvarint( "ui_star_animate_mark" ) ) / 25 * ( 1 + 12 ) , 0 ) , 1 ) ) && 1 ) )
+			visible when ( 1 && ( int( getcharbyindex( coopplayer( localvarint( "ui_player1_num" ) , "missionSOHighestDifficulty" ) , 9 ) ) >= 4 ) )
+			exp material ( "difficulty_star" )
 		}
 		itemDef
 		{
-			name so_sabotage_cliffhanger_gray
+			name "so_sabotage_cliffhanger_gray"
 			rect -64 68 336 20 1 1
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.6 0.6 0.6 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_button_selection_bar
-			group mw2_button
-			type 1
-			align 0
-			textAlign 6
-			textAlignX -60
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
 			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 0.6 0.6 0.6 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			visible when ( ( dvarbool( "mis_cheat" ) || 1 ) && ( !iscoop( ) && int( tablelookup( "sp/specOpsTable.csv" , 1 , "so_sabotage_cliffhanger" , 11 ) ) == 2 ) )
+			exp text ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 14 , 2 ) )
+			action
+			{
+				play "mouse_click";
+				if ( iscoop( ) && !gamehost( ) && !dvarbool( "splitscreen" ) )
+				{
+					open "only_host_can_choose";
+				}
+				else
+				{
+					setdvar "credits" 0;
+					setdvar "credits_active" 0;
+					setdvar "specialops" 1;
+					setdvar "ui_load_so_level" "so_sabotage_cliffhanger";
+					setdvar "coop_mapName" "so_sabotage_cliffhanger";
+					setdvar "ui_last_opened_group" 4;
+					setdvar "ui_last_played_level" "so_sabotage_cliffhanger";
+					if ( iscoop( ) )
+					{
+						close self;
+						close "levels_challenge";
+					}
+					else
+					{
+						if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , "so_sabotage_cliffhanger" , 14 ) ) == 0 )
+						{
+							exec "devmap so_sabotage_cliffhanger";
+						}
+						else
+						{
+							if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , "so_sabotage_cliffhanger" , 11 ) ) == 2 )
+							{
+								open "popmenu_multi_only";
+							}
+							else
+							{
+								open "popmenu_specialops_difficulty";
+							}
+						}
+					}
+				}
+			}
 			onFocus
 			{
-				"play" "mouse_over";
-				if ( dvarstring(static)( 2 ) != "mp"  )
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
 				{
-					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+					setItemColor "mw2_button" backcolor 0 0 0 0;
 				}
-				"setItemColor" "self" "backcolor" 0 0 0 1;
-				setLocalVarBool ui_menuAButton 1;
-				setLocalVarFloat ui_popupYPos 0.000000;
-				setLocalVarString ui_so_level_offset 14  );
-				setLocalVarString ui_so_level_reference tablelookup( "sp/specOpsTable.csv" , 0 , 14 , 1  );
-				setLocalVarString ui_so_level_levelshot tablelookup( "sp/specOpsTable.csv" , 0 , 14 , 4  );
-				setLocalVarString ui_so_level_desc ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 14 , 3 )  );
-				setLocalVarString ui_choicegroup "CHOICE_GROUP"  );
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) >= 4  )
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+				setLocalVarString "ui_so_level_offset" ( 14 );
+				setLocalVarString "ui_so_level_reference" ( tablelookup( "sp/specOpsTable.csv" , 0 , 14 , 1 ) );
+				;;
+				setLocalVarString "ui_so_level_levelshot" ( tablelookup( "sp/specOpsTable.csv" , 0 , 14 , 4 ) );
+				;;
+				setLocalVarString "ui_so_level_desc" ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 14 , 3 ) );
+				;;
+				setLocalVarString "ui_choicegroup" ( "CHOICE_GROUP" );
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) >= 4 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 1 );
+					setLocalVarFloat "ui_color_g" ( 0.4 );
+					setLocalVarFloat "ui_color_b" ( 0.4 );
+					setLocalVarFloat "ui_color_a" ( 0.9 );
 				}
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 3  )
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 3 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 1 );
+					setLocalVarFloat "ui_color_g" ( 0.575 );
+					setLocalVarFloat "ui_color_b" ( 0.275 );
+					setLocalVarFloat "ui_color_a" ( 0.88 );
 				}
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 2  )
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 2 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 0.85 );
+					setLocalVarFloat "ui_color_g" ( 0.85 );
+					setLocalVarFloat "ui_color_b" ( 0.35 );
+					setLocalVarFloat "ui_color_a" ( 0.85 );
 				}
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) <= 1  )
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) <= 1 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 0.6 );
+					setLocalVarFloat "ui_color_g" ( 1 );
+					setLocalVarFloat "ui_color_b" ( 0.6 );
+					setLocalVarFloat "ui_color_a" ( 0.725 );
 				}
 			}
 			leaveFocus
 			{
-				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
-				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
-				setLocalVarBool ui_menuAButton 1;
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
 			}
-			action
-			{
-				"play" "mouse_click";
-				if ( iscoop( ) && !gamehost( ) && !dvarbool(static)( 7 )  )
-				{
-					"open" "only_host_can_choose";
-				}
-				else
-				{
-					"setdvar" "credits" 0;
-					"setdvar" "credits_active" 0;
-					"setdvar" "specialops" 1;
-					"setdvar" "ui_load_so_level" "so_sabotage_cliffhanger";
-					"setdvar" "coop_mapName" "so_sabotage_cliffhanger";
-					"setdvar" "ui_last_opened_group" 4;
-					"setdvar" "ui_last_played_level" "so_sabotage_cliffhanger";
-					if ( iscoop( )  )
-					{
-						"close" "self";
-						"close" "levels_challenge";
-					}
-					else
-					{
-						if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_sabotage_cliffhanger" , 14 ) ) == 0  )
-						{
-							"exec" "devmap so_sabotage_cliffhanger";
-						}
-						else
-						{
-							if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_sabotage_cliffhanger" , 11 ) ) == 2  )
-							{
-								"open" "popmenu_multi_only";
-							}
-							else
-							{
-								"open" "popmenu_specialops_difficulty";
-							}
-							if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_sabotage_cliffhanger" , 11 ) ) == 2  )						}
-						if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_sabotage_cliffhanger" , 14 ) ) == 0  )					}
-					if ( iscoop( )  )				}
-				if ( iscoop( ) && !gamehost( ) && !dvarbool(static)( 7 )  )			}
-			exp text ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 14 , 2 )  )
-			visible when ( ( dvarbool(static)( 5 ) || 1 ) && ( !iscoop( ) && int tablelookup( "sp/specOpsTable.csv" , 1 , "so_sabotage_cliffhanger" , 11 ) ) == 2 )  )
 		}
 		itemDef
 		{
-			name so_sabotage_cliffhanger
+			name "so_sabotage_cliffhanger"
 			rect -64 68 336 20 1 1
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_button_selection_bar
-			group mw2_button
-			type 1
-			align 0
-			textAlign 6
-			textAlignX -60
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
 			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			visible when ( ( dvarbool( "mis_cheat" ) || 1 ) && !( !iscoop( ) && int( tablelookup( "sp/specOpsTable.csv" , 1 , "so_sabotage_cliffhanger" , 11 ) ) == 2 ) )
+			exp text ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 14 , 2 ) )
+			action
+			{
+				play "mouse_click";
+				if ( iscoop( ) && !gamehost( ) && !dvarbool( "splitscreen" ) )
+				{
+					open "only_host_can_choose";
+				}
+				else
+				{
+					setdvar "credits" 0;
+					setdvar "credits_active" 0;
+					setdvar "specialops" 1;
+					setdvar "ui_load_so_level" "so_sabotage_cliffhanger";
+					setdvar "coop_mapName" "so_sabotage_cliffhanger";
+					setdvar "ui_last_opened_group" 4;
+					setdvar "ui_last_played_level" "so_sabotage_cliffhanger";
+					if ( iscoop( ) )
+					{
+						close self;
+						close "levels_challenge";
+					}
+					else
+					{
+						if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , "so_sabotage_cliffhanger" , 14 ) ) == 0 )
+						{
+							exec "devmap so_sabotage_cliffhanger";
+						}
+						else
+						{
+							if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , "so_sabotage_cliffhanger" , 11 ) ) == 2 )
+							{
+								open "popmenu_multi_only";
+							}
+							else
+							{
+								open "popmenu_specialops_difficulty";
+							}
+						}
+					}
+				}
+			}
 			onFocus
 			{
-				"play" "mouse_over";
-				if ( dvarstring(static)( 2 ) != "mp"  )
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
 				{
-					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+					setItemColor "mw2_button" backcolor 0 0 0 0;
 				}
-				"setItemColor" "self" "backcolor" 0 0 0 1;
-				setLocalVarBool ui_menuAButton 1;
-				setLocalVarFloat ui_popupYPos 0.000000;
-				setLocalVarString ui_so_level_offset 14  );
-				setLocalVarString ui_so_level_reference tablelookup( "sp/specOpsTable.csv" , 0 , 14 , 1  );
-				setLocalVarString ui_so_level_levelshot tablelookup( "sp/specOpsTable.csv" , 0 , 14 , 4  );
-				setLocalVarString ui_so_level_desc ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 14 , 3 )  );
-				setLocalVarString ui_choicegroup "CHOICE_GROUP"  );
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) >= 4  )
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+				setLocalVarString "ui_so_level_offset" ( 14 );
+				setLocalVarString "ui_so_level_reference" ( tablelookup( "sp/specOpsTable.csv" , 0 , 14 , 1 ) );
+				;;
+				setLocalVarString "ui_so_level_levelshot" ( tablelookup( "sp/specOpsTable.csv" , 0 , 14 , 4 ) );
+				;;
+				setLocalVarString "ui_so_level_desc" ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 14 , 3 ) );
+				;;
+				setLocalVarString "ui_choicegroup" ( "CHOICE_GROUP" );
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) >= 4 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 1 );
+					setLocalVarFloat "ui_color_g" ( 0.4 );
+					setLocalVarFloat "ui_color_b" ( 0.4 );
+					setLocalVarFloat "ui_color_a" ( 0.9 );
 				}
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 3  )
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 3 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 1 );
+					setLocalVarFloat "ui_color_g" ( 0.575 );
+					setLocalVarFloat "ui_color_b" ( 0.275 );
+					setLocalVarFloat "ui_color_a" ( 0.88 );
 				}
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 2  )
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 2 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 0.85 );
+					setLocalVarFloat "ui_color_g" ( 0.85 );
+					setLocalVarFloat "ui_color_b" ( 0.35 );
+					setLocalVarFloat "ui_color_a" ( 0.85 );
 				}
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) <= 1  )
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) <= 1 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 0.6 );
+					setLocalVarFloat "ui_color_g" ( 1 );
+					setLocalVarFloat "ui_color_b" ( 0.6 );
+					setLocalVarFloat "ui_color_a" ( 0.725 );
 				}
 			}
 			leaveFocus
 			{
-				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
-				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
-				setLocalVarBool ui_menuAButton 1;
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
 			}
-			action
-			{
-				"play" "mouse_click";
-				if ( iscoop( ) && !gamehost( ) && !dvarbool(static)( 7 )  )
-				{
-					"open" "only_host_can_choose";
-				}
-				else
-				{
-					"setdvar" "credits" 0;
-					"setdvar" "credits_active" 0;
-					"setdvar" "specialops" 1;
-					"setdvar" "ui_load_so_level" "so_sabotage_cliffhanger";
-					"setdvar" "coop_mapName" "so_sabotage_cliffhanger";
-					"setdvar" "ui_last_opened_group" 4;
-					"setdvar" "ui_last_played_level" "so_sabotage_cliffhanger";
-					if ( iscoop( )  )
-					{
-						"close" "self";
-						"close" "levels_challenge";
-					}
-					else
-					{
-						if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_sabotage_cliffhanger" , 14 ) ) == 0  )
-						{
-							"exec" "devmap so_sabotage_cliffhanger";
-						}
-						else
-						{
-							if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_sabotage_cliffhanger" , 11 ) ) == 2  )
-							{
-								"open" "popmenu_multi_only";
-							}
-							else
-							{
-								"open" "popmenu_specialops_difficulty";
-							}
-							if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_sabotage_cliffhanger" , 11 ) ) == 2  )						}
-						if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_sabotage_cliffhanger" , 14 ) ) == 0  )					}
-					if ( iscoop( )  )				}
-				if ( iscoop( ) && !gamehost( ) && !dvarbool(static)( 7 )  )			}
-			exp text ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 14 , 2 )  )
-			visible when ( ( dvarbool(static)( 5 ) || 1 ) && !( !iscoop( ) && int tablelookup( "sp/specOpsTable.csv" , 1 , "so_sabotage_cliffhanger" , 11 ) ) == 2 )  )
 		}
 		itemDef
 		{
 			rect 2 71 336 20 1 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp material ( "difficulty_star_empty"  )
-			visible when ( 1  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 14  )
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect w ( 14 )
+			exp rect h ( 14 )
+			visible when ( 1 )
+			exp material ( "difficulty_star_empty" )
 		}
 		itemDef
 		{
 			rect 2 71 336 20 1 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp material ( "difficulty_star"  )
-			visible when ( 1 && ( int getcharbyindex( coopplayer( localvarint( "ui_player1_num" ) , "missionSOHighestDifficulty" ) , 14 ) ) >= 2 )  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( ( int min max ( milliseconds( ) - localvarint( "ui_star_animate_mark" ) ) / 25 * ( 1 + 4 ) , 0 ) , 1 ) ) && 1 )  )
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect w ( 14 )
+			exp rect h ( 14 )
+			exp forecolor a ( ( int( min( max( ( milliseconds( ) - localvarint( "ui_star_animate_mark" ) ) / 25 * ( 1 + 4 ) , 0 ) , 1 ) ) && 1 ) )
+			visible when ( 1 && ( int( getcharbyindex( coopplayer( localvarint( "ui_player1_num" ) , "missionSOHighestDifficulty" ) , 14 ) ) >= 2 ) )
+			exp material ( "difficulty_star" )
 		}
 		itemDef
 		{
 			rect 15 71 336 20 1 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp material ( "difficulty_star_empty"  )
-			visible when ( 1  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 14  )
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect w ( 14 )
+			exp rect h ( 14 )
+			visible when ( 1 )
+			exp material ( "difficulty_star_empty" )
 		}
 		itemDef
 		{
 			rect 15 71 336 20 1 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp material ( "difficulty_star"  )
-			visible when ( 1 && ( int getcharbyindex( coopplayer( localvarint( "ui_player1_num" ) , "missionSOHighestDifficulty" ) , 14 ) ) >= 3 )  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( ( int min max ( milliseconds( ) - localvarint( "ui_star_animate_mark" ) ) / 25 * ( 1 + 8 ) , 0 ) , 1 ) ) && 1 )  )
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect w ( 14 )
+			exp rect h ( 14 )
+			exp forecolor a ( ( int( min( max( ( milliseconds( ) - localvarint( "ui_star_animate_mark" ) ) / 25 * ( 1 + 8 ) , 0 ) , 1 ) ) && 1 ) )
+			visible when ( 1 && ( int( getcharbyindex( coopplayer( localvarint( "ui_player1_num" ) , "missionSOHighestDifficulty" ) , 14 ) ) >= 3 ) )
+			exp material ( "difficulty_star" )
 		}
 		itemDef
 		{
 			rect 28 71 336 20 1 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp material ( "difficulty_star_empty"  )
-			visible when ( 1  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 14  )
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect w ( 14 )
+			exp rect h ( 14 )
+			visible when ( 1 )
+			exp material ( "difficulty_star_empty" )
 		}
 		itemDef
 		{
 			rect 28 71 336 20 1 1
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			exp material ( "difficulty_star"  )
-			visible when ( 1 && ( int getcharbyindex( coopplayer( localvarint( "ui_player1_num" ) , "missionSOHighestDifficulty" ) , 14 ) ) >= 4 )  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( ( int min max ( milliseconds( ) - localvarint( "ui_star_animate_mark" ) ) / 25 * ( 1 + 12 ) , 0 ) , 1 ) ) && 1 )  )
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect w ( 14 )
+			exp rect h ( 14 )
+			exp forecolor a ( ( int( min( max( ( milliseconds( ) - localvarint( "ui_star_animate_mark" ) ) / 25 * ( 1 + 12 ) , 0 ) , 1 ) ) && 1 ) )
+			visible when ( 1 && ( int( getcharbyindex( coopplayer( localvarint( "ui_player1_num" ) , "missionSOHighestDifficulty" ) , 14 ) ) >= 4 ) )
+			exp material ( "difficulty_star" )
 		}
 		itemDef
 		{
-			name so_escape_airport_gray
+			name "so_escape_airport_gray"
 			rect -64 88 336 20 1 1
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.6 0.6 0.6 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_button_selection_bar
-			group mw2_button
-			type 1
-			align 0
-			textAlign 6
-			textAlignX -60
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
 			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 0.6 0.6 0.6 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			visible when ( ( dvarbool( "mis_cheat" ) || 1 ) && ( !iscoop( ) && int( tablelookup( "sp/specOpsTable.csv" , 1 , "so_escape_airport" , 11 ) ) == 2 ) )
+			exp text ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 6 , 2 ) )
+			action
+			{
+				play "mouse_click";
+				if ( iscoop( ) && !gamehost( ) && !dvarbool( "splitscreen" ) )
+				{
+					open "only_host_can_choose";
+				}
+				else
+				{
+					setdvar "credits" 0;
+					setdvar "credits_active" 0;
+					setdvar "specialops" 1;
+					setdvar "ui_load_so_level" "so_escape_airport";
+					setdvar "coop_mapName" "so_escape_airport";
+					setdvar "ui_last_opened_group" 4;
+					setdvar "ui_last_played_level" "so_escape_airport";
+					if ( iscoop( ) )
+					{
+						close self;
+						close "levels_challenge";
+					}
+					else
+					{
+						if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , "so_escape_airport" , 14 ) ) == 0 )
+						{
+							exec "devmap so_escape_airport";
+						}
+						else
+						{
+							if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , "so_escape_airport" , 11 ) ) == 2 )
+							{
+								open "popmenu_multi_only";
+							}
+							else
+							{
+								open "popmenu_specialops_difficulty";
+							}
+						}
+					}
+				}
+			}
 			onFocus
 			{
-				"play" "mouse_over";
-				if ( dvarstring(static)( 2 ) != "mp"  )
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
 				{
-					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+					setItemColor "mw2_button" backcolor 0 0 0 0;
 				}
-				"setItemColor" "self" "backcolor" 0 0 0 1;
-				setLocalVarBool ui_menuAButton 1;
-				setLocalVarFloat ui_popupYPos 0.000000;
-				setLocalVarString ui_so_level_offset 6  );
-				setLocalVarString ui_so_level_reference tablelookup( "sp/specOpsTable.csv" , 0 , 6 , 1  );
-				setLocalVarString ui_so_level_levelshot tablelookup( "sp/specOpsTable.csv" , 0 , 6 , 4  );
-				setLocalVarString ui_so_level_desc ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 6 , 3 )  );
-				setLocalVarString ui_choicegroup "CHOICE_GROUP"  );
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) >= 4  )
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+				setLocalVarString "ui_so_level_offset" ( 6 );
+				setLocalVarString "ui_so_level_reference" ( tablelookup( "sp/specOpsTable.csv" , 0 , 6 , 1 ) );
+				;;
+				setLocalVarString "ui_so_level_levelshot" ( tablelookup( "sp/specOpsTable.csv" , 0 , 6 , 4 ) );
+				;;
+				setLocalVarString "ui_so_level_desc" ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 6 , 3 ) );
+				;;
+				setLocalVarString "ui_choicegroup" ( "CHOICE_GROUP" );
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) >= 4 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 1 );
+					setLocalVarFloat "ui_color_g" ( 0.4 );
+					setLocalVarFloat "ui_color_b" ( 0.4 );
+					setLocalVarFloat "ui_color_a" ( 0.9 );
 				}
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 3  )
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 3 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 1 );
+					setLocalVarFloat "ui_color_g" ( 0.575 );
+					setLocalVarFloat "ui_color_b" ( 0.275 );
+					setLocalVarFloat "ui_color_a" ( 0.88 );
 				}
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 2  )
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 2 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 0.85 );
+					setLocalVarFloat "ui_color_g" ( 0.85 );
+					setLocalVarFloat "ui_color_b" ( 0.35 );
+					setLocalVarFloat "ui_color_a" ( 0.85 );
 				}
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) <= 1  )
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) <= 1 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 0.6 );
+					setLocalVarFloat "ui_color_g" ( 1 );
+					setLocalVarFloat "ui_color_b" ( 0.6 );
+					setLocalVarFloat "ui_color_a" ( 0.725 );
 				}
 			}
 			leaveFocus
 			{
-				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
-				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
-				setLocalVarBool ui_menuAButton 1;
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
 			}
-			action
-			{
-				"play" "mouse_click";
-				if ( iscoop( ) && !gamehost( ) && !dvarbool(static)( 7 )  )
-				{
-					"open" "only_host_can_choose";
-				}
-				else
-				{
-					"setdvar" "credits" 0;
-					"setdvar" "credits_active" 0;
-					"setdvar" "specialops" 1;
-					"setdvar" "ui_load_so_level" "so_escape_airport";
-					"setdvar" "coop_mapName" "so_escape_airport";
-					"setdvar" "ui_last_opened_group" 4;
-					"setdvar" "ui_last_played_level" "so_escape_airport";
-					if ( iscoop( )  )
-					{
-						"close" "self";
-						"close" "levels_challenge";
-					}
-					else
-					{
-						if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_escape_airport" , 14 ) ) == 0  )
-						{
-							"exec" "devmap so_escape_airport";
-						}
-						else
-						{
-							if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_escape_airport" , 11 ) ) == 2  )
-							{
-								"open" "popmenu_multi_only";
-							}
-							else
-							{
-								"open" "popmenu_specialops_difficulty";
-							}
-							if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_escape_airport" , 11 ) ) == 2  )						}
-						if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_escape_airport" , 14 ) ) == 0  )					}
-					if ( iscoop( )  )				}
-				if ( iscoop( ) && !gamehost( ) && !dvarbool(static)( 7 )  )			}
-			exp text ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 6 , 2 )  )
-			visible when ( ( dvarbool(static)( 5 ) || 1 ) && ( !iscoop( ) && int tablelookup( "sp/specOpsTable.csv" , 1 , "so_escape_airport" , 11 ) ) == 2 )  )
 		}
 		itemDef
 		{
-			name so_escape_airport
+			name "so_escape_airport"
 			rect -64 88 336 20 1 1
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_button_selection_bar
-			group mw2_button
-			type 1
-			align 0
-			textAlign 6
-			textAlignX -60
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
 			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			visible when ( ( dvarbool( "mis_cheat" ) || 1 ) && !( !iscoop( ) && int( tablelookup( "sp/specOpsTable.csv" , 1 , "so_escape_airport" , 11 ) ) == 2 ) )
+			exp text ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 6 , 2 ) )
+			action
+			{
+				play "mouse_click";
+				if ( iscoop( ) && !gamehost( ) && !dvarbool( "splitscreen" ) )
+				{
+					open "only_host_can_choose";
+				}
+				else
+				{
+					setdvar "credits" 0;
+					setdvar "credits_active" 0;
+					setdvar "specialops" 1;
+					setdvar "ui_load_so_level" "so_escape_airport";
+					setdvar "coop_mapName" "so_escape_airport";
+					setdvar "ui_last_opened_group" 4;
+					setdvar "ui_last_played_level" "so_escape_airport";
+					if ( iscoop( ) )
+					{
+						close self;
+						close "levels_challenge";
+					}
+					else
+					{
+						if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , "so_escape_airport" , 14 ) ) == 0 )
+						{
+							exec "devmap so_escape_airport";
+						}
+						else
+						{
+							if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , "so_escape_airport" , 11 ) ) == 2 )
+							{
+								open "popmenu_multi_only";
+							}
+							else
+							{
+								open "popmenu_specialops_difficulty";
+							}
+						}
+					}
+				}
+			}
 			onFocus
 			{
-				"play" "mouse_over";
-				if ( dvarstring(static)( 2 ) != "mp"  )
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
 				{
-					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+					setItemColor "mw2_button" backcolor 0 0 0 0;
 				}
-				"setItemColor" "self" "backcolor" 0 0 0 1;
-				setLocalVarBool ui_menuAButton 1;
-				setLocalVarFloat ui_popupYPos 0.000000;
-				setLocalVarString ui_so_level_offset 6  );
-				setLocalVarString ui_so_level_reference tablelookup( "sp/specOpsTable.csv" , 0 , 6 , 1  );
-				setLocalVarString ui_so_level_levelshot tablelookup( "sp/specOpsTable.csv" , 0 , 6 , 4  );
-				setLocalVarString ui_so_level_desc ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 6 , 3 )  );
-				setLocalVarString ui_choicegroup "CHOICE_GROUP"  );
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) >= 4  )
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+				setLocalVarString "ui_so_level_offset" ( 6 );
+				setLocalVarString "ui_so_level_reference" ( tablelookup( "sp/specOpsTable.csv" , 0 , 6 , 1 ) );
+				;;
+				setLocalVarString "ui_so_level_levelshot" ( tablelookup( "sp/specOpsTable.csv" , 0 , 6 , 4 ) );
+				;;
+				setLocalVarString "ui_so_level_desc" ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 6 , 3 ) );
+				;;
+				setLocalVarString "ui_choicegroup" ( "CHOICE_GROUP" );
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) >= 4 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 1 );
+					setLocalVarFloat "ui_color_g" ( 0.4 );
+					setLocalVarFloat "ui_color_b" ( 0.4 );
+					setLocalVarFloat "ui_color_a" ( 0.9 );
 				}
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 3  )
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 3 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 1 );
+					setLocalVarFloat "ui_color_g" ( 0.575 );
+					setLocalVarFloat "ui_color_b" ( 0.275 );
+					setLocalVarFloat "ui_color_a" ( 0.88 );
 				}
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 2  )
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 2 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 0.85 );
+					setLocalVarFloat "ui_color_g" ( 0.85 );
+					setLocalVarFloat "ui_color_b" ( 0.35 );
+					setLocalVarFloat "ui_color_a" ( 0.85 );
 				}
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) <= 1  )
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) <= 1 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 0.6 );
+					setLocalVarFloat "ui_color_g" ( 1 );
+					setLocalVarFloat "ui_color_b" ( 0.6 );
+					setLocalVarFloat "ui_color_a" ( 0.725 );
 				}
 			}
 			leaveFocus
 			{
-				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
-				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
-				setLocalVarBool ui_menuAButton 1;
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
 			}
-			action
-			{
-				"play" "mouse_click";
-				if ( iscoop( ) && !gamehost( ) && !dvarbool(static)( 7 )  )
-				{
-					"open" "only_host_can_choose";
-				}
-				else
-				{
-					"setdvar" "credits" 0;
-					"setdvar" "credits_active" 0;
-					"setdvar" "specialops" 1;
-					"setdvar" "ui_load_so_level" "so_escape_airport";
-					"setdvar" "coop_mapName" "so_escape_airport";
-					"setdvar" "ui_last_opened_group" 4;
-					"setdvar" "ui_last_played_level" "so_escape_airport";
-					if ( iscoop( )  )
-					{
-						"close" "self";
-						"close" "levels_challenge";
-					}
-					else
-					{
-						if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_escape_airport" , 14 ) ) == 0  )
-						{
-							"exec" "devmap so_escape_airport";
-						}
-						else
-						{
-							if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_escape_airport" , 11 ) ) == 2  )
-							{
-								"open" "popmenu_multi_only";
-							}
-							else
-							{
-								"open" "popmenu_specialops_difficulty";
-							}
-							if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_escape_airport" , 11 ) ) == 2  )						}
-						if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_escape_airport" , 14 ) ) == 0  )					}
-					if ( iscoop( )  )				}
-				if ( iscoop( ) && !gamehost( ) && !dvarbool(static)( 7 )  )			}
-			exp text ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 6 , 2 )  )
-			visible when ( ( dvarbool(static)( 5 ) || 1 ) && !( !iscoop( ) && int tablelookup( "sp/specOpsTable.csv" , 1 , "so_escape_airport" , 11 ) ) == 2 )  )
 		}
 		itemDef
 		{
 			rect 2 91 336 20 1 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp material ( "difficulty_star_empty"  )
-			visible when ( 1  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 14  )
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect w ( 14 )
+			exp rect h ( 14 )
+			visible when ( 1 )
+			exp material ( "difficulty_star_empty" )
 		}
 		itemDef
 		{
 			rect 2 91 336 20 1 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp material ( "difficulty_star"  )
-			visible when ( 1 && ( int getcharbyindex( coopplayer( localvarint( "ui_player1_num" ) , "missionSOHighestDifficulty" ) , 6 ) ) >= 2 )  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( ( int min max ( milliseconds( ) - localvarint( "ui_star_animate_mark" ) ) / 25 * ( 1 + 4 ) , 0 ) , 1 ) ) && 1 )  )
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect w ( 14 )
+			exp rect h ( 14 )
+			exp forecolor a ( ( int( min( max( ( milliseconds( ) - localvarint( "ui_star_animate_mark" ) ) / 25 * ( 1 + 4 ) , 0 ) , 1 ) ) && 1 ) )
+			visible when ( 1 && ( int( getcharbyindex( coopplayer( localvarint( "ui_player1_num" ) , "missionSOHighestDifficulty" ) , 6 ) ) >= 2 ) )
+			exp material ( "difficulty_star" )
 		}
 		itemDef
 		{
 			rect 15 91 336 20 1 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp material ( "difficulty_star_empty"  )
-			visible when ( 1  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 14  )
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect w ( 14 )
+			exp rect h ( 14 )
+			visible when ( 1 )
+			exp material ( "difficulty_star_empty" )
 		}
 		itemDef
 		{
 			rect 15 91 336 20 1 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp material ( "difficulty_star"  )
-			visible when ( 1 && ( int getcharbyindex( coopplayer( localvarint( "ui_player1_num" ) , "missionSOHighestDifficulty" ) , 6 ) ) >= 3 )  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( ( int min max ( milliseconds( ) - localvarint( "ui_star_animate_mark" ) ) / 25 * ( 1 + 8 ) , 0 ) , 1 ) ) && 1 )  )
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect w ( 14 )
+			exp rect h ( 14 )
+			exp forecolor a ( ( int( min( max( ( milliseconds( ) - localvarint( "ui_star_animate_mark" ) ) / 25 * ( 1 + 8 ) , 0 ) , 1 ) ) && 1 ) )
+			visible when ( 1 && ( int( getcharbyindex( coopplayer( localvarint( "ui_player1_num" ) , "missionSOHighestDifficulty" ) , 6 ) ) >= 3 ) )
+			exp material ( "difficulty_star" )
 		}
 		itemDef
 		{
 			rect 28 91 336 20 1 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp material ( "difficulty_star_empty"  )
-			visible when ( 1  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 14  )
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect w ( 14 )
+			exp rect h ( 14 )
+			visible when ( 1 )
+			exp material ( "difficulty_star_empty" )
 		}
 		itemDef
 		{
 			rect 28 91 336 20 1 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp material ( "difficulty_star"  )
-			visible when ( 1 && ( int getcharbyindex( coopplayer( localvarint( "ui_player1_num" ) , "missionSOHighestDifficulty" ) , 6 ) ) >= 4 )  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( ( int min max ( milliseconds( ) - localvarint( "ui_star_animate_mark" ) ) / 25 * ( 1 + 12 ) , 0 ) , 1 ) ) && 1 )  )
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect w ( 14 )
+			exp rect h ( 14 )
+			exp forecolor a ( ( int( min( max( ( milliseconds( ) - localvarint( "ui_star_animate_mark" ) ) / 25 * ( 1 + 12 ) , 0 ) , 1 ) ) && 1 ) )
+			visible when ( 1 && ( int( getcharbyindex( coopplayer( localvarint( "ui_player1_num" ) , "missionSOHighestDifficulty" ) , 6 ) ) >= 4 ) )
+			exp material ( "difficulty_star" )
 		}
 		itemDef
 		{
-			name so_takeover_estate_gray
+			name "so_takeover_estate_gray"
 			rect -64 108 336 20 1 1
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.6 0.6 0.6 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_button_selection_bar
-			group mw2_button
-			type 1
-			align 0
-			textAlign 6
-			textAlignX -60
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
 			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 0.6 0.6 0.6 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			visible when ( ( dvarbool( "mis_cheat" ) || 1 ) && ( !iscoop( ) && int( tablelookup( "sp/specOpsTable.csv" , 1 , "so_takeover_estate" , 11 ) ) == 2 ) )
+			exp text ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 16 , 2 ) )
+			action
+			{
+				play "mouse_click";
+				if ( iscoop( ) && !gamehost( ) && !dvarbool( "splitscreen" ) )
+				{
+					open "only_host_can_choose";
+				}
+				else
+				{
+					setdvar "credits" 0;
+					setdvar "credits_active" 0;
+					setdvar "specialops" 1;
+					setdvar "ui_load_so_level" "so_takeover_estate";
+					setdvar "coop_mapName" "so_takeover_estate";
+					setdvar "ui_last_opened_group" 4;
+					setdvar "ui_last_played_level" "so_takeover_estate";
+					if ( iscoop( ) )
+					{
+						close self;
+						close "levels_challenge";
+					}
+					else
+					{
+						if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , "so_takeover_estate" , 14 ) ) == 0 )
+						{
+							exec "devmap so_takeover_estate";
+						}
+						else
+						{
+							if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , "so_takeover_estate" , 11 ) ) == 2 )
+							{
+								open "popmenu_multi_only";
+							}
+							else
+							{
+								open "popmenu_specialops_difficulty";
+							}
+						}
+					}
+				}
+			}
 			onFocus
 			{
-				"play" "mouse_over";
-				if ( dvarstring(static)( 2 ) != "mp"  )
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
 				{
-					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+					setItemColor "mw2_button" backcolor 0 0 0 0;
 				}
-				"setItemColor" "self" "backcolor" 0 0 0 1;
-				setLocalVarBool ui_menuAButton 1;
-				setLocalVarFloat ui_popupYPos 0.000000;
-				setLocalVarString ui_so_level_offset 16  );
-				setLocalVarString ui_so_level_reference tablelookup( "sp/specOpsTable.csv" , 0 , 16 , 1  );
-				setLocalVarString ui_so_level_levelshot tablelookup( "sp/specOpsTable.csv" , 0 , 16 , 4  );
-				setLocalVarString ui_so_level_desc ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 16 , 3 )  );
-				setLocalVarString ui_choicegroup "CHOICE_GROUP"  );
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) >= 4  )
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+				setLocalVarString "ui_so_level_offset" ( 16 );
+				setLocalVarString "ui_so_level_reference" ( tablelookup( "sp/specOpsTable.csv" , 0 , 16 , 1 ) );
+				;;
+				setLocalVarString "ui_so_level_levelshot" ( tablelookup( "sp/specOpsTable.csv" , 0 , 16 , 4 ) );
+				;;
+				setLocalVarString "ui_so_level_desc" ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 16 , 3 ) );
+				;;
+				setLocalVarString "ui_choicegroup" ( "CHOICE_GROUP" );
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) >= 4 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 1 );
+					setLocalVarFloat "ui_color_g" ( 0.4 );
+					setLocalVarFloat "ui_color_b" ( 0.4 );
+					setLocalVarFloat "ui_color_a" ( 0.9 );
 				}
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 3  )
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 3 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 1 );
+					setLocalVarFloat "ui_color_g" ( 0.575 );
+					setLocalVarFloat "ui_color_b" ( 0.275 );
+					setLocalVarFloat "ui_color_a" ( 0.88 );
 				}
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 2  )
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 2 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 0.85 );
+					setLocalVarFloat "ui_color_g" ( 0.85 );
+					setLocalVarFloat "ui_color_b" ( 0.35 );
+					setLocalVarFloat "ui_color_a" ( 0.85 );
 				}
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) <= 1  )
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) <= 1 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 0.6 );
+					setLocalVarFloat "ui_color_g" ( 1 );
+					setLocalVarFloat "ui_color_b" ( 0.6 );
+					setLocalVarFloat "ui_color_a" ( 0.725 );
 				}
 			}
 			leaveFocus
 			{
-				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
-				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
-				setLocalVarBool ui_menuAButton 1;
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
 			}
-			action
-			{
-				"play" "mouse_click";
-				if ( iscoop( ) && !gamehost( ) && !dvarbool(static)( 7 )  )
-				{
-					"open" "only_host_can_choose";
-				}
-				else
-				{
-					"setdvar" "credits" 0;
-					"setdvar" "credits_active" 0;
-					"setdvar" "specialops" 1;
-					"setdvar" "ui_load_so_level" "so_takeover_estate";
-					"setdvar" "coop_mapName" "so_takeover_estate";
-					"setdvar" "ui_last_opened_group" 4;
-					"setdvar" "ui_last_played_level" "so_takeover_estate";
-					if ( iscoop( )  )
-					{
-						"close" "self";
-						"close" "levels_challenge";
-					}
-					else
-					{
-						if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_takeover_estate" , 14 ) ) == 0  )
-						{
-							"exec" "devmap so_takeover_estate";
-						}
-						else
-						{
-							if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_takeover_estate" , 11 ) ) == 2  )
-							{
-								"open" "popmenu_multi_only";
-							}
-							else
-							{
-								"open" "popmenu_specialops_difficulty";
-							}
-							if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_takeover_estate" , 11 ) ) == 2  )						}
-						if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_takeover_estate" , 14 ) ) == 0  )					}
-					if ( iscoop( )  )				}
-				if ( iscoop( ) && !gamehost( ) && !dvarbool(static)( 7 )  )			}
-			exp text ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 16 , 2 )  )
-			visible when ( ( dvarbool(static)( 5 ) || 1 ) && ( !iscoop( ) && int tablelookup( "sp/specOpsTable.csv" , 1 , "so_takeover_estate" , 11 ) ) == 2 )  )
 		}
 		itemDef
 		{
-			name so_takeover_estate
+			name "so_takeover_estate"
 			rect -64 108 336 20 1 1
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_button_selection_bar
-			group mw2_button
-			type 1
-			align 0
-			textAlign 6
-			textAlignX -60
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
 			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			visible when ( ( dvarbool( "mis_cheat" ) || 1 ) && !( !iscoop( ) && int( tablelookup( "sp/specOpsTable.csv" , 1 , "so_takeover_estate" , 11 ) ) == 2 ) )
+			exp text ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 16 , 2 ) )
+			action
+			{
+				play "mouse_click";
+				if ( iscoop( ) && !gamehost( ) && !dvarbool( "splitscreen" ) )
+				{
+					open "only_host_can_choose";
+				}
+				else
+				{
+					setdvar "credits" 0;
+					setdvar "credits_active" 0;
+					setdvar "specialops" 1;
+					setdvar "ui_load_so_level" "so_takeover_estate";
+					setdvar "coop_mapName" "so_takeover_estate";
+					setdvar "ui_last_opened_group" 4;
+					setdvar "ui_last_played_level" "so_takeover_estate";
+					if ( iscoop( ) )
+					{
+						close self;
+						close "levels_challenge";
+					}
+					else
+					{
+						if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , "so_takeover_estate" , 14 ) ) == 0 )
+						{
+							exec "devmap so_takeover_estate";
+						}
+						else
+						{
+							if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , "so_takeover_estate" , 11 ) ) == 2 )
+							{
+								open "popmenu_multi_only";
+							}
+							else
+							{
+								open "popmenu_specialops_difficulty";
+							}
+						}
+					}
+				}
+			}
 			onFocus
 			{
-				"play" "mouse_over";
-				if ( dvarstring(static)( 2 ) != "mp"  )
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
 				{
-					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+					setItemColor "mw2_button" backcolor 0 0 0 0;
 				}
-				"setItemColor" "self" "backcolor" 0 0 0 1;
-				setLocalVarBool ui_menuAButton 1;
-				setLocalVarFloat ui_popupYPos 0.000000;
-				setLocalVarString ui_so_level_offset 16  );
-				setLocalVarString ui_so_level_reference tablelookup( "sp/specOpsTable.csv" , 0 , 16 , 1  );
-				setLocalVarString ui_so_level_levelshot tablelookup( "sp/specOpsTable.csv" , 0 , 16 , 4  );
-				setLocalVarString ui_so_level_desc ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 16 , 3 )  );
-				setLocalVarString ui_choicegroup "CHOICE_GROUP"  );
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) >= 4  )
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+				setLocalVarString "ui_so_level_offset" ( 16 );
+				setLocalVarString "ui_so_level_reference" ( tablelookup( "sp/specOpsTable.csv" , 0 , 16 , 1 ) );
+				;;
+				setLocalVarString "ui_so_level_levelshot" ( tablelookup( "sp/specOpsTable.csv" , 0 , 16 , 4 ) );
+				;;
+				setLocalVarString "ui_so_level_desc" ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 16 , 3 ) );
+				;;
+				setLocalVarString "ui_choicegroup" ( "CHOICE_GROUP" );
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) >= 4 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 1 );
+					setLocalVarFloat "ui_color_g" ( 0.4 );
+					setLocalVarFloat "ui_color_b" ( 0.4 );
+					setLocalVarFloat "ui_color_a" ( 0.9 );
 				}
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 3  )
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 3 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 1 );
+					setLocalVarFloat "ui_color_g" ( 0.575 );
+					setLocalVarFloat "ui_color_b" ( 0.275 );
+					setLocalVarFloat "ui_color_a" ( 0.88 );
 				}
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 2  )
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) == 2 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 0.85 );
+					setLocalVarFloat "ui_color_g" ( 0.85 );
+					setLocalVarFloat "ui_color_b" ( 0.35 );
+					setLocalVarFloat "ui_color_a" ( 0.85 );
 				}
-				if ( int tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) <= 1  )
+				if ( int( tablelookup( "sp/specOpsTable.csv" , 1 , localvarstring( "ui_so_level_reference" ) , 6 ) ) <= 1 )
 				{
-					setLocalVarFloat ui_color_r 0.000000;
-					setLocalVarFloat ui_color_g 0.000000;
-					setLocalVarFloat ui_color_b 0.000000;
-					setLocalVarFloat ui_color_a 0.000000;
+					setLocalVarFloat "ui_color_r" ( 0.6 );
+					setLocalVarFloat "ui_color_g" ( 1 );
+					setLocalVarFloat "ui_color_b" ( 0.6 );
+					setLocalVarFloat "ui_color_a" ( 0.725 );
 				}
 			}
 			leaveFocus
 			{
-				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
-				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
-				setLocalVarBool ui_menuAButton 1;
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
 			}
-			action
-			{
-				"play" "mouse_click";
-				if ( iscoop( ) && !gamehost( ) && !dvarbool(static)( 7 )  )
-				{
-					"open" "only_host_can_choose";
-				}
-				else
-				{
-					"setdvar" "credits" 0;
-					"setdvar" "credits_active" 0;
-					"setdvar" "specialops" 1;
-					"setdvar" "ui_load_so_level" "so_takeover_estate";
-					"setdvar" "coop_mapName" "so_takeover_estate";
-					"setdvar" "ui_last_opened_group" 4;
-					"setdvar" "ui_last_played_level" "so_takeover_estate";
-					if ( iscoop( )  )
-					{
-						"close" "self";
-						"close" "levels_challenge";
-					}
-					else
-					{
-						if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_takeover_estate" , 14 ) ) == 0  )
-						{
-							"exec" "devmap so_takeover_estate";
-						}
-						else
-						{
-							if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_takeover_estate" , 11 ) ) == 2  )
-							{
-								"open" "popmenu_multi_only";
-							}
-							else
-							{
-								"open" "popmenu_specialops_difficulty";
-							}
-							if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_takeover_estate" , 11 ) ) == 2  )						}
-						if ( int tablelookup( "sp/specOpsTable.csv" , 1 , "so_takeover_estate" , 14 ) ) == 0  )					}
-					if ( iscoop( )  )				}
-				if ( iscoop( ) && !gamehost( ) && !dvarbool(static)( 7 )  )			}
-			exp text ( "@" + tablelookup( "sp/specOpsTable.csv" , 0 , 16 , 2 )  )
-			visible when ( ( dvarbool(static)( 5 ) || 1 ) && !( !iscoop( ) && int tablelookup( "sp/specOpsTable.csv" , 1 , "so_takeover_estate" , 11 ) ) == 2 )  )
 		}
 		itemDef
 		{
 			rect 2 111 336 20 1 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp material ( "difficulty_star_empty"  )
-			visible when ( 1  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 14  )
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect w ( 14 )
+			exp rect h ( 14 )
+			visible when ( 1 )
+			exp material ( "difficulty_star_empty" )
 		}
 		itemDef
 		{
 			rect 2 111 336 20 1 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp material ( "difficulty_star"  )
-			visible when ( 1 && ( int getcharbyindex( coopplayer( localvarint( "ui_player1_num" ) , "missionSOHighestDifficulty" ) , 16 ) ) >= 2 )  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( ( int min max ( milliseconds( ) - localvarint( "ui_star_animate_mark" ) ) / 25 * ( 1 + 4 ) , 0 ) , 1 ) ) && 1 )  )
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect w ( 14 )
+			exp rect h ( 14 )
+			exp forecolor a ( ( int( min( max( ( milliseconds( ) - localvarint( "ui_star_animate_mark" ) ) / 25 * ( 1 + 4 ) , 0 ) , 1 ) ) && 1 ) )
+			visible when ( 1 && ( int( getcharbyindex( coopplayer( localvarint( "ui_player1_num" ) , "missionSOHighestDifficulty" ) , 16 ) ) >= 2 ) )
+			exp material ( "difficulty_star" )
 		}
 		itemDef
 		{
 			rect 15 111 336 20 1 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp material ( "difficulty_star_empty"  )
-			visible when ( 1  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 14  )
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect w ( 14 )
+			exp rect h ( 14 )
+			visible when ( 1 )
+			exp material ( "difficulty_star_empty" )
 		}
 		itemDef
 		{
 			rect 15 111 336 20 1 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp material ( "difficulty_star"  )
-			visible when ( 1 && ( int getcharbyindex( coopplayer( localvarint( "ui_player1_num" ) , "missionSOHighestDifficulty" ) , 16 ) ) >= 3 )  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( ( int min max ( milliseconds( ) - localvarint( "ui_star_animate_mark" ) ) / 25 * ( 1 + 8 ) , 0 ) , 1 ) ) && 1 )  )
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect w ( 14 )
+			exp rect h ( 14 )
+			exp forecolor a ( ( int( min( max( ( milliseconds( ) - localvarint( "ui_star_animate_mark" ) ) / 25 * ( 1 + 8 ) , 0 ) , 1 ) ) && 1 ) )
+			visible when ( 1 && ( int( getcharbyindex( coopplayer( localvarint( "ui_player1_num" ) , "missionSOHighestDifficulty" ) , 16 ) ) >= 3 ) )
+			exp material ( "difficulty_star" )
 		}
 		itemDef
 		{
 			rect 28 111 336 20 1 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp material ( "difficulty_star_empty"  )
-			visible when ( 1  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 14  )
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect w ( 14 )
+			exp rect h ( 14 )
+			visible when ( 1 )
+			exp material ( "difficulty_star_empty" )
 		}
 		itemDef
 		{
 			rect 28 111 336 20 1 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp material ( "difficulty_star"  )
-			visible when ( 1 && ( int getcharbyindex( coopplayer( localvarint( "ui_player1_num" ) , "missionSOHighestDifficulty" ) , 16 ) ) >= 4 )  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( 14  )
-			exp (null) (null) ( ( int min max ( milliseconds( ) - localvarint( "ui_star_animate_mark" ) ) / 25 * ( 1 + 12 ) , 0 ) , 1 ) ) && 1 )  )
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect w ( 14 )
+			exp rect h ( 14 )
+			exp forecolor a ( ( int( min( max( ( milliseconds( ) - localvarint( "ui_star_animate_mark" ) ) / 25 * ( 1 + 12 ) , 0 ) , 1 ) ) && 1 ) )
+			visible when ( 1 && ( int( getcharbyindex( coopplayer( localvarint( "ui_player1_num" ) , "missionSOHighestDifficulty" ) , 16 ) ) >= 4 ) )
+			exp material ( "difficulty_star" )
 		}
 		itemDef
 		{
 			rect -64 -20 336 20 1 3
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_button_selection_bar
-			group mw2_button
-			type 1
-			align 0
-			textAlign 6
-			textAlignX -60
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
-			text "@PLATFORM_BACK_CAPS"
 			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@PLATFORM_BACK_CAPS"
+			visible when ( 1 )
+			action
+			{
+				play "mouse_click";
+				play "mouse_click";
+				setdvar "ui_last_played_level" "";
+				close self;
+			}
 			onFocus
 			{
-				"play" "mouse_over";
-				if ( dvarstring(static)( 2 ) != "mp"  )
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
 				{
-					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+					setItemColor "mw2_button" backcolor 0 0 0 0;
 				}
-				"setItemColor" "self" "backcolor" 0 0 0 1;
-				setLocalVarBool ui_menuAButton 1;
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
 			}
 			leaveFocus
 			{
-				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
-				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
-				setLocalVarBool ui_menuAButton 1;
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
 			}
-			action
-			{
-				"play" "mouse_click";
-				"play" "mouse_click";
-				"setdvar" "ui_last_played_level" "";
-				"close" "self";
-			}
-			visible when ( 1  )
 		}
 	}
 }

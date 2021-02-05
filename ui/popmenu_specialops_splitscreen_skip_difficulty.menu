@@ -1,81 +1,70 @@
 {
 	menuDef
 	{
-		name popmenu_specialops_splitscreen_skip_difficulty
-		fullscreen 0
-		rect 0 0 0 0
-		style 0
-		border 0
-		ownerdraw 0
-		ownerdrawFlag 0
-		borderSize 0
-		foreColor 1 1 1 1
-		backColor 0 0 0 0
-		borderColor 0 0 0 0
-		outlineColor 0 0 0 0
+		name "popmenu_specialops_splitscreen_skip_difficulty"
+		rect 0 0 0 0 0 0
+		forecolor 1 1 1 1
 		fadeCycle 1
 		fadeClamp 1
 		fadeAmount 0.1
-		fadeInAmount 0
-		blurWorld 0
 		onOpen
 		{
-			if ( dvarint(static)( 41 ) >= dvarint(static)( 42 )  )
+			if ( dvarstring( "g_gameskill_player_1" ) >= dvarstring( "g_gameskill_player_2" ) )
 			{
-				if ( dvarint(static)( 41 ) == 1  )
+				if ( dvarstring( "g_gameskill_player_1" ) == 1 )
 				{
-					"setdvar" "g_gameskill" 1;
+					setdvar "g_gameskill" 1;
 				}
-				if ( dvarint(static)( 41 ) == 2  )
+				if ( dvarstring( "g_gameskill_player_1" ) == 2 )
 				{
-					"setdvar" "g_gameskill" 2;
+					setdvar "g_gameskill" 2;
 				}
-				if ( dvarint(static)( 41 ) == 3  )
+				if ( dvarstring( "g_gameskill_player_1" ) == 3 )
 				{
-					"setdvar" "g_gameskill" 3;
+					setdvar "g_gameskill" 3;
 				}
 			}
 			else
 			{
-				if ( dvarint(static)( 42 ) == 1  )
+				if ( dvarstring( "g_gameskill_player_2" ) == 1 )
 				{
-					"setdvar" "g_gameskill" 1;
+					setdvar "g_gameskill" 1;
 				}
-				if ( dvarint(static)( 42 ) == 2  )
+				if ( dvarstring( "g_gameskill_player_2" ) == 2 )
 				{
-					"setdvar" "g_gameskill" 2;
+					setdvar "g_gameskill" 2;
 				}
-				if ( dvarint(static)( 42 ) == 3  )
+				if ( dvarstring( "g_gameskill_player_2" ) == 3 )
 				{
-					"setdvar" "g_gameskill" 3;
+					setdvar "g_gameskill" 3;
 				}
 			}
-			if ( dvarint(static)( 41 ) >= dvarint(static)( 42 )  )			"close" "self";
-			"execondvarstringvalue" "ui_load_so_level" "so_demo_so_bridge" "devmap so_demo_so_bridge";
-			"execondvarstringvalue" "ui_load_so_level" "so_crossing_so_bridge" "devmap so_crossing_so_bridge";
-			"execondvarstringvalue" "ui_load_so_level" "so_timed_so_quicky" "devmap so_timed_so_quicky";
-			"execondvarstringvalue" "ui_load_so_level" "so_killspree_invasion" "devmap so_killspree_invasion";
-			"execondvarstringvalue" "ui_load_so_level" "so_assault_oilrig" "devmap so_assault_oilrig";
-			"execondvarstringvalue" "ui_load_so_level" "so_ac130_co_hunted" "devmap so_ac130_co_hunted";
-			"execondvarstringvalue" "ui_load_so_level" "so_killspree_favela" "devmap so_killspree_favela";
-			"execondvarstringvalue" "ui_load_so_level" "so_showers_gulag" "devmap so_showers_gulag";
-			"execondvarstringvalue" "ui_load_so_level" "so_defense_invasion" "devmap so_defense_invasion";
-			"execondvarstringvalue" "ui_load_so_level" "so_escape_airport" "devmap so_escape_airport";
-			"execondvarstringvalue" "ui_load_so_level" "so_forest_contingency" "devmap so_forest_contingency";
-			"execondvarstringvalue" "ui_load_so_level" "so_hidden_so_ghillies" "devmap so_hidden_so_ghillies";
-			"execondvarstringvalue" "ui_load_so_level" "so_killspree_trainer" "devmap so_killspree_trainer";
-			"execondvarstringvalue" "ui_load_so_level" "so_sabotage_cliffhanger" "devmap so_sabotage_cliffhanger";
-			"execondvarstringvalue" "ui_load_so_level" "so_snowrace1_cliffhanger" "devmap so_snowrace1_cliffhanger";
-			"execondvarstringvalue" "ui_load_so_level" "so_snowrace2_cliffhanger" "devmap so_snowrace2_cliffhanger";
-			"execondvarstringvalue" "ui_load_so_level" "so_defuse_favela_escape" "devmap so_defuse_favela_escape";
-			"execondvarstringvalue" "ui_load_so_level" "so_takeover_estate" "devmap so_takeover_estate";
-			"execondvarstringvalue" "ui_load_so_level" "so_takeover_oilrig" "devmap so_takeover_oilrig";
-			"execondvarstringvalue" "ui_load_so_level" "so_intel_boneyard" "devmap so_intel_boneyard";
-			"execondvarstringvalue" "ui_load_so_level" "so_juggernauts_favela" "devmap so_juggernauts_favela";
-			"execondvarstringvalue" "ui_load_so_level" "so_download_arcadia" "devmap so_download_arcadia";
-			"execondvarstringvalue" "ui_load_so_level" "so_rooftop_contingency" "devmap so_rooftop_contingency";
-			"execondvarstringvalue" "ui_load_so_level" "so_chopper_invasion" "devmap so_chopper_invasion";
+			;
+			close self;
+			execOnDvarStringValue "ui_load_so_level" "so_demo_so_bridge" "devmap so_demo_so_bridge";
+			execOnDvarStringValue "ui_load_so_level" "so_crossing_so_bridge" "devmap so_crossing_so_bridge";
+			execOnDvarStringValue "ui_load_so_level" "so_timed_so_quicky" "devmap so_timed_so_quicky";
+			execOnDvarStringValue "ui_load_so_level" "so_killspree_invasion" "devmap so_killspree_invasion";
+			execOnDvarStringValue "ui_load_so_level" "so_assault_oilrig" "devmap so_assault_oilrig";
+			execOnDvarStringValue "ui_load_so_level" "so_ac130_co_hunted" "devmap so_ac130_co_hunted";
+			execOnDvarStringValue "ui_load_so_level" "so_killspree_favela" "devmap so_killspree_favela";
+			execOnDvarStringValue "ui_load_so_level" "so_showers_gulag" "devmap so_showers_gulag";
+			execOnDvarStringValue "ui_load_so_level" "so_defense_invasion" "devmap so_defense_invasion";
+			execOnDvarStringValue "ui_load_so_level" "so_escape_airport" "devmap so_escape_airport";
+			execOnDvarStringValue "ui_load_so_level" "so_forest_contingency" "devmap so_forest_contingency";
+			execOnDvarStringValue "ui_load_so_level" "so_hidden_so_ghillies" "devmap so_hidden_so_ghillies";
+			execOnDvarStringValue "ui_load_so_level" "so_killspree_trainer" "devmap so_killspree_trainer";
+			execOnDvarStringValue "ui_load_so_level" "so_sabotage_cliffhanger" "devmap so_sabotage_cliffhanger";
+			execOnDvarStringValue "ui_load_so_level" "so_snowrace1_cliffhanger" "devmap so_snowrace1_cliffhanger";
+			execOnDvarStringValue "ui_load_so_level" "so_snowrace2_cliffhanger" "devmap so_snowrace2_cliffhanger";
+			execOnDvarStringValue "ui_load_so_level" "so_defuse_favela_escape" "devmap so_defuse_favela_escape";
+			execOnDvarStringValue "ui_load_so_level" "so_takeover_estate" "devmap so_takeover_estate";
+			execOnDvarStringValue "ui_load_so_level" "so_takeover_oilrig" "devmap so_takeover_oilrig";
+			execOnDvarStringValue "ui_load_so_level" "so_intel_boneyard" "devmap so_intel_boneyard";
+			execOnDvarStringValue "ui_load_so_level" "so_juggernauts_favela" "devmap so_juggernauts_favela";
+			execOnDvarStringValue "ui_load_so_level" "so_download_arcadia" "devmap so_download_arcadia";
+			execOnDvarStringValue "ui_load_so_level" "so_rooftop_contingency" "devmap so_rooftop_contingency";
+			execOnDvarStringValue "ui_load_so_level" "so_chopper_invasion" "devmap so_chopper_invasion";
 		}
-		focusColor 0 0 0 0
 	}
 }

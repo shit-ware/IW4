@@ -1,1192 +1,717 @@
 {
 	menuDef
 	{
-		name popmenu_act1
-		fullscreen 1
-		rect 0 0 640 480
+		name "popmenu_act1"
+		rect 0 0 640 480 0 0
 		style 1
-		border 0
-		ownerdraw 0
-		ownerdrawFlag 0
-		borderSize 0
-		foreColor 1 1 1 1
-		backColor 0 0 0 0
-		borderColor 0 0 0 0
-		outlineColor 0 0 0 0
-		soundLoop music_mainmenu_mp
+		forecolor 1 1 1 1
+		focuscolor 1 1 1 1
+		fullscreen 1
 		fadeCycle 1
 		fadeClamp 1
 		fadeAmount 0.1
-		fadeInAmount 0
-		blurWorld 0
 		onOpen
 		{
-			"focusfirst";
-			setLocalVarInt ui_hide_act_button 1;
+			focusfirst;
+			setLocalVarInt "ui_hide_act_button" ( 1 );
 		}
 		onClose
 		{
-			setLocalVarInt ui_hide_act_button 1;
+			setLocalVarInt "ui_hide_act_button" ( 0 );
 		}
-		onESC
+		onEsc
 		{
-			"close" "self";
-		}
-		focusColor 1 1 1 1
-		itemDef
-		{
-			rect 0 0 640 480 4 4
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background mw2_main_background
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-		}
-		itemDef
-		{
-			rect 0 0 1708 480
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0.5
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background mw2_main_cloud_overlay
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			exp (null) (null) ( ( 0 - 107 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) )  )
-		}
-		itemDef
-		{
-			rect 0 0 -1708 -480
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0.5
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background mw2_main_cloud_overlay
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			exp (null) (null) ( ( - 107 + 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) )  )
+			close self;
 		}
 		itemDef
 		{
 			rect 0 0 640 480 4 4
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background mockup_bg_glow
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp (null) (null) ( ( ( sin milliseconds( ) / 1500 ) + 1 ) * 0.250000 ) + 0.250000  )
+			style 3
+			forecolor 1 1 1 1
+			background "mw2_main_background"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 0 1708 480 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.5
+			background "mw2_main_cloud_overlay"
+			textscale 0.55
+			exp rect x ( ( 0 - 107 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 -1708 -480 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.5
+			background "mw2_main_cloud_overlay"
+			textscale 0.55
+			exp rect x ( ( - 107 + 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) ) )
 		}
 		itemDef
 		{
 			rect 0 0 640 480 4 4
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background mockup_bg_glow
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp (null) (null) ( ( ( sin milliseconds( ) / 480 ) + 1 ) * 0.250000 ) + 0.250000  )
+			style 3
+			forecolor 1 1 1 0
+			background "mockup_bg_glow"
+			textscale 0.55
+			exp forecolor a ( ( ( sin( milliseconds( ) / 1500 ) + 1 ) * 0.25 ) + 0.25 )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0
+			background "mockup_bg_glow"
+			textscale 0.55
+			exp forecolor a ( ( ( sin( milliseconds( ) / 480 ) + 1 ) * 0.25 ) + 0.25 )
 		}
 		itemDef
 		{
 			rect 0 0 272 28 1 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 6
-			textAlignX -60
-			textAlignY 0
-			textScale 0.5
-			textStyle 0
-			textFont 9
-			feeder 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 6
+			textalignx -60
+			textscale 0.5
 			text "@MENU_MISSIONS_CAP"
-			visible 1
 		}
 		itemDef
 		{
 			rect 0 0 272 28 1 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 4
-			textAlignX 226
-			textAlignY 4.5
-			textScale 0.375
-			textStyle 0
-			textFont 9
-			feeder 0
-			text "@MENU_SP_ACT_I_CAPS"
+			decoration
 			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 4
+			textalignx 226
+			textaligny 4.5
+			textscale 0.375
+			text "@MENU_SP_ACT_I_CAPS"
 		}
 		itemDef
 		{
 			rect 222 0 272 28 1 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			autoWrapped 
-			type 0
-			align 0
-			textAlign 4
-			textAlignX 0
-			textAlignY 0
-			textScale 0.5
-			textStyle 0
-			textFont 9
-			feeder 0
+			decoration
+			autowrapped
 			visible 1
-			exp text ( ":"  )
-			visible when ( 0  )
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 4
+			textscale 0.5
+			visible when ( 0 )
+			exp text ( ":" )
 		}
 		itemDef
 		{
 			rect 0 28 640 356 4 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0.15
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background white
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
+			style 3
+			forecolor 1 1 1 0.15
+			background "white"
+			textscale 0.55
 		}
 		itemDef
 		{
 			rect -126 28 633.383 356 1 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0.2
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background mw2_main_sp_image
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( 1  )
+			style 3
+			forecolor 1 1 1 0.2
+			background "mw2_main_sp_image"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
 			rect -32 -4 32 32 4 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background drop_shadow_tl
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( 1  )
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_tl"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
 			rect 0 -4 640 32 4 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background drop_shadow_t
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( 1  )
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_t"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
 			rect 640 -4 32 32 4 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background drop_shadow_tr
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( 1  )
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_tr"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
 			rect 640 28 32 356 4 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background drop_shadow_r
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( 1  )
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_r"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
 			rect 640 384 32 32 4 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background drop_shadow_br
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( 1  )
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_br"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
 			rect 0 384 640 32 4 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background drop_shadow_b
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( 1  )
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_b"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
 			rect -32 384 32 32 4 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background drop_shadow_bl
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( 1  )
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_bl"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
 			rect -32 28 32 356 4 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background drop_shadow_l
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			visible when ( 1  )
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_l"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
 			rect -292 28 292 356 3 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.7 0.7 0.7 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background black
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
+			style 3
+			forecolor 0.7 0.7 0.7 1
+			background "black"
+			textscale 0.55
 		}
 		itemDef
 		{
-			name mapimage
+			name "mapimage"
 			rect -282 38 272 272 3 1
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
-			exp material ( localvarstring( "ui_level_levelshot" )  )
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp material ( localvarstring( "ui_level_levelshot" ) )
 		}
 		itemDef
 		{
-			name mapimage_gradient
+			name "mapimage_gradient"
 			rect -282 316 272 16 3 1
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 0.65
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			exp material ( "gradient"  )
-			visible when ( 0  )
+			forecolor 0 0 0 0.65
+			textscale 0.55
+			visible when ( 0 )
+			exp material ( "gradient" )
 		}
 		itemDef
 		{
-			name description
+			name "description"
 			rect -282 310 272 20 3 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0.75
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			autoWrapped 
-			type 0
-			align 0
-			textAlign 4
-			textAlignX 0
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
+			decoration
+			autowrapped
 			visible 1
-			exp text ( localvarstring( "ui_level_desc" )  )
+			forecolor 1 1 1 0.75
+			textfont 3
+			textalign 4
+			textscale 0.375
+			exp text ( localvarstring( "ui_level_desc" ) )
 		}
 		itemDef
 		{
-			name name
+			name "name"
 			rect -282 28 272 272 3 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0.75
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 12
-			textAlignX 2
-			textAlignY 32
-			textScale 0.375
-			textStyle 0
-			textFont 9
-			feeder 0
+			decoration
 			visible 1
-			exp text ( localvarstring( "ui_level_name" )  )
-			visible when ( 0  )
+			forecolor 1 1 1 0.75
+			textfont 9
+			textalign 12
+			textalignx 2
+			textaligny 32
+			textscale 0.375
+			visible when ( 0 )
+			exp text ( localvarstring( "ui_level_name" ) )
 		}
 		itemDef
 		{
 			rect -282 310 272 20 3 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 0.8 0.4 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			autoWrapped 
-			type 0
-			align 0
-			textAlign 4
-			textAlignX 0
-			textAlignY 52
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
+			decoration
+			autowrapped
 			visible 1
-			exp text ( locstring( "@MENU_DIFFICULTY_COMPLETED" ) + " " + locstring( "@MENU_RECRUIT" )  )
-			visible when ( ( int getcharbyindex( getprofiledata( "missionHighestDifficulty" ) , localvarint( "ui_highlighted_level_number" ) ) ) == 1 )  )
+			forecolor 1 0.8 0.4 1
+			textfont 3
+			textalign 4
+			textaligny 52
+			textscale 0.375
+			visible when ( ( int( getcharbyindex( getprofiledata( "missionHighestDifficulty" ) , localvarint( "ui_highlighted_level_number" ) ) ) == 1 ) )
+			exp text ( locstring( "@MENU_DIFFICULTY_COMPLETED" ) + " " + locstring( "@MENU_RECRUIT" ) )
 		}
 		itemDef
 		{
 			rect -282 310 272 20 3 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 0.8 0.4 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			autoWrapped 
-			type 0
-			align 0
-			textAlign 4
-			textAlignX 0
-			textAlignY 52
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
+			decoration
+			autowrapped
 			visible 1
-			exp text ( locstring( "@MENU_DIFFICULTY_COMPLETED" ) + " " + locstring( "@MENU_REGULAR" )  )
-			visible when ( ( int getcharbyindex( getprofiledata( "missionHighestDifficulty" ) , localvarint( "ui_highlighted_level_number" ) ) ) == 2 )  )
+			forecolor 1 0.8 0.4 1
+			textfont 3
+			textalign 4
+			textaligny 52
+			textscale 0.375
+			visible when ( ( int( getcharbyindex( getprofiledata( "missionHighestDifficulty" ) , localvarint( "ui_highlighted_level_number" ) ) ) == 2 ) )
+			exp text ( locstring( "@MENU_DIFFICULTY_COMPLETED" ) + " " + locstring( "@MENU_REGULAR" ) )
 		}
 		itemDef
 		{
 			rect -282 310 272 20 3 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 0.8 0.4 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			autoWrapped 
-			type 0
-			align 0
-			textAlign 4
-			textAlignX 0
-			textAlignY 52
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
+			decoration
+			autowrapped
 			visible 1
-			exp text ( locstring( "@MENU_DIFFICULTY_COMPLETED" ) + " " + locstring( "@MENU_HARDENED" )  )
-			visible when ( ( int getcharbyindex( getprofiledata( "missionHighestDifficulty" ) , localvarint( "ui_highlighted_level_number" ) ) ) == 3 )  )
+			forecolor 1 0.8 0.4 1
+			textfont 3
+			textalign 4
+			textaligny 52
+			textscale 0.375
+			visible when ( ( int( getcharbyindex( getprofiledata( "missionHighestDifficulty" ) , localvarint( "ui_highlighted_level_number" ) ) ) == 3 ) )
+			exp text ( locstring( "@MENU_DIFFICULTY_COMPLETED" ) + " " + locstring( "@MENU_HARDENED" ) )
 		}
 		itemDef
 		{
 			rect -282 310 272 20 3 1
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 0.8 0.4 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			autoWrapped 
-			type 0
-			align 0
-			textAlign 4
-			textAlignX 0
-			textAlignY 52
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
+			decoration
+			autowrapped
 			visible 1
-			exp text ( locstring( "@MENU_DIFFICULTY_COMPLETED" ) + " " + locstring( "@MENU_VETERAN" )  )
-			visible when ( ( int getcharbyindex( getprofiledata( "missionHighestDifficulty" ) , localvarint( "ui_highlighted_level_number" ) ) ) == 4 )  )
+			forecolor 1 0.8 0.4 1
+			textfont 3
+			textalign 4
+			textaligny 52
+			textscale 0.375
+			visible when ( ( int( getcharbyindex( getprofiledata( "missionHighestDifficulty" ) , localvarint( "ui_highlighted_level_number" ) ) ) == 4 ) )
+			exp text ( locstring( "@MENU_DIFFICULTY_COMPLETED" ) + " " + locstring( "@MENU_VETERAN" ) )
 		}
 		itemDef
 		{
-			name cheat_indicator
+			name "cheat_indicator"
 			rect -64 -44 336 24 1 3
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 0.8 0.4 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 0
-			align 0
-			textAlign 6
-			textAlignX -30
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 9
-			feeder 0
+			decoration
+			visible 1
+			forecolor 1 0.8 0.4 1
+			textfont 9
+			textalign 6
+			textalignx -30
+			textscale 0.375
 			text "@MENU_CHEAT_ENABLED"
-			visible 1
-			visible when ( dvarbool(static)( 5 )  )
+			visible when ( dvarbool( "mis_cheat" ) )
 		}
 		itemDef
 		{
-			name @MENU_SP_SP_TRAINER
+			name "@MENU_SP_SP_TRAINER"
 			rect -64 28 336 20 1 1
+			visible 1
+			group "mw2_button"
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_button_selection_bar
-			group mw2_button
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
 			type 1
-			align 0
-			textAlign 6
-			textAlignX -60
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
 			text "@MENU_SP_SP_TRAINER"
-			visible 1
-			onFocus
-			{
-				"play" "mouse_over";
-				if ( dvarstring(static)( 2 ) != "mp"  )
-				{
-					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
-				}
-				"setItemColor" "self" "backcolor" 0 0 0 1;
-				setLocalVarBool ui_menuAButton 1;
-				setLocalVarFloat ui_popupYPos 0.000000;
-				setLocalVarString ui_level_name "@MENU_SP_SP_TRAINER"  );
-				setLocalVarString ui_level_levelshot "levelshot_mw2_trainer"  );
-				setLocalVarString ui_level_desc "@MENU_SP_SP_TRAINER_DESC"  );
-				setLocalVarString ui_choicegroup "CHOICE_GROUP"  );
-				setLocalVarInt ui_highlighted_level_number 1;
-			}
-			leaveFocus
-			{
-				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
-				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
-				setLocalVarBool ui_menuAButton 1;
-			}
+			visible when ( ( ( ( 0 == 0 && getprofiledata( "highestMission" ) == 0 ) || ( getprofiledata( "highestMission" ) >= ( 0 ) || dvarbool( "mis_cheat" ) ) ) && 1 ) || dvarbool( "developer" ) )
 			action
 			{
-				"play" "mouse_click";
-				"setdvar" "credits" 0;
-				"setdvar" "credits_active" 0;
-				if ( "trainer" == "trainer"  )
+				play "mouse_click";
+				setdvar "credits" 0;
+				setdvar "credits_active" 0;
+				if ( "trainer" == "trainer" )
 				{
-					"exec" "devmap trainer";
+					exec "devmap trainer";
 				}
 				else
 				{
-					"setdvar" "ui_load_level" "trainer";
-					"open" "popmenu_difficulty";
+					setdvar "ui_load_level" "trainer";
+					open "popmenu_difficulty";
 				}
-				if ( "trainer" == "trainer"  )			}
-			visible when ( ( ( ( 0 == 0 && getprofiledata( "highestMission" ) ( ) == 0 ) || ( getprofiledata( "highestMission" ) ( ) >= ( 0 ) || dvarbool(static)( 5 ) ) ) && 1 ) || dvarbool(static)( 6 )  )
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+				setLocalVarString "ui_level_name" ( "@MENU_SP_SP_TRAINER" );
+				setLocalVarString "ui_level_levelshot" ( "levelshot_mw2_trainer" );
+				setLocalVarString "ui_level_desc" ( "@MENU_SP_SP_TRAINER_DESC" );
+				setLocalVarString "ui_choicegroup" ( "CHOICE_GROUP" );
+				setLocalVarInt "ui_highlighted_level_number" ( 0 );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
 		}
 		itemDef
 		{
-			name @MENU_SP_SP_ROADKILL
+			name "@MENU_SP_SP_ROADKILL"
 			rect -64 48 336 20 1 1
+			visible 1
+			group "mw2_button"
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_button_selection_bar
-			group mw2_button
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
 			type 1
-			align 0
-			textAlign 6
-			textAlignX -60
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
 			text "@MENU_SP_SP_ROADKILL"
-			visible 1
-			onFocus
-			{
-				"play" "mouse_over";
-				if ( dvarstring(static)( 2 ) != "mp"  )
-				{
-					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
-				}
-				"setItemColor" "self" "backcolor" 0 0 0 1;
-				setLocalVarBool ui_menuAButton 1;
-				setLocalVarFloat ui_popupYPos 0.000000;
-				setLocalVarString ui_level_name "@MENU_SP_SP_ROADKILL"  );
-				setLocalVarString ui_level_levelshot "levelshot_mw2_roadkill"  );
-				setLocalVarString ui_level_desc "@MENU_SP_SP_ROADKILL_DESC"  );
-				setLocalVarString ui_choicegroup "CHOICE_GROUP"  );
-				setLocalVarInt ui_highlighted_level_number 1;
-			}
-			leaveFocus
-			{
-				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
-				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
-				setLocalVarBool ui_menuAButton 1;
-			}
+			visible when ( ( ( ( 1 == 0 && getprofiledata( "highestMission" ) == 0 ) || ( getprofiledata( "highestMission" ) >= ( 1 ) || dvarbool( "mis_cheat" ) ) ) && 1 ) || dvarbool( "developer" ) )
 			action
 			{
-				"play" "mouse_click";
-				"setdvar" "credits" 0;
-				"setdvar" "credits_active" 0;
-				if ( "roadkill" == "trainer"  )
+				play "mouse_click";
+				setdvar "credits" 0;
+				setdvar "credits_active" 0;
+				if ( "roadkill" == "trainer" )
 				{
-					"exec" "devmap trainer";
+					exec "devmap trainer";
 				}
 				else
 				{
-					"setdvar" "ui_load_level" "roadkill";
-					"open" "popmenu_difficulty";
+					setdvar "ui_load_level" "roadkill";
+					open "popmenu_difficulty";
 				}
-				if ( "roadkill" == "trainer"  )			}
-			visible when ( ( ( ( 1 == 0 && getprofiledata( "highestMission" ) ( ) == 0 ) || ( getprofiledata( "highestMission" ) ( ) >= ( 1 ) || dvarbool(static)( 5 ) ) ) && 1 ) || dvarbool(static)( 6 )  )
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+				setLocalVarString "ui_level_name" ( "@MENU_SP_SP_ROADKILL" );
+				setLocalVarString "ui_level_levelshot" ( "levelshot_mw2_roadkill" );
+				setLocalVarString "ui_level_desc" ( "@MENU_SP_SP_ROADKILL_DESC" );
+				setLocalVarString "ui_choicegroup" ( "CHOICE_GROUP" );
+				setLocalVarInt "ui_highlighted_level_number" ( 1 );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
 		}
 		itemDef
 		{
-			name @MENU_SP_SP_CLIFFHANGER
+			name "@MENU_SP_SP_CLIFFHANGER"
 			rect -64 68 336 20 1 1
+			visible 1
+			group "mw2_button"
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_button_selection_bar
-			group mw2_button
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
 			type 1
-			align 0
-			textAlign 6
-			textAlignX -60
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
 			text "@MENU_SP_SP_CLIFFHANGER"
-			visible 1
-			onFocus
-			{
-				"play" "mouse_over";
-				if ( dvarstring(static)( 2 ) != "mp"  )
-				{
-					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
-				}
-				"setItemColor" "self" "backcolor" 0 0 0 1;
-				setLocalVarBool ui_menuAButton 1;
-				setLocalVarFloat ui_popupYPos 0.000000;
-				setLocalVarString ui_level_name "@MENU_SP_SP_CLIFFHANGER"  );
-				setLocalVarString ui_level_levelshot "levelshot_mw2_cliffhanger"  );
-				setLocalVarString ui_level_desc "@MENU_SP_SP_CLIFFHANGER_DESC"  );
-				setLocalVarString ui_choicegroup "CHOICE_GROUP"  );
-				setLocalVarInt ui_highlighted_level_number 1;
-			}
-			leaveFocus
-			{
-				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
-				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
-				setLocalVarBool ui_menuAButton 1;
-			}
+			visible when ( ( ( ( 2 == 0 && getprofiledata( "highestMission" ) == 0 ) || ( getprofiledata( "highestMission" ) >= ( 2 ) || dvarbool( "mis_cheat" ) ) ) && 1 ) || dvarbool( "developer" ) )
 			action
 			{
-				"play" "mouse_click";
-				"setdvar" "credits" 0;
-				"setdvar" "credits_active" 0;
-				if ( "cliffhanger" == "trainer"  )
+				play "mouse_click";
+				setdvar "credits" 0;
+				setdvar "credits_active" 0;
+				if ( "cliffhanger" == "trainer" )
 				{
-					"exec" "devmap trainer";
+					exec "devmap trainer";
 				}
 				else
 				{
-					"setdvar" "ui_load_level" "cliffhanger";
-					"open" "popmenu_difficulty";
+					setdvar "ui_load_level" "cliffhanger";
+					open "popmenu_difficulty";
 				}
-				if ( "cliffhanger" == "trainer"  )			}
-			visible when ( ( ( ( 2 == 0 && getprofiledata( "highestMission" ) ( ) == 0 ) || ( getprofiledata( "highestMission" ) ( ) >= ( 2 ) || dvarbool(static)( 5 ) ) ) && 1 ) || dvarbool(static)( 6 )  )
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+				setLocalVarString "ui_level_name" ( "@MENU_SP_SP_CLIFFHANGER" );
+				setLocalVarString "ui_level_levelshot" ( "levelshot_mw2_cliffhanger" );
+				setLocalVarString "ui_level_desc" ( "@MENU_SP_SP_CLIFFHANGER_DESC" );
+				setLocalVarString "ui_choicegroup" ( "CHOICE_GROUP" );
+				setLocalVarInt "ui_highlighted_level_number" ( 2 );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
 		}
 		itemDef
 		{
-			name @MENU_SP_SP_AIRPORT
+			name "@MENU_SP_SP_AIRPORT"
 			rect -64 88 336 20 1 1
+			visible 1
+			group "mw2_button"
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_button_selection_bar
-			group mw2_button
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
 			type 1
-			align 0
-			textAlign 6
-			textAlignX -60
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
 			text "@MENU_SP_SP_AIRPORT"
-			visible 1
-			onFocus
-			{
-				"play" "mouse_over";
-				if ( dvarstring(static)( 2 ) != "mp"  )
-				{
-					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
-				}
-				"setItemColor" "self" "backcolor" 0 0 0 1;
-				setLocalVarBool ui_menuAButton 1;
-				setLocalVarFloat ui_popupYPos 0.000000;
-				setLocalVarString ui_level_name "@MENU_SP_SP_AIRPORT"  );
-				setLocalVarString ui_level_levelshot "levelshot_mw2_airport"  );
-				setLocalVarString ui_level_desc "@MENU_SP_SP_AIRPORT_DESC"  );
-				setLocalVarString ui_choicegroup "CHOICE_GROUP"  );
-				setLocalVarInt ui_highlighted_level_number 1;
-			}
-			leaveFocus
-			{
-				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
-				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
-				setLocalVarBool ui_menuAButton 1;
-			}
+			visible when ( ( ( ( 3 == 0 && getprofiledata( "highestMission" ) == 0 ) || ( getprofiledata( "highestMission" ) >= ( 3 ) || dvarbool( "mis_cheat" ) ) ) && 1 ) || dvarbool( "developer" ) )
 			action
 			{
-				"play" "mouse_click";
-				"setdvar" "credits" 0;
-				"setdvar" "credits_active" 0;
-				if ( "airport" == "trainer"  )
+				play "mouse_click";
+				setdvar "credits" 0;
+				setdvar "credits_active" 0;
+				if ( "airport" == "trainer" )
 				{
-					"exec" "devmap trainer";
+					exec "devmap trainer";
 				}
 				else
 				{
-					"setdvar" "ui_load_level" "airport";
-					"open" "popmenu_difficulty";
+					setdvar "ui_load_level" "airport";
+					open "popmenu_difficulty";
 				}
-				if ( "airport" == "trainer"  )			}
-			visible when ( ( ( ( 3 == 0 && getprofiledata( "highestMission" ) ( ) == 0 ) || ( getprofiledata( "highestMission" ) ( ) >= ( 3 ) || dvarbool(static)( 5 ) ) ) && 1 ) || dvarbool(static)( 6 )  )
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+				setLocalVarString "ui_level_name" ( "@MENU_SP_SP_AIRPORT" );
+				setLocalVarString "ui_level_levelshot" ( "levelshot_mw2_airport" );
+				setLocalVarString "ui_level_desc" ( "@MENU_SP_SP_AIRPORT_DESC" );
+				setLocalVarString "ui_choicegroup" ( "CHOICE_GROUP" );
+				setLocalVarInt "ui_highlighted_level_number" ( 3 );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
 		}
 		itemDef
 		{
-			name @MENU_SP_SP_FAVELA
+			name "@MENU_SP_SP_FAVELA"
 			rect -64 108 336 20 1 1
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_button_selection_bar
-			group mw2_button
-			type 1
-			align 0
-			textAlign 6
-			textAlignX -60
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
-			text "@MENU_SP_SP_FAVELA"
 			visible 1
-			onFocus
-			{
-				"play" "mouse_over";
-				if ( dvarstring(static)( 2 ) != "mp"  )
-				{
-					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
-				}
-				"setItemColor" "self" "backcolor" 0 0 0 1;
-				setLocalVarBool ui_menuAButton 1;
-				setLocalVarFloat ui_popupYPos 0.000000;
-				setLocalVarString ui_level_name "@MENU_SP_SP_FAVELA"  );
-				setLocalVarString ui_level_levelshot "levelshot_mw2_favela"  );
-				setLocalVarString ui_level_desc "@MENU_SP_SP_FAVELA_DESC"  );
-				setLocalVarString ui_choicegroup "CHOICE_GROUP"  );
-				setLocalVarInt ui_highlighted_level_number 1;
-			}
-			leaveFocus
-			{
-				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
-				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
-				setLocalVarBool ui_menuAButton 1;
-			}
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@MENU_SP_SP_FAVELA"
+			visible when ( ( ( ( 4 == 0 && getprofiledata( "highestMission" ) == 0 ) || ( getprofiledata( "highestMission" ) >= ( 4 ) || dvarbool( "mis_cheat" ) ) ) && 1 ) || dvarbool( "developer" ) )
 			action
 			{
-				"play" "mouse_click";
-				"setdvar" "credits" 0;
-				"setdvar" "credits_active" 0;
-				if ( "favela" == "trainer"  )
+				play "mouse_click";
+				setdvar "credits" 0;
+				setdvar "credits_active" 0;
+				if ( "favela" == "trainer" )
 				{
-					"exec" "devmap trainer";
+					exec "devmap trainer";
 				}
 				else
 				{
-					"setdvar" "ui_load_level" "favela";
-					"open" "popmenu_difficulty";
+					setdvar "ui_load_level" "favela";
+					open "popmenu_difficulty";
 				}
-				if ( "favela" == "trainer"  )			}
-			visible when ( ( ( ( 4 == 0 && getprofiledata( "highestMission" ) ( ) == 0 ) || ( getprofiledata( "highestMission" ) ( ) >= ( 4 ) || dvarbool(static)( 5 ) ) ) && 1 ) || dvarbool(static)( 6 )  )
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+				setLocalVarString "ui_level_name" ( "@MENU_SP_SP_FAVELA" );
+				setLocalVarString "ui_level_levelshot" ( "levelshot_mw2_favela" );
+				setLocalVarString "ui_level_desc" ( "@MENU_SP_SP_FAVELA_DESC" );
+				setLocalVarString "ui_choicegroup" ( "CHOICE_GROUP" );
+				setLocalVarInt "ui_highlighted_level_number" ( 4 );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
 		}
 		itemDef
 		{
 			rect -64 -20 336 20 1 3
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_button_selection_bar
-			group mw2_button
-			type 1
-			align 0
-			textAlign 6
-			textAlignX -60
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
-			text "@PLATFORM_BACK_CAPS"
 			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@PLATFORM_BACK_CAPS"
+			visible when ( "@PLATFORM_BACK_CAPS" == "@PLATFORM_BACK_CAPS" )
+			action
+			{
+				play "mouse_click";
+				play "mouse_click";
+				"escape" self;
+			}
 			onFocus
 			{
-				"play" "mouse_over";
-				if ( dvarstring(static)( 2 ) != "mp"  )
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
 				{
-					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+					setItemColor "mw2_button" backcolor 0 0 0 0;
 				}
-				"setItemColor" "self" "backcolor" 0 0 0 1;
-				setLocalVarBool ui_menuAButton 1;
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
 			}
 			leaveFocus
 			{
-				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
-				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
-				setLocalVarBool ui_menuAButton 1;
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
 			}
-			action
-			{
-				"play" "mouse_click";
-				"play" "mouse_click";
-				"escape" "self";
-			}
-			visible when ( "@PLATFORM_BACK_CAPS" == "@PLATFORM_BACK_CAPS"  )
 		}
 		itemDef
 		{
 			rect -64 -20 336 20 1 3
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background menu_button_selection_bar
-			group mw2_button
-			type 1
-			align 0
-			textAlign 6
-			textAlignX -60
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
-			text "@PLATFORM_BACK_CAPS"
 			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@PLATFORM_BACK_CAPS"
+			visible when ( "@PLATFORM_BACK_CAPS" == "@PLATFORM_GAME_SUMMARY_CAPS" )
+			action
+			{
+				play "mouse_click";
+				play "mouse_click";
+				open "popup_summary";
+			}
 			onFocus
 			{
-				"play" "mouse_over";
-				if ( dvarstring(static)( 2 ) != "mp"  )
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
 				{
-					"setItemColor" "mw2_button" "backcolor" 0 0 0 0;
+					setItemColor "mw2_button" backcolor 0 0 0 0;
 				}
-				"setItemColor" "self" "backcolor" 0 0 0 1;
-				setLocalVarBool ui_menuAButton 1;
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
 			}
 			leaveFocus
 			{
-				"setItemColor" "self" "backcolor" 0 0 0 "0.0";
-				setLocalVarString ui_hint_text "@NULL_EMPTY"  );
-				setLocalVarBool ui_menuAButton 1;
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
 			}
-			action
-			{
-				"play" "mouse_click";
-				"play" "mouse_click";
-				"open" "popup_summary";
-			}
-			visible when ( "@PLATFORM_BACK_CAPS" == "@PLATFORM_GAME_SUMMARY_CAPS"  )
 		}
 	}
 }

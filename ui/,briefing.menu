@@ -1,0 +1,7 @@
+{
+	menuDef
+	{
+		name ",briefing"
+		rect 0 0 0 0 0 0
+	}
+}

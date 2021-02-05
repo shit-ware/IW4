@@ -1,0 +1,127 @@
+{
+	menuDef
+	{
+		name "menu_tickertest"
+		rect 0 0 640 480 0 0
+		style 1
+		forecolor 1 1 1 1
+		focuscolor 1 1 1 1
+		fullscreen 1
+		onOpen
+		{
+			focusfirst;
+		}
+		onEsc
+		{
+			close "menu_tickertest";
+		}
+		itemDef
+		{
+			rect 10 10 150 50 1 0
+			decoration
+			visible 1
+			border 1
+			forecolor 1 1 1 0.5
+			bordercolor 0 1 1 0.5
+			type 20
+			textfont 5
+			textscale 0.375
+			text "abcdefghijklmnopqrstuvwxzy ABCDEFGHIJKLMNOPQRSTUVWXYZ !@#$%^&*(){}~`/=\-',;"
+			speed 10
+		}
+		itemDef
+		{
+			rect 200 10 250 25 1 0
+			decoration
+			visible 1
+			border 1
+			forecolor 1 0 1 0.5
+			bordercolor 0 1 1 0.5
+			type 20
+			textfont 4
+			textscale 0.375
+			text "a long and narrow ticker, at 40 units per second. !@&#(?"
+			speed 40
+		}
+		itemDef
+		{
+			rect 10 70 150 50 1 0
+			decoration
+			visible 1
+			border 1
+			forecolor 1 1 1 0.5
+			bordercolor 0 1 1 0.5
+			type 20
+			textscale 0.4583
+			text "abcdefghijklmnopqrstuvwxzy ABCDEFGHIJKLMNOPQRSTUVWXYZ !@#$%^&*(){}~`/=\-',;"
+			speed 20
+		}
+		itemDef
+		{
+			rect 200 70 150 50 1 0
+			decoration
+			visible 1
+			border 1
+			forecolor 1 1 1 0.5
+			bordercolor 0 1 1 0.5
+			type 20
+			textscale 0.5833
+			text "Big Texted News Ticker.  20 units per second."
+			speed 20
+		}
+		itemDef
+		{
+			rect 10 130 50 50 1 0
+			decoration
+			visible 1
+			border 1
+			forecolor 1 1 1 0.5
+			bordercolor 0 1 1 0.5
+			type 20
+			textfont 6
+			textscale 0.375
+			text "A short ticker with a bunch of text."
+			speed 10
+		}
+		itemDef
+		{
+			rect 70 130 500 25 1 0
+			decoration
+			visible 1
+			forecolor 1 1 1 0.5
+			type 20
+			textfont 3
+			textscale 0.375
+			text "<>@#$%^&*()	A ticker with no borders.       And many spaces.           $%^13"
+			speed 35
+			spacing 10
+		}
+		itemDef
+		{
+			rect 10 220 500 25 1 0
+			decoration
+			visible 1
+			border 1
+			forecolor 1 1 1 0.5
+			bordercolor 0 1 1 0.5
+			type 20
+			textscale 0.375
+			text "Color Test: ^1Red ^2Green ^3Yellow ^4Blue ^5Cyan ^6Magenta ^7White"
+			speed 50
+		}
+		itemDef
+		{
+			rect 10 190 500 25 1 0
+			decoration
+			visible 1
+			border 1
+			forecolor 1 1 1 0.5
+			bordercolor 0 1 1 0.5
+			type 20
+			textscale 0.375
+			newsfeed 1
+			speed 50
+			spacing 30
+		}
+	}
+}
