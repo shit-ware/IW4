@@ -1,0 +1,211 @@
+{
+	menuDef
+	{
+		name "minimap_fullscreen"
+		rect 6 6 0 0 8 8
+		hiddenDuringFlashbang
+		hiddenDuringScope
+		visible 1
+		forecolor 1 1 1 1
+		visible when ( ( ( ! ( ui_active( ) )
+ )
+ && ( ! ( spectatingclient( ) )
+ )
+ && ( ! ( flashbanged( ) )
+ )
+ && ( ! ( ( ( weaponname( ) == "killstreak_ac130_mp" )
+ || ( weaponname( ) == "killstreak_helicopter_minigun_mp" )
+ || ( weaponname( ) == "killstreak_predator_missile_mp" )
+ || ( ( weaponname( ) == "ac130_105mm_mp" )
+ || ( weaponname( ) == "ac130_40mm_mp" )
+ || ( weaponname( ) == "ac130_25mm_mp" )
+ )
+ || ( adsjavelin( ) )
+ || ( weaponname( ) == "heli_remote_mp" )
+ || missilecam( ) )
+ || ( getperk( "equipment" ) == "_specialty_blastshield" && ( ( ! ( dvarstring( "scr_gameended" ) )
+ )
+ || inkillcam( ) ) )
+ )
+ )
+ && ( ! ( scoped( ) )
+ )
+ && ( ! ( selecting_location( ) )
+ )
+ && ( !isempjammed( ) )
+ && ( ( ! ( dvarbool( "g_hardcore" ) )
+ )
+ || radarisenabled( ) || dvarstring( "g_compassShowEnemies" ) ) && ( ! ( dvarstring( "scr_gameended" ) )
+ )
+ )
+ && ( ! ( milliseconds( ) - localvarint( "ui_show_killedBy" ) < 4000 || ( inkillcam( ) )
+ )
+ )
+ && ( ! ( selecting_location( ) )
+ )
+ && ( ! ( spectatingfree( ) )
+ )
+ )
+		itemDef
+		{
+			name "minimap_border"
+			rect 0 0 100 100 0 0
+			visible 1
+			border 1
+			borderSize 0.666667
+			forecolor 1 1 1 1
+			bordercolor 1 1 1 0.35
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 0 100 100 0 0
+			visible 1
+			style 3
+			forecolor 0.89 0.98 0.95 0.05
+			background "minimap_scanlines"
+			textscale 0.55
+		}
+		itemDef
+		{
+			name "minimap_map"
+			rect 0 0 100 100 0 0
+			visible 1
+			ownerdraw 159
+			forecolor 1 1 1 1
+			background "compass_map_default"
+			type 8
+			textscale 0.55
+		}
+		itemDef
+		{
+			name "minimap_friendlies"
+			rect 0 0 100 100 0 0
+			visible 1
+			ownerdraw 158
+			forecolor 1 1 1 1
+			type 8
+			textscale 0.55
+			exp forecolor a ( 1 - radarjamintensity( ) )
+		}
+		itemDef
+		{
+			name "minimap_objectives"
+			rect 0 0 100 100 0 0
+			visible 1
+			ownerdraw 152
+			forecolor 1 1 1 1
+			background "objective_line"
+			type 8
+			textscale 0.55
+		}
+		itemDef
+		{
+			name "minimap_enemies"
+			rect 0 0 100 100 0 0
+			visible 1
+			ownerdraw 175
+			forecolor 1 1 1 1
+			type 8
+			textscale 0.55
+			exp forecolor a ( 1 - radarjamintensity( ) )
+		}
+		itemDef
+		{
+			name "minimap_vehicles"
+			rect 0 0 100 100 0 0
+			visible 1
+			ownerdraw 155
+			forecolor 1 1 1 1
+			type 8
+			textscale 0.55
+			exp forecolor a ( 1 - radarjamintensity( ) )
+		}
+		itemDef
+		{
+			name "minimap_planes"
+			rect 0 0 100 100 0 0
+			visible 1
+			ownerdraw 156
+			forecolor 1 1 1 1
+			type 8
+			textscale 0.55
+			exp forecolor a ( 1 - radarjamintensity( ) )
+		}
+		itemDef
+		{
+			name "minimap_sentries"
+			rect 0 0 100 100 0 0
+			visible 1
+			ownerdraw 165
+			forecolor 1 1 1 1
+			type 8
+			textscale 0.55
+			exp forecolor a ( 1 - radarjamintensity( ) )
+		}
+		itemDef
+		{
+			name "minimap_player"
+			rect 0 0 100 100 0 0
+			visible 1
+			ownerdraw 150
+			forecolor 1 1 1 1
+			background "compassping_player"
+			type 8
+			textscale 0.55
+			exp forecolor a ( 1 - radarjamintensity( ) )
+		}
+		itemDef
+		{
+			rect 0 0 100 100 0 0
+			visible 1
+			style 3
+			forecolor 0.64 0.74 0.71 1
+			background "white"
+			textscale 0.55
+			exp forecolor a ( radarjamintensity( ) )
+			visible when ( radarisjammed( ) )
+		}
+		itemDef
+		{
+			rect 0 0 100 100 0 0
+			visible 1
+			style 3
+			forecolor 0.89 0.98 0.95 1
+			background "ac130_overlay_grain"
+			textscale 0.55
+			exp forecolor a ( radarjamintensity( ) )
+			visible when ( radarisjammed( ) )
+		}
+		itemDef
+		{
+			rect 0 0 100 100 0 0
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "stencil_base"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 0 100 100 0 0
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "scanlines_stencil"
+			textscale 0.55
+			exp rect y ( ( 0 - 100 ) + ( ( 100 * 2 ) * ( 1 - ( ( milliseconds( ) % 4000 ) / 4000 )
+ )
+ ) )
+		}
+		itemDef
+		{
+			rect 0 0 100 100 0 0
+			visible 1
+			style 3
+			forecolor 0.89 0.98 0.95 1
+			background "stencil_fill"
+			textscale 0.55
+		}
+	}
+}

@@ -1,0 +1,111 @@
+{
+	menuDef
+	{
+		name "splash"
+		rect 0 0 640 1 1 0
+		decoration
+		forecolor 1 1 1 1
+		exp rect y ( ( dvarbool( "camera_thirdPerson" ) )
+ * ( 0 - 40 ) * ( ! ( dvarbool( "splitscreen" ) )
+ )
+ )
+		onOpen
+		{
+			lerp "scale" "from" "10" "to" 1 "over" "0.15";
+			lerp "alpha" "from" 0 "to" 1 "over" "0.15";
+			setLocalVarInt "defcon_update_time" ( milliseconds( ) + 1000 );
+			;
+			close "challenge";
+			close "defcon";
+			close "killstreak_pickup";
+			close "killstreak";
+			close "perk_challenge";
+			close "promotion";
+		}
+		onRequestClose
+		{
+			lerp "scale" "from" 1 "to" "10" "over" "0.15";
+			lerp "alpha" "from" 1 "to" 0 "over" "0.15";
+		}
+		itemDef
+		{
+			name "splash_title"
+			rect 0 -110 0 0 2 2
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 4
+			textalign 1
+			textscale 0.48611
+			exp glowcolor r ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 5 ) )
+			exp glowcolor g ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 6 ) )
+			exp glowcolor b ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 7 ) )
+			exp glowcolor a ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 8 ) )
+			visible when ( ( ! ( dvarbool( "splitscreen" ) )
+ )
+ )
+			exp text ( getsplashtext( 0 ) )
+		}
+		itemDef
+		{
+			name "splash_description"
+			rect 0 -90 0 0 2 2
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textalign 1
+			textscale 0.375
+			visible when ( ( ! ( dvarbool( "splitscreen" ) )
+ )
+ )
+			exp text ( getsplashdescription( 0 ) )
+		}
+		itemDef
+		{
+			name "splash_icon"
+			rect -24 -180 48 48 2 2
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( ( ! ( dvarbool( "splitscreen" ) )
+ )
+ && splashhasicon( 0 ) )
+			exp material ( getsplashmaterial( 0 ) )
+		}
+		itemDef
+		{
+			name "splash_title_ss"
+			rect 0 -135 0 0 2 2
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 4
+			textalign 1
+			textscale 0.729165
+			exp glowcolor r ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 5 ) )
+			exp glowcolor g ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 6 ) )
+			exp glowcolor b ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 7 ) )
+			exp glowcolor a ( tablelookupbyrow( "mp/splashTable.csv" , splashrownum( 0 ) , 8 ) )
+			visible when ( ( dvarbool( "splitscreen" ) )
+ )
+			exp text ( getsplashtext( 0 ) )
+		}
+		itemDef
+		{
+			name "splash_icon_ss"
+			rect -36 -135 72 72 2 2
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( ( dvarbool( "splitscreen" ) )
+ && ( ! ( dvarbool( "camera_thirdPerson" ) )
+ )
+ && splashhasicon( 0 ) )
+			exp material ( getsplashmaterial( 0 ) )
+		}
+	}
+}

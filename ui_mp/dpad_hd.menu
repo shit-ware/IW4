@@ -1,0 +1,85 @@
+{
+	menuDef
+	{
+		name "dpad_hd"
+		rect 0 -16 640 480 4 4
+		visible 1
+		forecolor 1 1 1 1
+		visible when ( ( ( ! ( ui_active( ) )
+ )
+ && ( ! ( dvarbool( "g_hardcore" ) )
+ )
+ && ( ! ( flashbanged( ) )
+ )
+ && ( ! ( ( weaponname( ) == "killstreak_ac130_mp" )
+ || ( weaponname( ) == "killstreak_helicopter_minigun_mp" )
+ || ( weaponname( ) == "killstreak_predator_missile_mp" )
+ || ( ( weaponname( ) == "ac130_105mm_mp" )
+ || ( weaponname( ) == "ac130_40mm_mp" )
+ || ( weaponname( ) == "ac130_25mm_mp" )
+ )
+ || ( adsjavelin( ) )
+ || ( weaponname( ) == "heli_remote_mp" )
+ || missilecam( ) )
+ )
+ && ( !isempjammed( ) )
+ && ( ! ( dvarstring( "scr_gameended" ) )
+ )
+ )
+ && ! ( selecting_location( ) )
+ && ( ! ( spectatingfree( ) )
+ )
+ )
+		itemDef
+		{
+			rect -61 -29 32 32 10 10
+			visible 1
+			ownerdraw 173
+			forecolor 1 1 1 1
+			type 8
+			textfont 10
+			textalign 2
+			textalignx -21
+			textaligny -9
+			textscale 0.3333
+		}
+		itemDef
+		{
+			rect -61 -29 32 32 10 10
+			decoration
+			visible 1
+			forecolor 1 1 0 1
+			textfont 6
+			textalign 1
+			textaligny 35
+			textscale 0.25
+			visible when ( actionslotusable( 3 ) )
+			exp text ( "^3" + keybinding( "+actionslot 3" ) )
+		}
+		itemDef
+		{
+			rect -61 -61 32 32 10 10
+			visible 1
+			ownerdraw 174
+			forecolor 1 1 1 1
+			type 8
+			textfont 10
+			textalignx -40
+			textaligny -5
+			textscale 0.3333
+		}
+		itemDef
+		{
+			rect -61 -61 32 32 10 10
+			decoration
+			visible 1
+			forecolor 1 1 0 1
+			textfont 6
+			textalign 1
+			textaligny 35
+			textscale 0.25
+			visible when ( actionslotusable( 4 ) )
+			exp text ( "^3" + keybinding( "+actionslot 4" ) )
+		}
+	}
+}

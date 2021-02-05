@@ -1,0 +1,346 @@
+{
+	menuDef
+	{
+		name "quickcommands"
+		rect 6 268 190 204 1 1
+		popup
+		visible 1
+		style 1
+		forecolor 1 1 1 1
+		focuscolor 1 1 1 1
+		
+		{
+			scriptmenuresponse 8;
+			close "quickcommands";
+		}
+		
+		{
+			scriptmenuresponse 7;
+			close "quickcommands";
+		}
+		
+		{
+			scriptmenuresponse 6;
+			close "quickcommands";
+		}
+		
+		{
+			scriptmenuresponse 5;
+			close "quickcommands";
+		}
+		
+		{
+			scriptmenuresponse 4;
+			close "quickcommands";
+		}
+		
+		{
+			scriptmenuresponse 3;
+			close "quickcommands";
+		}
+		
+		{
+			scriptmenuresponse 2;
+			close "quickcommands";
+		}
+		
+		{
+			scriptmenuresponse 1;
+			close "quickcommands";
+		}
+		onOpen
+		{
+			setLocalVarInt "ui_centerPopup" ( 1 );
+			setdvar "cl_bypassMouseInput" 1 ;;
+		}
+		onClose
+		{
+			play "mouse_click";
+			setLocalVarInt "ui_centerPopup" ( 0 );
+			;;
+			setdvar "cl_bypassMouseInput" 0;
+		}
+		onEsc
+		{
+			close self;
+		}
+		itemDef
+		{
+			rect -600 -800 2000 2000 0 0
+			visible 1
+			forecolor 1 1 1 1
+			type 1
+			textfont 1
+			textscale 0.55
+			action
+			{
+				close self;
+			}
+			onFocus
+			{
+				setdvar "ui_popup_close_icon" 1;
+			}
+			leaveFocus
+			{
+				setdvar "ui_popup_close_icon" 0;
+			}
+		}
+		itemDef
+		{
+			rect -4 -4 190 204 0 0
+			visible 1
+			forecolor 1 1 1 1
+			type 1
+			textfont 1
+			textscale 0.55
+			action
+			{
+				;;
+			}
+		}
+		itemDef
+		{
+			rect -2 -2 194 208 1 1
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 2
+			forecolor 0.2 0.2 0.22 0.65
+			bordercolor 0.4 0.405 0.42 1
+			background "white"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 0 190 204 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.7
+			background "gradient_bottom"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -34 -34 32 32 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_tl"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect -2 -34 194 32 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_t"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 192 -34 32 32 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_tr"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 192 -2 32 0 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_r"
+			textscale 0.55
+			exp rect h ( ( ( ( 0 + 0 + ( ( 18 + 2 ) * ( 10 ) + 4 * 2 + 0 ) ) - 2 * 2 ) + 2 * 2 ) )
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 192 0 32 32 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_br"
+			textscale 0.55
+			exp rect y ( ( 0 - 2 ) + ( ( ( ( 0 + 0 + ( ( 18 + 2 ) * ( 10 ) + 4 * 2 + 0 ) ) - 2 * 2 ) + 2 * 2 ) ) )
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect -2 0 194 32 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_b"
+			textscale 0.55
+			exp rect y ( ( 0 - 2 ) + ( ( ( ( 0 + 0 + ( ( 18 + 2 ) * ( 10 ) + 4 * 2 + 0 ) ) - 2 * 2 ) + 2 * 2 ) ) )
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect -34 0 32 32 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_bl"
+			textscale 0.55
+			exp rect y ( ( 0 - 2 ) + ( ( ( ( 0 + 0 + ( ( 18 + 2 ) * ( 10 ) + 4 * 2 + 0 ) ) - 2 * 2 ) + 2 * 2 ) ) )
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect -34 -2 32 0 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_l"
+			textscale 0.55
+			exp rect h ( ( ( ( 0 + 0 + ( ( 18 + 2 ) * ( 10 ) + 4 * 2 + 0 ) ) - 2 * 2 ) + 2 * 2 ) )
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 97 2 0 0 1 1
+			decoration
+			visible 1
+			forecolor 0.69 0.69 0.69 1
+			type 1
+			textfont 1
+			textalign 5
+			textscale 0.4583
+			exp text ( "@QUICKMESSAGE_QUICK_MESSAGE" )
+		}
+		itemDef
+		{
+			name "window"
+			rect 16 36 0 0 0 0
+			decoration
+			visible 1
+			group "ingamebox"
+			forecolor 1 1 1 1
+			textfont 1
+			textaligny 8
+			textscale 0.375
+			text "@QUICKMESSAGE_1_FOLLOW_ME"
+		}
+		itemDef
+		{
+			name "window"
+			rect 16 52 0 0 0 0
+			decoration
+			visible 1
+			group "ingamebox"
+			forecolor 1 1 1 1
+			textfont 1
+			textaligny 8
+			textscale 0.375
+			text "@QUICKMESSAGE_2_MOVE_IN"
+		}
+		itemDef
+		{
+			name "window"
+			rect 16 68 0 0 0 0
+			decoration
+			visible 1
+			group "ingamebox"
+			forecolor 1 1 1 1
+			textfont 1
+			textaligny 8
+			textscale 0.375
+			text "@QUICKMESSAGE_3_FALL_BACK"
+		}
+		itemDef
+		{
+			name "window"
+			rect 16 84 0 0 0 0
+			decoration
+			visible 1
+			group "ingamebox"
+			forecolor 1 1 1 1
+			textfont 1
+			textaligny 8
+			textscale 0.375
+			text "@QUICKMESSAGE_4_SUPPRESSING_FIRE"
+		}
+		itemDef
+		{
+			name "window"
+			rect 16 100 0 0 0 0
+			decoration
+			visible 1
+			group "ingamebox"
+			forecolor 1 1 1 1
+			textfont 1
+			textaligny 8
+			textscale 0.375
+			text "@QUICKMESSAGE_5_ATTACK_LEFT_FLANK"
+		}
+		itemDef
+		{
+			name "window"
+			rect 16 116 0 0 0 0
+			decoration
+			visible 1
+			group "ingamebox"
+			forecolor 1 1 1 1
+			textfont 1
+			textaligny 8
+			textscale 0.375
+			text "@QUICKMESSAGE_6_ATTACK_RIGHT_FLANK"
+		}
+		itemDef
+		{
+			name "window"
+			rect 16 132 0 0 0 0
+			decoration
+			visible 1
+			group "ingamebox"
+			forecolor 1 1 1 1
+			textfont 1
+			textaligny 8
+			textscale 0.375
+			text "@QUICKMESSAGE_7_HOLD_THIS_POSITION"
+		}
+		itemDef
+		{
+			name "window"
+			rect 16 148 0 0 0 0
+			decoration
+			visible 1
+			group "ingamebox"
+			forecolor 1 1 1 1
+			textfont 1
+			textaligny 8
+			textscale 0.375
+			text "@QUICKMESSAGE_8_REGROUP"
+		}
+		itemDef
+		{
+			name "window"
+			rect 16 180 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textaligny 8
+			textscale 0.375
+			text "@QUICKMESSAGE_ESC_EXIT"
+		}
+	}
+}

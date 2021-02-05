@@ -1,0 +1,185 @@
+{
+	menuDef
+	{
+		name "killcam_fullscreen"
+		rect 0 0 640 480 4 4
+		visible 1
+		forecolor 1 1 1 1
+		visible when ( ( inkillcam( ) )
+ )
+		itemDef
+		{
+			rect 0 -84 640 138 4 8
+			decoration
+			visible 1
+			style 3
+			forecolor 0.49 0.05 0.03 0.5
+			background "white"
+			textscale 0.55
+			visible when ( ( ! ( dvarstring( "scr_gameended" ) )
+ )
+ && ( ( ! ( ui_active( ) )
+ )
+ || ( ( ui_active( ) )
+ && ( menuisopen( "scoreboard" ) )
+ ) ) )
+		}
+		itemDef
+		{
+			rect 0 -65 640 138 4 10
+			decoration
+			visible 1
+			style 3
+			forecolor 0.49 0.05 0.03 0.5
+			background "white"
+			textscale 0.55
+			visible when ( ( ! ( dvarstring( "scr_gameended" ) )
+ )
+ && ( ( ! ( ui_active( ) )
+ )
+ || ( ( ui_active( ) )
+ && ( menuisopen( "scoreboard" ) )
+ ) ) )
+		}
+		itemDef
+		{
+			rect 0 -64 640 138 4 8
+			decoration
+			visible 1
+			style 3
+			forecolor 0.49 0.05 0.03 0.5
+			background "killcam_blur"
+			textscale 0.55
+			visible when ( ( ! ( dvarstring( "scr_gameended" ) )
+ )
+ && ( ui_active( ) )
+ && ( ! ( menuisopen( "scoreboard" ) )
+ )
+ )
+		}
+		itemDef
+		{
+			rect 0 -85 640 -138 4 10
+			decoration
+			visible 1
+			style 3
+			forecolor 0.49 0.05 0.03 0.5
+			background "killcam_blur"
+			textscale 0.55
+			visible when ( ( ! ( dvarstring( "scr_gameended" ) )
+ )
+ && ( ui_active( ) )
+ && ( ! ( menuisopen( "scoreboard" ) )
+ )
+ )
+		}
+		itemDef
+		{
+			rect 0 -84 640 138 4 8
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 0.5
+			background "white"
+			textscale 0.55
+			visible when ( ( dvarstring( "scr_gameended" ) )
+ && ( ( ! ( ui_active( ) )
+ )
+ || ( ( ui_active( ) )
+ && ( menuisopen( "scoreboard" ) )
+ ) ) )
+		}
+		itemDef
+		{
+			rect 0 -65 640 138 4 10
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 0.5
+			background "white"
+			textscale 0.55
+			visible when ( ( dvarstring( "scr_gameended" ) )
+ && ( ( ! ( ui_active( ) )
+ )
+ || ( ( ui_active( ) )
+ && ( menuisopen( "scoreboard" ) )
+ ) ) )
+		}
+		itemDef
+		{
+			rect 0 -64 640 138 4 8
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 0.5
+			background "killcam_blur"
+			textscale 0.55
+			visible when ( ( dvarstring( "scr_gameended" ) )
+ && ( ui_active( ) )
+ && ( ! ( menuisopen( "scoreboard" ) )
+ )
+ )
+		}
+		itemDef
+		{
+			rect 0 -85 640 -138 4 10
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 0.5
+			background "killcam_blur"
+			textscale 0.55
+			visible when ( ( dvarstring( "scr_gameended" ) )
+ && ( ui_active( ) )
+ && ( ! ( menuisopen( "scoreboard" ) )
+ )
+ )
+		}
+		itemDef
+		{
+			rect 0 36 1 1 2 8
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 1
+			textscale 0.9
+			text "@MP_KILLCAM"
+			visible when ( ( ! ( dvarstring( "scr_gameended" ) )
+ )
+ && ( ! ( ui_active( ) )
+ )
+ )
+		}
+		itemDef
+		{
+			rect 0 36 1 1 2 8
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 1
+			textscale 0.5833
+			text "@MP_FINAL_KILLCAM"
+			visible when ( ( dvarstring( "scr_gameended" ) )
+ == 1 && ( ! ( ui_active( ) )
+ )
+ )
+		}
+		itemDef
+		{
+			rect 0 36 1 1 2 8
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 1
+			textscale 0.5833
+			text "@MP_ROUND_KILLCAM"
+			visible when ( ( dvarstring( "scr_gameended" ) )
+ == 2 && ( ! ( ui_active( ) )
+ )
+ )
+		}
+	}
+}

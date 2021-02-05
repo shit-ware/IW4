@@ -1,0 +1,118 @@
+{
+	menuDef
+	{
+		name "background_main"
+		rect 0 0 640 480 0 0
+		forecolor 1 1 1 1
+		focuscolor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		onOpen
+		{
+			execnow "g_friendlyfiredist 0";
+			execnow "g_friendlynamedist 0";
+			execnow "loc_warnings 0";
+			execnow "loc_warningsaserrors 0";
+		}
+		onEsc
+		{
+			
+		}
+		itemDef
+		{
+			rect 499 438 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textscale 0.4583
+			text "@PLATFORM_SELECT"
+		}
+		itemDef
+		{
+			name "signedinas"
+			rect 0 0 250 15 0 0
+			decoration
+			visible 1
+			ownerdraw 272
+			forecolor 0.4823 0.4823 0.4823 1
+			type 8
+			textfont 1
+			textscale 0.4583
+		}
+		itemDef
+		{
+			rect 80 170 250 15 0 0
+			visible 1
+			forecolor 0.4823 0.4823 0.4823 1
+			type 1
+			textfont 1
+			textscale 0.4583
+			
+			{
+				scriptmenuresponse "BUTTON_RTRIG";
+			}
+			
+			{
+				scriptmenuresponse "BUTTON_LTRIG";
+			}
+			
+			{
+				scriptmenuresponse "BUTTON_RSTICK";
+			}
+			
+			{
+				scriptmenuresponse "BUTTON_LSTICK";
+			}
+			
+			{
+				scriptmenuresponse "BUTTON_BACK";
+			}
+			
+			{
+				scriptmenuresponse "BUTTON_START";
+			}
+			
+			{
+				scriptmenuresponse "BUTTON_RSHLDR";
+			}
+			
+			{
+				scriptmenuresponse "BUTTON_LSHLDR";
+			}
+			
+			{
+				scriptmenuresponse "BUTTON_Y";
+			}
+			
+			{
+				scriptmenuresponse "BUTTON_X";
+			}
+			
+			{
+				scriptmenuresponse "BUTTON_B";
+			}
+			
+			{
+				scriptmenuresponse "BUTTON_A";
+			}
+			
+			{
+				scriptmenuresponse "DPAD_DOWN";
+			}
+			
+			{
+				scriptmenuresponse "DPAD_UP";
+			}
+			
+			{
+				scriptmenuresponse "DPAD_LEFT";
+			}
+			
+			{
+				scriptmenuresponse "DPAD_RIGHT";
+			}
+		}
+	}
+}

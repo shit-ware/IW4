@@ -1,0 +1,52 @@
+{
+	menuDef
+	{
+		name "missilecam_hud"
+		rect 0 0 640 480 0 0
+		visible 1
+		forecolor 1 1 1 1
+		visible when ( missilecam( ) )
+		itemDef
+		{
+			rect -320 -240 640 480 2 2
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.3
+			background "missilecam_reticle"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 180 105 0 20 9 9
+			decoration
+			visible 1
+			forecolor 1 1 1 0.65
+			textfont 3
+			textalign 4
+			textscale 0.375
+			text "@PLATFORM_PREDATOR_MISSILE_AIM"
+			visible when ( ( ! ( inkillcam( ) )
+ )
+ && ( ! ( spectatingclient( ) )
+ )
+ )
+		}
+		itemDef
+		{
+			rect 180 130 0 20 9 9
+			decoration
+			visible 1
+			forecolor 1 1 1 0.65
+			textfont 3
+			textalign 4
+			textscale 0.375
+			text "@PLATFORM_PREDATOR_MISSILE_BOOST"
+			visible when ( ( ! ( inkillcam( ) )
+ )
+ && ( ! ( spectatingclient( ) )
+ )
+ )
+		}
+	}
+}

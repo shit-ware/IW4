@@ -1,0 +1,39 @@
+{
+	menuDef
+	{
+		name "killstreak_hint"
+		rect 0 0 640 1 1 0
+		decoration
+		forecolor 1 1 1 1
+		onOpen
+		{
+			lerp "alpha" "from" 0 "to" 1 "over" "0.15";
+		}
+		onRequestClose
+		{
+			lerp x "from" 0 "to" "400" "over" "1.0";
+			lerp y "from" 0 "to" "400" "over" "1.0";
+			lerp "alpha" "from" 1 "to" 0 "over" "1.0";
+		}
+		itemDef
+		{
+			name "killstreak_icon"
+			rect -24 -190 48 48 2 2
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect y ( - 190 + ( ( dvarbool( "camera_thirdPerson" ) )
+ * 40 ) )
+			visible when ( ( ! ( dvarbool( "splitscreen" ) )
+ )
+ && ( ! ( dvarbool( "camera_thirdPerson" ) )
+ )
+ && ( ! ( inkillcam( ) )
+ )
+ && !ui_active( ) )
+			exp material ( tablelookup( "mp/killstreakTable.csv" , 1 , localvarstring( "ui_ksHint" ) , 16 ) )
+		}
+	}
+}

@@ -1,0 +1,247 @@
+{
+	menuDef
+	{
+		name "perks_info_sd"
+		rect 0 0 640 480 4 4
+		visible 1
+		forecolor 1 1 1 1
+		visible when ( ( ( ! ( ui_active( ) )
+ )
+ && ( ! ( dvarbool( "g_hardcore" ) )
+ )
+ && ( ! ( flashbanged( ) )
+ )
+ && ( ! ( ( weaponname( ) == "killstreak_ac130_mp" )
+ || ( weaponname( ) == "killstreak_helicopter_minigun_mp" )
+ || ( weaponname( ) == "killstreak_predator_missile_mp" )
+ || ( ( weaponname( ) == "ac130_105mm_mp" )
+ || ( weaponname( ) == "ac130_40mm_mp" )
+ || ( weaponname( ) == "ac130_25mm_mp" )
+ )
+ || ( adsjavelin( ) )
+ || ( weaponname( ) == "heli_remote_mp" )
+ || missilecam( ) )
+ )
+ && ( !isempjammed( ) )
+ && ( ! ( dvarstring( "scr_gameended" ) )
+ )
+ )
+ && ( ( inkillcam( ) )
+ || ( spectatingclient( ) )
+ ) || ( milliseconds( ) - localvarint( "ui_show_perks" ) < 5000 )
+ )
+		itemDef
+		{
+			rect -32 -200 1 32 10 10
+			decoration
+			visible 1
+			forecolor 1 0.8 0.4 1
+			textalign 10
+			textalignx -8
+			textscale 0.375
+			exp rect x ( ( 0 - 32 + 4 ) + ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_show_perks" ) + 0 * 500 ) / 100 ) , 1 ) , 0 ) * 256 ) )
+			exp forecolor a ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_show_perks" ) + 4500 ) / 500 ) , 1 ) , 0 ) + ( ( inkillcam( ) )
+ || ( spectatingclient( ) )
+ ) )
+			visible when ( getperk( "upgrade1" ) == "specialty_null" )
+			exp text ( "@" + tablelookup( "mp/perkTable.csv" , 1 , getperk( "perk1" ) , 2 ) )
+		}
+		itemDef
+		{
+			rect -32 -200 1 32 10 10
+			decoration
+			visible 1
+			forecolor 1 0.8 0.4 1
+			textalign 10
+			textalignx -8
+			textscale 0.375
+			exp rect x ( ( 0 - 32 + 4 ) + ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_show_perks" ) + 0 * 500 ) / 100 ) , 1 ) , 0 ) * 256 ) )
+			exp forecolor a ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_show_perks" ) + 4500 ) / 500 ) , 1 ) , 0 ) + ( ( inkillcam( ) )
+ || ( spectatingclient( ) )
+ ) )
+			visible when ( getperk( "upgrade1" ) != "specialty_null" )
+			exp text ( "@" + tablelookup( "mp/perkTable.csv" , 1 , getperk( "perk1" ) , int( 2 + ( isitemunlocked( tablelookup( "mp/perkTable.csv" , 1 , getperk( "perk1" ) , 8 ) ) * ( 9 - 2 ) ) ) ) )
+		}
+		itemDef
+		{
+			rect -32 -200 32 32 10 10
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( 0 - 32 + 4 ) + ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_show_perks" ) + 0 * 500 ) / 100 ) , 1 ) , 0 ) * 256 ) )
+			exp forecolor a ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_show_perks" ) + 4500 ) / 500 ) , 1 ) , 0 ) + ( ( inkillcam( ) )
+ || ( spectatingclient( ) )
+ ) )
+			visible when ( getperk( "upgrade1" ) == "specialty_null" )
+			exp material ( tablelookup( "mp/perkTable.csv" , 1 , getperk( "perk1" ) , 3 ) )
+		}
+		itemDef
+		{
+			rect -32 -200 32 32 10 10
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( 0 - 32 + 4 ) + ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_show_perks" ) + 0 * 500 ) / 100 ) , 1 ) , 0 ) * 256 ) )
+			exp forecolor a ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_show_perks" ) + 4500 ) / 500 ) , 1 ) , 0 ) + ( ( inkillcam( ) )
+ || ( spectatingclient( ) )
+ ) )
+			visible when ( getperk( "upgrade1" ) != "specialty_null" )
+			exp material ( tablelookup( "mp/perkTable.csv" , 1 , getperk( "perk1" ) , 3 ) + "_upgrade" )
+		}
+		itemDef
+		{
+			rect -32 -162 1 32 10 10
+			decoration
+			visible 1
+			forecolor 1 0.8 0.4 1
+			textalign 10
+			textalignx -8
+			textscale 0.375
+			exp rect x ( ( 0 - 32 + 4 ) + ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_show_perks" ) + 1 * 500 ) / 100 ) , 1 ) , 0 ) * 256 ) )
+			exp forecolor a ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_show_perks" ) + 4500 ) / 500 ) , 1 ) , 0 ) + ( ( inkillcam( ) )
+ || ( spectatingclient( ) )
+ ) )
+			visible when ( getperk( "upgrade2" ) == "specialty_null" )
+			exp text ( "@" + tablelookup( "mp/perkTable.csv" , 1 , getperk( "perk2" ) , 2 ) )
+		}
+		itemDef
+		{
+			rect -32 -162 1 32 10 10
+			decoration
+			visible 1
+			forecolor 1 0.8 0.4 1
+			textalign 10
+			textalignx -8
+			textscale 0.375
+			exp rect x ( ( 0 - 32 + 4 ) + ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_show_perks" ) + 1 * 500 ) / 100 ) , 1 ) , 0 ) * 256 ) )
+			exp forecolor a ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_show_perks" ) + 4500 ) / 500 ) , 1 ) , 0 ) + ( ( inkillcam( ) )
+ || ( spectatingclient( ) )
+ ) )
+			visible when ( getperk( "upgrade2" ) != "specialty_null" )
+			exp text ( "@" + tablelookup( "mp/perkTable.csv" , 1 , getperk( "perk2" ) , int( 2 + ( isitemunlocked( tablelookup( "mp/perkTable.csv" , 1 , getperk( "perk2" ) , 8 ) ) * ( 9 - 2 ) ) ) ) )
+		}
+		itemDef
+		{
+			rect -32 -162 32 32 10 10
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( 0 - 32 + 4 ) + ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_show_perks" ) + 1 * 500 ) / 100 ) , 1 ) , 0 ) * 256 ) )
+			exp forecolor a ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_show_perks" ) + 4500 ) / 500 ) , 1 ) , 0 ) + ( ( inkillcam( ) )
+ || ( spectatingclient( ) )
+ ) )
+			visible when ( getperk( "upgrade2" ) == "specialty_null" )
+			exp material ( tablelookup( "mp/perkTable.csv" , 1 , getperk( "perk2" ) , 3 ) )
+		}
+		itemDef
+		{
+			rect -32 -162 32 32 10 10
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( 0 - 32 + 4 ) + ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_show_perks" ) + 1 * 500 ) / 100 ) , 1 ) , 0 ) * 256 ) )
+			exp forecolor a ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_show_perks" ) + 4500 ) / 500 ) , 1 ) , 0 ) + ( ( inkillcam( ) )
+ || ( spectatingclient( ) )
+ ) )
+			visible when ( getperk( "upgrade2" ) != "specialty_null" )
+			exp material ( tablelookup( "mp/perkTable.csv" , 1 , getperk( "perk2" ) , 3 ) + "_upgrade" )
+		}
+		itemDef
+		{
+			rect -32 -124 1 32 10 10
+			decoration
+			visible 1
+			forecolor 1 0.8 0.4 1
+			textalign 10
+			textalignx -8
+			textscale 0.375
+			exp rect x ( ( 0 - 32 + 4 ) + ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_show_perks" ) + 2 * 500 ) / 100 ) , 1 ) , 0 ) * 256 ) )
+			exp forecolor a ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_show_perks" ) + 4500 ) / 500 ) , 1 ) , 0 ) + ( ( inkillcam( ) )
+ || ( spectatingclient( ) )
+ ) )
+			visible when ( getperk( "upgrade3" ) == "specialty_null" )
+			exp text ( "@" + tablelookup( "mp/perkTable.csv" , 1 , getperk( "perk3" ) , 2 ) )
+		}
+		itemDef
+		{
+			rect -32 -124 1 32 10 10
+			decoration
+			visible 1
+			forecolor 1 0.8 0.4 1
+			textalign 10
+			textalignx -8
+			textscale 0.375
+			exp rect x ( ( 0 - 32 + 4 ) + ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_show_perks" ) + 2 * 500 ) / 100 ) , 1 ) , 0 ) * 256 ) )
+			exp forecolor a ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_show_perks" ) + 4500 ) / 500 ) , 1 ) , 0 ) + ( ( inkillcam( ) )
+ || ( spectatingclient( ) )
+ ) )
+			visible when ( getperk( "upgrade3" ) != "specialty_null" )
+			exp text ( "@" + tablelookup( "mp/perkTable.csv" , 1 , getperk( "perk3" ) , int( 2 + ( isitemunlocked( tablelookup( "mp/perkTable.csv" , 1 , getperk( "perk3" ) , 8 ) ) * ( 9 - 2 ) ) ) ) )
+		}
+		itemDef
+		{
+			rect -32 -124 32 32 10 10
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( 0 - 32 + 4 ) + ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_show_perks" ) + 2 * 500 ) / 100 ) , 1 ) , 0 ) * 256 ) )
+			exp forecolor a ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_show_perks" ) + 4500 ) / 500 ) , 1 ) , 0 ) + ( ( inkillcam( ) )
+ || ( spectatingclient( ) )
+ ) )
+			visible when ( getperk( "upgrade3" ) == "specialty_null" )
+			exp material ( tablelookup( "mp/perkTable.csv" , 1 , getperk( "perk3" ) , 3 ) )
+		}
+		itemDef
+		{
+			rect -32 -124 32 32 10 10
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( 0 - 32 + 4 ) + ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_show_perks" ) + 2 * 500 ) / 100 ) , 1 ) , 0 ) * 256 ) )
+			exp forecolor a ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_show_perks" ) + 4500 ) / 500 ) , 1 ) , 0 ) + ( ( inkillcam( ) )
+ || ( spectatingclient( ) )
+ ) )
+			visible when ( getperk( "upgrade3" ) != "specialty_null" )
+			exp material ( tablelookup( "mp/perkTable.csv" , 1 , getperk( "perk3" ) , 3 ) + "_upgrade" )
+		}
+		itemDef
+		{
+			rect -32 -238 1 32 10 10
+			decoration
+			visible 1
+			forecolor 1 0.8 0.4 1
+			textalign 10
+			textalignx -8
+			textscale 0.375
+			exp rect x ( ( 0 - 32 + 4 ) + ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_show_perks" ) + ( 0 - 1 ) * 500 ) / 100 ) , 1 ) , 0 ) * 256 ) )
+			exp forecolor a ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_show_perks" ) + 4500 ) / 500 ) , 1 ) , 0 ) )
+			visible when ( getperk( "perk4" ) != "specialty_null" )
+			exp text ( "@" + tablelookup( "mp/perkTable.csv" , 1 , getperk( "perk4" ) , 2 ) )
+		}
+		itemDef
+		{
+			rect -32 -238 32 32 10 10
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( 0 - 32 + 4 ) + ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_show_perks" ) + ( 0 - 1 ) * 500 ) / 100 ) , 1 ) , 0 ) * 256 ) )
+			exp forecolor a ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_show_perks" ) + 4500 ) / 500 ) , 1 ) , 0 ) )
+			visible when ( getperk( "perk4" ) != "specialty_null" )
+			exp material ( tablelookup( "mp/perkTable.csv" , 1 , getperk( "perk4" ) , 3 ) )
+		}
+	}
+}

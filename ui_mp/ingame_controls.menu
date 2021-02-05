@@ -1,0 +1,220 @@
+{
+	menuDef
+	{
+		name "ingame_controls"
+		rect 0 0 640 480 0 0
+		legacySplitScreenScale
+		forecolor 1 1 1 1
+		focuscolor 1 1 1 1
+		blurWorld 6
+		onOpen
+		{
+			exec "Updatedvarsfromprofile";
+		}
+		onEsc
+		{
+			close "ingame_controls";
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0 0 0 1
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 55 854 75 4 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "gradient_top"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 351 854 75 4 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "gradient_bottom"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -128 0 896 66 0 0
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0.1412 0.1412 0.1412 1
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -128 66 896 2 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "line_horizontal"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -128 416 896 64 0 0
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0.1412 0.1412 0.1412 1
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -128 414 896 2 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "line_horizontal"
+			textscale 0.55
+		}
+		itemDef
+		{
+			name "cancel"
+			rect 505 422 100 16 0 0
+			visible 1
+			forecolor 1 1 1 1
+			type 1
+			textfont 1
+			textalign 9
+			textscale 0.4583
+			text "@PLATFORM_BACK"
+			visible when ( !localvarbool( "ui_hideBack" ) )
+			action
+			{
+				close self;
+			}
+		}
+		itemDef
+		{
+			rect 48 40 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 0.8 0.4 1
+			textfont 1
+			textscale 0.5833
+			text "CONTROLS"
+		}
+		itemDef
+		{
+			rect 228 120 128 24 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textaligny 20
+			textscale 0.4583
+			text "@MENU_LOW"
+			dvarTest "input_viewSensitivity"
+			showDvar { "0.8" }
+		}
+		itemDef
+		{
+			rect 228 120 128 24 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textaligny 20
+			textscale 0.4583
+			text "@MENU_MEDIUM"
+			dvarTest "input_viewSensitivity"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect 228 120 128 24 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textaligny 20
+			textscale 0.4583
+			text "@MENU_HIGH"
+			dvarTest "input_viewSensitivity"
+			showDvar { "1.8" }
+		}
+		itemDef
+		{
+			rect 228 120 128 24 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textaligny 20
+			textscale 0.4583
+			text "@MENU_VERY_HIGH"
+			dvarTest "input_viewSensitivity"
+			showDvar { 4 }
+		}
+		itemDef
+		{
+			rect 228 140 128 24 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textaligny 20
+			textscale 0.4583
+			text "@MENU_DISABLED"
+			dvarTest "input_invertpitch"
+			showDvar { 0 }
+		}
+		itemDef
+		{
+			rect 228 140 128 24 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textaligny 20
+			textscale 0.4583
+			text "@MENU_ENABLED"
+			dvarTest "input_invertpitch"
+			showDvar { 1 }
+		}
+		itemDef
+		{
+			rect 228 160 128 24 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textaligny 20
+			textscale 0.4583
+			text "@MENU_DISABLED"
+			dvarTest "gpad_rumble"
+			showDvar { 0 }
+		}
+		itemDef
+		{
+			rect 228 160 128 24 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textaligny 20
+			textscale 0.4583
+			text "@MENU_ENABLED"
+			dvarTest "gpad_rumble"
+			showDvar { 1 }
+		}
+	}
+}

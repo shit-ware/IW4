@@ -1,0 +1,226 @@
+{
+	menuDef
+	{
+		name "playercard_youkilled"
+		rect 0 0 640 480 4 4
+		visible 1
+		forecolor 1 1 1 1
+		visible when ( ( ( ! ( ui_active( ) )
+ )
+ && ( ! ( dvarbool( "g_hardcore" ) )
+ )
+ && ( ! ( flashbanged( ) )
+ )
+ && ( ! ( ( weaponname( ) == "killstreak_ac130_mp" )
+ || ( weaponname( ) == "killstreak_helicopter_minigun_mp" )
+ || ( weaponname( ) == "killstreak_predator_missile_mp" )
+ || ( ( weaponname( ) == "ac130_105mm_mp" )
+ || ( weaponname( ) == "ac130_40mm_mp" )
+ || ( weaponname( ) == "ac130_25mm_mp" )
+ )
+ || ( adsjavelin( ) )
+ || ( weaponname( ) == "heli_remote_mp" )
+ || missilecam( ) )
+ )
+ && ( !isempjammed( ) )
+ && ( ! ( dvarstring( "scr_gameended" ) )
+ )
+ )
+ && ( milliseconds( ) - localvarint( "ui_show_youKilled" ) < 2500 && ( ! ( milliseconds( ) - localvarint( "ui_show_killedBy" ) < 4000 || ( inkillcam( ) )
+ )
+ )
+ )
+ && ( ! ( inkillcam( ) )
+ )
+ && ! ( milliseconds( ) - localvarint( "ui_show_killedBy" ) < 4000 || ( inkillcam( ) )
+ )
+ && ! ( inkillcam( ) )
+ )
+		exp rect y ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_show_youKilled" ) ) / 150 ) , 1 ) , 0 ) * ( 180 ) ) + ( min( max( ( milliseconds( ) - localvarint( "ui_show_youKilled" ) + 2350 ) / 150 , 0 ) , 1 ) * ( 180 ) ) )
+		itemDef
+		{
+			rect 0 0 208 48 9 10
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 0.25
+			background "white"
+			textscale 0.55
+			exp rect x ( ( 0 - 104 ) )
+			exp rect y ( ( - 64 ) )
+			visible when ( ( getplayercardinfo( 0 , 0 , 8 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 9 10
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "cardtitle_248x48"
+			textfont 6
+			textalign 4
+			textaligny -20
+			textscale 0.375
+			exp rect x ( ( 0 - 104 ) )
+			exp rect y ( ( - 64 ) )
+			visible when ( ( getplayercardinfo( 0 , 0 , 8 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 9 10
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( 0 - 104 )
+			exp rect y ( - 64 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 0 , 8 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 0 , 8 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 0 , 8 ) , 5 ) )
+			visible when ( ( getplayercardinfo( 0 , 0 , 8 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 0 , 8 ) , 1 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 0 , 8 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 9 10
+			decoration
+			visible 1
+			forecolor 0.6 0.8 0.6 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( 0 - 104 )
+			exp rect y ( ( - 64 ) + 28 )
+			visible when ( ( ( getplayercardinfo( 0 , 0 , 8 ) != 0 ) && ( getplayercardinfo( 6 , 0 , 8 ) && getplayercardinfo( 6 , 0 , 8 ) == ( ( ( team( "name" ) == "TEAM_AXIS" ) * 1 ) + ( ( team( "name" ) == "TEAM_ALLIES" ) * 2 ) )
+ ) )
+ )
+			exp text ( getplayercardinfo( 8 , 0 , 8 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 9 10
+			decoration
+			visible 1
+			forecolor 0.8 0.35 0.4 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( 0 - 104 )
+			exp rect y ( ( - 64 ) + 28 )
+			visible when ( ( ( getplayercardinfo( 0 , 0 , 8 ) != 0 ) && ( !getplayercardinfo( 6 , 0 , 8 ) || getplayercardinfo( 6 , 0 , 8 ) != ( ( ( team( "name" ) == "TEAM_AXIS" ) * 1 ) + ( ( team( "name" ) == "TEAM_ALLIES" ) * 2 ) )
+ ) )
+ )
+			exp text ( getplayercardinfo( 8 , 0 , 8 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 9 10
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( 0 - 104 ) + 160 )
+			exp rect y ( ( - 64 ) )
+			visible when ( ( getplayercardinfo( 0 , 0 , 8 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 0 , 8 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 20 9 10
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 0.25
+			background "white"
+			textscale 0.55
+			exp rect x ( ( 0 - 104 ) )
+			exp rect y ( ( - 64 ) + 48 )
+			visible when ( ( getplayercardinfo( 0 , 0 , 8 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 20 9 10
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "cardtitle_248x20"
+			textscale 0.55
+			exp rect x ( ( 0 - 104 ) )
+			exp rect y ( ( - 64 ) + 48 )
+			visible when ( ( getplayercardinfo( 0 , 0 , 8 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 20 9 10
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textalignx 8
+			textscale 0.375
+			exp rect x ( ( 0 - 104 ) )
+			exp rect y ( ( - 64 ) + 48 )
+			visible when ( ( getplayercardinfo( 0 , 0 , 8 ) != 0 ) && getplayercardinfo( 9 , 0 , 8 ) != "" )
+			exp text ( "[" + getplayercardinfo( 9 , 0 , 8 ) + "]" )
+		}
+		itemDef
+		{
+			rect 0 0 20 20 9 10
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( 0 - 104 ) + 164 )
+			exp rect y ( ( - 64 ) + 48 )
+			visible when ( ( getplayercardinfo( 0 , 0 , 8 ) != 0 ) && ( getplayercardinfo( 4 , 0 , 8 ) >= 0 ) )
+			exp material ( tablelookup( "mp/rankIconTable.csv" , 0 , getplayercardinfo( 4 , 0 , 8 ) , ( getplayercardinfo( 5 , 0 , 8 ) + 1 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 20 20 9 10
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textalignx 20
+			textscale 0.375
+			exp rect x ( ( 0 - 104 ) + 164 )
+			exp rect y ( ( - 64 ) + 48 )
+			visible when ( ( getplayercardinfo( 0 , 0 , 8 ) != 0 ) && ( getplayercardinfo( 4 , 0 , 8 ) >= 0 ) )
+			exp text ( tablelookup( "mp/rankTable.csv" , 0 , getplayercardinfo( 4 , 0 , 8 ) , 14 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 20 9 10
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			textfont 6
+			textalign 5
+			textscale 0.375
+			glowColor 1 0.8 0.6 1
+			exp rect x ( ( 0 - 104 ) )
+			exp rect y ( ( - 64 ) + ( 0 - 20 ) )
+			visible when ( ( getplayercardinfo( 0 , 0 , 8 ) != 0 ) )
+			exp text ( "@MP_YOU_KILLED" )
+		}
+	}
+}

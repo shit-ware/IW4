@@ -1,0 +1,378 @@
+{
+	menuDef
+	{
+		name "hud_fullscreen"
+		rect 0 0 640 480 4 4
+		visible 1
+		forecolor 1 1 1 1
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			visible 1
+			ownerdraw 112
+			forecolor 1 1 1 1
+			background "splatter_alt"
+			type 8
+			textscale 0.55
+			visible when ( ! ( weaponname( ) == "heli_remote_mp" )
+ && ! ( ( weaponname( ) == "ac130_105mm_mp" )
+ || ( weaponname( ) == "ac130_40mm_mp" )
+ || ( weaponname( ) == "ac130_25mm_mp" )
+ )
+ && ( ( ! ( ( spectatingclient( ) )
+ && dvarbool( "cg_thirdPersonSpectator" ) )
+ )
+ || inkillcam( ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 1 1 0.3
+			background "ac130_overlay_grain"
+			textscale 0.55
+			visible when ( scopedthermal( ) && ( ! ( ( spectatingclient( ) )
+ && dvarbool( "cg_thirdPersonSpectator" ) )
+ )
+ )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "ballistic_overlay"
+			textscale 0.55
+			visible when ( ( getperk( "equipment" ) == "_specialty_blastshield" && ( ( ! ( dvarstring( "scr_gameended" ) )
+ )
+ || inkillcam( ) ) )
+ && !( weaponname( ) == "heli_remote_mp" ) && ! ( ( weaponname( ) == "ac130_105mm_mp" )
+ || ( weaponname( ) == "ac130_40mm_mp" )
+ || ( weaponname( ) == "ac130_25mm_mp" )
+ )
+ && !missilecam( ) )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 1 1 0.3
+			background "ac130_overlay_grain"
+			textscale 0.55
+			visible when ( isempjammed( ) )
+		}
+		itemDef
+		{
+			rect 0 -75 40 40 2 10
+			visible 1
+			ownerdraw 80
+			forecolor 1 1 1 0.65
+			type 8
+			textscale 0.375
+			visible when ( ( ( ! ( ui_active( ) )
+ )
+ && ( ! ( dvarbool( "g_hardcore" ) )
+ )
+ && ( ! ( spectatingclient( ) )
+ )
+ && ( ! ( inkillcam( ) )
+ )
+ && ( ! ( dvarstring( "scr_gameended" ) )
+ )
+ && ( ! ( flashbanged( ) )
+ )
+ && ( ! ( ( weaponname( ) == "killstreak_ac130_mp" )
+ || ( weaponname( ) == "killstreak_helicopter_minigun_mp" )
+ || ( weaponname( ) == "killstreak_predator_missile_mp" )
+ || ( ( weaponname( ) == "ac130_105mm_mp" )
+ || ( weaponname( ) == "ac130_40mm_mp" )
+ || ( weaponname( ) == "ac130_25mm_mp" )
+ )
+ || ( adsjavelin( ) )
+ || ( weaponname( ) == "heli_remote_mp" )
+ || missilecam( ) )
+ )
+ )
+ && !( ( ( ( ( ! ( ui_active( ) )
+ )
+ && ( ! ( dvarbool( "g_hardcore" ) )
+ )
+ && ( ! ( flashbanged( ) )
+ )
+ && ( ! ( ( weaponname( ) == "killstreak_ac130_mp" )
+ || ( weaponname( ) == "killstreak_helicopter_minigun_mp" )
+ || ( weaponname( ) == "killstreak_predator_missile_mp" )
+ || ( ( weaponname( ) == "ac130_105mm_mp" )
+ || ( weaponname( ) == "ac130_40mm_mp" )
+ || ( weaponname( ) == "ac130_25mm_mp" )
+ )
+ || ( adsjavelin( ) )
+ || ( weaponname( ) == "heli_remote_mp" )
+ || missilecam( ) )
+ )
+ && ( !isempjammed( ) )
+ && ( ! ( dvarstring( "scr_gameended" ) )
+ )
+ )
+ && ( milliseconds( ) - localvarint( "ui_show_youKilled" ) < 2500 && ( ! ( milliseconds( ) - localvarint( "ui_show_killedBy" ) < 4000 || ( inkillcam( ) )
+ )
+ )
+ )
+ && ( ! ( inkillcam( ) )
+ )
+ ) && !dvarbool( "ui_hide_playercards" ) && ! ( milliseconds( ) - localvarint( "ui_show_killedBy" ) < 4000 || ( inkillcam( ) )
+ )
+ && ! ( inkillcam( ) )
+ )
+ || ( ( ! ( ui_active( ) )
+ )
+ && ( ( milliseconds( ) - localvarint( "ui_show_killedBy" ) < 4000 || ( inkillcam( ) )
+ )
+ || ( inkillcam( ) )
+ ) && !dvarbool( "ui_hide_playercards" ) )
+ ) )
+		}
+		itemDef
+		{
+			rect 0 -125 40 40 2 10
+			visible 1
+			ownerdraw 72
+			forecolor 1 1 1 0.65
+			type 8
+			textscale 0.375
+			visible when ( ( ( ! ( ui_active( ) )
+ )
+ && ( ! ( dvarbool( "g_hardcore" ) )
+ )
+ && ( ! ( spectatingclient( ) )
+ )
+ && ( ! ( inkillcam( ) )
+ )
+ && ( ! ( dvarstring( "scr_gameended" ) )
+ )
+ && ( ! ( flashbanged( ) )
+ )
+ && ( ! ( ( weaponname( ) == "killstreak_ac130_mp" )
+ || ( weaponname( ) == "killstreak_helicopter_minigun_mp" )
+ || ( weaponname( ) == "killstreak_predator_missile_mp" )
+ || ( ( weaponname( ) == "ac130_105mm_mp" )
+ || ( weaponname( ) == "ac130_40mm_mp" )
+ || ( weaponname( ) == "ac130_25mm_mp" )
+ )
+ || ( adsjavelin( ) )
+ || ( weaponname( ) == "heli_remote_mp" )
+ || missilecam( ) )
+ )
+ )
+ )
+		}
+		itemDef
+		{
+			rect 0 -125 0 0 2 2
+			decoration
+			visible 1
+			ownerdraw 113
+			forecolor 1 1 1 1
+			type 8
+			textfont 1
+			textscale 0.375
+			visible when ( ( ! ( ui_active( ) )
+ )
+ && ( ! ( spectatingclient( ) )
+ )
+ )
+		}
+		itemDef
+		{
+			name "talking"
+			rect 108 48 24 24 8 8
+			decoration
+			visible 1
+			ownerdraw 266
+			forecolor 1 1 1 0.85
+			type 8
+			textscale 0.55
+			exp rect y ( 6 + ( ( ( ( dvarstring( "ui_danger_team" ) == "contested" )
+ || ( dvarstring( "ui_danger_team" ) != "BombExploded" && ( team( "name" ) == "TEAM_ALLIES" && dvarstring( "ui_danger_team" ) == "axis" ) || ( team( "name" ) == "TEAM_AXIS" && dvarstring( "ui_danger_team" ) == "allies" ) )
+ || ( dvarstring( "ui_danger_team" ) != "BombExploded" && dvarstring( "ui_danger_team" ) == "none" )
+ || ( dvarstring( "ui_danger_team" ) != "BombExploded" && ( team( "name" ) == "TEAM_ALLIES" && dvarstring( "ui_danger_team" ) == "allies" ) || ( team( "name" ) == "TEAM_AXIS" && dvarstring( "ui_danger_team" ) == "axis" ) )
+ ) )
+ * 16 ) + ( ( dvarstring( "ui_bomb_timer" ) )
+ * 26 ) )
+			visible when ( ( ( ! ( ui_active( ) )
+ )
+ && ( ! ( dvarbool( "g_hardcore" ) )
+ )
+ && ( ! ( inkillcam( ) )
+ )
+ && ( ! ( dvarstring( "scr_gameended" ) )
+ )
+ )
+ )
+		}
+		itemDef
+		{
+			name "talker1"
+			rect 0 136 18 18 8 8
+			decoration
+			visible 1
+			ownerdraw 193
+			forecolor 1 1 1 1
+			type 8
+			textalignx 18
+			textaligny 17
+			textscale 0.375
+			visible when ( ( ( ! ( ui_active( ) )
+ )
+ && ( ! ( dvarbool( "g_hardcore" ) )
+ )
+ && ( ! ( inkillcam( ) )
+ )
+ && ( ! ( dvarstring( "scr_gameended" ) )
+ )
+ )
+ )
+		}
+		itemDef
+		{
+			name "talker2"
+			rect 0 154 18 18 8 8
+			decoration
+			visible 1
+			ownerdraw 194
+			forecolor 1 1 1 1
+			type 8
+			textalignx 18
+			textaligny 17
+			textscale 0.375
+			visible when ( ( ( ! ( ui_active( ) )
+ )
+ && ( ! ( dvarbool( "g_hardcore" ) )
+ )
+ && ( ! ( inkillcam( ) )
+ )
+ && ( ! ( dvarstring( "scr_gameended" ) )
+ )
+ )
+ )
+		}
+		itemDef
+		{
+			name "talker3"
+			rect 0 172 18 18 8 8
+			decoration
+			visible 1
+			ownerdraw 195
+			forecolor 1 1 1 1
+			type 8
+			textalignx 18
+			textaligny 17
+			textscale 0.375
+			visible when ( ( ( ! ( ui_active( ) )
+ )
+ && ( ! ( dvarbool( "g_hardcore" ) )
+ )
+ && ( ! ( inkillcam( ) )
+ )
+ && ( ! ( dvarstring( "scr_gameended" ) )
+ )
+ )
+ )
+		}
+		itemDef
+		{
+			name "talker4"
+			rect 0 190 18 18 8 8
+			decoration
+			visible 1
+			ownerdraw 196
+			forecolor 1 1 1 1
+			type 8
+			textalignx 18
+			textaligny 17
+			textscale 0.375
+			visible when ( ( ( ! ( ui_active( ) )
+ )
+ && ( ! ( dvarbool( "g_hardcore" ) )
+ )
+ && ( ! ( inkillcam( ) )
+ )
+ && ( ! ( dvarstring( "scr_gameended" ) )
+ )
+ )
+ )
+		}
+		itemDef
+		{
+			rect -100 20 200 0 2 1
+			visible 1
+			forecolor 1 1 1 0.65
+			textalign 9
+			textscale 0.375
+			text "@CGAME_FOLLOWING"
+			visible when ( ( ! ( inkillcam( ) )
+ )
+ && ( spectatingclient( ) || spectatingfree( ) )
+ && ( ! ( ui_active( ) )
+ )
+ && ( ! ( dvarstring( "scr_gameended" ) )
+ )
+ )
+		}
+		itemDef
+		{
+			rect 0 0 200 5 8 8
+			visible 1
+			ownerdraw 61
+			forecolor 1 1 1 0.65
+			type 8
+			textalign 4
+			textscale 0.375
+			visible when ( ( ! ( inkillcam( ) )
+ )
+ && ( spectatingclient( ) || spectatingfree( ) )
+ && ( ! ( ui_active( ) )
+ )
+ && ( ! ( dvarstring( "scr_gameended" ) )
+ )
+ )
+		}
+		itemDef
+		{
+			rect 6 -60 10 10 8 10
+			visible 1
+			forecolor 1 1 1 0.45
+			type 19
+			textscale 0.375
+			gamemsgwindowmode 1
+			visible when ( ( ! ( inkillcam( ) )
+ )
+ && ( ! ( ui_active( ) )
+ )
+ )
+		}
+		itemDef
+		{
+			rect 0 -60 10 10 9 9
+			visible 1
+			forecolor 1 1 1 1
+			type 19
+			textfont 1
+			textalign 1
+			textscale 0.375
+			gamemsgwindowindex 1
+			gamemsgwindowmode 1
+			visible when ( ( ! ( inkillcam( ) )
+ )
+ && ( ! ( ui_active( ) )
+ )
+ )
+		}
+	}
+}

@@ -1,0 +1,107 @@
+{
+	menuDef
+	{
+		name "playercard_spectator_sd"
+		rect 0 0 640 480 4 4
+		visible 1
+		forecolor 1 1 1 1
+		visible when ( ( ( ! ( ui_active( ) )
+ )
+ && ( ! ( flashbanged( ) )
+ )
+ && ( ! ( ( weaponname( ) == "killstreak_ac130_mp" )
+ || ( weaponname( ) == "killstreak_helicopter_minigun_mp" )
+ || ( weaponname( ) == "killstreak_predator_missile_mp" )
+ || ( ( weaponname( ) == "ac130_105mm_mp" )
+ || ( weaponname( ) == "ac130_40mm_mp" )
+ || ( weaponname( ) == "ac130_25mm_mp" )
+ )
+ || ( adsjavelin( ) )
+ || ( weaponname( ) == "heli_remote_mp" )
+ || missilecam( ) )
+ )
+ && ( !isempjammed( ) )
+ && ( ! ( dvarstring( "scr_gameended" ) )
+ )
+ )
+ && ( getplayercardinfo( 0 , 0 , 6 ) ) && ( ( spectatingclient( ) )
+ && ( ! ( inkillcam( ) )
+ )
+ ) )
+		exp rect x ( ( max( ( 1 - ( getplayercardinfo( 7 , 0 , 6 ) / 150 ) ) , 0 ) * ( 208 ) ) )
+		itemDef
+		{
+			rect 0 0 208 48 2 1
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( 0 ) - ( ( 208 ) / 2 ) )
+			exp rect y ( 30 )
+			visible when ( 1 && ( getplayercardinfo( 0 , 0 , 6 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( 0 ) - ( ( 208 ) / 2 ) )
+			exp rect y ( 30 - 2 )
+			visible when ( 1 && ( getplayercardinfo( 0 , 0 , 6 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 0 , 6 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( 0 ) - ( ( 208 ) / 2 ) )
+			exp rect y ( 30 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 0 , 6 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 0 , 6 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 0 , 6 ) , 5 ) )
+			visible when ( 1 && ( getplayercardinfo( 0 , 0 , 6 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 0 , 6 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( 0 ) - ( ( 208 ) / 2 ) )
+			exp rect y ( ( 30 ) + 28 )
+			visible when ( 1 && ( getplayercardinfo( 0 , 0 , 6 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 0 , 6 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 0 ) - ( ( 208 ) / 2 ) ) + 158 )
+			exp rect y ( ( 30 ) )
+			visible when ( 1 && ( getplayercardinfo( 0 , 0 , 6 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 0 , 6 ) , 1 ) )
+		}
+	}
+}

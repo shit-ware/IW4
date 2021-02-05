@@ -1,0 +1,322 @@
+{
+	menuDef
+	{
+		name "targetmap_fullscreen"
+		rect 0 0 0 0 0 0
+		visible 1
+		forecolor 1 1 1 1
+		visible when ( ( selecting_location( ) )
+ && ( ! ( spectatingclient( ) )
+ )
+ )
+		itemDef
+		{
+			name "targetmap_border"
+			rect 0 0 0 0 9 9
+			visible 1
+			border 1
+			borderSize 0.666667
+			forecolor 1 1 1 1
+			bordercolor 1 1 1 0.35
+			textscale 0.55
+			exp rect x ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ * 0.5 ) )
+			exp rect y ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ * 0.5 ) )
+			exp rect h ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ )
+			exp rect w ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ )
+		}
+		itemDef
+		{
+			rect 0 0 0 0 9 9
+			visible 1
+			style 3
+			forecolor 0.89 0.98 0.95 0.05
+			background "minimap_scanlines"
+			textscale 0.55
+			exp rect x ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ * 0.5 ) )
+			exp rect y ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ * 0.5 ) )
+			exp rect h ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ )
+			exp rect w ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ )
+		}
+		itemDef
+		{
+			name "targetmap_map"
+			rect 0 0 0 0 9 9
+			decoration
+			visible 1
+			ownerdraw 181
+			forecolor 1 1 1 1
+			background "compass_map_default"
+			type 8
+			textscale 0.55
+			exp rect x ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ * 0.5 ) )
+			exp rect y ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ * 0.5 ) )
+			exp rect h ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ )
+			exp rect w ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ )
+		}
+		itemDef
+		{
+			name "targetmap_friendlies"
+			rect 0 0 0 0 9 9
+			visible 1
+			ownerdraw 185
+			forecolor 1 1 1 1
+			type 8
+			textscale 0.55
+			exp rect x ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ * 0.5 ) )
+			exp rect y ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ * 0.5 ) )
+			exp rect h ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ )
+			exp rect w ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ )
+			exp forecolor a ( 1 - radarjamintensity( ) )
+		}
+		itemDef
+		{
+			name "targetmap_enemies"
+			rect 0 0 0 0 9 9
+			visible 1
+			ownerdraw 188
+			forecolor 1 1 1 1
+			type 8
+			textscale 0.55
+			exp rect x ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ * 0.5 ) )
+			exp rect y ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ * 0.5 ) )
+			exp rect h ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ )
+			exp rect w ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ )
+			exp forecolor a ( 1 - radarjamintensity( ) )
+		}
+		itemDef
+		{
+			name "targetmap_objectives"
+			rect 0 0 0 0 9 9
+			decoration
+			visible 1
+			ownerdraw 182
+			forecolor 1 1 1 1
+			background "objective_line"
+			type 8
+			textscale 0.55
+			exp rect x ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ * 0.5 ) )
+			exp rect y ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ * 0.5 ) )
+			exp rect h ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ )
+			exp rect w ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ )
+		}
+		itemDef
+		{
+			name "targetmap_sentries"
+			rect 0 0 0 0 9 9
+			visible 1
+			ownerdraw 189
+			forecolor 1 1 1 1
+			type 8
+			textscale 0.55
+			exp rect x ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ * 0.5 ) )
+			exp rect y ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ * 0.5 ) )
+			exp rect h ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ )
+			exp rect w ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ )
+			exp forecolor a ( 1 - radarjamintensity( ) )
+		}
+		itemDef
+		{
+			name "targetmap_player"
+			rect 0 0 0 0 9 9
+			visible 1
+			ownerdraw 183
+			forecolor 1 1 1 1
+			background "compassping_player"
+			type 8
+			textscale 0.55
+			exp rect x ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ * 0.5 ) )
+			exp rect y ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ * 0.5 ) )
+			exp rect h ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ )
+			exp rect w ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ )
+			exp forecolor a ( 1 - radarjamintensity( ) )
+		}
+		itemDef
+		{
+			rect 0 0 0 0 9 9
+			decoration
+			visible 1
+			style 3
+			forecolor 0.64 0.74 0.71 1
+			background "white"
+			textscale 0.55
+			exp rect x ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ * 0.5 ) )
+			exp rect y ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ * 0.5 ) )
+			exp rect h ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ )
+			exp rect w ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ )
+			exp forecolor a ( radarjamintensity( ) )
+			visible when ( radarisjammed( ) )
+		}
+		itemDef
+		{
+			rect 0 0 0 0 9 9
+			decoration
+			visible 1
+			style 3
+			forecolor 0.89 0.98 0.95 1
+			background "ac130_overlay_grain"
+			textscale 0.55
+			exp rect x ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ * 0.5 ) )
+			exp rect y ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ * 0.5 ) )
+			exp rect h ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ )
+			exp rect w ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ )
+			exp forecolor a ( radarjamintensity( ) )
+			visible when ( radarisjammed( ) )
+		}
+		itemDef
+		{
+			rect 0 0 0 0 9 9
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "stencil_base"
+			textscale 0.55
+			exp rect x ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ * 0.5 ) )
+			exp rect y ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ * 0.5 ) )
+			exp rect h ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ )
+			exp rect w ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ )
+		}
+		itemDef
+		{
+			rect 0 0 0 0 9 9
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "scanlines_stencil"
+			textscale 0.55
+			exp rect x ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ * 0.5 ) )
+			exp rect y ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ * 1.5 ) + ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ * 2 ) * ( 1 - ( ( milliseconds( ) % 4000 ) / 4000 )
+ )
+ ) )
+			exp rect h ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ )
+			exp rect w ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ )
+		}
+		itemDef
+		{
+			rect 0 0 0 0 9 9
+			visible 1
+			style 3
+			forecolor 0.89 0.98 0.95 1
+			background "stencil_fill"
+			textscale 0.55
+			exp rect x ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ * 0.5 ) )
+			exp rect y ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ * 0.5 ) )
+			exp rect h ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ )
+			exp rect w ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ )
+		}
+		itemDef
+		{
+			name "targetmap_locator"
+			rect 0 0 0 0 9 9
+			decoration
+			visible 1
+			ownerdraw 186
+			forecolor 1 1 1 1
+			background "compass_map_default"
+			type 8
+			textscale 0.55
+			exp rect x ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ * 0.5 ) )
+			exp rect y ( 0 - ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ * 0.5 ) )
+			exp rect h ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ )
+			exp rect w ( ( ( 480 * getadjustedsafeareavertical( ) ) )
+ )
+		}
+		itemDef
+		{
+			rect 0 24 0 0 9 8
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 1
+			textscale 0.5
+			exp text ( "@" + tablelookup( "mp/killstreakTable.csv" , 12 , weaponname( ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 0 0 9 10
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textalign 1
+			textscale 0.4
+			exp rect y ( 0 - 24 - ( 20 * selecting_direction( ) ) )
+		}
+		itemDef
+		{
+			rect 0 -24 0 0 9 10
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textalign 1
+			textscale 0.4
+			text "@PLATFORM_USE_BUTTONLOOK_TO_AIM"
+			visible when ( selecting_direction( ) )
+		}
+		itemDef
+		{
+			rect 0 -4 0 0 9 10
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textalign 1
+			textscale 0.4
+			text "@PLATFORM_PRESS_BUTTON_TO_CONFIRM_TARGET"
+		}
+	}
+}

@@ -1,0 +1,153 @@
+{
+	menuDef
+	{
+		name "remote_chopper_overlay"
+		rect 0 0 640 480 0 0
+		visible 1
+		forecolor 1 1 1 1
+		visible when ( ( weaponname( ) == "heli_remote_mp" )
+ && ( ! ( ui_active( ) )
+ )
+ )
+		itemDef
+		{
+			rect -200 -190 400 20 2 2
+			decoration
+			visible 1
+			ownerdraw 145
+			forecolor 1 1 1 0.65
+			background "viper_heading_mp"
+			type 8
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 -30 100 30 8 10
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textalign 8
+			textscale 0.625
+			text "@AC130_HUD_WEAPON_25MM"
+			exp forecolor a ( 0.65 - ( ( ( sin( milliseconds( ) / 90 ) ) * 0.65 ) ) )
+		}
+		itemDef
+		{
+			rect -170 150 30 30 2 2
+			decoration
+			visible 1
+			ownerdraw 161
+			forecolor 0.65 0.65 0.65 0.65
+			type 8
+			textalign 8
+			textscale 0.625
+		}
+		itemDef
+		{
+			rect -200 112 30 30 2 2
+			decoration
+			visible 1
+			ownerdraw 160
+			forecolor 0.65 0.65 0.65 0.25
+			type 8
+			textalign 8
+			textscale 0.625
+		}
+		itemDef
+		{
+			rect -427 -240 854 480 2 2
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.65
+			background "viper_overlay_mp"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -32 -32 40 40 2 2
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.325
+			background "viper_locked_box"
+			textscale 0.55
+			exp rect x ( - 32 + ( sin( milliseconds( ) / 420 ) * 100 ) )
+			exp rect y ( - 32 + ( sin( milliseconds( ) / 490 ) * 100 ) )
+			visible when ( !weaplockblink( 11 ) )
+		}
+		itemDef
+		{
+			rect -20 -20 64 64 5 5
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.65
+			background "viper_locking_box"
+			textscale 0.55
+			exp rect x ( weaplockscreenposx( ) - 32 )
+			exp rect y ( weaplockscreenposy( ) - 42 )
+			visible when ( weaplockblink( 0 ) )
+		}
+		itemDef
+		{
+			rect -20 -20 64 64 5 5
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "viper_locked_box"
+			textscale 0.55
+			exp rect x ( weaplockscreenposx( ) - 32 )
+			exp rect y ( weaplockscreenposy( ) - 42 )
+			visible when ( weaplockblink( 5 ) && weaplocked( ) )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.5
+			background "javelin_overlay_grain"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -427 -240 854 480 2 2
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.65
+			background "nightvision_overlay_goggles"
+			textscale 0.55
+		}
+		itemDef
+		{
+			name "VehicleWeaponReticle"
+			rect -320 -240 640 480 0 0
+			decoration
+			visible 1
+			ownerdraw 190
+			forecolor 1 1 1 1
+			type 8
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 180 105 0 20 9 9
+			decoration
+			visible 1
+			forecolor 1 1 1 0.65
+			textfont 3
+			textalign 4
+			textscale 0.375
+			text "@PLATFORM_UI_AC130_TOGGLE_THERMAL"
+			visible when ( ( ! ( inkillcam( ) )
+ )
+ && ( ! ( spectatingclient( ) )
+ )
+ )
+		}
+	}
+}

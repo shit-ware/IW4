@@ -1,0 +1,120 @@
+{
+	menuDef
+	{
+		name "victory_none"
+		rect 0 0 640 480 4 4
+		forecolor 1 1 1 1
+		itemDef
+		{
+			rect 320 120 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 0 1
+			backcolor 0 0 0 1
+			textfont 6
+			textalign 1
+			textscale 1
+			text "DRAW"
+		}
+		itemDef
+		{
+			rect 320 130 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			backcolor 0 0 0 1
+			textfont 6
+			textalign 1
+			textscale 0.4
+			exp text ( "@" + dvarstring( "ui_text_endreason" ) )
+		}
+		itemDef
+		{
+			rect -130 -90 60 60 2 2
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( team( "name" ) == "TEAM_ALLIES" )
+			exp material ( dvarstring( "g_TeamIcon_Allies" ) + "_blue" )
+		}
+		itemDef
+		{
+			rect -130 -90 60 60 2 2
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( team( "name" ) == "TEAM_SPECTATOR" )
+			exp material ( dvarstring( "g_TeamIcon_Allies" ) )
+		}
+		itemDef
+		{
+			rect -130 -90 60 60 2 2
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( team( "name" ) == "TEAM_AXIS" )
+			exp material ( dvarstring( "g_TeamIcon_Allies" ) + "_blue" )
+		}
+		itemDef
+		{
+			rect 70 -90 60 60 2 2
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( team( "name" ) == "TEAM_ALLIES" )
+			exp material ( dvarstring( "g_TeamIcon_Axis" ) + "_red" )
+		}
+		itemDef
+		{
+			rect 70 -90 60 60 2 2
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( team( "name" ) == "TEAM_SPECTATOR" )
+			exp material ( dvarstring( "g_TeamIcon_Axis" ) )
+		}
+		itemDef
+		{
+			rect 70 -90 60 60 2 2
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( team( "name" ) == "TEAM_AXIS" )
+			exp material ( dvarstring( "g_TeamIcon_Axis" ) + "_red" )
+		}
+		itemDef
+		{
+			rect -100 30 1 1 2 2
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 6
+			textalign 1
+			textscale 1
+			exp text ( marinesfield( "score" ) )
+		}
+		itemDef
+		{
+			rect 100 30 1 1 2 2
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 6
+			textalign 1
+			textscale 1
+			exp text ( opforfield( "score" ) )
+		}
+	}
+}

@@ -1,0 +1,27 @@
+{
+	menuDef
+	{
+		name "hold_breath_hint"
+		rect 0 -130 0 0 2 2
+		visible 1
+		forecolor 1 1 1 1
+		visible when ( !adsjavelin( ) && ( ! ( dvarbool( "g_hardcore" ) )
+ )
+ && ( ! ( inkillcam( ) )
+ )
+ && ( ! ( spectatingclient( ) || spectatingfree( ) )
+ )
+ )
+		itemDef
+		{
+			name "chRect"
+			rect 0 0 0 0 0 0
+			decoration
+			visible 1
+			ownerdraw 71
+			forecolor 1 1 1 1
+			type 8
+			textscale 0.375
+		}
+	}
+}
