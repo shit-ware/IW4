@@ -1,0 +1,7 @@
+{
+	menuDef
+	{
+		name ",acceptinvite_warning"
+		rect 0 0 0 0 0 0
+	}
+}

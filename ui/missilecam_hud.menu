@@ -1,50 +1,23 @@
 {
 	menuDef
 	{
-		name missilecam_hud
-		fullscreen 0
-		rect 0 0 640 480
-		style 0
-		border 0
-		ownerdraw 0
-		ownerdrawFlag 0
-		borderSize 0
-		foreColor 1 1 1 1
-		backColor 0 0 0 0
-		borderColor 0 0 0 0
-		outlineColor 0 0 0 0
+		name "missilecam_hud"
+		rect 0 0 640 480 0 0
+		visible 1
+		forecolor 1 1 1 1
 		fadeCycle 1
 		fadeClamp 1
 		fadeAmount 0.1
-		fadeInAmount 0
-		visible when ( missilecam( )  )
-		blurWorld 0
-		focusColor 0 0 0 0
-		visible 
+		visible when ( missilecam( ) )
 		itemDef
 		{
 			rect -320 -240 640 480 2 2
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0.3
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background missilecam_reticle
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
+			decoration
 			visible 1
+			style 3
+			forecolor 1 1 1 0.3
+			background "missilecam_reticle"
+			textscale 0.55
 		}
 	}
 }

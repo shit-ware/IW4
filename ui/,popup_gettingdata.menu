@@ -1,0 +1,7 @@
+{
+	menuDef
+	{
+		name ",popup_gettingdata"
+		rect 0 0 0 0 0 0
+	}
+}

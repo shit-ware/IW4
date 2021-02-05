@@ -1,48 +1,24 @@
 {
 	menuDef
 	{
-		name subtitles
-		fullscreen 0
+		name "subtitles"
 		rect 0 0 0 0 2 3
-		style 0
-		border 0
-		ownerdraw 0
-		ownerdrawFlag 0
-		borderSize 0
-		foreColor 1 1 1 1
-		backColor 0 0 0 0
-		borderColor 0 0 0 0
-		outlineColor 0 0 0 0
+		visible 1
+		forecolor 1 1 1 1
 		fadeCycle 1
 		fadeClamp 1
 		fadeAmount 0.1
-		fadeInAmount 0
-		visible when ( dvarbool(static)( 13 ) == 0  )
-		blurWorld 0
-		focusColor 0 0 0 0
-		visible 
+		visible when ( dvarbool( "credits_active" ) == 0 )
 		itemDef
 		{
-			rect 0 0 0 0 2 3
-			style 0
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			type 19
-			align 0
-			textAlign 5
-			textAlignX 0
-			textAlignY 0
-			textScale 0.38
-			textStyle 3
-			textFont 0
-			feeder 0
+			rect 0 0 0 0 0 0
 			visible 1
+			forecolor 1 1 1 1
+			type 19
+			textalign 5
+			textscale 0.38
+			gamemsgwindowindex 2
+			gamemsgwindowmode 1
 		}
 	}
 }

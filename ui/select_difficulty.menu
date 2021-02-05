@@ -1,1039 +1,631 @@
 {
 	menuDef
 	{
-		name select_difficulty
-		fullscreen 0
+		name "select_difficulty"
 		rect -150 -92 300 184 2 2
+		popup
+		outOfBoundsClick
+		visible 1
 		style 1
-		border 0
-		ownerdraw 0
-		ownerdrawFlag 0
-		borderSize 0
-		foreColor 1 1 1 1
-		backColor 1 1 1 1
-		borderColor 0 0 0 0
-		outlineColor 0 0 0 0
-		background white
-		exp rect Y ( 0 - ( 24 + 8 * 20 ) / 2  )
+		forecolor 1 1 1 1
+		backcolor 1 1 1 1
+		background "white"
+		focuscolor 1 1 1 1
 		fadeCycle 1
 		fadeClamp 1
 		fadeAmount 0.1
-		fadeInAmount 0
-		blurWorld 0
+		allowedBinding "+talk"
+		exp rect y ( 0 - ( 24 + 8 * 20 ) / 2 )
+		
+		{
+			;;
+		}
+		
+		{
+			;;
+		}
 		onOpen
 		{
-			if ( dvarint(static)( 39 ) != 0  )
+			if ( dvarstring( "recommended_gameskill" ) != 0 )
 			{
-				"setItemColor" "newgame_easy" "forecolor" 1 "0.4" "0.4" 1;
+				setItemColor "newgame_easy" forecolor 1 "0.4" "0.4" 1;
 			}
-			if ( dvarint(static)( 39 ) != 1  )
+			if ( dvarstring( "recommended_gameskill" ) != 1 )
 			{
-				"setItemColor" "newgame_regular" "forecolor" 1 "0.4" "0.4" 1;
+				setItemColor "newgame_regular" forecolor 1 "0.4" "0.4" 1;
 			}
-			if ( dvarint(static)( 39 ) != 2  )
+			if ( dvarstring( "recommended_gameskill" ) != 2 )
 			{
-				"setItemColor" "newgame_hardened" "forecolor" 1 "0.4" "0.4" 1;
+				setItemColor "newgame_hardened" forecolor 1 "0.4" "0.4" 1;
 			}
-			if ( dvarint(static)( 39 ) != 3  )
+			if ( dvarstring( "recommended_gameskill" ) != 3 )
 			{
-				"setItemColor" "newgame_veteran" "forecolor" 1 "0.4" "0.4" 1;
+				setItemColor "newgame_veteran" forecolor 1 "0.4" "0.4" 1;
 			}
-			"setfocusbydvar" "recommended_gameskill";
+			setfocusbydvar "recommended_gameskill";
 		}
 		onClose
 		{
+			;;
 		}
-		onESC
+		onEsc
 		{
-			"close" "self";
-			"open" "select_difficulty";
-		}
-		focusColor 1 1 1 1
-		popup 
-		outOfBoundsClick 
-		allowedBinding +talk
-		execKeyInt 2
-		{
-		}
-		execKeyInt 14
-		{
+			close self;
+			open "select_difficulty";
 		}
 		itemDef
 		{
-			rect -1004 -572 3416 1920 2 2
+			rect -854 -480 3416 1920 0 0
+			decoration
+			visible 1
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0.35
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin -854 -480
-			background white
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
+			forecolor 1 1 1 1
+			backcolor 0 0 0 0.35
+			background "white"
+			textscale 0.55
 		}
 		itemDef
 		{
-			rect -1004 -572 3416 1920 2 2
+			rect -854 -480 3416 1920 0 0
+			decoration
+			visible 1
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 1 1 1 1
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin -854 -480
-			background xpbar_stencilbase
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "xpbar_stencilbase"
+			textscale 0.55
 		}
 		itemDef
 		{
-			rect -427 -92 854 184 2 2
+			rect -277 0 854 184 0 0
+			decoration
+			visible 1
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0.5 0.5 0.5 1
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin -277 0
-			background white
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.5 0.5 1
+			background "white"
+			textscale 0.55
 		}
 		itemDef
 		{
-			rect -771.489 -92 1708 480 2 9
+			rect 0 0 1708 480 2 9
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0.75
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 0 0
-			background mw2_popup_bg_fogstencil
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			exp (null) (null) ( ( 0 - ( 854 - 300 ) * 0.500000 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) )  )
+			forecolor 1 1 1 0.75
+			background "mw2_popup_bg_fogstencil"
+			textscale 0.55
+			exp rect x ( ( 0 - ( 854 - 300 ) * 0.5 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) ) )
 		}
 		itemDef
 		{
-			rect -771.489 -92 -1708 -480 2 9
+			rect 0 0 -1708 -480 2 9
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.85 0.85 0.85 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 0 0
-			background mw2_popup_bg_fogscroll
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			exp (null) (null) ( ( 0 - ( 854 - 300 ) * 0.500000 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) )  )
+			forecolor 0.85 0.85 0.85 1
+			background "mw2_popup_bg_fogscroll"
+			textscale 0.55
+			exp rect x ( ( 0 - ( 854 - 300 ) * 0.5 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) ) )
 		}
 		itemDef
 		{
-			rect -427 -92 854 184 2 9
+			rect -277 0 854 0 2 9
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin -277 0
-			background mockup_popup_bg_stencilfill
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			exp (null) (null) ( ( 24 + 8 * 20 )  )
+			forecolor 1 1 1 1
+			background "mockup_popup_bg_stencilfill"
+			textscale 0.55
+			exp rect h ( ( 24 + 8 * 20 ) )
 		}
 		itemDef
 		{
-			rect -867.613 -92 -1708 -480 2 9
+			rect 0 0 -1708 -480 2 9
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0.75
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 0 0
-			background mw2_popup_bg_fogstencil
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			exp (null) (null) ( ( 0 - ( 854 - 300 ) * 0.500000 ) + ( 0 - 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) )  )
+			forecolor 1 1 1 0.75
+			background "mw2_popup_bg_fogstencil"
+			textscale 0.55
+			exp rect x ( ( 0 - ( 854 - 300 ) * 0.5 ) + ( 0 - 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) ) )
 		}
 		itemDef
 		{
-			rect -867.613 -92 -1708 -480 2 9
+			rect 0 0 -1708 -480 2 9
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.85 0.85 0.85 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 0 0
-			background mw2_popup_bg_fogscroll
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			exp (null) (null) ( ( 0 - ( 854 - 300 ) * 0.500000 ) + ( 0 - 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) )  )
+			forecolor 0.85 0.85 0.85 1
+			background "mw2_popup_bg_fogscroll"
+			textscale 0.55
+			exp rect x ( ( 0 - ( 854 - 300 ) * 0.5 ) + ( 0 - 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) ) )
 		}
 		itemDef
 		{
-			rect -491 -156 64 64 2 2
+			rect -341 -64 64 64 2 2
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin -341 -64
-			background drop_shadow_tl
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			visible when ( 1  )
+			forecolor 0 0 0 1
+			background "drop_shadow_tl"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
-			rect -427 -156 854 64 2 2
+			rect -277 -64 854 64 2 2
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin -277 -64
-			background drop_shadow_t
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			visible when ( 1  )
+			forecolor 0 0 0 1
+			background "drop_shadow_t"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
-			rect 427 -156 64 64 2 2
+			rect 577 -64 64 64 2 2
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 577 -64
-			background drop_shadow_tr
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			visible when ( 1  )
+			forecolor 0 0 0 1
+			background "drop_shadow_tr"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
-			rect 427 -92 64 184 2 2
+			rect 577 0 64 184 2 2
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 577 0
-			background drop_shadow_r
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			visible when ( 1  )
+			forecolor 0 0 0 1
+			background "drop_shadow_r"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
-			rect 427 92 64 64 2 2
+			rect 577 184 64 64 2 2
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 577 184
-			background drop_shadow_br
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			visible when ( 1  )
+			forecolor 0 0 0 1
+			background "drop_shadow_br"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
-			rect -427 92 854 64 2 2
+			rect -277 184 854 64 2 2
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin -277 184
-			background drop_shadow_b
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			visible when ( 1  )
+			forecolor 0 0 0 1
+			background "drop_shadow_b"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
-			rect -491 92 64 64 2 2
+			rect -341 184 64 64 2 2
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin -341 184
-			background drop_shadow_bl
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			visible when ( 1  )
+			forecolor 0 0 0 1
+			background "drop_shadow_bl"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
-			rect -491 -92 64 184 2 2
+			rect -341 0 64 184 2 2
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin -341 0
-			background drop_shadow_l
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			visible when ( 1  )
+			forecolor 0 0 0 1
+			background "drop_shadow_l"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
-			rect -150 -92 300 24 2 2
+			rect 0 0 300 24 0 0
+			decoration
+			visible 1
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 0 0
-			background gradient_fadein
-			decoration 
-			type 0
-			align 0
-			textAlign 4
-			textAlignX 4
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 9
-			feeder 0
+			forecolor 1 1 1 1
+			background "gradient_fadein"
+			textfont 9
+			textalign 4
+			textalignx 4
+			textscale 0.375
 			text "@MENU_SELECT_DIFFICULTY"
-			visible 1
 		}
 		itemDef
 		{
-			rect -146 40 292 42 2 2
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 4 132
-			decoration 
-			autoWrapped 
-			type 0
-			align 0
-			textAlign 6
-			textAlignX 0
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
+			rect 4 132 292 42 0 0
+			decoration
+			autowrapped
 			visible 1
-			exp text ( locstring( "@MENU_REGULAR_DESC_3" ) + "
-" + locstring( "@MENU_REGULAR_DESC_4" )  )
-			visible when ( localvarstring( "ui_highlighted_diff" ) == "newgame_easy"  )
+			style 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 6
+			textscale 0.375
+			visible when ( localvarstring( "ui_highlighted_diff" ) == "newgame_easy" )
+			exp text ( locstring( "@MENU_REGULAR_DESC_3" ) + "\n" + locstring( "@MENU_REGULAR_DESC_4" ) )
 		}
 		itemDef
 		{
-			rect -146 40 292 42 2 2
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 4 132
-			decoration 
-			autoWrapped 
-			type 0
-			align 0
-			textAlign 6
-			textAlignX 0
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
+			rect 4 132 292 42 0 0
+			decoration
+			autowrapped
 			visible 1
-			exp text ( locstring( "@MENU_SKILLED_DESC" ) + "
-" + locstring( "@MENU_SKILLED_DESC_2" )  )
-			visible when ( localvarstring( "ui_highlighted_diff" ) == "newgame_regular"  )
+			style 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 6
+			textscale 0.375
+			visible when ( localvarstring( "ui_highlighted_diff" ) == "newgame_regular" )
+			exp text ( locstring( "@MENU_SKILLED_DESC" ) + "\n" + locstring( "@MENU_SKILLED_DESC_2" ) )
 		}
 		itemDef
 		{
-			rect -146 40 292 42 2 2
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 4 132
-			decoration 
-			autoWrapped 
-			type 0
-			align 0
-			textAlign 6
-			textAlignX 0
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
+			rect 4 132 292 42 0 0
+			decoration
+			autowrapped
 			visible 1
-			exp text ( "@MENU_HARDENED_DESC"  )
-			visible when ( localvarstring( "ui_highlighted_diff" ) == "newgame_hardened"  )
+			style 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 6
+			textscale 0.375
+			visible when ( localvarstring( "ui_highlighted_diff" ) == "newgame_hardened" )
+			exp text ( "@MENU_HARDENED_DESC" )
 		}
 		itemDef
 		{
-			rect -146 40 292 42 2 2
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 4 132
-			decoration 
-			autoWrapped 
-			type 0
-			align 0
-			textAlign 6
-			textAlignX 0
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
+			rect 4 132 292 42 0 0
+			decoration
+			autowrapped
 			visible 1
-			exp text ( "@MENU_VETERAN_DESC"  )
-			visible when ( localvarstring( "ui_highlighted_diff" ) == "newgame_veteran"  )
+			style 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 6
+			textscale 0.375
+			visible when ( localvarstring( "ui_highlighted_diff" ) == "newgame_veteran" )
+			exp text ( "@MENU_VETERAN_DESC" )
 		}
 		itemDef
 		{
-			rect -146 40 292 42 2 2
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 4 132
-			decoration 
-			autoWrapped 
-			type 0
-			align 0
-			textAlign 6
-			textAlignX 0
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
+			rect 4 132 292 42 0 0
+			decoration
+			autowrapped
 			visible 1
-			exp text ( "@MENU_TRY_AGAIN_DESC"  )
-			visible when ( localvarstring( "ui_highlighted_diff" ) == "try_again"  )
+			style 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 6
+			textscale 0.375
+			visible when ( localvarstring( "ui_highlighted_diff" ) == "try_again" )
+			exp text ( "@MENU_TRY_AGAIN_DESC" )
 		}
 		itemDef
 		{
-			name newgame_easy
-			rect -146 -68 292 20 2 2
+			name "newgame_easy"
+			rect 4 24 292 20 0 0
+			visible 1
+			group "mw2_popup_button"
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 0.4 0.4 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 4 24
-			background popup_button_selection_bar_flipped
-			group mw2_popup_button
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "popup_button_selection_bar_flipped"
 			type 1
-			align 0
-			textAlign 4
-			textAlignX 0
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
+			textfont 3
+			textalign 4
+			textscale 0.375
 			text "@MENU_RECRUIT_CAPS"
-			visible 1
-			onFocus
-			{
-				"play" "mouse_over";
-				if ( dvarstring(static)( 2 ) != "mp"  )
-				{
-					"setItemColor" "mw2_popup_button" "backcolor" 0 0 0 0;
-				}
-				"setItemColor" "self" "backcolor" 0 0 0 1;
-				setLocalVarBool ui_popupAButton 1;
-				"play" "mouse_over";
-				if ( dvarint(static)( 39 ) == 0  )
-				{
-					"setItemColor" "self" "forecolor" 1 1 1 1;
-				}
-				if ( dvarint(static)( 39 ) != 0  )
-				{
-					"setItemColor" "self" "forecolor" 1 "0.4" "0.4" 1;
-				}
-				setLocalVarBool ui_popupAButton 1;
-				setLocalVarString ui_highlighted_diff "newgame_easy"  );
-			}
-			leaveFocus
-			{
-				"setItemColor" "self" "backcolor" 1 1 1 0;
-				setLocalVarBool ui_popupAButton 1;
-			}
+			dvarTest "recommended_gameskill"
+			focusDvar { 0 }
 			action
 			{
-				"play" "mouse_click";
-				if ( dvarint(static)( 39 ) > 0  )
+				play "mouse_click";
+				if ( dvarstring( "recommended_gameskill" ) > 0 )
 				{
-					"exec" "profile_difficultySave 0";
-					setLocalVarString ui_exec_diff "difficultyeasy"  );
-					"open" "con_areyousure_easier";
+					exec "profile_difficultySave 0";
+					setLocalVarString "ui_exec_diff" ( "difficultyeasy" );
+					open "con_areyousure_easier";
 				}
 				else
 				{
-					"exec" "profile_difficultySave 0";
-					"execnow" "difficultyeasy";
-					"scriptMenuResponse" "continue";
-					"close" "self";
+					exec "profile_difficultySave 0";
+					execnow "difficultyeasy";
+					scriptmenuresponse "continue";
+					;
+					close self;
 				}
-				if ( dvarint(static)( 39 ) > 0  )			}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_popup_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_popupAButton" ( 1 );
+				play "mouse_over";
+				if ( dvarstring( "recommended_gameskill" ) == 0 )
+				{
+					setItemColor self forecolor 1 1 1 1;
+				}
+				if ( dvarstring( "recommended_gameskill" ) != 0 )
+				{
+					setItemColor self forecolor 1 "0.4" "0.4" 1;
+				}
+				setLocalVarBool "ui_popupAButton" ( 1 );
+				setLocalVarString "ui_highlighted_diff" ( "newgame_easy" );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 1 1 1 0;
+				setLocalVarBool "ui_popupAButton" ( 0 );
+			}
 		}
 		itemDef
 		{
-			name newgame_regular
-			rect -146 -48 292 20 2 2
+			name "newgame_regular"
+			rect 4 44 292 20 0 0
+			visible 1
+			group "mw2_popup_button"
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 0.4 0.4 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 4 44
-			background popup_button_selection_bar_flipped
-			group mw2_popup_button
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "popup_button_selection_bar_flipped"
 			type 1
-			align 0
-			textAlign 4
-			textAlignX 0
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
+			textfont 3
+			textalign 4
+			textscale 0.375
 			text "@MENU_REGULAR_CAPS"
-			visible 1
-			onFocus
-			{
-				"play" "mouse_over";
-				if ( dvarstring(static)( 2 ) != "mp"  )
-				{
-					"setItemColor" "mw2_popup_button" "backcolor" 0 0 0 0;
-				}
-				"setItemColor" "self" "backcolor" 0 0 0 1;
-				setLocalVarBool ui_popupAButton 1;
-				"play" "mouse_over";
-				if ( dvarint(static)( 39 ) == 1  )
-				{
-					"setItemColor" "self" "forecolor" 1 1 1 1;
-				}
-				if ( dvarint(static)( 39 ) != 1  )
-				{
-					"setItemColor" "self" "forecolor" 1 "0.4" "0.4" 1;
-				}
-				setLocalVarBool ui_popupAButton 1;
-				setLocalVarString ui_highlighted_diff "newgame_regular"  );
-			}
-			leaveFocus
-			{
-				"setItemColor" "self" "backcolor" 1 1 1 0;
-				setLocalVarBool ui_popupAButton 1;
-			}
+			dvarTest "recommended_gameskill"
+			focusDvar { 1 }
 			action
 			{
-				"play" "mouse_click";
-				if ( dvarint(static)( 39 ) != 1  )
+				play "mouse_click";
+				if ( dvarstring( "recommended_gameskill" ) != 1 )
 				{
-					"exec" "profile_difficultySave 1";
-					setLocalVarString ui_exec_diff "difficultymedium"  );
-					if ( dvarint(static)( 39 ) > 1  )
+					exec "profile_difficultySave 1";
+					setLocalVarString "ui_exec_diff" ( "difficultymedium" );
+					if ( dvarstring( "recommended_gameskill" ) > 1 )
 					{
-						"open" "con_areyousure_easier";
+						open "con_areyousure_easier";
 					}
 					else
 					{
-						setLocalVarString ui_question "@MENU_DIFFICULTY_WARNING"  );
-						"open" "con_areyousure";
+						setLocalVarString "ui_question" ( "@MENU_DIFFICULTY_WARNING" );
+						open "con_areyousure";
 					}
-					if ( dvarint(static)( 39 ) > 1  )				}
+				}
 				else
 				{
-					"exec" "profile_difficultySave 1";
-					"execnow" "difficultymedium";
-					"scriptMenuResponse" "continue";
-					"close" "self";
+					exec "profile_difficultySave 1";
+					execnow "difficultymedium";
+					scriptmenuresponse "continue";
+					;
+					close self;
 				}
-				if ( dvarint(static)( 39 ) != 1  )			}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_popup_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_popupAButton" ( 1 );
+				play "mouse_over";
+				if ( dvarstring( "recommended_gameskill" ) == 1 )
+				{
+					setItemColor self forecolor 1 1 1 1;
+				}
+				if ( dvarstring( "recommended_gameskill" ) != 1 )
+				{
+					setItemColor self forecolor 1 "0.4" "0.4" 1;
+				}
+				setLocalVarBool "ui_popupAButton" ( 1 );
+				setLocalVarString "ui_highlighted_diff" ( "newgame_regular" );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 1 1 1 0;
+				setLocalVarBool "ui_popupAButton" ( 0 );
+			}
 		}
 		itemDef
 		{
-			name newgame_hardened
-			rect -146 -28 292 20 2 2
+			name "newgame_hardened"
+			rect 4 64 292 20 0 0
+			visible 1
+			group "mw2_popup_button"
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 1
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 4 64
-			background popup_button_selection_bar_flipped
-			group mw2_popup_button
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "popup_button_selection_bar_flipped"
 			type 1
-			align 0
-			textAlign 4
-			textAlignX 0
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
+			textfont 3
+			textalign 4
+			textscale 0.375
 			text "@MENU_HARDENED_CAPS"
-			visible 1
-			onFocus
-			{
-				"play" "mouse_over";
-				if ( dvarstring(static)( 2 ) != "mp"  )
-				{
-					"setItemColor" "mw2_popup_button" "backcolor" 0 0 0 0;
-				}
-				"setItemColor" "self" "backcolor" 0 0 0 1;
-				setLocalVarBool ui_popupAButton 1;
-				"play" "mouse_over";
-				if ( dvarint(static)( 39 ) == 2  )
-				{
-					"setItemColor" "self" "forecolor" 1 1 1 1;
-				}
-				if ( dvarint(static)( 39 ) != 2  )
-				{
-					"setItemColor" "self" "forecolor" 1 "0.4" "0.4" 1;
-				}
-				setLocalVarBool ui_popupAButton 1;
-				setLocalVarString ui_highlighted_diff "newgame_hardened"  );
-			}
-			leaveFocus
-			{
-				"setItemColor" "self" "backcolor" 1 1 1 0;
-				setLocalVarBool ui_popupAButton 1;
-			}
+			dvarTest "recommended_gameskill"
+			focusDvar { 2 }
 			action
 			{
-				"play" "mouse_click";
-				if ( dvarint(static)( 39 ) != 2  )
+				play "mouse_click";
+				if ( dvarstring( "recommended_gameskill" ) != 2 )
 				{
-					"exec" "profile_difficultySave 2";
-					setLocalVarString ui_exec_diff "difficultyhard"  );
-					if ( dvarint(static)( 39 ) > 2  )
+					exec "profile_difficultySave 2";
+					setLocalVarString "ui_exec_diff" ( "difficultyhard" );
+					if ( dvarstring( "recommended_gameskill" ) > 2 )
 					{
-						"open" "con_areyousure_easier";
+						open "con_areyousure_easier";
 					}
 					else
 					{
-						setLocalVarString ui_question "@MENU_DIFFICULTY_WARNING"  );
-						"open" "con_areyousure";
+						setLocalVarString "ui_question" ( "@MENU_DIFFICULTY_WARNING" );
+						open "con_areyousure";
 					}
-					if ( dvarint(static)( 39 ) > 2  )				}
+				}
 				else
 				{
-					"exec" "profile_difficultySave 2";
-					"execnow" "difficultyhard";
-					"scriptMenuResponse" "continue";
-					"close" "self";
+					exec "profile_difficultySave 2";
+					execnow "difficultyhard";
+					scriptmenuresponse "continue";
+					;
+					close self;
 				}
-				if ( dvarint(static)( 39 ) != 2  )			}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_popup_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_popupAButton" ( 1 );
+				play "mouse_over";
+				if ( dvarstring( "recommended_gameskill" ) == 2 )
+				{
+					setItemColor self forecolor 1 1 1 1;
+				}
+				if ( dvarstring( "recommended_gameskill" ) != 2 )
+				{
+					setItemColor self forecolor 1 "0.4" "0.4" 1;
+				}
+				setLocalVarBool "ui_popupAButton" ( 1 );
+				setLocalVarString "ui_highlighted_diff" ( "newgame_hardened" );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 1 1 1 0;
+				setLocalVarBool "ui_popupAButton" ( 0 );
+			}
 		}
 		itemDef
 		{
-			name newgame_veteran
-			rect -146 -8 292 20 2 2
+			name "newgame_veteran"
+			rect 4 84 292 20 0 0
+			visible 1
+			group "mw2_popup_button"
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 0.4 0.4 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 4 84
-			background popup_button_selection_bar_flipped
-			group mw2_popup_button
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "popup_button_selection_bar_flipped"
 			type 1
-			align 0
-			textAlign 4
-			textAlignX 0
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
+			textfont 3
+			textalign 4
+			textscale 0.375
 			text "@MENU_VETERAN_CAPS"
-			visible 1
-			onFocus
-			{
-				"play" "mouse_over";
-				if ( dvarstring(static)( 2 ) != "mp"  )
-				{
-					"setItemColor" "mw2_popup_button" "backcolor" 0 0 0 0;
-				}
-				"setItemColor" "self" "backcolor" 0 0 0 1;
-				setLocalVarBool ui_popupAButton 1;
-				"play" "mouse_over";
-				if ( dvarint(static)( 39 ) == 3  )
-				{
-					"setItemColor" "self" "forecolor" 1 1 1 1;
-				}
-				if ( dvarint(static)( 39 ) != 3  )
-				{
-					"setItemColor" "self" "forecolor" 1 "0.4" "0.4" 1;
-				}
-				setLocalVarBool ui_popupAButton 1;
-				setLocalVarString ui_highlighted_diff "newgame_veteran"  );
-			}
-			leaveFocus
-			{
-				"setItemColor" "self" "backcolor" 1 1 1 0;
-				setLocalVarBool ui_popupAButton 1;
-			}
+			dvarTest "recommended_gameskill"
+			focusDvar { 3 }
 			action
 			{
-				"play" "mouse_click";
-				if ( dvarint(static)( 39 ) != 3  )
+				play "mouse_click";
+				if ( dvarstring( "recommended_gameskill" ) != 3 )
 				{
-					"exec" "profile_difficultySave 3";
-					setLocalVarString ui_exec_diff "difficultyfu"  );
-					setLocalVarString ui_question "@MENU_DIFFICULTY_WARNING"  );
-					"open" "con_areyousure";
+					exec "profile_difficultySave 3";
+					setLocalVarString "ui_exec_diff" ( "difficultyfu" );
+					setLocalVarString "ui_question" ( "@MENU_DIFFICULTY_WARNING" );
+					open "con_areyousure";
 				}
 				else
 				{
-					"exec" "profile_difficultySave 3";
-					setLocalVarString ui_exec_diff "difficultyfu"  );
-					setLocalVarString ui_question "@MENU_ARE_YOU_SURE"  );
-					"open" "con_areyousure";
+					exec "profile_difficultySave 3";
+					setLocalVarString "ui_exec_diff" ( "difficultyfu" );
+					setLocalVarString "ui_question" ( "@MENU_ARE_YOU_SURE" );
+					open "con_areyousure";
 				}
-				if ( dvarint(static)( 39 ) != 3  )			}
-		}
-		itemDef
-		{
-			rect -150 12 -280 1 2 2
-			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0.65
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 0 104
-			background gradient_fadein
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			exp (null) (null) ( - 216 - 64  )
-		}
-		itemDef
-		{
-			name try_again
-			rect -146 12 292 20 2 2
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 4 104
-			background popup_button_selection_bar_flipped
-			group mw2_popup_button
-			type 1
-			align 0
-			textAlign 4
-			textAlignX 0
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
-			text "@MENU_TRY_AGAIN_CAPS"
-			visible 1
+			}
 			onFocus
 			{
-				"play" "mouse_over";
-				if ( dvarstring(static)( 2 ) != "mp"  )
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
 				{
-					"setItemColor" "mw2_popup_button" "backcolor" 0 0 0 0;
+					setItemColor "mw2_popup_button" backcolor 0 0 0 0;
 				}
-				"setItemColor" "self" "backcolor" 0 0 0 1;
-				setLocalVarBool ui_popupAButton 1;
-				"play" "mouse_over";
-				setLocalVarBool ui_popupAButton 1;
-				setLocalVarString ui_highlighted_diff "try_again"  );
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_popupAButton" ( 1 );
+				play "mouse_over";
+				if ( dvarstring( "recommended_gameskill" ) == 3 )
+				{
+					setItemColor self forecolor 1 1 1 1;
+				}
+				if ( dvarstring( "recommended_gameskill" ) != 3 )
+				{
+					setItemColor self forecolor 1 "0.4" "0.4" 1;
+				}
+				setLocalVarBool "ui_popupAButton" ( 1 );
+				setLocalVarString "ui_highlighted_diff" ( "newgame_veteran" );
 			}
 			leaveFocus
 			{
-				"setItemColor" "self" "backcolor" 1 1 1 0;
-				setLocalVarBool ui_popupAButton 1;
+				setItemColor self backcolor 1 1 1 0;
+				setLocalVarBool "ui_popupAButton" ( 0 );
 			}
+		}
+		itemDef
+		{
+			rect 0 104 280 1 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.65
+			background "gradient_fadein"
+			textscale 0.55
+			exp rect w ( - 216 - 64 )
+		}
+		itemDef
+		{
+			name "try_again"
+			rect 4 104 292 20 0 0
+			visible 1
+			group "mw2_popup_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "popup_button_selection_bar_flipped"
+			type 1
+			textfont 3
+			textalign 4
+			textscale 0.375
+			text "@MENU_TRY_AGAIN_CAPS"
 			action
 			{
-				"play" "mouse_click";
-				"scriptMenuResponse" "tryagain";
-				"close" "self";
+				play "mouse_click";
+				scriptmenuresponse "tryagain";
+				close self;
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_popup_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_popupAButton" ( 1 );
+				play "mouse_over";
+				setLocalVarBool "ui_popupAButton" ( 1 );
+				setLocalVarString "ui_highlighted_diff" ( "try_again" );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 1 1 1 0;
+				setLocalVarBool "ui_popupAButton" ( 0 );
 			}
 		}
 	}

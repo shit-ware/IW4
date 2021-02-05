@@ -1,32 +1,22 @@
 {
 	menuDef
 	{
-		name offensive_skip
-		fullscreen 1
-		rect 0 0 640 480
+		name "offensive_skip"
+		rect 0 0 640 480 0 0
 		style 1
-		border 0
-		ownerdraw 0
-		ownerdrawFlag 0
-		borderSize 0
-		foreColor 1 1 1 1
-		backColor 0 0 0 0
-		borderColor 0 0 0 0
-		outlineColor 0 0 0 0
+		forecolor 1 1 1 1
+		fullscreen 1
 		fadeCycle 1
 		fadeClamp 1
 		fadeAmount 0.1
-		fadeInAmount 0
-		blurWorld 0
 		onOpen
 		{
-			"exec" "set cl_paused 1";
-			"open" "offensive_skip_popup";
+			exec "set cl_paused 1";
+			open "offensive_skip_popup";
 		}
 		onClose
 		{
-			"exec" "set cl_paused 0";
+			exec "set cl_paused 0";
 		}
-		focusColor 0 0 0 0
 	}
 }

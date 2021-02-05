@@ -1,0 +1,7 @@
+{
+	menuDef
+	{
+		name ",menu_resetstats_warning"
+		rect 0 0 0 0 0 0
+	}
+}

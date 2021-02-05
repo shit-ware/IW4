@@ -1,641 +1,330 @@
 {
 	menuDef
 	{
-		name con_areyousure_easier
-		fullscreen 0
+		name "con_areyousure_easier"
 		rect -150 -84 300 84 2 2
+		popup
+		legacySplitScreenScale
+		visible 1
 		style 1
-		border 0
-		ownerdraw 0
-		ownerdrawFlag 0
-		borderSize 0
-		foreColor 1 1 1 1
-		backColor 1 1 1 1
-		borderColor 0 0 0 0
-		outlineColor 0 0 0 0
-		background white
+		forecolor 1 1 1 1
+		backcolor 1 1 1 1
+		background "white"
+		focuscolor 1 1 1 1
 		fadeCycle 1
 		fadeClamp 1
 		fadeAmount 0.1
-		fadeInAmount 0
-		blurWorld 0
 		onOpen
 		{
-			setLocalVarInt ui_centerPopup 1;
-			"setfocus" "No";
+			setLocalVarInt "ui_centerPopup" ( 1 );
+			setfocus "No";
 		}
 		onClose
 		{
-			setLocalVarInt ui_centerPopup 1;
+			setLocalVarInt "ui_centerPopup" ( 0 );
+			;;
 		}
-		onESC
+		onEsc
 		{
-			"close" "self";
+			close self;
 		}
-		focusColor 1 1 1 1
-		popup 
-		legacySplitScreenScale 
 		itemDef
 		{
-			rect -1004 -564 1708 960 2 2
+			rect -854 -480 1708 960 0 0
+			decoration
+			visible 1
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0.35
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin -854 -480
-			background white
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
+			forecolor 1 1 1 1
+			backcolor 0 0 0 0.35
+			background "white"
+			textscale 0.55
 		}
 		itemDef
 		{
-			rect -1004 -564 1708 960 2 2
+			rect -854 -480 1708 960 0 0
+			decoration
+			visible 1
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 1 1 1 1
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin -854 -480
-			background xpbar_stencilbase
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "xpbar_stencilbase"
+			textscale 0.55
 		}
 		itemDef
 		{
-			rect -150 -84 300 84 2 2
+			rect 0 0 300 84 0 0
+			decoration
+			visible 1
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0.5 0.5 0.5 1
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 0 0
-			background white
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.5 0.5 1
+			background "white"
+			textscale 0.55
 		}
 		itemDef
 		{
-			rect -150 -84 1708 480 2 2
+			rect 0 0 1708 480 0 0
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0.75
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 0 0
-			background mw2_popup_bg_fogstencil
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			exp (null) (null) ( 0 - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) )  )
+			forecolor 1 1 1 0.75
+			background "mw2_popup_bg_fogstencil"
+			textscale 0.55
+			exp rect x ( 0 - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) ) )
 		}
 		itemDef
 		{
-			rect -150 -84 -1708 -480 2 2
+			rect 0 0 -1708 -480 0 0
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.85 0.85 0.85 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 0 0
-			background mw2_popup_bg_fogscroll
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			exp (null) (null) ( 0 - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) )  )
+			forecolor 0.85 0.85 0.85 1
+			background "mw2_popup_bg_fogscroll"
+			textscale 0.55
+			exp rect x ( 0 - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) ) )
 		}
 		itemDef
 		{
-			rect -150 -84 300 0 2 2
+			rect 0 0 300 0 0 0
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 0 0
-			background mockup_popup_bg_stencilfill
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			exp (null) (null) ( ( 24 + 3 * 20 )  )
+			forecolor 1 1 1 1
+			background "mockup_popup_bg_stencilfill"
+			textscale 0.55
+			exp rect h ( ( 24 + 3 * 20 ) )
 		}
 		itemDef
 		{
-			rect -150 -84 -1708 -480 2 2
+			rect 0 0 -1708 -480 0 0
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0.75
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 0 0
-			background mw2_popup_bg_fogstencil
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			exp (null) (null) ( ( - 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) )  )
+			forecolor 1 1 1 0.75
+			background "mw2_popup_bg_fogstencil"
+			textscale 0.55
+			exp rect x ( ( - 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) ) )
 		}
 		itemDef
 		{
-			rect -150 -84 -1708 -480 2 2
+			rect 0 0 -1708 -480 0 0
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0.85 0.85 0.85 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 0 0
-			background mw2_popup_bg_fogscroll
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			exp (null) (null) ( ( - 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) )  )
+			forecolor 0.85 0.85 0.85 1
+			background "mw2_popup_bg_fogscroll"
+			textscale 0.55
+			exp rect x ( ( - 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) ) )
 		}
 		itemDef
 		{
-			rect -150 -84 300 0 1 1
+			rect 0 0 300 0 1 1
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 0
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 0 0
-			background small_box_lightfx
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			exp (null) (null) ( ( 24 + 3 * 20 )  )
+			forecolor 1 1 1 0
+			background "small_box_lightfx"
+			textscale 0.55
+			exp rect h ( ( 24 + 3 * 20 ) )
 		}
 		itemDef
 		{
-			rect -214 -148 64 64 2 2
+			rect -64 -64 64 64 0 0
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin -64 -64
-			background drop_shadow_tl
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			visible when ( 1  )
+			forecolor 0 0 0 1
+			background "drop_shadow_tl"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
-			rect -150 -148 300 64 2 2
+			rect 0 -64 300 64 0 0
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 0 -64
-			background drop_shadow_t
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			visible when ( 1  )
+			forecolor 0 0 0 1
+			background "drop_shadow_t"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
-			rect 150 -148 64 64 2 2
+			rect 300 -64 64 64 0 0
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 300 -64
-			background drop_shadow_tr
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			visible when ( 1  )
+			forecolor 0 0 0 1
+			background "drop_shadow_tr"
+			textscale 0.55
+			visible when ( 1 )
 		}
 		itemDef
 		{
-			rect 150 -84 64 0 2 2
+			rect 300 0 64 0 0 0
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 300 0
-			background drop_shadow_r
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			visible when ( 1  )
-			exp (null) (null) ( ( 24 + 3 * 20 )  )
+			forecolor 0 0 0 1
+			background "drop_shadow_r"
+			textscale 0.55
+			exp rect h ( ( 24 + 3 * 20 ) )
+			visible when ( 1 )
 		}
 		itemDef
 		{
-			rect 150 -84 64 64 2 2
+			rect 300 0 64 64 0 0
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 300 0
-			background drop_shadow_br
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			visible when ( 1  )
-			exp (null) (null) ( ( 0 - 0 ) + ( ( 24 + 3 * 20 ) )  )
+			forecolor 0 0 0 1
+			background "drop_shadow_br"
+			textscale 0.55
+			exp rect y ( ( 0 - 0 ) + ( ( 24 + 3 * 20 ) ) )
+			visible when ( 1 )
 		}
 		itemDef
 		{
-			rect -150 -84 300 64 2 2
+			rect 0 0 300 64 0 0
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 0 0
-			background drop_shadow_b
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			visible when ( 1  )
-			exp (null) (null) ( ( 0 - 0 ) + ( ( 24 + 3 * 20 ) )  )
+			forecolor 0 0 0 1
+			background "drop_shadow_b"
+			textscale 0.55
+			exp rect y ( ( 0 - 0 ) + ( ( 24 + 3 * 20 ) ) )
+			visible when ( 1 )
 		}
 		itemDef
 		{
-			rect -214 -84 64 64 2 2
+			rect -64 0 64 64 0 0
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin -64 0
-			background drop_shadow_bl
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			visible when ( 1  )
-			exp (null) (null) ( ( 0 - 0 ) + ( ( 24 + 3 * 20 ) )  )
+			forecolor 0 0 0 1
+			background "drop_shadow_bl"
+			textscale 0.55
+			exp rect y ( ( 0 - 0 ) + ( ( 24 + 3 * 20 ) ) )
+			visible when ( 1 )
 		}
 		itemDef
 		{
-			rect -214 -84 64 0 2 2
+			rect -64 0 64 0 0 0
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 0 0 0 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin -64 0
-			background drop_shadow_l
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			visible when ( 1  )
-			exp (null) (null) ( ( 24 + 3 * 20 )  )
+			forecolor 0 0 0 1
+			background "drop_shadow_l"
+			textscale 0.55
+			exp rect h ( ( 24 + 3 * 20 ) )
+			visible when ( 1 )
 		}
 		itemDef
 		{
-			rect -146 -80 292 42 2 2
+			rect 4 4 292 42 0 0
+			decoration
+			autowrapped
+			visible 1
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 4 4
-			decoration 
-			autoWrapped 
-			type 0
-			align 0
-			textAlign 5
-			textAlignX 0
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
-			visible 1
-			exp text ( "@MENU_DIFFICULTY_WARNING_EASIER"  )
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textscale 0.375
+			exp text ( "@MENU_DIFFICULTY_WARNING_EASIER" )
 		}
 		itemDef
 		{
-			name Yes
-			rect -146 -40 292 20 2 2
+			name "Yes"
+			rect 4 44 292 20 0 0
+			visible 1
+			group "mw2_popup_button"
 			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 4 44
-			background popup_button_selection_bar
-			group mw2_popup_button
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "popup_button_selection_bar"
 			type 1
-			align 0
-			textAlign 6
-			textAlignX -24
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
+			textfont 3
+			textalign 6
+			textalignx -24
+			textscale 0.375
 			text "@MENU_YES_CAPS"
-			visible 1
+			action
+			{
+				play "mouse_click";
+				if ( localvarstring( "ui_exec_diff" ) == "difficultyeasy" )
+				{
+					exec "difficultyeasy";
+				}
+				if ( localvarstring( "ui_exec_diff" ) == "difficultymedium" )
+				{
+					exec "difficultymedium";
+				}
+				if ( localvarstring( "ui_exec_diff" ) == "difficultyhard" )
+				{
+					exec "difficultyhard";
+				}
+				if ( localvarstring( "ui_exec_diff" ) == "difficultyfu" )
+				{
+					exec "difficultyfu";
+				}
+				scriptmenuresponse "continue";
+				;
+				close self;
+				close "select_difficulty";
+			}
 			onFocus
 			{
-				"play" "mouse_over";
-				if ( dvarstring(static)( 2 ) != "mp"  )
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
 				{
-					"setItemColor" "mw2_popup_button" "backcolor" 0 0 0 0;
+					setItemColor "mw2_popup_button" backcolor 0 0 0 0;
 				}
-				"setItemColor" "self" "backcolor" 0 0 0 1;
-				setLocalVarBool ui_popupAButton 1;
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_popupAButton" ( 1 );
 			}
 			leaveFocus
 			{
-				"setItemColor" "self" "backcolor" 1 1 1 0;
-				setLocalVarBool ui_popupAButton 1;
-			}
-			action
-			{
-				"play" "mouse_click";
-				if ( localvarstring( "ui_exec_diff" ) == "difficultyeasy"  )
-				{
-					"exec" "difficultyeasy";
-				}
-				if ( localvarstring( "ui_exec_diff" ) == "difficultymedium"  )
-				{
-					"exec" "difficultymedium";
-				}
-				if ( localvarstring( "ui_exec_diff" ) == "difficultyhard"  )
-				{
-					"exec" "difficultyhard";
-				}
-				if ( localvarstring( "ui_exec_diff" ) == "difficultyfu"  )
-				{
-					"exec" "difficultyfu";
-				}
-				"scriptMenuResponse" "continue";
-				"close" "self";
-				"close" "select_difficulty";
+				setItemColor self backcolor 1 1 1 0;
+				setLocalVarBool "ui_popupAButton" ( 0 );
 			}
 		}
 		itemDef
 		{
-			name No
-			rect -146 -20 292 20 2 2
-			style 1
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			origin 4 64
-			background popup_button_selection_bar
-			group mw2_popup_button
-			type 1
-			align 0
-			textAlign 6
-			textAlignX -24
-			textAlignY 0
-			textScale 0.375
-			textStyle 0
-			textFont 3
-			feeder 0
-			text "@MENU_NO_CAPS"
+			name "No"
+			rect 4 64 292 20 0 0
 			visible 1
+			group "mw2_popup_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "popup_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -24
+			textscale 0.375
+			text "@MENU_NO_CAPS"
+			action
+			{
+				play "mouse_click";
+				close self;
+				open "select_difficulty";
+			}
 			onFocus
 			{
-				"play" "mouse_over";
-				if ( dvarstring(static)( 2 ) != "mp"  )
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
 				{
-					"setItemColor" "mw2_popup_button" "backcolor" 0 0 0 0;
+					setItemColor "mw2_popup_button" backcolor 0 0 0 0;
 				}
-				"setItemColor" "self" "backcolor" 0 0 0 1;
-				setLocalVarBool ui_popupAButton 1;
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_popupAButton" ( 1 );
 			}
 			leaveFocus
 			{
-				"setItemColor" "self" "backcolor" 1 1 1 0;
-				setLocalVarBool ui_popupAButton 1;
-			}
-			action
-			{
-				"play" "mouse_click";
-				"close" "self";
-				"open" "select_difficulty";
+				setItemColor self backcolor 1 1 1 0;
+				setLocalVarBool "ui_popupAButton" ( 0 );
 			}
 		}
 	}

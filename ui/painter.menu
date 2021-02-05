@@ -1,0 +1,27 @@
+{
+	menuDef
+	{
+		name "painter"
+		rect 0 0 640 480 4 4
+		visible 1
+		forecolor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		exp rect y ( 0 - ( 0 * "ONLINEGAME_OFFSET" ) )
+		onOpen
+		{
+			exec "ufo";
+			focusfirst;
+		}
+		itemDef
+		{
+			rect -400 64 800 0 2 1
+			visible 1
+			forecolor 1 1 1 0.85
+			textalign 1
+			textscale 0.5833
+			exp text ( "haahh" )
+		}
+	}
+}

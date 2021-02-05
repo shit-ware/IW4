@@ -1,371 +1,167 @@
 {
 	menuDef
 	{
-		name weaponjavelinhud
-		fullscreen 0
+		name "weaponjavelinhud"
 		rect 0 0 960 480 2 2
-		style 0
-		border 0
-		ownerdraw 0
-		ownerdrawFlag 0
-		borderSize 0
-		foreColor 1 1 1 1
-		backColor 0 0 0 0
-		borderColor 0 0 0 0
-		outlineColor 0 0 0 0
+		visible 1
+		forecolor 1 1 1 1
 		fadeCycle 1
 		fadeClamp 1
 		fadeAmount 0.1
-		fadeInAmount 0
-		visible when ( adsjavelin( )  )
-		blurWorld 0
-		focusColor 0 0 0 0
-		visible 
+		visible when ( adsjavelin( ) )
 		itemDef
 		{
-			name WeaponJavelinTargets
-			rect -320 -240 640 480 2 2
-			style 0
-			border 0
+			name "WeaponJavelinTargets"
+			rect -320 -240 640 480 0 0
+			decoration
+			visible 1
 			ownerdraw 192
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background white
-			decoration 
+			forecolor 1 1 1 1
+			background "white"
 			type 8
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
+			textscale 0.55
 		}
 		itemDef
 		{
-			name javelinlockbox
-			rect -80 -40 160 80 2 2
+			name "javelinlockbox"
+			rect -80 -40 160 80 0 0
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background hud_javelin_lock_box
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			visible when ( weaplockblink( 11 )  )
+			forecolor 1 1 1 1
+			background "hud_javelin_lock_box"
+			textscale 0.55
+			visible when ( weaplockblink( 11 ) )
 		}
 		itemDef
 		{
-			name javelinfilmgrain
-			rect -230 -125 460 260 2 2
+			name "javelinfilmgrain"
+			rect -230 -125 460 260 0 0
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background javelin_overlay_grain
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
+			forecolor 1 1 1 1
+			background "javelin_overlay_grain"
+			textscale 0.55
 		}
 		itemDef
 		{
-			name WeaponJavelinBG
-			rect -427 -240 854 480 2 2
+			name "WeaponJavelinBG"
+			rect -427 -240 854 480 0 0
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background hud_javelin_bg
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
+			forecolor 1 1 1 1
+			background "hud_javelin_bg"
+			textscale 0.55
 		}
 		itemDef
 		{
-			name javelinlockon
-			rect 154 -198 64 64 2 2
+			name "javelinlockon"
+			rect 154 -198 64 64 0 0
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background hud_javelin_lock_on
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			visible when ( weaplockblink( 4.500000 )  )
+			forecolor 1 1 1 1
+			background "hud_javelin_lock_on"
+			textscale 0.55
+			visible when ( weaplockblink( 4.5 ) )
 		}
 		itemDef
 		{
-			name javelincluon
-			rect -300 -28 64 64 2 2
+			name "javelincluon"
+			rect -300 -28 64 64 0 0
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background hud_javelin_clu_on
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			visible when ( weaplockblink( 0 ) && !weapattacktop( ) && !weapattackdirect( )  )
+			forecolor 1 1 1 1
+			background "hud_javelin_clu_on"
+			textscale 0.55
+			visible when ( weaplockblink( 0 ) && !weapattacktop( ) && !weapattackdirect( ) )
 		}
 		itemDef
 		{
-			name javelintopoff
-			rect 228 -124 64 64 2 2
+			name "javelintopoff"
+			rect 228 -124 64 64 0 0
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background hud_javelin_top_on
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			visible when ( weapattacktop( )  )
+			forecolor 1 1 1 1
+			background "hud_javelin_top_on"
+			textscale 0.55
+			visible when ( weapattacktop( ) )
 		}
 		itemDef
 		{
-			name javelindiroff
-			rect 228 -28 64 64 2 2
+			name "javelindiroff"
+			rect 228 -28 64 64 0 0
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background hud_javelin_dir_on
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			visible when ( weapattackdirect( )  )
+			forecolor 1 1 1 1
+			background "hud_javelin_dir_on"
+			textscale 0.55
+			visible when ( weapattackdirect( ) )
 		}
 		itemDef
 		{
-			name javelinday
-			rect -226 -198 64 64 2 2
+			name "javelinday"
+			rect -226 -198 64 64 0 0
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background hud_javelin_day_on
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			visible when ( !player( "nightvision" )  )
+			forecolor 1 1 1 1
+			background "hud_javelin_day_on"
+			textscale 0.55
+			visible when ( !player( "nightvision" ) )
 		}
 		itemDef
 		{
-			name javelinnight
-			rect -300 -125 64 64 2 2
+			name "javelinnight"
+			rect -300 -125 64 64 0 0
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background hud_javelin_night_on
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			visible when ( player( "nightvision" )  )
+			forecolor 1 1 1 1
+			background "hud_javelin_night_on"
+			textscale 0.55
+			visible when ( player( "nightvision" ) )
 		}
 		itemDef
 		{
-			name javelinrocket_on
-			rect 30 144 64 64 2 2
+			name "javelinrocket_on"
+			rect 30 144 64 64 0 0
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background hud_javelin_rocket_on
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			visible when ( player( "clipammo" )  )
+			forecolor 1 1 1 1
+			background "hud_javelin_rocket_on"
+			textscale 0.55
+			visible when ( player( "clipammo" ) )
 		}
 		itemDef
 		{
-			name javelinnorocket_on
-			rect 154 144 64 64 2 2
+			name "javelinnorocket_on"
+			rect 154 144 64 64 0 0
+			decoration
+			visible 1
 			style 3
-			border 0
-			ownerdraw 0
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			background hud_javelin_norocket_on
-			decoration 
-			type 0
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.55
-			textStyle 0
-			textFont 0
-			feeder 0
-			visible 1
-			visible when ( !player( "clipammo" )  )
+			forecolor 1 1 1 1
+			background "hud_javelin_norocket_on"
+			textscale 0.55
+			visible when ( !player( "clipammo" ) )
 		}
 		itemDef
 		{
-			name chRect
+			name "chRect"
 			rect 0 -90 0 0 2 2
-			style 0
-			border 0
-			ownerdraw 113
-			ownerdrawFlag 0
-			borderSize 0
-			foreColor 1 1 1 1
-			backColor 0 0 0 0
-			borderColor 0 0 0 0
-			outlineColor 0 0 0 0
-			decoration 
-			type 8
-			align 0
-			textAlign 0
-			textAlignX 0
-			textAlignY 0
-			textScale 0.4583
-			textStyle 3
-			textFont 6
-			feeder 0
+			decoration
 			visible 1
+			ownerdraw 113
+			forecolor 1 1 1 1
+			type 8
+			textfont 6
+			textscale 0.4583
 		}
 	}
 }

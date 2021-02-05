@@ -1,0 +1,7 @@
+{
+	menuDef
+	{
+		name ",pregame_loaderror_mp"
+		rect 0 0 0 0 0 0
+	}
+}

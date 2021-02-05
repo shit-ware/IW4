@@ -1,0 +1,7 @@
+{
+	menuDef
+	{
+		name ",popup_reconnectingtoparty"
+		rect 0 0 0 0 0 0
+	}
+}
