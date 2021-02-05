@@ -1,0 +1,1324 @@
+{
+	menuDef
+	{
+		name "popup_challenge_assault_primary"
+		rect -64 0 854 184 1 1
+		popup
+		outOfBoundsClick
+		visible 1
+		style 1
+		forecolor 1 1 1 1
+		backcolor 1 1 1 1
+		background "white"
+		focuscolor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		allowedBinding "+talk"
+		visible when ( localvarint( "ui_tabDepth" ) == localvarint( "ui_popup_challenge_assault_primary_tabDepth" ) )
+		exp rect y ( localvarfloat( "ui_popupYPos" ) + localvarint( "ui_tabDepth" ) * 20 )
+		onOpen
+		{
+			focusfirst;
+			setLocalVarInt "ui_tabDepth" ( localvarint( "ui_tabDepth" ) + 1 );
+			;;
+			setLocalVarInt "ui_popup_challenge_assault_primary_tabDepth" ( localvarint( "ui_tabDepth" ) );
+			;;
+		}
+		onClose
+		{
+			setLocalVarInt "ui_tabDepth" ( localvarint( "ui_tabDepth" ) - 1 );
+			;;
+		}
+		onEsc
+		{
+			close self;
+		}
+		itemDef
+		{
+			rect -854 -480 1708 960 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0 0 0 0.35
+			background "white"
+			textscale 0.55
+			visible when ( !localvarint( "ui_centerPopup" ) )
+		}
+		itemDef
+		{
+			rect -854 -480 1708 960 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "xpbar_stencilbase"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 0 854 184 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.5 0.5 1
+			background "white"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 0 1708 480 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.75
+			background "mw2_popup_bg_fogstencil"
+			textscale 0.55
+			exp rect x ( 0 - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 -1708 -480 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0.85 0.85 0.85 1
+			background "mw2_popup_bg_fogscroll"
+			textscale 0.55
+			exp rect x ( 0 - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 854 0 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "mockup_popup_bg_stencilfill"
+			textscale 0.55
+			exp rect h ( ( 24 + 8 * 20 ) )
+		}
+		itemDef
+		{
+			rect 0 0 -1708 -480 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.75
+			background "mw2_popup_bg_fogstencil"
+			textscale 0.55
+			exp rect x ( ( - 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 -1708 -480 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0.85 0.85 0.85 1
+			background "mw2_popup_bg_fogscroll"
+			textscale 0.55
+			exp rect x ( ( - 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 854 0 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0
+			background "small_box_lightfx"
+			textscale 0.55
+			exp rect h ( ( 24 + 8 * 20 ) )
+		}
+		itemDef
+		{
+			rect -32 -32 32 32 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_tl"
+			textscale 0.55
+			visible when ( !localvarint( "ui_centerPopup" ) )
+		}
+		itemDef
+		{
+			rect 0 -32 854 32 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_t"
+			textscale 0.55
+			visible when ( !localvarint( "ui_centerPopup" ) )
+		}
+		itemDef
+		{
+			rect 854 -32 32 32 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_tr"
+			textscale 0.55
+			visible when ( !localvarint( "ui_centerPopup" ) )
+		}
+		itemDef
+		{
+			rect 854 0 32 0 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_r"
+			textscale 0.55
+			exp rect h ( ( 24 + 8 * 20 ) )
+			visible when ( !localvarint( "ui_centerPopup" ) )
+		}
+		itemDef
+		{
+			rect 854 0 32 32 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_br"
+			textscale 0.55
+			exp rect y ( ( 0 - 0 ) + ( ( 24 + 8 * 20 ) ) )
+			visible when ( !localvarint( "ui_centerPopup" ) )
+		}
+		itemDef
+		{
+			rect 0 0 854 32 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_b"
+			textscale 0.55
+			exp rect y ( ( 0 - 0 ) + ( ( 24 + 8 * 20 ) ) )
+			visible when ( !localvarint( "ui_centerPopup" ) )
+		}
+		itemDef
+		{
+			rect -32 0 32 32 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_bl"
+			textscale 0.55
+			exp rect y ( ( 0 - 0 ) + ( ( 24 + 8 * 20 ) ) )
+			visible when ( !localvarint( "ui_centerPopup" ) )
+		}
+		itemDef
+		{
+			rect -32 0 32 0 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_l"
+			textscale 0.55
+			exp rect h ( ( 24 + 8 * 20 ) )
+			visible when ( !localvarint( "ui_centerPopup" ) )
+		}
+		itemDef
+		{
+			rect 0 0 280 184 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 0
+			background "gradient_fadein"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 0 280 20 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0.25 0.25 0.25 1
+			background "white"
+			textscale 0.55
+			exp rect y ( - 20 - ( ( localvarint( "ui_tabDepth" ) - 1 ) * 20 ) )
+			visible when ( localvarint( "ui_tabDepth" ) > ( 1 - 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 280 20 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0 0 0 1
+			background "gradient_fadein"
+			textfont 9
+			textalign 4
+			textalignx 68
+			textscale 0.375
+			exp rect y ( - 20 - ( ( localvarint( "ui_tabDepth" ) - 1 ) * 20 ) )
+			exp forecolor r ( 1 - ( ( localvarint( "ui_tabDepth" ) > 1 ) * 0.35 ) )
+			exp forecolor g ( 1 - ( ( localvarint( "ui_tabDepth" ) > 1 ) * 0.35 ) )
+			exp forecolor b ( 1 - ( ( localvarint( "ui_tabDepth" ) > 1 ) * 0.35 ) )
+			visible when ( localvarint( "ui_tabDepth" ) > ( 1 - 1 ) )
+			exp text ( localvarstring( "ui_tab1Name" ) )
+		}
+		itemDef
+		{
+			rect 0 0 280 20 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0.25 0.25 0.25 1
+			background "white"
+			textscale 0.55
+			exp rect y ( - 20 - ( ( localvarint( "ui_tabDepth" ) - 2 ) * 20 ) )
+			visible when ( localvarint( "ui_tabDepth" ) > ( 2 - 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 280 20 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0 0 0 1
+			background "gradient_fadein"
+			textfont 9
+			textalign 4
+			textalignx 68
+			textscale 0.375
+			exp rect y ( - 20 - ( ( localvarint( "ui_tabDepth" ) - 2 ) * 20 ) )
+			exp forecolor r ( 1 - ( ( localvarint( "ui_tabDepth" ) > 2 ) * 0.35 ) )
+			exp forecolor g ( 1 - ( ( localvarint( "ui_tabDepth" ) > 2 ) * 0.35 ) )
+			exp forecolor b ( 1 - ( ( localvarint( "ui_tabDepth" ) > 2 ) * 0.35 ) )
+			visible when ( localvarint( "ui_tabDepth" ) > ( 2 - 1 ) )
+			exp text ( localvarstring( "ui_tab2Name" ) )
+		}
+		itemDef
+		{
+			rect 0 0 280 20 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0.25 0.25 0.25 1
+			background "white"
+			textscale 0.55
+			exp rect y ( - 20 - ( ( localvarint( "ui_tabDepth" ) - 3 ) * 20 ) )
+			visible when ( localvarint( "ui_tabDepth" ) > ( 3 - 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 280 20 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0 0 0 1
+			background "gradient_fadein"
+			textfont 9
+			textalign 4
+			textalignx 68
+			textscale 0.375
+			exp rect y ( - 20 - ( ( localvarint( "ui_tabDepth" ) - 3 ) * 20 ) )
+			exp forecolor r ( 1 - ( ( localvarint( "ui_tabDepth" ) > 3 ) * 0.35 ) )
+			exp forecolor g ( 1 - ( ( localvarint( "ui_tabDepth" ) > 3 ) * 0.35 ) )
+			exp forecolor b ( 1 - ( ( localvarint( "ui_tabDepth" ) > 3 ) * 0.35 ) )
+			visible when ( localvarint( "ui_tabDepth" ) > ( 3 - 1 ) )
+			exp text ( localvarstring( "ui_tab3Name" ) )
+		}
+		itemDef
+		{
+			rect 0 0 280 20 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0.25 0.25 0.25 1
+			background "white"
+			textscale 0.55
+			exp rect y ( - 20 - ( ( localvarint( "ui_tabDepth" ) - 4 ) * 20 ) )
+			visible when ( localvarint( "ui_tabDepth" ) > ( 4 - 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 280 20 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0 0 0 1
+			background "gradient_fadein"
+			textfont 9
+			textalign 4
+			textalignx 68
+			textscale 0.375
+			exp rect y ( - 20 - ( ( localvarint( "ui_tabDepth" ) - 4 ) * 20 ) )
+			exp forecolor r ( 1 - ( ( localvarint( "ui_tabDepth" ) > 4 ) * 0.35 ) )
+			exp forecolor g ( 1 - ( ( localvarint( "ui_tabDepth" ) > 4 ) * 0.35 ) )
+			exp forecolor b ( 1 - ( ( localvarint( "ui_tabDepth" ) > 4 ) * 0.35 ) )
+			visible when ( localvarint( "ui_tabDepth" ) > ( 4 - 1 ) )
+			exp text ( localvarstring( "ui_tab4Name" ) )
+		}
+		itemDef
+		{
+			rect 0 0 280 20 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0.25 0.25 0.25 1
+			background "white"
+			textscale 0.55
+			exp rect y ( - 20 - ( ( localvarint( "ui_tabDepth" ) - 5 ) * 20 ) )
+			visible when ( localvarint( "ui_tabDepth" ) > ( 5 - 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 280 20 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0 0 0 1
+			background "gradient_fadein"
+			textfont 9
+			textalign 4
+			textalignx 68
+			textscale 0.375
+			exp rect y ( - 20 - ( ( localvarint( "ui_tabDepth" ) - 5 ) * 20 ) )
+			exp forecolor r ( 1 - ( ( localvarint( "ui_tabDepth" ) > 5 ) * 0.35 ) )
+			exp forecolor g ( 1 - ( ( localvarint( "ui_tabDepth" ) > 5 ) * 0.35 ) )
+			exp forecolor b ( 1 - ( ( localvarint( "ui_tabDepth" ) > 5 ) * 0.35 ) )
+			visible when ( localvarint( "ui_tabDepth" ) > ( 5 - 1 ) )
+			exp text ( localvarstring( "ui_tab5Name" ) )
+		}
+		itemDef
+		{
+			name "weaponChallenge_m4"
+			rect 0 4 336 20 0 0
+			visible 1
+			group "mw2_popup_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "popup_button_selection_bar_short"
+			type 1
+			textfont 3
+			textalign 4
+			textalignx 68
+			textscale 0.375
+			disabled when ( !isitemunlocked( "m4" ) )
+			exp text ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "m4" , 3 ) )
+			action
+			{
+				play "mouse_click";
+				if ( localvarint( "ui_tabDepth" ) == 0 )
+				{
+					setLocalVarString "ui_tab1Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "m4" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 1 )
+				{
+					setLocalVarString "ui_tab2Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "m4" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 2 )
+				{
+					setLocalVarString "ui_tab3Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "m4" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 3 )
+				{
+					setLocalVarString "ui_tab4Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "m4" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 4 )
+				{
+					setLocalVarString "ui_tab5Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "m4" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 5 )
+				{
+					setLocalVarString "ui_tab6Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "m4" , 3 ) );
+					;;
+				}
+				setLocalVarString "ui_challengeTierTable" ( tablelookup( "mp/challengeTable.csv" , 6 , "m4" , 4 ) );
+				;
+				open "menu_challenge_details";
+				setLocalVarInt "tierForWeapon" ( int( tablelookup( "mp/challengeTable.csv" , 6 , "m4" , 0 ) ) );
+				setPlayerData ( "challengeTierNew" , "localVarInt" ( "tierForWeapon" ) , "false" );
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_popup_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_popupAButton" ( 1 );
+				setLocalVarString "ui_selected_ref" ( "m4" );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 1 1 1 0;
+				setLocalVarBool "ui_popupAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect 226 4 40 20 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_locked"
+			textscale 0.55
+			visible when ( !isitemunlocked( "m4" ) )
+		}
+		itemDef
+		{
+			rect 226 4 40 20 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new"
+			textscale 0.55
+			visible when ( getplayerdata( "challengeTierNew" , int( tablelookup( "mp/challengeTable.csv" , 6 , "m4" , 0 ) ) ) )
+		}
+		itemDef
+		{
+			name "weaponChallenge_famas"
+			rect 0 24 336 20 0 0
+			visible 1
+			group "mw2_popup_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "popup_button_selection_bar_short"
+			type 1
+			textfont 3
+			textalign 4
+			textalignx 68
+			textscale 0.375
+			disabled when ( !isitemunlocked( "famas" ) )
+			exp text ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "famas" , 3 ) )
+			action
+			{
+				play "mouse_click";
+				if ( localvarint( "ui_tabDepth" ) == 0 )
+				{
+					setLocalVarString "ui_tab1Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "famas" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 1 )
+				{
+					setLocalVarString "ui_tab2Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "famas" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 2 )
+				{
+					setLocalVarString "ui_tab3Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "famas" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 3 )
+				{
+					setLocalVarString "ui_tab4Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "famas" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 4 )
+				{
+					setLocalVarString "ui_tab5Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "famas" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 5 )
+				{
+					setLocalVarString "ui_tab6Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "famas" , 3 ) );
+					;;
+				}
+				setLocalVarString "ui_challengeTierTable" ( tablelookup( "mp/challengeTable.csv" , 6 , "famas" , 4 ) );
+				;
+				open "menu_challenge_details";
+				setLocalVarInt "tierForWeapon" ( int( tablelookup( "mp/challengeTable.csv" , 6 , "famas" , 0 ) ) );
+				setPlayerData ( "challengeTierNew" , "localVarInt" ( "tierForWeapon" ) , "false" );
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_popup_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_popupAButton" ( 1 );
+				setLocalVarString "ui_selected_ref" ( "famas" );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 1 1 1 0;
+				setLocalVarBool "ui_popupAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect 226 24 40 20 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_locked"
+			textscale 0.55
+			visible when ( !isitemunlocked( "famas" ) )
+		}
+		itemDef
+		{
+			rect 226 24 40 20 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new"
+			textscale 0.55
+			visible when ( getplayerdata( "challengeTierNew" , int( tablelookup( "mp/challengeTable.csv" , 6 , "famas" , 0 ) ) ) )
+		}
+		itemDef
+		{
+			name "weaponChallenge_scar"
+			rect 0 44 336 20 0 0
+			visible 1
+			group "mw2_popup_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "popup_button_selection_bar_short"
+			type 1
+			textfont 3
+			textalign 4
+			textalignx 68
+			textscale 0.375
+			disabled when ( !isitemunlocked( "scar" ) )
+			exp text ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "scar" , 3 ) )
+			action
+			{
+				play "mouse_click";
+				if ( localvarint( "ui_tabDepth" ) == 0 )
+				{
+					setLocalVarString "ui_tab1Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "scar" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 1 )
+				{
+					setLocalVarString "ui_tab2Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "scar" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 2 )
+				{
+					setLocalVarString "ui_tab3Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "scar" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 3 )
+				{
+					setLocalVarString "ui_tab4Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "scar" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 4 )
+				{
+					setLocalVarString "ui_tab5Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "scar" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 5 )
+				{
+					setLocalVarString "ui_tab6Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "scar" , 3 ) );
+					;;
+				}
+				setLocalVarString "ui_challengeTierTable" ( tablelookup( "mp/challengeTable.csv" , 6 , "scar" , 4 ) );
+				;
+				open "menu_challenge_details";
+				setLocalVarInt "tierForWeapon" ( int( tablelookup( "mp/challengeTable.csv" , 6 , "scar" , 0 ) ) );
+				setPlayerData ( "challengeTierNew" , "localVarInt" ( "tierForWeapon" ) , "false" );
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_popup_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_popupAButton" ( 1 );
+				setLocalVarString "ui_selected_ref" ( "scar" );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 1 1 1 0;
+				setLocalVarBool "ui_popupAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect 226 44 40 20 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_locked"
+			textscale 0.55
+			visible when ( !isitemunlocked( "scar" ) )
+		}
+		itemDef
+		{
+			rect 226 44 40 20 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new"
+			textscale 0.55
+			visible when ( getplayerdata( "challengeTierNew" , int( tablelookup( "mp/challengeTable.csv" , 6 , "scar" , 0 ) ) ) )
+		}
+		itemDef
+		{
+			name "weaponChallenge_tavor"
+			rect 0 64 336 20 0 0
+			visible 1
+			group "mw2_popup_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "popup_button_selection_bar_short"
+			type 1
+			textfont 3
+			textalign 4
+			textalignx 68
+			textscale 0.375
+			disabled when ( !isitemunlocked( "tavor" ) )
+			exp text ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "tavor" , 3 ) )
+			action
+			{
+				play "mouse_click";
+				if ( localvarint( "ui_tabDepth" ) == 0 )
+				{
+					setLocalVarString "ui_tab1Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "tavor" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 1 )
+				{
+					setLocalVarString "ui_tab2Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "tavor" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 2 )
+				{
+					setLocalVarString "ui_tab3Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "tavor" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 3 )
+				{
+					setLocalVarString "ui_tab4Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "tavor" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 4 )
+				{
+					setLocalVarString "ui_tab5Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "tavor" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 5 )
+				{
+					setLocalVarString "ui_tab6Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "tavor" , 3 ) );
+					;;
+				}
+				setLocalVarString "ui_challengeTierTable" ( tablelookup( "mp/challengeTable.csv" , 6 , "tavor" , 4 ) );
+				;
+				open "menu_challenge_details";
+				setLocalVarInt "tierForWeapon" ( int( tablelookup( "mp/challengeTable.csv" , 6 , "tavor" , 0 ) ) );
+				setPlayerData ( "challengeTierNew" , "localVarInt" ( "tierForWeapon" ) , "false" );
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_popup_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_popupAButton" ( 1 );
+				setLocalVarString "ui_selected_ref" ( "tavor" );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 1 1 1 0;
+				setLocalVarBool "ui_popupAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect 226 64 40 20 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_locked"
+			textscale 0.55
+			visible when ( !isitemunlocked( "tavor" ) )
+		}
+		itemDef
+		{
+			rect 226 64 40 20 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new"
+			textscale 0.55
+			visible when ( getplayerdata( "challengeTierNew" , int( tablelookup( "mp/challengeTable.csv" , 6 , "tavor" , 0 ) ) ) )
+		}
+		itemDef
+		{
+			name "weaponChallenge_fal"
+			rect 0 84 336 20 0 0
+			visible 1
+			group "mw2_popup_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "popup_button_selection_bar_short"
+			type 1
+			textfont 3
+			textalign 4
+			textalignx 68
+			textscale 0.375
+			disabled when ( !isitemunlocked( "fal" ) )
+			exp text ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "fal" , 3 ) )
+			action
+			{
+				play "mouse_click";
+				if ( localvarint( "ui_tabDepth" ) == 0 )
+				{
+					setLocalVarString "ui_tab1Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "fal" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 1 )
+				{
+					setLocalVarString "ui_tab2Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "fal" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 2 )
+				{
+					setLocalVarString "ui_tab3Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "fal" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 3 )
+				{
+					setLocalVarString "ui_tab4Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "fal" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 4 )
+				{
+					setLocalVarString "ui_tab5Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "fal" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 5 )
+				{
+					setLocalVarString "ui_tab6Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "fal" , 3 ) );
+					;;
+				}
+				setLocalVarString "ui_challengeTierTable" ( tablelookup( "mp/challengeTable.csv" , 6 , "fal" , 4 ) );
+				;
+				open "menu_challenge_details";
+				setLocalVarInt "tierForWeapon" ( int( tablelookup( "mp/challengeTable.csv" , 6 , "fal" , 0 ) ) );
+				setPlayerData ( "challengeTierNew" , "localVarInt" ( "tierForWeapon" ) , "false" );
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_popup_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_popupAButton" ( 1 );
+				setLocalVarString "ui_selected_ref" ( "fal" );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 1 1 1 0;
+				setLocalVarBool "ui_popupAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect 226 84 40 20 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_locked"
+			textscale 0.55
+			visible when ( !isitemunlocked( "fal" ) )
+		}
+		itemDef
+		{
+			rect 226 84 40 20 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new"
+			textscale 0.55
+			visible when ( getplayerdata( "challengeTierNew" , int( tablelookup( "mp/challengeTable.csv" , 6 , "fal" , 0 ) ) ) )
+		}
+		itemDef
+		{
+			name "weaponChallenge_m16"
+			rect 0 104 336 20 0 0
+			visible 1
+			group "mw2_popup_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "popup_button_selection_bar_short"
+			type 1
+			textfont 3
+			textalign 4
+			textalignx 68
+			textscale 0.375
+			disabled when ( !isitemunlocked( "m16" ) )
+			exp text ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "m16" , 3 ) )
+			action
+			{
+				play "mouse_click";
+				if ( localvarint( "ui_tabDepth" ) == 0 )
+				{
+					setLocalVarString "ui_tab1Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "m16" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 1 )
+				{
+					setLocalVarString "ui_tab2Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "m16" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 2 )
+				{
+					setLocalVarString "ui_tab3Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "m16" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 3 )
+				{
+					setLocalVarString "ui_tab4Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "m16" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 4 )
+				{
+					setLocalVarString "ui_tab5Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "m16" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 5 )
+				{
+					setLocalVarString "ui_tab6Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "m16" , 3 ) );
+					;;
+				}
+				setLocalVarString "ui_challengeTierTable" ( tablelookup( "mp/challengeTable.csv" , 6 , "m16" , 4 ) );
+				;
+				open "menu_challenge_details";
+				setLocalVarInt "tierForWeapon" ( int( tablelookup( "mp/challengeTable.csv" , 6 , "m16" , 0 ) ) );
+				setPlayerData ( "challengeTierNew" , "localVarInt" ( "tierForWeapon" ) , "false" );
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_popup_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_popupAButton" ( 1 );
+				setLocalVarString "ui_selected_ref" ( "m16" );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 1 1 1 0;
+				setLocalVarBool "ui_popupAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect 226 104 40 20 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_locked"
+			textscale 0.55
+			visible when ( !isitemunlocked( "m16" ) )
+		}
+		itemDef
+		{
+			rect 226 104 40 20 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new"
+			textscale 0.55
+			visible when ( getplayerdata( "challengeTierNew" , int( tablelookup( "mp/challengeTable.csv" , 6 , "m16" , 0 ) ) ) )
+		}
+		itemDef
+		{
+			name "weaponChallenge_masada"
+			rect 0 124 336 20 0 0
+			visible 1
+			group "mw2_popup_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "popup_button_selection_bar_short"
+			type 1
+			textfont 3
+			textalign 4
+			textalignx 68
+			textscale 0.375
+			disabled when ( !isitemunlocked( "masada" ) )
+			exp text ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "masada" , 3 ) )
+			action
+			{
+				play "mouse_click";
+				if ( localvarint( "ui_tabDepth" ) == 0 )
+				{
+					setLocalVarString "ui_tab1Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "masada" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 1 )
+				{
+					setLocalVarString "ui_tab2Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "masada" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 2 )
+				{
+					setLocalVarString "ui_tab3Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "masada" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 3 )
+				{
+					setLocalVarString "ui_tab4Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "masada" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 4 )
+				{
+					setLocalVarString "ui_tab5Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "masada" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 5 )
+				{
+					setLocalVarString "ui_tab6Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "masada" , 3 ) );
+					;;
+				}
+				setLocalVarString "ui_challengeTierTable" ( tablelookup( "mp/challengeTable.csv" , 6 , "masada" , 4 ) );
+				;
+				open "menu_challenge_details";
+				setLocalVarInt "tierForWeapon" ( int( tablelookup( "mp/challengeTable.csv" , 6 , "masada" , 0 ) ) );
+				setPlayerData ( "challengeTierNew" , "localVarInt" ( "tierForWeapon" ) , "false" );
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_popup_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_popupAButton" ( 1 );
+				setLocalVarString "ui_selected_ref" ( "masada" );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 1 1 1 0;
+				setLocalVarBool "ui_popupAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect 226 124 40 20 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_locked"
+			textscale 0.55
+			visible when ( !isitemunlocked( "masada" ) )
+		}
+		itemDef
+		{
+			rect 226 124 40 20 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new"
+			textscale 0.55
+			visible when ( getplayerdata( "challengeTierNew" , int( tablelookup( "mp/challengeTable.csv" , 6 , "masada" , 0 ) ) ) )
+		}
+		itemDef
+		{
+			name "weaponChallenge_fn2000"
+			rect 0 144 336 20 0 0
+			visible 1
+			group "mw2_popup_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "popup_button_selection_bar_short"
+			type 1
+			textfont 3
+			textalign 4
+			textalignx 68
+			textscale 0.375
+			disabled when ( !isitemunlocked( "fn2000" ) )
+			exp text ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "fn2000" , 3 ) )
+			action
+			{
+				play "mouse_click";
+				if ( localvarint( "ui_tabDepth" ) == 0 )
+				{
+					setLocalVarString "ui_tab1Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "fn2000" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 1 )
+				{
+					setLocalVarString "ui_tab2Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "fn2000" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 2 )
+				{
+					setLocalVarString "ui_tab3Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "fn2000" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 3 )
+				{
+					setLocalVarString "ui_tab4Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "fn2000" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 4 )
+				{
+					setLocalVarString "ui_tab5Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "fn2000" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 5 )
+				{
+					setLocalVarString "ui_tab6Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "fn2000" , 3 ) );
+					;;
+				}
+				setLocalVarString "ui_challengeTierTable" ( tablelookup( "mp/challengeTable.csv" , 6 , "fn2000" , 4 ) );
+				;
+				open "menu_challenge_details";
+				setLocalVarInt "tierForWeapon" ( int( tablelookup( "mp/challengeTable.csv" , 6 , "fn2000" , 0 ) ) );
+				setPlayerData ( "challengeTierNew" , "localVarInt" ( "tierForWeapon" ) , "false" );
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_popup_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_popupAButton" ( 1 );
+				setLocalVarString "ui_selected_ref" ( "fn2000" );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 1 1 1 0;
+				setLocalVarBool "ui_popupAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect 226 144 40 20 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_locked"
+			textscale 0.55
+			visible when ( !isitemunlocked( "fn2000" ) )
+		}
+		itemDef
+		{
+			rect 226 144 40 20 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new"
+			textscale 0.55
+			visible when ( getplayerdata( "challengeTierNew" , int( tablelookup( "mp/challengeTable.csv" , 6 , "fn2000" , 0 ) ) ) )
+		}
+		itemDef
+		{
+			name "weaponChallenge_ak47"
+			rect 0 164 336 20 0 0
+			visible 1
+			group "mw2_popup_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "popup_button_selection_bar_short"
+			type 1
+			textfont 3
+			textalign 4
+			textalignx 68
+			textscale 0.375
+			disabled when ( !isitemunlocked( "ak47" ) )
+			exp text ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "ak47" , 3 ) )
+			action
+			{
+				play "mouse_click";
+				if ( localvarint( "ui_tabDepth" ) == 0 )
+				{
+					setLocalVarString "ui_tab1Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "ak47" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 1 )
+				{
+					setLocalVarString "ui_tab2Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "ak47" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 2 )
+				{
+					setLocalVarString "ui_tab3Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "ak47" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 3 )
+				{
+					setLocalVarString "ui_tab4Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "ak47" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 4 )
+				{
+					setLocalVarString "ui_tab5Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "ak47" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 5 )
+				{
+					setLocalVarString "ui_tab6Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "ak47" , 3 ) );
+					;;
+				}
+				setLocalVarString "ui_challengeTierTable" ( tablelookup( "mp/challengeTable.csv" , 6 , "ak47" , 4 ) );
+				;
+				open "menu_challenge_details";
+				setLocalVarInt "tierForWeapon" ( int( tablelookup( "mp/challengeTable.csv" , 6 , "ak47" , 0 ) ) );
+				setPlayerData ( "challengeTierNew" , "localVarInt" ( "tierForWeapon" ) , "false" );
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_popup_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_popupAButton" ( 1 );
+				setLocalVarString "ui_selected_ref" ( "ak47" );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 1 1 1 0;
+				setLocalVarBool "ui_popupAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect 226 164 40 20 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_locked"
+			textscale 0.55
+			visible when ( !isitemunlocked( "ak47" ) )
+		}
+		itemDef
+		{
+			rect 226 164 40 20 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new"
+			textscale 0.55
+			visible when ( getplayerdata( "challengeTierNew" , int( tablelookup( "mp/challengeTable.csv" , 6 , "ak47" , 0 ) ) ) )
+		}
+		itemDef
+		{
+			rect 8 0 200 184 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.5
+			background "small_box_lightfx"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 8 0 200 184 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 4
+			textalignx 4
+			textscale 0.375
+			exp text ( "@" + tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 3 ) )
+		}
+		itemDef
+		{
+			rect 8 10 200 100 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp material ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 6 ) )
+		}
+		itemDef
+		{
+			rect 8 0 200 184 2 1
+			decoration
+			autowrapped
+			visible 1
+			forecolor 1 1 1 0.65
+			textfont 3
+			textalign 4
+			textalignx 4
+			textaligny 104
+			textscale 0.375
+			visible when ( isitemunlocked( localvarstring( "ui_selected_ref" ) ) )
+			exp text ( "@" + tablelookup( "mp/statstable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 7 ) )
+		}
+		itemDef
+		{
+			rect 8 0 200 184 2 1
+			decoration
+			autowrapped
+			visible 1
+			forecolor 1 1 1 0.65
+			textfont 3
+			textalign 4
+			textalignx 4
+			textaligny 104
+			textscale 0.375
+			visible when ( !isitemunlocked( localvarstring( "ui_selected_ref" ) ) )
+			exp text ( "@" + tablelookup( "mp/rankTable.csv" , 0 , tablelookup( "mp/unlockTable.csv" , 0 , localvarstring( "ui_selected_ref" ) , 2 ) , 17 ) )
+		}
+	}
+}

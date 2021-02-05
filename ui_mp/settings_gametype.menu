@@ -1,0 +1,713 @@
+{
+	menuDef
+	{
+		name "settings_gametype"
+		rect 0 0 640 480 0 0
+		style 1
+		forecolor 1 1 1 1
+		focuscolor 1 1 1 1
+		fullscreen 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		onOpen
+		{
+			focusfirst;
+			setfocusbydvar "ui_gametype";
+		}
+		onClose
+		{
+			execnow "xupdatepartystate";
+		}
+		onEsc
+		{
+			close "settings_gametype";
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "mw2_main_background"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 0 1708 480 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.5
+			background "mw2_main_cloud_overlay"
+			textscale 0.55
+			exp rect x ( ( 0 - 107 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 -1708 -480 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.5
+			background "mw2_main_cloud_overlay"
+			textscale 0.55
+			exp rect x ( ( - 107 + 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0
+			background "mockup_bg_glow"
+			textscale 0.55
+			exp forecolor a ( ( ( sin( milliseconds( ) / 1500 ) + 1 ) * 0.25 ) + 0.25 )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0
+			background "mockup_bg_glow"
+			textscale 0.55
+			exp forecolor a ( ( ( sin( milliseconds( ) / 480 ) + 1 ) * 0.25 ) + 0.25 )
+		}
+		itemDef
+		{
+			rect 0 0 272 28 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 6
+			textalignx -60
+			textscale 0.44
+			text "@MENU_CHOOSE_GAME_MODE_CAP"
+		}
+		itemDef
+		{
+			rect 0 28 640 356 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.15
+			background "white"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -32 -4 32 32 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_tl"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 0 -4 640 32 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_t"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 640 -4 32 32 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_tr"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 640 28 32 356 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_r"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 640 384 32 32 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_br"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 0 384 640 32 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_b"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect -32 384 32 32 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_bl"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect -32 28 32 356 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_l"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect -64 28 336 20 1 1
+			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			dvarTest "ui_gametype"
+			focusDvar { "dm" }
+			exp text ( "@" + tablelookup( "mp/gameTypesTable.csv" , 0 , "dm" , 1 ) + "_CAPS" )
+			action
+			{
+				play "mouse_click";
+				setdvar "ui_gametype" "dm";
+				execOnDvarIntValue "splitscreen" 1 "exec default_splitscreen.cfg";
+				execOnDvarIntValue "systemlink" 1 "exec default_systemlink.cfg";
+				execOnDvarIntValue "xblive_privatematch" 1 "exec default_xboxlive.cfg";
+				close self;
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+				setLocalVarString "ui_info_name" ( "@" + tablelookup( "mp/gameTypesTable.csv" , 0 , "dm" , 1 ) );
+				;;
+				setLocalVarString "ui_info_desc" ( "@" + tablelookup( "mp/gameTypesTable.csv" , 0 , "dm" , 2 ) );
+				;;
+				setLocalVarString "ui_info_icon" ( tablelookup( "mp/gameTypesTable.csv" , 0 , "dm" , 3 ) );
+				;;
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect -64 48 336 20 1 1
+			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			dvarTest "ui_gametype"
+			focusDvar { "war" }
+			exp text ( "@" + tablelookup( "mp/gameTypesTable.csv" , 0 , "war" , 1 ) + "_CAPS" )
+			action
+			{
+				play "mouse_click";
+				setdvar "ui_gametype" "war";
+				execOnDvarIntValue "splitscreen" 1 "exec default_splitscreen.cfg";
+				execOnDvarIntValue "systemlink" 1 "exec default_systemlink.cfg";
+				execOnDvarIntValue "xblive_privatematch" 1 "exec default_xboxlive.cfg";
+				close self;
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+				setLocalVarString "ui_info_name" ( "@" + tablelookup( "mp/gameTypesTable.csv" , 0 , "war" , 1 ) );
+				;;
+				setLocalVarString "ui_info_desc" ( "@" + tablelookup( "mp/gameTypesTable.csv" , 0 , "war" , 2 ) );
+				;;
+				setLocalVarString "ui_info_icon" ( tablelookup( "mp/gameTypesTable.csv" , 0 , "war" , 3 ) );
+				;;
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect -64 68 336 20 1 1
+			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			dvarTest "ui_gametype"
+			focusDvar { "sd" }
+			exp text ( "@" + tablelookup( "mp/gameTypesTable.csv" , 0 , "sd" , 1 ) + "_CAPS" )
+			action
+			{
+				play "mouse_click";
+				setdvar "ui_gametype" "sd";
+				execOnDvarIntValue "splitscreen" 1 "exec default_splitscreen.cfg";
+				execOnDvarIntValue "systemlink" 1 "exec default_systemlink.cfg";
+				execOnDvarIntValue "xblive_privatematch" 1 "exec default_xboxlive.cfg";
+				close self;
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+				setLocalVarString "ui_info_name" ( "@" + tablelookup( "mp/gameTypesTable.csv" , 0 , "sd" , 1 ) );
+				;;
+				setLocalVarString "ui_info_desc" ( "@" + tablelookup( "mp/gameTypesTable.csv" , 0 , "sd" , 2 ) );
+				;;
+				setLocalVarString "ui_info_icon" ( tablelookup( "mp/gameTypesTable.csv" , 0 , "sd" , 3 ) );
+				;;
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect -64 88 336 20 1 1
+			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			dvarTest "ui_gametype"
+			focusDvar { "sab" }
+			exp text ( "@" + tablelookup( "mp/gameTypesTable.csv" , 0 , "sab" , 1 ) + "_CAPS" )
+			action
+			{
+				play "mouse_click";
+				setdvar "ui_gametype" "sab";
+				execOnDvarIntValue "splitscreen" 1 "exec default_splitscreen.cfg";
+				execOnDvarIntValue "systemlink" 1 "exec default_systemlink.cfg";
+				execOnDvarIntValue "xblive_privatematch" 1 "exec default_xboxlive.cfg";
+				close self;
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+				setLocalVarString "ui_info_name" ( "@" + tablelookup( "mp/gameTypesTable.csv" , 0 , "sab" , 1 ) );
+				;;
+				setLocalVarString "ui_info_desc" ( "@" + tablelookup( "mp/gameTypesTable.csv" , 0 , "sab" , 2 ) );
+				;;
+				setLocalVarString "ui_info_icon" ( tablelookup( "mp/gameTypesTable.csv" , 0 , "sab" , 3 ) );
+				;;
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect -64 108 336 20 1 1
+			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			dvarTest "ui_gametype"
+			focusDvar { "dom" }
+			exp text ( "@" + tablelookup( "mp/gameTypesTable.csv" , 0 , "dom" , 1 ) + "_CAPS" )
+			action
+			{
+				play "mouse_click";
+				setdvar "ui_gametype" "dom";
+				execOnDvarIntValue "splitscreen" 1 "exec default_splitscreen.cfg";
+				execOnDvarIntValue "systemlink" 1 "exec default_systemlink.cfg";
+				execOnDvarIntValue "xblive_privatematch" 1 "exec default_xboxlive.cfg";
+				close self;
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+				setLocalVarString "ui_info_name" ( "@" + tablelookup( "mp/gameTypesTable.csv" , 0 , "dom" , 1 ) );
+				;;
+				setLocalVarString "ui_info_desc" ( "@" + tablelookup( "mp/gameTypesTable.csv" , 0 , "dom" , 2 ) );
+				;;
+				setLocalVarString "ui_info_icon" ( tablelookup( "mp/gameTypesTable.csv" , 0 , "dom" , 3 ) );
+				;;
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect -64 128 336 20 1 1
+			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			dvarTest "ui_gametype"
+			focusDvar { "koth" }
+			exp text ( "@" + tablelookup( "mp/gameTypesTable.csv" , 0 , "koth" , 1 ) + "_CAPS" )
+			action
+			{
+				play "mouse_click";
+				setdvar "ui_gametype" "koth";
+				execOnDvarIntValue "splitscreen" 1 "exec default_splitscreen.cfg";
+				execOnDvarIntValue "systemlink" 1 "exec default_systemlink.cfg";
+				execOnDvarIntValue "xblive_privatematch" 1 "exec default_xboxlive.cfg";
+				close self;
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+				setLocalVarString "ui_info_name" ( "@" + tablelookup( "mp/gameTypesTable.csv" , 0 , "koth" , 1 ) );
+				;;
+				setLocalVarString "ui_info_desc" ( "@" + tablelookup( "mp/gameTypesTable.csv" , 0 , "koth" , 2 ) );
+				;;
+				setLocalVarString "ui_info_icon" ( tablelookup( "mp/gameTypesTable.csv" , 0 , "koth" , 3 ) );
+				;;
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect -64 148 336 20 1 1
+			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			dvarTest "ui_gametype"
+			focusDvar { "ctf" }
+			exp text ( "@" + tablelookup( "mp/gameTypesTable.csv" , 0 , "ctf" , 1 ) + "_CAPS" )
+			action
+			{
+				play "mouse_click";
+				setdvar "ui_gametype" "ctf";
+				execOnDvarIntValue "splitscreen" 1 "exec default_splitscreen.cfg";
+				execOnDvarIntValue "systemlink" 1 "exec default_systemlink.cfg";
+				execOnDvarIntValue "xblive_privatematch" 1 "exec default_xboxlive.cfg";
+				close self;
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+				setLocalVarString "ui_info_name" ( "@" + tablelookup( "mp/gameTypesTable.csv" , 0 , "ctf" , 1 ) );
+				;;
+				setLocalVarString "ui_info_desc" ( "@" + tablelookup( "mp/gameTypesTable.csv" , 0 , "ctf" , 2 ) );
+				;;
+				setLocalVarString "ui_info_icon" ( tablelookup( "mp/gameTypesTable.csv" , 0 , "ctf" , 3 ) );
+				;;
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect -64 168 336 20 1 1
+			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			dvarTest "ui_gametype"
+			focusDvar { "dd" }
+			exp text ( "@" + tablelookup( "mp/gameTypesTable.csv" , 0 , "dd" , 1 ) + "_CAPS" )
+			action
+			{
+				play "mouse_click";
+				setdvar "ui_gametype" "dd";
+				execOnDvarIntValue "splitscreen" 1 "exec default_splitscreen.cfg";
+				execOnDvarIntValue "systemlink" 1 "exec default_systemlink.cfg";
+				execOnDvarIntValue "xblive_privatematch" 1 "exec default_xboxlive.cfg";
+				close self;
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+				setLocalVarString "ui_info_name" ( "@" + tablelookup( "mp/gameTypesTable.csv" , 0 , "dd" , 1 ) );
+				;;
+				setLocalVarString "ui_info_desc" ( "@" + tablelookup( "mp/gameTypesTable.csv" , 0 , "dd" , 2 ) );
+				;;
+				setLocalVarString "ui_info_icon" ( tablelookup( "mp/gameTypesTable.csv" , 0 , "dd" , 3 ) );
+				;;
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect -64 -20 336 20 1 3
+			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@PLATFORM_BACK_CAPS"
+			visible when ( "@PLATFORM_BACK_CAPS" == "@PLATFORM_BACK_CAPS" )
+			action
+			{
+				play "mouse_click";
+				play "mouse_click";
+				"escape" self;
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect -64 -20 336 20 1 3
+			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@PLATFORM_BACK_CAPS"
+			visible when ( "@PLATFORM_BACK_CAPS" == "@PLATFORM_GAME_SUMMARY_CAPS" )
+			action
+			{
+				play "mouse_click";
+				play "mouse_click";
+				open "popup_summary";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect -272 28 272 356 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "white"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -272 28 264 200 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 4
+			textalignx 8
+			textscale 0.375
+			exp text ( localvarstring( "ui_info_name" ) )
+		}
+		itemDef
+		{
+			rect -272 28 264 200 3 1
+			decoration
+			autowrapped
+			visible 1
+			forecolor 1 1 1 0.65
+			textfont 3
+			textalign 4
+			textalignx 8
+			textaligny 20
+			textscale 0.375
+			exp text ( localvarstring( "ui_info_desc" ) )
+		}
+	}
+}

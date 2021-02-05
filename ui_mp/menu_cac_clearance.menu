@@ -1,0 +1,1156 @@
+{
+	menuDef
+	{
+		name "menu_cac_clearance"
+		rect 0 0 640 480 0 0
+		forecolor 1 1 1 1
+		focuscolor 1 1 1 1
+		fullscreen 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		blurWorld 5
+		onOpen
+		{
+			focusfirst;
+		}
+		onClose
+		{
+			if ( dvarbool( "splitscreen" ) )
+			{
+				execnow "splitscreencontrols";
+			}
+		}
+		onEsc
+		{
+			execnow "uploadstats";
+			close self;
+		}
+		itemDef
+		{
+			rect -107 0 854 480 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "animbg_blur_back"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -107 0 1708 480 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "animbg_blur_fogscroll"
+			textscale 0.55
+			exp rect x ( ( - 107 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) ) )
+		}
+		itemDef
+		{
+			rect -107 0 854 480 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "animbg_blur_front"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 48 40 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 0.8 0.4 1
+			textfont 1
+			textalign 4
+			textalignx -36
+			textaligny -36
+			textscale 0.5833
+			exp text ( "@MPUI_PLAYERCARD" )
+		}
+		itemDef
+		{
+			rect -120 -32 378 64 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 0.95 0.175
+			background "white"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 258 -32 16 -64 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 0.95 0.175
+			background "button_highlight_end"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 56 448 528 40 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 0.95 0.175
+			background "white"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 584 448 16 64 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 0.95 0.175
+			background "button_highlight_end"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 40 448 -16 64 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 0.95 0.175
+			background "button_highlight_end"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -120 464 160 32 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 0.95 0.175
+			background "white"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 600 464 160 32 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 0.95 0.175
+			background "white"
+			textscale 0.55
+		}
+		itemDef
+		{
+			name "back"
+			rect -250 -26 40 20 2 3
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			type 1
+			textfont 1
+			textaligny 18
+			textscale 0.375
+			text "@MENU_BACK"
+			visible when ( 1 )
+			mouseEnter
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				play "mouse_click";
+				close self ;;
+			}
+		}
+		itemDef
+		{
+			rect 390 56 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 0.5
+			textfont 1
+			textscale 0.375
+			dvar "party_statusString"
+			visible when ( dvarstring( "party_timerVisible" ) == 0 && !dvarstring( "xblive_privatematch" ) )
+		}
+		itemDef
+		{
+			rect 390 64 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 0.5
+			textfont 1
+			textscale 0.375
+			text "@MENU_MATCH_BEGINNING_IN"
+			visible when ( dvarstring( "party_timerVisible" ) == 1 && !dvarstring( "xblive_privatematch" ) )
+		}
+		itemDef
+		{
+			rect 520 64 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 0.5
+			textfont 1
+			textscale 0.375
+			dvar "party_timer"
+			visible when ( dvarstring( "party_timerVisible" ) == 1 && !dvarstring( "xblive_privatematch" ) )
+		}
+		itemDef
+		{
+			rect 0 34 214.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 1 0.07
+			textscale 0.55
+			visible when ( 1 )
+			exp material ( "gradient_fadein" )
+		}
+		itemDef
+		{
+			rect 214.5 34 5.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 1 0.07
+			background "button_highlight_end"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 0 34 214.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.95 1 0.35
+			background "gradient_fadein"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 1 && localvarstring( "ui_choicegroup" ) == "" && 1 )
+		}
+		itemDef
+		{
+			rect 214.5 34 5.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.95 1 0.35
+			background "button_highlight_end"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 1 && localvarstring( "ui_choicegroup" ) == "" && 1 )
+		}
+		itemDef
+		{
+			rect 0 34 220 22 1 1
+			visible 1
+			forecolor 0.69 0.69 0.69 1
+			type 1
+			textfont 1
+			textalign 10
+			textalignx -10
+			textscale 0.4
+			visible when ( isitemunlocked( "playercard_title" ) )
+			exp text ( "@MPUI_PLAYERCARD_TITLE" )
+			action
+			{
+				play "mouse_click";
+				if ( isitemunlocked( "playercard_title" ) )
+				{
+					open "menu_playercard_title_popup";
+				}
+				;;
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarInt "ui_highlight" ( 1 );
+				setLocalVarString "ui_choicegroup" ( "" );
+				if ( isitemunlocked( "playercard_title" ) )
+				{
+					setLocalVarString "ui_hint_text" ( "@MPUI_DESC_PLAYERCARD_TITLE" );
+					;;
+				}
+				else
+				{
+					if ( tablelookup( "mp/unlockTable.csv" , 0 , "playercard_title" , 2 ) == 9999 )
+					{
+						setLocalVarString "ui_hint_text" ( "@PERKS_UNLOCKED_AT_NONE" );
+					}
+					else
+					{
+						if ( tablelookup( "mp/unlockTable.csv" , 0 , "playercard_title" , 3 ) != "" )
+						{
+							setLocalVarString "ui_hint_text" ( "@PERKS_UNLOCKED_BY_CHALLENGE" );
+						}
+						else
+						{
+							setLocalVarString "ui_hint_text" ( "@" + tablelookup( "mp/rankTable.csv" , 0 , tablelookup( "mp/unlockTable.csv" , 0 , "playercard_title" , 2 ) , 17 ) );
+							;;
+						}
+					}
+					exec "set ui_hint_text THIS MENU SHOULD BE UPDATED TO USE setLocalVarString ui_hint_text;";
+				}
+			}
+			leaveFocus
+			{
+				setLocalVarInt "ui_highlight" ( 0 );
+				;;
+			}
+		}
+		itemDef
+		{
+			rect 0 34 220 22 1 1
+			visible 1
+			forecolor 1 1 1 1
+			type 1
+			textscale 0.55
+			visible when ( ( isitemunlocked( "playercard_title" ) ) == 0 )
+			action
+			{
+				play "mouse_click";
+				;;
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarInt "ui_highlight" ( 1 );
+				setLocalVarString "ui_choicegroup" ( "" );
+				if ( isitemunlocked( "playercard_title" ) )
+				{
+					setLocalVarString "ui_hint_text" ( "@MPUI_DESC_PLAYERCARD_TITLE" );
+					;;
+				}
+				else
+				{
+					if ( tablelookup( "mp/unlockTable.csv" , 0 , "playercard_title" , 2 ) == 9999 )
+					{
+						setLocalVarString "ui_hint_text" ( "@PERKS_UNLOCKED_AT_NONE" );
+					}
+					else
+					{
+						if ( tablelookup( "mp/unlockTable.csv" , 0 , "playercard_title" , 3 ) != "" )
+						{
+							setLocalVarString "ui_hint_text" ( "@PERKS_UNLOCKED_BY_CHALLENGE" );
+						}
+						else
+						{
+							setLocalVarString "ui_hint_text" ( "@" + tablelookup( "mp/rankTable.csv" , 0 , tablelookup( "mp/unlockTable.csv" , 0 , "playercard_title" , 2 ) , 17 ) );
+							;;
+						}
+					}
+					exec "set ui_hint_text THIS MENU SHOULD BE UPDATED TO USE setLocalVarString ui_hint_text;";
+				}
+			}
+			leaveFocus
+			{
+				setLocalVarInt "ui_highlight" ( 0 );
+				;;
+			}
+		}
+		itemDef
+		{
+			rect 0 34 220 22 1 1
+			decoration
+			visible 1
+			forecolor 0.5 0.5 0.5 0.5
+			textfont 1
+			textalign 10
+			textalignx -10
+			textscale 0.4
+			visible when ( ( isitemunlocked( "playercard_title" ) ) == 0 )
+			exp text ( "@MPUI_PLAYERCARD_TITLE" )
+		}
+		itemDef
+		{
+			rect 0 58 214.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 1 0.07
+			textscale 0.55
+			visible when ( 1 )
+			exp material ( "gradient_fadein" )
+		}
+		itemDef
+		{
+			rect 214.5 58 5.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 1 0.07
+			background "button_highlight_end"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 0 58 214.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.95 1 0.35
+			background "gradient_fadein"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 2 && localvarstring( "ui_choicegroup" ) == "" && 1 )
+		}
+		itemDef
+		{
+			rect 214.5 58 5.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.95 1 0.35
+			background "button_highlight_end"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 2 && localvarstring( "ui_choicegroup" ) == "" && 1 )
+		}
+		itemDef
+		{
+			rect 0 58 220 22 1 1
+			visible 1
+			forecolor 0.69 0.69 0.69 1
+			type 1
+			textfont 1
+			textalign 10
+			textalignx -10
+			textscale 0.4
+			visible when ( isitemunlocked( "playercard_icon" ) )
+			exp text ( "@MPUI_PLAYERCARD_ICON" )
+			action
+			{
+				play "mouse_click";
+				if ( isitemunlocked( "playercard_icon" ) )
+				{
+					open "menu_playercard_icon_popup";
+				}
+				;;
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarInt "ui_highlight" ( 2 );
+				setLocalVarString "ui_choicegroup" ( "" );
+				if ( isitemunlocked( "playercard_icon" ) )
+				{
+					setLocalVarString "ui_hint_text" ( "@MPUI_DESC_PLAYERCARD_ICON" );
+					;;
+				}
+				else
+				{
+					if ( tablelookup( "mp/unlockTable.csv" , 0 , "playercard_icon" , 2 ) == 9999 )
+					{
+						setLocalVarString "ui_hint_text" ( "@PERKS_UNLOCKED_AT_NONE" );
+					}
+					else
+					{
+						if ( tablelookup( "mp/unlockTable.csv" , 0 , "playercard_icon" , 3 ) != "" )
+						{
+							setLocalVarString "ui_hint_text" ( "@PERKS_UNLOCKED_BY_CHALLENGE" );
+						}
+						else
+						{
+							setLocalVarString "ui_hint_text" ( "@" + tablelookup( "mp/rankTable.csv" , 0 , tablelookup( "mp/unlockTable.csv" , 0 , "playercard_icon" , 2 ) , 17 ) );
+							;;
+						}
+					}
+					exec "set ui_hint_text THIS MENU SHOULD BE UPDATED TO USE setLocalVarString ui_hint_text;";
+				}
+			}
+			leaveFocus
+			{
+				setLocalVarInt "ui_highlight" ( 0 );
+				;;
+			}
+		}
+		itemDef
+		{
+			rect 0 58 220 22 1 1
+			visible 1
+			forecolor 1 1 1 1
+			type 1
+			textscale 0.55
+			visible when ( ( isitemunlocked( "playercard_icon" ) ) == 0 )
+			action
+			{
+				play "mouse_click";
+				;;
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarInt "ui_highlight" ( 2 );
+				setLocalVarString "ui_choicegroup" ( "" );
+				if ( isitemunlocked( "playercard_icon" ) )
+				{
+					setLocalVarString "ui_hint_text" ( "@MPUI_DESC_PLAYERCARD_ICON" );
+					;;
+				}
+				else
+				{
+					if ( tablelookup( "mp/unlockTable.csv" , 0 , "playercard_icon" , 2 ) == 9999 )
+					{
+						setLocalVarString "ui_hint_text" ( "@PERKS_UNLOCKED_AT_NONE" );
+					}
+					else
+					{
+						if ( tablelookup( "mp/unlockTable.csv" , 0 , "playercard_icon" , 3 ) != "" )
+						{
+							setLocalVarString "ui_hint_text" ( "@PERKS_UNLOCKED_BY_CHALLENGE" );
+						}
+						else
+						{
+							setLocalVarString "ui_hint_text" ( "@" + tablelookup( "mp/rankTable.csv" , 0 , tablelookup( "mp/unlockTable.csv" , 0 , "playercard_icon" , 2 ) , 17 ) );
+							;;
+						}
+					}
+					exec "set ui_hint_text THIS MENU SHOULD BE UPDATED TO USE setLocalVarString ui_hint_text;";
+				}
+			}
+			leaveFocus
+			{
+				setLocalVarInt "ui_highlight" ( 0 );
+				;;
+			}
+		}
+		itemDef
+		{
+			rect 0 58 220 22 1 1
+			decoration
+			visible 1
+			forecolor 0.5 0.5 0.5 0.5
+			textfont 1
+			textalign 10
+			textalignx -10
+			textscale 0.4
+			visible when ( ( isitemunlocked( "playercard_icon" ) ) == 0 )
+			exp text ( "@MPUI_PLAYERCARD_ICON" )
+		}
+		itemDef
+		{
+			rect 0 82 214.5 8 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 1 0.07
+			background "gradient_fadein"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 0 92 214.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 1 0.07
+			textscale 0.55
+			visible when ( isitemunlocked( "cac" ) )
+			exp material ( "gradient_fadein" )
+		}
+		itemDef
+		{
+			rect 214.5 92 5.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 1 0.07
+			background "button_highlight_end"
+			textscale 0.55
+			visible when ( isitemunlocked( "cac" ) )
+		}
+		itemDef
+		{
+			rect 0 92 214.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			borderSize 2
+			forecolor 0.9 0.95 1 0.35
+			bordercolor 0.8 0.95 1 0.4
+			background "gradient_fadein"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 3 && localvarstring( "ui_choicegroup" ) == "" )
+		}
+		itemDef
+		{
+			rect 214.5 92 5.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.95 1 0.35
+			background "button_highlight_end"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 3 && localvarstring( "ui_choicegroup" ) == "" )
+		}
+		itemDef
+		{
+			rect 0 92 220 22 1 1
+			visible 1
+			forecolor 0.69 0.69 0.69 1
+			type 1
+			textfont 1
+			textalign 10
+			textalignx -10
+			textscale 0.4
+			visible when ( isitemunlocked( "cac" ) )
+			exp text ( "@MPUI_CREATE_A_CLASS" )
+			action
+			{
+				play "mouse_click";
+				open "live_cac_popup" ;;
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarInt "ui_highlight" ( 3 );
+				setLocalVarString "ui_choicegroup" ( "" );
+				setLocalVarString "ui_hint_text" ( "@MPUI_DESC_CREATE_A_CLASS" );
+			}
+			leaveFocus
+			{
+				setLocalVarInt "ui_highlight" ( 0 );
+				;;
+			}
+		}
+		itemDef
+		{
+			rect 0 92 220 22 1 1
+			visible 1
+			forecolor 0.69 0.69 0.69 1
+			type 1
+			textfont 1
+			textalign 10
+			textalignx -10
+			textscale 0.4
+			visible when ( isitemunlocked( "cac" ) == 0 )
+			exp text ( "" )
+			action
+			{
+				play "mouse_click";
+				;;
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarInt "ui_highlight" ( 3 );
+				setLocalVarString "ui_choicegroup" ( "" );
+				setLocalVarString "ui_hint_text" ( "@MPUI_DESC_CREATE_A_CLASS_LOCKED" );
+			}
+			leaveFocus
+			{
+				setLocalVarInt "ui_highlight" ( 0 );
+				;;
+			}
+		}
+		itemDef
+		{
+			rect 0 92 214.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 1 0.07
+			textscale 0.55
+			visible when ( isitemunlocked( "cac" ) == 0 )
+			exp material ( "gradient_fadein" )
+		}
+		itemDef
+		{
+			rect 214.5 92 5.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 1 0.07
+			background "button_highlight_end"
+			textscale 0.55
+			visible when ( isitemunlocked( "cac" ) == 0 )
+		}
+		itemDef
+		{
+			rect 0 92 220 22 1 1
+			decoration
+			visible 1
+			forecolor 0.5 0.5 0.5 0.5
+			textfont 1
+			textalign 10
+			textalignx -10
+			textscale 0.4
+			visible when ( isitemunlocked( "cac" ) == 0 )
+			exp text ( "@MPUI_CREATE_A_CLASS" )
+		}
+		itemDef
+		{
+			rect 220 94 44 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( ( ( getplayerdataanybooltrue( "weaponNew" ) || getplayerdataanybooltrue( "camoNew" ) || getplayerdataanybooltrue( "attachmentNew" ) ) || getplayerdataanybooltrue( "perkNew" ) || ( ( getplayerdata( "perkNew" , "frag_grenade_mp" ) || getplayerdata( "perkNew" , tablelookup( "mp/perkTable.csv" , 1 , "frag_grenade_mp" , 8 ) ) ) || ( getplayerdata( "perkNew" , "semtex_mp" ) || getplayerdata( "perkNew" , tablelookup( "mp/perkTable.csv" , 1 , "semtex_mp" , 8 ) ) ) || ( getplayerdata( "perkNew" , "c4_mp" ) || getplayerdata( "perkNew" , tablelookup( "mp/perkTable.csv" , 1 , "c4_mp" , 8 ) ) ) || ( getplayerdata( "perkNew" , "claymore_mp" ) || getplayerdata( "perkNew" , tablelookup( "mp/perkTable.csv" , 1 , "claymore_mp" , 8 ) ) ) || ( getplayerdata( "perkNew" , "throwingknife_mp" ) || getplayerdata( "perkNew" , tablelookup( "mp/perkTable.csv" , 1 , "throwingknife_mp" , 8 ) ) ) || ( getplayerdata( "perkNew" , "specialty_tacticalinsertion" ) || getplayerdata( "perkNew" , tablelookup( "mp/perkTable.csv" , 1 , "specialty_tacticalinsertion" , 8 ) ) ) || ( getplayerdata( "perkNew" , "specialty_blastshield" ) || getplayerdata( "perkNew" , tablelookup( "mp/perkTable.csv" , 1 , "specialty_blastshield" , 8 ) ) ) || weaponclassnew( "weapon_grenade" ) || weaponclassnew( "weapon_equipment" ) ) || getplayerdata( "featureNew" , "cac" ) ) )
+			exp material ( "specialty_new" )
+		}
+		itemDef
+		{
+			rect 0 116 214.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 1 0.07
+			textscale 0.55
+			visible when ( 1 )
+			exp material ( "gradient_fadein" )
+		}
+		itemDef
+		{
+			rect 214.5 116 5.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 1 0.07
+			background "button_highlight_end"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 0 116 214.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.95 1 0.35
+			background "gradient_fadein"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 4 && localvarstring( "ui_choicegroup" ) == "" && 1 )
+		}
+		itemDef
+		{
+			rect 214.5 116 5.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.95 1 0.35
+			background "button_highlight_end"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 4 && localvarstring( "ui_choicegroup" ) == "" && 1 )
+		}
+		itemDef
+		{
+			rect 0 116 220 22 1 1
+			visible 1
+			forecolor 0.69 0.69 0.69 1
+			type 1
+			textfont 1
+			textalign 10
+			textalignx -10
+			textscale 0.4
+			visible when ( isitemunlocked( "cas" ) )
+			exp text ( "@MPUI_KILLSTREAK_REWARDS" )
+			action
+			{
+				play "mouse_click";
+				if ( isitemunlocked( "cas" ) )
+				{
+					open "menu_cas_popup";
+				}
+				;;
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarInt "ui_highlight" ( 4 );
+				setLocalVarString "ui_choicegroup" ( "" );
+				if ( isitemunlocked( "cas" ) )
+				{
+					setLocalVarString "ui_hint_text" ( "@MPUI_DESC_KILLSTREAK_REWARDS" );
+					;;
+				}
+				else
+				{
+					if ( tablelookup( "mp/unlockTable.csv" , 0 , "cas" , 2 ) == 9999 )
+					{
+						setLocalVarString "ui_hint_text" ( "@PERKS_UNLOCKED_AT_NONE" );
+					}
+					else
+					{
+						if ( tablelookup( "mp/unlockTable.csv" , 0 , "cas" , 3 ) != "" )
+						{
+							setLocalVarString "ui_hint_text" ( "@PERKS_UNLOCKED_BY_CHALLENGE" );
+						}
+						else
+						{
+							setLocalVarString "ui_hint_text" ( "@" + tablelookup( "mp/rankTable.csv" , 0 , tablelookup( "mp/unlockTable.csv" , 0 , "cas" , 2 ) , 17 ) );
+							;;
+						}
+					}
+					exec "set ui_hint_text THIS MENU SHOULD BE UPDATED TO USE setLocalVarString ui_hint_text;";
+				}
+			}
+			leaveFocus
+			{
+				setLocalVarInt "ui_highlight" ( 0 );
+				;;
+			}
+		}
+		itemDef
+		{
+			rect 0 116 220 22 1 1
+			visible 1
+			forecolor 1 1 1 1
+			type 1
+			textscale 0.55
+			visible when ( ( isitemunlocked( "cas" ) ) == 0 )
+			action
+			{
+				play "mouse_click";
+				;;
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarInt "ui_highlight" ( 4 );
+				setLocalVarString "ui_choicegroup" ( "" );
+				if ( isitemunlocked( "cas" ) )
+				{
+					setLocalVarString "ui_hint_text" ( "@MPUI_DESC_KILLSTREAK_REWARDS" );
+					;;
+				}
+				else
+				{
+					if ( tablelookup( "mp/unlockTable.csv" , 0 , "cas" , 2 ) == 9999 )
+					{
+						setLocalVarString "ui_hint_text" ( "@PERKS_UNLOCKED_AT_NONE" );
+					}
+					else
+					{
+						if ( tablelookup( "mp/unlockTable.csv" , 0 , "cas" , 3 ) != "" )
+						{
+							setLocalVarString "ui_hint_text" ( "@PERKS_UNLOCKED_BY_CHALLENGE" );
+						}
+						else
+						{
+							setLocalVarString "ui_hint_text" ( "@" + tablelookup( "mp/rankTable.csv" , 0 , tablelookup( "mp/unlockTable.csv" , 0 , "cas" , 2 ) , 17 ) );
+							;;
+						}
+					}
+					exec "set ui_hint_text THIS MENU SHOULD BE UPDATED TO USE setLocalVarString ui_hint_text;";
+				}
+			}
+			leaveFocus
+			{
+				setLocalVarInt "ui_highlight" ( 0 );
+				;;
+			}
+		}
+		itemDef
+		{
+			rect 0 116 220 22 1 1
+			decoration
+			visible 1
+			forecolor 0.5 0.5 0.5 0.5
+			textfont 1
+			textalign 10
+			textalignx -10
+			textscale 0.4
+			visible when ( ( isitemunlocked( "cas" ) ) == 0 )
+			exp text ( "@MPUI_KILLSTREAK_REWARDS" )
+		}
+		itemDef
+		{
+			name "desc_arrow"
+			rect 15 183 10 10 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.25
+			background "ui_arrow_right"
+			textscale 0.55
+		}
+		itemDef
+		{
+			name "description_choice"
+			rect 27 180 210 36 1 1
+			decoration
+			autowrapped
+			visible 1
+			forecolor 1 1 1 0.7
+			textaligny 16
+			textscale 0.375
+			exp text ( localvarstring( "ui_hint_text" ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 3 1
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( 0 ) - ( 208 ) )
+			exp rect y ( 36 + ( dvarstring( "party_selectedIndex" ) * 18 ) )
+			visible when ( 1 && ( getplayercardinfo( 0 , 1 , 0 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( 0 ) - ( 208 ) )
+			exp rect y ( 36 + ( dvarstring( "party_selectedIndex" ) * 18 ) - 2 )
+			visible when ( 1 && ( getplayercardinfo( 0 , 1 , 0 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( 0 ) - ( 208 ) )
+			exp rect y ( 36 + ( dvarstring( "party_selectedIndex" ) * 18 ) - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 5 ) )
+			visible when ( 1 && ( getplayercardinfo( 0 , 1 , 0 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( 0 ) - ( 208 ) )
+			exp rect y ( ( 36 + ( dvarstring( "party_selectedIndex" ) * 18 ) ) + 28 )
+			visible when ( 1 && ( getplayercardinfo( 0 , 1 , 0 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 1 , 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 0 ) - ( 208 ) ) + 158 )
+			exp rect y ( ( 36 + ( dvarstring( "party_selectedIndex" ) * 18 ) ) )
+			visible when ( 1 && ( getplayercardinfo( 0 , 1 , 0 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 1 , 0 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect -270 120 270 68 10 8
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 0.25 0.25 1
+			background "white"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -270 120 270 68 10 8
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 0.5
+			background "gradient_center"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -52 124 48 48 10 8
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp material ( tablelookup( "mp/killstreakTable.csv" , 1 , getplayerdata( "killstreaks" , 0 ) , 14 ) )
+		}
+		itemDef
+		{
+			rect -270 120 270 68 10 8
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 4
+			textalignx 6
+			textscale 0.375
+			exp text ( "@" + tablelookup( "mp/killstreakTable.csv" , 1 , getplayerdata( "killstreaks" , 0 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect -270 120 222 68 10 8
+			decoration
+			autowrapped
+			visible 1
+			forecolor 1 1 1 0.6
+			textfont 3
+			textalign 4
+			textalignx 6
+			textaligny 20
+			textscale 0.375
+			exp text ( "@" + tablelookup( "mp/killstreakTable.csv" , 1 , getplayerdata( "killstreaks" , 0 ) , 3 ) )
+		}
+		itemDef
+		{
+			rect -52 120 48 68 10 8
+			decoration
+			visible 1
+			forecolor 0.65 0.65 0.65 1
+			textfont 3
+			textalign 13
+			textscale 0.375
+			exp text ( int( tablelookup( "mp/killstreakTable.csv" , 1 , getplayerdata( "killstreaks" , 0 ) , 4 ) ) + " kills" )
+		}
+		itemDef
+		{
+			rect -270 192 270 68 10 8
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 0.25 0.25 1
+			background "white"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -270 192 270 68 10 8
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 0.5
+			background "gradient_center"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -52 196 48 48 10 8
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp material ( tablelookup( "mp/killstreakTable.csv" , 1 , getplayerdata( "killstreaks" , 1 ) , 14 ) )
+		}
+		itemDef
+		{
+			rect -270 192 270 68 10 8
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 4
+			textalignx 6
+			textscale 0.375
+			exp text ( "@" + tablelookup( "mp/killstreakTable.csv" , 1 , getplayerdata( "killstreaks" , 1 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect -270 192 222 68 10 8
+			decoration
+			autowrapped
+			visible 1
+			forecolor 1 1 1 0.6
+			textfont 3
+			textalign 4
+			textalignx 6
+			textaligny 20
+			textscale 0.375
+			exp text ( "@" + tablelookup( "mp/killstreakTable.csv" , 1 , getplayerdata( "killstreaks" , 1 ) , 3 ) )
+		}
+		itemDef
+		{
+			rect -52 192 48 68 10 8
+			decoration
+			visible 1
+			forecolor 0.65 0.65 0.65 1
+			textfont 3
+			textalign 13
+			textscale 0.375
+			exp text ( int( tablelookup( "mp/killstreakTable.csv" , 1 , getplayerdata( "killstreaks" , 1 ) , 4 ) ) + " kills" )
+		}
+		itemDef
+		{
+			rect -270 264 270 68 10 8
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 0.25 0.25 1
+			background "white"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -270 264 270 68 10 8
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 0.5
+			background "gradient_center"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -52 268 48 48 10 8
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp material ( tablelookup( "mp/killstreakTable.csv" , 1 , getplayerdata( "killstreaks" , 2 ) , 14 ) )
+		}
+		itemDef
+		{
+			rect -270 264 270 68 10 8
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 4
+			textalignx 6
+			textscale 0.375
+			exp text ( "@" + tablelookup( "mp/killstreakTable.csv" , 1 , getplayerdata( "killstreaks" , 2 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect -270 264 222 68 10 8
+			decoration
+			autowrapped
+			visible 1
+			forecolor 1 1 1 0.6
+			textfont 3
+			textalign 4
+			textalignx 6
+			textaligny 20
+			textscale 0.375
+			exp text ( "@" + tablelookup( "mp/killstreakTable.csv" , 1 , getplayerdata( "killstreaks" , 2 ) , 3 ) )
+		}
+		itemDef
+		{
+			rect -52 264 48 68 10 8
+			decoration
+			visible 1
+			forecolor 0.65 0.65 0.65 1
+			textfont 3
+			textalign 13
+			textscale 0.375
+			exp text ( int( tablelookup( "mp/killstreakTable.csv" , 1 , getplayerdata( "killstreaks" , 2 ) , 4 ) ) + " kills" )
+		}
+	}
+}

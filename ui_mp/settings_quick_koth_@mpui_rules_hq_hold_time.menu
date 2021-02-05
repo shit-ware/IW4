@@ -1,0 +1,274 @@
+{
+	menuDef
+	{
+		name "settings_quick_koth_@mpui_rules_hq_hold_time"
+		rect -272 82 272 18 2 1
+		popup
+		visible 1
+		style 1
+		forecolor 1 1 1 1
+		focuscolor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		exp rect y ( localvarint( "ui_popupYPos" ) )
+		onOpen
+		{
+			focusfirst;
+			setfocusbydvar "koth_autodestroytime";
+			setLocalVarBool "ui_hideSelectButton" ( 1 );
+		}
+		onClose
+		{
+			setLocalVarBool "ui_hideSelectButton" ( 0 );
+		}
+		onEsc
+		{
+			play "mouse_click";
+			close self;
+		}
+		itemDef
+		{
+			rect -600 -800 2000 2000 0 0
+			visible 1
+			forecolor 1 1 1 1
+			type 1
+			textfont 1
+			textscale 0.55
+			action
+			{
+				close self;
+			}
+		}
+		itemDef
+		{
+			rect 144 0 110 100 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0.35 0.35 0.35 1
+			textscale 0.55
+			exp material ( "white" )
+		}
+		itemDef
+		{
+			rect 128 -16 16 16 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_tl"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 144 -16 110 16 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_t"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 254 -16 16 16 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_tr"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 254 0 16 100 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_r"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 254 100 16 16 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_br"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 144 100 110 16 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_b"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 128 100 16 16 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_bl"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 128 0 16 100 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_l"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 144 0 128 15 0 0
+			visible 1
+			forecolor 0.65 0.65 0.65 1
+			textalign 8
+			textalignx 12
+			textscale 0.375
+			text "@MPUI_RULES_UNLIMITED"
+			dvarTest "koth_autodestroytime"
+			focusDvar { 0 }
+			visible when ( "@MPUI_RULES_UNLIMITED" != "" )
+			action
+			{
+				setdvar "koth_autodestroytime" 0 play "mouse_click";
+				close self;
+			}
+			leaveFocus
+			{
+				play "mouse_submenu_over";
+			}
+		}
+		itemDef
+		{
+			rect 144 15 128 15 0 0
+			visible 1
+			forecolor 0.65 0.65 0.65 1
+			textalign 8
+			textalignx 12
+			textscale 0.375
+			text "@MPUI_RULES_30SECONDS"
+			dvarTest "koth_autodestroytime"
+			focusDvar { "30" }
+			visible when ( "@MPUI_RULES_30SECONDS" != "" )
+			action
+			{
+				setdvar "koth_autodestroytime" "30" play "mouse_click";
+				close self;
+			}
+			leaveFocus
+			{
+				play "mouse_submenu_over";
+			}
+		}
+		itemDef
+		{
+			rect 144 30 128 15 0 0
+			visible 1
+			forecolor 0.65 0.65 0.65 1
+			textalign 8
+			textalignx 12
+			textscale 0.375
+			text "@MPUI_RULES_45SECONDS"
+			dvarTest "koth_autodestroytime"
+			focusDvar { "45" }
+			visible when ( "@MPUI_RULES_45SECONDS" != "" )
+			action
+			{
+				setdvar "koth_autodestroytime" "45" play "mouse_click";
+				close self;
+			}
+			leaveFocus
+			{
+				play "mouse_submenu_over";
+			}
+		}
+		itemDef
+		{
+			rect 144 45 128 15 0 0
+			visible 1
+			forecolor 0.65 0.65 0.65 1
+			textalign 8
+			textalignx 12
+			textscale 0.375
+			text "@MPUI_RULES_1MINUTE"
+			dvarTest "koth_autodestroytime"
+			focusDvar { "60" }
+			visible when ( "@MPUI_RULES_1MINUTE" != "" )
+			action
+			{
+				setdvar "koth_autodestroytime" "60" play "mouse_click";
+				close self;
+			}
+			leaveFocus
+			{
+				play "mouse_submenu_over";
+			}
+		}
+		itemDef
+		{
+			rect 144 60 128 15 0 0
+			visible 1
+			forecolor 0.65 0.65 0.65 1
+			textalign 8
+			textalignx 12
+			textscale 0.375
+			text "@MPUI_RULES_1_5MINUTES"
+			dvarTest "koth_autodestroytime"
+			focusDvar { "90" }
+			visible when ( "@MPUI_RULES_1_5MINUTES" != "" )
+			action
+			{
+				setdvar "koth_autodestroytime" "90" play "mouse_click";
+				close self;
+			}
+			leaveFocus
+			{
+				play "mouse_submenu_over";
+			}
+		}
+		itemDef
+		{
+			rect 144 75 128 15 0 0
+			visible 1
+			forecolor 0.65 0.65 0.65 1
+			textalign 8
+			textalignx 12
+			textscale 0.375
+			text "@MPUI_RULES_2MINUTES"
+			dvarTest "koth_autodestroytime"
+			focusDvar { "120" }
+			visible when ( "@MPUI_RULES_2MINUTES" != "" )
+			action
+			{
+				setdvar "koth_autodestroytime" "120" play "mouse_click";
+				close self;
+			}
+			leaveFocus
+			{
+				play "mouse_submenu_over";
+			}
+		}
+	}
+}

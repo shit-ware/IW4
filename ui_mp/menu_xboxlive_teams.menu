@@ -1,0 +1,3235 @@
+{
+	menuDef
+	{
+		name "menu_xboxlive_teams"
+		rect 0 0 0 0 0 0
+		visible 1
+		forecolor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		allowedBinding "+talk"
+		visible when ( 0 )
+		onOpen
+		{
+			close self;
+		}
+		onClose
+		{
+			
+		}
+		onEsc
+		{
+			
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "mw2_main_background"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 0 1708 480 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.5
+			background "mw2_main_cloud_overlay"
+			textscale 0.55
+			exp rect x ( ( 0 - 107 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 -1708 -480 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.5
+			background "mw2_main_cloud_overlay"
+			textscale 0.55
+			exp rect x ( ( - 107 + 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0
+			background "mockup_bg_glow"
+			textscale 0.55
+			exp forecolor a ( ( ( sin( milliseconds( ) / 1500 ) + 1 ) * 0.25 ) + 0.25 )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0
+			background "mockup_bg_glow"
+			textscale 0.55
+			exp forecolor a ( ( ( sin( milliseconds( ) / 480 ) + 1 ) * 0.25 ) + 0.25 )
+		}
+		itemDef
+		{
+			rect 0 0 0 0 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 0.5
+			textfont 1
+			textalign 5
+			textalignx -60
+			textaligny 6
+			textscale 0.375
+			dvar "party_statusString"
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && 0 )
+		}
+		itemDef
+		{
+			rect -272 -130 200 200 2 2
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 0.65
+			textfont 9
+			textalign 5
+			textaligny 130
+			textscale 0.5833
+			exp glowcolor r ( tablelookup( "mp/factionTable.csv" , 0 , getmapcustom( "allieschar" ) , 14 ) )
+			exp glowcolor g ( tablelookup( "mp/factionTable.csv" , 0 , getmapcustom( "allieschar" ) , 15 ) )
+			exp glowcolor b ( tablelookup( "mp/factionTable.csv" , 0 , getmapcustom( "allieschar" ) , 16 ) )
+			exp glowcolor a ( 1 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && player( "teamname" ) == "TEAM_ALLIES" )
+			exp text ( "@" + tablelookup( "mp/factionTable.csv" , 0 , getmapcustom( "allieschar" ) , 1 ) )
+			exp material ( tablelookup( "mp/factionTable.csv" , 0 , getmapcustom( "allieschar" ) , 5 ) )
+		}
+		itemDef
+		{
+			rect -272 -130 200 200 2 2
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 0.65
+			textfont 9
+			textalign 5
+			textaligny 130
+			textscale 0.5833
+			exp glowcolor r ( tablelookup( "mp/factionTable.csv" , 0 , getmapcustom( "axischar" ) , 14 ) )
+			exp glowcolor g ( tablelookup( "mp/factionTable.csv" , 0 , getmapcustom( "axischar" ) , 15 ) )
+			exp glowcolor b ( tablelookup( "mp/factionTable.csv" , 0 , getmapcustom( "axischar" ) , 16 ) )
+			exp glowcolor a ( 1 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && player( "teamname" ) == "TEAM_AXIS" )
+			exp text ( "@" + tablelookup( "mp/factionTable.csv" , 0 , getmapcustom( "axischar" ) , 1 ) )
+			exp material ( tablelookup( "mp/factionTable.csv" , 0 , getmapcustom( "axischar" ) , 5 ) )
+		}
+		itemDef
+		{
+			rect 72 -70 200 200 2 2
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 0.65
+			textfont 9
+			textalign 5
+			textaligny 70
+			textscale 0.5833
+			exp glowcolor r ( tablelookup( "mp/factionTable.csv" , 0 , getmapcustom( "axischar" ) , 14 ) )
+			exp glowcolor g ( tablelookup( "mp/factionTable.csv" , 0 , getmapcustom( "axischar" ) , 15 ) )
+			exp glowcolor b ( tablelookup( "mp/factionTable.csv" , 0 , getmapcustom( "axischar" ) , 16 ) )
+			exp glowcolor a ( 1 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && player( "teamname" ) == "TEAM_ALLIES" )
+			exp text ( "@" + tablelookup( "mp/factionTable.csv" , 0 , getmapcustom( "axischar" ) , 1 ) )
+			exp material ( tablelookup( "mp/factionTable.csv" , 0 , getmapcustom( "axischar" ) , 5 ) )
+		}
+		itemDef
+		{
+			rect 72 -70 200 200 2 2
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 0.65
+			textfont 9
+			textalign 5
+			textaligny 70
+			textscale 0.5833
+			exp glowcolor r ( tablelookup( "mp/factionTable.csv" , 0 , getmapcustom( "allieschar" ) , 14 ) )
+			exp glowcolor g ( tablelookup( "mp/factionTable.csv" , 0 , getmapcustom( "allieschar" ) , 15 ) )
+			exp glowcolor b ( tablelookup( "mp/factionTable.csv" , 0 , getmapcustom( "allieschar" ) , 16 ) )
+			exp glowcolor a ( 1 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && player( "teamname" ) == "TEAM_AXIS" )
+			exp text ( "@" + tablelookup( "mp/factionTable.csv" , 0 , getmapcustom( "allieschar" ) , 1 ) )
+			exp material ( tablelookup( "mp/factionTable.csv" , 0 , getmapcustom( "allieschar" ) , 5 ) )
+		}
+		itemDef
+		{
+			rect 0 -100 0 200 2 2
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 5
+			textaligny 100
+			textscale 0.5833
+			text "VS."
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) )
+		}
+		itemDef
+		{
+			rect 136 45 0 0 8 8
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 5
+			textscale 0.5833
+			text "VS."
+			visible when ( ( !dvarbool( "party_teamBased" ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 -208 56 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 0.75 0.25 1
+			background "playercard_team_bg"
+			textscale 0.55
+			exp rect x ( ( 24 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 0 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 0 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 0 * 45 - ( ( 72 / 1.5 ) - ( 60 / 1.5 ) ) )
+			exp forecolor a ( ( ( sin( milliseconds( ) / 150 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) == getplayercardinfo( 8 , 4 , 0 ) ) && dvarstring( "party_maxPlayers" ) > 12 )
+		}
+		itemDef
+		{
+			rect 0 0 -208 56 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 0.75 0.25 1
+			background "playercard_team_bg"
+			textscale 0.55
+			exp rect x ( ( 21 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 1 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 1 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 1 * 45 - ( ( 72 / 1.5 ) - ( 60 / 1.5 ) ) )
+			exp forecolor a ( ( ( sin( milliseconds( ) / 150 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) == getplayercardinfo( 8 , 4 , 1 ) ) && dvarstring( "party_maxPlayers" ) > 12 )
+		}
+		itemDef
+		{
+			rect 0 0 -208 56 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 0.75 0.25 1
+			background "playercard_team_bg"
+			textscale 0.55
+			exp rect x ( ( 18 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 2 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 2 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 2 * 45 - ( ( 72 / 1.5 ) - ( 60 / 1.5 ) ) )
+			exp forecolor a ( ( ( sin( milliseconds( ) / 150 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) == getplayercardinfo( 8 , 4 , 2 ) ) && dvarstring( "party_maxPlayers" ) > 12 )
+		}
+		itemDef
+		{
+			rect 0 0 -208 56 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 0.75 0.25 1
+			background "playercard_team_bg"
+			textscale 0.55
+			exp rect x ( ( 15 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 3 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 3 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 3 * 45 - ( ( 72 / 1.5 ) - ( 60 / 1.5 ) ) )
+			exp forecolor a ( ( ( sin( milliseconds( ) / 150 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) == getplayercardinfo( 8 , 4 , 3 ) ) && dvarstring( "party_maxPlayers" ) > 12 )
+		}
+		itemDef
+		{
+			rect 0 0 -208 56 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 0.75 0.25 1
+			background "playercard_team_bg"
+			textscale 0.55
+			exp rect x ( ( 12 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 4 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 4 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 4 * 45 - ( ( 72 / 1.5 ) - ( 60 / 1.5 ) ) )
+			exp forecolor a ( ( ( sin( milliseconds( ) / 150 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) == getplayercardinfo( 8 , 4 , 4 ) ) && dvarstring( "party_maxPlayers" ) > 12 )
+		}
+		itemDef
+		{
+			rect 0 0 -208 56 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 0.75 0.25 1
+			background "playercard_team_bg"
+			textscale 0.55
+			exp rect x ( ( 9 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 5 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 5 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 5 * 45 - ( ( 72 / 1.5 ) - ( 60 / 1.5 ) ) )
+			exp forecolor a ( ( ( sin( milliseconds( ) / 150 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) == getplayercardinfo( 8 , 4 , 5 ) ) && dvarstring( "party_maxPlayers" ) > 12 )
+		}
+		itemDef
+		{
+			rect 0 0 -208 56 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 0.75 0.25 1
+			background "playercard_team_bg"
+			textscale 0.55
+			exp rect x ( ( 6 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 6 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 6 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 6 * 45 - ( ( 72 / 1.5 ) - ( 60 / 1.5 ) ) )
+			exp forecolor a ( ( ( sin( milliseconds( ) / 150 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) == getplayercardinfo( 8 , 4 , 6 ) ) && dvarstring( "party_maxPlayers" ) > 12 )
+		}
+		itemDef
+		{
+			rect 0 0 -208 56 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 0.75 0.25 1
+			background "playercard_team_bg"
+			textscale 0.55
+			exp rect x ( ( 3 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 7 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 7 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 7 * 45 - ( ( 72 / 1.5 ) - ( 60 / 1.5 ) ) )
+			exp forecolor a ( ( ( sin( milliseconds( ) / 150 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) == getplayercardinfo( 8 , 4 , 7 ) ) && dvarstring( "party_maxPlayers" ) > 12 )
+		}
+		itemDef
+		{
+			rect 0 0 -208 56 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 0.75 0.25 1
+			background "playercard_team_bg"
+			textscale 0.55
+			exp rect x ( ( 0 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 8 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 8 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 8 * 45 - ( ( 72 / 1.5 ) - ( 60 / 1.5 ) ) )
+			exp forecolor a ( ( ( sin( milliseconds( ) / 150 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) == getplayercardinfo( 8 , 4 , 8 ) ) && dvarstring( "party_maxPlayers" ) > 12 )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 1 1
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( 24 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 0 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 0 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 0 * 45 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 0 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( 24 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 0 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 0 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 0 * 45 - 2 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 0 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 0 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( 24 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 0 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 0 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 0 * 45 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 0 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 0 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 0 ) , 5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 0 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 0 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( 24 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 0 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 0 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( ( 0 + 0 * 45 ) + 28 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 0 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 4 , 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 24 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 0 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 0 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) + 158 )
+			exp rect y ( ( 0 + 0 * 45 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 0 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 4 , 0 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 1 1
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( 21 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 1 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 1 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 1 * 45 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 1 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( 21 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 1 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 1 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 1 * 45 - 2 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 1 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 1 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( 21 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 1 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 1 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 1 * 45 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 1 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 1 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 1 ) , 5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 1 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 1 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( 21 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 1 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 1 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( ( 0 + 1 * 45 ) + 28 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 1 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 4 , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 21 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 1 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 1 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) + 158 )
+			exp rect y ( ( 0 + 1 * 45 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 1 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 4 , 1 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 1 1
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( 18 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 2 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 2 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 2 * 45 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 2 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( 18 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 2 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 2 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 2 * 45 - 2 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 2 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 2 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( 18 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 2 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 2 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 2 * 45 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 2 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 2 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 2 ) , 5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 2 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 2 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( 18 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 2 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 2 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( ( 0 + 2 * 45 ) + 28 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 2 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 4 , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 18 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 2 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 2 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) + 158 )
+			exp rect y ( ( 0 + 2 * 45 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 2 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 4 , 2 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 1 1
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( 15 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 3 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 3 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 3 * 45 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 3 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( 15 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 3 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 3 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 3 * 45 - 2 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 3 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 3 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( 15 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 3 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 3 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 3 * 45 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 3 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 3 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 3 ) , 5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 3 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 3 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( 15 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 3 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 3 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( ( 0 + 3 * 45 ) + 28 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 3 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 4 , 3 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 15 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 3 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 3 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) + 158 )
+			exp rect y ( ( 0 + 3 * 45 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 3 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 4 , 3 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 1 1
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( 12 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 4 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 4 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 4 * 45 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 4 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( 12 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 4 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 4 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 4 * 45 - 2 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 4 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 4 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( 12 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 4 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 4 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 4 * 45 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 4 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 4 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 4 ) , 5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 4 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 4 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( 12 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 4 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 4 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( ( 0 + 4 * 45 ) + 28 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 4 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 4 , 4 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 12 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 4 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 4 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) + 158 )
+			exp rect y ( ( 0 + 4 * 45 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 4 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 4 , 4 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 1 1
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( 9 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 5 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 5 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 5 * 45 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 5 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( 9 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 5 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 5 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 5 * 45 - 2 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 5 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 5 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( 9 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 5 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 5 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 5 * 45 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 5 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 5 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 5 ) , 5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 5 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 5 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( 9 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 5 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 5 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( ( 0 + 5 * 45 ) + 28 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 5 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 4 , 5 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 9 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 5 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 5 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) + 158 )
+			exp rect y ( ( 0 + 5 * 45 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 5 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 4 , 5 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 1 1
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( 6 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 6 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 6 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 6 * 45 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 6 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( 6 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 6 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 6 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 6 * 45 - 2 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 6 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 6 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( 6 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 6 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 6 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 6 * 45 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 6 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 6 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 6 ) , 5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 6 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 6 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( 6 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 6 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 6 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( ( 0 + 6 * 45 ) + 28 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 6 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 4 , 6 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 6 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 6 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 6 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) + 158 )
+			exp rect y ( ( 0 + 6 * 45 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 6 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 4 , 6 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 1 1
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( 3 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 7 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 7 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 7 * 45 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 7 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( 3 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 7 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 7 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 7 * 45 - 2 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 7 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 7 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( 3 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 7 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 7 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 7 * 45 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 7 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 7 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 7 ) , 5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 7 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 7 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( 3 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 7 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 7 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( ( 0 + 7 * 45 ) + 28 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 7 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 4 , 7 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 3 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 7 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 7 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) + 158 )
+			exp rect y ( ( 0 + 7 * 45 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 7 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 4 , 7 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 1 1
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( 0 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 8 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 8 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 8 * 45 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 8 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( 0 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 8 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 8 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 8 * 45 - 2 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 8 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 8 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( 0 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 8 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 8 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 8 * 45 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 8 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 8 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 8 ) , 5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 8 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 8 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( 0 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 8 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 8 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( ( 0 + 8 * 45 ) + 28 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 8 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 4 , 8 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 0 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 8 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 8 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) + 158 )
+			exp rect y ( ( 0 + 8 * 45 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 4 , 8 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 4 , 8 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 3 1
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 24 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 0 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 0 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 0 * 45 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 0 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 24 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 0 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 0 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 0 * 45 - 2 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 0 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 0 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( ( 0 - ( 24 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 0 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 0 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 0 * 45 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 0 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 0 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 0 ) , 5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 0 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 0 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( ( 0 - ( 24 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 0 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 0 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( ( 0 + 0 * 45 ) + 28 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 0 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 5 , 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( ( 0 - ( 24 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 0 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 0 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) ) + 158 )
+			exp rect y ( ( 0 + 0 * 45 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 0 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 5 , 0 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 3 1
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 21 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 1 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 1 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 1 * 45 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 1 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 21 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 1 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 1 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 1 * 45 - 2 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 1 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 1 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( ( 0 - ( 21 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 1 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 1 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 1 * 45 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 1 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 1 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 1 ) , 5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 1 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 1 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( ( 0 - ( 21 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 1 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 1 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( ( 0 + 1 * 45 ) + 28 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 1 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 5 , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( ( 0 - ( 21 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 1 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 1 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) ) + 158 )
+			exp rect y ( ( 0 + 1 * 45 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 1 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 5 , 1 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 3 1
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 18 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 2 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 2 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 2 * 45 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 2 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 18 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 2 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 2 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 2 * 45 - 2 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 2 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 2 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( ( 0 - ( 18 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 2 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 2 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 2 * 45 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 2 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 2 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 2 ) , 5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 2 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 2 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( ( 0 - ( 18 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 2 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 2 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( ( 0 + 2 * 45 ) + 28 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 2 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 5 , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( ( 0 - ( 18 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 2 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 2 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) ) + 158 )
+			exp rect y ( ( 0 + 2 * 45 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 2 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 5 , 2 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 3 1
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 15 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 3 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 3 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 3 * 45 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 3 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 15 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 3 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 3 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 3 * 45 - 2 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 3 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 3 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( ( 0 - ( 15 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 3 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 3 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 3 * 45 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 3 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 3 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 3 ) , 5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 3 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 3 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( ( 0 - ( 15 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 3 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 3 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( ( 0 + 3 * 45 ) + 28 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 3 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 5 , 3 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( ( 0 - ( 15 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 3 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 3 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) ) + 158 )
+			exp rect y ( ( 0 + 3 * 45 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 3 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 5 , 3 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 3 1
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 12 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 4 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 4 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 4 * 45 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 4 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 12 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 4 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 4 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 4 * 45 - 2 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 4 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 4 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( ( 0 - ( 12 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 4 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 4 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 4 * 45 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 4 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 4 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 4 ) , 5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 4 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 4 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( ( 0 - ( 12 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 4 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 4 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( ( 0 + 4 * 45 ) + 28 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 4 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 5 , 4 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( ( 0 - ( 12 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 4 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 4 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) ) + 158 )
+			exp rect y ( ( 0 + 4 * 45 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 4 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 5 , 4 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 3 1
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 9 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 5 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 5 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 5 * 45 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 5 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 9 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 5 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 5 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 5 * 45 - 2 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 5 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 5 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( ( 0 - ( 9 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 5 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 5 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 5 * 45 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 5 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 5 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 5 ) , 5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 5 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 5 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( ( 0 - ( 9 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 5 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 5 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( ( 0 + 5 * 45 ) + 28 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 5 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 5 , 5 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( ( 0 - ( 9 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 5 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 5 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) ) + 158 )
+			exp rect y ( ( 0 + 5 * 45 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 5 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 5 , 5 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 3 1
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 6 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 6 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 6 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 6 * 45 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 6 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 6 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 6 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 6 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 6 * 45 - 2 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 6 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 6 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( ( 0 - ( 6 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 6 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 6 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 6 * 45 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 6 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 6 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 6 ) , 5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 6 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 6 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( ( 0 - ( 6 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 6 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 6 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( ( 0 + 6 * 45 ) + 28 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 6 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 5 , 6 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( ( 0 - ( 6 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 6 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 6 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) ) + 158 )
+			exp rect y ( ( 0 + 6 * 45 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 6 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 5 , 6 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 3 1
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 3 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 7 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 7 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 7 * 45 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 7 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 3 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 7 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 7 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 7 * 45 - 2 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 7 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 7 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( ( 0 - ( 3 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 7 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 7 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 7 * 45 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 7 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 7 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 7 ) , 5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 7 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 7 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( ( 0 - ( 3 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 7 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 7 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( ( 0 + 7 * 45 ) + 28 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 7 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 5 , 7 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( ( 0 - ( 3 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 7 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 7 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) ) + 158 )
+			exp rect y ( ( 0 + 7 * 45 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 7 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 5 , 7 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 3 1
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 0 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 8 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 8 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 8 * 45 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 8 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 0 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 8 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 8 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 8 * 45 - 2 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 8 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 8 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( ( 0 - ( 0 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 8 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 8 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 8 * 45 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 8 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 8 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 8 ) , 5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 8 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 8 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( ( 0 - ( 0 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 8 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 8 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( ( 0 + 8 * 45 ) + 28 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 8 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 5 , 8 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( ( 0 - ( 0 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 8 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 8 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) ) + 158 )
+			exp rect y ( ( 0 + 8 * 45 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) > 12 && ( getplayercardinfo( 0 , 5 , 8 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 5 , 8 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 -208 56 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 0.75 0.25 1
+			background "playercard_team_bg"
+			textscale 0.55
+			exp rect x ( ( 30 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 0 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 0 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 0 * 68 - ( ( 72 / 1.5 ) - ( 60 / 1.5 ) ) )
+			exp forecolor a ( ( ( sin( milliseconds( ) / 150 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) == getplayercardinfo( 8 , 4 , 0 ) ) && dvarstring( "party_maxPlayers" ) <= 12 )
+		}
+		itemDef
+		{
+			rect 0 0 -208 56 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 0.75 0.25 1
+			background "playercard_team_bg"
+			textscale 0.55
+			exp rect x ( ( 24 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 1 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 1 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 1 * 68 - ( ( 72 / 1.5 ) - ( 60 / 1.5 ) ) )
+			exp forecolor a ( ( ( sin( milliseconds( ) / 150 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) == getplayercardinfo( 8 , 4 , 1 ) ) && dvarstring( "party_maxPlayers" ) <= 12 )
+		}
+		itemDef
+		{
+			rect 0 0 -208 56 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 0.75 0.25 1
+			background "playercard_team_bg"
+			textscale 0.55
+			exp rect x ( ( 18 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 2 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 2 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 2 * 68 - ( ( 72 / 1.5 ) - ( 60 / 1.5 ) ) )
+			exp forecolor a ( ( ( sin( milliseconds( ) / 150 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) == getplayercardinfo( 8 , 4 , 2 ) ) && dvarstring( "party_maxPlayers" ) <= 12 )
+		}
+		itemDef
+		{
+			rect 0 0 -208 56 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 0.75 0.25 1
+			background "playercard_team_bg"
+			textscale 0.55
+			exp rect x ( ( 12 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 3 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 3 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 3 * 68 - ( ( 72 / 1.5 ) - ( 60 / 1.5 ) ) )
+			exp forecolor a ( ( ( sin( milliseconds( ) / 150 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) == getplayercardinfo( 8 , 4 , 3 ) ) && dvarstring( "party_maxPlayers" ) <= 12 )
+		}
+		itemDef
+		{
+			rect 0 0 -208 56 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 0.75 0.25 1
+			background "playercard_team_bg"
+			textscale 0.55
+			exp rect x ( ( 6 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 4 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 4 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 4 * 68 - ( ( 72 / 1.5 ) - ( 60 / 1.5 ) ) )
+			exp forecolor a ( ( ( sin( milliseconds( ) / 150 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) == getplayercardinfo( 8 , 4 , 4 ) ) && dvarstring( "party_maxPlayers" ) <= 12 )
+		}
+		itemDef
+		{
+			rect 0 0 -208 56 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 0.75 0.25 1
+			background "playercard_team_bg"
+			textscale 0.55
+			exp rect x ( ( 0 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 5 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 5 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 5 * 68 - ( ( 72 / 1.5 ) - ( 60 / 1.5 ) ) )
+			exp forecolor a ( ( ( sin( milliseconds( ) / 150 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) == getplayercardinfo( 8 , 4 , 5 ) ) && dvarstring( "party_maxPlayers" ) <= 12 )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 1 1
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( 30 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 0 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 0 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 0 * 68 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 4 , 0 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( 30 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 0 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 0 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 0 * 68 - 2 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 4 , 0 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 0 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( 30 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 0 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 0 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 0 * 68 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 0 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 0 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 0 ) , 5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 4 , 0 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 0 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( 30 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 0 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 0 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( ( 0 + 0 * 68 ) + 28 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 4 , 0 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 4 , 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 30 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 0 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 0 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) + 158 )
+			exp rect y ( ( 0 + 0 * 68 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 4 , 0 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 4 , 0 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 1 1
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( 24 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 1 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 1 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 1 * 68 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 4 , 1 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( 24 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 1 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 1 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 1 * 68 - 2 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 4 , 1 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 1 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( 24 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 1 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 1 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 1 * 68 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 1 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 1 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 1 ) , 5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 4 , 1 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 1 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( 24 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 1 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 1 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( ( 0 + 1 * 68 ) + 28 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 4 , 1 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 4 , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 24 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 1 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 1 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) + 158 )
+			exp rect y ( ( 0 + 1 * 68 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 4 , 1 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 4 , 1 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 1 1
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( 18 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 2 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 2 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 2 * 68 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 4 , 2 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( 18 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 2 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 2 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 2 * 68 - 2 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 4 , 2 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 2 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( 18 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 2 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 2 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 2 * 68 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 2 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 2 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 2 ) , 5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 4 , 2 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 2 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( 18 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 2 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 2 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( ( 0 + 2 * 68 ) + 28 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 4 , 2 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 4 , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 18 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 2 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 2 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) + 158 )
+			exp rect y ( ( 0 + 2 * 68 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 4 , 2 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 4 , 2 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 1 1
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( 12 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 3 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 3 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 3 * 68 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 4 , 3 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( 12 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 3 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 3 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 3 * 68 - 2 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 4 , 3 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 3 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( 12 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 3 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 3 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 3 * 68 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 3 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 3 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 3 ) , 5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 4 , 3 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 3 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( 12 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 3 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 3 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( ( 0 + 3 * 68 ) + 28 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 4 , 3 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 4 , 3 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 12 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 3 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 3 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) + 158 )
+			exp rect y ( ( 0 + 3 * 68 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 4 , 3 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 4 , 3 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 1 1
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( 6 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 4 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 4 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 4 * 68 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 4 , 4 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( 6 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 4 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 4 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 4 * 68 - 2 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 4 , 4 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 4 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( 6 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 4 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 4 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 4 * 68 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 4 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 4 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 4 ) , 5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 4 , 4 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 4 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( 6 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 4 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 4 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( ( 0 + 4 * 68 ) + 28 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 4 , 4 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 4 , 4 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 6 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 4 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 4 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) + 158 )
+			exp rect y ( ( 0 + 4 * 68 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 4 , 4 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 4 , 4 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 1 1
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( 0 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 5 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 5 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 5 * 68 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 4 , 5 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( 0 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 5 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 5 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 5 * 68 - 2 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 4 , 5 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 5 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( 0 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 5 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 5 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 5 * 68 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 5 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 5 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 5 ) , 5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 4 , 5 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 4 , 5 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 1 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( 0 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 5 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 5 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( ( 0 + 5 * 68 ) + 28 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 4 , 5 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 4 , 5 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 0 * localvarfloat( "ui_cardOffsetScale" ) ) - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 5 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 5 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) + 158 )
+			exp rect y ( ( 0 + 5 * 68 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 4 , 5 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 4 , 5 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 3 1
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 30 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 0 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 0 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 0 * 68 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 5 , 0 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 30 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 0 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 0 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 0 * 68 - 2 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 5 , 0 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 0 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( ( 0 - ( 30 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 0 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 0 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 0 * 68 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 0 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 0 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 0 ) , 5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 5 , 0 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 0 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( ( 0 - ( 30 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 0 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 0 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( ( 0 + 0 * 68 ) + 28 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 5 , 0 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 5 , 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( ( 0 - ( 30 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 0 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 0 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) ) + 158 )
+			exp rect y ( ( 0 + 0 * 68 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 5 , 0 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 5 , 0 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 3 1
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 24 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 1 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 1 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 1 * 68 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 5 , 1 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 24 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 1 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 1 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 1 * 68 - 2 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 5 , 1 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 1 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( ( 0 - ( 24 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 1 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 1 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 1 * 68 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 1 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 1 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 1 ) , 5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 5 , 1 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 1 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( ( 0 - ( 24 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 1 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 1 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( ( 0 + 1 * 68 ) + 28 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 5 , 1 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 5 , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( ( 0 - ( 24 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 1 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 1 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) ) + 158 )
+			exp rect y ( ( 0 + 1 * 68 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 5 , 1 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 5 , 1 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 3 1
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 18 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 2 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 2 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 2 * 68 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 5 , 2 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 18 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 2 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 2 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 2 * 68 - 2 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 5 , 2 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 2 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( ( 0 - ( 18 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 2 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 2 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 2 * 68 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 2 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 2 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 2 ) , 5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 5 , 2 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 2 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( ( 0 - ( 18 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 2 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 2 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( ( 0 + 2 * 68 ) + 28 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 5 , 2 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 5 , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( ( 0 - ( 18 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 2 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 2 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) ) + 158 )
+			exp rect y ( ( 0 + 2 * 68 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 5 , 2 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 5 , 2 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 3 1
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 12 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 3 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 3 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 3 * 68 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 5 , 3 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 12 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 3 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 3 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 3 * 68 - 2 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 5 , 3 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 3 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( ( 0 - ( 12 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 3 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 3 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 3 * 68 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 3 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 3 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 3 ) , 5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 5 , 3 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 3 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( ( 0 - ( 12 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 3 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 3 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( ( 0 + 3 * 68 ) + 28 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 5 , 3 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 5 , 3 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( ( 0 - ( 12 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 3 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 3 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) ) + 158 )
+			exp rect y ( ( 0 + 3 * 68 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 5 , 3 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 5 , 3 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 3 1
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 6 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 4 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 4 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 4 * 68 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 5 , 4 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 6 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 4 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 4 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 4 * 68 - 2 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 5 , 4 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 4 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( ( 0 - ( 6 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 4 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 4 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 4 * 68 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 4 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 4 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 4 ) , 5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 5 , 4 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 4 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( ( 0 - ( 6 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 4 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 4 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( ( 0 + 4 * 68 ) + 28 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 5 , 4 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 5 , 4 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( ( 0 - ( 6 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 4 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 4 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) ) + 158 )
+			exp rect y ( ( 0 + 4 * 68 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 5 , 4 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 5 , 4 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 3 1
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 0 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 5 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 5 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 5 * 68 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 5 , 5 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 0 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 5 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 5 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 5 * 68 - 2 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 5 , 5 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 5 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( ( 0 - ( 0 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 5 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 5 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 5 * 68 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 5 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 5 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 5 ) , 5 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 5 , 5 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 5 , 5 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( ( 0 - ( 0 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 5 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 5 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( ( 0 + 5 * 68 ) + 28 )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 5 , 5 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 5 , 5 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( ( 0 - ( 0 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 5 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 5 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) ) + 158 )
+			exp rect y ( ( 0 + 5 * 68 ) )
+			visible when ( ( dvarbool( "party_teamsVisible" ) && dvarbool( "party_teamBased" ) && dvarbool( "party_autoteams" ) ) && dvarstring( "party_maxPlayers" ) <= 12 && ( getplayercardinfo( 0 , 5 , 5 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 5 , 5 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 -208 56 8 8
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 0.75 0.25 1
+			background "playercard_team_bg"
+			textscale 0.55
+			exp rect x ( 0 - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 0 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 0 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 0 * 58 - ( ( 72 / 1.5 ) - ( 60 / 1.5 ) ) )
+			exp forecolor a ( ( ( sin( milliseconds( ) / 150 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 8 8
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( 0 - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 0 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 0 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 0 * 58 )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 0 , 1 , 0 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 8 8
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( 0 - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 0 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 0 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 0 * 58 - 2 )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 0 , 1 , 0 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 8 8
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( 0 - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 0 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 0 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( 0 + 0 * 58 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 5 ) )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 0 , 1 , 0 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 8 8
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( 0 - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 0 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 0 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) )
+			exp rect y ( ( 0 + 0 * 58 ) + 28 )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 0 , 1 , 0 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 1 , 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 8 8
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( 0 - ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 0 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 0 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) + 158 )
+			exp rect y ( ( 0 + 0 * 58 ) )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 0 , 1 , 0 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 1 , 0 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 10 8
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 30 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 1 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 1 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 0 * 58 )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) != getplayercardinfo( 8 , 3 , 0 ) ) && ( getplayercardinfo( 0 , 3 , 0 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 10 8
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 30 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 1 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 1 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 0 * 58 - 2 )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) != getplayercardinfo( 8 , 3 , 0 ) ) && ( getplayercardinfo( 0 , 3 , 0 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 3 , 0 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 10 8
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( ( 0 - ( 30 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 1 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 1 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 0 * 58 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 3 , 0 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 3 , 0 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 3 , 0 ) , 5 ) )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) != getplayercardinfo( 8 , 3 , 0 ) ) && ( getplayercardinfo( 0 , 3 , 0 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 3 , 0 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 10 8
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( ( 0 - ( 30 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 1 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 1 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( ( 0 + 0 * 58 ) + 28 )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) != getplayercardinfo( 8 , 3 , 0 ) ) && ( getplayercardinfo( 0 , 3 , 0 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 3 , 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 10 8
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( ( 0 - ( 30 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 1 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 1 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) ) + 158 )
+			exp rect y ( ( 0 + 0 * 58 ) )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) != getplayercardinfo( 8 , 3 , 0 ) ) && ( getplayercardinfo( 0 , 3 , 0 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 3 , 0 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 10 8
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 18 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 2 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 2 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 1 * 58 )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) != getplayercardinfo( 8 , 3 , 1 ) ) && ( getplayercardinfo( 0 , 3 , 1 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 10 8
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 18 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 2 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 2 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 1 * 58 - 2 )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) != getplayercardinfo( 8 , 3 , 1 ) ) && ( getplayercardinfo( 0 , 3 , 1 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 3 , 1 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 10 8
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( ( 0 - ( 18 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 2 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 2 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 1 * 58 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 3 , 1 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 3 , 1 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 3 , 1 ) , 5 ) )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) != getplayercardinfo( 8 , 3 , 1 ) ) && ( getplayercardinfo( 0 , 3 , 1 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 3 , 1 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 10 8
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( ( 0 - ( 18 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 2 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 2 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( ( 0 + 1 * 58 ) + 28 )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) != getplayercardinfo( 8 , 3 , 1 ) ) && ( getplayercardinfo( 0 , 3 , 1 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 3 , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 10 8
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( ( 0 - ( 18 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 2 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 2 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) ) + 158 )
+			exp rect y ( ( 0 + 1 * 58 ) )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) != getplayercardinfo( 8 , 3 , 1 ) ) && ( getplayercardinfo( 0 , 3 , 1 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 3 , 1 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 10 8
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 6 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 3 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 3 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 2 * 58 )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) != getplayercardinfo( 8 , 3 , 2 ) ) && ( getplayercardinfo( 0 , 3 , 2 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 10 8
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 6 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 3 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 3 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 2 * 58 - 2 )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) != getplayercardinfo( 8 , 3 , 2 ) ) && ( getplayercardinfo( 0 , 3 , 2 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 3 , 2 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 10 8
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( ( 0 - ( 6 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 3 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 3 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 2 * 58 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 3 , 2 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 3 , 2 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 3 , 2 ) , 5 ) )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) != getplayercardinfo( 8 , 3 , 2 ) ) && ( getplayercardinfo( 0 , 3 , 2 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 3 , 2 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 10 8
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( ( 0 - ( 6 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 3 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 3 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( ( 0 + 2 * 58 ) + 28 )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) != getplayercardinfo( 8 , 3 , 2 ) ) && ( getplayercardinfo( 0 , 3 , 2 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 3 , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 10 8
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( ( 0 - ( 6 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 3 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 3 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) ) + 158 )
+			exp rect y ( ( 0 + 2 * 58 ) )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) != getplayercardinfo( 8 , 3 , 2 ) ) && ( getplayercardinfo( 0 , 3 , 2 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 3 , 2 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 10 8
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( ( 0 ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 4 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 4 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 3 * 58 )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) != getplayercardinfo( 8 , 3 , 3 ) ) && ( getplayercardinfo( 0 , 3 , 3 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 10 8
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 0 ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 4 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 4 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 3 * 58 - 2 )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) != getplayercardinfo( 8 , 3 , 3 ) ) && ( getplayercardinfo( 0 , 3 , 3 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 3 , 3 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 10 8
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( ( 0 ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 4 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 4 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 3 * 58 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 3 , 3 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 3 , 3 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 3 , 3 ) , 5 ) )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) != getplayercardinfo( 8 , 3 , 3 ) ) && ( getplayercardinfo( 0 , 3 , 3 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 3 , 3 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 10 8
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( ( 0 ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 4 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 4 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( ( 0 + 3 * 58 ) + 28 )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) != getplayercardinfo( 8 , 3 , 3 ) ) && ( getplayercardinfo( 0 , 3 , 3 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 3 , 3 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 10 8
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( ( 0 ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 4 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 4 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) ) + 158 )
+			exp rect y ( ( 0 + 3 * 58 ) )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) != getplayercardinfo( 8 , 3 , 3 ) ) && ( getplayercardinfo( 0 , 3 , 3 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 3 , 3 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 10 8
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 6 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 5 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 5 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 4 * 58 )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) != getplayercardinfo( 8 , 3 , 4 ) ) && ( getplayercardinfo( 0 , 3 , 4 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 10 8
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 6 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 5 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 5 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 4 * 58 - 2 )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) != getplayercardinfo( 8 , 3 , 4 ) ) && ( getplayercardinfo( 0 , 3 , 4 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 3 , 4 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 10 8
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( ( 0 - ( 6 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 5 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 5 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 4 * 58 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 3 , 4 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 3 , 4 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 3 , 4 ) , 5 ) )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) != getplayercardinfo( 8 , 3 , 4 ) ) && ( getplayercardinfo( 0 , 3 , 4 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 3 , 4 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 10 8
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( ( 0 - ( 6 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 5 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 5 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( ( 0 + 4 * 58 ) + 28 )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) != getplayercardinfo( 8 , 3 , 4 ) ) && ( getplayercardinfo( 0 , 3 , 4 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 3 , 4 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 10 8
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( ( 0 - ( 6 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 5 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 5 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) ) + 158 )
+			exp rect y ( ( 0 + 4 * 58 ) )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) != getplayercardinfo( 8 , 3 , 4 ) ) && ( getplayercardinfo( 0 , 3 , 4 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 3 , 4 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 10 8
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 18 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 6 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 6 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 5 * 58 )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) != getplayercardinfo( 8 , 3 , 5 ) ) && ( getplayercardinfo( 0 , 3 , 5 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 10 8
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 18 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 6 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 6 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 5 * 58 - 2 )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) != getplayercardinfo( 8 , 3 , 5 ) ) && ( getplayercardinfo( 0 , 3 , 5 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 3 , 5 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 10 8
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( ( 0 - ( 18 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 6 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 6 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 5 * 58 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 3 , 5 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 3 , 5 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 3 , 5 ) , 5 ) )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) != getplayercardinfo( 8 , 3 , 5 ) ) && ( getplayercardinfo( 0 , 3 , 5 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 3 , 5 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 10 8
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( ( 0 - ( 18 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 6 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 6 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( ( 0 + 5 * 58 ) + 28 )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) != getplayercardinfo( 8 , 3 , 5 ) ) && ( getplayercardinfo( 0 , 3 , 5 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 3 , 5 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 10 8
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( ( 0 - ( 18 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 6 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 6 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) ) + 158 )
+			exp rect y ( ( 0 + 5 * 58 ) )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) != getplayercardinfo( 8 , 3 , 5 ) ) && ( getplayercardinfo( 0 , 3 , 5 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 3 , 5 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 10 8
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 30 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 7 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 7 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 6 * 58 )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) != getplayercardinfo( 8 , 3 , 6 ) ) && ( getplayercardinfo( 0 , 3 , 6 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 10 8
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 0 - ( 30 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 7 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 7 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 6 * 58 - 2 )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) != getplayercardinfo( 8 , 3 , 6 ) ) && ( getplayercardinfo( 0 , 3 , 6 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 3 , 6 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 10 8
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( ( 0 - ( 30 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 7 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 7 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( 0 + 6 * 58 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 3 , 6 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 3 , 6 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 3 , 6 ) , 5 ) )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) != getplayercardinfo( 8 , 3 , 6 ) ) && ( getplayercardinfo( 0 , 3 , 6 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 3 , 6 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 10 8
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( ( 0 - ( 30 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 7 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 7 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) )
+			exp rect y ( ( 0 + 6 * 58 ) + 28 )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) != getplayercardinfo( 8 , 3 , 6 ) ) && ( getplayercardinfo( 0 , 3 , 6 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 3 , 6 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 10 8
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( ( 0 - ( 30 * localvarfloat( "ui_cardOffsetScale" ) ) ) + ( ( max( min( ( 1 - ( milliseconds( ) - localvarint( "ui_switchTime" ) + ( 7 * 400 ) ) / 300 ) , 1 ) , 0 ) * 640 ) + ( min( max( ( milliseconds( ) - localvarint( "ui_switchTime2" ) + ( 7 * 200 ) ) / 150 , 0 ) , 1 ) * 640 ) ) ) - ( 208 ) ) + 158 )
+			exp rect y ( ( 0 + 6 * 58 ) )
+			visible when ( ( !dvarbool( "party_teamBased" ) ) && ( getplayercardinfo( 8 , 1 , 0 ) != getplayercardinfo( 8 , 3 , 6 ) ) && ( getplayercardinfo( 0 , 3 , 6 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 3 , 6 ) , 1 ) )
+		}
+	}
+}

@@ -1,0 +1,262 @@
+{
+	menuDef
+	{
+		name "callsign_popup_preview"
+		rect 0 0 640 480 4 4
+		decoration
+		popup
+		style 1
+		forecolor 1 1 1 1
+		backcolor 1 1 1 0
+		focuscolor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		onOpen
+		{
+			lerp x "from" "300" "to" 0 "over" "0.15";
+		}
+		onRequestClose
+		{
+			lerp x "from" 0 "to" "300" "over" "0.15";
+		}
+		onClose
+		{
+			if ( dvarbool( "splitscreen" ) )
+			{
+				execnow "splitscreencontrols";
+			}
+		}
+		itemDef
+		{
+			rect -258 28 336 88 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.45 0.45 0.45 1
+			background "white"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -258 28 336 88 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 0.65
+			background "gradient_fadein"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -290 -4 32 32 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_tl"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect -258 -4 336 32 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_t"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 78 -4 32 32 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_tr"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 78 28 32 88 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_r"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 78 116 32 32 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_br"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect -258 116 336 32 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_b"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect -290 116 32 32 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_bl"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect -290 28 32 88 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_l"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 0 0 208 70 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 0.25
+			background "white"
+			textscale 0.55
+			exp rect x ( ( - 248 ) )
+			exp rect y ( ( 38 ) )
+			visible when ( 1 && ( getplayercardinfo( 0 , 1 , 0 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 70 3 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "cardtitle_248x48"
+			textfont 6
+			textalign 4
+			textaligny -20
+			textscale 0.375
+			exp rect x ( ( - 248 ) )
+			exp rect y ( ( 38 ) )
+			visible when ( 1 && ( getplayercardinfo( 0 , 1 , 0 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 3 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( - 248 )
+			exp rect y ( 38 - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 5 ) )
+			visible when ( 1 && ( getplayercardinfo( 0 , 1 , 0 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 1 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( - 248 )
+			exp rect y ( ( 38 ) + 28 )
+			visible when ( 1 && ( getplayercardinfo( 0 , 1 , 0 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 1 , 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( - 248 ) + 160 )
+			exp rect y ( ( 38 ) )
+			visible when ( 1 && ( getplayercardinfo( 0 , 1 , 0 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 1 , 0 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 20 3 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textalignx 8
+			textscale 0.375
+			exp rect x ( ( - 248 ) )
+			exp rect y ( ( 38 ) + 48 )
+			visible when ( 1 && ( getplayercardinfo( 0 , 1 , 0 ) != 0 ) && getplayercardinfo( 9 , 1 , 0 ) != "" )
+			exp text ( "[" + getplayercardinfo( 9 , 1 , 0 ) + "]" )
+		}
+		itemDef
+		{
+			rect 0 0 20 20 3 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( - 248 ) + 164 )
+			exp rect y ( ( 38 ) + 48 )
+			visible when ( 1 && ( getplayercardinfo( 0 , 1 , 0 ) != 0 ) && ( getplayercardinfo( 4 , 1 , 0 ) >= 0 ) )
+			exp material ( tablelookup( "mp/rankIconTable.csv" , 0 , getplayercardinfo( 4 , 1 , 0 ) , ( getplayercardinfo( 5 , 1 , 0 ) + 1 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 20 20 3 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textalignx 20
+			textscale 0.375
+			exp rect x ( ( - 248 ) + 164 )
+			exp rect y ( ( 38 ) + 48 )
+			visible when ( 1 && ( getplayercardinfo( 0 , 1 , 0 ) != 0 ) && ( getplayercardinfo( 4 , 1 , 0 ) >= 0 ) )
+			exp text ( tablelookup( "mp/rankTable.csv" , 0 , getplayercardinfo( 4 , 1 , 0 ) , 14 ) )
+		}
+	}
+}

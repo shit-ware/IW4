@@ -1,0 +1,839 @@
+{
+	menuDef
+	{
+		name "popup_challenge_weapon_primary"
+		rect -64 0 854 104 1 1
+		popup
+		outOfBoundsClick
+		visible 1
+		style 1
+		forecolor 1 1 1 1
+		backcolor 1 1 1 1
+		background "white"
+		focuscolor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		allowedBinding "+talk"
+		visible when ( localvarint( "ui_tabDepth" ) == localvarint( "ui_popup_challenge_weapon_primary_tabDepth" ) )
+		exp rect y ( localvarfloat( "ui_popupYPos" ) + localvarint( "ui_tabDepth" ) * 20 )
+		onOpen
+		{
+			focusfirst;
+			setLocalVarInt "ui_tabDepth" ( localvarint( "ui_tabDepth" ) + 1 );
+			;;
+			setLocalVarInt "ui_popup_challenge_weapon_primary_tabDepth" ( localvarint( "ui_tabDepth" ) );
+			;;
+		}
+		onClose
+		{
+			setLocalVarInt "ui_tabDepth" ( localvarint( "ui_tabDepth" ) - 1 );
+			;;
+		}
+		onEsc
+		{
+			close self;
+		}
+		itemDef
+		{
+			rect -854 -480 1708 960 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0 0 0 0.35
+			background "white"
+			textscale 0.55
+			visible when ( !localvarint( "ui_centerPopup" ) )
+		}
+		itemDef
+		{
+			rect -854 -480 1708 960 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "xpbar_stencilbase"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 0 854 104 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.5 0.5 1
+			background "white"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 0 1708 480 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.75
+			background "mw2_popup_bg_fogstencil"
+			textscale 0.55
+			exp rect x ( 0 - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 -1708 -480 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0.85 0.85 0.85 1
+			background "mw2_popup_bg_fogscroll"
+			textscale 0.55
+			exp rect x ( 0 - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 854 0 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "mockup_popup_bg_stencilfill"
+			textscale 0.55
+			exp rect h ( ( 24 + 4 * 20 ) )
+		}
+		itemDef
+		{
+			rect 0 0 -1708 -480 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.75
+			background "mw2_popup_bg_fogstencil"
+			textscale 0.55
+			exp rect x ( ( - 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 -1708 -480 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0.85 0.85 0.85 1
+			background "mw2_popup_bg_fogscroll"
+			textscale 0.55
+			exp rect x ( ( - 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 854 0 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0
+			background "small_box_lightfx"
+			textscale 0.55
+			exp rect h ( ( 24 + 4 * 20 ) )
+		}
+		itemDef
+		{
+			rect -32 -32 32 32 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_tl"
+			textscale 0.55
+			visible when ( !localvarint( "ui_centerPopup" ) )
+		}
+		itemDef
+		{
+			rect 0 -32 854 32 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_t"
+			textscale 0.55
+			visible when ( !localvarint( "ui_centerPopup" ) )
+		}
+		itemDef
+		{
+			rect 854 -32 32 32 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_tr"
+			textscale 0.55
+			visible when ( !localvarint( "ui_centerPopup" ) )
+		}
+		itemDef
+		{
+			rect 854 0 32 0 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_r"
+			textscale 0.55
+			exp rect h ( ( 24 + 4 * 20 ) )
+			visible when ( !localvarint( "ui_centerPopup" ) )
+		}
+		itemDef
+		{
+			rect 854 0 32 32 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_br"
+			textscale 0.55
+			exp rect y ( ( 0 - 0 ) + ( ( 24 + 4 * 20 ) ) )
+			visible when ( !localvarint( "ui_centerPopup" ) )
+		}
+		itemDef
+		{
+			rect 0 0 854 32 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_b"
+			textscale 0.55
+			exp rect y ( ( 0 - 0 ) + ( ( 24 + 4 * 20 ) ) )
+			visible when ( !localvarint( "ui_centerPopup" ) )
+		}
+		itemDef
+		{
+			rect -32 0 32 32 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_bl"
+			textscale 0.55
+			exp rect y ( ( 0 - 0 ) + ( ( 24 + 4 * 20 ) ) )
+			visible when ( !localvarint( "ui_centerPopup" ) )
+		}
+		itemDef
+		{
+			rect -32 0 32 0 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_l"
+			textscale 0.55
+			exp rect h ( ( 24 + 4 * 20 ) )
+			visible when ( !localvarint( "ui_centerPopup" ) )
+		}
+		itemDef
+		{
+			rect 0 0 280 104 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 0
+			background "gradient_fadein"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 0 280 20 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0.25 0.25 0.25 1
+			background "white"
+			textscale 0.55
+			exp rect y ( - 20 - ( ( localvarint( "ui_tabDepth" ) - 1 ) * 20 ) )
+			visible when ( localvarint( "ui_tabDepth" ) > ( 1 - 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 280 20 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0 0 0 1
+			background "gradient_fadein"
+			textfont 9
+			textalign 4
+			textalignx 68
+			textscale 0.375
+			exp rect y ( - 20 - ( ( localvarint( "ui_tabDepth" ) - 1 ) * 20 ) )
+			exp forecolor r ( 1 - ( ( localvarint( "ui_tabDepth" ) > 1 ) * 0.35 ) )
+			exp forecolor g ( 1 - ( ( localvarint( "ui_tabDepth" ) > 1 ) * 0.35 ) )
+			exp forecolor b ( 1 - ( ( localvarint( "ui_tabDepth" ) > 1 ) * 0.35 ) )
+			visible when ( localvarint( "ui_tabDepth" ) > ( 1 - 1 ) )
+			exp text ( localvarstring( "ui_tab1Name" ) )
+		}
+		itemDef
+		{
+			rect 0 0 280 20 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0.25 0.25 0.25 1
+			background "white"
+			textscale 0.55
+			exp rect y ( - 20 - ( ( localvarint( "ui_tabDepth" ) - 2 ) * 20 ) )
+			visible when ( localvarint( "ui_tabDepth" ) > ( 2 - 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 280 20 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0 0 0 1
+			background "gradient_fadein"
+			textfont 9
+			textalign 4
+			textalignx 68
+			textscale 0.375
+			exp rect y ( - 20 - ( ( localvarint( "ui_tabDepth" ) - 2 ) * 20 ) )
+			exp forecolor r ( 1 - ( ( localvarint( "ui_tabDepth" ) > 2 ) * 0.35 ) )
+			exp forecolor g ( 1 - ( ( localvarint( "ui_tabDepth" ) > 2 ) * 0.35 ) )
+			exp forecolor b ( 1 - ( ( localvarint( "ui_tabDepth" ) > 2 ) * 0.35 ) )
+			visible when ( localvarint( "ui_tabDepth" ) > ( 2 - 1 ) )
+			exp text ( localvarstring( "ui_tab2Name" ) )
+		}
+		itemDef
+		{
+			rect 0 0 280 20 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0.25 0.25 0.25 1
+			background "white"
+			textscale 0.55
+			exp rect y ( - 20 - ( ( localvarint( "ui_tabDepth" ) - 3 ) * 20 ) )
+			visible when ( localvarint( "ui_tabDepth" ) > ( 3 - 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 280 20 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0 0 0 1
+			background "gradient_fadein"
+			textfont 9
+			textalign 4
+			textalignx 68
+			textscale 0.375
+			exp rect y ( - 20 - ( ( localvarint( "ui_tabDepth" ) - 3 ) * 20 ) )
+			exp forecolor r ( 1 - ( ( localvarint( "ui_tabDepth" ) > 3 ) * 0.35 ) )
+			exp forecolor g ( 1 - ( ( localvarint( "ui_tabDepth" ) > 3 ) * 0.35 ) )
+			exp forecolor b ( 1 - ( ( localvarint( "ui_tabDepth" ) > 3 ) * 0.35 ) )
+			visible when ( localvarint( "ui_tabDepth" ) > ( 3 - 1 ) )
+			exp text ( localvarstring( "ui_tab3Name" ) )
+		}
+		itemDef
+		{
+			rect 0 0 280 20 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0.25 0.25 0.25 1
+			background "white"
+			textscale 0.55
+			exp rect y ( - 20 - ( ( localvarint( "ui_tabDepth" ) - 4 ) * 20 ) )
+			visible when ( localvarint( "ui_tabDepth" ) > ( 4 - 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 280 20 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0 0 0 1
+			background "gradient_fadein"
+			textfont 9
+			textalign 4
+			textalignx 68
+			textscale 0.375
+			exp rect y ( - 20 - ( ( localvarint( "ui_tabDepth" ) - 4 ) * 20 ) )
+			exp forecolor r ( 1 - ( ( localvarint( "ui_tabDepth" ) > 4 ) * 0.35 ) )
+			exp forecolor g ( 1 - ( ( localvarint( "ui_tabDepth" ) > 4 ) * 0.35 ) )
+			exp forecolor b ( 1 - ( ( localvarint( "ui_tabDepth" ) > 4 ) * 0.35 ) )
+			visible when ( localvarint( "ui_tabDepth" ) > ( 4 - 1 ) )
+			exp text ( localvarstring( "ui_tab4Name" ) )
+		}
+		itemDef
+		{
+			rect 0 0 280 20 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0.25 0.25 0.25 1
+			background "white"
+			textscale 0.55
+			exp rect y ( - 20 - ( ( localvarint( "ui_tabDepth" ) - 5 ) * 20 ) )
+			visible when ( localvarint( "ui_tabDepth" ) > ( 5 - 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 280 20 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0 0 0 1
+			background "gradient_fadein"
+			textfont 9
+			textalign 4
+			textalignx 68
+			textscale 0.375
+			exp rect y ( - 20 - ( ( localvarint( "ui_tabDepth" ) - 5 ) * 20 ) )
+			exp forecolor r ( 1 - ( ( localvarint( "ui_tabDepth" ) > 5 ) * 0.35 ) )
+			exp forecolor g ( 1 - ( ( localvarint( "ui_tabDepth" ) > 5 ) * 0.35 ) )
+			exp forecolor b ( 1 - ( ( localvarint( "ui_tabDepth" ) > 5 ) * 0.35 ) )
+			visible when ( localvarint( "ui_tabDepth" ) > ( 5 - 1 ) )
+			exp text ( localvarstring( "ui_tab5Name" ) )
+		}
+		itemDef
+		{
+			name "challenge_primary_assault"
+			rect 0 4 336 20 0 0
+			visible 1
+			group "mw2_popup_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "popup_button_selection_bar_short"
+			type 1
+			textfont 3
+			textalign 4
+			textalignx 68
+			textscale 0.375
+			text "@MENU_ASSAULT_RIFLES_CAPS"
+			action
+			{
+				play "mouse_click";
+				if ( localvarint( "ui_tabDepth" ) == 0 )
+				{
+					setLocalVarString "ui_tab1Name" ( "@MENU_ASSAULT_RIFLES_CAPS" );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 1 )
+				{
+					setLocalVarString "ui_tab2Name" ( "@MENU_ASSAULT_RIFLES_CAPS" );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 2 )
+				{
+					setLocalVarString "ui_tab3Name" ( "@MENU_ASSAULT_RIFLES_CAPS" );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 3 )
+				{
+					setLocalVarString "ui_tab4Name" ( "@MENU_ASSAULT_RIFLES_CAPS" );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 4 )
+				{
+					setLocalVarString "ui_tab5Name" ( "@MENU_ASSAULT_RIFLES_CAPS" );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 5 )
+				{
+					setLocalVarString "ui_tab6Name" ( "@MENU_ASSAULT_RIFLES_CAPS" );
+					;;
+				}
+				;
+				open "popup_challenge_assault_primary";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_popup_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_popupAButton" ( 1 );
+				setLocalVarString "ui_info_name" ( "@MENU_ASSAULT_RIFLES_CAPS" );
+				setLocalVarString "ui_info_desc" ( "@" );
+				setLocalVarString "ui_info_icon" ( "compass_overlay_map_blank" );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 1 1 1 0;
+				setLocalVarBool "ui_popupAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect 226 4 40 20 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new"
+			textscale 0.55
+			visible when ( ( getplayerdata( "challengeTierNew" , int( tablelookup( "mp/challengeTable.csv" , 6 , "masada" , 0 ) ) ) || getplayerdata( "challengeTierNew" , int( tablelookup( "mp/challengeTable.csv" , 6 , "m16" , 0 ) ) ) || getplayerdata( "challengeTierNew" , int( tablelookup( "mp/challengeTable.csv" , 6 , "tavor" , 0 ) ) ) || getplayerdata( "challengeTierNew" , int( tablelookup( "mp/challengeTable.csv" , 6 , "fn2000" , 0 ) ) ) || getplayerdata( "challengeTierNew" , int( tablelookup( "mp/challengeTable.csv" , 6 , "m4" , 0 ) ) ) || getplayerdata( "challengeTierNew" , int( tablelookup( "mp/challengeTable.csv" , 6 , "scar" , 0 ) ) ) || getplayerdata( "challengeTierNew" , int( tablelookup( "mp/challengeTable.csv" , 6 , "ak47" , 0 ) ) ) || getplayerdata( "challengeTierNew" , int( tablelookup( "mp/challengeTable.csv" , 6 , "fal" , 0 ) ) ) || getplayerdata( "challengeTierNew" , int( tablelookup( "mp/challengeTable.csv" , 6 , "famas" , 0 ) ) ) )
+ )
+		}
+		itemDef
+		{
+			name "challenge_primary_smg"
+			rect 0 24 336 20 0 0
+			visible 1
+			group "mw2_popup_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "popup_button_selection_bar_short"
+			type 1
+			textfont 3
+			textalign 4
+			textalignx 68
+			textscale 0.375
+			text "@MENU_SMGS_CAPS"
+			action
+			{
+				play "mouse_click";
+				if ( localvarint( "ui_tabDepth" ) == 0 )
+				{
+					setLocalVarString "ui_tab1Name" ( "@MENU_SMGS_CAPS" );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 1 )
+				{
+					setLocalVarString "ui_tab2Name" ( "@MENU_SMGS_CAPS" );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 2 )
+				{
+					setLocalVarString "ui_tab3Name" ( "@MENU_SMGS_CAPS" );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 3 )
+				{
+					setLocalVarString "ui_tab4Name" ( "@MENU_SMGS_CAPS" );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 4 )
+				{
+					setLocalVarString "ui_tab5Name" ( "@MENU_SMGS_CAPS" );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 5 )
+				{
+					setLocalVarString "ui_tab6Name" ( "@MENU_SMGS_CAPS" );
+					;;
+				}
+				;
+				open "popup_challenge_smg_primary";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_popup_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_popupAButton" ( 1 );
+				setLocalVarString "ui_info_name" ( "@MENU_SMGS_CAPS" );
+				setLocalVarString "ui_info_desc" ( "@" );
+				setLocalVarString "ui_info_icon" ( "compass_overlay_map_blank" );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 1 1 1 0;
+				setLocalVarBool "ui_popupAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect 226 24 40 20 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new"
+			textscale 0.55
+			visible when ( ( getplayerdata( "challengeTierNew" , int( tablelookup( "mp/challengeTable.csv" , 6 , "mp5k" , 0 ) ) ) || getplayerdata( "challengeTierNew" , int( tablelookup( "mp/challengeTable.csv" , 6 , "uzi" , 0 ) ) ) || getplayerdata( "challengeTierNew" , int( tablelookup( "mp/challengeTable.csv" , 6 , "kriss" , 0 ) ) ) || getplayerdata( "challengeTierNew" , int( tablelookup( "mp/challengeTable.csv" , 6 , "ump45" , 0 ) ) ) || getplayerdata( "challengeTierNew" , int( tablelookup( "mp/challengeTable.csv" , 6 , "p90" , 0 ) ) ) )
+ )
+		}
+		itemDef
+		{
+			name "challenge_primary_lmg"
+			rect 0 44 336 20 0 0
+			visible 1
+			group "mw2_popup_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "popup_button_selection_bar_short"
+			type 1
+			textfont 3
+			textalign 4
+			textalignx 68
+			textscale 0.375
+			text "@MENU_LMGS_CAPS"
+			action
+			{
+				play "mouse_click";
+				if ( localvarint( "ui_tabDepth" ) == 0 )
+				{
+					setLocalVarString "ui_tab1Name" ( "@MENU_LMGS_CAPS" );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 1 )
+				{
+					setLocalVarString "ui_tab2Name" ( "@MENU_LMGS_CAPS" );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 2 )
+				{
+					setLocalVarString "ui_tab3Name" ( "@MENU_LMGS_CAPS" );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 3 )
+				{
+					setLocalVarString "ui_tab4Name" ( "@MENU_LMGS_CAPS" );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 4 )
+				{
+					setLocalVarString "ui_tab5Name" ( "@MENU_LMGS_CAPS" );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 5 )
+				{
+					setLocalVarString "ui_tab6Name" ( "@MENU_LMGS_CAPS" );
+					;;
+				}
+				;
+				open "popup_challenge_lmg_primary";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_popup_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_popupAButton" ( 1 );
+				setLocalVarString "ui_info_name" ( "@MENU_LMGS_CAPS" );
+				setLocalVarString "ui_info_desc" ( "@" );
+				setLocalVarString "ui_info_icon" ( "compass_overlay_map_blank" );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 1 1 1 0;
+				setLocalVarBool "ui_popupAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect 226 44 40 20 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new"
+			textscale 0.55
+			visible when ( ( getplayerdata( "challengeTierNew" , int( tablelookup( "mp/challengeTable.csv" , 6 , "m240" , 0 ) ) ) || getplayerdata( "challengeTierNew" , int( tablelookup( "mp/challengeTable.csv" , 6 , "sa80" , 0 ) ) ) || getplayerdata( "challengeTierNew" , int( tablelookup( "mp/challengeTable.csv" , 6 , "rpd" , 0 ) ) ) || getplayerdata( "challengeTierNew" , int( tablelookup( "mp/challengeTable.csv" , 6 , "aug" , 0 ) ) ) || getplayerdata( "challengeTierNew" , int( tablelookup( "mp/challengeTable.csv" , 6 , "mg4" , 0 ) ) ) )
+ )
+		}
+		itemDef
+		{
+			name "challenge_primary_sniper"
+			rect 0 64 336 20 0 0
+			visible 1
+			group "mw2_popup_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "popup_button_selection_bar_short"
+			type 1
+			textfont 3
+			textalign 4
+			textalignx 68
+			textscale 0.375
+			text "@MENU_SNIPER_RIFLES_CAPS"
+			action
+			{
+				play "mouse_click";
+				if ( localvarint( "ui_tabDepth" ) == 0 )
+				{
+					setLocalVarString "ui_tab1Name" ( "@MENU_SNIPER_RIFLES_CAPS" );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 1 )
+				{
+					setLocalVarString "ui_tab2Name" ( "@MENU_SNIPER_RIFLES_CAPS" );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 2 )
+				{
+					setLocalVarString "ui_tab3Name" ( "@MENU_SNIPER_RIFLES_CAPS" );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 3 )
+				{
+					setLocalVarString "ui_tab4Name" ( "@MENU_SNIPER_RIFLES_CAPS" );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 4 )
+				{
+					setLocalVarString "ui_tab5Name" ( "@MENU_SNIPER_RIFLES_CAPS" );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 5 )
+				{
+					setLocalVarString "ui_tab6Name" ( "@MENU_SNIPER_RIFLES_CAPS" );
+					;;
+				}
+				;
+				open "popup_challenge_sniper_primary";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_popup_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_popupAButton" ( 1 );
+				setLocalVarString "ui_info_name" ( "@MENU_SNIPER_RIFLES_CAPS" );
+				setLocalVarString "ui_info_desc" ( "@" );
+				setLocalVarString "ui_info_icon" ( "compass_overlay_map_blank" );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 1 1 1 0;
+				setLocalVarBool "ui_popupAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect 226 64 40 20 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new"
+			textscale 0.55
+			visible when ( ( getplayerdata( "challengeTierNew" , int( tablelookup( "mp/challengeTable.csv" , 6 , "cheytac" , 0 ) ) ) || getplayerdata( "challengeTierNew" , int( tablelookup( "mp/challengeTable.csv" , 6 , "m21" , 0 ) ) ) || getplayerdata( "challengeTierNew" , int( tablelookup( "mp/challengeTable.csv" , 6 , "barrett" , 0 ) ) ) || getplayerdata( "challengeTierNew" , int( tablelookup( "mp/challengeTable.csv" , 6 , "wa2000" , 0 ) ) ) )
+ )
+		}
+		itemDef
+		{
+			name "challenge_primary_riot"
+			rect 0 84 336 20 0 0
+			visible 1
+			group "mw2_popup_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "popup_button_selection_bar_short"
+			type 1
+			textfont 3
+			textalign 4
+			textalignx 68
+			textscale 0.375
+			text "@MENU_RIOT_SHIELD_CAPS"
+			action
+			{
+				play "mouse_click";
+				setLocalVarString "ui_challengeTierTable" ( tablelookup( "mp/challengeTable.csv" , 6 , "riotshield" , 4 ) );
+				;
+				open "menu_challenge_details";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_popup_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_popupAButton" ( 1 );
+				setLocalVarString "ui_info_name" ( "@MENU_RIOT_SHIELD_CAPS" );
+				setLocalVarString "ui_info_desc" ( "@" );
+				setLocalVarString "ui_info_icon" ( "compass_overlay_map_blank" );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 1 1 1 0;
+				setLocalVarBool "ui_popupAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect 226 84 40 20 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new"
+			textscale 0.55
+			visible when ( 0 )
+		}
+		itemDef
+		{
+			rect 8 0 200 104 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.5
+			background "small_box_lightfx"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 8 0 200 104 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 4
+			textalignx 4
+			textscale 0.375
+			exp text ( localvarstring( "ui_info_name" ) )
+		}
+		itemDef
+		{
+			rect 76 20 64 64 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp material ( localvarstring( "ui_info_icon" ) )
+		}
+		itemDef
+		{
+			rect 8 0 200 104 2 1
+			decoration
+			autowrapped
+			visible 1
+			forecolor 1 1 1 0.65
+			textfont 3
+			textalign 4
+			textalignx 4
+			textaligny 84
+			textscale 0.375
+			visible when ( isitemunlocked( "weaponRefString" + " " + "refString" ) )
+			exp text ( localvarstring( "ui_info_desc" ) )
+		}
+	}
+}

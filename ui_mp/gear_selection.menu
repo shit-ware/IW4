@@ -1,0 +1,1781 @@
+{
+	menuDef
+	{
+		name "gear_selection"
+		rect 0 0 640 480 0 0
+		style 1
+		forecolor 1 1 1 1
+		focuscolor 1 1 1 1
+		fullscreen 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		onOpen
+		{
+			setdvar "perk1_level" 0;
+			setdvar "perk2_level" 0;
+			setdvar "perk3_level" 0;
+			setdvar "perk_maxStars" 1;
+			setdvar "perk1_maxLevel" 1;
+			setdvar "perk2_maxLevel" 1;
+			setdvar "perk3_maxLevel" 1;
+		}
+		onEsc
+		{
+			close "gear_selection";
+		}
+		itemDef
+		{
+			rect -107 0 854 480 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "animbg_blur_back"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -107 0 1708 480 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "animbg_blur_fogscroll"
+			textscale 0.55
+			exp rect x ( ( - 107 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) ) )
+		}
+		itemDef
+		{
+			rect -107 0 854 480 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "animbg_blur_front"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 48 40 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 0.8 0.4 1
+			textfont 1
+			textalign 4
+			textalignx -36
+			textaligny -36
+			textscale 0.5833
+			exp text ( "GEAR SELECTION" )
+		}
+		itemDef
+		{
+			rect -120 -32 378 64 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 0.95 0.175
+			background "white"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 258 -32 16 -64 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 0.95 0.175
+			background "button_highlight_end"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 56 448 528 40 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 0.95 0.175
+			background "white"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 584 448 16 64 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 0.95 0.175
+			background "button_highlight_end"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 40 448 -16 64 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 0.95 0.175
+			background "button_highlight_end"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -120 464 160 32 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 0.95 0.175
+			background "white"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 600 464 160 32 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 0.95 0.175
+			background "white"
+			textscale 0.55
+		}
+		itemDef
+		{
+			name "back"
+			rect -250 -26 40 20 2 3
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			type 1
+			textfont 1
+			textaligny 18
+			textscale 0.375
+			text "@MENU_BACK"
+			visible when ( 1 )
+			mouseEnter
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				play "mouse_click";
+				close self;
+				open "main_text";
+			}
+		}
+		itemDef
+		{
+			rect 0 34 214.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 1 0.07
+			textscale 0.55
+			exp material ( "gradient_fadein" )
+		}
+		itemDef
+		{
+			rect 214.5 34 5.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 1 0.07
+			background "button_highlight_end"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 34 214.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			borderSize 2
+			forecolor 0.9 0.95 1 0.35
+			bordercolor 0.8 0.95 1 0.4
+			background "gradient_fadein"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 1 && localvarstring( "ui_choicegroup" ) == "" )
+		}
+		itemDef
+		{
+			rect 214.5 34 5.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.95 1 0.35
+			background "button_highlight_end"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 1 && localvarstring( "ui_choicegroup" ) == "" )
+		}
+		itemDef
+		{
+			rect 0 34 220 22 1 1
+			visible 1
+			forecolor 0.69 0.69 0.69 1
+			type 1
+			textfont 1
+			textalign 10
+			textalignx -10
+			textscale 0.4
+			exp text ( "Bandolier" )
+			
+			{
+				if ( dvarstring( "perk1_level" ) == 4 && ( dvarstring( "perk1_level" ) + dvarstring( "perk2_level" ) + dvarstring( "perk3_level" ) < dvarstring( "perk_maxStars" ) ) && ( dvarstring( "perk1_level" ) < dvarstring( "perk1_maxLevel" ) ) )
+				{
+					setdvar "perk1_level" 5;
+				}
+				if ( dvarstring( "perk1_level" ) == 3 && ( dvarstring( "perk1_level" ) + dvarstring( "perk2_level" ) + dvarstring( "perk3_level" ) < dvarstring( "perk_maxStars" ) ) && ( dvarstring( "perk1_level" ) < dvarstring( "perk1_maxLevel" ) ) )
+				{
+					setdvar "perk1_level" 4;
+				}
+				if ( dvarstring( "perk1_level" ) == 2 && ( dvarstring( "perk1_level" ) + dvarstring( "perk2_level" ) + dvarstring( "perk3_level" ) < dvarstring( "perk_maxStars" ) ) && ( dvarstring( "perk1_level" ) < dvarstring( "perk1_maxLevel" ) ) )
+				{
+					setdvar "perk1_level" 3;
+				}
+				if ( dvarstring( "perk1_level" ) == 1 && ( dvarstring( "perk1_level" ) + dvarstring( "perk2_level" ) + dvarstring( "perk3_level" ) < dvarstring( "perk_maxStars" ) ) && ( dvarstring( "perk1_level" ) < dvarstring( "perk1_maxLevel" ) ) )
+				{
+					setdvar "perk1_level" 2;
+				}
+				if ( dvarstring( "perk1_level" ) == 0 && ( dvarstring( "perk1_level" ) + dvarstring( "perk2_level" ) + dvarstring( "perk3_level" ) < dvarstring( "perk_maxStars" ) ) && ( dvarstring( "perk1_level" ) < dvarstring( "perk1_maxLevel" ) ) )
+				{
+					setdvar "perk1_level" 1;
+				}
+			}
+			
+			{
+				if ( dvarstring( "perk1_level" ) == 1 )
+				{
+					setdvar "perk1_level" 0;
+				}
+				if ( dvarstring( "perk1_level" ) == 2 )
+				{
+					setdvar "perk1_level" 1;
+				}
+				if ( dvarstring( "perk1_level" ) == 3 )
+				{
+					setdvar "perk1_level" 2;
+				}
+				if ( dvarstring( "perk1_level" ) == 4 )
+				{
+					setdvar "perk1_level" 3;
+				}
+				if ( dvarstring( "perk1_level" ) == 5 )
+				{
+					setdvar "perk1_level" 4;
+				}
+			}
+			
+			{
+				if ( dvarstring( "perk1_level" ) == 4 && ( dvarstring( "perk1_level" ) + dvarstring( "perk2_level" ) + dvarstring( "perk3_level" ) < dvarstring( "perk_maxStars" ) ) && ( dvarstring( "perk1_level" ) < dvarstring( "perk1_maxLevel" ) ) )
+				{
+					setdvar "perk1_level" 5;
+				}
+				if ( dvarstring( "perk1_level" ) == 3 && ( dvarstring( "perk1_level" ) + dvarstring( "perk2_level" ) + dvarstring( "perk3_level" ) < dvarstring( "perk_maxStars" ) ) && ( dvarstring( "perk1_level" ) < dvarstring( "perk1_maxLevel" ) ) )
+				{
+					setdvar "perk1_level" 4;
+				}
+				if ( dvarstring( "perk1_level" ) == 2 && ( dvarstring( "perk1_level" ) + dvarstring( "perk2_level" ) + dvarstring( "perk3_level" ) < dvarstring( "perk_maxStars" ) ) && ( dvarstring( "perk1_level" ) < dvarstring( "perk1_maxLevel" ) ) )
+				{
+					setdvar "perk1_level" 3;
+				}
+				if ( dvarstring( "perk1_level" ) == 1 && ( dvarstring( "perk1_level" ) + dvarstring( "perk2_level" ) + dvarstring( "perk3_level" ) < dvarstring( "perk_maxStars" ) ) && ( dvarstring( "perk1_level" ) < dvarstring( "perk1_maxLevel" ) ) )
+				{
+					setdvar "perk1_level" 2;
+				}
+				if ( dvarstring( "perk1_level" ) == 0 && ( dvarstring( "perk1_level" ) + dvarstring( "perk2_level" ) + dvarstring( "perk3_level" ) < dvarstring( "perk_maxStars" ) ) && ( dvarstring( "perk1_level" ) < dvarstring( "perk1_maxLevel" ) ) )
+				{
+					setdvar "perk1_level" 1;
+				}
+			}
+			
+			{
+				if ( dvarstring( "perk1_level" ) == 1 )
+				{
+					setdvar "perk1_level" 0;
+				}
+				if ( dvarstring( "perk1_level" ) == 2 )
+				{
+					setdvar "perk1_level" 1;
+				}
+				if ( dvarstring( "perk1_level" ) == 3 )
+				{
+					setdvar "perk1_level" 2;
+				}
+				if ( dvarstring( "perk1_level" ) == 4 )
+				{
+					setdvar "perk1_level" 3;
+				}
+				if ( dvarstring( "perk1_level" ) == 5 )
+				{
+					setdvar "perk1_level" 4;
+				}
+			}
+			action
+			{
+				play "mouse_click";
+				open "gear_head" ;;
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarInt "ui_highlight" ( 1 );
+				setLocalVarString "ui_choicegroup" ( "" );
+				;;
+			}
+			leaveFocus
+			{
+				setLocalVarInt "ui_highlight" ( 0 );
+				;;
+			}
+		}
+		itemDef
+		{
+			rect 0 58 214.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 1 0.07
+			textscale 0.55
+			exp material ( "gradient_fadein" )
+		}
+		itemDef
+		{
+			rect 214.5 58 5.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 1 0.07
+			background "button_highlight_end"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 58 214.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			borderSize 2
+			forecolor 0.9 0.95 1 0.35
+			bordercolor 0.8 0.95 1 0.4
+			background "gradient_fadein"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 2 && localvarstring( "ui_choicegroup" ) == "" )
+		}
+		itemDef
+		{
+			rect 214.5 58 5.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.95 1 0.35
+			background "button_highlight_end"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 2 && localvarstring( "ui_choicegroup" ) == "" )
+		}
+		itemDef
+		{
+			rect 0 58 220 22 1 1
+			visible 1
+			forecolor 0.69 0.69 0.69 1
+			type 1
+			textfont 1
+			textalign 10
+			textalignx -10
+			textscale 0.4
+			exp text ( "Juggernaut" )
+			
+			{
+				if ( dvarstring( "perk2_level" ) == 4 && ( dvarstring( "perk1_level" ) + dvarstring( "perk2_level" ) + dvarstring( "perk3_level" ) < dvarstring( "perk_maxStars" ) ) && ( dvarstring( "perk2_level" ) < dvarstring( "perk2_maxLevel" ) ) )
+				{
+					setdvar "perk2_level" 5;
+				}
+				if ( dvarstring( "perk2_level" ) == 3 && ( dvarstring( "perk1_level" ) + dvarstring( "perk2_level" ) + dvarstring( "perk3_level" ) < dvarstring( "perk_maxStars" ) ) && ( dvarstring( "perk2_level" ) < dvarstring( "perk2_maxLevel" ) ) )
+				{
+					setdvar "perk2_level" 4;
+				}
+				if ( dvarstring( "perk2_level" ) == 2 && ( dvarstring( "perk1_level" ) + dvarstring( "perk2_level" ) + dvarstring( "perk3_level" ) < dvarstring( "perk_maxStars" ) ) && ( dvarstring( "perk2_level" ) < dvarstring( "perk2_maxLevel" ) ) )
+				{
+					setdvar "perk2_level" 3;
+				}
+				if ( dvarstring( "perk2_level" ) == 1 && ( dvarstring( "perk1_level" ) + dvarstring( "perk2_level" ) + dvarstring( "perk3_level" ) < dvarstring( "perk_maxStars" ) ) && ( dvarstring( "perk2_level" ) < dvarstring( "perk2_maxLevel" ) ) )
+				{
+					setdvar "perk2_level" 2;
+				}
+				if ( dvarstring( "perk2_level" ) == 0 && ( dvarstring( "perk1_level" ) + dvarstring( "perk2_level" ) + dvarstring( "perk3_level" ) < dvarstring( "perk_maxStars" ) ) && ( dvarstring( "perk2_level" ) < dvarstring( "perk2_maxLevel" ) ) )
+				{
+					setdvar "perk2_level" 1;
+				}
+			}
+			
+			{
+				if ( dvarstring( "perk2_level" ) == 1 )
+				{
+					setdvar "perk2_level" 0;
+				}
+				if ( dvarstring( "perk2_level" ) == 2 )
+				{
+					setdvar "perk2_level" 1;
+				}
+				if ( dvarstring( "perk2_level" ) == 3 )
+				{
+					setdvar "perk2_level" 2;
+				}
+				if ( dvarstring( "perk2_level" ) == 4 )
+				{
+					setdvar "perk2_level" 3;
+				}
+				if ( dvarstring( "perk2_level" ) == 5 )
+				{
+					setdvar "perk2_level" 4;
+				}
+			}
+			
+			{
+				if ( dvarstring( "perk2_level" ) == 4 && ( dvarstring( "perk1_level" ) + dvarstring( "perk2_level" ) + dvarstring( "perk3_level" ) < dvarstring( "perk_maxStars" ) ) && ( dvarstring( "perk2_level" ) < dvarstring( "perk2_maxLevel" ) ) )
+				{
+					setdvar "perk2_level" 5;
+				}
+				if ( dvarstring( "perk2_level" ) == 3 && ( dvarstring( "perk1_level" ) + dvarstring( "perk2_level" ) + dvarstring( "perk3_level" ) < dvarstring( "perk_maxStars" ) ) && ( dvarstring( "perk2_level" ) < dvarstring( "perk2_maxLevel" ) ) )
+				{
+					setdvar "perk2_level" 4;
+				}
+				if ( dvarstring( "perk2_level" ) == 2 && ( dvarstring( "perk1_level" ) + dvarstring( "perk2_level" ) + dvarstring( "perk3_level" ) < dvarstring( "perk_maxStars" ) ) && ( dvarstring( "perk2_level" ) < dvarstring( "perk2_maxLevel" ) ) )
+				{
+					setdvar "perk2_level" 3;
+				}
+				if ( dvarstring( "perk2_level" ) == 1 && ( dvarstring( "perk1_level" ) + dvarstring( "perk2_level" ) + dvarstring( "perk3_level" ) < dvarstring( "perk_maxStars" ) ) && ( dvarstring( "perk2_level" ) < dvarstring( "perk2_maxLevel" ) ) )
+				{
+					setdvar "perk2_level" 2;
+				}
+				if ( dvarstring( "perk2_level" ) == 0 && ( dvarstring( "perk1_level" ) + dvarstring( "perk2_level" ) + dvarstring( "perk3_level" ) < dvarstring( "perk_maxStars" ) ) && ( dvarstring( "perk2_level" ) < dvarstring( "perk2_maxLevel" ) ) )
+				{
+					setdvar "perk2_level" 1;
+				}
+			}
+			
+			{
+				if ( dvarstring( "perk2_level" ) == 1 )
+				{
+					setdvar "perk2_level" 0;
+				}
+				if ( dvarstring( "perk2_level" ) == 2 )
+				{
+					setdvar "perk2_level" 1;
+				}
+				if ( dvarstring( "perk2_level" ) == 3 )
+				{
+					setdvar "perk2_level" 2;
+				}
+				if ( dvarstring( "perk2_level" ) == 4 )
+				{
+					setdvar "perk2_level" 3;
+				}
+				if ( dvarstring( "perk2_level" ) == 5 )
+				{
+					setdvar "perk2_level" 4;
+				}
+			}
+			action
+			{
+				play "mouse_click";
+				open "gear_chest" ;;
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarInt "ui_highlight" ( 2 );
+				setLocalVarString "ui_choicegroup" ( "" );
+				;;
+			}
+			leaveFocus
+			{
+				setLocalVarInt "ui_highlight" ( 0 );
+				;;
+			}
+		}
+		itemDef
+		{
+			rect 0 82 214.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 1 0.07
+			textscale 0.55
+			exp material ( "gradient_fadein" )
+		}
+		itemDef
+		{
+			rect 214.5 82 5.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 1 0.07
+			background "button_highlight_end"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 82 214.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			borderSize 2
+			forecolor 0.9 0.95 1 0.35
+			bordercolor 0.8 0.95 1 0.4
+			background "gradient_fadein"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 3 && localvarstring( "ui_choicegroup" ) == "" )
+		}
+		itemDef
+		{
+			rect 214.5 82 5.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.95 1 0.35
+			background "button_highlight_end"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 3 && localvarstring( "ui_choicegroup" ) == "" )
+		}
+		itemDef
+		{
+			rect 0 82 220 22 1 1
+			visible 1
+			forecolor 0.69 0.69 0.69 1
+			type 1
+			textfont 1
+			textalign 10
+			textalignx -10
+			textscale 0.4
+			exp text ( "Extreme Conditioning" )
+			
+			{
+				if ( dvarstring( "perk3_level" ) == 4 && ( dvarstring( "perk1_level" ) + dvarstring( "perk2_level" ) + dvarstring( "perk3_level" ) < dvarstring( "perk_maxStars" ) ) && ( dvarstring( "perk3_level" ) < dvarstring( "perk3_maxLevel" ) ) )
+				{
+					setdvar "perk3_level" 5;
+				}
+				if ( dvarstring( "perk3_level" ) == 3 && ( dvarstring( "perk1_level" ) + dvarstring( "perk2_level" ) + dvarstring( "perk3_level" ) < dvarstring( "perk_maxStars" ) ) && ( dvarstring( "perk3_level" ) < dvarstring( "perk3_maxLevel" ) ) )
+				{
+					setdvar "perk3_level" 4;
+				}
+				if ( dvarstring( "perk3_level" ) == 2 && ( dvarstring( "perk1_level" ) + dvarstring( "perk2_level" ) + dvarstring( "perk3_level" ) < dvarstring( "perk_maxStars" ) ) && ( dvarstring( "perk3_level" ) < dvarstring( "perk3_maxLevel" ) ) )
+				{
+					setdvar "perk3_level" 3;
+				}
+				if ( dvarstring( "perk3_level" ) == 1 && ( dvarstring( "perk1_level" ) + dvarstring( "perk2_level" ) + dvarstring( "perk3_level" ) < dvarstring( "perk_maxStars" ) ) && ( dvarstring( "perk3_level" ) < dvarstring( "perk3_maxLevel" ) ) )
+				{
+					setdvar "perk3_level" 2;
+				}
+				if ( dvarstring( "perk3_level" ) == 0 && ( dvarstring( "perk1_level" ) + dvarstring( "perk2_level" ) + dvarstring( "perk3_level" ) < dvarstring( "perk_maxStars" ) ) && ( dvarstring( "perk3_level" ) < dvarstring( "perk3_maxLevel" ) ) )
+				{
+					setdvar "perk3_level" 1;
+				}
+			}
+			
+			{
+				if ( dvarstring( "perk3_level" ) == 1 )
+				{
+					setdvar "perk3_level" 0;
+				}
+				if ( dvarstring( "perk3_level" ) == 2 )
+				{
+					setdvar "perk3_level" 1;
+				}
+				if ( dvarstring( "perk3_level" ) == 3 )
+				{
+					setdvar "perk3_level" 2;
+				}
+				if ( dvarstring( "perk3_level" ) == 4 )
+				{
+					setdvar "perk3_level" 3;
+				}
+				if ( dvarstring( "perk3_level" ) == 5 )
+				{
+					setdvar "perk3_level" 4;
+				}
+			}
+			
+			{
+				if ( dvarstring( "perk3_level" ) == 4 && ( dvarstring( "perk1_level" ) + dvarstring( "perk2_level" ) + dvarstring( "perk3_level" ) < dvarstring( "perk_maxStars" ) ) && ( dvarstring( "perk3_level" ) < dvarstring( "perk3_maxLevel" ) ) )
+				{
+					setdvar "perk3_level" 5;
+				}
+				if ( dvarstring( "perk3_level" ) == 3 && ( dvarstring( "perk1_level" ) + dvarstring( "perk2_level" ) + dvarstring( "perk3_level" ) < dvarstring( "perk_maxStars" ) ) && ( dvarstring( "perk3_level" ) < dvarstring( "perk3_maxLevel" ) ) )
+				{
+					setdvar "perk3_level" 4;
+				}
+				if ( dvarstring( "perk3_level" ) == 2 && ( dvarstring( "perk1_level" ) + dvarstring( "perk2_level" ) + dvarstring( "perk3_level" ) < dvarstring( "perk_maxStars" ) ) && ( dvarstring( "perk3_level" ) < dvarstring( "perk3_maxLevel" ) ) )
+				{
+					setdvar "perk3_level" 3;
+				}
+				if ( dvarstring( "perk3_level" ) == 1 && ( dvarstring( "perk1_level" ) + dvarstring( "perk2_level" ) + dvarstring( "perk3_level" ) < dvarstring( "perk_maxStars" ) ) && ( dvarstring( "perk3_level" ) < dvarstring( "perk3_maxLevel" ) ) )
+				{
+					setdvar "perk3_level" 2;
+				}
+				if ( dvarstring( "perk3_level" ) == 0 && ( dvarstring( "perk1_level" ) + dvarstring( "perk2_level" ) + dvarstring( "perk3_level" ) < dvarstring( "perk_maxStars" ) ) && ( dvarstring( "perk3_level" ) < dvarstring( "perk3_maxLevel" ) ) )
+				{
+					setdvar "perk3_level" 1;
+				}
+			}
+			
+			{
+				if ( dvarstring( "perk3_level" ) == 1 )
+				{
+					setdvar "perk3_level" 0;
+				}
+				if ( dvarstring( "perk3_level" ) == 2 )
+				{
+					setdvar "perk3_level" 1;
+				}
+				if ( dvarstring( "perk3_level" ) == 3 )
+				{
+					setdvar "perk3_level" 2;
+				}
+				if ( dvarstring( "perk3_level" ) == 4 )
+				{
+					setdvar "perk3_level" 3;
+				}
+				if ( dvarstring( "perk3_level" ) == 5 )
+				{
+					setdvar "perk3_level" 4;
+				}
+			}
+			action
+			{
+				play "mouse_click";
+				open "gear_legs" ;;
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarInt "ui_highlight" ( 3 );
+				setLocalVarString "ui_choicegroup" ( "" );
+				;;
+			}
+			leaveFocus
+			{
+				setLocalVarInt "ui_highlight" ( 0 );
+				;;
+			}
+		}
+		itemDef
+		{
+			rect 0 106 220 22 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 0.65
+			textalign 10
+			textalignx 10
+			textscale 0.4
+			visible when ( ( dvarstring( "perk_maxStars" ) - dvarstring( "perk1_level" ) - dvarstring( "perk2_level" ) - dvarstring( "perk3_level" ) ) > 0 )
+			exp text ( "Stars Left: " + ( dvarstring( "perk_maxStars" ) - dvarstring( "perk1_level" ) - dvarstring( "perk2_level" ) - dvarstring( "perk3_level" ) ) )
+		}
+		itemDef
+		{
+			rect 0 106 220 22 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 0.35 0.35 0.65
+			textalign 10
+			textalignx 10
+			textscale 0.4
+			visible when ( ( dvarstring( "perk_maxStars" ) - dvarstring( "perk1_level" ) - dvarstring( "perk2_level" ) - dvarstring( "perk3_level" ) ) == 0 )
+			exp text ( "Stars Left: " + ( dvarstring( "perk_maxStars" ) - dvarstring( "perk1_level" ) - dvarstring( "perk2_level" ) - dvarstring( "perk3_level" ) ) )
+		}
+		itemDef
+		{
+			rect 0 178 220 22 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 0.65
+			textalign 10
+			textalignx 10
+			textscale 0.4
+			exp text ( "Kill Streak Rewards" )
+		}
+		itemDef
+		{
+			rect 0 202 214.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 1 0.07
+			textscale 0.55
+			exp material ( "gradient_fadein" )
+		}
+		itemDef
+		{
+			rect 214.5 202 5.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 1 0.07
+			background "button_highlight_end"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 202 214.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			borderSize 2
+			forecolor 0.9 0.95 1 0.35
+			bordercolor 0.8 0.95 1 0.4
+			background "gradient_fadein"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 8 && localvarstring( "ui_choicegroup" ) == "" )
+		}
+		itemDef
+		{
+			rect 214.5 202 5.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.95 1 0.35
+			background "button_highlight_end"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 8 && localvarstring( "ui_choicegroup" ) == "" )
+		}
+		itemDef
+		{
+			rect 0 202 220 22 1 1
+			visible 1
+			forecolor 0.69 0.69 0.69 1
+			type 1
+			textfont 1
+			textalign 10
+			textalignx -10
+			textscale 0.4
+			exp text ( "Reward 1" )
+			action
+			{
+				play "mouse_click";
+				open "streak_set1" ;;
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarInt "ui_highlight" ( 8 );
+				setLocalVarString "ui_choicegroup" ( "" );
+				;;
+			}
+			leaveFocus
+			{
+				setLocalVarInt "ui_highlight" ( 0 );
+				;;
+			}
+		}
+		itemDef
+		{
+			rect 0 226 214.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 1 0.07
+			textscale 0.55
+			exp material ( "gradient_fadein" )
+		}
+		itemDef
+		{
+			rect 214.5 226 5.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 1 0.07
+			background "button_highlight_end"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 226 214.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			borderSize 2
+			forecolor 0.9 0.95 1 0.35
+			bordercolor 0.8 0.95 1 0.4
+			background "gradient_fadein"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 9 && localvarstring( "ui_choicegroup" ) == "" )
+		}
+		itemDef
+		{
+			rect 214.5 226 5.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.95 1 0.35
+			background "button_highlight_end"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 9 && localvarstring( "ui_choicegroup" ) == "" )
+		}
+		itemDef
+		{
+			rect 0 226 220 22 1 1
+			visible 1
+			forecolor 0.69 0.69 0.69 1
+			type 1
+			textfont 1
+			textalign 10
+			textalignx -10
+			textscale 0.4
+			exp text ( "Reward 2" )
+			action
+			{
+				play "mouse_click";
+				open "streak_set2" ;;
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarInt "ui_highlight" ( 9 );
+				setLocalVarString "ui_choicegroup" ( "" );
+				;;
+			}
+			leaveFocus
+			{
+				setLocalVarInt "ui_highlight" ( 0 );
+				;;
+			}
+		}
+		itemDef
+		{
+			rect 0 250 214.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 1 0.07
+			textscale 0.55
+			exp material ( "gradient_fadein" )
+		}
+		itemDef
+		{
+			rect 214.5 250 5.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 1 0.07
+			background "button_highlight_end"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 250 214.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			borderSize 2
+			forecolor 0.9 0.95 1 0.35
+			bordercolor 0.8 0.95 1 0.4
+			background "gradient_fadein"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 10 && localvarstring( "ui_choicegroup" ) == "" )
+		}
+		itemDef
+		{
+			rect 214.5 250 5.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.95 1 0.35
+			background "button_highlight_end"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 10 && localvarstring( "ui_choicegroup" ) == "" )
+		}
+		itemDef
+		{
+			rect 0 250 220 22 1 1
+			visible 1
+			forecolor 0.69 0.69 0.69 1
+			type 1
+			textfont 1
+			textalign 10
+			textalignx -10
+			textscale 0.4
+			exp text ( "Reward 3" )
+			action
+			{
+				play "mouse_click";
+				open "streak_set3" ;;
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarInt "ui_highlight" ( 10 );
+				setLocalVarString "ui_choicegroup" ( "" );
+				;;
+			}
+			leaveFocus
+			{
+				setLocalVarInt "ui_highlight" ( 0 );
+				;;
+			}
+		}
+		itemDef
+		{
+			rect 0 274 214.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 1 0.07
+			textscale 0.55
+			exp material ( "gradient_fadein" )
+		}
+		itemDef
+		{
+			rect 214.5 274 5.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 1 0.07
+			background "button_highlight_end"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 274 214.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			borderSize 2
+			forecolor 0.9 0.95 1 0.35
+			bordercolor 0.8 0.95 1 0.4
+			background "gradient_fadein"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 11 && localvarstring( "ui_choicegroup" ) == "" )
+		}
+		itemDef
+		{
+			rect 214.5 274 5.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.95 1 0.35
+			background "button_highlight_end"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 11 && localvarstring( "ui_choicegroup" ) == "" )
+		}
+		itemDef
+		{
+			rect 0 274 220 22 1 1
+			visible 1
+			forecolor 0.69 0.69 0.69 1
+			type 1
+			textfont 1
+			textalign 10
+			textalignx -10
+			textscale 0.4
+			exp text ( "Reward 4" )
+			action
+			{
+				play "mouse_click";
+				open "streak_set4" ;;
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarInt "ui_highlight" ( 11 );
+				setLocalVarString "ui_choicegroup" ( "" );
+				;;
+			}
+			leaveFocus
+			{
+				setLocalVarInt "ui_highlight" ( 0 );
+				;;
+			}
+		}
+		itemDef
+		{
+			rect 0 346 214.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 1 0.07
+			textscale 0.55
+			exp material ( "gradient_fadein" )
+		}
+		itemDef
+		{
+			rect 214.5 346 5.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 1 0.07
+			background "button_highlight_end"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 346 214.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			borderSize 2
+			forecolor 0.9 0.95 1 0.35
+			bordercolor 0.8 0.95 1 0.4
+			background "gradient_fadein"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 14 && localvarstring( "ui_choicegroup" ) == "" )
+		}
+		itemDef
+		{
+			rect 214.5 346 5.5 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.95 1 0.35
+			background "button_highlight_end"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 14 && localvarstring( "ui_choicegroup" ) == "" )
+		}
+		itemDef
+		{
+			rect 0 346 220 22 1 1
+			visible 1
+			forecolor 0.69 0.69 0.69 1
+			type 1
+			textfont 1
+			textalign 10
+			textalignx -10
+			textscale 0.4
+			exp text ( "level up" )
+			action
+			{
+				play "mouse_click";
+				if ( dvarstring( "perk1_maxLevel" ) == 3 )
+				{
+					setdvar "perk1_maxLevel" 5;
+					setdvar "perk2_maxLevel" 5;
+					setdvar "perk3_maxLevel" 5;
+					setdvar "perk_maxStars" 8;
+				}
+				if ( dvarstring( "perk1_maxLevel" ) == 2 )
+				{
+					setdvar "perk1_maxLevel" 3;
+					setdvar "perk2_maxLevel" 4;
+					setdvar "perk3_maxLevel" 2;
+					setdvar "perk_maxStars" 6;
+				}
+				if ( dvarstring( "perk1_maxLevel" ) == 1 )
+				{
+					setdvar "perk1_maxLevel" 2;
+					setdvar "perk2_maxLevel" 2;
+					setdvar "perk3_maxLevel" 2;
+					setdvar "perk_maxStars" 3;
+				}
+				;;
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarInt "ui_highlight" ( 14 );
+				setLocalVarString "ui_choicegroup" ( "" );
+				;;
+			}
+			leaveFocus
+			{
+				setLocalVarInt "ui_highlight" ( 0 );
+				;;
+			}
+		}
+		itemDef
+		{
+			rect -272 0 272 18 3 1
+			decoration
+			visible 1
+			forecolor 1 0.8 0.4 1
+			textfont 1
+			textalign 8
+			textscale 0.4583
+			visible when ( 1 )
+			exp text ( "Bandolier" )
+		}
+		itemDef
+		{
+			rect -272 20 272 18 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.69 0.69 0.69 1
+			background "gradient"
+			type 1
+			textfont 1
+			textalign 8
+			textalignx 5
+			textscale 0.375
+			visible when ( dvarstring( "perk1_level" ) >= 1 )
+			exp text ( "(" + 1 + ") " + "Picking up ammo always fills magazines." )
+		}
+		itemDef
+		{
+			rect -272 20 272 18 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.5 0.5 0.5 0.5
+			background "gradient"
+			type 1
+			textfont 1
+			textalign 8
+			textalignx 5
+			textscale 0.375
+			visible when ( dvarstring( "perk1_level" ) < 1 && dvarstring( "perk1_maxLevel" ) >= 1 )
+			exp text ( "(" + 1 + ") " + "Picking up ammo always fills magazines." )
+		}
+		itemDef
+		{
+			rect -272 40 272 18 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.69 0.69 0.69 1
+			background "gradient"
+			type 1
+			textfont 1
+			textalign 8
+			textalignx 5
+			textscale 0.375
+			visible when ( dvarstring( "perk1_level" ) >= 2 )
+			exp text ( "(" + 2 + ") " + "Twice as many magazines." )
+		}
+		itemDef
+		{
+			rect -272 40 272 18 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.5 0.5 0.5 0.5
+			background "gradient"
+			type 1
+			textfont 1
+			textalign 8
+			textalignx 5
+			textscale 0.375
+			visible when ( dvarstring( "perk1_level" ) < 2 && dvarstring( "perk1_maxLevel" ) >= 2 )
+			exp text ( "(" + 2 + ") " + "Twice as many magazines." )
+		}
+		itemDef
+		{
+			rect -272 60 272 18 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.69 0.69 0.69 1
+			background "gradient"
+			type 1
+			textfont 1
+			textalign 8
+			textalignx 5
+			textscale 0.375
+			visible when ( dvarstring( "perk1_level" ) >= 3 )
+			exp text ( "(" + 3 + ") " + "25% more ammo per magazine." )
+		}
+		itemDef
+		{
+			rect -272 60 272 18 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.5 0.5 0.5 0.5
+			background "gradient"
+			type 1
+			textfont 1
+			textalign 8
+			textalignx 5
+			textscale 0.375
+			visible when ( dvarstring( "perk1_level" ) < 3 && dvarstring( "perk1_maxLevel" ) >= 3 )
+			exp text ( "(" + 3 + ") " + "25% more ammo per magazine." )
+		}
+		itemDef
+		{
+			rect -272 80 272 18 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.69 0.69 0.69 1
+			background "gradient"
+			type 1
+			textfont 1
+			textalign 8
+			textalignx 5
+			textscale 0.375
+			visible when ( dvarstring( "perk1_level" ) >= 4 )
+			exp text ( "(" + 4 + ") " + "Faster reload." )
+		}
+		itemDef
+		{
+			rect -272 80 272 18 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.5 0.5 0.5 0.5
+			background "gradient"
+			type 1
+			textfont 1
+			textalign 8
+			textalignx 5
+			textscale 0.375
+			visible when ( dvarstring( "perk1_level" ) < 4 && dvarstring( "perk1_maxLevel" ) >= 4 )
+			exp text ( "(" + 4 + ") " + "Faster reload." )
+		}
+		itemDef
+		{
+			rect -272 100 272 18 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.69 0.69 0.69 1
+			background "gradient"
+			type 1
+			textfont 1
+			textalign 8
+			textalignx 5
+			textscale 0.375
+			visible when ( dvarstring( "perk1_level" ) >= 5 )
+			exp text ( "(" + 5 + ") " + "50% more ammo per magazine." )
+		}
+		itemDef
+		{
+			rect -272 100 272 18 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.5 0.5 0.5 0.5
+			background "gradient"
+			type 1
+			textfont 1
+			textalign 8
+			textalignx 5
+			textscale 0.375
+			visible when ( dvarstring( "perk1_level" ) < 5 && dvarstring( "perk1_maxLevel" ) >= 5 )
+			exp text ( "(" + 5 + ") " + "50% more ammo per magazine." )
+		}
+		itemDef
+		{
+			rect -272 140 272 18 3 1
+			decoration
+			visible 1
+			forecolor 1 0.8 0.4 1
+			textfont 1
+			textalign 8
+			textscale 0.4583
+			visible when ( 1 )
+			exp text ( "Juggernaut" )
+		}
+		itemDef
+		{
+			rect -272 160 272 18 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.69 0.69 0.69 1
+			background "gradient"
+			type 1
+			textfont 1
+			textalign 8
+			textalignx 5
+			textscale 0.375
+			visible when ( dvarstring( "perk2_level" ) >= 1 )
+			exp text ( "(" + 1 + ") " + "Reduced slowdown effect from bullets." )
+		}
+		itemDef
+		{
+			rect -272 160 272 18 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.5 0.5 0.5 0.5
+			background "gradient"
+			type 1
+			textfont 1
+			textalign 8
+			textalignx 5
+			textscale 0.375
+			visible when ( dvarstring( "perk2_level" ) < 1 && dvarstring( "perk2_maxLevel" ) >= 1 )
+			exp text ( "(" + 1 + ") " + "Reduced slowdown effect from bullets." )
+		}
+		itemDef
+		{
+			rect -272 180 272 18 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.69 0.69 0.69 1
+			background "gradient"
+			type 1
+			textfont 1
+			textalign 8
+			textalignx 5
+			textscale 0.375
+			visible when ( dvarstring( "perk2_level" ) >= 2 )
+			exp text ( "(" + 2 + ") " + "Decreases explosives damage taken." )
+		}
+		itemDef
+		{
+			rect -272 180 272 18 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.5 0.5 0.5 0.5
+			background "gradient"
+			type 1
+			textfont 1
+			textalign 8
+			textalignx 5
+			textscale 0.375
+			visible when ( dvarstring( "perk2_level" ) < 2 && dvarstring( "perk2_maxLevel" ) >= 2 )
+			exp text ( "(" + 2 + ") " + "Decreases explosives damage taken." )
+		}
+		itemDef
+		{
+			rect -272 200 272 18 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.69 0.69 0.69 1
+			background "gradient"
+			type 1
+			textfont 1
+			textalign 8
+			textalignx 5
+			textscale 0.375
+			visible when ( dvarstring( "perk2_level" ) >= 3 )
+			exp text ( "(" + 3 + ") " + "Decreases flashbang and concussion duration." )
+		}
+		itemDef
+		{
+			rect -272 200 272 18 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.5 0.5 0.5 0.5
+			background "gradient"
+			type 1
+			textfont 1
+			textalign 8
+			textalignx 5
+			textscale 0.375
+			visible when ( dvarstring( "perk2_level" ) < 3 && dvarstring( "perk2_maxLevel" ) >= 3 )
+			exp text ( "(" + 3 + ") " + "Decreases flashbang and concussion duration." )
+		}
+		itemDef
+		{
+			rect -272 220 272 18 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.69 0.69 0.69 1
+			background "gradient"
+			type 1
+			textfont 1
+			textalign 8
+			textalignx 5
+			textscale 0.375
+			visible when ( dvarstring( "perk2_level" ) >= 4 )
+			exp text ( "(" + 4 + ") " + "Decreases air support damage taken." )
+		}
+		itemDef
+		{
+			rect -272 220 272 18 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.5 0.5 0.5 0.5
+			background "gradient"
+			type 1
+			textfont 1
+			textalign 8
+			textalignx 5
+			textscale 0.375
+			visible when ( dvarstring( "perk2_level" ) < 4 && dvarstring( "perk2_maxLevel" ) >= 4 )
+			exp text ( "(" + 4 + ") " + "Decreases air support damage taken." )
+		}
+		itemDef
+		{
+			rect -272 240 272 18 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.69 0.69 0.69 1
+			background "gradient"
+			type 1
+			textfont 1
+			textalign 8
+			textalignx 5
+			textscale 0.375
+			visible when ( dvarstring( "perk2_level" ) >= 5 )
+			exp text ( "(" + 5 + ") " + "50% faster health regeneration." )
+		}
+		itemDef
+		{
+			rect -272 240 272 18 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.5 0.5 0.5 0.5
+			background "gradient"
+			type 1
+			textfont 1
+			textalign 8
+			textalignx 5
+			textscale 0.375
+			visible when ( dvarstring( "perk2_level" ) < 5 && dvarstring( "perk2_maxLevel" ) >= 5 )
+			exp text ( "(" + 5 + ") " + "50% faster health regeneration." )
+		}
+		itemDef
+		{
+			rect -272 280 272 18 3 1
+			decoration
+			visible 1
+			forecolor 1 0.8 0.4 1
+			textfont 1
+			textalign 8
+			textscale 0.4583
+			visible when ( 1 )
+			exp text ( "Extreme Conditioning" )
+		}
+		itemDef
+		{
+			rect -272 300 272 18 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.69 0.69 0.69 1
+			background "gradient"
+			type 1
+			textfont 1
+			textalign 8
+			textalignx 5
+			textscale 0.375
+			visible when ( dvarstring( "perk3_level" ) >= 1 )
+			exp text ( "(" + 1 + ") " + "Faster sprint recharge." )
+		}
+		itemDef
+		{
+			rect -272 300 272 18 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.5 0.5 0.5 0.5
+			background "gradient"
+			type 1
+			textfont 1
+			textalign 8
+			textalignx 5
+			textscale 0.375
+			visible when ( dvarstring( "perk3_level" ) < 1 && dvarstring( "perk3_maxLevel" ) >= 1 )
+			exp text ( "(" + 1 + ") " + "Faster sprint recharge." )
+		}
+		itemDef
+		{
+			rect -272 320 272 18 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.69 0.69 0.69 1
+			background "gradient"
+			type 1
+			textfont 1
+			textalign 8
+			textalignx 5
+			textscale 0.375
+			visible when ( dvarstring( "perk3_level" ) >= 2 )
+			exp text ( "(" + 2 + ") " + "25% longer sprint." )
+		}
+		itemDef
+		{
+			rect -272 320 272 18 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.5 0.5 0.5 0.5
+			background "gradient"
+			type 1
+			textfont 1
+			textalign 8
+			textalignx 5
+			textscale 0.375
+			visible when ( dvarstring( "perk3_level" ) < 2 && dvarstring( "perk3_maxLevel" ) >= 2 )
+			exp text ( "(" + 2 + ") " + "25% longer sprint." )
+		}
+		itemDef
+		{
+			rect -272 340 272 18 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.69 0.69 0.69 1
+			background "gradient"
+			type 1
+			textfont 1
+			textalign 8
+			textalignx 5
+			textscale 0.375
+			visible when ( dvarstring( "perk3_level" ) >= 3 )
+			exp text ( "(" + 3 + ") " + "Instant gun ready after sprinting." )
+		}
+		itemDef
+		{
+			rect -272 340 272 18 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.5 0.5 0.5 0.5
+			background "gradient"
+			type 1
+			textfont 1
+			textalign 8
+			textalignx 5
+			textscale 0.375
+			visible when ( dvarstring( "perk3_level" ) < 3 && dvarstring( "perk3_maxLevel" ) >= 3 )
+			exp text ( "(" + 3 + ") " + "Instant gun ready after sprinting." )
+		}
+		itemDef
+		{
+			rect -272 360 272 18 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.69 0.69 0.69 1
+			background "gradient"
+			type 1
+			textfont 1
+			textalign 8
+			textalignx 5
+			textscale 0.375
+			visible when ( dvarstring( "perk3_level" ) >= 4 )
+			exp text ( "(" + 4 + ") " + "25% faster sprint." )
+		}
+		itemDef
+		{
+			rect -272 360 272 18 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.5 0.5 0.5 0.5
+			background "gradient"
+			type 1
+			textfont 1
+			textalign 8
+			textalignx 5
+			textscale 0.375
+			visible when ( dvarstring( "perk3_level" ) < 4 && dvarstring( "perk3_maxLevel" ) >= 4 )
+			exp text ( "(" + 4 + ") " + "25% faster sprint." )
+		}
+		itemDef
+		{
+			rect -272 380 272 18 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.69 0.69 0.69 1
+			background "gradient"
+			type 1
+			textfont 1
+			textalign 8
+			textalignx 5
+			textscale 0.375
+			visible when ( dvarstring( "perk3_level" ) >= 5 )
+			exp text ( "(" + 5 + ") " + "Shoot while sprinting." )
+		}
+		itemDef
+		{
+			rect -272 380 272 18 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.5 0.5 0.5 0.5
+			background "gradient"
+			type 1
+			textfont 1
+			textalign 8
+			textalignx 5
+			textscale 0.375
+			visible when ( dvarstring( "perk3_level" ) < 5 && dvarstring( "perk3_maxLevel" ) >= 5 )
+			exp text ( "(" + 5 + ") " + "Shoot while sprinting." )
+		}
+		itemDef
+		{
+			rect 220 34 22 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.25
+			textscale 0.55
+			exp forecolor a ( ( dvarstring( "perk1_level" ) >= 1 ) * 0.7 + 0.3 )
+			visible when ( dvarstring( "perk1_maxLevel" ) >= 1 )
+			exp material ( "rank_prestige9" )
+		}
+		itemDef
+		{
+			rect 242 34 22 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.25
+			textscale 0.55
+			exp forecolor a ( ( dvarstring( "perk1_level" ) >= 2 ) * 0.7 + 0.3 )
+			visible when ( dvarstring( "perk1_maxLevel" ) >= 2 )
+			exp material ( "rank_prestige9" )
+		}
+		itemDef
+		{
+			rect 264 34 22 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.25
+			textscale 0.55
+			exp forecolor a ( ( dvarstring( "perk1_level" ) >= 3 ) * 0.7 + 0.3 )
+			visible when ( dvarstring( "perk1_maxLevel" ) >= 3 )
+			exp material ( "rank_prestige9" )
+		}
+		itemDef
+		{
+			rect 286 34 22 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.25
+			textscale 0.55
+			exp forecolor a ( ( dvarstring( "perk1_level" ) >= 4 ) * 0.7 + 0.3 )
+			visible when ( dvarstring( "perk1_maxLevel" ) >= 4 )
+			exp material ( "rank_prestige9" )
+		}
+		itemDef
+		{
+			rect 308 34 22 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.25
+			textscale 0.55
+			exp forecolor a ( ( dvarstring( "perk1_level" ) >= 5 ) * 0.7 + 0.3 )
+			visible when ( dvarstring( "perk1_maxLevel" ) >= 5 )
+			exp material ( "rank_prestige9" )
+		}
+		itemDef
+		{
+			rect 220 58 22 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.25
+			textscale 0.55
+			exp forecolor a ( ( dvarstring( "perk2_level" ) >= 1 ) * 0.7 + 0.3 )
+			visible when ( dvarstring( "perk2_maxLevel" ) >= 1 )
+			exp material ( "rank_prestige9" )
+		}
+		itemDef
+		{
+			rect 242 58 22 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.25
+			textscale 0.55
+			exp forecolor a ( ( dvarstring( "perk2_level" ) >= 2 ) * 0.7 + 0.3 )
+			visible when ( dvarstring( "perk2_maxLevel" ) >= 2 )
+			exp material ( "rank_prestige9" )
+		}
+		itemDef
+		{
+			rect 264 58 22 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.25
+			textscale 0.55
+			exp forecolor a ( ( dvarstring( "perk2_level" ) >= 3 ) * 0.7 + 0.3 )
+			visible when ( dvarstring( "perk2_maxLevel" ) >= 3 )
+			exp material ( "rank_prestige9" )
+		}
+		itemDef
+		{
+			rect 286 58 22 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.25
+			textscale 0.55
+			exp forecolor a ( ( dvarstring( "perk2_level" ) >= 4 ) * 0.7 + 0.3 )
+			visible when ( dvarstring( "perk2_maxLevel" ) >= 4 )
+			exp material ( "rank_prestige9" )
+		}
+		itemDef
+		{
+			rect 308 58 22 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.25
+			textscale 0.55
+			exp forecolor a ( ( dvarstring( "perk2_level" ) >= 5 ) * 0.7 + 0.3 )
+			visible when ( dvarstring( "perk2_maxLevel" ) >= 5 )
+			exp material ( "rank_prestige9" )
+		}
+		itemDef
+		{
+			rect 220 82 22 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.25
+			textscale 0.55
+			exp forecolor a ( ( dvarstring( "perk3_level" ) >= 1 ) * 0.7 + 0.3 )
+			visible when ( dvarstring( "perk3_maxLevel" ) >= 1 )
+			exp material ( "rank_prestige9" )
+		}
+		itemDef
+		{
+			rect 242 82 22 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.25
+			textscale 0.55
+			exp forecolor a ( ( dvarstring( "perk3_level" ) >= 2 ) * 0.7 + 0.3 )
+			visible when ( dvarstring( "perk3_maxLevel" ) >= 2 )
+			exp material ( "rank_prestige9" )
+		}
+		itemDef
+		{
+			rect 264 82 22 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.25
+			textscale 0.55
+			exp forecolor a ( ( dvarstring( "perk3_level" ) >= 3 ) * 0.7 + 0.3 )
+			visible when ( dvarstring( "perk3_maxLevel" ) >= 3 )
+			exp material ( "rank_prestige9" )
+		}
+		itemDef
+		{
+			rect 286 82 22 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.25
+			textscale 0.55
+			exp forecolor a ( ( dvarstring( "perk3_level" ) >= 4 ) * 0.7 + 0.3 )
+			visible when ( dvarstring( "perk3_maxLevel" ) >= 4 )
+			exp material ( "rank_prestige9" )
+		}
+		itemDef
+		{
+			rect 308 82 22 22 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.25
+			textscale 0.55
+			exp forecolor a ( ( dvarstring( "perk3_level" ) >= 5 ) * 0.7 + 0.3 )
+			visible when ( dvarstring( "perk3_maxLevel" ) >= 5 )
+			exp material ( "rank_prestige9" )
+		}
+	}
+}

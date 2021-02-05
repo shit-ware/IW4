@@ -1,0 +1,820 @@
+{
+	menuDef
+	{
+		name "page_progress"
+		rect 0 50 544 337 2 1
+		popup
+		outOfBoundsClick
+		style 1
+		forecolor 1 1 1 1
+		focuscolor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		exp rect x ( - ( 544 / 2 ) )
+		
+		{
+			if ( "page_progress" == "page_summary" )
+			{
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					close self;
+					open "page_progress";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( 1 );
+				}
+			}
+			if ( "page_progress" == "page_progress" )
+			{
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					close self;
+					open "page_highlights";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( 1 );
+				}
+			}
+			if ( "page_progress" == "page_highlights" )
+			{
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					close self;
+					open "page_scoreboard";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( 1 );
+				}
+			}
+		}
+		
+		{
+			if ( "page_progress" == "page_summary" )
+			{
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					close self;
+					open "page_progress";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( 1 );
+				}
+			}
+			if ( "page_progress" == "page_progress" )
+			{
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					close self;
+					open "page_highlights";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( 1 );
+				}
+			}
+			if ( "page_progress" == "page_highlights" )
+			{
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					close self;
+					open "page_scoreboard";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( 1 );
+				}
+			}
+		}
+		
+		{
+			if ( "page_progress" == "page_summary" )
+			{
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					close self;
+					open "page_progress";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( 1 );
+				}
+			}
+			if ( "page_progress" == "page_progress" )
+			{
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					close self;
+					open "page_highlights";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( 1 );
+				}
+			}
+			if ( "page_progress" == "page_highlights" )
+			{
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					close self;
+					open "page_scoreboard";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( 1 );
+				}
+			}
+		}
+		
+		{
+			if ( "page_progress" == "page_summary" )
+			{
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					close self;
+					open "page_progress";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( 1 );
+				}
+			}
+			if ( "page_progress" == "page_progress" )
+			{
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					close self;
+					open "page_highlights";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( 1 );
+				}
+			}
+			if ( "page_progress" == "page_highlights" )
+			{
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					close self;
+					open "page_scoreboard";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( 1 );
+				}
+			}
+		}
+		
+		{
+			if ( "page_progress" == "page_progress" )
+			{
+				close self;
+				open "page_summary";
+				play "mouse_over";
+				setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+				;;
+				setLocalVarInt "ui_switchDir" ( - 1 ) );
+			}
+			if ( "page_progress" == "page_highlights" )
+			{
+				close self;
+				open "page_progress";
+				play "mouse_over";
+				setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+				;;
+				setLocalVarInt "ui_switchDir" ( - 1 ) );
+			}
+			if ( "page_progress" == "page_scoreboard" )
+			{
+				close self;
+				open "page_highlights";
+				play "mouse_over";
+				setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+				;;
+				setLocalVarInt "ui_switchDir" ( - 1 ) );
+			}
+		}
+		
+		{
+			if ( "page_progress" == "page_progress" )
+			{
+				close self;
+				open "page_summary";
+				play "mouse_over";
+				setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+				;;
+				setLocalVarInt "ui_switchDir" ( - 1 ) );
+			}
+			if ( "page_progress" == "page_highlights" )
+			{
+				close self;
+				open "page_progress";
+				play "mouse_over";
+				setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+				;;
+				setLocalVarInt "ui_switchDir" ( - 1 ) );
+			}
+			if ( "page_progress" == "page_scoreboard" )
+			{
+				close self;
+				open "page_highlights";
+				play "mouse_over";
+				setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+				;;
+				setLocalVarInt "ui_switchDir" ( - 1 ) );
+			}
+		}
+		
+		{
+			if ( "page_progress" == "page_progress" )
+			{
+				close self;
+				open "page_summary";
+				play "mouse_over";
+				setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+				;;
+				setLocalVarInt "ui_switchDir" ( - 1 ) );
+			}
+			if ( "page_progress" == "page_highlights" )
+			{
+				close self;
+				open "page_progress";
+				play "mouse_over";
+				setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+				;;
+				setLocalVarInt "ui_switchDir" ( - 1 ) );
+			}
+			if ( "page_progress" == "page_scoreboard" )
+			{
+				close self;
+				open "page_highlights";
+				play "mouse_over";
+				setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+				;;
+				setLocalVarInt "ui_switchDir" ( - 1 ) );
+			}
+		}
+		
+		{
+			if ( "page_progress" == "page_progress" )
+			{
+				close self;
+				open "page_summary";
+				play "mouse_over";
+				setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+				;;
+				setLocalVarInt "ui_switchDir" ( - 1 ) );
+			}
+			if ( "page_progress" == "page_highlights" )
+			{
+				close self;
+				open "page_progress";
+				play "mouse_over";
+				setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+				;;
+				setLocalVarInt "ui_switchDir" ( - 1 ) );
+			}
+			if ( "page_progress" == "page_scoreboard" )
+			{
+				close self;
+				open "page_highlights";
+				play "mouse_over";
+				setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+				;;
+				setLocalVarInt "ui_switchDir" ( - 1 ) );
+			}
+		}
+		
+		{
+			close self;
+		}
+		onOpen
+		{
+			setLocalVarString "ui_currentPage" ( "page_progress" );
+			if ( "page_progress" == "page_summary" )
+			{
+				setLocalVarInt "ui_leftArrow" ( 0 );
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					setLocalVarInt "ui_rightArrow" ( 1 );
+				}
+				else
+				{
+					setLocalVarInt "ui_rightArrow" ( 0 );
+				}
+			}
+			if ( "page_progress" == "page_progress" || "page_progress" == "page_highlights" )
+			{
+				setLocalVarInt "ui_leftArrow" ( 1 );
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					setLocalVarInt "ui_rightArrow" ( 1 );
+				}
+				else
+				{
+					setLocalVarInt "ui_rightArrow" ( 0 );
+				}
+			}
+			if ( "page_progress" == "page_scoreboard" )
+			{
+				setLocalVarInt "ui_leftArrow" ( 1 );
+				setLocalVarInt "ui_rightArrow" ( 0 );
+			}
+		}
+		onRequestClose
+		{
+			
+		}
+		onEsc
+		{
+			close self;
+			close "popup_summary";
+		}
+		itemDef
+		{
+			rect 0 0 544 28 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 5
+			textscale 0.5833
+			text "@MPUI_PROGRESS"
+		}
+		itemDef
+		{
+			rect 5 313 272 24 2 1
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textalignx -1
+			textscale 0.375
+			exp text ( localvarstring( "ui_navbutton_a" ) )
+			action
+			{
+				play "mouse_click";
+				"escape" self;
+			}
+		}
+		itemDef
+		{
+			rect 0 0 544 285 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 0.3
+			background "white"
+			textscale 0.55
+			exp rect x ( 0 )
+			exp rect y ( ( 28 ) )
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 0 0 544 285 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 0.125
+			background "gradient_vertical_rect"
+			textscale 0.55
+			exp rect x ( 0 )
+			exp rect y ( ( 28 ) )
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 2 1
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( 544 / 2 ) - ( ( 208 ) / 2 ) )
+			exp rect y ( ( ( 28 ) + 10 ) )
+			visible when ( 1 && ( getplayercardinfo( 0 , 1 , 0 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( 544 / 2 ) - ( ( 208 ) / 2 ) )
+			exp rect y ( ( ( 28 ) + 10 ) - 2 )
+			visible when ( 1 && ( getplayercardinfo( 0 , 1 , 0 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( 544 / 2 ) - ( ( 208 ) / 2 ) )
+			exp rect y ( ( ( 28 ) + 10 ) - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 5 ) )
+			visible when ( 1 && ( getplayercardinfo( 0 , 1 , 0 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( 544 / 2 ) - ( ( 208 ) / 2 ) )
+			exp rect y ( ( ( ( 28 ) + 10 ) ) + 28 )
+			visible when ( 1 && ( getplayercardinfo( 0 , 1 , 0 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 1 , 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 544 / 2 ) - ( ( 208 ) / 2 ) ) + 158 )
+			exp rect y ( ( ( ( 28 ) + 10 ) ) )
+			visible when ( 1 && ( getplayercardinfo( 0 , 1 , 0 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 1 , 0 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect -1280 110 4096 32 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "xpbar_stencilbase"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 52 110 440 10.6667 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.5
+			background "summary_xpbar_shadow"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 52 110 440 10.6667 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "summary_xpbar"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 52 110 440 10.6667 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "summary_xpbar_solid"
+			textscale 0.55
+			exp rect x ( 52 - ( 660 / 1.5 ) * ( 1 - ( ( min( ( getplayerdata( "experience" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) )
+ ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) )
+ - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) )
+ ) , 0.9999 ) )
+ * min( max( ( milliseconds( ) - localvarint( "popup_summary_time_start" ) ) / 500 , 0 ) , 1 ) ) ) )
+		}
+		itemDef
+		{
+			rect 52 110 440 10.6667 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "xpbar_xpfill"
+			textscale 0.55
+			exp rect x ( 52 - ( 660 / 1.5 ) * ( 1 - ( ( min( ( getplayerdata( "experience" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) )
+ ) / ( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) )
+ - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) )
+ ) , 0.9999 ) )
+ * min( max( ( milliseconds( ) - localvarint( "popup_summary_time_start" ) ) / 500 , 0 ) , 1 ) ) ) )
+		}
+		itemDef
+		{
+			rect 52 110 440 10.6667 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.5
+			background "summary_xpbar_shadow"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 52 89 20 20 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp material ( tablelookup( "mp/rankIconTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , getplayerdata( "prestige" ) + 1 ) )
+		}
+		itemDef
+		{
+			rect 72 89 16 20 0 0
+			decoration
+			visible 1
+			forecolor 0.701961 0.701961 0.729412 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp text ( tablelookup( "mp/ranktable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 14 ) )
+		}
+		itemDef
+		{
+			rect 456 89 20 20 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( levelforexperience( getplayerdata( "experience" ) ) < int( tablelookup( "mp/rankTable.csv" , 0 , "maxrank" , 1 ) ) )
+			exp material ( tablelookup( "mp/rankIconTable.csv" , 0 , ( levelforexperience( getplayerdata( "experience" ) ) + 1 ) , getplayerdata( "prestige" ) + 1 ) )
+		}
+		itemDef
+		{
+			rect 476 89 16 20 0 0
+			decoration
+			visible 1
+			forecolor 0.701961 0.701961 0.729412 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			visible when ( levelforexperience( getplayerdata( "experience" ) ) < int( tablelookup( "mp/rankTable.csv" , 0 , "maxrank" , 1 ) ) )
+			exp text ( tablelookup( "mp/ranktable.csv" , 0 , ( levelforexperience( getplayerdata( "experience" ) ) + 1 ) , 14 ) )
+		}
+		itemDef
+		{
+			rect 52 89 440 20 0 0
+			decoration
+			visible 1
+			forecolor 1 1 0.498039 1
+			textfont 10
+			textalign 1
+			textalignx 2
+			textaligny 18
+			textscale 0.3333
+			visible when ( levelforexperience( getplayerdata( "experience" ) ) < int( tablelookup( "mp/rankTable.csv" , 0 , "maxrank" , 1 ) ) )
+			exp text ( locstring( "@MPUI_X_SLASH_Y_XP" , int( ( getplayerdata( "experience" ) - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) )
+ ) * min( max( ( milliseconds( ) - localvarint( "popup_summary_time_start" ) ) / 500 , 0 ) , 1 ) ) , int( ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 7 ) )
+ - ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdata( "experience" ) ) , 2 ) )
+ ) ) )
+		}
+		itemDef
+		{
+			rect 47 138 225 18 0 0
+			decoration
+			visible 1
+			forecolor 0.701961 0.701961 0.729412 1
+			textalign 2
+			textalignx -10
+			textaligny 18
+			textscale 0.375
+			visible when ( dvarstring( "player_summary_score" ) != "" )
+			exp text ( "@MPUI_XP_PRE" )
+		}
+		itemDef
+		{
+			rect 47 156 225 18 0 0
+			decoration
+			visible 1
+			forecolor 0.701961 0.701961 0.729412 1
+			textalign 2
+			textalignx -10
+			textaligny 18
+			textscale 0.375
+			visible when ( dvarstring( "player_summary_challenge" ) != "" )
+			exp text ( "@MPUI_CHALLENGES_PRE" )
+		}
+		itemDef
+		{
+			rect 47 174 225 18 0 0
+			decoration
+			visible 1
+			forecolor 0.701961 0.701961 0.729412 1
+			textalign 2
+			textalignx -10
+			textaligny 18
+			textscale 0.375
+			visible when ( dvarstring( "player_summary_match" ) != "" )
+			exp text ( "@MPUI_MATCHBONUS_PRE" )
+		}
+		itemDef
+		{
+			rect 47 192 225 18 0 0
+			decoration
+			visible 1
+			forecolor 1 0.8 0.4 1
+			textalign 2
+			textalignx -10
+			textaligny 18
+			textscale 0.375
+			visible when ( dvarstring( "player_summary_xp" ) != "" )
+			exp text ( "@MPUI_TOTAL_EARNED_PRE" )
+		}
+		itemDef
+		{
+			rect 272 138 225 18 0 0
+			decoration
+			visible 1
+			forecolor 0.701961 0.701961 0.729412 1
+			textfont 10
+			textalignx 10
+			textaligny 18
+			textscale 0.3333
+			visible when ( dvarstring( "player_summary_score" ) != "" )
+			exp text ( int( dvarstring( "player_summary_score" ) * min( max( ( milliseconds( ) - localvarint( "popup_summary_time_start" ) ) / 500 , 0 ) , 1 ) ) + " XP" )
+		}
+		itemDef
+		{
+			rect 272 156 225 18 0 0
+			decoration
+			visible 1
+			forecolor 0.701961 0.701961 0.729412 1
+			textfont 10
+			textalignx 10
+			textaligny 18
+			textscale 0.3333
+			visible when ( dvarstring( "player_summary_challenge" ) != "" )
+			exp text ( int( dvarstring( "player_summary_challenge" ) * min( max( ( milliseconds( ) - localvarint( "popup_summary_time_start" ) ) / 500 , 0 ) , 1 ) ) + " XP" )
+		}
+		itemDef
+		{
+			rect 272 174 225 18 0 0
+			decoration
+			visible 1
+			forecolor 0.701961 0.701961 0.729412 1
+			textfont 10
+			textalignx 10
+			textaligny 18
+			textscale 0.3333
+			visible when ( dvarstring( "player_summary_match" ) != "" )
+			exp text ( int( dvarstring( "player_summary_match" ) * min( max( ( milliseconds( ) - localvarint( "popup_summary_time_start" ) ) / 500 , 0 ) , 1 ) ) + " XP" )
+		}
+		itemDef
+		{
+			rect 272 192 225 18 0 0
+			decoration
+			visible 1
+			forecolor 1 0.8 0.4 1
+			textfont 10
+			textalignx 10
+			textaligny 18
+			textscale 0.3333
+			visible when ( dvarstring( "player_summary_xp" ) != "" )
+			exp text ( int( dvarstring( "player_summary_xp" ) * min( max( ( milliseconds( ) - localvarint( "popup_summary_time_start" ) ) / 500 , 0 ) , 1 ) ) + " XP" )
+		}
+		itemDef
+		{
+			rect 0 104.5 -32 128 0 0
+			decoration
+			visible 1
+			group "left_arrow"
+			style 3
+			forecolor 0.85 0.85 0.85 1
+			textscale 0.55
+			visible when ( localvarint( "ui_leftArrow" ) )
+			exp material ( "summary_arrow" )
+		}
+		itemDef
+		{
+			rect 0 104.5 32 128 0 0
+			visible 1
+			forecolor 1 1 1 1
+			type 1
+			textscale 0.55
+			visible when ( localvarint( "ui_leftArrow" ) )
+			action
+			{
+				if ( "page_progress" == "page_progress" )
+				{
+					close self;
+					open "page_summary";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( - 1 ) );
+				}
+				if ( "page_progress" == "page_highlights" )
+				{
+					close self;
+					open "page_progress";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( - 1 ) );
+				}
+				if ( "page_progress" == "page_scoreboard" )
+				{
+					close self;
+					open "page_highlights";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( - 1 ) );
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setItemColor "left_arrow" forecolor 1 1 "0.5" 1;
+			}
+			leaveFocus
+			{
+				setItemColor "left_arrow" forecolor "0.85" "0.85" "0.85" 1;
+			}
+		}
+		itemDef
+		{
+			rect 512 104.5 32 128 0 0
+			visible 1
+			group "right_arrow"
+			style 3
+			forecolor 0.85 0.85 0.85 1
+			type 1
+			textscale 0.55
+			visible when ( localvarint( "ui_rightArrow" ) )
+			exp material ( "summary_arrow" )
+			action
+			{
+				if ( "page_progress" == "page_summary" )
+				{
+					if ( ( getclientmatchdatadef( ) != "" ) )
+					{
+						close self;
+						open "page_progress";
+						play "mouse_over";
+						setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+						;;
+						setLocalVarInt "ui_switchDir" ( 1 );
+					}
+				}
+				if ( "page_progress" == "page_progress" )
+				{
+					if ( ( getclientmatchdatadef( ) != "" ) )
+					{
+						close self;
+						open "page_highlights";
+						play "mouse_over";
+						setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+						;;
+						setLocalVarInt "ui_switchDir" ( 1 );
+					}
+				}
+				if ( "page_progress" == "page_highlights" )
+				{
+					if ( ( getclientmatchdatadef( ) != "" ) )
+					{
+						close self;
+						open "page_scoreboard";
+						play "mouse_over";
+						setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+						;;
+						setLocalVarInt "ui_switchDir" ( 1 );
+					}
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setItemColor "right_arrow" forecolor 1 1 "0.5" 1;
+			}
+			leaveFocus
+			{
+				setItemColor "right_arrow" forecolor "0.85" "0.85" "0.85" 1;
+			}
+		}
+	}
+}

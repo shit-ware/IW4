@@ -1,0 +1,274 @@
+{
+	menuDef
+	{
+		name "settings_quick_dd_@mpui_rules_number_of_lives"
+		rect 0 46 272 18 2 1
+		popup
+		visible 1
+		style 1
+		forecolor 1 1 1 1
+		focuscolor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		exp rect y ( localvarint( "ui_popupYPos" ) )
+		onOpen
+		{
+			focusfirst;
+			setfocusbydvar "scr_dd_numlives";
+			setLocalVarBool "ui_hideSelectButton" ( 1 );
+		}
+		onClose
+		{
+			setLocalVarBool "ui_hideSelectButton" ( 0 );
+		}
+		onEsc
+		{
+			play "mouse_click";
+			close self;
+		}
+		itemDef
+		{
+			rect -600 -800 2000 2000 0 0
+			visible 1
+			forecolor 1 1 1 1
+			type 1
+			textfont 1
+			textscale 0.55
+			action
+			{
+				close self;
+			}
+		}
+		itemDef
+		{
+			rect 144 0 110 100 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0.35 0.35 0.35 1
+			textscale 0.55
+			exp material ( "white" )
+		}
+		itemDef
+		{
+			rect 128 -16 16 16 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_tl"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 144 -16 110 16 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_t"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 254 -16 16 16 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_tr"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 254 0 16 100 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_r"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 254 100 16 16 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_br"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 144 100 110 16 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_b"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 128 100 16 16 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_bl"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 128 0 16 100 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_l"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 144 0 128 15 0 0
+			visible 1
+			forecolor 0.65 0.65 0.65 1
+			textalign 8
+			textalignx 12
+			textscale 0.375
+			text "@MPUI_RULES_UNLIMITED"
+			dvarTest "scr_dd_numlives"
+			focusDvar { 0 }
+			visible when ( "@MPUI_RULES_UNLIMITED" != "" )
+			action
+			{
+				setdvar "scr_dd_numlives" 0 play "mouse_click";
+				close self;
+			}
+			leaveFocus
+			{
+				play "mouse_submenu_over";
+			}
+		}
+		itemDef
+		{
+			rect 144 15 128 15 0 0
+			visible 1
+			forecolor 0.65 0.65 0.65 1
+			textalign 8
+			textalignx 12
+			textscale 0.375
+			text "@MPUI_RULES_ITEM_LIFE"
+			dvarTest "scr_dd_numlives"
+			focusDvar { 1 }
+			visible when ( "@MPUI_RULES_ITEM_LIFE" != "" )
+			action
+			{
+				setdvar "scr_dd_numlives" 1 play "mouse_click";
+				close self;
+			}
+			leaveFocus
+			{
+				play "mouse_submenu_over";
+			}
+		}
+		itemDef
+		{
+			rect 144 30 128 15 0 0
+			visible 1
+			forecolor 0.65 0.65 0.65 1
+			textalign 8
+			textalignx 12
+			textscale 0.375
+			text "@MPUI_RULES_ITEM_2LIVES"
+			dvarTest "scr_dd_numlives"
+			focusDvar { 2 }
+			visible when ( "@MPUI_RULES_ITEM_2LIVES" != "" )
+			action
+			{
+				setdvar "scr_dd_numlives" 2 play "mouse_click";
+				close self;
+			}
+			leaveFocus
+			{
+				play "mouse_submenu_over";
+			}
+		}
+		itemDef
+		{
+			rect 144 45 128 15 0 0
+			visible 1
+			forecolor 0.65 0.65 0.65 1
+			textalign 8
+			textalignx 12
+			textscale 0.375
+			text "@MPUI_RULES_ITEM_3LIVES"
+			dvarTest "scr_dd_numlives"
+			focusDvar { 3 }
+			visible when ( "@MPUI_RULES_ITEM_3LIVES" != "" )
+			action
+			{
+				setdvar "scr_dd_numlives" 3 play "mouse_click";
+				close self;
+			}
+			leaveFocus
+			{
+				play "mouse_submenu_over";
+			}
+		}
+		itemDef
+		{
+			rect 144 60 128 15 0 0
+			visible 1
+			forecolor 0.65 0.65 0.65 1
+			textalign 8
+			textalignx 12
+			textscale 0.375
+			text "@MPUI_RULES_ITEM_5LIVES"
+			dvarTest "scr_dd_numlives"
+			focusDvar { 5 }
+			visible when ( "@MPUI_RULES_ITEM_5LIVES" != "" )
+			action
+			{
+				setdvar "scr_dd_numlives" 5 play "mouse_click";
+				close self;
+			}
+			leaveFocus
+			{
+				play "mouse_submenu_over";
+			}
+		}
+		itemDef
+		{
+			rect 144 75 128 15 0 0
+			visible 1
+			forecolor 0.65 0.65 0.65 1
+			textalign 8
+			textalignx 12
+			textscale 0.375
+			text "@MPUI_RULES_ITEM_9LIVES"
+			dvarTest "scr_dd_numlives"
+			focusDvar { 9 }
+			visible when ( "@MPUI_RULES_ITEM_9LIVES" != "" )
+			action
+			{
+				setdvar "scr_dd_numlives" 9 play "mouse_click";
+				close self;
+			}
+			leaveFocus
+			{
+				play "mouse_submenu_over";
+			}
+		}
+	}
+}

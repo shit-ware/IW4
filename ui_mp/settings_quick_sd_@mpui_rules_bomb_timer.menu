@@ -1,0 +1,273 @@
+{
+	menuDef
+	{
+		name "settings_quick_sd_@mpui_rules_bomb_timer"
+		rect -272 64 272 18 2 1
+		popup
+		visible 1
+		style 1
+		forecolor 1 1 1 1
+		focuscolor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		exp rect y ( localvarint( "ui_popupYPos" ) )
+		onOpen
+		{
+			focusfirst;
+			setfocusbydvar "scr_sd_bombtimer";
+			setLocalVarBool "ui_hideSelectButton" ( 1 );
+		}
+		onClose
+		{
+			setLocalVarBool "ui_hideSelectButton" ( 0 );
+		}
+		onEsc
+		{
+			play "mouse_click";
+			close self;
+		}
+		itemDef
+		{
+			rect -600 -800 2000 2000 0 0
+			visible 1
+			forecolor 1 1 1 1
+			type 1
+			textfont 1
+			textscale 0.55
+			action
+			{
+				close self;
+			}
+		}
+		itemDef
+		{
+			rect 144 0 110 85 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0.35 0.35 0.35 1
+			textscale 0.55
+			exp material ( "white" )
+		}
+		itemDef
+		{
+			rect 128 -16 16 16 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_tl"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 144 -16 110 16 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_t"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 254 -16 16 16 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_tr"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 254 0 16 85 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_r"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 254 85 16 16 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_br"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 144 85 110 16 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_b"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 128 85 16 16 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_bl"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 128 0 16 85 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_l"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 144 0 128 15 0 0
+			visible 1
+			forecolor 0.65 0.65 0.65 1
+			textalign 8
+			textalignx 12
+			textscale 0.375
+			text "@MPUI_RULES_5SECONDS"
+			dvarTest "scr_sd_bombtimer"
+			focusDvar { 5 }
+			visible when ( "@MPUI_RULES_5SECONDS" != "" )
+			action
+			{
+				setdvar "scr_sd_bombtimer" 5 play "mouse_click";
+				close self;
+			}
+			leaveFocus
+			{
+				play "mouse_submenu_over";
+			}
+		}
+		itemDef
+		{
+			rect 144 15 128 15 0 0
+			visible 1
+			forecolor 0.65 0.65 0.65 1
+			textalign 8
+			textalignx 12
+			textscale 0.375
+			text "@MPUI_RULES_15SECONDS"
+			dvarTest "scr_sd_bombtimer"
+			focusDvar { "15" }
+			visible when ( "@MPUI_RULES_15SECONDS" != "" )
+			action
+			{
+				setdvar "scr_sd_bombtimer" "15" play "mouse_click";
+				close self;
+			}
+			leaveFocus
+			{
+				play "mouse_submenu_over";
+			}
+		}
+		itemDef
+		{
+			rect 144 30 128 15 0 0
+			visible 1
+			forecolor 0.65 0.65 0.65 1
+			textalign 8
+			textalignx 12
+			textscale 0.375
+			text "@MPUI_RULES_30SECONDS"
+			dvarTest "scr_sd_bombtimer"
+			focusDvar { "30" }
+			visible when ( "@MPUI_RULES_30SECONDS" != "" )
+			action
+			{
+				setdvar "scr_sd_bombtimer" "30" play "mouse_click";
+				close self;
+			}
+			leaveFocus
+			{
+				play "mouse_submenu_over";
+			}
+		}
+		itemDef
+		{
+			rect 144 45 128 15 0 0
+			visible 1
+			forecolor 0.65 0.65 0.65 1
+			textalign 8
+			textalignx 12
+			textscale 0.375
+			text "@MPUI_RULES_45SECONDS"
+			dvarTest "scr_sd_bombtimer"
+			focusDvar { "45" }
+			visible when ( "@MPUI_RULES_45SECONDS" != "" )
+			action
+			{
+				setdvar "scr_sd_bombtimer" "45" play "mouse_click";
+				close self;
+			}
+			leaveFocus
+			{
+				play "mouse_submenu_over";
+			}
+		}
+		itemDef
+		{
+			rect 144 60 128 15 0 0
+			visible 1
+			forecolor 0.65 0.65 0.65 1
+			textalign 8
+			textalignx 12
+			textscale 0.375
+			text "@MPUI_RULES_1MINUTE"
+			dvarTest "scr_sd_bombtimer"
+			focusDvar { "60" }
+			visible when ( "@MPUI_RULES_1MINUTE" != "" )
+			action
+			{
+				setdvar "scr_sd_bombtimer" "60" play "mouse_click";
+				close self;
+			}
+			leaveFocus
+			{
+				play "mouse_submenu_over";
+			}
+		}
+		itemDef
+		{
+			rect 144 75 128 15 0 0
+			visible 1
+			forecolor 0.65 0.65 0.65 1
+			textalign 8
+			textalignx 12
+			textscale 0.375
+			dvarTest "scr_sd_bombtimer"
+			focusDvar { 0 }
+			visible when ( "" != "" )
+			action
+			{
+				setdvar "scr_sd_bombtimer" 0 play "mouse_click";
+				close self;
+			}
+			leaveFocus
+			{
+				play "mouse_submenu_over";
+			}
+		}
+	}
+}

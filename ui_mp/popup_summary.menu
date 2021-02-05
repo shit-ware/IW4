@@ -1,0 +1,284 @@
+{
+	menuDef
+	{
+		name "popup_summary"
+		rect -272 50 544 337 2 1
+		popup
+		outOfBoundsClick
+		visible 1
+		style 1
+		forecolor 1 1 1 1
+		backcolor 1 1 1 1
+		background "white"
+		focuscolor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		allowedBinding "+talk"
+		visible when ( !( menuisopen( "page_unlocks_titles" ) || menuisopen( "page_unlocks_emblems" ) || menuisopen( "page_unlocks_perks" ) || menuisopen( "page_unlocks_weapons" ) || menuisopen( "page_unlocks_features" ) ) )
+		onOpen
+		{
+			setLocalVarInt "ui_centerPopup" ( 1 );
+			if ( !( getclientmatchdatadef( ) != "" ) )
+			{
+				if ( dvarbool( "splitscreen" ) )
+				{
+					if ( splitscreenplayercount( ) >= 1 )
+					{
+						setPlayerDataSplitscreen ( 0 , "round" , "awardCount" , 0 );
+					}
+					if ( splitscreenplayercount( ) >= 2 )
+					{
+						setPlayerDataSplitscreen ( 1 , "round" , "awardCount" , 0 );
+					}
+					if ( splitscreenplayercount( ) >= 3 )
+					{
+						setPlayerDataSplitscreen ( 2 , "round" , "awardCount" , 0 );
+					}
+					if ( splitscreenplayercount( ) >= 4 )
+					{
+						setPlayerDataSplitscreen ( 3 , "round" , "awardCount" , 0 );
+					}
+				}
+				else
+				{
+					setPlayerData ( "round" , "awardCount" , 0 );
+				}
+				uiScript "clearClientMatchData";
+			}
+			if ( ( unlockeditemcount( "title" ) ) )
+			{
+				open "page_unlocks_titles";
+			}
+			else
+			{
+				if ( ( unlockeditemcount( "icon" ) ) )
+				{
+					open "page_unlocks_emblems";
+				}
+				else
+				{
+					if ( ( unlockeditemcount( "perk" ) ) )
+					{
+						open "page_unlocks_perks";
+					}
+					else
+					{
+						if ( ( unlockeditemcount( "weapon" ) || unlockeditemcount( "attachment" ) || unlockeditemcount( "camo" ) ) )
+						{
+							open "page_unlocks_weapons";
+						}
+						else
+						{
+							if ( ( unlockeditemcount( "feature" ) || unlockeditemcount( "challenge" ) ) )
+							{
+								open "page_unlocks_features";
+							}
+							else
+							{
+								open "page_summary";
+							}
+						}
+					}
+				}
+			}
+			setLocalVarString "ui_scoreboardType" ( getplayerdata( "round" , "scoreboardType" ) );
+			;;
+		}
+		onClose
+		{
+			setLocalVarInt "ui_centerPopup" ( 0 );
+			close "page_unlocks_features";
+			close "page_summary";
+			close "page_progress";
+			close "page_highlights";
+			close "page_scoreboard";
+		}
+		onEsc
+		{
+			close self;
+			close self;
+		}
+		itemDef
+		{
+			rect -854 -480 3416 1920 0 0
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0 0 0 0.66
+			background "white"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -854 -480 3416 1920 0 0
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "xpbar_stencilbase"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 0 544 337 0 0
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.5 0.5 1
+			background "white"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 0 1708 480 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.4
+			background "mw2_popup_bg_fogstencil"
+			textscale 0.55
+			exp rect x ( 0 - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 -1708 -480 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0.85 0.85 0.85 1
+			background "mw2_popup_bg_fogscroll"
+			textscale 0.55
+			exp rect x ( 0 - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 544 0 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "mockup_popup_bg_stencilfill"
+			textscale 0.55
+			exp rect h ( 337 )
+		}
+		itemDef
+		{
+			rect 0 0 -1708 -480 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.4
+			background "mw2_popup_bg_fogstencil"
+			textscale 0.55
+			exp rect x ( ( - 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 -1708 -480 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0.85 0.85 0.85 1
+			background "mw2_popup_bg_fogscroll"
+			textscale 0.55
+			exp rect x ( ( - 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) ) )
+		}
+		itemDef
+		{
+			rect -64 -64 64 64 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_tl"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 0 -64 544 64 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_t"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 544 -64 64 64 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_tr"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 544 0 64 0 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_r"
+			textscale 0.55
+			exp rect h ( 337 )
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 544 0 64 64 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_br"
+			textscale 0.55
+			exp rect y ( ( 0 - 0 ) + ( 337 ) )
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 0 0 544 64 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_b"
+			textscale 0.55
+			exp rect y ( ( 0 - 0 ) + ( 337 ) )
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect -64 0 64 64 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_bl"
+			textscale 0.55
+			exp rect y ( ( 0 - 0 ) + ( 337 ) )
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect -64 0 64 0 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_l"
+			textscale 0.55
+			exp rect h ( 337 )
+			visible when ( 1 )
+		}
+	}
+}

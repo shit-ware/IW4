@@ -1,0 +1,2401 @@
+{
+	menuDef
+	{
+		name "page_highlights"
+		rect 0 50 544 337 2 1
+		popup
+		outOfBoundsClick
+		style 1
+		forecolor 1 1 1 1
+		focuscolor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		exp rect x ( - ( 544 / 2 ) )
+		
+		{
+			if ( "page_highlights" == "page_summary" )
+			{
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					close self;
+					open "page_progress";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( 1 );
+				}
+			}
+			if ( "page_highlights" == "page_progress" )
+			{
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					close self;
+					open "page_highlights";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( 1 );
+				}
+			}
+			if ( "page_highlights" == "page_highlights" )
+			{
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					close self;
+					open "page_scoreboard";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( 1 );
+				}
+			}
+		}
+		
+		{
+			if ( "page_highlights" == "page_summary" )
+			{
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					close self;
+					open "page_progress";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( 1 );
+				}
+			}
+			if ( "page_highlights" == "page_progress" )
+			{
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					close self;
+					open "page_highlights";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( 1 );
+				}
+			}
+			if ( "page_highlights" == "page_highlights" )
+			{
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					close self;
+					open "page_scoreboard";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( 1 );
+				}
+			}
+		}
+		
+		{
+			if ( "page_highlights" == "page_summary" )
+			{
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					close self;
+					open "page_progress";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( 1 );
+				}
+			}
+			if ( "page_highlights" == "page_progress" )
+			{
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					close self;
+					open "page_highlights";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( 1 );
+				}
+			}
+			if ( "page_highlights" == "page_highlights" )
+			{
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					close self;
+					open "page_scoreboard";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( 1 );
+				}
+			}
+		}
+		
+		{
+			if ( "page_highlights" == "page_summary" )
+			{
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					close self;
+					open "page_progress";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( 1 );
+				}
+			}
+			if ( "page_highlights" == "page_progress" )
+			{
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					close self;
+					open "page_highlights";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( 1 );
+				}
+			}
+			if ( "page_highlights" == "page_highlights" )
+			{
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					close self;
+					open "page_scoreboard";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( 1 );
+				}
+			}
+		}
+		
+		{
+			if ( "page_highlights" == "page_progress" )
+			{
+				close self;
+				open "page_summary";
+				play "mouse_over";
+				setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+				;;
+				setLocalVarInt "ui_switchDir" ( - 1 ) );
+			}
+			if ( "page_highlights" == "page_highlights" )
+			{
+				close self;
+				open "page_progress";
+				play "mouse_over";
+				setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+				;;
+				setLocalVarInt "ui_switchDir" ( - 1 ) );
+			}
+			if ( "page_highlights" == "page_scoreboard" )
+			{
+				close self;
+				open "page_highlights";
+				play "mouse_over";
+				setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+				;;
+				setLocalVarInt "ui_switchDir" ( - 1 ) );
+			}
+		}
+		
+		{
+			if ( "page_highlights" == "page_progress" )
+			{
+				close self;
+				open "page_summary";
+				play "mouse_over";
+				setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+				;;
+				setLocalVarInt "ui_switchDir" ( - 1 ) );
+			}
+			if ( "page_highlights" == "page_highlights" )
+			{
+				close self;
+				open "page_progress";
+				play "mouse_over";
+				setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+				;;
+				setLocalVarInt "ui_switchDir" ( - 1 ) );
+			}
+			if ( "page_highlights" == "page_scoreboard" )
+			{
+				close self;
+				open "page_highlights";
+				play "mouse_over";
+				setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+				;;
+				setLocalVarInt "ui_switchDir" ( - 1 ) );
+			}
+		}
+		
+		{
+			if ( "page_highlights" == "page_progress" )
+			{
+				close self;
+				open "page_summary";
+				play "mouse_over";
+				setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+				;;
+				setLocalVarInt "ui_switchDir" ( - 1 ) );
+			}
+			if ( "page_highlights" == "page_highlights" )
+			{
+				close self;
+				open "page_progress";
+				play "mouse_over";
+				setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+				;;
+				setLocalVarInt "ui_switchDir" ( - 1 ) );
+			}
+			if ( "page_highlights" == "page_scoreboard" )
+			{
+				close self;
+				open "page_highlights";
+				play "mouse_over";
+				setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+				;;
+				setLocalVarInt "ui_switchDir" ( - 1 ) );
+			}
+		}
+		
+		{
+			if ( "page_highlights" == "page_progress" )
+			{
+				close self;
+				open "page_summary";
+				play "mouse_over";
+				setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+				;;
+				setLocalVarInt "ui_switchDir" ( - 1 ) );
+			}
+			if ( "page_highlights" == "page_highlights" )
+			{
+				close self;
+				open "page_progress";
+				play "mouse_over";
+				setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+				;;
+				setLocalVarInt "ui_switchDir" ( - 1 ) );
+			}
+			if ( "page_highlights" == "page_scoreboard" )
+			{
+				close self;
+				open "page_highlights";
+				play "mouse_over";
+				setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+				;;
+				setLocalVarInt "ui_switchDir" ( - 1 ) );
+			}
+		}
+		
+		{
+			close self;
+		}
+		onOpen
+		{
+			setLocalVarString "ui_currentPage" ( "page_highlights" );
+			if ( "page_highlights" == "page_summary" )
+			{
+				setLocalVarInt "ui_leftArrow" ( 0 );
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					setLocalVarInt "ui_rightArrow" ( 1 );
+				}
+				else
+				{
+					setLocalVarInt "ui_rightArrow" ( 0 );
+				}
+			}
+			if ( "page_highlights" == "page_progress" || "page_highlights" == "page_highlights" )
+			{
+				setLocalVarInt "ui_leftArrow" ( 1 );
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					setLocalVarInt "ui_rightArrow" ( 1 );
+				}
+				else
+				{
+					setLocalVarInt "ui_rightArrow" ( 0 );
+				}
+			}
+			if ( "page_highlights" == "page_scoreboard" )
+			{
+				setLocalVarInt "ui_leftArrow" ( 1 );
+				setLocalVarInt "ui_rightArrow" ( 0 );
+			}
+		}
+		onRequestClose
+		{
+			
+		}
+		onEsc
+		{
+			close self;
+			close "popup_summary";
+		}
+		itemDef
+		{
+			rect 0 0 544 28 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 5
+			textscale 0.5833
+			text "@MPUI_ACCOLADES"
+		}
+		itemDef
+		{
+			rect 5 313 272 24 2 1
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textalignx -1
+			textscale 0.375
+			exp text ( localvarstring( "ui_navbutton_a" ) )
+			action
+			{
+				play "mouse_click";
+				"escape" self;
+			}
+		}
+		itemDef
+		{
+			rect 0 0 544 285 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 0.3
+			background "white"
+			textscale 0.55
+			exp rect x ( 0 )
+			exp rect y ( ( ( 28 ) ) )
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 0 0 544 285 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 0.125
+			background "gradient_vertical_rect"
+			textscale 0.55
+			exp rect x ( 0 )
+			exp rect y ( ( ( 28 ) ) )
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 50 43 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 0 < getclientmatchdata( "highlightCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "highlights" , 0 , "clientId" ) , "xuid" ) )
+		}
+		itemDef
+		{
+			rect 242 44 13 13 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( ( 0 < getclientmatchdata( "highlightCount" ) ) )
+			exp material ( tablelookup( "mp/awardTable.csv" , 1 , getclientmatchdata( "highlights" , 0 , "award" ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 256 43 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 0 < getclientmatchdata( "highlightCount" ) ) )
+			exp text ( "@" + tablelookup( "mp/awardTable.csv" , 1 , getclientmatchdata( "highlights" , 0 , "award" ) , 4 ) )
+		}
+		itemDef
+		{
+			rect 44 43 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( getclientmatchdata( "highlights" , 0 , "value" ) )
+		}
+		itemDef
+		{
+			rect 44 43 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( getclientmatchdata( "highlights" , 0 , "value" ) / 36 ) + " yds" )
+		}
+		itemDef
+		{
+			rect 44 43 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( secondsascountdown( getclientmatchdata( "highlights" , 0 , "value" ) / 1000 ) + " min" )
+		}
+		itemDef
+		{
+			rect 44 43 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 0 , "value" ) & 65535 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 0 , "value" ) & 65535 ) - int( ( getclientmatchdata( "highlights" , 0 , "value" ) & 65535 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 44 43 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 0 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 0 , "value" ) >> 16 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 0 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 0 , "value" ) >> 16 ) - int( ( getclientmatchdata( "highlights" , 0 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 0 , "value" ) >> 16 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 44 43 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( ( getclientmatchdata( "highlights" , 0 , "value" ) & 65535 ) + "/" + ( getclientmatchdata( "highlights" , 0 , "value" ) >> 16 ) )
+		}
+		itemDef
+		{
+			rect 44 43 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 0 , "value" ) / 100 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 0 , "value" ) / 100 ) - int( ( getclientmatchdata( "highlights" , 0 , "value" ) / 100 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 50 58 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 1 < getclientmatchdata( "highlightCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "highlights" , 1 , "clientId" ) , "xuid" ) )
+		}
+		itemDef
+		{
+			rect 242 59 13 13 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( ( 1 < getclientmatchdata( "highlightCount" ) ) )
+			exp material ( tablelookup( "mp/awardTable.csv" , 1 , getclientmatchdata( "highlights" , 1 , "award" ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 256 58 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 1 < getclientmatchdata( "highlightCount" ) ) )
+			exp text ( "@" + tablelookup( "mp/awardTable.csv" , 1 , getclientmatchdata( "highlights" , 1 , "award" ) , 4 ) )
+		}
+		itemDef
+		{
+			rect 44 58 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( getclientmatchdata( "highlights" , 1 , "value" ) )
+		}
+		itemDef
+		{
+			rect 44 58 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( getclientmatchdata( "highlights" , 1 , "value" ) / 36 ) + " yds" )
+		}
+		itemDef
+		{
+			rect 44 58 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( secondsascountdown( getclientmatchdata( "highlights" , 1 , "value" ) / 1000 ) + " min" )
+		}
+		itemDef
+		{
+			rect 44 58 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 1 , "value" ) & 65535 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 1 , "value" ) & 65535 ) - int( ( getclientmatchdata( "highlights" , 1 , "value" ) & 65535 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 44 58 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 1 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 1 , "value" ) >> 16 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 1 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 1 , "value" ) >> 16 ) - int( ( getclientmatchdata( "highlights" , 1 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 1 , "value" ) >> 16 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 44 58 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( ( getclientmatchdata( "highlights" , 1 , "value" ) & 65535 ) + "/" + ( getclientmatchdata( "highlights" , 1 , "value" ) >> 16 ) )
+		}
+		itemDef
+		{
+			rect 44 58 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 1 , "value" ) / 100 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 1 , "value" ) / 100 ) - int( ( getclientmatchdata( "highlights" , 1 , "value" ) / 100 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 50 73 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 2 < getclientmatchdata( "highlightCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "highlights" , 2 , "clientId" ) , "xuid" ) )
+		}
+		itemDef
+		{
+			rect 242 74 13 13 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( ( 2 < getclientmatchdata( "highlightCount" ) ) )
+			exp material ( tablelookup( "mp/awardTable.csv" , 1 , getclientmatchdata( "highlights" , 2 , "award" ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 256 73 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 2 < getclientmatchdata( "highlightCount" ) ) )
+			exp text ( "@" + tablelookup( "mp/awardTable.csv" , 1 , getclientmatchdata( "highlights" , 2 , "award" ) , 4 ) )
+		}
+		itemDef
+		{
+			rect 44 73 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( getclientmatchdata( "highlights" , 2 , "value" ) )
+		}
+		itemDef
+		{
+			rect 44 73 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( getclientmatchdata( "highlights" , 2 , "value" ) / 36 ) + " yds" )
+		}
+		itemDef
+		{
+			rect 44 73 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( secondsascountdown( getclientmatchdata( "highlights" , 2 , "value" ) / 1000 ) + " min" )
+		}
+		itemDef
+		{
+			rect 44 73 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 2 , "value" ) & 65535 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 2 , "value" ) & 65535 ) - int( ( getclientmatchdata( "highlights" , 2 , "value" ) & 65535 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 44 73 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 2 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 2 , "value" ) >> 16 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 2 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 2 , "value" ) >> 16 ) - int( ( getclientmatchdata( "highlights" , 2 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 2 , "value" ) >> 16 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 44 73 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( ( getclientmatchdata( "highlights" , 2 , "value" ) & 65535 ) + "/" + ( getclientmatchdata( "highlights" , 2 , "value" ) >> 16 ) )
+		}
+		itemDef
+		{
+			rect 44 73 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 2 , "value" ) / 100 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 2 , "value" ) / 100 ) - int( ( getclientmatchdata( "highlights" , 2 , "value" ) / 100 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 50 88 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 3 < getclientmatchdata( "highlightCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "highlights" , 3 , "clientId" ) , "xuid" ) )
+		}
+		itemDef
+		{
+			rect 242 89 13 13 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( ( 3 < getclientmatchdata( "highlightCount" ) ) )
+			exp material ( tablelookup( "mp/awardTable.csv" , 1 , getclientmatchdata( "highlights" , 3 , "award" ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 256 88 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 3 < getclientmatchdata( "highlightCount" ) ) )
+			exp text ( "@" + tablelookup( "mp/awardTable.csv" , 1 , getclientmatchdata( "highlights" , 3 , "award" ) , 4 ) )
+		}
+		itemDef
+		{
+			rect 44 88 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( getclientmatchdata( "highlights" , 3 , "value" ) )
+		}
+		itemDef
+		{
+			rect 44 88 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( getclientmatchdata( "highlights" , 3 , "value" ) / 36 ) + " yds" )
+		}
+		itemDef
+		{
+			rect 44 88 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( secondsascountdown( getclientmatchdata( "highlights" , 3 , "value" ) / 1000 ) + " min" )
+		}
+		itemDef
+		{
+			rect 44 88 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 3 , "value" ) & 65535 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 3 , "value" ) & 65535 ) - int( ( getclientmatchdata( "highlights" , 3 , "value" ) & 65535 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 44 88 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 3 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 3 , "value" ) >> 16 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 3 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 3 , "value" ) >> 16 ) - int( ( getclientmatchdata( "highlights" , 3 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 3 , "value" ) >> 16 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 44 88 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( ( getclientmatchdata( "highlights" , 3 , "value" ) & 65535 ) + "/" + ( getclientmatchdata( "highlights" , 3 , "value" ) >> 16 ) )
+		}
+		itemDef
+		{
+			rect 44 88 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 3 , "value" ) / 100 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 3 , "value" ) / 100 ) - int( ( getclientmatchdata( "highlights" , 3 , "value" ) / 100 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 50 103 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 4 < getclientmatchdata( "highlightCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "highlights" , 4 , "clientId" ) , "xuid" ) )
+		}
+		itemDef
+		{
+			rect 242 104 13 13 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( ( 4 < getclientmatchdata( "highlightCount" ) ) )
+			exp material ( tablelookup( "mp/awardTable.csv" , 1 , getclientmatchdata( "highlights" , 4 , "award" ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 256 103 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 4 < getclientmatchdata( "highlightCount" ) ) )
+			exp text ( "@" + tablelookup( "mp/awardTable.csv" , 1 , getclientmatchdata( "highlights" , 4 , "award" ) , 4 ) )
+		}
+		itemDef
+		{
+			rect 44 103 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( getclientmatchdata( "highlights" , 4 , "value" ) )
+		}
+		itemDef
+		{
+			rect 44 103 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( getclientmatchdata( "highlights" , 4 , "value" ) / 36 ) + " yds" )
+		}
+		itemDef
+		{
+			rect 44 103 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( secondsascountdown( getclientmatchdata( "highlights" , 4 , "value" ) / 1000 ) + " min" )
+		}
+		itemDef
+		{
+			rect 44 103 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 4 , "value" ) & 65535 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 4 , "value" ) & 65535 ) - int( ( getclientmatchdata( "highlights" , 4 , "value" ) & 65535 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 44 103 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 4 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 4 , "value" ) >> 16 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 4 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 4 , "value" ) >> 16 ) - int( ( getclientmatchdata( "highlights" , 4 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 4 , "value" ) >> 16 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 44 103 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( ( getclientmatchdata( "highlights" , 4 , "value" ) & 65535 ) + "/" + ( getclientmatchdata( "highlights" , 4 , "value" ) >> 16 ) )
+		}
+		itemDef
+		{
+			rect 44 103 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 4 , "value" ) / 100 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 4 , "value" ) / 100 ) - int( ( getclientmatchdata( "highlights" , 4 , "value" ) / 100 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 50 118 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 5 < getclientmatchdata( "highlightCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "highlights" , 5 , "clientId" ) , "xuid" ) )
+		}
+		itemDef
+		{
+			rect 242 119 13 13 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( ( 5 < getclientmatchdata( "highlightCount" ) ) )
+			exp material ( tablelookup( "mp/awardTable.csv" , 1 , getclientmatchdata( "highlights" , 5 , "award" ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 256 118 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 5 < getclientmatchdata( "highlightCount" ) ) )
+			exp text ( "@" + tablelookup( "mp/awardTable.csv" , 1 , getclientmatchdata( "highlights" , 5 , "award" ) , 4 ) )
+		}
+		itemDef
+		{
+			rect 44 118 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( getclientmatchdata( "highlights" , 5 , "value" ) )
+		}
+		itemDef
+		{
+			rect 44 118 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( getclientmatchdata( "highlights" , 5 , "value" ) / 36 ) + " yds" )
+		}
+		itemDef
+		{
+			rect 44 118 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( secondsascountdown( getclientmatchdata( "highlights" , 5 , "value" ) / 1000 ) + " min" )
+		}
+		itemDef
+		{
+			rect 44 118 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 5 , "value" ) & 65535 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 5 , "value" ) & 65535 ) - int( ( getclientmatchdata( "highlights" , 5 , "value" ) & 65535 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 44 118 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 5 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 5 , "value" ) >> 16 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 5 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 5 , "value" ) >> 16 ) - int( ( getclientmatchdata( "highlights" , 5 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 5 , "value" ) >> 16 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 44 118 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( ( getclientmatchdata( "highlights" , 5 , "value" ) & 65535 ) + "/" + ( getclientmatchdata( "highlights" , 5 , "value" ) >> 16 ) )
+		}
+		itemDef
+		{
+			rect 44 118 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 5 , "value" ) / 100 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 5 , "value" ) / 100 ) - int( ( getclientmatchdata( "highlights" , 5 , "value" ) / 100 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 50 133 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 6 < getclientmatchdata( "highlightCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "highlights" , 6 , "clientId" ) , "xuid" ) )
+		}
+		itemDef
+		{
+			rect 242 134 13 13 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( ( 6 < getclientmatchdata( "highlightCount" ) ) )
+			exp material ( tablelookup( "mp/awardTable.csv" , 1 , getclientmatchdata( "highlights" , 6 , "award" ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 256 133 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 6 < getclientmatchdata( "highlightCount" ) ) )
+			exp text ( "@" + tablelookup( "mp/awardTable.csv" , 1 , getclientmatchdata( "highlights" , 6 , "award" ) , 4 ) )
+		}
+		itemDef
+		{
+			rect 44 133 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( getclientmatchdata( "highlights" , 6 , "value" ) )
+		}
+		itemDef
+		{
+			rect 44 133 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( getclientmatchdata( "highlights" , 6 , "value" ) / 36 ) + " yds" )
+		}
+		itemDef
+		{
+			rect 44 133 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( secondsascountdown( getclientmatchdata( "highlights" , 6 , "value" ) / 1000 ) + " min" )
+		}
+		itemDef
+		{
+			rect 44 133 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 6 , "value" ) & 65535 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 6 , "value" ) & 65535 ) - int( ( getclientmatchdata( "highlights" , 6 , "value" ) & 65535 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 44 133 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 6 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 6 , "value" ) >> 16 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 6 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 6 , "value" ) >> 16 ) - int( ( getclientmatchdata( "highlights" , 6 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 6 , "value" ) >> 16 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 44 133 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( ( getclientmatchdata( "highlights" , 6 , "value" ) & 65535 ) + "/" + ( getclientmatchdata( "highlights" , 6 , "value" ) >> 16 ) )
+		}
+		itemDef
+		{
+			rect 44 133 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 6 , "value" ) / 100 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 6 , "value" ) / 100 ) - int( ( getclientmatchdata( "highlights" , 6 , "value" ) / 100 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 50 148 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 7 < getclientmatchdata( "highlightCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "highlights" , 7 , "clientId" ) , "xuid" ) )
+		}
+		itemDef
+		{
+			rect 242 149 13 13 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( ( 7 < getclientmatchdata( "highlightCount" ) ) )
+			exp material ( tablelookup( "mp/awardTable.csv" , 1 , getclientmatchdata( "highlights" , 7 , "award" ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 256 148 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 7 < getclientmatchdata( "highlightCount" ) ) )
+			exp text ( "@" + tablelookup( "mp/awardTable.csv" , 1 , getclientmatchdata( "highlights" , 7 , "award" ) , 4 ) )
+		}
+		itemDef
+		{
+			rect 44 148 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( getclientmatchdata( "highlights" , 7 , "value" ) )
+		}
+		itemDef
+		{
+			rect 44 148 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( getclientmatchdata( "highlights" , 7 , "value" ) / 36 ) + " yds" )
+		}
+		itemDef
+		{
+			rect 44 148 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( secondsascountdown( getclientmatchdata( "highlights" , 7 , "value" ) / 1000 ) + " min" )
+		}
+		itemDef
+		{
+			rect 44 148 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 7 , "value" ) & 65535 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 7 , "value" ) & 65535 ) - int( ( getclientmatchdata( "highlights" , 7 , "value" ) & 65535 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 44 148 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 7 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 7 , "value" ) >> 16 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 7 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 7 , "value" ) >> 16 ) - int( ( getclientmatchdata( "highlights" , 7 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 7 , "value" ) >> 16 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 44 148 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( ( getclientmatchdata( "highlights" , 7 , "value" ) & 65535 ) + "/" + ( getclientmatchdata( "highlights" , 7 , "value" ) >> 16 ) )
+		}
+		itemDef
+		{
+			rect 44 148 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 7 , "value" ) / 100 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 7 , "value" ) / 100 ) - int( ( getclientmatchdata( "highlights" , 7 , "value" ) / 100 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 50 163 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 8 < getclientmatchdata( "highlightCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "highlights" , 8 , "clientId" ) , "xuid" ) )
+		}
+		itemDef
+		{
+			rect 242 164 13 13 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( ( 8 < getclientmatchdata( "highlightCount" ) ) )
+			exp material ( tablelookup( "mp/awardTable.csv" , 1 , getclientmatchdata( "highlights" , 8 , "award" ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 256 163 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 8 < getclientmatchdata( "highlightCount" ) ) )
+			exp text ( "@" + tablelookup( "mp/awardTable.csv" , 1 , getclientmatchdata( "highlights" , 8 , "award" ) , 4 ) )
+		}
+		itemDef
+		{
+			rect 44 163 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( getclientmatchdata( "highlights" , 8 , "value" ) )
+		}
+		itemDef
+		{
+			rect 44 163 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( getclientmatchdata( "highlights" , 8 , "value" ) / 36 ) + " yds" )
+		}
+		itemDef
+		{
+			rect 44 163 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( secondsascountdown( getclientmatchdata( "highlights" , 8 , "value" ) / 1000 ) + " min" )
+		}
+		itemDef
+		{
+			rect 44 163 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 8 , "value" ) & 65535 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 8 , "value" ) & 65535 ) - int( ( getclientmatchdata( "highlights" , 8 , "value" ) & 65535 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 44 163 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 8 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 8 , "value" ) >> 16 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 8 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 8 , "value" ) >> 16 ) - int( ( getclientmatchdata( "highlights" , 8 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 8 , "value" ) >> 16 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 44 163 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( ( getclientmatchdata( "highlights" , 8 , "value" ) & 65535 ) + "/" + ( getclientmatchdata( "highlights" , 8 , "value" ) >> 16 ) )
+		}
+		itemDef
+		{
+			rect 44 163 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 8 , "value" ) / 100 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 8 , "value" ) / 100 ) - int( ( getclientmatchdata( "highlights" , 8 , "value" ) / 100 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 50 178 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 9 < getclientmatchdata( "highlightCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "highlights" , 9 , "clientId" ) , "xuid" ) )
+		}
+		itemDef
+		{
+			rect 242 179 13 13 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( ( 9 < getclientmatchdata( "highlightCount" ) ) )
+			exp material ( tablelookup( "mp/awardTable.csv" , 1 , getclientmatchdata( "highlights" , 9 , "award" ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 256 178 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 9 < getclientmatchdata( "highlightCount" ) ) )
+			exp text ( "@" + tablelookup( "mp/awardTable.csv" , 1 , getclientmatchdata( "highlights" , 9 , "award" ) , 4 ) )
+		}
+		itemDef
+		{
+			rect 44 178 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( getclientmatchdata( "highlights" , 9 , "value" ) )
+		}
+		itemDef
+		{
+			rect 44 178 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( getclientmatchdata( "highlights" , 9 , "value" ) / 36 ) + " yds" )
+		}
+		itemDef
+		{
+			rect 44 178 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( secondsascountdown( getclientmatchdata( "highlights" , 9 , "value" ) / 1000 ) + " min" )
+		}
+		itemDef
+		{
+			rect 44 178 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 9 , "value" ) & 65535 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 9 , "value" ) & 65535 ) - int( ( getclientmatchdata( "highlights" , 9 , "value" ) & 65535 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 44 178 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 9 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 9 , "value" ) >> 16 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 9 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 9 , "value" ) >> 16 ) - int( ( getclientmatchdata( "highlights" , 9 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 9 , "value" ) >> 16 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 44 178 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( ( getclientmatchdata( "highlights" , 9 , "value" ) & 65535 ) + "/" + ( getclientmatchdata( "highlights" , 9 , "value" ) >> 16 ) )
+		}
+		itemDef
+		{
+			rect 44 178 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 9 , "value" ) / 100 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 9 , "value" ) / 100 ) - int( ( getclientmatchdata( "highlights" , 9 , "value" ) / 100 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 50 193 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 10 < getclientmatchdata( "highlightCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "highlights" , 10 , "clientId" ) , "xuid" ) )
+		}
+		itemDef
+		{
+			rect 242 194 13 13 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( ( 10 < getclientmatchdata( "highlightCount" ) ) )
+			exp material ( tablelookup( "mp/awardTable.csv" , 1 , getclientmatchdata( "highlights" , 10 , "award" ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 256 193 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 10 < getclientmatchdata( "highlightCount" ) ) )
+			exp text ( "@" + tablelookup( "mp/awardTable.csv" , 1 , getclientmatchdata( "highlights" , 10 , "award" ) , 4 ) )
+		}
+		itemDef
+		{
+			rect 44 193 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( getclientmatchdata( "highlights" , 10 , "value" ) )
+		}
+		itemDef
+		{
+			rect 44 193 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( getclientmatchdata( "highlights" , 10 , "value" ) / 36 ) + " yds" )
+		}
+		itemDef
+		{
+			rect 44 193 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( secondsascountdown( getclientmatchdata( "highlights" , 10 , "value" ) / 1000 ) + " min" )
+		}
+		itemDef
+		{
+			rect 44 193 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 10 , "value" ) & 65535 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 10 , "value" ) & 65535 ) - int( ( getclientmatchdata( "highlights" , 10 , "value" ) & 65535 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 44 193 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 10 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 10 , "value" ) >> 16 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 10 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 10 , "value" ) >> 16 ) - int( ( getclientmatchdata( "highlights" , 10 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 10 , "value" ) >> 16 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 44 193 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( ( getclientmatchdata( "highlights" , 10 , "value" ) & 65535 ) + "/" + ( getclientmatchdata( "highlights" , 10 , "value" ) >> 16 ) )
+		}
+		itemDef
+		{
+			rect 44 193 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 10 , "value" ) / 100 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 10 , "value" ) / 100 ) - int( ( getclientmatchdata( "highlights" , 10 , "value" ) / 100 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 50 208 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 11 < getclientmatchdata( "highlightCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "highlights" , 11 , "clientId" ) , "xuid" ) )
+		}
+		itemDef
+		{
+			rect 242 209 13 13 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( ( 11 < getclientmatchdata( "highlightCount" ) ) )
+			exp material ( tablelookup( "mp/awardTable.csv" , 1 , getclientmatchdata( "highlights" , 11 , "award" ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 256 208 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 11 < getclientmatchdata( "highlightCount" ) ) )
+			exp text ( "@" + tablelookup( "mp/awardTable.csv" , 1 , getclientmatchdata( "highlights" , 11 , "award" ) , 4 ) )
+		}
+		itemDef
+		{
+			rect 44 208 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( getclientmatchdata( "highlights" , 11 , "value" ) )
+		}
+		itemDef
+		{
+			rect 44 208 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( getclientmatchdata( "highlights" , 11 , "value" ) / 36 ) + " yds" )
+		}
+		itemDef
+		{
+			rect 44 208 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( secondsascountdown( getclientmatchdata( "highlights" , 11 , "value" ) / 1000 ) + " min" )
+		}
+		itemDef
+		{
+			rect 44 208 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 11 , "value" ) & 65535 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 11 , "value" ) & 65535 ) - int( ( getclientmatchdata( "highlights" , 11 , "value" ) & 65535 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 44 208 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 11 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 11 , "value" ) >> 16 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 11 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 11 , "value" ) >> 16 ) - int( ( getclientmatchdata( "highlights" , 11 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 11 , "value" ) >> 16 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 44 208 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( ( getclientmatchdata( "highlights" , 11 , "value" ) & 65535 ) + "/" + ( getclientmatchdata( "highlights" , 11 , "value" ) >> 16 ) )
+		}
+		itemDef
+		{
+			rect 44 208 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 11 , "value" ) / 100 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 11 , "value" ) / 100 ) - int( ( getclientmatchdata( "highlights" , 11 , "value" ) / 100 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 50 223 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 12 < getclientmatchdata( "highlightCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "highlights" , 12 , "clientId" ) , "xuid" ) )
+		}
+		itemDef
+		{
+			rect 242 224 13 13 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( ( 12 < getclientmatchdata( "highlightCount" ) ) )
+			exp material ( tablelookup( "mp/awardTable.csv" , 1 , getclientmatchdata( "highlights" , 12 , "award" ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 256 223 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 12 < getclientmatchdata( "highlightCount" ) ) )
+			exp text ( "@" + tablelookup( "mp/awardTable.csv" , 1 , getclientmatchdata( "highlights" , 12 , "award" ) , 4 ) )
+		}
+		itemDef
+		{
+			rect 44 223 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( getclientmatchdata( "highlights" , 12 , "value" ) )
+		}
+		itemDef
+		{
+			rect 44 223 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( getclientmatchdata( "highlights" , 12 , "value" ) / 36 ) + " yds" )
+		}
+		itemDef
+		{
+			rect 44 223 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( secondsascountdown( getclientmatchdata( "highlights" , 12 , "value" ) / 1000 ) + " min" )
+		}
+		itemDef
+		{
+			rect 44 223 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 12 , "value" ) & 65535 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 12 , "value" ) & 65535 ) - int( ( getclientmatchdata( "highlights" , 12 , "value" ) & 65535 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 44 223 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 12 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 12 , "value" ) >> 16 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 12 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 12 , "value" ) >> 16 ) - int( ( getclientmatchdata( "highlights" , 12 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 12 , "value" ) >> 16 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 44 223 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( ( getclientmatchdata( "highlights" , 12 , "value" ) & 65535 ) + "/" + ( getclientmatchdata( "highlights" , 12 , "value" ) >> 16 ) )
+		}
+		itemDef
+		{
+			rect 44 223 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 12 , "value" ) / 100 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 12 , "value" ) / 100 ) - int( ( getclientmatchdata( "highlights" , 12 , "value" ) / 100 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 50 238 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 13 < getclientmatchdata( "highlightCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "highlights" , 13 , "clientId" ) , "xuid" ) )
+		}
+		itemDef
+		{
+			rect 242 239 13 13 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( ( 13 < getclientmatchdata( "highlightCount" ) ) )
+			exp material ( tablelookup( "mp/awardTable.csv" , 1 , getclientmatchdata( "highlights" , 13 , "award" ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 256 238 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 13 < getclientmatchdata( "highlightCount" ) ) )
+			exp text ( "@" + tablelookup( "mp/awardTable.csv" , 1 , getclientmatchdata( "highlights" , 13 , "award" ) , 4 ) )
+		}
+		itemDef
+		{
+			rect 44 238 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( getclientmatchdata( "highlights" , 13 , "value" ) )
+		}
+		itemDef
+		{
+			rect 44 238 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( getclientmatchdata( "highlights" , 13 , "value" ) / 36 ) + " yds" )
+		}
+		itemDef
+		{
+			rect 44 238 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( secondsascountdown( getclientmatchdata( "highlights" , 13 , "value" ) / 1000 ) + " min" )
+		}
+		itemDef
+		{
+			rect 44 238 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 13 , "value" ) & 65535 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 13 , "value" ) & 65535 ) - int( ( getclientmatchdata( "highlights" , 13 , "value" ) & 65535 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 44 238 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 13 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 13 , "value" ) >> 16 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 13 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 13 , "value" ) >> 16 ) - int( ( getclientmatchdata( "highlights" , 13 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 13 , "value" ) >> 16 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 44 238 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( ( getclientmatchdata( "highlights" , 13 , "value" ) & 65535 ) + "/" + ( getclientmatchdata( "highlights" , 13 , "value" ) >> 16 ) )
+		}
+		itemDef
+		{
+			rect 44 238 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 13 , "value" ) / 100 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 13 , "value" ) / 100 ) - int( ( getclientmatchdata( "highlights" , 13 , "value" ) / 100 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 50 253 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 14 < getclientmatchdata( "highlightCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "highlights" , 14 , "clientId" ) , "xuid" ) )
+		}
+		itemDef
+		{
+			rect 242 254 13 13 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( ( 14 < getclientmatchdata( "highlightCount" ) ) )
+			exp material ( tablelookup( "mp/awardTable.csv" , 1 , getclientmatchdata( "highlights" , 14 , "award" ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 256 253 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 14 < getclientmatchdata( "highlightCount" ) ) )
+			exp text ( "@" + tablelookup( "mp/awardTable.csv" , 1 , getclientmatchdata( "highlights" , 14 , "award" ) , 4 ) )
+		}
+		itemDef
+		{
+			rect 44 253 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( getclientmatchdata( "highlights" , 14 , "value" ) )
+		}
+		itemDef
+		{
+			rect 44 253 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( getclientmatchdata( "highlights" , 14 , "value" ) / 36 ) + " yds" )
+		}
+		itemDef
+		{
+			rect 44 253 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( secondsascountdown( getclientmatchdata( "highlights" , 14 , "value" ) / 1000 ) + " min" )
+		}
+		itemDef
+		{
+			rect 44 253 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 14 , "value" ) & 65535 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 14 , "value" ) & 65535 ) - int( ( getclientmatchdata( "highlights" , 14 , "value" ) & 65535 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 44 253 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 14 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 14 , "value" ) >> 16 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 14 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 14 , "value" ) >> 16 ) - int( ( getclientmatchdata( "highlights" , 14 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 14 , "value" ) >> 16 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 44 253 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( ( getclientmatchdata( "highlights" , 14 , "value" ) & 65535 ) + "/" + ( getclientmatchdata( "highlights" , 14 , "value" ) >> 16 ) )
+		}
+		itemDef
+		{
+			rect 44 253 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 14 , "value" ) / 100 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 14 , "value" ) / 100 ) - int( ( getclientmatchdata( "highlights" , 14 , "value" ) / 100 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 50 268 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 15 < getclientmatchdata( "highlightCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "highlights" , 15 , "clientId" ) , "xuid" ) )
+		}
+		itemDef
+		{
+			rect 242 269 13 13 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( ( 15 < getclientmatchdata( "highlightCount" ) ) )
+			exp material ( tablelookup( "mp/awardTable.csv" , 1 , getclientmatchdata( "highlights" , 15 , "award" ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 256 268 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 15 < getclientmatchdata( "highlightCount" ) ) )
+			exp text ( "@" + tablelookup( "mp/awardTable.csv" , 1 , getclientmatchdata( "highlights" , 15 , "award" ) , 4 ) )
+		}
+		itemDef
+		{
+			rect 44 268 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( getclientmatchdata( "highlights" , 15 , "value" ) )
+		}
+		itemDef
+		{
+			rect 44 268 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( getclientmatchdata( "highlights" , 15 , "value" ) / 36 ) + " yds" )
+		}
+		itemDef
+		{
+			rect 44 268 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( secondsascountdown( getclientmatchdata( "highlights" , 15 , "value" ) / 1000 ) + " min" )
+		}
+		itemDef
+		{
+			rect 44 268 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 15 , "value" ) & 65535 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 15 , "value" ) & 65535 ) - int( ( getclientmatchdata( "highlights" , 15 , "value" ) & 65535 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 44 268 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 15 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 15 , "value" ) >> 16 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 15 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 15 , "value" ) >> 16 ) - int( ( getclientmatchdata( "highlights" , 15 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 15 , "value" ) >> 16 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 44 268 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( ( getclientmatchdata( "highlights" , 15 , "value" ) & 65535 ) + "/" + ( getclientmatchdata( "highlights" , 15 , "value" ) >> 16 ) )
+		}
+		itemDef
+		{
+			rect 44 268 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 15 , "value" ) / 100 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 15 , "value" ) / 100 ) - int( ( getclientmatchdata( "highlights" , 15 , "value" ) / 100 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 50 283 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 16 < getclientmatchdata( "highlightCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "highlights" , 16 , "clientId" ) , "xuid" ) )
+		}
+		itemDef
+		{
+			rect 242 284 13 13 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( ( 16 < getclientmatchdata( "highlightCount" ) ) )
+			exp material ( tablelookup( "mp/awardTable.csv" , 1 , getclientmatchdata( "highlights" , 16 , "award" ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 256 283 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 16 < getclientmatchdata( "highlightCount" ) ) )
+			exp text ( "@" + tablelookup( "mp/awardTable.csv" , 1 , getclientmatchdata( "highlights" , 16 , "award" ) , 4 ) )
+		}
+		itemDef
+		{
+			rect 44 283 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( getclientmatchdata( "highlights" , 16 , "value" ) )
+		}
+		itemDef
+		{
+			rect 44 283 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( getclientmatchdata( "highlights" , 16 , "value" ) / 36 ) + " yds" )
+		}
+		itemDef
+		{
+			rect 44 283 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( secondsascountdown( getclientmatchdata( "highlights" , 16 , "value" ) / 1000 ) + " min" )
+		}
+		itemDef
+		{
+			rect 44 283 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 16 , "value" ) & 65535 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 16 , "value" ) & 65535 ) - int( ( getclientmatchdata( "highlights" , 16 , "value" ) & 65535 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 44 283 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 16 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 16 , "value" ) >> 16 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 16 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 16 , "value" ) >> 16 ) - int( ( getclientmatchdata( "highlights" , 16 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 16 , "value" ) >> 16 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 44 283 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( ( getclientmatchdata( "highlights" , 16 , "value" ) & 65535 ) + "/" + ( getclientmatchdata( "highlights" , 16 , "value" ) >> 16 ) )
+		}
+		itemDef
+		{
+			rect 44 283 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 16 , "value" ) / 100 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 16 , "value" ) / 100 ) - int( ( getclientmatchdata( "highlights" , 16 , "value" ) / 100 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 50 298 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 17 < getclientmatchdata( "highlightCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "highlights" , 17 , "clientId" ) , "xuid" ) )
+		}
+		itemDef
+		{
+			rect 242 299 13 13 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( ( 17 < getclientmatchdata( "highlightCount" ) ) )
+			exp material ( tablelookup( "mp/awardTable.csv" , 1 , getclientmatchdata( "highlights" , 17 , "award" ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 256 298 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 17 < getclientmatchdata( "highlightCount" ) ) )
+			exp text ( "@" + tablelookup( "mp/awardTable.csv" , 1 , getclientmatchdata( "highlights" , 17 , "award" ) , 4 ) )
+		}
+		itemDef
+		{
+			rect 44 298 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( getclientmatchdata( "highlights" , 17 , "value" ) )
+		}
+		itemDef
+		{
+			rect 44 298 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( getclientmatchdata( "highlights" , 17 , "value" ) / 36 ) + " yds" )
+		}
+		itemDef
+		{
+			rect 44 298 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( secondsascountdown( getclientmatchdata( "highlights" , 17 , "value" ) / 1000 ) + " min" )
+		}
+		itemDef
+		{
+			rect 44 298 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 17 , "value" ) & 65535 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 17 , "value" ) & 65535 ) - int( ( getclientmatchdata( "highlights" , 17 , "value" ) & 65535 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 44 298 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 17 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 17 , "value" ) >> 16 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 17 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 17 , "value" ) >> 16 ) - int( ( getclientmatchdata( "highlights" , 17 , "value" ) & 65535 ) / ( getclientmatchdata( "highlights" , 17 , "value" ) >> 16 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 44 298 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( ( getclientmatchdata( "highlights" , 17 , "value" ) & 65535 ) + "/" + ( getclientmatchdata( "highlights" , 17 , "value" ) >> 16 ) )
+		}
+		itemDef
+		{
+			rect 44 298 450 15 0 0
+			decoration
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			exp text ( int( ( getclientmatchdata( "highlights" , 17 , "value" ) / 100 ) ) + "." + int( ( ( getclientmatchdata( "highlights" , 17 , "value" ) / 100 ) - int( ( getclientmatchdata( "highlights" , 17 , "value" ) / 100 ) ) ) * 100 ) )
+		}
+		itemDef
+		{
+			rect 0 104.5 -32 128 0 0
+			decoration
+			visible 1
+			group "left_arrow"
+			style 3
+			forecolor 0.85 0.85 0.85 1
+			textscale 0.55
+			visible when ( localvarint( "ui_leftArrow" ) )
+			exp material ( "summary_arrow" )
+		}
+		itemDef
+		{
+			rect 0 104.5 32 128 0 0
+			visible 1
+			forecolor 1 1 1 1
+			type 1
+			textscale 0.55
+			visible when ( localvarint( "ui_leftArrow" ) )
+			action
+			{
+				if ( "page_highlights" == "page_progress" )
+				{
+					close self;
+					open "page_summary";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( - 1 ) );
+				}
+				if ( "page_highlights" == "page_highlights" )
+				{
+					close self;
+					open "page_progress";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( - 1 ) );
+				}
+				if ( "page_highlights" == "page_scoreboard" )
+				{
+					close self;
+					open "page_highlights";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( - 1 ) );
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setItemColor "left_arrow" forecolor 1 1 "0.5" 1;
+			}
+			leaveFocus
+			{
+				setItemColor "left_arrow" forecolor "0.85" "0.85" "0.85" 1;
+			}
+		}
+		itemDef
+		{
+			rect 512 104.5 32 128 0 0
+			visible 1
+			group "right_arrow"
+			style 3
+			forecolor 0.85 0.85 0.85 1
+			type 1
+			textscale 0.55
+			visible when ( localvarint( "ui_rightArrow" ) )
+			exp material ( "summary_arrow" )
+			action
+			{
+				if ( "page_highlights" == "page_summary" )
+				{
+					if ( ( getclientmatchdatadef( ) != "" ) )
+					{
+						close self;
+						open "page_progress";
+						play "mouse_over";
+						setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+						;;
+						setLocalVarInt "ui_switchDir" ( 1 );
+					}
+				}
+				if ( "page_highlights" == "page_progress" )
+				{
+					if ( ( getclientmatchdatadef( ) != "" ) )
+					{
+						close self;
+						open "page_highlights";
+						play "mouse_over";
+						setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+						;;
+						setLocalVarInt "ui_switchDir" ( 1 );
+					}
+				}
+				if ( "page_highlights" == "page_highlights" )
+				{
+					if ( ( getclientmatchdatadef( ) != "" ) )
+					{
+						close self;
+						open "page_scoreboard";
+						play "mouse_over";
+						setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+						;;
+						setLocalVarInt "ui_switchDir" ( 1 );
+					}
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setItemColor "right_arrow" forecolor 1 1 "0.5" 1;
+			}
+			leaveFocus
+			{
+				setItemColor "right_arrow" forecolor "0.85" "0.85" "0.85" 1;
+			}
+		}
+	}
+}

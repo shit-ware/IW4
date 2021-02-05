@@ -1,0 +1,455 @@
+{
+	menuDef
+	{
+		name "player_profile"
+		rect 0 0 640 480 0 0
+		forecolor 1 1 1 1
+		focuscolor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		onOpen
+		{
+			close "main_selection";
+			setdvar "ui_separator_show" 1;
+			setdvar "ui_version_show" 0;
+			uiScript "closeMenuOnDvar" "ui_playerProfileAlreadyChosen" 1 "player_profile";
+			uiScript "addPlayerProfiles";
+			uiScript "selectActivePlayerProfile";
+			uiScript "openMenuOnDvar" "ui_playerProfileCount" 0 "profile_create_popmenu";
+			setfocus "profilelist";
+		}
+		onClose
+		{
+			setdvar "ui_separator_show" 1;
+			setdvar "ui_version_show" 1;
+			open "main_selection";
+		}
+		onEsc
+		{
+			setdvar "ui_playerProfileAlreadyChosen" 1;
+			uiScript "closeMenuOnDvarNot" "com_playerProfile" "" "player_profile";
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "mw2_main_background"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 0 1708 480 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.5
+			background "mw2_main_cloud_overlay"
+			textscale 0.55
+			exp rect x ( ( 0 - 107 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 -1708 -480 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.5
+			background "mw2_main_cloud_overlay"
+			textscale 0.55
+			exp rect x ( ( - 107 + 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) ) )
+		}
+		itemDef
+		{
+			rect -427 -240 854 480 2 2
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "mw2_main_sp_image"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0
+			background "mockup_bg_glow"
+			textscale 0.55
+			exp forecolor a ( ( ( sin( milliseconds( ) / 1500 ) + 1 ) * 0.25 ) + 0.25 )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0
+			background "mockup_bg_glow"
+			textscale 0.55
+			exp forecolor a ( ( ( sin( milliseconds( ) / 480 ) + 1 ) * 0.25 ) + 0.25 )
+		}
+		itemDef
+		{
+			rect -256 -198 512 128 2 2
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "logo_cod2"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 170 640 156 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 0.2
+			background "white"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect -160 170 320 156 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.5 0.5 0.5 0.65
+			background "white"
+			textscale 0.55
+			exp rect x ( 0 - 320 * 1.5 - 4 )
+		}
+		itemDef
+		{
+			rect -160 170 320 156 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.5 0.5 0.5 0.65
+			background "white"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -160 170 320 156 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.5 0.5 0.5 0.65
+			background "white"
+			textscale 0.55
+			exp rect x ( 320 * 0.5 + 4 )
+		}
+		itemDef
+		{
+			rect -32 138 32 32 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_tl"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 0 138 640 32 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_t"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 640 138 32 32 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_tr"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 640 170 32 156 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_r"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 640 326 32 32 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_br"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 0 326 640 32 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_b"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect -32 326 32 32 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_bl"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect -32 170 32 156 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_l"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			name "profile_box"
+			rect -160 170 320 156 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0 0 0 0.375
+			background "white"
+			textfont 9
+			textalign 5
+			textscale 0.375
+			text "@MENU_SELECT_PROFILE"
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			name "profilelist"
+			rect -160 190 320 136 2 1
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			outlinecolor 0 0 0 0.5
+			type 6
+			textalignx 6
+			textscale 0.375
+			feeder 24
+			elementWidth 120
+			elementHeight 22
+//			numcol			xpos	xwidth	textlen	  alignment
+			columns 0		0		0		0		  0
+			doubleClick
+			{
+				play "mouse_click";
+				setdvar "ui_playerProfileAlreadyChosen" 1;
+				uiScript "loadPlayerProfile";
+				if ( !getprofiledata( "hasEverPlayed_MainMenu" ) )
+				{
+					close self;
+					open "brightness_adjust";
+				}
+				else
+				{
+					close self;
+					open "main_selection";
+				}
+				close "player_profile";
+			}
+			
+			{
+				play "mouse_click";
+				setdvar "ui_playerProfileAlreadyChosen" 1;
+				uiScript "loadPlayerProfile";
+				if ( !getprofiledata( "hasEverPlayed_MainMenu" ) )
+				{
+					close self;
+					open "brightness_adjust";
+				}
+				else
+				{
+					close self;
+					open "main_selection";
+				}
+				close "player_profile";
+			}
+			mouseEnter
+			{
+				play "mouse_over";
+			}
+			mouseExit
+			{
+				;;
+			}
+		}
+		itemDef
+		{
+			name "create"
+			rect -160 326 106.667 20 2 1
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.55 0.55 0.55 1
+			background "white"
+			type 1
+			textfont 9
+			textalign 9
+			textscale 0.375
+			text "@MENU_NEW"
+			mouseEnter
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				play "mouse_click";
+				open "profile_create_popmenu";
+			}
+			onFocus
+			{
+				setItemColor self backcolor 0 0 0 1;
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 0;
+			}
+		}
+		itemDef
+		{
+			name "del"
+			rect -53.3333 326 106.667 20 2 1
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.55 0.55 0.55 1
+			background "white"
+			type 1
+			textfont 9
+			textalign 9
+			textscale 0.375
+			text "@MENU_DELETE"
+			mouseEnter
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				play "mouse_click";
+				open "profile_del_sure_popmenu";
+			}
+			onFocus
+			{
+				setItemColor self backcolor 0 0 0 1;
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 0;
+			}
+		}
+		itemDef
+		{
+			name "load"
+			rect 53.3333 326 106.667 20 2 1
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.55 0.55 0.55 1
+			background "white"
+			type 1
+			textfont 9
+			textalign 9
+			textscale 0.375
+			text "@MENU_OK"
+			disabled when ( dvarstring( "ui_playerProfileSelected" ) == "" )
+			mouseEnter
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				play "mouse_click";
+				setdvar "ui_playerProfileAlreadyChosen" 1;
+				uiScript "loadPlayerProfile";
+				if ( !getprofiledata( "hasEverPlayed_MainMenu" ) )
+				{
+					close self;
+					open "brightness_adjust";
+				}
+				else
+				{
+					close self;
+					open "main_selection";
+				}
+				close "player_profile";
+			}
+			onFocus
+			{
+				setItemColor self backcolor 0 0 0 1;
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 0;
+			}
+		}
+		itemDef
+		{
+			name "quit"
+			rect -85 0 170 20 2 3
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			background "white"
+			type 1
+			textfont 9
+			textalign 9
+			textscale 0.375
+			text "@MENU_QUIT"
+			mouseEnter
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				play "mouse_click";
+				open "quit_popmenu";
+			}
+			onFocus
+			{
+				setItemColor self backcolor 0 0 0 1;
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 0;
+			}
+		}
+	}
+}

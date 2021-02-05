@@ -1,0 +1,1222 @@
+{
+	menuDef
+	{
+		name "page_summary_splitscreen"
+		rect 0 50 544 337 2 1
+		style 1
+		forecolor 1 1 1 1
+		focuscolor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		exp rect x ( - ( 544 / 2 ) )
+		
+		{
+			if ( "page_summary_splitscreen" == "page_summary_splitscreen" )
+			{
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					close self;
+					open "page_highlights_splitscreen";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( 1 );
+				}
+			}
+			if ( "page_summary_splitscreen" == "page_highlights_splitscreen" )
+			{
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					close self;
+					open "page_scoreboard_splitscreen";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( 1 );
+				}
+			}
+		}
+		
+		{
+			if ( "page_summary_splitscreen" == "page_summary_splitscreen" )
+			{
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					close self;
+					open "page_highlights_splitscreen";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( 1 );
+				}
+			}
+			if ( "page_summary_splitscreen" == "page_highlights_splitscreen" )
+			{
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					close self;
+					open "page_scoreboard_splitscreen";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( 1 );
+				}
+			}
+		}
+		
+		{
+			if ( "page_summary_splitscreen" == "page_summary_splitscreen" )
+			{
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					close self;
+					open "page_highlights_splitscreen";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( 1 );
+				}
+			}
+			if ( "page_summary_splitscreen" == "page_highlights_splitscreen" )
+			{
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					close self;
+					open "page_scoreboard_splitscreen";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( 1 );
+				}
+			}
+		}
+		
+		{
+			if ( "page_summary_splitscreen" == "page_summary_splitscreen" )
+			{
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					close self;
+					open "page_highlights_splitscreen";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( 1 );
+				}
+			}
+			if ( "page_summary_splitscreen" == "page_highlights_splitscreen" )
+			{
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					close self;
+					open "page_scoreboard_splitscreen";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( 1 );
+				}
+			}
+		}
+		
+		{
+			close self;
+			close "popup_summary_splitscreen";
+		}
+		onOpen
+		{
+			setLocalVarString "ui_currentPage" ( "page_summary_splitscreen" );
+			if ( "page_summary_splitscreen" == "page_summary_splitscreen" )
+			{
+				setLocalVarInt "ui_leftArrow" ( 0 );
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					setLocalVarInt "ui_rightArrow" ( 1 );
+				}
+				else
+				{
+					setLocalVarInt "ui_rightArrow" ( 0 );
+				}
+			}
+			if ( "page_summary_splitscreen" == "page_highlights_splitscreen" )
+			{
+				setLocalVarInt "ui_leftArrow" ( 1 );
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					setLocalVarInt "ui_rightArrow" ( 1 );
+				}
+				else
+				{
+					setLocalVarInt "ui_rightArrow" ( 0 );
+				}
+			}
+			if ( "page_summary_splitscreen" == "page_scoreboard_splitscreen" )
+			{
+				setLocalVarInt "ui_leftArrow" ( 1 );
+				setLocalVarInt "ui_rightArrow" ( 0 );
+			}
+			if ( localvarint( "ui_autoopened" ) )
+			{
+				play "mp_ingame_summary";
+				setLocalVarInt "popup_summary_time_start" ( milliseconds( ) );
+				;;
+				setLocalVarInt "ui_autoopened" ( 0 );
+			}
+			setLocalVarString "ui_navbutton_a" ( "@PLATFORM_BACK_CAPS" );
+		}
+		onEsc
+		{
+			close self;
+			close "popup_summary_splitscreen";
+		}
+		itemDef
+		{
+			rect 0 0 544 28 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 5
+			textscale 0.5833
+			text "@MPUI_SUMMARY"
+		}
+		itemDef
+		{
+			rect 0 0 544 285.5 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 0.3
+			background "white"
+			textscale 0.55
+			exp rect x ( 42 )
+			exp rect y ( ( 28 ) )
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 0 0 544 285.5 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 0.125
+			background "gradient_vertical_rect"
+			textscale 0.55
+			exp rect x ( 42 )
+			exp rect y ( ( 28 ) )
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 0 0 450 48 0 0
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( ( 42 + 5 ) ) )
+			exp rect y ( ( ( ( 28 ) ) + ( ( 71.333 + 0 ) * 0 ) ) )
+			visible when ( ( 0 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 0 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 42 + 5 ) ) )
+			exp rect y ( ( ( ( 28 ) ) + ( ( 71.333 + 0 ) * 0 ) ) - 2 )
+			visible when ( ( 0 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 0 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( ( 42 + 5 ) ) )
+			exp rect y ( ( ( ( 28 ) ) + ( ( 71.333 + 0 ) * 0 ) ) - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 5 ) )
+			visible when ( ( 0 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 0 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( ( 42 + 5 ) ) )
+			exp rect y ( ( ( ( ( 28 ) ) + ( ( 71.333 + 0 ) * 0 ) ) ) + 28 )
+			visible when ( ( 0 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 0 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 1 , 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( ( 42 + 5 ) ) ) + 158 )
+			exp rect y ( ( ( ( ( 28 ) ) + ( ( 71.333 + 0 ) * 0 ) ) ) )
+			visible when ( ( 0 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 0 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 1 , 0 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 260 28 232 24 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textalignx -2
+			textaligny 2
+			textscale 0.35
+			visible when ( ( 0 < splitscreenplayercount( ) ) )
+			exp text ( locstring( "@MPUI_SCORE_PRE_N" , getplayerdatasplitscreen( 0 , "round" , "score" ) ) )
+		}
+		itemDef
+		{
+			rect 260 33 18 18 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( getplayerdatasplitscreen( 0 , "round" , "awardCount" ) && ( 0 < splitscreenplayercount( ) ) )
+			exp material ( tablelookup( "mp/awardTable.csv" , 1 , getplayerdatasplitscreen( 0 , "round" , "awards" , 0 , "award" ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 260 28 232 24 0 0
+			decoration
+			visible 1
+			forecolor 1 0.8 0.4 1
+			textfont 3
+			textalign 8
+			textalignx 20
+			textaligny 2
+			textscale 0.35
+			visible when ( getplayerdatasplitscreen( 0 , "round" , "awardCount" ) && ( 0 < splitscreenplayercount( ) ) )
+			exp text ( "@" + tablelookup( "mp/awardTable.csv" , 1 , getplayerdatasplitscreen( 0 , "round" , "awards" , 0 , "award" ) , 3 ) )
+		}
+		itemDef
+		{
+			rect 260 52 232 24 0 0
+			decoration
+			visible 1
+			forecolor 0.701961 0.701961 0.729412 1
+			textfont 3
+			textalign 8
+			textaligny -2
+			textscale 0.35
+			visible when ( getplayerdatasplitscreen( 0 , "round" , "awardCount" ) && ( 0 < splitscreenplayercount( ) ) )
+			exp text ( "@" + tablelookup( "mp/awardTable.csv" , 1 , getplayerdatasplitscreen( 0 , "round" , "awards" , 0 , "award" ) , 4 ) )
+		}
+		itemDef
+		{
+			rect -1280 91 4096 8 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "xpbar_stencilbase"
+			textscale 0.55
+			visible when ( ( 0 < splitscreenplayercount( ) ) )
+		}
+		itemDef
+		{
+			rect 49 91 446.5 8 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.5
+			background "summary_xpbar_shadow"
+			textscale 0.55
+			visible when ( ( 0 < splitscreenplayercount( ) ) )
+		}
+		itemDef
+		{
+			rect 49 91 446.5 8 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "summary_xpbar"
+			textscale 0.55
+			visible when ( ( 0 < splitscreenplayercount( ) ) )
+		}
+		itemDef
+		{
+			rect 49 91 446.5 8 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "summary_xpbar_solid"
+			textscale 0.55
+			exp rect x ( ( ( 42 + 5 ) + 2 ) - 446.5 * ( 1 - ( min( ( getplayerdatasplitscreen( 0 , "experience" ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 0 , "experience" ) ) , 2 ) ) / ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 0 , "experience" ) ) , 7 ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 0 , "experience" ) ) , 2 ) ) , 0.9999 ) * min( max( ( milliseconds( ) - localvarint( "popup_summary_time_start" ) ) / 500 , 0 ) , 1 ) ) ) )
+			visible when ( ( 0 < splitscreenplayercount( ) ) )
+		}
+		itemDef
+		{
+			rect 49 91 446.5 8 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "xpbar_xpfill"
+			textscale 0.55
+			exp rect x ( ( ( 42 + 5 ) + 2 ) - 446.5 * ( 1 - ( min( ( getplayerdatasplitscreen( 0 , "experience" ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 0 , "experience" ) ) , 2 ) ) / ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 0 , "experience" ) ) , 7 ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 0 , "experience" ) ) , 2 ) ) , 0.9999 ) * min( max( ( milliseconds( ) - localvarint( "popup_summary_time_start" ) ) / 500 , 0 ) , 1 ) ) ) )
+			visible when ( ( 0 < splitscreenplayercount( ) ) )
+		}
+		itemDef
+		{
+			rect 49 91 446.5 8 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.5
+			background "summary_xpbar_shadow"
+			textscale 0.55
+			visible when ( ( 0 < splitscreenplayercount( ) ) )
+		}
+		itemDef
+		{
+			rect 49 73 20 20 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( ( 0 < splitscreenplayercount( ) ) )
+			exp material ( tablelookup( "mp/rankIconTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 0 , "experience" ) ) , getplayerdatasplitscreen( 0 , "prestige" ) + 1 ) )
+		}
+		itemDef
+		{
+			rect 69 73 16 20 0 0
+			decoration
+			visible 1
+			forecolor 0.701961 0.701961 0.729412 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			visible when ( ( 0 < splitscreenplayercount( ) ) )
+			exp text ( tablelookup( "mp/ranktable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 0 , "experience" ) ) , 14 ) )
+		}
+		itemDef
+		{
+			rect 459.5 73 20 20 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( levelforexperience( getplayerdatasplitscreen( 0 , "experience" ) ) < int( tablelookup( "mp/rankTable.csv" , 0 , "maxrank" , 1 ) ) && ( 0 < splitscreenplayercount( ) ) )
+			exp material ( tablelookup( "mp/rankIconTable.csv" , 0 , ( levelforexperience( getplayerdatasplitscreen( 0 , "experience" ) ) + 1 ) , getplayerdatasplitscreen( 0 , "prestige" ) + 1 ) )
+		}
+		itemDef
+		{
+			rect 479.5 73 16 20 0 0
+			decoration
+			visible 1
+			forecolor 0.701961 0.701961 0.729412 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			visible when ( levelforexperience( getplayerdatasplitscreen( 0 , "experience" ) ) < int( tablelookup( "mp/rankTable.csv" , 0 , "maxrank" , 1 ) ) && ( 0 < splitscreenplayercount( ) ) )
+			exp text ( tablelookup( "mp/ranktable.csv" , 0 , ( levelforexperience( getplayerdatasplitscreen( 0 , "experience" ) ) + 1 ) , 14 ) )
+		}
+		itemDef
+		{
+			rect 49 73 446.5 20 0 0
+			decoration
+			visible 1
+			forecolor 1 1 0.498039 1
+			textfont 10
+			textalign 1
+			textaligny 18
+			textscale 0.3333
+			visible when ( levelforexperience( getplayerdatasplitscreen( 0 , "experience" ) ) < int( tablelookup( "mp/rankTable.csv" , 0 , "maxrank" , 1 ) ) && ( 0 < splitscreenplayercount( ) ) )
+			exp text ( locstring( "@MPUI_X_SLASH_Y_XP" , int( ( getplayerdatasplitscreen( 0 , "experience" ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 0 , "experience" ) ) , 2 ) ) * min( max( ( milliseconds( ) - localvarint( "popup_summary_time_start" ) ) / 500 , 0 ) , 1 ) ) , int( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 0 , "experience" ) ) , 7 ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 0 , "experience" ) ) , 2 ) ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 450 48 0 0
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( ( 42 + 5 ) ) )
+			exp rect y ( ( ( ( 28 ) ) + ( ( 71.333 + 0 ) * 1 ) ) )
+			visible when ( ( 1 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 1 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 42 + 5 ) ) )
+			exp rect y ( ( ( ( 28 ) ) + ( ( 71.333 + 0 ) * 1 ) ) - 2 )
+			visible when ( ( 1 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 1 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 1 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( ( 42 + 5 ) ) )
+			exp rect y ( ( ( ( 28 ) ) + ( ( 71.333 + 0 ) * 1 ) ) - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 1 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 1 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 1 ) , 5 ) )
+			visible when ( ( 1 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 1 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 1 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( ( 42 + 5 ) ) )
+			exp rect y ( ( ( ( ( 28 ) ) + ( ( 71.333 + 0 ) * 1 ) ) ) + 28 )
+			visible when ( ( 1 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 1 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 1 , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( ( 42 + 5 ) ) ) + 158 )
+			exp rect y ( ( ( ( ( 28 ) ) + ( ( 71.333 + 0 ) * 1 ) ) ) )
+			visible when ( ( 1 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 1 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 1 , 1 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 260 99.333 232 24 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textalignx -2
+			textaligny 2
+			textscale 0.35
+			visible when ( ( 1 < splitscreenplayercount( ) ) )
+			exp text ( locstring( "@MPUI_SCORE_PRE_N" , getplayerdatasplitscreen( 1 , "round" , "score" ) ) )
+		}
+		itemDef
+		{
+			rect 260 104.333 18 18 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( getplayerdatasplitscreen( 1 , "round" , "awardCount" ) && ( 1 < splitscreenplayercount( ) ) )
+			exp material ( tablelookup( "mp/awardTable.csv" , 1 , getplayerdatasplitscreen( 1 , "round" , "awards" , 0 , "award" ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 260 99.333 232 24 0 0
+			decoration
+			visible 1
+			forecolor 1 0.8 0.4 1
+			textfont 3
+			textalign 8
+			textalignx 20
+			textaligny 2
+			textscale 0.35
+			visible when ( getplayerdatasplitscreen( 1 , "round" , "awardCount" ) && ( 1 < splitscreenplayercount( ) ) )
+			exp text ( "@" + tablelookup( "mp/awardTable.csv" , 1 , getplayerdatasplitscreen( 1 , "round" , "awards" , 0 , "award" ) , 3 ) )
+		}
+		itemDef
+		{
+			rect 260 123.333 232 24 0 0
+			decoration
+			visible 1
+			forecolor 0.701961 0.701961 0.729412 1
+			textfont 3
+			textalign 8
+			textaligny -2
+			textscale 0.35
+			visible when ( getplayerdatasplitscreen( 1 , "round" , "awardCount" ) && ( 1 < splitscreenplayercount( ) ) )
+			exp text ( "@" + tablelookup( "mp/awardTable.csv" , 1 , getplayerdatasplitscreen( 1 , "round" , "awards" , 0 , "award" ) , 4 ) )
+		}
+		itemDef
+		{
+			rect -1280 162.333 4096 8 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "xpbar_stencilbase"
+			textscale 0.55
+			visible when ( ( 1 < splitscreenplayercount( ) ) )
+		}
+		itemDef
+		{
+			rect 49 162.333 446.5 8 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.5
+			background "summary_xpbar_shadow"
+			textscale 0.55
+			visible when ( ( 1 < splitscreenplayercount( ) ) )
+		}
+		itemDef
+		{
+			rect 49 162.333 446.5 8 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "summary_xpbar"
+			textscale 0.55
+			visible when ( ( 1 < splitscreenplayercount( ) ) )
+		}
+		itemDef
+		{
+			rect 49 162.333 446.5 8 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "summary_xpbar_solid"
+			textscale 0.55
+			exp rect x ( ( ( 42 + 5 ) + 2 ) - 446.5 * ( 1 - ( min( ( getplayerdatasplitscreen( 1 , "experience" ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 1 , "experience" ) ) , 2 ) ) / ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 1 , "experience" ) ) , 7 ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 1 , "experience" ) ) , 2 ) ) , 0.9999 ) * min( max( ( milliseconds( ) - localvarint( "popup_summary_time_start" ) ) / 500 , 0 ) , 1 ) ) ) )
+			visible when ( ( 1 < splitscreenplayercount( ) ) )
+		}
+		itemDef
+		{
+			rect 49 162.333 446.5 8 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "xpbar_xpfill"
+			textscale 0.55
+			exp rect x ( ( ( 42 + 5 ) + 2 ) - 446.5 * ( 1 - ( min( ( getplayerdatasplitscreen( 1 , "experience" ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 1 , "experience" ) ) , 2 ) ) / ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 1 , "experience" ) ) , 7 ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 1 , "experience" ) ) , 2 ) ) , 0.9999 ) * min( max( ( milliseconds( ) - localvarint( "popup_summary_time_start" ) ) / 500 , 0 ) , 1 ) ) ) )
+			visible when ( ( 1 < splitscreenplayercount( ) ) )
+		}
+		itemDef
+		{
+			rect 49 162.333 446.5 8 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.5
+			background "summary_xpbar_shadow"
+			textscale 0.55
+			visible when ( ( 1 < splitscreenplayercount( ) ) )
+		}
+		itemDef
+		{
+			rect 49 144.333 20 20 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( ( 1 < splitscreenplayercount( ) ) )
+			exp material ( tablelookup( "mp/rankIconTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 1 , "experience" ) ) , getplayerdatasplitscreen( 1 , "prestige" ) + 1 ) )
+		}
+		itemDef
+		{
+			rect 69 144.333 16 20 0 0
+			decoration
+			visible 1
+			forecolor 0.701961 0.701961 0.729412 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			visible when ( ( 1 < splitscreenplayercount( ) ) )
+			exp text ( tablelookup( "mp/ranktable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 1 , "experience" ) ) , 14 ) )
+		}
+		itemDef
+		{
+			rect 459.5 144.333 20 20 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( levelforexperience( getplayerdatasplitscreen( 1 , "experience" ) ) < int( tablelookup( "mp/rankTable.csv" , 0 , "maxrank" , 1 ) ) && ( 1 < splitscreenplayercount( ) ) )
+			exp material ( tablelookup( "mp/rankIconTable.csv" , 0 , ( levelforexperience( getplayerdatasplitscreen( 1 , "experience" ) ) + 1 ) , getplayerdatasplitscreen( 1 , "prestige" ) + 1 ) )
+		}
+		itemDef
+		{
+			rect 479.5 144.333 16 20 0 0
+			decoration
+			visible 1
+			forecolor 0.701961 0.701961 0.729412 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			visible when ( levelforexperience( getplayerdatasplitscreen( 1 , "experience" ) ) < int( tablelookup( "mp/rankTable.csv" , 0 , "maxrank" , 1 ) ) && ( 1 < splitscreenplayercount( ) ) )
+			exp text ( tablelookup( "mp/ranktable.csv" , 0 , ( levelforexperience( getplayerdatasplitscreen( 1 , "experience" ) ) + 1 ) , 14 ) )
+		}
+		itemDef
+		{
+			rect 49 144.333 446.5 20 0 0
+			decoration
+			visible 1
+			forecolor 1 1 0.498039 1
+			textfont 10
+			textalign 1
+			textaligny 18
+			textscale 0.3333
+			visible when ( levelforexperience( getplayerdatasplitscreen( 1 , "experience" ) ) < int( tablelookup( "mp/rankTable.csv" , 0 , "maxrank" , 1 ) ) && ( 1 < splitscreenplayercount( ) ) )
+			exp text ( locstring( "@MPUI_X_SLASH_Y_XP" , int( ( getplayerdatasplitscreen( 1 , "experience" ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 1 , "experience" ) ) , 2 ) ) * min( max( ( milliseconds( ) - localvarint( "popup_summary_time_start" ) ) / 500 , 0 ) , 1 ) ) , int( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 1 , "experience" ) ) , 7 ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 1 , "experience" ) ) , 2 ) ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 450 48 0 0
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( ( 42 + 5 ) ) )
+			exp rect y ( ( ( ( 28 ) ) + ( ( 71.333 + 0 ) * 2 ) ) )
+			visible when ( ( 2 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 2 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 42 + 5 ) ) )
+			exp rect y ( ( ( ( 28 ) ) + ( ( 71.333 + 0 ) * 2 ) ) - 2 )
+			visible when ( ( 2 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 2 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 2 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( ( 42 + 5 ) ) )
+			exp rect y ( ( ( ( 28 ) ) + ( ( 71.333 + 0 ) * 2 ) ) - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 2 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 2 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 2 ) , 5 ) )
+			visible when ( ( 2 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 2 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 2 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( ( 42 + 5 ) ) )
+			exp rect y ( ( ( ( ( 28 ) ) + ( ( 71.333 + 0 ) * 2 ) ) ) + 28 )
+			visible when ( ( 2 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 2 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 1 , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( ( 42 + 5 ) ) ) + 158 )
+			exp rect y ( ( ( ( ( 28 ) ) + ( ( 71.333 + 0 ) * 2 ) ) ) )
+			visible when ( ( 2 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 2 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 1 , 2 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 260 170.666 232 24 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textalignx -2
+			textaligny 2
+			textscale 0.35
+			visible when ( ( 2 < splitscreenplayercount( ) ) )
+			exp text ( locstring( "@MPUI_SCORE_PRE_N" , getplayerdatasplitscreen( 2 , "round" , "score" ) ) )
+		}
+		itemDef
+		{
+			rect 260 175.666 18 18 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( getplayerdatasplitscreen( 2 , "round" , "awardCount" ) && ( 2 < splitscreenplayercount( ) ) )
+			exp material ( tablelookup( "mp/awardTable.csv" , 1 , getplayerdatasplitscreen( 2 , "round" , "awards" , 0 , "award" ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 260 170.666 232 24 0 0
+			decoration
+			visible 1
+			forecolor 1 0.8 0.4 1
+			textfont 3
+			textalign 8
+			textalignx 20
+			textaligny 2
+			textscale 0.35
+			visible when ( getplayerdatasplitscreen( 2 , "round" , "awardCount" ) && ( 2 < splitscreenplayercount( ) ) )
+			exp text ( "@" + tablelookup( "mp/awardTable.csv" , 1 , getplayerdatasplitscreen( 2 , "round" , "awards" , 0 , "award" ) , 3 ) )
+		}
+		itemDef
+		{
+			rect 260 194.666 232 24 0 0
+			decoration
+			visible 1
+			forecolor 0.701961 0.701961 0.729412 1
+			textfont 3
+			textalign 8
+			textaligny -2
+			textscale 0.35
+			visible when ( getplayerdatasplitscreen( 2 , "round" , "awardCount" ) && ( 2 < splitscreenplayercount( ) ) )
+			exp text ( "@" + tablelookup( "mp/awardTable.csv" , 1 , getplayerdatasplitscreen( 2 , "round" , "awards" , 0 , "award" ) , 4 ) )
+		}
+		itemDef
+		{
+			rect -1280 233.666 4096 8 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "xpbar_stencilbase"
+			textscale 0.55
+			visible when ( ( 2 < splitscreenplayercount( ) ) )
+		}
+		itemDef
+		{
+			rect 49 233.666 446.5 8 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.5
+			background "summary_xpbar_shadow"
+			textscale 0.55
+			visible when ( ( 2 < splitscreenplayercount( ) ) )
+		}
+		itemDef
+		{
+			rect 49 233.666 446.5 8 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "summary_xpbar"
+			textscale 0.55
+			visible when ( ( 2 < splitscreenplayercount( ) ) )
+		}
+		itemDef
+		{
+			rect 49 233.666 446.5 8 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "summary_xpbar_solid"
+			textscale 0.55
+			exp rect x ( ( ( 42 + 5 ) + 2 ) - 446.5 * ( 1 - ( min( ( getplayerdatasplitscreen( 2 , "experience" ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 2 , "experience" ) ) , 2 ) ) / ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 2 , "experience" ) ) , 7 ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 2 , "experience" ) ) , 2 ) ) , 0.9999 ) * min( max( ( milliseconds( ) - localvarint( "popup_summary_time_start" ) ) / 500 , 0 ) , 1 ) ) ) )
+			visible when ( ( 2 < splitscreenplayercount( ) ) )
+		}
+		itemDef
+		{
+			rect 49 233.666 446.5 8 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "xpbar_xpfill"
+			textscale 0.55
+			exp rect x ( ( ( 42 + 5 ) + 2 ) - 446.5 * ( 1 - ( min( ( getplayerdatasplitscreen( 2 , "experience" ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 2 , "experience" ) ) , 2 ) ) / ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 2 , "experience" ) ) , 7 ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 2 , "experience" ) ) , 2 ) ) , 0.9999 ) * min( max( ( milliseconds( ) - localvarint( "popup_summary_time_start" ) ) / 500 , 0 ) , 1 ) ) ) )
+			visible when ( ( 2 < splitscreenplayercount( ) ) )
+		}
+		itemDef
+		{
+			rect 49 233.666 446.5 8 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.5
+			background "summary_xpbar_shadow"
+			textscale 0.55
+			visible when ( ( 2 < splitscreenplayercount( ) ) )
+		}
+		itemDef
+		{
+			rect 49 215.666 20 20 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( ( 2 < splitscreenplayercount( ) ) )
+			exp material ( tablelookup( "mp/rankIconTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 2 , "experience" ) ) , getplayerdatasplitscreen( 2 , "prestige" ) + 1 ) )
+		}
+		itemDef
+		{
+			rect 69 215.666 16 20 0 0
+			decoration
+			visible 1
+			forecolor 0.701961 0.701961 0.729412 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			visible when ( ( 2 < splitscreenplayercount( ) ) )
+			exp text ( tablelookup( "mp/ranktable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 2 , "experience" ) ) , 14 ) )
+		}
+		itemDef
+		{
+			rect 459.5 215.666 20 20 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( levelforexperience( getplayerdatasplitscreen( 2 , "experience" ) ) < int( tablelookup( "mp/rankTable.csv" , 0 , "maxrank" , 1 ) ) && ( 2 < splitscreenplayercount( ) ) )
+			exp material ( tablelookup( "mp/rankIconTable.csv" , 0 , ( levelforexperience( getplayerdatasplitscreen( 2 , "experience" ) ) + 1 ) , getplayerdatasplitscreen( 2 , "prestige" ) + 1 ) )
+		}
+		itemDef
+		{
+			rect 479.5 215.666 16 20 0 0
+			decoration
+			visible 1
+			forecolor 0.701961 0.701961 0.729412 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			visible when ( levelforexperience( getplayerdatasplitscreen( 2 , "experience" ) ) < int( tablelookup( "mp/rankTable.csv" , 0 , "maxrank" , 1 ) ) && ( 2 < splitscreenplayercount( ) ) )
+			exp text ( tablelookup( "mp/ranktable.csv" , 0 , ( levelforexperience( getplayerdatasplitscreen( 2 , "experience" ) ) + 1 ) , 14 ) )
+		}
+		itemDef
+		{
+			rect 49 215.666 446.5 20 0 0
+			decoration
+			visible 1
+			forecolor 1 1 0.498039 1
+			textfont 10
+			textalign 1
+			textaligny 18
+			textscale 0.3333
+			visible when ( levelforexperience( getplayerdatasplitscreen( 2 , "experience" ) ) < int( tablelookup( "mp/rankTable.csv" , 0 , "maxrank" , 1 ) ) && ( 2 < splitscreenplayercount( ) ) )
+			exp text ( locstring( "@MPUI_X_SLASH_Y_XP" , int( ( getplayerdatasplitscreen( 2 , "experience" ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 2 , "experience" ) ) , 2 ) ) * min( max( ( milliseconds( ) - localvarint( "popup_summary_time_start" ) ) / 500 , 0 ) , 1 ) ) , int( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 2 , "experience" ) ) , 7 ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 2 , "experience" ) ) , 2 ) ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 450 48 0 0
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( ( ( 42 + 5 ) ) )
+			exp rect y ( ( ( ( 28 ) ) + ( ( 71.333 + 0 ) * 3 ) ) )
+			visible when ( ( 3 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 3 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( 42 + 5 ) ) )
+			exp rect y ( ( ( ( 28 ) ) + ( ( 71.333 + 0 ) * 3 ) ) - 2 )
+			visible when ( ( 3 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 3 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 3 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( ( ( 42 + 5 ) ) )
+			exp rect y ( ( ( ( 28 ) ) + ( ( 71.333 + 0 ) * 3 ) ) - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 3 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 3 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 3 ) , 5 ) )
+			visible when ( ( 3 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 3 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 3 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( ( ( 42 + 5 ) ) )
+			exp rect y ( ( ( ( ( 28 ) ) + ( ( 71.333 + 0 ) * 3 ) ) ) + 28 )
+			visible when ( ( 3 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 3 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 1 , 3 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( ( ( 42 + 5 ) ) ) + 158 )
+			exp rect y ( ( ( ( ( 28 ) ) + ( ( 71.333 + 0 ) * 3 ) ) ) )
+			visible when ( ( 3 < splitscreenplayercount( ) ) && ( getplayercardinfo( 0 , 1 , 3 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 1 , 3 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 260 241.999 232 24 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textalignx -2
+			textaligny 2
+			textscale 0.35
+			visible when ( ( 3 < splitscreenplayercount( ) ) )
+			exp text ( locstring( "@MPUI_SCORE_PRE_N" , getplayerdatasplitscreen( 3 , "round" , "score" ) ) )
+		}
+		itemDef
+		{
+			rect 260 246.999 18 18 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( getplayerdatasplitscreen( 3 , "round" , "awardCount" ) && ( 3 < splitscreenplayercount( ) ) )
+			exp material ( tablelookup( "mp/awardTable.csv" , 1 , getplayerdatasplitscreen( 3 , "round" , "awards" , 0 , "award" ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 260 241.999 232 24 0 0
+			decoration
+			visible 1
+			forecolor 1 0.8 0.4 1
+			textfont 3
+			textalign 8
+			textalignx 20
+			textaligny 2
+			textscale 0.35
+			visible when ( getplayerdatasplitscreen( 3 , "round" , "awardCount" ) && ( 3 < splitscreenplayercount( ) ) )
+			exp text ( "@" + tablelookup( "mp/awardTable.csv" , 1 , getplayerdatasplitscreen( 3 , "round" , "awards" , 0 , "award" ) , 3 ) )
+		}
+		itemDef
+		{
+			rect 260 265.999 232 24 0 0
+			decoration
+			visible 1
+			forecolor 0.701961 0.701961 0.729412 1
+			textfont 3
+			textalign 8
+			textaligny -2
+			textscale 0.35
+			visible when ( getplayerdatasplitscreen( 3 , "round" , "awardCount" ) && ( 3 < splitscreenplayercount( ) ) )
+			exp text ( "@" + tablelookup( "mp/awardTable.csv" , 1 , getplayerdatasplitscreen( 3 , "round" , "awards" , 0 , "award" ) , 4 ) )
+		}
+		itemDef
+		{
+			rect -1280 304.999 4096 8 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "xpbar_stencilbase"
+			textscale 0.55
+			visible when ( ( 3 < splitscreenplayercount( ) ) )
+		}
+		itemDef
+		{
+			rect 49 304.999 446.5 8 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.5
+			background "summary_xpbar_shadow"
+			textscale 0.55
+			visible when ( ( 3 < splitscreenplayercount( ) ) )
+		}
+		itemDef
+		{
+			rect 49 304.999 446.5 8 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "summary_xpbar"
+			textscale 0.55
+			visible when ( ( 3 < splitscreenplayercount( ) ) )
+		}
+		itemDef
+		{
+			rect 49 304.999 446.5 8 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "summary_xpbar_solid"
+			textscale 0.55
+			exp rect x ( ( ( 42 + 5 ) + 2 ) - 446.5 * ( 1 - ( min( ( getplayerdatasplitscreen( 3 , "experience" ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 3 , "experience" ) ) , 2 ) ) / ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 3 , "experience" ) ) , 7 ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 3 , "experience" ) ) , 2 ) ) , 0.9999 ) * min( max( ( milliseconds( ) - localvarint( "popup_summary_time_start" ) ) / 500 , 0 ) , 1 ) ) ) )
+			visible when ( ( 3 < splitscreenplayercount( ) ) )
+		}
+		itemDef
+		{
+			rect 49 304.999 446.5 8 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "xpbar_xpfill"
+			textscale 0.55
+			exp rect x ( ( ( 42 + 5 ) + 2 ) - 446.5 * ( 1 - ( min( ( getplayerdatasplitscreen( 3 , "experience" ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 3 , "experience" ) ) , 2 ) ) / ( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 3 , "experience" ) ) , 7 ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 3 , "experience" ) ) , 2 ) ) , 0.9999 ) * min( max( ( milliseconds( ) - localvarint( "popup_summary_time_start" ) ) / 500 , 0 ) , 1 ) ) ) )
+			visible when ( ( 3 < splitscreenplayercount( ) ) )
+		}
+		itemDef
+		{
+			rect 49 304.999 446.5 8 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.5
+			background "summary_xpbar_shadow"
+			textscale 0.55
+			visible when ( ( 3 < splitscreenplayercount( ) ) )
+		}
+		itemDef
+		{
+			rect 49 286.999 20 20 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( ( 3 < splitscreenplayercount( ) ) )
+			exp material ( tablelookup( "mp/rankIconTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 3 , "experience" ) ) , getplayerdatasplitscreen( 3 , "prestige" ) + 1 ) )
+		}
+		itemDef
+		{
+			rect 69 286.999 16 20 0 0
+			decoration
+			visible 1
+			forecolor 0.701961 0.701961 0.729412 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			visible when ( ( 3 < splitscreenplayercount( ) ) )
+			exp text ( tablelookup( "mp/ranktable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 3 , "experience" ) ) , 14 ) )
+		}
+		itemDef
+		{
+			rect 459.5 286.999 20 20 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			visible when ( levelforexperience( getplayerdatasplitscreen( 3 , "experience" ) ) < int( tablelookup( "mp/rankTable.csv" , 0 , "maxrank" , 1 ) ) && ( 3 < splitscreenplayercount( ) ) )
+			exp material ( tablelookup( "mp/rankIconTable.csv" , 0 , ( levelforexperience( getplayerdatasplitscreen( 3 , "experience" ) ) + 1 ) , getplayerdatasplitscreen( 3 , "prestige" ) + 1 ) )
+		}
+		itemDef
+		{
+			rect 479.5 286.999 16 20 0 0
+			decoration
+			visible 1
+			forecolor 0.701961 0.701961 0.729412 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			visible when ( levelforexperience( getplayerdatasplitscreen( 3 , "experience" ) ) < int( tablelookup( "mp/rankTable.csv" , 0 , "maxrank" , 1 ) ) && ( 3 < splitscreenplayercount( ) ) )
+			exp text ( tablelookup( "mp/ranktable.csv" , 0 , ( levelforexperience( getplayerdatasplitscreen( 3 , "experience" ) ) + 1 ) , 14 ) )
+		}
+		itemDef
+		{
+			rect 49 286.999 446.5 20 0 0
+			decoration
+			visible 1
+			forecolor 1 1 0.498039 1
+			textfont 10
+			textalign 1
+			textaligny 18
+			textscale 0.3333
+			visible when ( levelforexperience( getplayerdatasplitscreen( 3 , "experience" ) ) < int( tablelookup( "mp/rankTable.csv" , 0 , "maxrank" , 1 ) ) && ( 3 < splitscreenplayercount( ) ) )
+			exp text ( locstring( "@MPUI_X_SLASH_Y_XP" , int( ( getplayerdatasplitscreen( 3 , "experience" ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 3 , "experience" ) ) , 2 ) ) * min( max( ( milliseconds( ) - localvarint( "popup_summary_time_start" ) ) / 500 , 0 ) , 1 ) ) , int( tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 3 , "experience" ) ) , 7 ) - tablelookup( "mp/rankTable.csv" , 0 , levelforexperience( getplayerdatasplitscreen( 3 , "experience" ) ) , 2 ) ) ) )
+		}
+	}
+}

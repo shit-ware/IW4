@@ -1,0 +1,1635 @@
+{
+	menuDef
+	{
+		name "popup_cac_handgun_secondary"
+		rect -64 0 854 184 1 1
+		popup
+		outOfBoundsClick
+		visible 1
+		style 1
+		forecolor 1 1 1 1
+		backcolor 1 1 1 1
+		background "white"
+		focuscolor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		allowedBinding "+talk"
+		visible when ( localvarint( "ui_tabDepth" ) == localvarint( "ui_popup_cac_handgun_secondary_tabDepth" ) )
+		exp rect y ( localvarfloat( "ui_popupYPos" ) + localvarint( "ui_tabDepth" ) * 20 )
+		onOpen
+		{
+			focusfirst;
+			setLocalVarInt "ui_tabDepth" ( localvarint( "ui_tabDepth" ) + 1 );
+			;;
+			setLocalVarInt "ui_popup_cac_handgun_secondary_tabDepth" ( localvarint( "ui_tabDepth" ) );
+			;;
+			focusfirst;
+			focusfirst;
+			focusfirst;
+			focusfirst;
+		}
+		onClose
+		{
+			setLocalVarInt "ui_tabDepth" ( localvarint( "ui_tabDepth" ) - 1 );
+			;;
+		}
+		onEsc
+		{
+			close self;
+		}
+		itemDef
+		{
+			rect -854 -480 1708 960 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0 0 0 0.35
+			background "white"
+			textscale 0.55
+			visible when ( !localvarint( "ui_centerPopup" ) )
+		}
+		itemDef
+		{
+			rect -854 -480 1708 960 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "xpbar_stencilbase"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 0 854 184 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0.5 0.5 0.5 1
+			background "white"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 0 1708 480 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.75
+			background "mw2_popup_bg_fogstencil"
+			textscale 0.55
+			exp rect x ( 0 - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 -1708 -480 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0.85 0.85 0.85 1
+			background "mw2_popup_bg_fogscroll"
+			textscale 0.55
+			exp rect x ( 0 - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 854 0 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "mockup_popup_bg_stencilfill"
+			textscale 0.55
+			exp rect h ( ( 24 + 8 * 20 ) )
+		}
+		itemDef
+		{
+			rect 0 0 -1708 -480 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.75
+			background "mw2_popup_bg_fogstencil"
+			textscale 0.55
+			exp rect x ( ( - 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 -1708 -480 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0.85 0.85 0.85 1
+			background "mw2_popup_bg_fogscroll"
+			textscale 0.55
+			exp rect x ( ( - 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 854 0 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0
+			background "small_box_lightfx"
+			textscale 0.55
+			exp rect h ( ( 24 + 8 * 20 ) )
+		}
+		itemDef
+		{
+			rect -32 -32 32 32 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_tl"
+			textscale 0.55
+			visible when ( !localvarint( "ui_centerPopup" ) )
+		}
+		itemDef
+		{
+			rect 0 -32 854 32 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_t"
+			textscale 0.55
+			visible when ( !localvarint( "ui_centerPopup" ) )
+		}
+		itemDef
+		{
+			rect 854 -32 32 32 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_tr"
+			textscale 0.55
+			visible when ( !localvarint( "ui_centerPopup" ) )
+		}
+		itemDef
+		{
+			rect 854 0 32 0 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_r"
+			textscale 0.55
+			exp rect h ( ( 24 + 8 * 20 ) )
+			visible when ( !localvarint( "ui_centerPopup" ) )
+		}
+		itemDef
+		{
+			rect 854 0 32 32 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_br"
+			textscale 0.55
+			exp rect y ( ( 0 - 0 ) + ( ( 24 + 8 * 20 ) ) )
+			visible when ( !localvarint( "ui_centerPopup" ) )
+		}
+		itemDef
+		{
+			rect 0 0 854 32 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_b"
+			textscale 0.55
+			exp rect y ( ( 0 - 0 ) + ( ( 24 + 8 * 20 ) ) )
+			visible when ( !localvarint( "ui_centerPopup" ) )
+		}
+		itemDef
+		{
+			rect -32 0 32 32 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_bl"
+			textscale 0.55
+			exp rect y ( ( 0 - 0 ) + ( ( 24 + 8 * 20 ) ) )
+			visible when ( !localvarint( "ui_centerPopup" ) )
+		}
+		itemDef
+		{
+			rect -32 0 32 0 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_l"
+			textscale 0.55
+			exp rect h ( ( 24 + 8 * 20 ) )
+			visible when ( !localvarint( "ui_centerPopup" ) )
+		}
+		itemDef
+		{
+			rect 0 0 280 184 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 0
+			background "gradient_fadein"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 0 280 20 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0.25 0.25 0.25 1
+			background "white"
+			textscale 0.55
+			exp rect y ( - 20 - ( ( localvarint( "ui_tabDepth" ) - 1 ) * 20 ) )
+			visible when ( localvarint( "ui_tabDepth" ) > ( 1 - 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 280 20 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0 0 0 1
+			background "gradient_fadein"
+			textfont 9
+			textalign 4
+			textalignx 68
+			textscale 0.375
+			exp rect y ( - 20 - ( ( localvarint( "ui_tabDepth" ) - 1 ) * 20 ) )
+			exp forecolor r ( 1 - ( ( localvarint( "ui_tabDepth" ) > 1 ) * 0.35 ) )
+			exp forecolor g ( 1 - ( ( localvarint( "ui_tabDepth" ) > 1 ) * 0.35 ) )
+			exp forecolor b ( 1 - ( ( localvarint( "ui_tabDepth" ) > 1 ) * 0.35 ) )
+			visible when ( localvarint( "ui_tabDepth" ) > ( 1 - 1 ) )
+			exp text ( localvarstring( "ui_tab1Name" ) )
+		}
+		itemDef
+		{
+			rect 0 0 280 20 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0.25 0.25 0.25 1
+			background "white"
+			textscale 0.55
+			exp rect y ( - 20 - ( ( localvarint( "ui_tabDepth" ) - 2 ) * 20 ) )
+			visible when ( localvarint( "ui_tabDepth" ) > ( 2 - 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 280 20 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0 0 0 1
+			background "gradient_fadein"
+			textfont 9
+			textalign 4
+			textalignx 68
+			textscale 0.375
+			exp rect y ( - 20 - ( ( localvarint( "ui_tabDepth" ) - 2 ) * 20 ) )
+			exp forecolor r ( 1 - ( ( localvarint( "ui_tabDepth" ) > 2 ) * 0.35 ) )
+			exp forecolor g ( 1 - ( ( localvarint( "ui_tabDepth" ) > 2 ) * 0.35 ) )
+			exp forecolor b ( 1 - ( ( localvarint( "ui_tabDepth" ) > 2 ) * 0.35 ) )
+			visible when ( localvarint( "ui_tabDepth" ) > ( 2 - 1 ) )
+			exp text ( localvarstring( "ui_tab2Name" ) )
+		}
+		itemDef
+		{
+			rect 0 0 280 20 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0.25 0.25 0.25 1
+			background "white"
+			textscale 0.55
+			exp rect y ( - 20 - ( ( localvarint( "ui_tabDepth" ) - 3 ) * 20 ) )
+			visible when ( localvarint( "ui_tabDepth" ) > ( 3 - 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 280 20 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0 0 0 1
+			background "gradient_fadein"
+			textfont 9
+			textalign 4
+			textalignx 68
+			textscale 0.375
+			exp rect y ( - 20 - ( ( localvarint( "ui_tabDepth" ) - 3 ) * 20 ) )
+			exp forecolor r ( 1 - ( ( localvarint( "ui_tabDepth" ) > 3 ) * 0.35 ) )
+			exp forecolor g ( 1 - ( ( localvarint( "ui_tabDepth" ) > 3 ) * 0.35 ) )
+			exp forecolor b ( 1 - ( ( localvarint( "ui_tabDepth" ) > 3 ) * 0.35 ) )
+			visible when ( localvarint( "ui_tabDepth" ) > ( 3 - 1 ) )
+			exp text ( localvarstring( "ui_tab3Name" ) )
+		}
+		itemDef
+		{
+			rect 0 0 280 20 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0.25 0.25 0.25 1
+			background "white"
+			textscale 0.55
+			exp rect y ( - 20 - ( ( localvarint( "ui_tabDepth" ) - 4 ) * 20 ) )
+			visible when ( localvarint( "ui_tabDepth" ) > ( 4 - 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 280 20 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0 0 0 1
+			background "gradient_fadein"
+			textfont 9
+			textalign 4
+			textalignx 68
+			textscale 0.375
+			exp rect y ( - 20 - ( ( localvarint( "ui_tabDepth" ) - 4 ) * 20 ) )
+			exp forecolor r ( 1 - ( ( localvarint( "ui_tabDepth" ) > 4 ) * 0.35 ) )
+			exp forecolor g ( 1 - ( ( localvarint( "ui_tabDepth" ) > 4 ) * 0.35 ) )
+			exp forecolor b ( 1 - ( ( localvarint( "ui_tabDepth" ) > 4 ) * 0.35 ) )
+			visible when ( localvarint( "ui_tabDepth" ) > ( 4 - 1 ) )
+			exp text ( localvarstring( "ui_tab4Name" ) )
+		}
+		itemDef
+		{
+			rect 0 0 280 20 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0.25 0.25 0.25 1
+			background "white"
+			textscale 0.55
+			exp rect y ( - 20 - ( ( localvarint( "ui_tabDepth" ) - 5 ) * 20 ) )
+			visible when ( localvarint( "ui_tabDepth" ) > ( 5 - 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 280 20 1 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 0 0 0 1
+			background "gradient_fadein"
+			textfont 9
+			textalign 4
+			textalignx 68
+			textscale 0.375
+			exp rect y ( - 20 - ( ( localvarint( "ui_tabDepth" ) - 5 ) * 20 ) )
+			exp forecolor r ( 1 - ( ( localvarint( "ui_tabDepth" ) > 5 ) * 0.35 ) )
+			exp forecolor g ( 1 - ( ( localvarint( "ui_tabDepth" ) > 5 ) * 0.35 ) )
+			exp forecolor b ( 1 - ( ( localvarint( "ui_tabDepth" ) > 5 ) * 0.35 ) )
+			visible when ( localvarint( "ui_tabDepth" ) > ( 5 - 1 ) )
+			exp text ( localvarstring( "ui_tab5Name" ) )
+		}
+		itemDef
+		{
+			name "cac_weapon_usp"
+			rect 0 4 336 20 0 0
+			visible 1
+			group "mw2_popup_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "popup_button_selection_bar_short"
+			type 1
+			textfont 3
+			textalign 4
+			textalignx 68
+			textscale 0.375
+			disabled when ( !isitemunlocked( "usp" ) )
+			exp text ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "usp" , 3 ) )
+			
+			{
+				if ( ( tablelookup( "mp/challengeTable.csv" , 6 , "usp" , 4 ) ) != "" )
+				{
+					setLocalVarString "ui_challengeTierTable" ( tablelookup( "mp/challengeTable.csv" , 6 , "usp" , 4 ) );
+					;
+					open "menu_challenge_details";
+				}
+			}
+			action
+			{
+				play "mouse_click";
+				if ( localvarint( "ui_tabDepth" ) == 0 )
+				{
+					setLocalVarString "ui_tab1Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "usp" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 1 )
+				{
+					setLocalVarString "ui_tab2Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "usp" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 2 )
+				{
+					setLocalVarString "ui_tab3Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "usp" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 3 )
+				{
+					setLocalVarString "ui_tab4Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "usp" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 4 )
+				{
+					setLocalVarString "ui_tab5Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "usp" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 5 )
+				{
+					setLocalVarString "ui_tab6Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "usp" , 3 ) );
+					;;
+				}
+				if ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "weapon" ) != "usp" )
+				{
+					setPlayerData ( "customClasses" , "localVarInt" ( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 0 , "none" );
+					setPlayerData ( "customClasses" , "localVarInt" ( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 1 , "none" );
+					setPlayerData ( "customClasses" , "localVarInt" ( "classIndex" ) , "weaponSetups" , 1 , "camo" , "none" );
+				}
+				setPlayerData ( "customClasses" , "localVarInt" ( "classIndex" ) , "weaponSetups" , 1 , "weapon" , "usp" );
+				setPlayerData ( "weaponNew" , "usp" , "false" );
+				if ( !( tablelookup( "mp/attachmentTable.csv" , 4 , getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "attachment" , 0 ) , 12 ) != "" || tablelookup( "mp/attachmentTable.csv" , 4 , getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 0 ) , 12 ) != "" ) && ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 0 ) == "specialty_null_gl" || getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 0 ) == "specialty_null_grip" || getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 0 ) == "specialty_null_shotgun" ) || getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 0 ) == "specialty_null_heartbeat" )
+				{
+					setPlayerData ( "customClasses" , "localVarInt" ( "classIndex" ) , "perks" , 0 , "specialty_null" );
+				}
+				setLocalVarString "loadoutPrimary" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "weapon" ) );
+				;;
+				setLocalVarString "loadoutPrimaryAttachment" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "attachment" , 0 ) );
+				;;
+				setLocalVarString "loadoutPrimaryAttachment2" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "attachment" , 1 ) );
+				;;
+				if ( localvarstring( "loadoutPrimaryAttachment2" ) == "" )
+				{
+					setLocalVarString "loadoutPrimaryAttachment2" ( "none" );
+					;;
+				}
+				setLocalVarString "loadoutPrimaryCamo" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "camo" ) );
+				;;
+				setLocalVarString "loadoutSecondaryCamo" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "camo" ) );
+				;;
+				setLocalVarString "loadoutSecondary" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "weapon" ) );
+				;;
+				setLocalVarString "loadoutSecondaryAttachment" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 0 ) );
+				;;
+				setLocalVarString "loadoutSecondaryAttachment2" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 1 ) );
+				;;
+				if ( localvarstring( "loadoutSecondaryAttachment2" ) == "" )
+				{
+					setLocalVarString "loadoutSecondaryAttachment2" ( "none" );
+					;;
+				}
+				setLocalVarString "loadoutSecondaryCamo" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "camo" ) );
+				;;
+				setLocalVarString "loadoutEquipment" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 0 ) );
+				;;
+				setLocalVarString "loadoutPerk1" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 1 ) );
+				;;
+				setLocalVarString "loadoutPerk2" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 2 ) );
+				;;
+				setLocalVarString "loadoutPerk3" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 3 ) );
+				;;
+				setLocalVarString "loadoutStreak1" ( getplayerdata( "killstreaks" , 0 ) );
+				;;
+				setLocalVarString "loadoutStreak2" ( getplayerdata( "killstreaks" , 1 ) );
+				;;
+				setLocalVarString "loadoutStreak3" ( getplayerdata( "killstreaks" , 2 ) );
+				;;
+				setLocalVarString "loadoutDeathStreak" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 4 ) );
+				;;
+				setLocalVarString "loadoutOffhandSecondary" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "specialGrenade" ) );
+				;;
+				setLocalVarString "loadoutClassName" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "name" ) );
+				;;
+				if ( 1 == 0 )
+				{
+					if ( ( tablelookup( "mp/statsTable.csv" , 4 , "usp" , 11 ) != "" ) )
+					{
+						if ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 1 ) == "specialty_bling" )
+						{
+							open "popup_primary_attachments_bling";
+						}
+						else
+						{
+							open "popup_primary_attachments";
+						}
+					}
+					else
+					{
+						open "popup_cac_primary_camo";
+					}
+				}
+				else
+				{
+					if ( ( tablelookup( "mp/statsTable.csv" , 4 , "usp" , 11 ) != "" ) )
+					{
+						if ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 1 ) == "specialty_bling" && isitemunlocked( "specialty_secondarybling" ) )
+						{
+							open "popup_secondary_attachments_bling";
+						}
+						else
+						{
+							open "popup_secondary_attachments";
+						}
+					}
+					else
+					{
+						close "popup_cac_weapon_primary";
+						close "popup_primary_attachments" close "popup_secondary_attachments" close "popup_cac_weapon_secondary";
+						close "popup_cac_handgun_secondary";
+						close "popup_cac_machinePistols_secondary";
+						close "popup_cac_assault_primary";
+						close "popup_cac_SMG_primary";
+						close "popup_cac_LMG_primary";
+						close "popup_cac_sniper_primary";
+						close "popup_cac_shotgun_primary";
+						close "popup_cac_assault_secondary";
+						close "popup_cac_SMG_secondary";
+						close "popup_cac_LMG_secondary";
+						close "popup_cac_sniper_secondary";
+						close "popup_cac_shotgun_secondary";
+						close "popup_cac_template";
+						close "popup_cac_primary_camo";
+						close "popup_cac_secondary_camo";
+						close "popup_cac_bling";
+						close "popup_cac_perk2";
+						close "popup_cac_rocket_secondary";
+						close "popup_primary_attachments_bling";
+						close "popup_secondary_attachments_bling";
+						close "popup_cac_other_primary";
+					}
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_popup_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_popupAButton" ( 1 );
+				setLocalVarString "ui_selected_ref" ( "usp" );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 1 1 1 0;
+				setLocalVarBool "ui_popupAButton" ( 0 );
+				setPlayerData ( "weaponNew" , "usp" , "false" );
+			}
+		}
+		itemDef
+		{
+			rect 226 4 40 20 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new"
+			textscale 0.55
+			visible when ( ( getplayerdata( "weaponNew" , "usp" ) || getplayerdataanybooltrue( "camoNew" , "usp" ) || getplayerdataanybooltrue( "attachmentNew" , "usp" ) ) )
+		}
+		itemDef
+		{
+			rect 226 4 40 20 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_locked"
+			textscale 0.55
+			visible when ( ( isitemunlocked( "usp" ) == 0 ) )
+		}
+		itemDef
+		{
+			name "cac_weapon_coltanaconda"
+			rect 0 24 336 20 0 0
+			visible 1
+			group "mw2_popup_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "popup_button_selection_bar_short"
+			type 1
+			textfont 3
+			textalign 4
+			textalignx 68
+			textscale 0.375
+			disabled when ( !isitemunlocked( "coltanaconda" ) )
+			exp text ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "coltanaconda" , 3 ) )
+			
+			{
+				if ( ( tablelookup( "mp/challengeTable.csv" , 6 , "coltanaconda" , 4 ) ) != "" )
+				{
+					setLocalVarString "ui_challengeTierTable" ( tablelookup( "mp/challengeTable.csv" , 6 , "coltanaconda" , 4 ) );
+					;
+					open "menu_challenge_details";
+				}
+			}
+			action
+			{
+				play "mouse_click";
+				if ( localvarint( "ui_tabDepth" ) == 0 )
+				{
+					setLocalVarString "ui_tab1Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "coltanaconda" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 1 )
+				{
+					setLocalVarString "ui_tab2Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "coltanaconda" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 2 )
+				{
+					setLocalVarString "ui_tab3Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "coltanaconda" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 3 )
+				{
+					setLocalVarString "ui_tab4Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "coltanaconda" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 4 )
+				{
+					setLocalVarString "ui_tab5Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "coltanaconda" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 5 )
+				{
+					setLocalVarString "ui_tab6Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "coltanaconda" , 3 ) );
+					;;
+				}
+				if ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "weapon" ) != "coltanaconda" )
+				{
+					setPlayerData ( "customClasses" , "localVarInt" ( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 0 , "none" );
+					setPlayerData ( "customClasses" , "localVarInt" ( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 1 , "none" );
+					setPlayerData ( "customClasses" , "localVarInt" ( "classIndex" ) , "weaponSetups" , 1 , "camo" , "none" );
+				}
+				setPlayerData ( "customClasses" , "localVarInt" ( "classIndex" ) , "weaponSetups" , 1 , "weapon" , "coltanaconda" );
+				setPlayerData ( "weaponNew" , "coltanaconda" , "false" );
+				if ( !( tablelookup( "mp/attachmentTable.csv" , 4 , getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "attachment" , 0 ) , 12 ) != "" || tablelookup( "mp/attachmentTable.csv" , 4 , getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 0 ) , 12 ) != "" ) && ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 0 ) == "specialty_null_gl" || getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 0 ) == "specialty_null_grip" || getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 0 ) == "specialty_null_shotgun" ) || getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 0 ) == "specialty_null_heartbeat" )
+				{
+					setPlayerData ( "customClasses" , "localVarInt" ( "classIndex" ) , "perks" , 0 , "specialty_null" );
+				}
+				setLocalVarString "loadoutPrimary" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "weapon" ) );
+				;;
+				setLocalVarString "loadoutPrimaryAttachment" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "attachment" , 0 ) );
+				;;
+				setLocalVarString "loadoutPrimaryAttachment2" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "attachment" , 1 ) );
+				;;
+				if ( localvarstring( "loadoutPrimaryAttachment2" ) == "" )
+				{
+					setLocalVarString "loadoutPrimaryAttachment2" ( "none" );
+					;;
+				}
+				setLocalVarString "loadoutPrimaryCamo" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "camo" ) );
+				;;
+				setLocalVarString "loadoutSecondaryCamo" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "camo" ) );
+				;;
+				setLocalVarString "loadoutSecondary" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "weapon" ) );
+				;;
+				setLocalVarString "loadoutSecondaryAttachment" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 0 ) );
+				;;
+				setLocalVarString "loadoutSecondaryAttachment2" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 1 ) );
+				;;
+				if ( localvarstring( "loadoutSecondaryAttachment2" ) == "" )
+				{
+					setLocalVarString "loadoutSecondaryAttachment2" ( "none" );
+					;;
+				}
+				setLocalVarString "loadoutSecondaryCamo" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "camo" ) );
+				;;
+				setLocalVarString "loadoutEquipment" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 0 ) );
+				;;
+				setLocalVarString "loadoutPerk1" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 1 ) );
+				;;
+				setLocalVarString "loadoutPerk2" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 2 ) );
+				;;
+				setLocalVarString "loadoutPerk3" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 3 ) );
+				;;
+				setLocalVarString "loadoutStreak1" ( getplayerdata( "killstreaks" , 0 ) );
+				;;
+				setLocalVarString "loadoutStreak2" ( getplayerdata( "killstreaks" , 1 ) );
+				;;
+				setLocalVarString "loadoutStreak3" ( getplayerdata( "killstreaks" , 2 ) );
+				;;
+				setLocalVarString "loadoutDeathStreak" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 4 ) );
+				;;
+				setLocalVarString "loadoutOffhandSecondary" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "specialGrenade" ) );
+				;;
+				setLocalVarString "loadoutClassName" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "name" ) );
+				;;
+				if ( 1 == 0 )
+				{
+					if ( ( tablelookup( "mp/statsTable.csv" , 4 , "coltanaconda" , 11 ) != "" ) )
+					{
+						if ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 1 ) == "specialty_bling" )
+						{
+							open "popup_primary_attachments_bling";
+						}
+						else
+						{
+							open "popup_primary_attachments";
+						}
+					}
+					else
+					{
+						open "popup_cac_primary_camo";
+					}
+				}
+				else
+				{
+					if ( ( tablelookup( "mp/statsTable.csv" , 4 , "coltanaconda" , 11 ) != "" ) )
+					{
+						if ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 1 ) == "specialty_bling" && isitemunlocked( "specialty_secondarybling" ) )
+						{
+							open "popup_secondary_attachments_bling";
+						}
+						else
+						{
+							open "popup_secondary_attachments";
+						}
+					}
+					else
+					{
+						close "popup_cac_weapon_primary";
+						close "popup_primary_attachments" close "popup_secondary_attachments" close "popup_cac_weapon_secondary";
+						close "popup_cac_handgun_secondary";
+						close "popup_cac_machinePistols_secondary";
+						close "popup_cac_assault_primary";
+						close "popup_cac_SMG_primary";
+						close "popup_cac_LMG_primary";
+						close "popup_cac_sniper_primary";
+						close "popup_cac_shotgun_primary";
+						close "popup_cac_assault_secondary";
+						close "popup_cac_SMG_secondary";
+						close "popup_cac_LMG_secondary";
+						close "popup_cac_sniper_secondary";
+						close "popup_cac_shotgun_secondary";
+						close "popup_cac_template";
+						close "popup_cac_primary_camo";
+						close "popup_cac_secondary_camo";
+						close "popup_cac_bling";
+						close "popup_cac_perk2";
+						close "popup_cac_rocket_secondary";
+						close "popup_primary_attachments_bling";
+						close "popup_secondary_attachments_bling";
+						close "popup_cac_other_primary";
+					}
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_popup_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_popupAButton" ( 1 );
+				setLocalVarString "ui_selected_ref" ( "coltanaconda" );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 1 1 1 0;
+				setLocalVarBool "ui_popupAButton" ( 0 );
+				setPlayerData ( "weaponNew" , "coltanaconda" , "false" );
+			}
+		}
+		itemDef
+		{
+			rect 226 24 40 20 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new"
+			textscale 0.55
+			visible when ( ( getplayerdata( "weaponNew" , "coltanaconda" ) || getplayerdataanybooltrue( "camoNew" , "coltanaconda" ) || getplayerdataanybooltrue( "attachmentNew" , "coltanaconda" ) ) )
+		}
+		itemDef
+		{
+			rect 226 24 40 20 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_locked"
+			textscale 0.55
+			visible when ( ( isitemunlocked( "coltanaconda" ) == 0 ) )
+		}
+		itemDef
+		{
+			name "cac_weapon_beretta"
+			rect 0 44 336 20 0 0
+			visible 1
+			group "mw2_popup_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "popup_button_selection_bar_short"
+			type 1
+			textfont 3
+			textalign 4
+			textalignx 68
+			textscale 0.375
+			disabled when ( !isitemunlocked( "beretta" ) )
+			exp text ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "beretta" , 3 ) )
+			
+			{
+				if ( ( tablelookup( "mp/challengeTable.csv" , 6 , "beretta" , 4 ) ) != "" )
+				{
+					setLocalVarString "ui_challengeTierTable" ( tablelookup( "mp/challengeTable.csv" , 6 , "beretta" , 4 ) );
+					;
+					open "menu_challenge_details";
+				}
+			}
+			action
+			{
+				play "mouse_click";
+				if ( localvarint( "ui_tabDepth" ) == 0 )
+				{
+					setLocalVarString "ui_tab1Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "beretta" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 1 )
+				{
+					setLocalVarString "ui_tab2Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "beretta" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 2 )
+				{
+					setLocalVarString "ui_tab3Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "beretta" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 3 )
+				{
+					setLocalVarString "ui_tab4Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "beretta" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 4 )
+				{
+					setLocalVarString "ui_tab5Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "beretta" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 5 )
+				{
+					setLocalVarString "ui_tab6Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "beretta" , 3 ) );
+					;;
+				}
+				if ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "weapon" ) != "beretta" )
+				{
+					setPlayerData ( "customClasses" , "localVarInt" ( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 0 , "none" );
+					setPlayerData ( "customClasses" , "localVarInt" ( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 1 , "none" );
+					setPlayerData ( "customClasses" , "localVarInt" ( "classIndex" ) , "weaponSetups" , 1 , "camo" , "none" );
+				}
+				setPlayerData ( "customClasses" , "localVarInt" ( "classIndex" ) , "weaponSetups" , 1 , "weapon" , "beretta" );
+				setPlayerData ( "weaponNew" , "beretta" , "false" );
+				if ( !( tablelookup( "mp/attachmentTable.csv" , 4 , getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "attachment" , 0 ) , 12 ) != "" || tablelookup( "mp/attachmentTable.csv" , 4 , getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 0 ) , 12 ) != "" ) && ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 0 ) == "specialty_null_gl" || getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 0 ) == "specialty_null_grip" || getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 0 ) == "specialty_null_shotgun" ) || getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 0 ) == "specialty_null_heartbeat" )
+				{
+					setPlayerData ( "customClasses" , "localVarInt" ( "classIndex" ) , "perks" , 0 , "specialty_null" );
+				}
+				setLocalVarString "loadoutPrimary" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "weapon" ) );
+				;;
+				setLocalVarString "loadoutPrimaryAttachment" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "attachment" , 0 ) );
+				;;
+				setLocalVarString "loadoutPrimaryAttachment2" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "attachment" , 1 ) );
+				;;
+				if ( localvarstring( "loadoutPrimaryAttachment2" ) == "" )
+				{
+					setLocalVarString "loadoutPrimaryAttachment2" ( "none" );
+					;;
+				}
+				setLocalVarString "loadoutPrimaryCamo" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "camo" ) );
+				;;
+				setLocalVarString "loadoutSecondaryCamo" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "camo" ) );
+				;;
+				setLocalVarString "loadoutSecondary" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "weapon" ) );
+				;;
+				setLocalVarString "loadoutSecondaryAttachment" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 0 ) );
+				;;
+				setLocalVarString "loadoutSecondaryAttachment2" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 1 ) );
+				;;
+				if ( localvarstring( "loadoutSecondaryAttachment2" ) == "" )
+				{
+					setLocalVarString "loadoutSecondaryAttachment2" ( "none" );
+					;;
+				}
+				setLocalVarString "loadoutSecondaryCamo" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "camo" ) );
+				;;
+				setLocalVarString "loadoutEquipment" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 0 ) );
+				;;
+				setLocalVarString "loadoutPerk1" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 1 ) );
+				;;
+				setLocalVarString "loadoutPerk2" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 2 ) );
+				;;
+				setLocalVarString "loadoutPerk3" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 3 ) );
+				;;
+				setLocalVarString "loadoutStreak1" ( getplayerdata( "killstreaks" , 0 ) );
+				;;
+				setLocalVarString "loadoutStreak2" ( getplayerdata( "killstreaks" , 1 ) );
+				;;
+				setLocalVarString "loadoutStreak3" ( getplayerdata( "killstreaks" , 2 ) );
+				;;
+				setLocalVarString "loadoutDeathStreak" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 4 ) );
+				;;
+				setLocalVarString "loadoutOffhandSecondary" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "specialGrenade" ) );
+				;;
+				setLocalVarString "loadoutClassName" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "name" ) );
+				;;
+				if ( 1 == 0 )
+				{
+					if ( ( tablelookup( "mp/statsTable.csv" , 4 , "beretta" , 11 ) != "" ) )
+					{
+						if ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 1 ) == "specialty_bling" )
+						{
+							open "popup_primary_attachments_bling";
+						}
+						else
+						{
+							open "popup_primary_attachments";
+						}
+					}
+					else
+					{
+						open "popup_cac_primary_camo";
+					}
+				}
+				else
+				{
+					if ( ( tablelookup( "mp/statsTable.csv" , 4 , "beretta" , 11 ) != "" ) )
+					{
+						if ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 1 ) == "specialty_bling" && isitemunlocked( "specialty_secondarybling" ) )
+						{
+							open "popup_secondary_attachments_bling";
+						}
+						else
+						{
+							open "popup_secondary_attachments";
+						}
+					}
+					else
+					{
+						close "popup_cac_weapon_primary";
+						close "popup_primary_attachments" close "popup_secondary_attachments" close "popup_cac_weapon_secondary";
+						close "popup_cac_handgun_secondary";
+						close "popup_cac_machinePistols_secondary";
+						close "popup_cac_assault_primary";
+						close "popup_cac_SMG_primary";
+						close "popup_cac_LMG_primary";
+						close "popup_cac_sniper_primary";
+						close "popup_cac_shotgun_primary";
+						close "popup_cac_assault_secondary";
+						close "popup_cac_SMG_secondary";
+						close "popup_cac_LMG_secondary";
+						close "popup_cac_sniper_secondary";
+						close "popup_cac_shotgun_secondary";
+						close "popup_cac_template";
+						close "popup_cac_primary_camo";
+						close "popup_cac_secondary_camo";
+						close "popup_cac_bling";
+						close "popup_cac_perk2";
+						close "popup_cac_rocket_secondary";
+						close "popup_primary_attachments_bling";
+						close "popup_secondary_attachments_bling";
+						close "popup_cac_other_primary";
+					}
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_popup_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_popupAButton" ( 1 );
+				setLocalVarString "ui_selected_ref" ( "beretta" );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 1 1 1 0;
+				setLocalVarBool "ui_popupAButton" ( 0 );
+				setPlayerData ( "weaponNew" , "beretta" , "false" );
+			}
+		}
+		itemDef
+		{
+			rect 226 44 40 20 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new"
+			textscale 0.55
+			visible when ( ( getplayerdata( "weaponNew" , "beretta" ) || getplayerdataanybooltrue( "camoNew" , "beretta" ) || getplayerdataanybooltrue( "attachmentNew" , "beretta" ) ) )
+		}
+		itemDef
+		{
+			rect 226 44 40 20 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_locked"
+			textscale 0.55
+			visible when ( ( isitemunlocked( "beretta" ) == 0 ) )
+		}
+		itemDef
+		{
+			name "cac_weapon_deserteagle"
+			rect 0 64 336 20 0 0
+			visible 1
+			group "mw2_popup_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "popup_button_selection_bar_short"
+			type 1
+			textfont 3
+			textalign 4
+			textalignx 68
+			textscale 0.375
+			disabled when ( !isitemunlocked( "deserteagle" ) )
+			exp text ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "deserteagle" , 3 ) )
+			
+			{
+				if ( ( tablelookup( "mp/challengeTable.csv" , 6 , "deserteagle" , 4 ) ) != "" )
+				{
+					setLocalVarString "ui_challengeTierTable" ( tablelookup( "mp/challengeTable.csv" , 6 , "deserteagle" , 4 ) );
+					;
+					open "menu_challenge_details";
+				}
+			}
+			action
+			{
+				play "mouse_click";
+				if ( localvarint( "ui_tabDepth" ) == 0 )
+				{
+					setLocalVarString "ui_tab1Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "deserteagle" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 1 )
+				{
+					setLocalVarString "ui_tab2Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "deserteagle" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 2 )
+				{
+					setLocalVarString "ui_tab3Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "deserteagle" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 3 )
+				{
+					setLocalVarString "ui_tab4Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "deserteagle" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 4 )
+				{
+					setLocalVarString "ui_tab5Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "deserteagle" , 3 ) );
+					;;
+				}
+				if ( localvarint( "ui_tabDepth" ) == 5 )
+				{
+					setLocalVarString "ui_tab6Name" ( "@" + tablelookup( "mp/statsTable.csv" , 4 , "deserteagle" , 3 ) );
+					;;
+				}
+				if ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "weapon" ) != "deserteagle" )
+				{
+					setPlayerData ( "customClasses" , "localVarInt" ( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 0 , "none" );
+					setPlayerData ( "customClasses" , "localVarInt" ( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 1 , "none" );
+					setPlayerData ( "customClasses" , "localVarInt" ( "classIndex" ) , "weaponSetups" , 1 , "camo" , "none" );
+				}
+				setPlayerData ( "customClasses" , "localVarInt" ( "classIndex" ) , "weaponSetups" , 1 , "weapon" , "deserteagle" );
+				setPlayerData ( "weaponNew" , "deserteagle" , "false" );
+				if ( !( tablelookup( "mp/attachmentTable.csv" , 4 , getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "attachment" , 0 ) , 12 ) != "" || tablelookup( "mp/attachmentTable.csv" , 4 , getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 0 ) , 12 ) != "" ) && ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 0 ) == "specialty_null_gl" || getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 0 ) == "specialty_null_grip" || getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 0 ) == "specialty_null_shotgun" ) || getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 0 ) == "specialty_null_heartbeat" )
+				{
+					setPlayerData ( "customClasses" , "localVarInt" ( "classIndex" ) , "perks" , 0 , "specialty_null" );
+				}
+				setLocalVarString "loadoutPrimary" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "weapon" ) );
+				;;
+				setLocalVarString "loadoutPrimaryAttachment" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "attachment" , 0 ) );
+				;;
+				setLocalVarString "loadoutPrimaryAttachment2" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "attachment" , 1 ) );
+				;;
+				if ( localvarstring( "loadoutPrimaryAttachment2" ) == "" )
+				{
+					setLocalVarString "loadoutPrimaryAttachment2" ( "none" );
+					;;
+				}
+				setLocalVarString "loadoutPrimaryCamo" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 0 , "camo" ) );
+				;;
+				setLocalVarString "loadoutSecondaryCamo" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "camo" ) );
+				;;
+				setLocalVarString "loadoutSecondary" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "weapon" ) );
+				;;
+				setLocalVarString "loadoutSecondaryAttachment" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 0 ) );
+				;;
+				setLocalVarString "loadoutSecondaryAttachment2" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "attachment" , 1 ) );
+				;;
+				if ( localvarstring( "loadoutSecondaryAttachment2" ) == "" )
+				{
+					setLocalVarString "loadoutSecondaryAttachment2" ( "none" );
+					;;
+				}
+				setLocalVarString "loadoutSecondaryCamo" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "weaponSetups" , 1 , "camo" ) );
+				;;
+				setLocalVarString "loadoutEquipment" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 0 ) );
+				;;
+				setLocalVarString "loadoutPerk1" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 1 ) );
+				;;
+				setLocalVarString "loadoutPerk2" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 2 ) );
+				;;
+				setLocalVarString "loadoutPerk3" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 3 ) );
+				;;
+				setLocalVarString "loadoutStreak1" ( getplayerdata( "killstreaks" , 0 ) );
+				;;
+				setLocalVarString "loadoutStreak2" ( getplayerdata( "killstreaks" , 1 ) );
+				;;
+				setLocalVarString "loadoutStreak3" ( getplayerdata( "killstreaks" , 2 ) );
+				;;
+				setLocalVarString "loadoutDeathStreak" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 4 ) );
+				;;
+				setLocalVarString "loadoutOffhandSecondary" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "specialGrenade" ) );
+				;;
+				setLocalVarString "loadoutClassName" ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "name" ) );
+				;;
+				if ( 1 == 0 )
+				{
+					if ( ( tablelookup( "mp/statsTable.csv" , 4 , "deserteagle" , 11 ) != "" ) )
+					{
+						if ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 1 ) == "specialty_bling" )
+						{
+							open "popup_primary_attachments_bling";
+						}
+						else
+						{
+							open "popup_primary_attachments";
+						}
+					}
+					else
+					{
+						open "popup_cac_primary_camo";
+					}
+				}
+				else
+				{
+					if ( ( tablelookup( "mp/statsTable.csv" , 4 , "deserteagle" , 11 ) != "" ) )
+					{
+						if ( getplayerdata( "customClasses" , localvarint( "classIndex" ) , "perks" , 1 ) == "specialty_bling" && isitemunlocked( "specialty_secondarybling" ) )
+						{
+							open "popup_secondary_attachments_bling";
+						}
+						else
+						{
+							open "popup_secondary_attachments";
+						}
+					}
+					else
+					{
+						close "popup_cac_weapon_primary";
+						close "popup_primary_attachments" close "popup_secondary_attachments" close "popup_cac_weapon_secondary";
+						close "popup_cac_handgun_secondary";
+						close "popup_cac_machinePistols_secondary";
+						close "popup_cac_assault_primary";
+						close "popup_cac_SMG_primary";
+						close "popup_cac_LMG_primary";
+						close "popup_cac_sniper_primary";
+						close "popup_cac_shotgun_primary";
+						close "popup_cac_assault_secondary";
+						close "popup_cac_SMG_secondary";
+						close "popup_cac_LMG_secondary";
+						close "popup_cac_sniper_secondary";
+						close "popup_cac_shotgun_secondary";
+						close "popup_cac_template";
+						close "popup_cac_primary_camo";
+						close "popup_cac_secondary_camo";
+						close "popup_cac_bling";
+						close "popup_cac_perk2";
+						close "popup_cac_rocket_secondary";
+						close "popup_primary_attachments_bling";
+						close "popup_secondary_attachments_bling";
+						close "popup_cac_other_primary";
+					}
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_popup_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_popupAButton" ( 1 );
+				setLocalVarString "ui_selected_ref" ( "deserteagle" );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 1 1 1 0;
+				setLocalVarBool "ui_popupAButton" ( 0 );
+				setPlayerData ( "weaponNew" , "deserteagle" , "false" );
+			}
+		}
+		itemDef
+		{
+			rect 226 64 40 20 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new"
+			textscale 0.55
+			visible when ( ( getplayerdata( "weaponNew" , "deserteagle" ) || getplayerdataanybooltrue( "camoNew" , "deserteagle" ) || getplayerdataanybooltrue( "attachmentNew" , "deserteagle" ) ) )
+		}
+		itemDef
+		{
+			rect 226 64 40 20 1 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_locked"
+			textscale 0.55
+			visible when ( ( isitemunlocked( "deserteagle" ) == 0 ) )
+		}
+		itemDef
+		{
+			rect 8 0 200 184 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.5
+			background "small_box_lightfx"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 8 0 200 184 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 4
+			textalignx 4
+			textscale 0.375
+			exp text ( "@" + tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 3 ) )
+		}
+		itemDef
+		{
+			rect 8 10 200 100 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp material ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 6 ) )
+		}
+		itemDef
+		{
+			rect 8 0 200 184 2 1
+			decoration
+			autowrapped
+			visible 1
+			forecolor 1 1 1 0.65
+			textfont 3
+			textalign 4
+			textalignx 4
+			textaligny 104
+			textscale 0.375
+			visible when ( isitemunlocked( localvarstring( "ui_selected_ref" ) ) )
+			exp text ( "@" + tablelookup( "mp/statstable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 7 ) )
+		}
+		itemDef
+		{
+			rect 8 0 200 184 2 1
+			decoration
+			autowrapped
+			visible 1
+			forecolor 1 1 1 0.65
+			textfont 3
+			textalign 4
+			textalignx 4
+			textaligny 104
+			textscale 0.375
+			visible when ( !isitemunlocked( localvarstring( "ui_selected_ref" ) ) )
+			exp text ( "@" + tablelookup( "mp/rankTable.csv" , 0 , tablelookup( "mp/unlockTable.csv" , 0 , localvarstring( "ui_selected_ref" ) , 2 ) , 17 ) )
+		}
+		itemDef
+		{
+			rect 8 0 200 184 2 1
+			decoration
+			autowrapped
+			visible 1
+			forecolor 1 1 1 0.65
+			textfont 3
+			textalign 4
+			textalignx 4
+			textaligny 144
+			textscale 0.375
+			text "@PLATFORM_VIEW_CHALLENGES"
+			visible when ( isitemunlocked( localvarstring( "ui_selected_ref" ) ) && ( tablelookup( "mp/challengeTable.csv" , 6 , localvarstring( "ui_selected_ref" ) , 4 ) ) != "" )
+		}
+		itemDef
+		{
+			rect -64 22 120 4 3 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 0.65
+			backcolor 0 0 0 1
+			background "gradient_fadein"
+			textfont 3
+			textalign 6
+			textaligny -20
+			textscale 0.375
+			text "@MPUI_ACCURACY"
+			visible when ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 22 ) && 1 )
+		}
+		itemDef
+		{
+			rect -64 22 120 2 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.75 1 0.7 0.85
+			background "white"
+			textscale 0.55
+			exp rect w ( ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 22 ) / 100 ) * 120 )
+			visible when ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 22 ) && 1 )
+		}
+		itemDef
+		{
+			rect -64 22 120 2 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.85 0.85 0.85 1
+			background "gradient_fadein"
+			textscale 0.55
+			exp rect w ( ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 22 ) / 100 ) * 120 )
+			visible when ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 22 ) && 1 )
+		}
+		itemDef
+		{
+			rect -64 22 120 2 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 0.25 0.65
+			background "white"
+			textscale 0.55
+			exp rect x ( - 64 + ( 0 - 120 * ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 22 ) / 100 ) ) + ( ( 0 - 120 * ( 0 / 100 ) ) * ( 0 < 0 ) ) )
+			exp rect w ( min( 120 * ( 0 / 100 ) , ( 1 - ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 22 ) / 100 ) ) * 120 ) )
+			exp forecolor r ( ( 0 < 0 ) * 0.45 + 0.25 )
+			exp forecolor g ( ( 0 > 0 ) * 0.45 + 0.25 )
+			visible when ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 22 ) && 1 )
+		}
+		itemDef
+		{
+			rect -64 48 120 4 3 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 0.65
+			backcolor 0 0 0 1
+			background "gradient_fadein"
+			textfont 3
+			textalign 6
+			textaligny -20
+			textscale 0.375
+			text "@MPUI_DAMAGE"
+			visible when ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 23 ) && 1 )
+		}
+		itemDef
+		{
+			rect -64 48 120 2 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.75 1 0.7 0.85
+			background "white"
+			textscale 0.55
+			exp rect w ( ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 23 ) / 100 ) * 120 )
+			visible when ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 23 ) && 1 )
+		}
+		itemDef
+		{
+			rect -64 48 120 2 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.85 0.85 0.85 1
+			background "gradient_fadein"
+			textscale 0.55
+			exp rect w ( ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 23 ) / 100 ) * 120 )
+			visible when ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 23 ) && 1 )
+		}
+		itemDef
+		{
+			rect -64 48 120 2 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 0.25 0.65
+			background "white"
+			textscale 0.55
+			exp rect x ( - 64 + ( 0 - 120 * ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 23 ) / 100 ) ) + ( ( 0 - 120 * ( 0 / 100 ) ) * ( 0 < 0 ) ) )
+			exp rect w ( min( 120 * ( 0 / 100 ) , ( 1 - ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 23 ) / 100 ) ) * 120 ) )
+			exp forecolor r ( ( 0 < 0 ) * 0.45 + 0.25 )
+			exp forecolor g ( ( 0 > 0 ) * 0.45 + 0.25 )
+			visible when ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 23 ) && 1 )
+		}
+		itemDef
+		{
+			rect -64 74 120 4 3 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 0.65
+			backcolor 0 0 0 1
+			background "gradient_fadein"
+			textfont 3
+			textalign 6
+			textaligny -20
+			textscale 0.375
+			text "@MPUI_RANGE"
+			visible when ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 24 ) && 1 )
+		}
+		itemDef
+		{
+			rect -64 74 120 2 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.75 1 0.7 0.85
+			background "white"
+			textscale 0.55
+			exp rect w ( ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 24 ) / 100 ) * 120 )
+			visible when ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 24 ) && 1 )
+		}
+		itemDef
+		{
+			rect -64 74 120 2 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.85 0.85 0.85 1
+			background "gradient_fadein"
+			textscale 0.55
+			exp rect w ( ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 24 ) / 100 ) * 120 )
+			visible when ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 24 ) && 1 )
+		}
+		itemDef
+		{
+			rect -64 74 120 2 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 0.25 0.65
+			background "white"
+			textscale 0.55
+			exp rect x ( - 64 + ( 0 - 120 * ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 24 ) / 100 ) ) + ( ( 0 - 120 * ( 0 / 100 ) ) * ( 0 < 0 ) ) )
+			exp rect w ( min( 120 * ( 0 / 100 ) , ( 1 - ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 24 ) / 100 ) ) * 120 ) )
+			exp forecolor r ( ( 0 < 0 ) * 0.45 + 0.25 )
+			exp forecolor g ( ( 0 > 0 ) * 0.45 + 0.25 )
+			visible when ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 24 ) && 1 )
+		}
+		itemDef
+		{
+			rect -64 100 120 4 3 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 0.65
+			backcolor 0 0 0 1
+			background "gradient_fadein"
+			textfont 3
+			textalign 6
+			textaligny -20
+			textscale 0.375
+			text "@MPUI_FIRE_RATE"
+			visible when ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 25 ) && 1 )
+		}
+		itemDef
+		{
+			rect -64 100 120 2 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.75 1 0.7 0.85
+			background "white"
+			textscale 0.55
+			exp rect w ( ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 25 ) / 100 ) * 120 )
+			visible when ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 25 ) && 1 )
+		}
+		itemDef
+		{
+			rect -64 100 120 2 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.85 0.85 0.85 1
+			background "gradient_fadein"
+			textscale 0.55
+			exp rect w ( ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 25 ) / 100 ) * 120 )
+			visible when ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 25 ) && 1 )
+		}
+		itemDef
+		{
+			rect -64 100 120 2 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 0.25 0.65
+			background "white"
+			textscale 0.55
+			exp rect x ( - 64 + ( 0 - 120 * ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 25 ) / 100 ) ) + ( ( 0 - 120 * ( 0 / 100 ) ) * ( 0 < 0 ) ) )
+			exp rect w ( min( 120 * ( 0 / 100 ) , ( 1 - ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 25 ) / 100 ) ) * 120 ) )
+			exp forecolor r ( ( 0 < 0 ) * 0.45 + 0.25 )
+			exp forecolor g ( ( 0 > 0 ) * 0.45 + 0.25 )
+			visible when ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 25 ) && 1 )
+		}
+		itemDef
+		{
+			rect -64 126 120 4 3 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 0.65
+			backcolor 0 0 0 1
+			background "gradient_fadein"
+			textfont 3
+			textalign 6
+			textaligny -20
+			textscale 0.375
+			text "@MPUI_MOBILITY"
+			visible when ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 26 ) && 0 )
+		}
+		itemDef
+		{
+			rect -64 126 120 2 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.75 1 0.7 0.85
+			background "white"
+			textscale 0.55
+			exp rect w ( ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 26 ) / 100 ) * 120 )
+			visible when ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 26 ) && 0 )
+		}
+		itemDef
+		{
+			rect -64 126 120 2 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.85 0.85 0.85 1
+			background "gradient_fadein"
+			textscale 0.55
+			exp rect w ( ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 26 ) / 100 ) * 120 )
+			visible when ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 26 ) && 0 )
+		}
+		itemDef
+		{
+			rect -64 126 120 2 3 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 0.25 0.65
+			background "white"
+			textscale 0.55
+			exp rect x ( - 64 + ( 0 - 120 * ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 26 ) / 100 ) ) + ( ( 0 - 120 * ( 0 / 100 ) ) * ( 0 < 0 ) ) )
+			exp rect w ( min( 120 * ( 0 / 100 ) , ( 1 - ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 26 ) / 100 ) ) * 120 ) )
+			exp forecolor r ( ( 0 < 0 ) * 0.45 + 0.25 )
+			exp forecolor g ( ( 0 > 0 ) * 0.45 + 0.25 )
+			visible when ( tablelookup( "mp/statsTable.csv" , 4 , localvarstring( "ui_selected_ref" ) , 26 ) && 0 )
+		}
+	}
+}

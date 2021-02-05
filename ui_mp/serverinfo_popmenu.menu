@@ -1,0 +1,225 @@
+{
+	menuDef
+	{
+		name "serverinfo_popmenu"
+		rect -219 70 438 372 2 0
+		popup
+		visible 1
+		style 1
+		border 1
+		borderSize 2
+		forecolor 1 1 1 1
+		bordercolor 0.4 0.405 0.42 1
+		focuscolor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		onOpen
+		{
+			uiScript "ServerStatus";
+			setLocalVarBool "ui_centerPopup" ( 1 );
+		}
+		onClose
+		{
+			setLocalVarBool "ui_centerPopup" ( 0 );
+		}
+		onEsc
+		{
+			setLocalVarBool "ui_centerPopup" ( 0 );
+			play "mouse_click";
+			close self;
+		}
+		itemDef
+		{
+			rect 0 0 434 368 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0.2 0.2 0.22 0.85
+			background "white"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 219 2 0 324 2 1
+			decoration
+			visible 1
+			forecolor 0.69 0.69 0.69 1
+			type 1
+			textfont 1
+			textalign 5
+			textscale 0.4583
+			exp text ( "@MENU_SERVER_INFO" )
+		}
+		itemDef
+		{
+			name "serverinfo"
+			rect 20 28 390 280 0 0
+			visible 1
+			style 1
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			backcolor 0 0 0 1
+			bordercolor 0.5 0.5 0.5 1
+			type 6
+			textfont 1
+			textscale 0.25
+			feeder 13
+			elementWidth 120
+			elementHeight 16
+//			numcol			xpos	xwidth	textlen	  alignment
+			columns 4		2		50		20		  0
+							60		40		10		  0
+							110		40		10		  0
+							155		40		25		  0
+			notselectable
+		}
+		itemDef
+		{
+			rect 0 328 425.5 18 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 1 0.07
+			textscale 0.55
+			exp material ( "gradient_fadein" )
+		}
+		itemDef
+		{
+			rect 425.5 328 4.5 18 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 1 0.07
+			background "button_highlight_end"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 328 425.5 18 2 1
+			decoration
+			visible 1
+			style 3
+			borderSize 2
+			forecolor 0.9 0.95 1 0.25
+			bordercolor 0.8 0.95 1 0.4
+			background "gradient_fadein"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 1 && localvarstring( "ui_choicegroup" ) == "popmenu" )
+		}
+		itemDef
+		{
+			rect 425.5 328 4.5 18 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.95 1 0.25
+			background "button_highlight_end"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 1 && localvarstring( "ui_choicegroup" ) == "popmenu" )
+		}
+		itemDef
+		{
+			rect 0 328 430 18 2 1
+			visible 1
+			forecolor 0.69 0.69 0.69 1
+			type 1
+			textfont 1
+			textalign 10
+			textalignx -6
+			textscale 0.4
+			exp text ( "@MENU_CLOSE" )
+			action
+			{
+				play "mouse_click";
+				close self ;;
+			}
+			onFocus
+			{
+				play "mouse_submenu_over";
+				setLocalVarInt "ui_highlight" ( 1 );
+				setLocalVarString "ui_choicegroup" ( "popmenu" );
+				;;
+			}
+			leaveFocus
+			{
+				setLocalVarInt "ui_highlight" ( 0 );
+				;;
+			}
+		}
+		itemDef
+		{
+			rect 0 348 425.5 18 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 1 0.07
+			textscale 0.55
+			exp material ( "gradient_fadein" )
+		}
+		itemDef
+		{
+			rect 425.5 348 4.5 18 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 1 0.07
+			background "button_highlight_end"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 348 425.5 18 2 1
+			decoration
+			visible 1
+			style 3
+			borderSize 2
+			forecolor 0.9 0.95 1 0.25
+			bordercolor 0.8 0.95 1 0.4
+			background "gradient_fadein"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 2 && localvarstring( "ui_choicegroup" ) == "popmenu" )
+		}
+		itemDef
+		{
+			rect 425.5 348 4.5 18 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.95 1 0.25
+			background "button_highlight_end"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 2 && localvarstring( "ui_choicegroup" ) == "popmenu" )
+		}
+		itemDef
+		{
+			rect 0 348 430 18 2 1
+			visible 1
+			forecolor 0.69 0.69 0.69 1
+			type 1
+			textfont 1
+			textalign 10
+			textalignx -6
+			textscale 0.4
+			exp text ( "@MENU_REFRESH" )
+			action
+			{
+				play "mouse_click";
+				uiScript "ServerStatus" ;;
+			}
+			onFocus
+			{
+				play "mouse_submenu_over";
+				setLocalVarInt "ui_highlight" ( 2 );
+				setLocalVarString "ui_choicegroup" ( "popmenu" );
+				;;
+			}
+			leaveFocus
+			{
+				setLocalVarInt "ui_highlight" ( 0 );
+				;;
+			}
+		}
+	}
+}

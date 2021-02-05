@@ -1,0 +1,322 @@
+{
+	menuDef
+	{
+		name "mods_menu"
+		rect 0 0 640 480 0 0
+		style 1
+		forecolor 1 1 1 1
+		focuscolor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		onOpen
+		{
+			setLocalVarBool "ui_hideBack" ( 1 );
+			uiScript "loadMods";
+		}
+		onClose
+		{
+			setLocalVarBool "ui_hideBack" ( 0 );
+		}
+		onEsc
+		{
+			close self;
+			open "main_text";
+		}
+		itemDef
+		{
+			rect -120 0 880 480 0 0
+			decoration
+			visible 1
+			style 3
+			borderSize 1
+			forecolor 0 0 0 0.75
+			textscale 0.55
+			exp material ( "white" )
+		}
+		itemDef
+		{
+			rect -120 -32 378 64 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 0.95 0.175
+			background "white"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 258 -32 16 -64 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 0.95 0.175
+			background "button_highlight_end"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 56 448 528 40 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 0.95 0.175
+			background "white"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 584 448 16 64 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 0.95 0.175
+			background "button_highlight_end"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 40 448 -16 64 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 0.95 0.175
+			background "button_highlight_end"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -120 464 160 32 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 0.95 0.175
+			background "white"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 600 464 160 32 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 0.95 0.175
+			background "white"
+			textscale 0.55
+		}
+		itemDef
+		{
+			name "back"
+			rect -250 -26 40 20 2 3
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			type 1
+			textfont 1
+			textaligny 18
+			textscale 0.375
+			text "@MENU_BACK"
+			visible when ( 1 )
+			mouseEnter
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				play "mouse_click";
+				close self;
+				open "main_text";
+			}
+		}
+		itemDef
+		{
+			rect 48 40 0 0 0 0
+			decoration
+			visible 1
+			forecolor 1 0.8 0.4 1
+			textfont 1
+			textalign 4
+			textalignx -36
+			textaligny -36
+			textscale 0.5833
+			exp text ( "@MENU_MODS" )
+		}
+		itemDef
+		{
+			name "modlist"
+			rect -170 64 340 280 2 1
+			visible 1
+			style 1
+			border 1
+			forecolor 1 1 1 0.9
+			bordercolor 1 1 1 0.15
+			outlinecolor 0.9 0.9 1 0.07
+			type 6
+			textalignx 6
+			textscale 0.4
+			feeder 9
+			elementWidth 120
+			elementHeight 22
+//			numcol			xpos	xwidth	textlen	  alignment
+			columns 0		0		0		0		  0
+			doubleClick
+			{
+				play "mouse_click";
+				uiScript "RunMod";
+			}
+			action
+			{
+				show "accept";
+			}
+		}
+		itemDef
+		{
+			rect -170 348 334.5 22 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 1 0.07
+			textscale 0.55
+			exp material ( "gradient_fadein" )
+		}
+		itemDef
+		{
+			rect 164.5 348 5.5 22 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 1 0.07
+			background "button_highlight_end"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -170 348 334.5 22 2 1
+			decoration
+			visible 1
+			style 3
+			borderSize 2
+			forecolor 0.9 0.95 1 0.35
+			bordercolor 0.8 0.95 1 0.4
+			background "gradient_fadein"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 1 && localvarstring( "ui_choicegroup" ) == "mods" )
+		}
+		itemDef
+		{
+			rect 164.5 348 5.5 22 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.95 1 0.35
+			background "button_highlight_end"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 1 && localvarstring( "ui_choicegroup" ) == "mods" )
+		}
+		itemDef
+		{
+			rect -170 348 340 22 2 1
+			visible 1
+			forecolor 0.69 0.69 0.69 1
+			type 1
+			textfont 1
+			textalign 10
+			textalignx -10
+			textscale 0.4
+			exp text ( "@MENU_LAUNCH" )
+			action
+			{
+				play "mouse_click";
+				uiScript "RunMod" ;;
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarInt "ui_highlight" ( 1 );
+				setLocalVarString "ui_choicegroup" ( "mods" );
+				;;
+			}
+			leaveFocus
+			{
+				setLocalVarInt "ui_highlight" ( 0 );
+				;;
+			}
+		}
+		itemDef
+		{
+			rect -170 372 334.5 22 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 1 0.07
+			textscale 0.55
+			visible when ( dvarstring( "fs_game" ) != "" )
+			exp material ( "gradient_fadein" )
+		}
+		itemDef
+		{
+			rect 164.5 372 5.5 22 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.9 1 0.07
+			background "button_highlight_end"
+			textscale 0.55
+			visible when ( dvarstring( "fs_game" ) != "" )
+		}
+		itemDef
+		{
+			rect -170 372 334.5 22 2 1
+			decoration
+			visible 1
+			style 3
+			borderSize 2
+			forecolor 0.9 0.95 1 0.35
+			bordercolor 0.8 0.95 1 0.4
+			background "gradient_fadein"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 2 && localvarstring( "ui_choicegroup" ) == "mods" )
+		}
+		itemDef
+		{
+			rect 164.5 372 5.5 22 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.9 0.95 1 0.35
+			background "button_highlight_end"
+			textscale 0.55
+			visible when ( localvarint( "ui_highlight" ) == 2 && localvarstring( "ui_choicegroup" ) == "mods" )
+		}
+		itemDef
+		{
+			rect -170 372 340 22 2 1
+			visible 1
+			forecolor 0.69 0.69 0.69 1
+			type 1
+			textfont 1
+			textalign 10
+			textalignx -10
+			textscale 0.4
+			visible when ( dvarstring( "fs_game" ) != "" )
+			exp text ( "@MENU_LAUNCH_WITHOUT_MODS" )
+			action
+			{
+				play "mouse_click";
+				uiScript "ClearMods" ;;
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarInt "ui_highlight" ( 2 );
+				setLocalVarString "ui_choicegroup" ( "mods" );
+				;;
+			}
+			leaveFocus
+			{
+				setLocalVarInt "ui_highlight" ( 0 );
+				;;
+			}
+		}
+	}
+}

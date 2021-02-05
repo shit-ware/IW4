@@ -1,0 +1,25 @@
+{
+	menuDef
+	{
+		name "popup_ready"
+		rect 0 0 640 480 0 0
+		popup
+		style 1
+		border 1
+		forecolor 1 1 1 1
+		focuscolor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		onOpen
+		{
+			exec "xpartyready 1";
+		}
+		onEsc
+		{
+			play "mouse_click";
+			exec "xpartyready 0";
+			close "popup_ready";
+		}
+	}
+}

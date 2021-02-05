@@ -1,0 +1,1929 @@
+{
+	menuDef
+	{
+		name "page_scoreboard"
+		rect 0 50 544 337 2 1
+		popup
+		outOfBoundsClick
+		style 1
+		forecolor 1 1 1 1
+		focuscolor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		exp rect x ( - ( 544 / 2 ) )
+		
+		{
+			if ( "page_scoreboard" == "page_progress" )
+			{
+				close self;
+				open "page_summary";
+				play "mouse_over";
+				setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+				;;
+				setLocalVarInt "ui_switchDir" ( - 1 ) );
+			}
+			if ( "page_scoreboard" == "page_highlights" )
+			{
+				close self;
+				open "page_progress";
+				play "mouse_over";
+				setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+				;;
+				setLocalVarInt "ui_switchDir" ( - 1 ) );
+			}
+			if ( "page_scoreboard" == "page_scoreboard" )
+			{
+				close self;
+				open "page_highlights";
+				play "mouse_over";
+				setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+				;;
+				setLocalVarInt "ui_switchDir" ( - 1 ) );
+			}
+		}
+		
+		{
+			if ( "page_scoreboard" == "page_progress" )
+			{
+				close self;
+				open "page_summary";
+				play "mouse_over";
+				setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+				;;
+				setLocalVarInt "ui_switchDir" ( - 1 ) );
+			}
+			if ( "page_scoreboard" == "page_highlights" )
+			{
+				close self;
+				open "page_progress";
+				play "mouse_over";
+				setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+				;;
+				setLocalVarInt "ui_switchDir" ( - 1 ) );
+			}
+			if ( "page_scoreboard" == "page_scoreboard" )
+			{
+				close self;
+				open "page_highlights";
+				play "mouse_over";
+				setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+				;;
+				setLocalVarInt "ui_switchDir" ( - 1 ) );
+			}
+		}
+		
+		{
+			if ( "page_scoreboard" == "page_progress" )
+			{
+				close self;
+				open "page_summary";
+				play "mouse_over";
+				setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+				;;
+				setLocalVarInt "ui_switchDir" ( - 1 ) );
+			}
+			if ( "page_scoreboard" == "page_highlights" )
+			{
+				close self;
+				open "page_progress";
+				play "mouse_over";
+				setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+				;;
+				setLocalVarInt "ui_switchDir" ( - 1 ) );
+			}
+			if ( "page_scoreboard" == "page_scoreboard" )
+			{
+				close self;
+				open "page_highlights";
+				play "mouse_over";
+				setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+				;;
+				setLocalVarInt "ui_switchDir" ( - 1 ) );
+			}
+		}
+		
+		{
+			if ( "page_scoreboard" == "page_progress" )
+			{
+				close self;
+				open "page_summary";
+				play "mouse_over";
+				setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+				;;
+				setLocalVarInt "ui_switchDir" ( - 1 ) );
+			}
+			if ( "page_scoreboard" == "page_highlights" )
+			{
+				close self;
+				open "page_progress";
+				play "mouse_over";
+				setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+				;;
+				setLocalVarInt "ui_switchDir" ( - 1 ) );
+			}
+			if ( "page_scoreboard" == "page_scoreboard" )
+			{
+				close self;
+				open "page_highlights";
+				play "mouse_over";
+				setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+				;;
+				setLocalVarInt "ui_switchDir" ( - 1 ) );
+			}
+		}
+		
+		{
+			close self;
+		}
+		onOpen
+		{
+			setLocalVarString "ui_currentPage" ( "page_scoreboard" );
+			if ( "page_scoreboard" == "page_summary" )
+			{
+				setLocalVarInt "ui_leftArrow" ( 0 );
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					setLocalVarInt "ui_rightArrow" ( 1 );
+				}
+				else
+				{
+					setLocalVarInt "ui_rightArrow" ( 0 );
+				}
+			}
+			if ( "page_scoreboard" == "page_progress" || "page_scoreboard" == "page_highlights" )
+			{
+				setLocalVarInt "ui_leftArrow" ( 1 );
+				if ( ( getclientmatchdatadef( ) != "" ) )
+				{
+					setLocalVarInt "ui_rightArrow" ( 1 );
+				}
+				else
+				{
+					setLocalVarInt "ui_rightArrow" ( 0 );
+				}
+			}
+			if ( "page_scoreboard" == "page_scoreboard" )
+			{
+				setLocalVarInt "ui_leftArrow" ( 1 );
+				setLocalVarInt "ui_rightArrow" ( 0 );
+			}
+		}
+		onRequestClose
+		{
+			
+		}
+		onEsc
+		{
+			close self;
+			close "popup_summary";
+		}
+		itemDef
+		{
+			rect 0 0 544 28 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 5
+			textscale 0.5833
+			text "@MENU_SCOREBOARD"
+		}
+		itemDef
+		{
+			rect 5 313 272 24 2 1
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textalignx -1
+			textscale 0.375
+			exp text ( localvarstring( "ui_navbutton_a" ) )
+			action
+			{
+				play "mouse_click";
+				"escape" self;
+			}
+		}
+		itemDef
+		{
+			rect 0 0 544 285 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 0.3
+			background "white"
+			textscale 0.55
+			exp rect x ( 0 )
+			exp rect y ( ( ( 28 ) ) )
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 0 0 544 285 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 0.125
+			background "gradient_vertical_rect"
+			textscale 0.55
+			exp rect x ( 0 )
+			exp rect y ( ( ( 28 ) ) )
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 47 28 270 15 0 0
+			decoration
+			visible 1
+			forecolor 1 0.8 0.4 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			text "@MPUI_SCORE"
+		}
+		itemDef
+		{
+			rect 47 28 330 15 0 0
+			decoration
+			visible 1
+			forecolor 1 0.8 0.4 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			text "@MPUI_KILLS"
+		}
+		itemDef
+		{
+			rect 47 28 390 15 0 0
+			decoration
+			visible 1
+			forecolor 1 0.8 0.4 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			text "@MPUI_ASSISTS"
+		}
+		itemDef
+		{
+			rect 47 28 447 15 0 0
+			decoration
+			visible 1
+			forecolor 1 0.8 0.4 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			text "@MENU_DEATHS"
+		}
+		itemDef
+		{
+			rect 47 43 450 15 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.33
+			background "white"
+			textscale 0.55
+			exp forecolor r ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 0 ) , "faction" ) , 14 ) )
+			exp forecolor g ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 0 ) , "faction" ) , 15 ) )
+			exp forecolor b ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 0 ) , "faction" ) , 16 ) )
+			visible when ( ( 0 < getclientmatchdata( "scoreboardPlayerCount" ) ) && localvarstring( "ui_scoreboardType" ) != "neutral" )
+		}
+		itemDef
+		{
+			rect 47 43 450 15 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 0 0.33
+			background "white"
+			textscale 0.55
+			visible when ( ( 0 < getclientmatchdata( "scoreboardPlayerCount" ) ) && localvarstring( "ui_scoreboardType" ) == "neutral" )
+		}
+		itemDef
+		{
+			rect 50 43 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 0 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 0 ) , "xuid" ) )
+		}
+		itemDef
+		{
+			rect 47 43 270 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 0 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 0 ) , "score" ) )
+		}
+		itemDef
+		{
+			rect 47 43 330 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 0 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 0 ) , "kills" ) )
+		}
+		itemDef
+		{
+			rect 47 43 390 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 0 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 0 ) , "assists" ) )
+		}
+		itemDef
+		{
+			rect 47 43 447 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 0 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 0 ) , "deaths" ) )
+		}
+		itemDef
+		{
+			rect 47 58 450 15 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.33
+			background "white"
+			textscale 0.55
+			exp forecolor r ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 1 ) , "faction" ) , 14 ) )
+			exp forecolor g ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 1 ) , "faction" ) , 15 ) )
+			exp forecolor b ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 1 ) , "faction" ) , 16 ) )
+			visible when ( ( 1 < getclientmatchdata( "scoreboardPlayerCount" ) ) && localvarstring( "ui_scoreboardType" ) != "neutral" )
+		}
+		itemDef
+		{
+			rect 47 58 450 15 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 0 0.33
+			background "white"
+			textscale 0.55
+			visible when ( ( 1 < getclientmatchdata( "scoreboardPlayerCount" ) ) && localvarstring( "ui_scoreboardType" ) == "neutral" )
+		}
+		itemDef
+		{
+			rect 50 58 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 1 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 1 ) , "xuid" ) )
+		}
+		itemDef
+		{
+			rect 47 58 270 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 1 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 1 ) , "score" ) )
+		}
+		itemDef
+		{
+			rect 47 58 330 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 1 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 1 ) , "kills" ) )
+		}
+		itemDef
+		{
+			rect 47 58 390 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 1 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 1 ) , "assists" ) )
+		}
+		itemDef
+		{
+			rect 47 58 447 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 1 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 1 ) , "deaths" ) )
+		}
+		itemDef
+		{
+			rect 47 73 450 15 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.33
+			background "white"
+			textscale 0.55
+			exp forecolor r ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 2 ) , "faction" ) , 14 ) )
+			exp forecolor g ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 2 ) , "faction" ) , 15 ) )
+			exp forecolor b ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 2 ) , "faction" ) , 16 ) )
+			visible when ( ( 2 < getclientmatchdata( "scoreboardPlayerCount" ) ) && localvarstring( "ui_scoreboardType" ) != "neutral" )
+		}
+		itemDef
+		{
+			rect 47 73 450 15 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 0 0.33
+			background "white"
+			textscale 0.55
+			visible when ( ( 2 < getclientmatchdata( "scoreboardPlayerCount" ) ) && localvarstring( "ui_scoreboardType" ) == "neutral" )
+		}
+		itemDef
+		{
+			rect 50 73 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 2 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 2 ) , "xuid" ) )
+		}
+		itemDef
+		{
+			rect 47 73 270 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 2 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 2 ) , "score" ) )
+		}
+		itemDef
+		{
+			rect 47 73 330 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 2 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 2 ) , "kills" ) )
+		}
+		itemDef
+		{
+			rect 47 73 390 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 2 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 2 ) , "assists" ) )
+		}
+		itemDef
+		{
+			rect 47 73 447 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 2 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 2 ) , "deaths" ) )
+		}
+		itemDef
+		{
+			rect 47 88 450 15 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.33
+			background "white"
+			textscale 0.55
+			exp forecolor r ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 3 ) , "faction" ) , 14 ) )
+			exp forecolor g ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 3 ) , "faction" ) , 15 ) )
+			exp forecolor b ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 3 ) , "faction" ) , 16 ) )
+			visible when ( ( 3 < getclientmatchdata( "scoreboardPlayerCount" ) ) && localvarstring( "ui_scoreboardType" ) != "neutral" )
+		}
+		itemDef
+		{
+			rect 47 88 450 15 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 0 0.33
+			background "white"
+			textscale 0.55
+			visible when ( ( 3 < getclientmatchdata( "scoreboardPlayerCount" ) ) && localvarstring( "ui_scoreboardType" ) == "neutral" )
+		}
+		itemDef
+		{
+			rect 50 88 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 3 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 3 ) , "xuid" ) )
+		}
+		itemDef
+		{
+			rect 47 88 270 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 3 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 3 ) , "score" ) )
+		}
+		itemDef
+		{
+			rect 47 88 330 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 3 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 3 ) , "kills" ) )
+		}
+		itemDef
+		{
+			rect 47 88 390 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 3 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 3 ) , "assists" ) )
+		}
+		itemDef
+		{
+			rect 47 88 447 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 3 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 3 ) , "deaths" ) )
+		}
+		itemDef
+		{
+			rect 47 103 450 15 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.33
+			background "white"
+			textscale 0.55
+			exp forecolor r ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 4 ) , "faction" ) , 14 ) )
+			exp forecolor g ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 4 ) , "faction" ) , 15 ) )
+			exp forecolor b ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 4 ) , "faction" ) , 16 ) )
+			visible when ( ( 4 < getclientmatchdata( "scoreboardPlayerCount" ) ) && localvarstring( "ui_scoreboardType" ) != "neutral" )
+		}
+		itemDef
+		{
+			rect 47 103 450 15 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 0 0.33
+			background "white"
+			textscale 0.55
+			visible when ( ( 4 < getclientmatchdata( "scoreboardPlayerCount" ) ) && localvarstring( "ui_scoreboardType" ) == "neutral" )
+		}
+		itemDef
+		{
+			rect 50 103 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 4 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 4 ) , "xuid" ) )
+		}
+		itemDef
+		{
+			rect 47 103 270 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 4 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 4 ) , "score" ) )
+		}
+		itemDef
+		{
+			rect 47 103 330 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 4 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 4 ) , "kills" ) )
+		}
+		itemDef
+		{
+			rect 47 103 390 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 4 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 4 ) , "assists" ) )
+		}
+		itemDef
+		{
+			rect 47 103 447 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 4 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 4 ) , "deaths" ) )
+		}
+		itemDef
+		{
+			rect 47 118 450 15 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.33
+			background "white"
+			textscale 0.55
+			exp forecolor r ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 5 ) , "faction" ) , 14 ) )
+			exp forecolor g ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 5 ) , "faction" ) , 15 ) )
+			exp forecolor b ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 5 ) , "faction" ) , 16 ) )
+			visible when ( ( 5 < getclientmatchdata( "scoreboardPlayerCount" ) ) && localvarstring( "ui_scoreboardType" ) != "neutral" )
+		}
+		itemDef
+		{
+			rect 47 118 450 15 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 0 0.33
+			background "white"
+			textscale 0.55
+			visible when ( ( 5 < getclientmatchdata( "scoreboardPlayerCount" ) ) && localvarstring( "ui_scoreboardType" ) == "neutral" )
+		}
+		itemDef
+		{
+			rect 50 118 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 5 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 5 ) , "xuid" ) )
+		}
+		itemDef
+		{
+			rect 47 118 270 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 5 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 5 ) , "score" ) )
+		}
+		itemDef
+		{
+			rect 47 118 330 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 5 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 5 ) , "kills" ) )
+		}
+		itemDef
+		{
+			rect 47 118 390 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 5 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 5 ) , "assists" ) )
+		}
+		itemDef
+		{
+			rect 47 118 447 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 5 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 5 ) , "deaths" ) )
+		}
+		itemDef
+		{
+			rect 47 133 450 15 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.33
+			background "white"
+			textscale 0.55
+			exp forecolor r ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 6 ) , "faction" ) , 14 ) )
+			exp forecolor g ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 6 ) , "faction" ) , 15 ) )
+			exp forecolor b ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 6 ) , "faction" ) , 16 ) )
+			visible when ( ( 6 < getclientmatchdata( "scoreboardPlayerCount" ) ) && localvarstring( "ui_scoreboardType" ) != "neutral" )
+		}
+		itemDef
+		{
+			rect 47 133 450 15 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 0 0.33
+			background "white"
+			textscale 0.55
+			visible when ( ( 6 < getclientmatchdata( "scoreboardPlayerCount" ) ) && localvarstring( "ui_scoreboardType" ) == "neutral" )
+		}
+		itemDef
+		{
+			rect 50 133 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 6 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 6 ) , "xuid" ) )
+		}
+		itemDef
+		{
+			rect 47 133 270 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 6 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 6 ) , "score" ) )
+		}
+		itemDef
+		{
+			rect 47 133 330 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 6 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 6 ) , "kills" ) )
+		}
+		itemDef
+		{
+			rect 47 133 390 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 6 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 6 ) , "assists" ) )
+		}
+		itemDef
+		{
+			rect 47 133 447 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 6 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 6 ) , "deaths" ) )
+		}
+		itemDef
+		{
+			rect 47 148 450 15 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.33
+			background "white"
+			textscale 0.55
+			exp forecolor r ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 7 ) , "faction" ) , 14 ) )
+			exp forecolor g ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 7 ) , "faction" ) , 15 ) )
+			exp forecolor b ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 7 ) , "faction" ) , 16 ) )
+			visible when ( ( 7 < getclientmatchdata( "scoreboardPlayerCount" ) ) && localvarstring( "ui_scoreboardType" ) != "neutral" )
+		}
+		itemDef
+		{
+			rect 47 148 450 15 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 0 0.33
+			background "white"
+			textscale 0.55
+			visible when ( ( 7 < getclientmatchdata( "scoreboardPlayerCount" ) ) && localvarstring( "ui_scoreboardType" ) == "neutral" )
+		}
+		itemDef
+		{
+			rect 50 148 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 7 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 7 ) , "xuid" ) )
+		}
+		itemDef
+		{
+			rect 47 148 270 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 7 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 7 ) , "score" ) )
+		}
+		itemDef
+		{
+			rect 47 148 330 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 7 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 7 ) , "kills" ) )
+		}
+		itemDef
+		{
+			rect 47 148 390 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 7 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 7 ) , "assists" ) )
+		}
+		itemDef
+		{
+			rect 47 148 447 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 7 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 7 ) , "deaths" ) )
+		}
+		itemDef
+		{
+			rect 47 163 450 15 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.33
+			background "white"
+			textscale 0.55
+			exp forecolor r ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 8 ) , "faction" ) , 14 ) )
+			exp forecolor g ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 8 ) , "faction" ) , 15 ) )
+			exp forecolor b ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 8 ) , "faction" ) , 16 ) )
+			visible when ( ( 8 < getclientmatchdata( "scoreboardPlayerCount" ) ) && localvarstring( "ui_scoreboardType" ) != "neutral" )
+		}
+		itemDef
+		{
+			rect 47 163 450 15 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 0 0.33
+			background "white"
+			textscale 0.55
+			visible when ( ( 8 < getclientmatchdata( "scoreboardPlayerCount" ) ) && localvarstring( "ui_scoreboardType" ) == "neutral" )
+		}
+		itemDef
+		{
+			rect 50 163 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 8 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 8 ) , "xuid" ) )
+		}
+		itemDef
+		{
+			rect 47 163 270 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 8 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 8 ) , "score" ) )
+		}
+		itemDef
+		{
+			rect 47 163 330 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 8 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 8 ) , "kills" ) )
+		}
+		itemDef
+		{
+			rect 47 163 390 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 8 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 8 ) , "assists" ) )
+		}
+		itemDef
+		{
+			rect 47 163 447 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 8 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 8 ) , "deaths" ) )
+		}
+		itemDef
+		{
+			rect 47 178 450 15 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.33
+			background "white"
+			textscale 0.55
+			exp forecolor r ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 9 ) , "faction" ) , 14 ) )
+			exp forecolor g ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 9 ) , "faction" ) , 15 ) )
+			exp forecolor b ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 9 ) , "faction" ) , 16 ) )
+			visible when ( ( 9 < getclientmatchdata( "scoreboardPlayerCount" ) ) && localvarstring( "ui_scoreboardType" ) != "neutral" )
+		}
+		itemDef
+		{
+			rect 47 178 450 15 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 0 0.33
+			background "white"
+			textscale 0.55
+			visible when ( ( 9 < getclientmatchdata( "scoreboardPlayerCount" ) ) && localvarstring( "ui_scoreboardType" ) == "neutral" )
+		}
+		itemDef
+		{
+			rect 50 178 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 9 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 9 ) , "xuid" ) )
+		}
+		itemDef
+		{
+			rect 47 178 270 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 9 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 9 ) , "score" ) )
+		}
+		itemDef
+		{
+			rect 47 178 330 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 9 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 9 ) , "kills" ) )
+		}
+		itemDef
+		{
+			rect 47 178 390 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 9 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 9 ) , "assists" ) )
+		}
+		itemDef
+		{
+			rect 47 178 447 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 9 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 9 ) , "deaths" ) )
+		}
+		itemDef
+		{
+			rect 47 193 450 15 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.33
+			background "white"
+			textscale 0.55
+			exp forecolor r ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 10 ) , "faction" ) , 14 ) )
+			exp forecolor g ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 10 ) , "faction" ) , 15 ) )
+			exp forecolor b ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 10 ) , "faction" ) , 16 ) )
+			visible when ( ( 10 < getclientmatchdata( "scoreboardPlayerCount" ) ) && localvarstring( "ui_scoreboardType" ) != "neutral" )
+		}
+		itemDef
+		{
+			rect 47 193 450 15 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 0 0.33
+			background "white"
+			textscale 0.55
+			visible when ( ( 10 < getclientmatchdata( "scoreboardPlayerCount" ) ) && localvarstring( "ui_scoreboardType" ) == "neutral" )
+		}
+		itemDef
+		{
+			rect 50 193 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 10 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 10 ) , "xuid" ) )
+		}
+		itemDef
+		{
+			rect 47 193 270 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 10 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 10 ) , "score" ) )
+		}
+		itemDef
+		{
+			rect 47 193 330 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 10 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 10 ) , "kills" ) )
+		}
+		itemDef
+		{
+			rect 47 193 390 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 10 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 10 ) , "assists" ) )
+		}
+		itemDef
+		{
+			rect 47 193 447 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 10 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 10 ) , "deaths" ) )
+		}
+		itemDef
+		{
+			rect 47 208 450 15 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.33
+			background "white"
+			textscale 0.55
+			exp forecolor r ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 11 ) , "faction" ) , 14 ) )
+			exp forecolor g ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 11 ) , "faction" ) , 15 ) )
+			exp forecolor b ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 11 ) , "faction" ) , 16 ) )
+			visible when ( ( 11 < getclientmatchdata( "scoreboardPlayerCount" ) ) && localvarstring( "ui_scoreboardType" ) != "neutral" )
+		}
+		itemDef
+		{
+			rect 47 208 450 15 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 0 0.33
+			background "white"
+			textscale 0.55
+			visible when ( ( 11 < getclientmatchdata( "scoreboardPlayerCount" ) ) && localvarstring( "ui_scoreboardType" ) == "neutral" )
+		}
+		itemDef
+		{
+			rect 50 208 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 11 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 11 ) , "xuid" ) )
+		}
+		itemDef
+		{
+			rect 47 208 270 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 11 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 11 ) , "score" ) )
+		}
+		itemDef
+		{
+			rect 47 208 330 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 11 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 11 ) , "kills" ) )
+		}
+		itemDef
+		{
+			rect 47 208 390 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 11 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 11 ) , "assists" ) )
+		}
+		itemDef
+		{
+			rect 47 208 447 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 11 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 11 ) , "deaths" ) )
+		}
+		itemDef
+		{
+			rect 47 223 450 15 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.33
+			background "white"
+			textscale 0.55
+			exp forecolor r ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 12 ) , "faction" ) , 14 ) )
+			exp forecolor g ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 12 ) , "faction" ) , 15 ) )
+			exp forecolor b ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 12 ) , "faction" ) , 16 ) )
+			visible when ( ( 12 < getclientmatchdata( "scoreboardPlayerCount" ) ) && localvarstring( "ui_scoreboardType" ) != "neutral" )
+		}
+		itemDef
+		{
+			rect 47 223 450 15 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 0 0.33
+			background "white"
+			textscale 0.55
+			visible when ( ( 12 < getclientmatchdata( "scoreboardPlayerCount" ) ) && localvarstring( "ui_scoreboardType" ) == "neutral" )
+		}
+		itemDef
+		{
+			rect 50 223 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 12 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 12 ) , "xuid" ) )
+		}
+		itemDef
+		{
+			rect 47 223 270 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 12 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 12 ) , "score" ) )
+		}
+		itemDef
+		{
+			rect 47 223 330 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 12 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 12 ) , "kills" ) )
+		}
+		itemDef
+		{
+			rect 47 223 390 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 12 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 12 ) , "assists" ) )
+		}
+		itemDef
+		{
+			rect 47 223 447 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 12 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 12 ) , "deaths" ) )
+		}
+		itemDef
+		{
+			rect 47 238 450 15 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.33
+			background "white"
+			textscale 0.55
+			exp forecolor r ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 13 ) , "faction" ) , 14 ) )
+			exp forecolor g ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 13 ) , "faction" ) , 15 ) )
+			exp forecolor b ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 13 ) , "faction" ) , 16 ) )
+			visible when ( ( 13 < getclientmatchdata( "scoreboardPlayerCount" ) ) && localvarstring( "ui_scoreboardType" ) != "neutral" )
+		}
+		itemDef
+		{
+			rect 47 238 450 15 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 0 0.33
+			background "white"
+			textscale 0.55
+			visible when ( ( 13 < getclientmatchdata( "scoreboardPlayerCount" ) ) && localvarstring( "ui_scoreboardType" ) == "neutral" )
+		}
+		itemDef
+		{
+			rect 50 238 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 13 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 13 ) , "xuid" ) )
+		}
+		itemDef
+		{
+			rect 47 238 270 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 13 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 13 ) , "score" ) )
+		}
+		itemDef
+		{
+			rect 47 238 330 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 13 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 13 ) , "kills" ) )
+		}
+		itemDef
+		{
+			rect 47 238 390 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 13 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 13 ) , "assists" ) )
+		}
+		itemDef
+		{
+			rect 47 238 447 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 13 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 13 ) , "deaths" ) )
+		}
+		itemDef
+		{
+			rect 47 253 450 15 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.33
+			background "white"
+			textscale 0.55
+			exp forecolor r ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 14 ) , "faction" ) , 14 ) )
+			exp forecolor g ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 14 ) , "faction" ) , 15 ) )
+			exp forecolor b ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 14 ) , "faction" ) , 16 ) )
+			visible when ( ( 14 < getclientmatchdata( "scoreboardPlayerCount" ) ) && localvarstring( "ui_scoreboardType" ) != "neutral" )
+		}
+		itemDef
+		{
+			rect 47 253 450 15 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 0 0.33
+			background "white"
+			textscale 0.55
+			visible when ( ( 14 < getclientmatchdata( "scoreboardPlayerCount" ) ) && localvarstring( "ui_scoreboardType" ) == "neutral" )
+		}
+		itemDef
+		{
+			rect 50 253 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 14 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 14 ) , "xuid" ) )
+		}
+		itemDef
+		{
+			rect 47 253 270 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 14 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 14 ) , "score" ) )
+		}
+		itemDef
+		{
+			rect 47 253 330 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 14 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 14 ) , "kills" ) )
+		}
+		itemDef
+		{
+			rect 47 253 390 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 14 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 14 ) , "assists" ) )
+		}
+		itemDef
+		{
+			rect 47 253 447 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 14 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 14 ) , "deaths" ) )
+		}
+		itemDef
+		{
+			rect 47 268 450 15 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.33
+			background "white"
+			textscale 0.55
+			exp forecolor r ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 15 ) , "faction" ) , 14 ) )
+			exp forecolor g ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 15 ) , "faction" ) , 15 ) )
+			exp forecolor b ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 15 ) , "faction" ) , 16 ) )
+			visible when ( ( 15 < getclientmatchdata( "scoreboardPlayerCount" ) ) && localvarstring( "ui_scoreboardType" ) != "neutral" )
+		}
+		itemDef
+		{
+			rect 47 268 450 15 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 0 0.33
+			background "white"
+			textscale 0.55
+			visible when ( ( 15 < getclientmatchdata( "scoreboardPlayerCount" ) ) && localvarstring( "ui_scoreboardType" ) == "neutral" )
+		}
+		itemDef
+		{
+			rect 50 268 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 15 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 15 ) , "xuid" ) )
+		}
+		itemDef
+		{
+			rect 47 268 270 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 15 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 15 ) , "score" ) )
+		}
+		itemDef
+		{
+			rect 47 268 330 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 15 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 15 ) , "kills" ) )
+		}
+		itemDef
+		{
+			rect 47 268 390 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 15 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 15 ) , "assists" ) )
+		}
+		itemDef
+		{
+			rect 47 268 447 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 15 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 15 ) , "deaths" ) )
+		}
+		itemDef
+		{
+			rect 47 283 450 15 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.33
+			background "white"
+			textscale 0.55
+			exp forecolor r ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 16 ) , "faction" ) , 14 ) )
+			exp forecolor g ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 16 ) , "faction" ) , 15 ) )
+			exp forecolor b ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 16 ) , "faction" ) , 16 ) )
+			visible when ( ( 16 < getclientmatchdata( "scoreboardPlayerCount" ) ) && localvarstring( "ui_scoreboardType" ) != "neutral" )
+		}
+		itemDef
+		{
+			rect 47 283 450 15 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 0 0.33
+			background "white"
+			textscale 0.55
+			visible when ( ( 16 < getclientmatchdata( "scoreboardPlayerCount" ) ) && localvarstring( "ui_scoreboardType" ) == "neutral" )
+		}
+		itemDef
+		{
+			rect 50 283 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 16 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 16 ) , "xuid" ) )
+		}
+		itemDef
+		{
+			rect 47 283 270 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 16 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 16 ) , "score" ) )
+		}
+		itemDef
+		{
+			rect 47 283 330 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 16 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 16 ) , "kills" ) )
+		}
+		itemDef
+		{
+			rect 47 283 390 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 16 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 16 ) , "assists" ) )
+		}
+		itemDef
+		{
+			rect 47 283 447 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 16 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 16 ) , "deaths" ) )
+		}
+		itemDef
+		{
+			rect 47 298 450 15 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.33
+			background "white"
+			textscale 0.55
+			exp forecolor r ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 17 ) , "faction" ) , 14 ) )
+			exp forecolor g ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 17 ) , "faction" ) , 15 ) )
+			exp forecolor b ( tablelookup( "mp/factionTable.csv" , 0 , getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 17 ) , "faction" ) , 16 ) )
+			visible when ( ( 17 < getclientmatchdata( "scoreboardPlayerCount" ) ) && localvarstring( "ui_scoreboardType" ) != "neutral" )
+		}
+		itemDef
+		{
+			rect 47 298 450 15 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 0 0.33
+			background "white"
+			textscale 0.55
+			visible when ( ( 17 < getclientmatchdata( "scoreboardPlayerCount" ) ) && localvarstring( "ui_scoreboardType" ) == "neutral" )
+		}
+		itemDef
+		{
+			rect 50 298 450 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 8
+			textscale 0.35
+			visible when ( ( 17 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 17 ) , "xuid" ) )
+		}
+		itemDef
+		{
+			rect 47 298 270 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 17 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 17 ) , "score" ) )
+		}
+		itemDef
+		{
+			rect 47 298 330 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 17 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 17 ) , "kills" ) )
+		}
+		itemDef
+		{
+			rect 47 298 390 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 17 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 17 ) , "assists" ) )
+		}
+		itemDef
+		{
+			rect 47 298 447 15 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 10
+			textscale 0.35
+			visible when ( ( 17 < getclientmatchdata( "scoreboardPlayerCount" ) ) )
+			exp text ( getclientmatchdata( "players" , getclientmatchdata( "scoreboards" , localvarstring( "ui_scoreboardType" ) , 17 ) , "deaths" ) )
+		}
+		itemDef
+		{
+			rect 0 104.5 -32 128 0 0
+			decoration
+			visible 1
+			group "left_arrow"
+			style 3
+			forecolor 0.85 0.85 0.85 1
+			textscale 0.55
+			visible when ( localvarint( "ui_leftArrow" ) )
+			exp material ( "summary_arrow" )
+		}
+		itemDef
+		{
+			rect 0 104.5 32 128 0 0
+			visible 1
+			forecolor 1 1 1 1
+			type 1
+			textscale 0.55
+			visible when ( localvarint( "ui_leftArrow" ) )
+			action
+			{
+				if ( "page_scoreboard" == "page_progress" )
+				{
+					close self;
+					open "page_summary";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( - 1 ) );
+				}
+				if ( "page_scoreboard" == "page_highlights" )
+				{
+					close self;
+					open "page_progress";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( - 1 ) );
+				}
+				if ( "page_scoreboard" == "page_scoreboard" )
+				{
+					close self;
+					open "page_highlights";
+					play "mouse_over";
+					setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+					;;
+					setLocalVarInt "ui_switchDir" ( - 1 ) );
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setItemColor "left_arrow" forecolor 1 1 "0.5" 1;
+			}
+			leaveFocus
+			{
+				setItemColor "left_arrow" forecolor "0.85" "0.85" "0.85" 1;
+			}
+		}
+		itemDef
+		{
+			rect 512 104.5 32 128 0 0
+			visible 1
+			group "right_arrow"
+			style 3
+			forecolor 0.85 0.85 0.85 1
+			type 1
+			textscale 0.55
+			visible when ( localvarint( "ui_rightArrow" ) )
+			exp material ( "summary_arrow" )
+			action
+			{
+				if ( "page_scoreboard" == "page_summary" )
+				{
+					if ( ( getclientmatchdatadef( ) != "" ) )
+					{
+						close self;
+						open "page_progress";
+						play "mouse_over";
+						setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+						;;
+						setLocalVarInt "ui_switchDir" ( 1 );
+					}
+				}
+				if ( "page_scoreboard" == "page_progress" )
+				{
+					if ( ( getclientmatchdatadef( ) != "" ) )
+					{
+						close self;
+						open "page_highlights";
+						play "mouse_over";
+						setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+						;;
+						setLocalVarInt "ui_switchDir" ( 1 );
+					}
+				}
+				if ( "page_scoreboard" == "page_highlights" )
+				{
+					if ( ( getclientmatchdatadef( ) != "" ) )
+					{
+						close self;
+						open "page_scoreboard";
+						play "mouse_over";
+						setLocalVarInt "ui_switchTime" ( milliseconds( ) );
+						;;
+						setLocalVarInt "ui_switchDir" ( 1 );
+					}
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setItemColor "right_arrow" forecolor 1 1 "0.5" 1;
+			}
+			leaveFocus
+			{
+				setItemColor "right_arrow" forecolor "0.85" "0.85" "0.85" 1;
+			}
+		}
+	}
+}

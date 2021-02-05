@@ -1,0 +1,150 @@
+{
+	menuDef
+	{
+		name "auconfirm"
+		rect 204 160 235 135 0 0
+		popup
+		style 1
+		border 1
+		forecolor 1 1 1 1
+		focuscolor 1 1 1 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		onEsc
+		{
+			close "auconfirm";
+		}
+		itemDef
+		{
+			name "acwindow"
+			rect 0 2 235 135 0 0
+			decoration
+			visible 1
+			group "grpControlbutton"
+			style 1
+			border 1
+			forecolor 1 1 1 1
+			backcolor 0 0 0 0.85
+			bordercolor 0.5 0.5 0.5 0.5
+			textscale 0.55
+		}
+		itemDef
+		{
+			name "acwindow2"
+			rect 2 4 231 20 0 0
+			decoration
+			visible 1
+			group "grpControlbutton"
+			style 1
+			border 1
+			forecolor 1 1 1 1
+			backcolor 1 1 0.3 0.3
+			bordercolor 0.1 0.1 0.1 0.2
+			textscale 0.55
+		}
+		itemDef
+		{
+			name "acconfirm"
+			rect 116 20 110 20 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 1
+			textalignx -55
+			textscale 0.25
+			text "@MENU_DOWNLOAD_AUTOUPDATE_PATCH"
+		}
+		itemDef
+		{
+			name "oldtitle"
+			rect 30 40 110 20 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textscale 0.25
+			text "@MENU_VERSION_INSTALLED"
+		}
+		itemDef
+		{
+			name "oldver"
+			rect 30 55 110 20 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textscale 0.25
+			dvar "cl_updateoldversion"
+		}
+		itemDef
+		{
+			name "newtitle"
+			rect 30 70 110 20 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textscale 0.25
+			text "@MENU_VERSION_AVAILABLE"
+		}
+		itemDef
+		{
+			name "newver"
+			rect 30 85 110 20 0 0
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textscale 0.25
+			dvar "cl_updateversion"
+		}
+		itemDef
+		{
+			name "yes"
+			rect 45 95 50 20 0 0
+			visible 1
+			style 1
+			forecolor 0.9 0.9 0.95 1
+			type 1
+			textfont 1
+			textalign 1
+			textaligny 15
+			textscale 0.3
+			text "@MENU_YES"
+			mouseEnter
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				play "mouse_click";
+				"getautoupdate";
+			}
+		}
+		itemDef
+		{
+			name "no"
+			rect 142 95 50 20 0 0
+			visible 1
+			style 1
+			forecolor 0.9 0.9 0.95 1
+			type 1
+			textfont 1
+			textalign 1
+			textaligny 15
+			textscale 0.3
+			text "@MENU_NO"
+			mouseEnter
+			{
+				play "mouse_over";
+			}
+			action
+			{
+				play "mouse_click";
+				close "auconfirm";
+			}
+		}
+	}
+}

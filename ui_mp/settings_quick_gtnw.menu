@@ -1,0 +1,1518 @@
+{
+	menuDef
+	{
+		name "settings_quick_gtnw"
+		rect 0 0 640 480 0 0
+		style 1
+		forecolor 1 1 1 1
+		focuscolor 1 1 1 1
+		fullscreen 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		onOpen
+		{
+			focusfirst;
+		}
+		onEsc
+		{
+			close "settings_quick_gtnw";
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "mw2_main_background"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 0 1708 480 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.5
+			background "mw2_main_cloud_overlay"
+			textscale 0.55
+			exp rect x ( ( 0 - 107 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 -1708 -480 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.5
+			background "mw2_main_cloud_overlay"
+			textscale 0.55
+			exp rect x ( ( - 107 + 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0
+			background "mockup_bg_glow"
+			textscale 0.55
+			exp forecolor a ( ( ( sin( milliseconds( ) / 1500 ) + 1 ) * 0.25 ) + 0.25 )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0
+			background "mockup_bg_glow"
+			textscale 0.55
+			exp forecolor a ( ( ( sin( milliseconds( ) / 480 ) + 1 ) * 0.25 ) + 0.25 )
+		}
+		itemDef
+		{
+			rect 0 0 0 28 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 5
+			textalignx 5
+			textscale 0.5
+			exp text ( "@MENU_GTNW_DESC" )
+		}
+		itemDef
+		{
+			rect 0 28 640 162 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.15
+			background "white"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -32 -4 32 32 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_tl"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 0 -4 640 32 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_t"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 640 -4 32 32 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_tr"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 640 28 32 162 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_r"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 640 190 32 32 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_br"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 0 190 640 32 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_b"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect -32 190 32 32 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_bl"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect -32 28 32 162 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_l"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 0 226 640 144 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.15
+			background "white"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -32 194 32 32 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_tl"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 0 194 640 32 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_t"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 640 194 32 32 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_tr"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 640 226 32 144 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_r"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 640 370 32 32 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_br"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 0 370 640 32 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_b"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect -32 370 32 32 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_bl"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect -32 226 32 144 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_l"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect -272 28 160 18 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 6
+			textalignx -32
+			textscale 0.3333
+			exp text ( "@MPUI_GAME_RULES" )
+		}
+		itemDef
+		{
+			name "sidenav_button_1"
+			rect -272 46 260 18 2 1
+			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_rules_selection_bar"
+			type 1
+			textfont 3
+			textalign 4
+			textaligny -2
+			textscale 0.375
+			text "@MPUI_RULES_TIME_LIMIT"
+			dvar "scr_gtnw_timelimit"
+			
+			{
+				setfocus "sidenav_button_20";
+			}
+			
+			{
+				setfocus "sidenav_button_20";
+			}
+			action
+			{
+				play "mouse_click";
+				open "settings_quick_gtnw_@MPUI_RULES_TIME_LIMIT";
+				play "mouse_click";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect -272 46 272 18 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 0.65
+			backcolor 1 1 1 0
+			background "white"
+			type 12
+			textfont 3
+			textalign 4
+			textalignx 160
+			textaligny -2
+			textscale 0.375
+			dvar "scr_gtnw_timelimit"
+			dvarStrList { "@MPUI_RULES_2_5MINUTES" "2.5" "@MPUI_RULES_3MINUTES" "3" "@MPUI_RULES_5MINUTES" "5" "@MPUI_RULES_8MINUTES" "8" "@MPUI_RULES_10MINUTES" "10" "" "0" }
+		}
+		itemDef
+		{
+			rect -272 226 160 18 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 6
+			textalignx -32
+			textscale 0.3333
+			exp text ( "@MPUI_RULES_TEAM_OPTIONS" )
+		}
+		itemDef
+		{
+			name "sidenav_button_12"
+			rect -272 244 260 18 2 1
+			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_rules_selection_bar"
+			type 1
+			textfont 3
+			textalign 4
+			textaligny -2
+			textscale 0.375
+			text "@MPUI_RULES_SPECTATING"
+			dvar "scr_game_spectatetype"
+			
+			{
+				setfocus "sidenav_button_31";
+			}
+			
+			{
+				setfocus "sidenav_button_31";
+			}
+			action
+			{
+				play "mouse_click";
+				open "settings_quick_gtnw_@MPUI_RULES_SPECTATING";
+				play "mouse_click";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect -272 244 272 18 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 0.65
+			backcolor 1 1 1 0
+			background "white"
+			type 12
+			textfont 3
+			textalign 4
+			textalignx 160
+			textaligny -2
+			textscale 0.375
+			dvar "scr_game_spectatetype"
+			dvarStrList { "@MENU_DISABLED" "0" "@MPUI_RULES_TEAM_ONLY" "1" "@MPUI_RULES_FREE" "2" "" "0" "" "0" "" "0" }
+		}
+		itemDef
+		{
+			name "sidenav_button_13"
+			rect -272 262 260 18 2 1
+			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_rules_selection_bar"
+			type 1
+			textfont 3
+			textalign 4
+			textaligny -2
+			textscale 0.375
+			text "@MPUI_RULES_WAVE_DELAY"
+			dvar "scr_gtnw_waverespawndelay"
+			
+			{
+				setfocus "sidenav_button_32";
+			}
+			
+			{
+				setfocus "sidenav_button_32";
+			}
+			action
+			{
+				play "mouse_click";
+				open "settings_quick_gtnw_@MPUI_RULES_WAVE_DELAY";
+				play "mouse_click";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect -272 262 272 18 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 0.65
+			backcolor 1 1 1 0
+			background "white"
+			type 12
+			textfont 3
+			textalign 4
+			textalignx 160
+			textaligny -2
+			textscale 0.375
+			dvar "scr_gtnw_waverespawndelay"
+			dvarStrList { "@MPUI_RULES_NONE" "0" "@MPUI_RULES_5SECONDS" "5" "@MPUI_RULES_10SECONDS" "10" "@MPUI_RULES_15SECONDS" "15" "@MPUI_RULES_30SECONDS" "30" "" "0" }
+		}
+		itemDef
+		{
+			name "sidenav_button_14"
+			rect -272 280 260 18 2 1
+			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_rules_selection_bar"
+			type 1
+			textfont 3
+			textalign 4
+			textaligny -2
+			textscale 0.375
+			text "@MPUI_RULES_FORCE_RESPAWN"
+			dvar "scr_player_forcerespawn"
+			
+			{
+				setfocus "sidenav_button_33";
+			}
+			
+			{
+				setfocus "sidenav_button_33";
+			}
+			action
+			{
+				play "mouse_click";
+				exec "toggle scr_player_forcerespawn 0 1";
+				play "mouse_click";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect -272 280 272 18 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 0.65
+			backcolor 1 1 1 0
+			background "white"
+			type 12
+			textfont 3
+			textalign 4
+			textalignx 160
+			textaligny -2
+			textscale 0.375
+			dvar "scr_player_forcerespawn"
+			dvarStrList { "@MENU_DISABLED" "0" "@MENU_ENABLED" "1" }
+		}
+		itemDef
+		{
+			name "sidenav_button_15"
+			rect -272 298 260 18 2 1
+			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_rules_selection_bar"
+			type 1
+			textfont 3
+			textalign 4
+			textaligny -2
+			textscale 0.375
+			text "@MPUI_RULES_RADAR_ALWAYS_ON"
+			dvar "scr_game_forceuav"
+			
+			{
+				setfocus "sidenav_button_34";
+			}
+			
+			{
+				setfocus "sidenav_button_34";
+			}
+			action
+			{
+				play "mouse_click";
+				exec "toggle scr_game_forceuav 0 1";
+				play "mouse_click";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect -272 298 272 18 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 0.65
+			backcolor 1 1 1 0
+			background "white"
+			type 12
+			textfont 3
+			textalign 4
+			textalignx 160
+			textaligny -2
+			textscale 0.375
+			dvar "scr_game_forceuav"
+			dvarStrList { "@MENU_NO" "0" "@MENU_YES" "1" }
+		}
+		itemDef
+		{
+			name "sidenav_button_16"
+			rect -272 316 260 18 2 1
+			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_rules_selection_bar"
+			type 1
+			textfont 3
+			textalign 4
+			textaligny -2
+			textscale 0.375
+			text "@MPUI_RULES_FRIENDLY_FIRE"
+			dvar "scr_team_fftype"
+			
+			{
+				setfocus "sidenav_button_35";
+			}
+			
+			{
+				setfocus "sidenav_button_35";
+			}
+			action
+			{
+				play "mouse_click";
+				open "settings_quick_gtnw_@MPUI_RULES_FRIENDLY_FIRE";
+				play "mouse_click";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect -272 316 272 18 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 0.65
+			backcolor 1 1 1 0
+			background "white"
+			type 12
+			textfont 3
+			textalign 4
+			textalignx 160
+			textaligny -2
+			textscale 0.375
+			dvar "scr_team_fftype"
+			dvarStrList { "@MENU_DISABLED" "0" "@MENU_ENABLED" "1" "@MPUI_RULES_REFLECT" "2" "@MPUI_RULES_SHARED" "3" "" "0" "" "0" }
+		}
+		itemDef
+		{
+			rect 0 28 160 18 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 6
+			textalignx -32
+			textscale 0.3333
+			exp text ( "@MPUI_RULES_PLAYER_OPTIONS" )
+		}
+		itemDef
+		{
+			name "sidenav_button_20"
+			rect 0 46 260 18 2 1
+			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_rules_selection_bar"
+			type 1
+			textfont 3
+			textalign 4
+			textaligny -2
+			textscale 0.375
+			text "@MPUI_RULES_NUMBER_OF_LIVES"
+			dvar "scr_gtnw_numlives"
+			
+			{
+				setfocus "sidenav_button_1";
+			}
+			
+			{
+				setfocus "sidenav_button_1";
+			}
+			action
+			{
+				play "mouse_click";
+				open "settings_quick_gtnw_@MPUI_RULES_NUMBER_OF_LIVES";
+				play "mouse_click";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect 0 46 272 18 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 0.65
+			backcolor 1 1 1 0
+			background "white"
+			type 12
+			textfont 3
+			textalign 4
+			textalignx 160
+			textaligny -2
+			textscale 0.375
+			dvar "scr_gtnw_numlives"
+			dvarStrList { "@MPUI_RULES_UNLIMITED" "0" "@MPUI_RULES_ITEM_LIFE" "1" "@MPUI_RULES_ITEM_2LIVES" "2" "@MPUI_RULES_ITEM_3LIVES" "3" "@MPUI_RULES_ITEM_5LIVES" "5" "@MPUI_RULES_ITEM_9LIVES" "9" }
+		}
+		itemDef
+		{
+			name "sidenav_button_21"
+			rect 0 64 260 18 2 1
+			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_rules_selection_bar"
+			type 1
+			textfont 3
+			textalign 4
+			textaligny -2
+			textscale 0.375
+			text "@MPUI_RULES_RESPAWN_DELAY"
+			dvar "scr_gtnw_playerrespawndelay"
+			
+			{
+				setfocus "sidenav_button_2";
+			}
+			
+			{
+				setfocus "sidenav_button_2";
+			}
+			action
+			{
+				play "mouse_click";
+				open "settings_quick_gtnw_@MPUI_RULES_RESPAWN_DELAY";
+				play "mouse_click";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect 0 64 272 18 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 0.65
+			backcolor 1 1 1 0
+			background "white"
+			type 12
+			textfont 3
+			textalign 4
+			textalignx 160
+			textaligny -2
+			textscale 0.375
+			dvar "scr_gtnw_playerrespawndelay"
+			dvarStrList { "@MPUI_RULES_NONE" "0" "@MPUI_RULES_5SECONDS" "5" "@MPUI_RULES_7_5SECONDS" "7.5" "@MPUI_RULES_10SECONDS" "10" "@MPUI_RULES_15SECONDS" "15" "@MPUI_RULES_30SECONDS" "30" }
+		}
+		itemDef
+		{
+			name "sidenav_button_22"
+			rect 0 82 260 18 2 1
+			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_rules_selection_bar"
+			type 1
+			textfont 3
+			textalign 4
+			textaligny -2
+			textscale 0.375
+			text "@MPUI_RULES_MAX_HEALTH"
+			dvar "scr_player_maxhealth"
+			
+			{
+				setfocus "sidenav_button_3";
+			}
+			
+			{
+				setfocus "sidenav_button_3";
+			}
+			action
+			{
+				play "mouse_click";
+				open "settings_quick_gtnw_@MPUI_RULES_MAX_HEALTH";
+				play "mouse_click";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect 0 82 272 18 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 0.65
+			backcolor 1 1 1 0
+			background "white"
+			type 12
+			textfont 3
+			textalign 4
+			textalignx 160
+			textaligny -2
+			textscale 0.375
+			dvar "scr_player_maxhealth"
+			dvarStrList { "@MPUI_RULES_MINISCULE" "30" "@MPUI_RULES_HALF" "50" "@MPUI_RULES_NORMAL" "100" "@MPUI_RULES_DOUBLE" "200" "" "0" "" "0" }
+		}
+		itemDef
+		{
+			name "sidenav_button_23"
+			rect 0 100 260 18 2 1
+			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_rules_selection_bar"
+			type 1
+			textfont 3
+			textalign 4
+			textaligny -2
+			textscale 0.375
+			text "@MPUI_RULES_HEALTH_REGEN"
+			dvar "scr_player_healthregentime"
+			
+			{
+				setfocus "sidenav_button_4";
+			}
+			
+			{
+				setfocus "sidenav_button_4";
+			}
+			action
+			{
+				play "mouse_click";
+				open "settings_quick_gtnw_@MPUI_RULES_HEALTH_REGEN";
+				play "mouse_click";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect 0 100 272 18 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 0.65
+			backcolor 1 1 1 0
+			background "white"
+			type 12
+			textfont 3
+			textalign 4
+			textalignx 160
+			textaligny -2
+			textscale 0.375
+			dvar "scr_player_healthregentime"
+			dvarStrList { "@MPUI_RULES_NONE" "0" "@MPUI_RULES_FAST" "2" "@MPUI_RULES_NORMAL" "5" "@MPUI_RULES_SLOW" "10" "" "0" "" "0" }
+		}
+		itemDef
+		{
+			name "sidenav_button_24"
+			rect 0 118 260 18 2 1
+			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_rules_selection_bar"
+			type 1
+			textfont 3
+			textalign 4
+			textaligny -2
+			textscale 0.375
+			text "@MPUI_RULES_KILLCAM"
+			dvar "scr_game_allowkillcam"
+			
+			{
+				setfocus "sidenav_button_5";
+			}
+			
+			{
+				setfocus "sidenav_button_5";
+			}
+			action
+			{
+				play "mouse_click";
+				exec "toggle scr_game_allowkillcam 0 1";
+				play "mouse_click";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect 0 118 272 18 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 0.65
+			backcolor 1 1 1 0
+			background "white"
+			type 12
+			textfont 3
+			textalign 4
+			textalignx 160
+			textaligny -2
+			textscale 0.375
+			dvar "scr_game_allowkillcam"
+			dvarStrList { "@MENU_DISABLED" "0" "@MENU_ENABLED" "1" }
+		}
+		itemDef
+		{
+			rect 0 226 160 18 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 6
+			textalignx -32
+			textscale 0.3333
+			exp text ( "@MPUI_RULES_GAMEPLAY_OPTIONS" )
+		}
+		itemDef
+		{
+			name "sidenav_button_31"
+			rect 0 244 260 18 2 1
+			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_rules_selection_bar"
+			type 1
+			textfont 3
+			textalign 4
+			textaligny -2
+			textscale 0.375
+			text "@MPUI_RULES_HEADSHOTS_ONLY"
+			dvar "scr_game_onlyheadshots"
+			
+			{
+				setfocus "sidenav_button_12";
+			}
+			
+			{
+				setfocus "sidenav_button_12";
+			}
+			action
+			{
+				play "mouse_click";
+				exec "toggle scr_game_onlyheadshots 0 1";
+				play "mouse_click";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect 0 244 272 18 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 0.65
+			backcolor 1 1 1 0
+			background "white"
+			type 12
+			textfont 3
+			textalign 4
+			textalignx 160
+			textaligny -2
+			textscale 0.375
+			dvar "scr_game_onlyheadshots"
+			dvarStrList { "@MENU_DISABLED" "0" "@MENU_ENABLED" "1" }
+		}
+		itemDef
+		{
+			name "sidenav_button_32"
+			rect 0 262 260 18 2 1
+			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_rules_selection_bar"
+			type 1
+			textfont 3
+			textalign 4
+			textaligny -2
+			textscale 0.375
+			text "@MPUI_RULES_PERKS"
+			dvar "scr_game_perks"
+			
+			{
+				setfocus "sidenav_button_13";
+			}
+			
+			{
+				setfocus "sidenav_button_13";
+			}
+			action
+			{
+				play "mouse_click";
+				exec "toggle scr_game_perks 0 1";
+				play "mouse_click";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect 0 262 272 18 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 0.65
+			backcolor 1 1 1 0
+			background "white"
+			type 12
+			textfont 3
+			textalign 4
+			textalignx 160
+			textaligny -2
+			textscale 0.375
+			dvar "scr_game_perks"
+			dvarStrList { "@MENU_DISABLED" "0" "@MENU_ENABLED" "1" }
+		}
+		itemDef
+		{
+			name "sidenav_button_33"
+			rect 0 280 260 18 2 1
+			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_rules_selection_bar"
+			type 1
+			textfont 3
+			textalign 4
+			textaligny -2
+			textscale 0.375
+			text "@MPUI_RULES_KILLSTREAK_REWARDS"
+			dvar "scr_game_hardpoints"
+			
+			{
+				setfocus "sidenav_button_14";
+			}
+			
+			{
+				setfocus "sidenav_button_14";
+			}
+			action
+			{
+				play "mouse_click";
+				exec "toggle scr_game_hardpoints 0 1";
+				play "mouse_click";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect 0 280 272 18 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 0.65
+			backcolor 1 1 1 0
+			background "white"
+			type 12
+			textfont 3
+			textalign 4
+			textalignx 160
+			textaligny -2
+			textscale 0.375
+			dvar "scr_game_hardpoints"
+			dvarStrList { "@MENU_DISABLED" "0" "@MENU_ENABLED" "1" }
+		}
+		itemDef
+		{
+			name "sidenav_button_34"
+			rect 0 298 260 18 2 1
+			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_rules_selection_bar"
+			type 1
+			textfont 3
+			textalign 4
+			textaligny -2
+			textscale 0.375
+			text "@MPUI_RULES_HARDCORE"
+			dvar "g_hardcore"
+			
+			{
+				setfocus "sidenav_button_15";
+			}
+			
+			{
+				setfocus "sidenav_button_15";
+			}
+			action
+			{
+				play "mouse_click";
+				execnow "toggle g_hardcore 0 1";
+				play "mouse_click";
+				execNowOnDvarIntValue "g_hardcore" 0 "exec hardcore_disable.cfg";
+				execNowOnDvarIntValue "g_hardcore" 1 "exec hardcore_settings.cfg";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect 0 298 272 18 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 0.65
+			backcolor 1 1 1 0
+			background "white"
+			type 12
+			textfont 3
+			textalign 4
+			textalignx 160
+			textaligny -2
+			textscale 0.375
+			dvar "g_hardcore"
+			dvarStrList { "@MENU_DISABLED" "0" "@MENU_ENABLED" "1" }
+		}
+		itemDef
+		{
+			name "sidenav_button_35"
+			rect 0 316 260 18 2 1
+			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_rules_selection_bar"
+			type 1
+			textfont 3
+			textalign 4
+			textaligny -2
+			textscale 0.375
+			text "@MPUI_RULES_CAMERA"
+			dvar "scr_thirdperson"
+			
+			{
+				setfocus "sidenav_button_16";
+			}
+			
+			{
+				setfocus "sidenav_button_16";
+			}
+			action
+			{
+				play "mouse_click";
+				exec "toggle scr_thirdperson 0 1";
+				play "mouse_click";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+				setLocalVarFloat "ui_popupYPos" ( getfocuseditemy( ) );
+				;;
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect 0 316 272 18 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 0.65
+			backcolor 1 1 1 0
+			background "white"
+			type 12
+			textfont 3
+			textalign 4
+			textalignx 160
+			textaligny -2
+			textscale 0.375
+			dvar "scr_thirdperson"
+			dvarStrList { "@MENU_DISABLED" "0" "@MENU_ENABLED" "1" }
+		}
+		itemDef
+		{
+			rect 0 0 144 18 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 1
+			textalign 10
+			textaligny -1
+			textscale 0.28
+			exp rect x ( getfocuseditemx( ) )
+			exp rect y ( getfocuseditemy( ) )
+			visible when ( !localvarbool( "ui_hideSelectButton" ) )
+		}
+		itemDef
+		{
+			rect -64 -20 336 20 1 3
+			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@PLATFORM_BACK_CAPS"
+			visible when ( "@PLATFORM_BACK_CAPS" == "@PLATFORM_BACK_CAPS" )
+			action
+			{
+				play "mouse_click";
+				play "mouse_click";
+				"escape" self;
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect -64 -20 336 20 1 3
+			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@PLATFORM_BACK_CAPS"
+			visible when ( "@PLATFORM_BACK_CAPS" == "@PLATFORM_GAME_SUMMARY_CAPS" )
+			action
+			{
+				play "mouse_click";
+				play "mouse_click";
+				open "popup_summary";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+	}
+}

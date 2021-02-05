@@ -1,0 +1,5450 @@
+{
+	menuDef
+	{
+		name "menu_playercard_title_popup"
+		rect 0 0 640 480 0 0
+		style 1
+		forecolor 1 1 1 1
+		focuscolor 1 1 1 1
+		fullscreen 1
+		fadeCycle 1
+		fadeClamp 1
+		fadeAmount 0.1
+		
+		{
+			if ( localvarint( "ui_pageIndex" ) )
+			{
+				setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+				;;
+			}
+		}
+		
+		{
+			if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+			{
+				setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+				;;
+			}
+		}
+		
+		{
+			if ( localvarint( "ui_pageIndex" ) )
+			{
+				setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+				;;
+			}
+		}
+		
+		{
+			if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+			{
+				setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+				;;
+			}
+		}
+		onOpen
+		{
+			setLocalVarInt "ui_pageIndex" ( 0 );
+			setLocalVarInt "ui_numPages" ( 0 );
+			if ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , ( 1 * 27 ) , 0 ) != "" ) )
+			{
+				setLocalVarInt "ui_numPages" ( 1 );
+				;;
+			}
+			if ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , ( 2 * 27 ) , 0 ) != "" ) )
+			{
+				setLocalVarInt "ui_numPages" ( 2 );
+				;;
+			}
+			if ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , ( 3 * 27 ) , 0 ) != "" ) )
+			{
+				setLocalVarInt "ui_numPages" ( 3 );
+				;;
+			}
+			if ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , ( 4 * 27 ) , 0 ) != "" ) )
+			{
+				setLocalVarInt "ui_numPages" ( 4 );
+				;;
+			}
+			if ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , ( 5 * 27 ) , 0 ) != "" ) )
+			{
+				setLocalVarInt "ui_numPages" ( 5 );
+				;;
+			}
+			if ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , ( 6 * 27 ) , 0 ) != "" ) )
+			{
+				setLocalVarInt "ui_numPages" ( 6 );
+				;;
+			}
+			if ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , ( 7 * 27 ) , 0 ) != "" ) )
+			{
+				setLocalVarInt "ui_numPages" ( 7 );
+				;;
+			}
+			if ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , ( 8 * 27 ) , 0 ) != "" ) )
+			{
+				setLocalVarInt "ui_numPages" ( 8 );
+				;;
+			}
+			if ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , ( 9 * 27 ) , 0 ) != "" ) )
+			{
+				setLocalVarInt "ui_numPages" ( 9 );
+				;;
+			}
+			if ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , ( 10 * 27 ) , 0 ) != "" ) )
+			{
+				setLocalVarInt "ui_numPages" ( 10 );
+				;;
+			}
+			if ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , ( 11 * 27 ) , 0 ) != "" ) )
+			{
+				setLocalVarInt "ui_numPages" ( 11 );
+				;;
+			}
+			if ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , ( 12 * 27 ) , 0 ) != "" ) )
+			{
+				setLocalVarInt "ui_numPages" ( 12 );
+				;;
+			}
+			if ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , ( 13 * 27 ) , 0 ) != "" ) )
+			{
+				setLocalVarInt "ui_numPages" ( 13 );
+				;;
+			}
+			if ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , ( 14 * 27 ) , 0 ) != "" ) )
+			{
+				setLocalVarInt "ui_numPages" ( 14 );
+				;;
+			}
+			if ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , ( 15 * 27 ) , 0 ) != "" ) )
+			{
+				setLocalVarInt "ui_numPages" ( 15 );
+				;;
+			}
+			if ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , ( 16 * 27 ) , 0 ) != "" ) )
+			{
+				setLocalVarInt "ui_numPages" ( 16 );
+				;;
+			}
+			if ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , ( 17 * 27 ) , 0 ) != "" ) )
+			{
+				setLocalVarInt "ui_numPages" ( 17 );
+				;;
+			}
+			if ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , ( 18 * 27 ) , 0 ) != "" ) )
+			{
+				setLocalVarInt "ui_numPages" ( 18 );
+				;;
+			}
+			if ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , ( 19 * 27 ) , 0 ) != "" ) )
+			{
+				setLocalVarInt "ui_numPages" ( 19 );
+				;;
+			}
+			if ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , ( 20 * 27 ) , 0 ) != "" ) )
+			{
+				setLocalVarInt "ui_numPages" ( 20 );
+				;;
+			}
+			if ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , ( 21 * 27 ) , 0 ) != "" ) )
+			{
+				setLocalVarInt "ui_numPages" ( 21 );
+				;;
+			}
+			if ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , ( 22 * 27 ) , 0 ) != "" ) )
+			{
+				setLocalVarInt "ui_numPages" ( 22 );
+				;;
+			}
+			if ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , ( 23 * 27 ) , 0 ) != "" ) )
+			{
+				setLocalVarInt "ui_numPages" ( 23 );
+				;;
+			}
+			if ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , ( 24 * 27 ) , 0 ) != "" ) )
+			{
+				setLocalVarInt "ui_numPages" ( 24 );
+				;;
+			}
+			if ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , ( 25 * 27 ) , 0 ) != "" ) )
+			{
+				setLocalVarInt "ui_numPages" ( 25 );
+				;;
+			}
+			if ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , ( 26 * 27 ) , 0 ) != "" ) )
+			{
+				setLocalVarInt "ui_numPages" ( 26 );
+				;;
+			}
+			if ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , ( 27 * 27 ) , 0 ) != "" ) )
+			{
+				setLocalVarInt "ui_numPages" ( 27 );
+				;;
+			}
+			if ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , ( 28 * 27 ) , 0 ) != "" ) )
+			{
+				setLocalVarInt "ui_numPages" ( 28 );
+				;;
+			}
+			if ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , ( 29 * 27 ) , 0 ) != "" ) )
+			{
+				setLocalVarInt "ui_numPages" ( 29 );
+				;;
+			}
+			if ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , ( 30 * 27 ) , 0 ) != "" ) )
+			{
+				setLocalVarInt "ui_numPages" ( 30 );
+				;;
+			}
+			setPlayerData ( "titleNew" , "cardtitle_flag_uk" , "false" ) setPlayerData ( "titleNew" , "cardtitle_flag_canada" , "false" ) setPlayerData ( "titleNew" , "cardtitle_flag_australia" , "false" ) setPlayerData ( "titleNew" , "cardtitle_flag_spain" , "false" ) setPlayerData ( "titleNew" , "cardtitle_flag_austria" , "false" ) setPlayerData ( "titleNew" , "cardtitle_flag_japan" , "false" ) setPlayerData ( "titleNew" , "cardtitle_flag_brazil" , "false" ) setPlayerData ( "titleNew" , "cardtitle_flag_swiss" , "false" ) setPlayerData ( "titleNew" , "cardtitle_flag_russia" , "false" ) setPlayerData ( "titleNew" , "cardtitle_flag_mexico" , "false" ) setPlayerData ( "titleNew" , "cardtitle_flag_france" , "false" ) setPlayerData ( "titleNew" , "cardtitle_flag_germany" , "false" ) setPlayerData ( "titleNew" , "cardtitle_flag_italy" , "false" ) setPlayerData ( "titleNew" , "cardtitle_flag_norway" , "false" ) setPlayerData ( "titleNew" , "cardtitle_flag_greece" , "false" ) setPlayerData ( "titleNew" , "cardtitle_flag_sweden" , "false" ) setPlayerData ( "titleNew" , "cardtitle_flag_ireland" , "false" ) setPlayerData ( "titleNew" , "cardtitle_flag_belgium" , "false" ) setPlayerData ( "titleNew" , "cardtitle_flag_finland" , "false" ) setPlayerData ( "titleNew" , "cardtitle_flag_luxemburg" , "false" ) setPlayerData ( "titleNew" , "cardtitle_flag_czech" , "false" ) setPlayerData ( "titleNew" , "cardtitle_flag_netherlands" , "false" ) setPlayerData ( "titleNew" , "cardtitle_flag_newzealand" , "false" ) setPlayerData ( "titleNew" , "cardtitle_flag_philippines" , "false" ) setPlayerData ( "titleNew" , "cardtitle_flag_poland" , "false" ) setPlayerData ( "titleNew" , "cardtitle_flag_portugal" , "false" ) setPlayerData ( "titleNew" , "cardtitle_flag_denmark" , "false" ) setPlayerData ( "titleNew" , "cardtitle_flag_saudiarabia" , "false" ) setPlayerData ( "titleNew" , "cardtitle_flag_singapore" , "false" ) setPlayerData ( "titleNew" , "cardtitle_flag_southafrica" , "false" ) setPlayerData ( "titleNew" , "cardtitle_flag_southkorea" , "false" ) setPlayerData ( "titleNew" , "cardtitle_flag_hongkong" , "false" ) setPlayerData ( "titleNew" , "cardtitle_flag_india" , "false" ) setPlayerData ( "titleNew" , "cardtitle_flag_taiwan" , "false" ) setPlayerData ( "titleNew" , "cardtitle_flag_united_arab_emirates" , "false" ) setPlayerData ( "titleNew" , "cardtitle_flag_elsalvador" , "false" ) setPlayerData ( "titleNew" , "cardtitle_flag_china" , "false" ) setPlayerData ( "titleNew" , "cardtitle_flag_iran" , "false" );
+		}
+		onClose
+		{
+			execnow "uploadstats";
+		}
+		onEsc
+		{
+			close self;
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "mw2_main_background"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect 0 0 1708 480 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.5
+			background "mw2_main_cloud_overlay"
+			textscale 0.55
+			exp rect x ( ( 0 - 107 ) - ( ( float( milliseconds( ) % 60000 ) / 60000 ) * ( 854 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 -1708 -480 0 0
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.5
+			background "mw2_main_cloud_overlay"
+			textscale 0.55
+			exp rect x ( ( - 107 + 854 ) + ( ( float( milliseconds( ) % 50000 ) / 50000 ) * ( 854 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0
+			background "mockup_bg_glow"
+			textscale 0.55
+			exp forecolor a ( ( ( sin( milliseconds( ) / 1500 ) + 1 ) * 0.25 ) + 0.25 )
+		}
+		itemDef
+		{
+			rect 0 0 640 480 4 4
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0
+			background "mockup_bg_glow"
+			textscale 0.55
+			exp forecolor a ( ( ( sin( milliseconds( ) / 480 ) + 1 ) * 0.25 ) + 0.25 )
+		}
+		itemDef
+		{
+			rect -320 0 640 28 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 4
+			textalignx 54
+			textscale 0.5833
+			text "@MENU_TITLE_CAPS"
+			visible when ( !dvarbool( "wideScreen" ) )
+		}
+		itemDef
+		{
+			rect -320 0 640 28 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 9
+			textalign 5
+			textscale 0.5833
+			text "@MENU_TITLE_CAPS"
+			visible when ( dvarbool( "wideScreen" ) )
+		}
+		itemDef
+		{
+			rect 0 28 640 356 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 0.15
+			background "white"
+			textscale 0.55
+		}
+		itemDef
+		{
+			rect -32 -4 32 32 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_tl"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 0 -4 640 32 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_t"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 640 -4 32 32 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_tr"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 640 28 32 356 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_r"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 640 384 32 32 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_br"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect 0 384 640 32 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_b"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect -32 384 32 32 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_bl"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect -32 28 32 356 4 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0 0 0 1
+			background "drop_shadow_l"
+			textscale 0.55
+			visible when ( 1 )
+		}
+		itemDef
+		{
+			rect -272 0 0 18 3 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 0.65
+			background "white"
+			textfont 3
+			textalign 4
+			textalignx 20
+			textscale 0.375
+			dvar "party_statusString"
+			visible when ( !dvarstring( "xblive_privatematch" ) && inlobby( ) )
+		}
+		itemDef
+		{
+			rect -272 0 272 18 3 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 0.65
+			background "white"
+			textfont 3
+			textalign 4
+			textalignx 20
+			textscale 0.375
+			dvar "party_partyPlayerCount"
+			visible when ( !inlobby( ) )
+		}
+		itemDef
+		{
+			rect -272 28 544 24 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 6
+			textalignx -4
+			textscale 0.3333
+			visible when ( 1 )
+			exp text ( locstring( "@MPUI_PAGE_N_SLASH_N" , ( localvarint( "ui_pageIndex" ) + 1 ) , ( localvarint( "ui_numPages" ) + 1 ) ) )
+		}
+		itemDef
+		{
+			rect 0 0 208 48 2 1
+			decoration
+			visible 1
+			style 3
+			border 1
+			borderSize 1
+			forecolor 1 1 1 1
+			bordercolor 0 0 0 0.75
+			background "cardtitle_248x48"
+			textscale 0.55
+			exp rect x ( 0 - ( ( 208 ) / 2 ) )
+			exp rect y ( ( 28 + 4 ) )
+			visible when ( 1 && ( getplayercardinfo( 0 , 1 , 0 ) != 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( 0 - ( ( 208 ) / 2 ) )
+			exp rect y ( ( 28 + 4 ) - 2 )
+			visible when ( 1 && ( getplayercardinfo( 0 , 1 , 0 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 32 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 3
+			textalign 9
+			textscale 0.375
+			exp rect x ( 0 - ( ( 208 ) / 2 ) )
+			exp rect y ( ( 28 + 4 ) - 2 )
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 5 ) )
+			visible when ( 1 && ( getplayercardinfo( 0 , 1 , 0 ) != 0 ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , getplayercardinfo( 1 , 1 , 0 ) , 1 ) )
+		}
+		itemDef
+		{
+			rect 0 0 160 18 2 1
+			decoration
+			visible 1
+			forecolor 1 1 1 1
+			textfont 10
+			textalign 4
+			textalignx 8
+			textscale 0.3333
+			exp rect x ( 0 - ( ( 208 ) / 2 ) )
+			exp rect y ( ( ( 28 + 4 ) ) + 28 )
+			visible when ( 1 && ( getplayercardinfo( 0 , 1 , 0 ) != 0 ) )
+			exp text ( getplayercardinfo( 8 , 1 , 0 ) )
+		}
+		itemDef
+		{
+			rect 0 0 48 48 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			textscale 0.55
+			exp rect x ( ( 0 - ( ( 208 ) / 2 ) ) + 158 )
+			exp rect y ( ( ( 28 + 4 ) ) )
+			visible when ( 1 && ( getplayercardinfo( 0 , 1 , 0 ) != 0 ) )
+			exp material ( tablelookupbyrow( "mp/cardIconTable.csv" , getplayercardinfo( 2 , 1 , 0 ) , 1 ) )
+		}
+		itemDef
+		{
+			name "cardTitle1_0"
+			rect -302 81.3333 224 53.3333 2 1
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "highlight_selected"
+			type 1
+			textscale 0.55
+			exp forecolor g ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 0 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 0 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor b ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 0 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 0 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor a ( ( getfocuseditemname( ) == "cardTitle1_0" ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 0 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+			
+			{
+				if ( 0 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle1_2";
+					}
+				}
+				if ( 0 == 1 )
+				{
+					setfocus "cardTitle1_0";
+				}
+				if ( 0 == 2 )
+				{
+					setfocus "cardTitle1_1";
+				}
+			}
+			
+			{
+				if ( 0 == 0 )
+				{
+					setfocus "cardTitle1_1";
+				}
+				if ( 0 == 1 )
+				{
+					setfocus "cardTitle1_2";
+				}
+				if ( 0 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle1_0";
+					}
+				}
+			}
+			
+			{
+				if ( 0 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle1_2";
+					}
+				}
+				if ( 0 == 1 )
+				{
+					setfocus "cardTitle1_0";
+				}
+				if ( 0 == 2 )
+				{
+					setfocus "cardTitle1_1";
+				}
+			}
+			
+			{
+				if ( 0 == 0 )
+				{
+					setfocus "cardTitle1_1";
+				}
+				if ( 0 == 1 )
+				{
+					setfocus "cardTitle1_2";
+				}
+				if ( 0 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle1_0";
+					}
+				}
+			}
+			action
+			{
+				if ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 0 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+				{
+					play "mouse_click";
+					setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 0 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+					;
+					setPlayerData ( "cardTitle" , "localVarString" ( "ui_tempVar" ) );
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 0 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+				;;
+				if ( localvarstring( "ui_tempVar" ) != "" )
+				{
+					setPlayerData ( "titleNew" , "localVarString" ( "ui_tempVar" ) , "false" );
+				}
+			}
+		}
+		itemDef
+		{
+			rect -270 92 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , 0 + ( localvarint( "ui_pageIndex" ) * 27 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , 0 + ( localvarint( "ui_pageIndex" ) * 27 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , 0 + ( localvarint( "ui_pageIndex" ) * 27 ) , 5 ) )
+			exp forecolor a ( ( 1 * !( getfocuseditemname( ) == "cardTitle1_0" ) ) + ( ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.25 + 0.75 ) * ( getfocuseditemname( ) == "cardTitle1_0" ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 0 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 0 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , 0 + ( localvarint( "ui_pageIndex" ) * 27 ) , 1 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , 0 + ( localvarint( "ui_pageIndex" ) * 27 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect -280 82 60 40 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 1 0.45 1
+			background "highlight_selected"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 0 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) * 0.65 )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 0 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect -270 92 40 20 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new_bg"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 0 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 0 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect -270 92 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "cardtitle_locked"
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 0 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && !isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 0 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "" )
+		}
+		itemDef
+		{
+			name "cardTitle2_0"
+			rect -302 113.333 224 53.3333 2 1
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "highlight_selected"
+			type 1
+			textscale 0.55
+			exp forecolor g ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 1 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 1 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor b ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 1 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 1 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor a ( ( getfocuseditemname( ) == "cardTitle2_0" ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 1 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+			
+			{
+				if ( 0 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle2_2";
+					}
+				}
+				if ( 0 == 1 )
+				{
+					setfocus "cardTitle2_0";
+				}
+				if ( 0 == 2 )
+				{
+					setfocus "cardTitle2_1";
+				}
+			}
+			
+			{
+				if ( 0 == 0 )
+				{
+					setfocus "cardTitle2_1";
+				}
+				if ( 0 == 1 )
+				{
+					setfocus "cardTitle2_2";
+				}
+				if ( 0 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle2_0";
+					}
+				}
+			}
+			
+			{
+				if ( 0 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle2_2";
+					}
+				}
+				if ( 0 == 1 )
+				{
+					setfocus "cardTitle2_0";
+				}
+				if ( 0 == 2 )
+				{
+					setfocus "cardTitle2_1";
+				}
+			}
+			
+			{
+				if ( 0 == 0 )
+				{
+					setfocus "cardTitle2_1";
+				}
+				if ( 0 == 1 )
+				{
+					setfocus "cardTitle2_2";
+				}
+				if ( 0 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle2_0";
+					}
+				}
+			}
+			action
+			{
+				if ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 1 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+				{
+					play "mouse_click";
+					setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 1 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+					;
+					setPlayerData ( "cardTitle" , "localVarString" ( "ui_tempVar" ) );
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 1 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+				;;
+				if ( localvarstring( "ui_tempVar" ) != "" )
+				{
+					setPlayerData ( "titleNew" , "localVarString" ( "ui_tempVar" ) , "false" );
+				}
+			}
+		}
+		itemDef
+		{
+			rect -270 124 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , 1 + ( localvarint( "ui_pageIndex" ) * 27 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , 1 + ( localvarint( "ui_pageIndex" ) * 27 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , 1 + ( localvarint( "ui_pageIndex" ) * 27 ) , 5 ) )
+			exp forecolor a ( ( 1 * !( getfocuseditemname( ) == "cardTitle2_0" ) ) + ( ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.25 + 0.75 ) * ( getfocuseditemname( ) == "cardTitle2_0" ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 1 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 1 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , 1 + ( localvarint( "ui_pageIndex" ) * 27 ) , 1 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , 1 + ( localvarint( "ui_pageIndex" ) * 27 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect -280 114 60 40 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 1 0.45 1
+			background "highlight_selected"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 1 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) * 0.65 )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 1 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect -270 124 40 20 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new_bg"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 1 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 1 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect -270 124 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "cardtitle_locked"
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 1 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && !isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 1 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "" )
+		}
+		itemDef
+		{
+			name "cardTitle3_0"
+			rect -302 145.333 224 53.3333 2 1
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "highlight_selected"
+			type 1
+			textscale 0.55
+			exp forecolor g ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 2 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 2 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor b ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 2 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 2 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor a ( ( getfocuseditemname( ) == "cardTitle3_0" ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 2 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+			
+			{
+				if ( 0 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle3_2";
+					}
+				}
+				if ( 0 == 1 )
+				{
+					setfocus "cardTitle3_0";
+				}
+				if ( 0 == 2 )
+				{
+					setfocus "cardTitle3_1";
+				}
+			}
+			
+			{
+				if ( 0 == 0 )
+				{
+					setfocus "cardTitle3_1";
+				}
+				if ( 0 == 1 )
+				{
+					setfocus "cardTitle3_2";
+				}
+				if ( 0 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle3_0";
+					}
+				}
+			}
+			
+			{
+				if ( 0 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle3_2";
+					}
+				}
+				if ( 0 == 1 )
+				{
+					setfocus "cardTitle3_0";
+				}
+				if ( 0 == 2 )
+				{
+					setfocus "cardTitle3_1";
+				}
+			}
+			
+			{
+				if ( 0 == 0 )
+				{
+					setfocus "cardTitle3_1";
+				}
+				if ( 0 == 1 )
+				{
+					setfocus "cardTitle3_2";
+				}
+				if ( 0 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle3_0";
+					}
+				}
+			}
+			action
+			{
+				if ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 2 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+				{
+					play "mouse_click";
+					setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 2 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+					;
+					setPlayerData ( "cardTitle" , "localVarString" ( "ui_tempVar" ) );
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 2 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+				;;
+				if ( localvarstring( "ui_tempVar" ) != "" )
+				{
+					setPlayerData ( "titleNew" , "localVarString" ( "ui_tempVar" ) , "false" );
+				}
+			}
+		}
+		itemDef
+		{
+			rect -270 156 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , 2 + ( localvarint( "ui_pageIndex" ) * 27 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , 2 + ( localvarint( "ui_pageIndex" ) * 27 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , 2 + ( localvarint( "ui_pageIndex" ) * 27 ) , 5 ) )
+			exp forecolor a ( ( 1 * !( getfocuseditemname( ) == "cardTitle3_0" ) ) + ( ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.25 + 0.75 ) * ( getfocuseditemname( ) == "cardTitle3_0" ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 2 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 2 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , 2 + ( localvarint( "ui_pageIndex" ) * 27 ) , 1 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , 2 + ( localvarint( "ui_pageIndex" ) * 27 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect -280 146 60 40 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 1 0.45 1
+			background "highlight_selected"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 2 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) * 0.65 )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 2 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect -270 156 40 20 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new_bg"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 2 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 2 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect -270 156 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "cardtitle_locked"
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 2 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && !isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 2 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "" )
+		}
+		itemDef
+		{
+			name "cardTitle4_0"
+			rect -302 177.333 224 53.3333 2 1
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "highlight_selected"
+			type 1
+			textscale 0.55
+			exp forecolor g ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 3 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 3 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor b ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 3 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 3 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor a ( ( getfocuseditemname( ) == "cardTitle4_0" ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 3 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+			
+			{
+				if ( 0 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle4_2";
+					}
+				}
+				if ( 0 == 1 )
+				{
+					setfocus "cardTitle4_0";
+				}
+				if ( 0 == 2 )
+				{
+					setfocus "cardTitle4_1";
+				}
+			}
+			
+			{
+				if ( 0 == 0 )
+				{
+					setfocus "cardTitle4_1";
+				}
+				if ( 0 == 1 )
+				{
+					setfocus "cardTitle4_2";
+				}
+				if ( 0 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle4_0";
+					}
+				}
+			}
+			
+			{
+				if ( 0 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle4_2";
+					}
+				}
+				if ( 0 == 1 )
+				{
+					setfocus "cardTitle4_0";
+				}
+				if ( 0 == 2 )
+				{
+					setfocus "cardTitle4_1";
+				}
+			}
+			
+			{
+				if ( 0 == 0 )
+				{
+					setfocus "cardTitle4_1";
+				}
+				if ( 0 == 1 )
+				{
+					setfocus "cardTitle4_2";
+				}
+				if ( 0 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle4_0";
+					}
+				}
+			}
+			action
+			{
+				if ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 3 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+				{
+					play "mouse_click";
+					setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 3 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+					;
+					setPlayerData ( "cardTitle" , "localVarString" ( "ui_tempVar" ) );
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 3 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+				;;
+				if ( localvarstring( "ui_tempVar" ) != "" )
+				{
+					setPlayerData ( "titleNew" , "localVarString" ( "ui_tempVar" ) , "false" );
+				}
+			}
+		}
+		itemDef
+		{
+			rect -270 188 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , 3 + ( localvarint( "ui_pageIndex" ) * 27 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , 3 + ( localvarint( "ui_pageIndex" ) * 27 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , 3 + ( localvarint( "ui_pageIndex" ) * 27 ) , 5 ) )
+			exp forecolor a ( ( 1 * !( getfocuseditemname( ) == "cardTitle4_0" ) ) + ( ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.25 + 0.75 ) * ( getfocuseditemname( ) == "cardTitle4_0" ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 3 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 3 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , 3 + ( localvarint( "ui_pageIndex" ) * 27 ) , 1 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , 3 + ( localvarint( "ui_pageIndex" ) * 27 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect -280 178 60 40 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 1 0.45 1
+			background "highlight_selected"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 3 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) * 0.65 )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 3 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect -270 188 40 20 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new_bg"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 3 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 3 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect -270 188 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "cardtitle_locked"
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 3 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && !isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 3 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "" )
+		}
+		itemDef
+		{
+			name "cardTitle5_0"
+			rect -302 209.333 224 53.3333 2 1
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "highlight_selected"
+			type 1
+			textscale 0.55
+			exp forecolor g ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 4 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 4 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor b ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 4 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 4 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor a ( ( getfocuseditemname( ) == "cardTitle5_0" ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 4 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+			
+			{
+				if ( 0 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle5_2";
+					}
+				}
+				if ( 0 == 1 )
+				{
+					setfocus "cardTitle5_0";
+				}
+				if ( 0 == 2 )
+				{
+					setfocus "cardTitle5_1";
+				}
+			}
+			
+			{
+				if ( 0 == 0 )
+				{
+					setfocus "cardTitle5_1";
+				}
+				if ( 0 == 1 )
+				{
+					setfocus "cardTitle5_2";
+				}
+				if ( 0 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle5_0";
+					}
+				}
+			}
+			
+			{
+				if ( 0 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle5_2";
+					}
+				}
+				if ( 0 == 1 )
+				{
+					setfocus "cardTitle5_0";
+				}
+				if ( 0 == 2 )
+				{
+					setfocus "cardTitle5_1";
+				}
+			}
+			
+			{
+				if ( 0 == 0 )
+				{
+					setfocus "cardTitle5_1";
+				}
+				if ( 0 == 1 )
+				{
+					setfocus "cardTitle5_2";
+				}
+				if ( 0 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle5_0";
+					}
+				}
+			}
+			action
+			{
+				if ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 4 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+				{
+					play "mouse_click";
+					setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 4 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+					;
+					setPlayerData ( "cardTitle" , "localVarString" ( "ui_tempVar" ) );
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 4 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+				;;
+				if ( localvarstring( "ui_tempVar" ) != "" )
+				{
+					setPlayerData ( "titleNew" , "localVarString" ( "ui_tempVar" ) , "false" );
+				}
+			}
+		}
+		itemDef
+		{
+			rect -270 220 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , 4 + ( localvarint( "ui_pageIndex" ) * 27 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , 4 + ( localvarint( "ui_pageIndex" ) * 27 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , 4 + ( localvarint( "ui_pageIndex" ) * 27 ) , 5 ) )
+			exp forecolor a ( ( 1 * !( getfocuseditemname( ) == "cardTitle5_0" ) ) + ( ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.25 + 0.75 ) * ( getfocuseditemname( ) == "cardTitle5_0" ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 4 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 4 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , 4 + ( localvarint( "ui_pageIndex" ) * 27 ) , 1 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , 4 + ( localvarint( "ui_pageIndex" ) * 27 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect -280 210 60 40 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 1 0.45 1
+			background "highlight_selected"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 4 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) * 0.65 )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 4 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect -270 220 40 20 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new_bg"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 4 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 4 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect -270 220 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "cardtitle_locked"
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 4 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && !isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 4 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "" )
+		}
+		itemDef
+		{
+			name "cardTitle6_0"
+			rect -302 241.333 224 53.3333 2 1
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "highlight_selected"
+			type 1
+			textscale 0.55
+			exp forecolor g ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 5 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 5 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor b ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 5 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 5 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor a ( ( getfocuseditemname( ) == "cardTitle6_0" ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 5 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+			
+			{
+				if ( 0 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle6_2";
+					}
+				}
+				if ( 0 == 1 )
+				{
+					setfocus "cardTitle6_0";
+				}
+				if ( 0 == 2 )
+				{
+					setfocus "cardTitle6_1";
+				}
+			}
+			
+			{
+				if ( 0 == 0 )
+				{
+					setfocus "cardTitle6_1";
+				}
+				if ( 0 == 1 )
+				{
+					setfocus "cardTitle6_2";
+				}
+				if ( 0 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle6_0";
+					}
+				}
+			}
+			
+			{
+				if ( 0 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle6_2";
+					}
+				}
+				if ( 0 == 1 )
+				{
+					setfocus "cardTitle6_0";
+				}
+				if ( 0 == 2 )
+				{
+					setfocus "cardTitle6_1";
+				}
+			}
+			
+			{
+				if ( 0 == 0 )
+				{
+					setfocus "cardTitle6_1";
+				}
+				if ( 0 == 1 )
+				{
+					setfocus "cardTitle6_2";
+				}
+				if ( 0 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle6_0";
+					}
+				}
+			}
+			action
+			{
+				if ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 5 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+				{
+					play "mouse_click";
+					setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 5 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+					;
+					setPlayerData ( "cardTitle" , "localVarString" ( "ui_tempVar" ) );
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 5 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+				;;
+				if ( localvarstring( "ui_tempVar" ) != "" )
+				{
+					setPlayerData ( "titleNew" , "localVarString" ( "ui_tempVar" ) , "false" );
+				}
+			}
+		}
+		itemDef
+		{
+			rect -270 252 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , 5 + ( localvarint( "ui_pageIndex" ) * 27 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , 5 + ( localvarint( "ui_pageIndex" ) * 27 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , 5 + ( localvarint( "ui_pageIndex" ) * 27 ) , 5 ) )
+			exp forecolor a ( ( 1 * !( getfocuseditemname( ) == "cardTitle6_0" ) ) + ( ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.25 + 0.75 ) * ( getfocuseditemname( ) == "cardTitle6_0" ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 5 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 5 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , 5 + ( localvarint( "ui_pageIndex" ) * 27 ) , 1 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , 5 + ( localvarint( "ui_pageIndex" ) * 27 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect -280 242 60 40 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 1 0.45 1
+			background "highlight_selected"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 5 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) * 0.65 )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 5 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect -270 252 40 20 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new_bg"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 5 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 5 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect -270 252 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "cardtitle_locked"
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 5 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && !isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 5 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "" )
+		}
+		itemDef
+		{
+			name "cardTitle7_0"
+			rect -302 273.333 224 53.3333 2 1
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "highlight_selected"
+			type 1
+			textscale 0.55
+			exp forecolor g ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 6 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 6 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor b ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 6 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 6 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor a ( ( getfocuseditemname( ) == "cardTitle7_0" ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 6 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+			
+			{
+				if ( 0 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle7_2";
+					}
+				}
+				if ( 0 == 1 )
+				{
+					setfocus "cardTitle7_0";
+				}
+				if ( 0 == 2 )
+				{
+					setfocus "cardTitle7_1";
+				}
+			}
+			
+			{
+				if ( 0 == 0 )
+				{
+					setfocus "cardTitle7_1";
+				}
+				if ( 0 == 1 )
+				{
+					setfocus "cardTitle7_2";
+				}
+				if ( 0 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle7_0";
+					}
+				}
+			}
+			
+			{
+				if ( 0 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle7_2";
+					}
+				}
+				if ( 0 == 1 )
+				{
+					setfocus "cardTitle7_0";
+				}
+				if ( 0 == 2 )
+				{
+					setfocus "cardTitle7_1";
+				}
+			}
+			
+			{
+				if ( 0 == 0 )
+				{
+					setfocus "cardTitle7_1";
+				}
+				if ( 0 == 1 )
+				{
+					setfocus "cardTitle7_2";
+				}
+				if ( 0 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle7_0";
+					}
+				}
+			}
+			action
+			{
+				if ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 6 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+				{
+					play "mouse_click";
+					setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 6 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+					;
+					setPlayerData ( "cardTitle" , "localVarString" ( "ui_tempVar" ) );
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 6 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+				;;
+				if ( localvarstring( "ui_tempVar" ) != "" )
+				{
+					setPlayerData ( "titleNew" , "localVarString" ( "ui_tempVar" ) , "false" );
+				}
+			}
+		}
+		itemDef
+		{
+			rect -270 284 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , 6 + ( localvarint( "ui_pageIndex" ) * 27 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , 6 + ( localvarint( "ui_pageIndex" ) * 27 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , 6 + ( localvarint( "ui_pageIndex" ) * 27 ) , 5 ) )
+			exp forecolor a ( ( 1 * !( getfocuseditemname( ) == "cardTitle7_0" ) ) + ( ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.25 + 0.75 ) * ( getfocuseditemname( ) == "cardTitle7_0" ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 6 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 6 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , 6 + ( localvarint( "ui_pageIndex" ) * 27 ) , 1 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , 6 + ( localvarint( "ui_pageIndex" ) * 27 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect -280 274 60 40 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 1 0.45 1
+			background "highlight_selected"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 6 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) * 0.65 )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 6 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect -270 284 40 20 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new_bg"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 6 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 6 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect -270 284 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "cardtitle_locked"
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 6 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && !isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 6 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "" )
+		}
+		itemDef
+		{
+			name "cardTitle8_0"
+			rect -302 305.333 224 53.3333 2 1
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "highlight_selected"
+			type 1
+			textscale 0.55
+			exp forecolor g ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 7 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 7 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor b ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 7 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 7 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor a ( ( getfocuseditemname( ) == "cardTitle8_0" ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 7 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+			
+			{
+				if ( 0 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle8_2";
+					}
+				}
+				if ( 0 == 1 )
+				{
+					setfocus "cardTitle8_0";
+				}
+				if ( 0 == 2 )
+				{
+					setfocus "cardTitle8_1";
+				}
+			}
+			
+			{
+				if ( 0 == 0 )
+				{
+					setfocus "cardTitle8_1";
+				}
+				if ( 0 == 1 )
+				{
+					setfocus "cardTitle8_2";
+				}
+				if ( 0 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle8_0";
+					}
+				}
+			}
+			
+			{
+				if ( 0 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle8_2";
+					}
+				}
+				if ( 0 == 1 )
+				{
+					setfocus "cardTitle8_0";
+				}
+				if ( 0 == 2 )
+				{
+					setfocus "cardTitle8_1";
+				}
+			}
+			
+			{
+				if ( 0 == 0 )
+				{
+					setfocus "cardTitle8_1";
+				}
+				if ( 0 == 1 )
+				{
+					setfocus "cardTitle8_2";
+				}
+				if ( 0 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle8_0";
+					}
+				}
+			}
+			action
+			{
+				if ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 7 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+				{
+					play "mouse_click";
+					setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 7 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+					;
+					setPlayerData ( "cardTitle" , "localVarString" ( "ui_tempVar" ) );
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 7 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+				;;
+				if ( localvarstring( "ui_tempVar" ) != "" )
+				{
+					setPlayerData ( "titleNew" , "localVarString" ( "ui_tempVar" ) , "false" );
+				}
+			}
+		}
+		itemDef
+		{
+			rect -270 316 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , 7 + ( localvarint( "ui_pageIndex" ) * 27 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , 7 + ( localvarint( "ui_pageIndex" ) * 27 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , 7 + ( localvarint( "ui_pageIndex" ) * 27 ) , 5 ) )
+			exp forecolor a ( ( 1 * !( getfocuseditemname( ) == "cardTitle8_0" ) ) + ( ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.25 + 0.75 ) * ( getfocuseditemname( ) == "cardTitle8_0" ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 7 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 7 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , 7 + ( localvarint( "ui_pageIndex" ) * 27 ) , 1 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , 7 + ( localvarint( "ui_pageIndex" ) * 27 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect -280 306 60 40 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 1 0.45 1
+			background "highlight_selected"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 7 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) * 0.65 )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 7 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect -270 316 40 20 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new_bg"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 7 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 7 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect -270 316 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "cardtitle_locked"
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 7 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && !isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 7 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "" )
+		}
+		itemDef
+		{
+			name "cardTitle9_0"
+			rect -302 337.333 224 53.3333 2 1
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "highlight_selected"
+			type 1
+			textscale 0.55
+			exp forecolor g ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 8 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 8 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor b ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 8 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 8 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor a ( ( getfocuseditemname( ) == "cardTitle9_0" ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 8 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+			
+			{
+				if ( 0 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle9_2";
+					}
+				}
+				if ( 0 == 1 )
+				{
+					setfocus "cardTitle9_0";
+				}
+				if ( 0 == 2 )
+				{
+					setfocus "cardTitle9_1";
+				}
+			}
+			
+			{
+				if ( 0 == 0 )
+				{
+					setfocus "cardTitle9_1";
+				}
+				if ( 0 == 1 )
+				{
+					setfocus "cardTitle9_2";
+				}
+				if ( 0 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle9_0";
+					}
+				}
+			}
+			
+			{
+				if ( 0 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle9_2";
+					}
+				}
+				if ( 0 == 1 )
+				{
+					setfocus "cardTitle9_0";
+				}
+				if ( 0 == 2 )
+				{
+					setfocus "cardTitle9_1";
+				}
+			}
+			
+			{
+				if ( 0 == 0 )
+				{
+					setfocus "cardTitle9_1";
+				}
+				if ( 0 == 1 )
+				{
+					setfocus "cardTitle9_2";
+				}
+				if ( 0 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle9_0";
+					}
+				}
+			}
+			action
+			{
+				if ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 8 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+				{
+					play "mouse_click";
+					setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 8 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+					;
+					setPlayerData ( "cardTitle" , "localVarString" ( "ui_tempVar" ) );
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 8 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+				;;
+				if ( localvarstring( "ui_tempVar" ) != "" )
+				{
+					setPlayerData ( "titleNew" , "localVarString" ( "ui_tempVar" ) , "false" );
+				}
+			}
+		}
+		itemDef
+		{
+			rect -270 348 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , 8 + ( localvarint( "ui_pageIndex" ) * 27 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , 8 + ( localvarint( "ui_pageIndex" ) * 27 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , 8 + ( localvarint( "ui_pageIndex" ) * 27 ) , 5 ) )
+			exp forecolor a ( ( 1 * !( getfocuseditemname( ) == "cardTitle9_0" ) ) + ( ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.25 + 0.75 ) * ( getfocuseditemname( ) == "cardTitle9_0" ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 8 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 8 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , 8 + ( localvarint( "ui_pageIndex" ) * 27 ) , 1 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , 8 + ( localvarint( "ui_pageIndex" ) * 27 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect -280 338 60 40 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 1 0.45 1
+			background "highlight_selected"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 8 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) * 0.65 )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 8 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect -270 348 40 20 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new_bg"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 8 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 8 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect -270 348 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "cardtitle_locked"
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 8 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && !isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 8 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "" )
+		}
+		itemDef
+		{
+			name "cardTitle1_1"
+			rect -112 81.3333 224 53.3333 2 1
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "highlight_selected"
+			type 1
+			textscale 0.55
+			exp forecolor g ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 9 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 9 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor b ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 9 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 9 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor a ( ( getfocuseditemname( ) == "cardTitle1_1" ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 9 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+			
+			{
+				if ( 1 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle1_2";
+					}
+				}
+				if ( 1 == 1 )
+				{
+					setfocus "cardTitle1_0";
+				}
+				if ( 1 == 2 )
+				{
+					setfocus "cardTitle1_1";
+				}
+			}
+			
+			{
+				if ( 1 == 0 )
+				{
+					setfocus "cardTitle1_1";
+				}
+				if ( 1 == 1 )
+				{
+					setfocus "cardTitle1_2";
+				}
+				if ( 1 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle1_0";
+					}
+				}
+			}
+			
+			{
+				if ( 1 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle1_2";
+					}
+				}
+				if ( 1 == 1 )
+				{
+					setfocus "cardTitle1_0";
+				}
+				if ( 1 == 2 )
+				{
+					setfocus "cardTitle1_1";
+				}
+			}
+			
+			{
+				if ( 1 == 0 )
+				{
+					setfocus "cardTitle1_1";
+				}
+				if ( 1 == 1 )
+				{
+					setfocus "cardTitle1_2";
+				}
+				if ( 1 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle1_0";
+					}
+				}
+			}
+			action
+			{
+				if ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 9 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+				{
+					play "mouse_click";
+					setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 9 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+					;
+					setPlayerData ( "cardTitle" , "localVarString" ( "ui_tempVar" ) );
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 9 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+				;;
+				if ( localvarstring( "ui_tempVar" ) != "" )
+				{
+					setPlayerData ( "titleNew" , "localVarString" ( "ui_tempVar" ) , "false" );
+				}
+			}
+		}
+		itemDef
+		{
+			rect -80 92 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , 9 + ( localvarint( "ui_pageIndex" ) * 27 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , 9 + ( localvarint( "ui_pageIndex" ) * 27 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , 9 + ( localvarint( "ui_pageIndex" ) * 27 ) , 5 ) )
+			exp forecolor a ( ( 1 * !( getfocuseditemname( ) == "cardTitle1_1" ) ) + ( ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.25 + 0.75 ) * ( getfocuseditemname( ) == "cardTitle1_1" ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 9 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 9 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , 9 + ( localvarint( "ui_pageIndex" ) * 27 ) , 1 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , 9 + ( localvarint( "ui_pageIndex" ) * 27 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect -90 82 60 40 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 1 0.45 1
+			background "highlight_selected"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 9 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) * 0.65 )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 9 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect -80 92 40 20 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new_bg"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 9 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 9 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect -80 92 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "cardtitle_locked"
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 9 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && !isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 9 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "" )
+		}
+		itemDef
+		{
+			name "cardTitle2_1"
+			rect -112 113.333 224 53.3333 2 1
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "highlight_selected"
+			type 1
+			textscale 0.55
+			exp forecolor g ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 10 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 10 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor b ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 10 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 10 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor a ( ( getfocuseditemname( ) == "cardTitle2_1" ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 10 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+			
+			{
+				if ( 1 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle2_2";
+					}
+				}
+				if ( 1 == 1 )
+				{
+					setfocus "cardTitle2_0";
+				}
+				if ( 1 == 2 )
+				{
+					setfocus "cardTitle2_1";
+				}
+			}
+			
+			{
+				if ( 1 == 0 )
+				{
+					setfocus "cardTitle2_1";
+				}
+				if ( 1 == 1 )
+				{
+					setfocus "cardTitle2_2";
+				}
+				if ( 1 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle2_0";
+					}
+				}
+			}
+			
+			{
+				if ( 1 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle2_2";
+					}
+				}
+				if ( 1 == 1 )
+				{
+					setfocus "cardTitle2_0";
+				}
+				if ( 1 == 2 )
+				{
+					setfocus "cardTitle2_1";
+				}
+			}
+			
+			{
+				if ( 1 == 0 )
+				{
+					setfocus "cardTitle2_1";
+				}
+				if ( 1 == 1 )
+				{
+					setfocus "cardTitle2_2";
+				}
+				if ( 1 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle2_0";
+					}
+				}
+			}
+			action
+			{
+				if ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 10 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+				{
+					play "mouse_click";
+					setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 10 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+					;
+					setPlayerData ( "cardTitle" , "localVarString" ( "ui_tempVar" ) );
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 10 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+				;;
+				if ( localvarstring( "ui_tempVar" ) != "" )
+				{
+					setPlayerData ( "titleNew" , "localVarString" ( "ui_tempVar" ) , "false" );
+				}
+			}
+		}
+		itemDef
+		{
+			rect -80 124 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , 10 + ( localvarint( "ui_pageIndex" ) * 27 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , 10 + ( localvarint( "ui_pageIndex" ) * 27 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , 10 + ( localvarint( "ui_pageIndex" ) * 27 ) , 5 ) )
+			exp forecolor a ( ( 1 * !( getfocuseditemname( ) == "cardTitle2_1" ) ) + ( ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.25 + 0.75 ) * ( getfocuseditemname( ) == "cardTitle2_1" ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 10 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 10 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , 10 + ( localvarint( "ui_pageIndex" ) * 27 ) , 1 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , 10 + ( localvarint( "ui_pageIndex" ) * 27 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect -90 114 60 40 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 1 0.45 1
+			background "highlight_selected"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 10 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) * 0.65 )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 10 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect -80 124 40 20 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new_bg"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 10 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 10 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect -80 124 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "cardtitle_locked"
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 10 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && !isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 10 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "" )
+		}
+		itemDef
+		{
+			name "cardTitle3_1"
+			rect -112 145.333 224 53.3333 2 1
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "highlight_selected"
+			type 1
+			textscale 0.55
+			exp forecolor g ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 11 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 11 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor b ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 11 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 11 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor a ( ( getfocuseditemname( ) == "cardTitle3_1" ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 11 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+			
+			{
+				if ( 1 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle3_2";
+					}
+				}
+				if ( 1 == 1 )
+				{
+					setfocus "cardTitle3_0";
+				}
+				if ( 1 == 2 )
+				{
+					setfocus "cardTitle3_1";
+				}
+			}
+			
+			{
+				if ( 1 == 0 )
+				{
+					setfocus "cardTitle3_1";
+				}
+				if ( 1 == 1 )
+				{
+					setfocus "cardTitle3_2";
+				}
+				if ( 1 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle3_0";
+					}
+				}
+			}
+			
+			{
+				if ( 1 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle3_2";
+					}
+				}
+				if ( 1 == 1 )
+				{
+					setfocus "cardTitle3_0";
+				}
+				if ( 1 == 2 )
+				{
+					setfocus "cardTitle3_1";
+				}
+			}
+			
+			{
+				if ( 1 == 0 )
+				{
+					setfocus "cardTitle3_1";
+				}
+				if ( 1 == 1 )
+				{
+					setfocus "cardTitle3_2";
+				}
+				if ( 1 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle3_0";
+					}
+				}
+			}
+			action
+			{
+				if ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 11 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+				{
+					play "mouse_click";
+					setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 11 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+					;
+					setPlayerData ( "cardTitle" , "localVarString" ( "ui_tempVar" ) );
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 11 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+				;;
+				if ( localvarstring( "ui_tempVar" ) != "" )
+				{
+					setPlayerData ( "titleNew" , "localVarString" ( "ui_tempVar" ) , "false" );
+				}
+			}
+		}
+		itemDef
+		{
+			rect -80 156 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , 11 + ( localvarint( "ui_pageIndex" ) * 27 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , 11 + ( localvarint( "ui_pageIndex" ) * 27 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , 11 + ( localvarint( "ui_pageIndex" ) * 27 ) , 5 ) )
+			exp forecolor a ( ( 1 * !( getfocuseditemname( ) == "cardTitle3_1" ) ) + ( ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.25 + 0.75 ) * ( getfocuseditemname( ) == "cardTitle3_1" ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 11 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 11 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , 11 + ( localvarint( "ui_pageIndex" ) * 27 ) , 1 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , 11 + ( localvarint( "ui_pageIndex" ) * 27 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect -90 146 60 40 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 1 0.45 1
+			background "highlight_selected"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 11 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) * 0.65 )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 11 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect -80 156 40 20 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new_bg"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 11 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 11 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect -80 156 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "cardtitle_locked"
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 11 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && !isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 11 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "" )
+		}
+		itemDef
+		{
+			name "cardTitle4_1"
+			rect -112 177.333 224 53.3333 2 1
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "highlight_selected"
+			type 1
+			textscale 0.55
+			exp forecolor g ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 12 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 12 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor b ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 12 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 12 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor a ( ( getfocuseditemname( ) == "cardTitle4_1" ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 12 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+			
+			{
+				if ( 1 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle4_2";
+					}
+				}
+				if ( 1 == 1 )
+				{
+					setfocus "cardTitle4_0";
+				}
+				if ( 1 == 2 )
+				{
+					setfocus "cardTitle4_1";
+				}
+			}
+			
+			{
+				if ( 1 == 0 )
+				{
+					setfocus "cardTitle4_1";
+				}
+				if ( 1 == 1 )
+				{
+					setfocus "cardTitle4_2";
+				}
+				if ( 1 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle4_0";
+					}
+				}
+			}
+			
+			{
+				if ( 1 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle4_2";
+					}
+				}
+				if ( 1 == 1 )
+				{
+					setfocus "cardTitle4_0";
+				}
+				if ( 1 == 2 )
+				{
+					setfocus "cardTitle4_1";
+				}
+			}
+			
+			{
+				if ( 1 == 0 )
+				{
+					setfocus "cardTitle4_1";
+				}
+				if ( 1 == 1 )
+				{
+					setfocus "cardTitle4_2";
+				}
+				if ( 1 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle4_0";
+					}
+				}
+			}
+			action
+			{
+				if ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 12 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+				{
+					play "mouse_click";
+					setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 12 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+					;
+					setPlayerData ( "cardTitle" , "localVarString" ( "ui_tempVar" ) );
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 12 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+				;;
+				if ( localvarstring( "ui_tempVar" ) != "" )
+				{
+					setPlayerData ( "titleNew" , "localVarString" ( "ui_tempVar" ) , "false" );
+				}
+			}
+		}
+		itemDef
+		{
+			rect -80 188 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , 12 + ( localvarint( "ui_pageIndex" ) * 27 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , 12 + ( localvarint( "ui_pageIndex" ) * 27 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , 12 + ( localvarint( "ui_pageIndex" ) * 27 ) , 5 ) )
+			exp forecolor a ( ( 1 * !( getfocuseditemname( ) == "cardTitle4_1" ) ) + ( ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.25 + 0.75 ) * ( getfocuseditemname( ) == "cardTitle4_1" ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 12 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 12 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , 12 + ( localvarint( "ui_pageIndex" ) * 27 ) , 1 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , 12 + ( localvarint( "ui_pageIndex" ) * 27 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect -90 178 60 40 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 1 0.45 1
+			background "highlight_selected"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 12 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) * 0.65 )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 12 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect -80 188 40 20 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new_bg"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 12 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 12 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect -80 188 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "cardtitle_locked"
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 12 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && !isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 12 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "" )
+		}
+		itemDef
+		{
+			name "cardTitle5_1"
+			rect -112 209.333 224 53.3333 2 1
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "highlight_selected"
+			type 1
+			textscale 0.55
+			exp forecolor g ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 13 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 13 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor b ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 13 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 13 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor a ( ( getfocuseditemname( ) == "cardTitle5_1" ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 13 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+			
+			{
+				if ( 1 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle5_2";
+					}
+				}
+				if ( 1 == 1 )
+				{
+					setfocus "cardTitle5_0";
+				}
+				if ( 1 == 2 )
+				{
+					setfocus "cardTitle5_1";
+				}
+			}
+			
+			{
+				if ( 1 == 0 )
+				{
+					setfocus "cardTitle5_1";
+				}
+				if ( 1 == 1 )
+				{
+					setfocus "cardTitle5_2";
+				}
+				if ( 1 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle5_0";
+					}
+				}
+			}
+			
+			{
+				if ( 1 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle5_2";
+					}
+				}
+				if ( 1 == 1 )
+				{
+					setfocus "cardTitle5_0";
+				}
+				if ( 1 == 2 )
+				{
+					setfocus "cardTitle5_1";
+				}
+			}
+			
+			{
+				if ( 1 == 0 )
+				{
+					setfocus "cardTitle5_1";
+				}
+				if ( 1 == 1 )
+				{
+					setfocus "cardTitle5_2";
+				}
+				if ( 1 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle5_0";
+					}
+				}
+			}
+			action
+			{
+				if ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 13 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+				{
+					play "mouse_click";
+					setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 13 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+					;
+					setPlayerData ( "cardTitle" , "localVarString" ( "ui_tempVar" ) );
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 13 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+				;;
+				if ( localvarstring( "ui_tempVar" ) != "" )
+				{
+					setPlayerData ( "titleNew" , "localVarString" ( "ui_tempVar" ) , "false" );
+				}
+			}
+		}
+		itemDef
+		{
+			rect -80 220 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , 13 + ( localvarint( "ui_pageIndex" ) * 27 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , 13 + ( localvarint( "ui_pageIndex" ) * 27 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , 13 + ( localvarint( "ui_pageIndex" ) * 27 ) , 5 ) )
+			exp forecolor a ( ( 1 * !( getfocuseditemname( ) == "cardTitle5_1" ) ) + ( ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.25 + 0.75 ) * ( getfocuseditemname( ) == "cardTitle5_1" ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 13 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 13 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , 13 + ( localvarint( "ui_pageIndex" ) * 27 ) , 1 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , 13 + ( localvarint( "ui_pageIndex" ) * 27 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect -90 210 60 40 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 1 0.45 1
+			background "highlight_selected"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 13 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) * 0.65 )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 13 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect -80 220 40 20 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new_bg"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 13 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 13 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect -80 220 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "cardtitle_locked"
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 13 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && !isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 13 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "" )
+		}
+		itemDef
+		{
+			name "cardTitle6_1"
+			rect -112 241.333 224 53.3333 2 1
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "highlight_selected"
+			type 1
+			textscale 0.55
+			exp forecolor g ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 14 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 14 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor b ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 14 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 14 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor a ( ( getfocuseditemname( ) == "cardTitle6_1" ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 14 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+			
+			{
+				if ( 1 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle6_2";
+					}
+				}
+				if ( 1 == 1 )
+				{
+					setfocus "cardTitle6_0";
+				}
+				if ( 1 == 2 )
+				{
+					setfocus "cardTitle6_1";
+				}
+			}
+			
+			{
+				if ( 1 == 0 )
+				{
+					setfocus "cardTitle6_1";
+				}
+				if ( 1 == 1 )
+				{
+					setfocus "cardTitle6_2";
+				}
+				if ( 1 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle6_0";
+					}
+				}
+			}
+			
+			{
+				if ( 1 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle6_2";
+					}
+				}
+				if ( 1 == 1 )
+				{
+					setfocus "cardTitle6_0";
+				}
+				if ( 1 == 2 )
+				{
+					setfocus "cardTitle6_1";
+				}
+			}
+			
+			{
+				if ( 1 == 0 )
+				{
+					setfocus "cardTitle6_1";
+				}
+				if ( 1 == 1 )
+				{
+					setfocus "cardTitle6_2";
+				}
+				if ( 1 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle6_0";
+					}
+				}
+			}
+			action
+			{
+				if ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 14 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+				{
+					play "mouse_click";
+					setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 14 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+					;
+					setPlayerData ( "cardTitle" , "localVarString" ( "ui_tempVar" ) );
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 14 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+				;;
+				if ( localvarstring( "ui_tempVar" ) != "" )
+				{
+					setPlayerData ( "titleNew" , "localVarString" ( "ui_tempVar" ) , "false" );
+				}
+			}
+		}
+		itemDef
+		{
+			rect -80 252 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , 14 + ( localvarint( "ui_pageIndex" ) * 27 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , 14 + ( localvarint( "ui_pageIndex" ) * 27 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , 14 + ( localvarint( "ui_pageIndex" ) * 27 ) , 5 ) )
+			exp forecolor a ( ( 1 * !( getfocuseditemname( ) == "cardTitle6_1" ) ) + ( ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.25 + 0.75 ) * ( getfocuseditemname( ) == "cardTitle6_1" ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 14 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 14 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , 14 + ( localvarint( "ui_pageIndex" ) * 27 ) , 1 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , 14 + ( localvarint( "ui_pageIndex" ) * 27 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect -90 242 60 40 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 1 0.45 1
+			background "highlight_selected"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 14 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) * 0.65 )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 14 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect -80 252 40 20 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new_bg"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 14 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 14 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect -80 252 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "cardtitle_locked"
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 14 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && !isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 14 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "" )
+		}
+		itemDef
+		{
+			name "cardTitle7_1"
+			rect -112 273.333 224 53.3333 2 1
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "highlight_selected"
+			type 1
+			textscale 0.55
+			exp forecolor g ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 15 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 15 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor b ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 15 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 15 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor a ( ( getfocuseditemname( ) == "cardTitle7_1" ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 15 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+			
+			{
+				if ( 1 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle7_2";
+					}
+				}
+				if ( 1 == 1 )
+				{
+					setfocus "cardTitle7_0";
+				}
+				if ( 1 == 2 )
+				{
+					setfocus "cardTitle7_1";
+				}
+			}
+			
+			{
+				if ( 1 == 0 )
+				{
+					setfocus "cardTitle7_1";
+				}
+				if ( 1 == 1 )
+				{
+					setfocus "cardTitle7_2";
+				}
+				if ( 1 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle7_0";
+					}
+				}
+			}
+			
+			{
+				if ( 1 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle7_2";
+					}
+				}
+				if ( 1 == 1 )
+				{
+					setfocus "cardTitle7_0";
+				}
+				if ( 1 == 2 )
+				{
+					setfocus "cardTitle7_1";
+				}
+			}
+			
+			{
+				if ( 1 == 0 )
+				{
+					setfocus "cardTitle7_1";
+				}
+				if ( 1 == 1 )
+				{
+					setfocus "cardTitle7_2";
+				}
+				if ( 1 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle7_0";
+					}
+				}
+			}
+			action
+			{
+				if ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 15 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+				{
+					play "mouse_click";
+					setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 15 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+					;
+					setPlayerData ( "cardTitle" , "localVarString" ( "ui_tempVar" ) );
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 15 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+				;;
+				if ( localvarstring( "ui_tempVar" ) != "" )
+				{
+					setPlayerData ( "titleNew" , "localVarString" ( "ui_tempVar" ) , "false" );
+				}
+			}
+		}
+		itemDef
+		{
+			rect -80 284 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , 15 + ( localvarint( "ui_pageIndex" ) * 27 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , 15 + ( localvarint( "ui_pageIndex" ) * 27 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , 15 + ( localvarint( "ui_pageIndex" ) * 27 ) , 5 ) )
+			exp forecolor a ( ( 1 * !( getfocuseditemname( ) == "cardTitle7_1" ) ) + ( ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.25 + 0.75 ) * ( getfocuseditemname( ) == "cardTitle7_1" ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 15 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 15 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , 15 + ( localvarint( "ui_pageIndex" ) * 27 ) , 1 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , 15 + ( localvarint( "ui_pageIndex" ) * 27 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect -90 274 60 40 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 1 0.45 1
+			background "highlight_selected"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 15 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) * 0.65 )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 15 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect -80 284 40 20 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new_bg"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 15 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 15 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect -80 284 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "cardtitle_locked"
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 15 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && !isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 15 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "" )
+		}
+		itemDef
+		{
+			name "cardTitle8_1"
+			rect -112 305.333 224 53.3333 2 1
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "highlight_selected"
+			type 1
+			textscale 0.55
+			exp forecolor g ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 16 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 16 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor b ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 16 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 16 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor a ( ( getfocuseditemname( ) == "cardTitle8_1" ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 16 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+			
+			{
+				if ( 1 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle8_2";
+					}
+				}
+				if ( 1 == 1 )
+				{
+					setfocus "cardTitle8_0";
+				}
+				if ( 1 == 2 )
+				{
+					setfocus "cardTitle8_1";
+				}
+			}
+			
+			{
+				if ( 1 == 0 )
+				{
+					setfocus "cardTitle8_1";
+				}
+				if ( 1 == 1 )
+				{
+					setfocus "cardTitle8_2";
+				}
+				if ( 1 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle8_0";
+					}
+				}
+			}
+			
+			{
+				if ( 1 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle8_2";
+					}
+				}
+				if ( 1 == 1 )
+				{
+					setfocus "cardTitle8_0";
+				}
+				if ( 1 == 2 )
+				{
+					setfocus "cardTitle8_1";
+				}
+			}
+			
+			{
+				if ( 1 == 0 )
+				{
+					setfocus "cardTitle8_1";
+				}
+				if ( 1 == 1 )
+				{
+					setfocus "cardTitle8_2";
+				}
+				if ( 1 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle8_0";
+					}
+				}
+			}
+			action
+			{
+				if ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 16 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+				{
+					play "mouse_click";
+					setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 16 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+					;
+					setPlayerData ( "cardTitle" , "localVarString" ( "ui_tempVar" ) );
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 16 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+				;;
+				if ( localvarstring( "ui_tempVar" ) != "" )
+				{
+					setPlayerData ( "titleNew" , "localVarString" ( "ui_tempVar" ) , "false" );
+				}
+			}
+		}
+		itemDef
+		{
+			rect -80 316 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , 16 + ( localvarint( "ui_pageIndex" ) * 27 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , 16 + ( localvarint( "ui_pageIndex" ) * 27 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , 16 + ( localvarint( "ui_pageIndex" ) * 27 ) , 5 ) )
+			exp forecolor a ( ( 1 * !( getfocuseditemname( ) == "cardTitle8_1" ) ) + ( ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.25 + 0.75 ) * ( getfocuseditemname( ) == "cardTitle8_1" ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 16 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 16 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , 16 + ( localvarint( "ui_pageIndex" ) * 27 ) , 1 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , 16 + ( localvarint( "ui_pageIndex" ) * 27 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect -90 306 60 40 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 1 0.45 1
+			background "highlight_selected"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 16 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) * 0.65 )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 16 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect -80 316 40 20 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new_bg"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 16 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 16 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect -80 316 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "cardtitle_locked"
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 16 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && !isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 16 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "" )
+		}
+		itemDef
+		{
+			name "cardTitle9_1"
+			rect -112 337.333 224 53.3333 2 1
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "highlight_selected"
+			type 1
+			textscale 0.55
+			exp forecolor g ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 17 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 17 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor b ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 17 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 17 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor a ( ( getfocuseditemname( ) == "cardTitle9_1" ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 17 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+			
+			{
+				if ( 1 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle9_2";
+					}
+				}
+				if ( 1 == 1 )
+				{
+					setfocus "cardTitle9_0";
+				}
+				if ( 1 == 2 )
+				{
+					setfocus "cardTitle9_1";
+				}
+			}
+			
+			{
+				if ( 1 == 0 )
+				{
+					setfocus "cardTitle9_1";
+				}
+				if ( 1 == 1 )
+				{
+					setfocus "cardTitle9_2";
+				}
+				if ( 1 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle9_0";
+					}
+				}
+			}
+			
+			{
+				if ( 1 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle9_2";
+					}
+				}
+				if ( 1 == 1 )
+				{
+					setfocus "cardTitle9_0";
+				}
+				if ( 1 == 2 )
+				{
+					setfocus "cardTitle9_1";
+				}
+			}
+			
+			{
+				if ( 1 == 0 )
+				{
+					setfocus "cardTitle9_1";
+				}
+				if ( 1 == 1 )
+				{
+					setfocus "cardTitle9_2";
+				}
+				if ( 1 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle9_0";
+					}
+				}
+			}
+			action
+			{
+				if ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 17 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+				{
+					play "mouse_click";
+					setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 17 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+					;
+					setPlayerData ( "cardTitle" , "localVarString" ( "ui_tempVar" ) );
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 17 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+				;;
+				if ( localvarstring( "ui_tempVar" ) != "" )
+				{
+					setPlayerData ( "titleNew" , "localVarString" ( "ui_tempVar" ) , "false" );
+				}
+			}
+		}
+		itemDef
+		{
+			rect -80 348 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , 17 + ( localvarint( "ui_pageIndex" ) * 27 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , 17 + ( localvarint( "ui_pageIndex" ) * 27 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , 17 + ( localvarint( "ui_pageIndex" ) * 27 ) , 5 ) )
+			exp forecolor a ( ( 1 * !( getfocuseditemname( ) == "cardTitle9_1" ) ) + ( ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.25 + 0.75 ) * ( getfocuseditemname( ) == "cardTitle9_1" ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 17 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 17 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , 17 + ( localvarint( "ui_pageIndex" ) * 27 ) , 1 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , 17 + ( localvarint( "ui_pageIndex" ) * 27 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect -90 338 60 40 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 1 0.45 1
+			background "highlight_selected"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 17 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) * 0.65 )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 17 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect -80 348 40 20 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new_bg"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 17 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 17 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect -80 348 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "cardtitle_locked"
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 17 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && !isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 17 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "" )
+		}
+		itemDef
+		{
+			name "cardTitle1_2"
+			rect 78 81.3333 224 53.3333 2 1
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "highlight_selected"
+			type 1
+			textscale 0.55
+			exp forecolor g ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 18 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 18 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor b ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 18 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 18 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor a ( ( getfocuseditemname( ) == "cardTitle1_2" ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 18 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+			
+			{
+				if ( 2 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle1_2";
+					}
+				}
+				if ( 2 == 1 )
+				{
+					setfocus "cardTitle1_0";
+				}
+				if ( 2 == 2 )
+				{
+					setfocus "cardTitle1_1";
+				}
+			}
+			
+			{
+				if ( 2 == 0 )
+				{
+					setfocus "cardTitle1_1";
+				}
+				if ( 2 == 1 )
+				{
+					setfocus "cardTitle1_2";
+				}
+				if ( 2 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle1_0";
+					}
+				}
+			}
+			
+			{
+				if ( 2 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle1_2";
+					}
+				}
+				if ( 2 == 1 )
+				{
+					setfocus "cardTitle1_0";
+				}
+				if ( 2 == 2 )
+				{
+					setfocus "cardTitle1_1";
+				}
+			}
+			
+			{
+				if ( 2 == 0 )
+				{
+					setfocus "cardTitle1_1";
+				}
+				if ( 2 == 1 )
+				{
+					setfocus "cardTitle1_2";
+				}
+				if ( 2 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle1_0";
+					}
+				}
+			}
+			action
+			{
+				if ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 18 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+				{
+					play "mouse_click";
+					setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 18 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+					;
+					setPlayerData ( "cardTitle" , "localVarString" ( "ui_tempVar" ) );
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 18 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+				;;
+				if ( localvarstring( "ui_tempVar" ) != "" )
+				{
+					setPlayerData ( "titleNew" , "localVarString" ( "ui_tempVar" ) , "false" );
+				}
+			}
+		}
+		itemDef
+		{
+			rect 110 92 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , 18 + ( localvarint( "ui_pageIndex" ) * 27 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , 18 + ( localvarint( "ui_pageIndex" ) * 27 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , 18 + ( localvarint( "ui_pageIndex" ) * 27 ) , 5 ) )
+			exp forecolor a ( ( 1 * !( getfocuseditemname( ) == "cardTitle1_2" ) ) + ( ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.25 + 0.75 ) * ( getfocuseditemname( ) == "cardTitle1_2" ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 18 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 18 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , 18 + ( localvarint( "ui_pageIndex" ) * 27 ) , 1 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , 18 + ( localvarint( "ui_pageIndex" ) * 27 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 100 82 60 40 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 1 0.45 1
+			background "highlight_selected"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 18 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) * 0.65 )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 18 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect 110 92 40 20 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new_bg"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 18 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 18 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect 110 92 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "cardtitle_locked"
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 18 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && !isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 18 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "" )
+		}
+		itemDef
+		{
+			name "cardTitle2_2"
+			rect 78 113.333 224 53.3333 2 1
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "highlight_selected"
+			type 1
+			textscale 0.55
+			exp forecolor g ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 19 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 19 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor b ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 19 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 19 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor a ( ( getfocuseditemname( ) == "cardTitle2_2" ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 19 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+			
+			{
+				if ( 2 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle2_2";
+					}
+				}
+				if ( 2 == 1 )
+				{
+					setfocus "cardTitle2_0";
+				}
+				if ( 2 == 2 )
+				{
+					setfocus "cardTitle2_1";
+				}
+			}
+			
+			{
+				if ( 2 == 0 )
+				{
+					setfocus "cardTitle2_1";
+				}
+				if ( 2 == 1 )
+				{
+					setfocus "cardTitle2_2";
+				}
+				if ( 2 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle2_0";
+					}
+				}
+			}
+			
+			{
+				if ( 2 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle2_2";
+					}
+				}
+				if ( 2 == 1 )
+				{
+					setfocus "cardTitle2_0";
+				}
+				if ( 2 == 2 )
+				{
+					setfocus "cardTitle2_1";
+				}
+			}
+			
+			{
+				if ( 2 == 0 )
+				{
+					setfocus "cardTitle2_1";
+				}
+				if ( 2 == 1 )
+				{
+					setfocus "cardTitle2_2";
+				}
+				if ( 2 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle2_0";
+					}
+				}
+			}
+			action
+			{
+				if ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 19 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+				{
+					play "mouse_click";
+					setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 19 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+					;
+					setPlayerData ( "cardTitle" , "localVarString" ( "ui_tempVar" ) );
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 19 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+				;;
+				if ( localvarstring( "ui_tempVar" ) != "" )
+				{
+					setPlayerData ( "titleNew" , "localVarString" ( "ui_tempVar" ) , "false" );
+				}
+			}
+		}
+		itemDef
+		{
+			rect 110 124 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , 19 + ( localvarint( "ui_pageIndex" ) * 27 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , 19 + ( localvarint( "ui_pageIndex" ) * 27 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , 19 + ( localvarint( "ui_pageIndex" ) * 27 ) , 5 ) )
+			exp forecolor a ( ( 1 * !( getfocuseditemname( ) == "cardTitle2_2" ) ) + ( ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.25 + 0.75 ) * ( getfocuseditemname( ) == "cardTitle2_2" ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 19 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 19 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , 19 + ( localvarint( "ui_pageIndex" ) * 27 ) , 1 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , 19 + ( localvarint( "ui_pageIndex" ) * 27 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 100 114 60 40 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 1 0.45 1
+			background "highlight_selected"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 19 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) * 0.65 )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 19 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect 110 124 40 20 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new_bg"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 19 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 19 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect 110 124 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "cardtitle_locked"
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 19 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && !isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 19 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "" )
+		}
+		itemDef
+		{
+			name "cardTitle3_2"
+			rect 78 145.333 224 53.3333 2 1
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "highlight_selected"
+			type 1
+			textscale 0.55
+			exp forecolor g ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 20 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 20 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor b ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 20 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 20 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor a ( ( getfocuseditemname( ) == "cardTitle3_2" ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 20 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+			
+			{
+				if ( 2 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle3_2";
+					}
+				}
+				if ( 2 == 1 )
+				{
+					setfocus "cardTitle3_0";
+				}
+				if ( 2 == 2 )
+				{
+					setfocus "cardTitle3_1";
+				}
+			}
+			
+			{
+				if ( 2 == 0 )
+				{
+					setfocus "cardTitle3_1";
+				}
+				if ( 2 == 1 )
+				{
+					setfocus "cardTitle3_2";
+				}
+				if ( 2 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle3_0";
+					}
+				}
+			}
+			
+			{
+				if ( 2 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle3_2";
+					}
+				}
+				if ( 2 == 1 )
+				{
+					setfocus "cardTitle3_0";
+				}
+				if ( 2 == 2 )
+				{
+					setfocus "cardTitle3_1";
+				}
+			}
+			
+			{
+				if ( 2 == 0 )
+				{
+					setfocus "cardTitle3_1";
+				}
+				if ( 2 == 1 )
+				{
+					setfocus "cardTitle3_2";
+				}
+				if ( 2 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle3_0";
+					}
+				}
+			}
+			action
+			{
+				if ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 20 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+				{
+					play "mouse_click";
+					setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 20 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+					;
+					setPlayerData ( "cardTitle" , "localVarString" ( "ui_tempVar" ) );
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 20 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+				;;
+				if ( localvarstring( "ui_tempVar" ) != "" )
+				{
+					setPlayerData ( "titleNew" , "localVarString" ( "ui_tempVar" ) , "false" );
+				}
+			}
+		}
+		itemDef
+		{
+			rect 110 156 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , 20 + ( localvarint( "ui_pageIndex" ) * 27 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , 20 + ( localvarint( "ui_pageIndex" ) * 27 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , 20 + ( localvarint( "ui_pageIndex" ) * 27 ) , 5 ) )
+			exp forecolor a ( ( 1 * !( getfocuseditemname( ) == "cardTitle3_2" ) ) + ( ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.25 + 0.75 ) * ( getfocuseditemname( ) == "cardTitle3_2" ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 20 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 20 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , 20 + ( localvarint( "ui_pageIndex" ) * 27 ) , 1 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , 20 + ( localvarint( "ui_pageIndex" ) * 27 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 100 146 60 40 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 1 0.45 1
+			background "highlight_selected"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 20 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) * 0.65 )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 20 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect 110 156 40 20 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new_bg"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 20 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 20 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect 110 156 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "cardtitle_locked"
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 20 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && !isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 20 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "" )
+		}
+		itemDef
+		{
+			name "cardTitle4_2"
+			rect 78 177.333 224 53.3333 2 1
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "highlight_selected"
+			type 1
+			textscale 0.55
+			exp forecolor g ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 21 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 21 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor b ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 21 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 21 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor a ( ( getfocuseditemname( ) == "cardTitle4_2" ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 21 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+			
+			{
+				if ( 2 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle4_2";
+					}
+				}
+				if ( 2 == 1 )
+				{
+					setfocus "cardTitle4_0";
+				}
+				if ( 2 == 2 )
+				{
+					setfocus "cardTitle4_1";
+				}
+			}
+			
+			{
+				if ( 2 == 0 )
+				{
+					setfocus "cardTitle4_1";
+				}
+				if ( 2 == 1 )
+				{
+					setfocus "cardTitle4_2";
+				}
+				if ( 2 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle4_0";
+					}
+				}
+			}
+			
+			{
+				if ( 2 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle4_2";
+					}
+				}
+				if ( 2 == 1 )
+				{
+					setfocus "cardTitle4_0";
+				}
+				if ( 2 == 2 )
+				{
+					setfocus "cardTitle4_1";
+				}
+			}
+			
+			{
+				if ( 2 == 0 )
+				{
+					setfocus "cardTitle4_1";
+				}
+				if ( 2 == 1 )
+				{
+					setfocus "cardTitle4_2";
+				}
+				if ( 2 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle4_0";
+					}
+				}
+			}
+			action
+			{
+				if ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 21 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+				{
+					play "mouse_click";
+					setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 21 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+					;
+					setPlayerData ( "cardTitle" , "localVarString" ( "ui_tempVar" ) );
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 21 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+				;;
+				if ( localvarstring( "ui_tempVar" ) != "" )
+				{
+					setPlayerData ( "titleNew" , "localVarString" ( "ui_tempVar" ) , "false" );
+				}
+			}
+		}
+		itemDef
+		{
+			rect 110 188 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , 21 + ( localvarint( "ui_pageIndex" ) * 27 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , 21 + ( localvarint( "ui_pageIndex" ) * 27 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , 21 + ( localvarint( "ui_pageIndex" ) * 27 ) , 5 ) )
+			exp forecolor a ( ( 1 * !( getfocuseditemname( ) == "cardTitle4_2" ) ) + ( ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.25 + 0.75 ) * ( getfocuseditemname( ) == "cardTitle4_2" ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 21 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 21 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , 21 + ( localvarint( "ui_pageIndex" ) * 27 ) , 1 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , 21 + ( localvarint( "ui_pageIndex" ) * 27 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 100 178 60 40 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 1 0.45 1
+			background "highlight_selected"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 21 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) * 0.65 )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 21 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect 110 188 40 20 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new_bg"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 21 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 21 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect 110 188 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "cardtitle_locked"
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 21 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && !isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 21 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "" )
+		}
+		itemDef
+		{
+			name "cardTitle5_2"
+			rect 78 209.333 224 53.3333 2 1
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "highlight_selected"
+			type 1
+			textscale 0.55
+			exp forecolor g ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 22 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 22 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor b ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 22 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 22 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor a ( ( getfocuseditemname( ) == "cardTitle5_2" ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 22 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+			
+			{
+				if ( 2 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle5_2";
+					}
+				}
+				if ( 2 == 1 )
+				{
+					setfocus "cardTitle5_0";
+				}
+				if ( 2 == 2 )
+				{
+					setfocus "cardTitle5_1";
+				}
+			}
+			
+			{
+				if ( 2 == 0 )
+				{
+					setfocus "cardTitle5_1";
+				}
+				if ( 2 == 1 )
+				{
+					setfocus "cardTitle5_2";
+				}
+				if ( 2 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle5_0";
+					}
+				}
+			}
+			
+			{
+				if ( 2 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle5_2";
+					}
+				}
+				if ( 2 == 1 )
+				{
+					setfocus "cardTitle5_0";
+				}
+				if ( 2 == 2 )
+				{
+					setfocus "cardTitle5_1";
+				}
+			}
+			
+			{
+				if ( 2 == 0 )
+				{
+					setfocus "cardTitle5_1";
+				}
+				if ( 2 == 1 )
+				{
+					setfocus "cardTitle5_2";
+				}
+				if ( 2 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle5_0";
+					}
+				}
+			}
+			action
+			{
+				if ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 22 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+				{
+					play "mouse_click";
+					setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 22 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+					;
+					setPlayerData ( "cardTitle" , "localVarString" ( "ui_tempVar" ) );
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 22 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+				;;
+				if ( localvarstring( "ui_tempVar" ) != "" )
+				{
+					setPlayerData ( "titleNew" , "localVarString" ( "ui_tempVar" ) , "false" );
+				}
+			}
+		}
+		itemDef
+		{
+			rect 110 220 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , 22 + ( localvarint( "ui_pageIndex" ) * 27 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , 22 + ( localvarint( "ui_pageIndex" ) * 27 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , 22 + ( localvarint( "ui_pageIndex" ) * 27 ) , 5 ) )
+			exp forecolor a ( ( 1 * !( getfocuseditemname( ) == "cardTitle5_2" ) ) + ( ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.25 + 0.75 ) * ( getfocuseditemname( ) == "cardTitle5_2" ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 22 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 22 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , 22 + ( localvarint( "ui_pageIndex" ) * 27 ) , 1 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , 22 + ( localvarint( "ui_pageIndex" ) * 27 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 100 210 60 40 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 1 0.45 1
+			background "highlight_selected"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 22 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) * 0.65 )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 22 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect 110 220 40 20 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new_bg"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 22 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 22 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect 110 220 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "cardtitle_locked"
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 22 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && !isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 22 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "" )
+		}
+		itemDef
+		{
+			name "cardTitle6_2"
+			rect 78 241.333 224 53.3333 2 1
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "highlight_selected"
+			type 1
+			textscale 0.55
+			exp forecolor g ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 23 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 23 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor b ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 23 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 23 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor a ( ( getfocuseditemname( ) == "cardTitle6_2" ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 23 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+			
+			{
+				if ( 2 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle6_2";
+					}
+				}
+				if ( 2 == 1 )
+				{
+					setfocus "cardTitle6_0";
+				}
+				if ( 2 == 2 )
+				{
+					setfocus "cardTitle6_1";
+				}
+			}
+			
+			{
+				if ( 2 == 0 )
+				{
+					setfocus "cardTitle6_1";
+				}
+				if ( 2 == 1 )
+				{
+					setfocus "cardTitle6_2";
+				}
+				if ( 2 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle6_0";
+					}
+				}
+			}
+			
+			{
+				if ( 2 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle6_2";
+					}
+				}
+				if ( 2 == 1 )
+				{
+					setfocus "cardTitle6_0";
+				}
+				if ( 2 == 2 )
+				{
+					setfocus "cardTitle6_1";
+				}
+			}
+			
+			{
+				if ( 2 == 0 )
+				{
+					setfocus "cardTitle6_1";
+				}
+				if ( 2 == 1 )
+				{
+					setfocus "cardTitle6_2";
+				}
+				if ( 2 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle6_0";
+					}
+				}
+			}
+			action
+			{
+				if ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 23 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+				{
+					play "mouse_click";
+					setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 23 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+					;
+					setPlayerData ( "cardTitle" , "localVarString" ( "ui_tempVar" ) );
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 23 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+				;;
+				if ( localvarstring( "ui_tempVar" ) != "" )
+				{
+					setPlayerData ( "titleNew" , "localVarString" ( "ui_tempVar" ) , "false" );
+				}
+			}
+		}
+		itemDef
+		{
+			rect 110 252 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , 23 + ( localvarint( "ui_pageIndex" ) * 27 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , 23 + ( localvarint( "ui_pageIndex" ) * 27 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , 23 + ( localvarint( "ui_pageIndex" ) * 27 ) , 5 ) )
+			exp forecolor a ( ( 1 * !( getfocuseditemname( ) == "cardTitle6_2" ) ) + ( ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.25 + 0.75 ) * ( getfocuseditemname( ) == "cardTitle6_2" ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 23 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 23 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , 23 + ( localvarint( "ui_pageIndex" ) * 27 ) , 1 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , 23 + ( localvarint( "ui_pageIndex" ) * 27 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 100 242 60 40 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 1 0.45 1
+			background "highlight_selected"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 23 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) * 0.65 )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 23 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect 110 252 40 20 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new_bg"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 23 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 23 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect 110 252 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "cardtitle_locked"
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 23 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && !isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 23 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "" )
+		}
+		itemDef
+		{
+			name "cardTitle7_2"
+			rect 78 273.333 224 53.3333 2 1
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "highlight_selected"
+			type 1
+			textscale 0.55
+			exp forecolor g ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 24 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 24 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor b ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 24 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 24 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor a ( ( getfocuseditemname( ) == "cardTitle7_2" ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 24 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+			
+			{
+				if ( 2 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle7_2";
+					}
+				}
+				if ( 2 == 1 )
+				{
+					setfocus "cardTitle7_0";
+				}
+				if ( 2 == 2 )
+				{
+					setfocus "cardTitle7_1";
+				}
+			}
+			
+			{
+				if ( 2 == 0 )
+				{
+					setfocus "cardTitle7_1";
+				}
+				if ( 2 == 1 )
+				{
+					setfocus "cardTitle7_2";
+				}
+				if ( 2 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle7_0";
+					}
+				}
+			}
+			
+			{
+				if ( 2 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle7_2";
+					}
+				}
+				if ( 2 == 1 )
+				{
+					setfocus "cardTitle7_0";
+				}
+				if ( 2 == 2 )
+				{
+					setfocus "cardTitle7_1";
+				}
+			}
+			
+			{
+				if ( 2 == 0 )
+				{
+					setfocus "cardTitle7_1";
+				}
+				if ( 2 == 1 )
+				{
+					setfocus "cardTitle7_2";
+				}
+				if ( 2 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle7_0";
+					}
+				}
+			}
+			action
+			{
+				if ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 24 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+				{
+					play "mouse_click";
+					setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 24 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+					;
+					setPlayerData ( "cardTitle" , "localVarString" ( "ui_tempVar" ) );
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 24 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+				;;
+				if ( localvarstring( "ui_tempVar" ) != "" )
+				{
+					setPlayerData ( "titleNew" , "localVarString" ( "ui_tempVar" ) , "false" );
+				}
+			}
+		}
+		itemDef
+		{
+			rect 110 284 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , 24 + ( localvarint( "ui_pageIndex" ) * 27 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , 24 + ( localvarint( "ui_pageIndex" ) * 27 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , 24 + ( localvarint( "ui_pageIndex" ) * 27 ) , 5 ) )
+			exp forecolor a ( ( 1 * !( getfocuseditemname( ) == "cardTitle7_2" ) ) + ( ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.25 + 0.75 ) * ( getfocuseditemname( ) == "cardTitle7_2" ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 24 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 24 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , 24 + ( localvarint( "ui_pageIndex" ) * 27 ) , 1 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , 24 + ( localvarint( "ui_pageIndex" ) * 27 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 100 274 60 40 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 1 0.45 1
+			background "highlight_selected"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 24 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) * 0.65 )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 24 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect 110 284 40 20 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new_bg"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 24 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 24 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect 110 284 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "cardtitle_locked"
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 24 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && !isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 24 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "" )
+		}
+		itemDef
+		{
+			name "cardTitle8_2"
+			rect 78 305.333 224 53.3333 2 1
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "highlight_selected"
+			type 1
+			textscale 0.55
+			exp forecolor g ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 25 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 25 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor b ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 25 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 25 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor a ( ( getfocuseditemname( ) == "cardTitle8_2" ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 25 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+			
+			{
+				if ( 2 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle8_2";
+					}
+				}
+				if ( 2 == 1 )
+				{
+					setfocus "cardTitle8_0";
+				}
+				if ( 2 == 2 )
+				{
+					setfocus "cardTitle8_1";
+				}
+			}
+			
+			{
+				if ( 2 == 0 )
+				{
+					setfocus "cardTitle8_1";
+				}
+				if ( 2 == 1 )
+				{
+					setfocus "cardTitle8_2";
+				}
+				if ( 2 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle8_0";
+					}
+				}
+			}
+			
+			{
+				if ( 2 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle8_2";
+					}
+				}
+				if ( 2 == 1 )
+				{
+					setfocus "cardTitle8_0";
+				}
+				if ( 2 == 2 )
+				{
+					setfocus "cardTitle8_1";
+				}
+			}
+			
+			{
+				if ( 2 == 0 )
+				{
+					setfocus "cardTitle8_1";
+				}
+				if ( 2 == 1 )
+				{
+					setfocus "cardTitle8_2";
+				}
+				if ( 2 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle8_0";
+					}
+				}
+			}
+			action
+			{
+				if ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 25 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+				{
+					play "mouse_click";
+					setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 25 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+					;
+					setPlayerData ( "cardTitle" , "localVarString" ( "ui_tempVar" ) );
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 25 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+				;;
+				if ( localvarstring( "ui_tempVar" ) != "" )
+				{
+					setPlayerData ( "titleNew" , "localVarString" ( "ui_tempVar" ) , "false" );
+				}
+			}
+		}
+		itemDef
+		{
+			rect 110 316 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , 25 + ( localvarint( "ui_pageIndex" ) * 27 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , 25 + ( localvarint( "ui_pageIndex" ) * 27 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , 25 + ( localvarint( "ui_pageIndex" ) * 27 ) , 5 ) )
+			exp forecolor a ( ( 1 * !( getfocuseditemname( ) == "cardTitle8_2" ) ) + ( ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.25 + 0.75 ) * ( getfocuseditemname( ) == "cardTitle8_2" ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 25 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 25 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , 25 + ( localvarint( "ui_pageIndex" ) * 27 ) , 1 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , 25 + ( localvarint( "ui_pageIndex" ) * 27 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 100 306 60 40 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 1 0.45 1
+			background "highlight_selected"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 25 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) * 0.65 )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 25 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect 110 316 40 20 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new_bg"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 25 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 25 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect 110 316 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "cardtitle_locked"
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 25 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && !isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 25 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "" )
+		}
+		itemDef
+		{
+			name "cardTitle9_2"
+			rect 78 337.333 224 53.3333 2 1
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "highlight_selected"
+			type 1
+			textscale 0.55
+			exp forecolor g ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 26 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 26 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor b ( 0.45 + ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 26 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) && ( tablelookupbyrow( "mp/cardTitleTable.csv" , 26 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) ) )
+			exp forecolor a ( ( getfocuseditemname( ) == "cardTitle9_2" ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 26 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+			
+			{
+				if ( 2 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle9_2";
+					}
+				}
+				if ( 2 == 1 )
+				{
+					setfocus "cardTitle9_0";
+				}
+				if ( 2 == 2 )
+				{
+					setfocus "cardTitle9_1";
+				}
+			}
+			
+			{
+				if ( 2 == 0 )
+				{
+					setfocus "cardTitle9_1";
+				}
+				if ( 2 == 1 )
+				{
+					setfocus "cardTitle9_2";
+				}
+				if ( 2 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle9_0";
+					}
+				}
+			}
+			
+			{
+				if ( 2 == 0 )
+				{
+					if ( localvarint( "ui_pageIndex" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+						;
+						setfocus "cardTitle9_2";
+					}
+				}
+				if ( 2 == 1 )
+				{
+					setfocus "cardTitle9_0";
+				}
+				if ( 2 == 2 )
+				{
+					setfocus "cardTitle9_1";
+				}
+			}
+			
+			{
+				if ( 2 == 0 )
+				{
+					setfocus "cardTitle9_1";
+				}
+				if ( 2 == 1 )
+				{
+					setfocus "cardTitle9_2";
+				}
+				if ( 2 == 2 )
+				{
+					if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+					{
+						setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+						;
+						setfocus "cardTitle9_0";
+					}
+				}
+			}
+			action
+			{
+				if ( isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 26 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+				{
+					play "mouse_click";
+					setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 26 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+					;
+					setPlayerData ( "cardTitle" , "localVarString" ( "ui_tempVar" ) );
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setLocalVarString "ui_tempVar" ( tablelookupbyrow( "mp/cardTitleTable.csv" , 26 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) );
+				;;
+				if ( localvarstring( "ui_tempVar" ) != "" )
+				{
+					setPlayerData ( "titleNew" , "localVarString" ( "ui_tempVar" ) , "false" );
+				}
+			}
+		}
+		itemDef
+		{
+			rect 110 348 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			exp forecolor r ( tablelookupbyrow( "mp/cardTitleTable.csv" , 26 + ( localvarint( "ui_pageIndex" ) * 27 ) , 3 ) )
+			exp forecolor g ( tablelookupbyrow( "mp/cardTitleTable.csv" , 26 + ( localvarint( "ui_pageIndex" ) * 27 ) , 4 ) )
+			exp forecolor b ( tablelookupbyrow( "mp/cardTitleTable.csv" , 26 + ( localvarint( "ui_pageIndex" ) * 27 ) , 5 ) )
+			exp forecolor a ( ( 1 * !( getfocuseditemname( ) == "cardTitle9_2" ) ) + ( ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.25 + 0.75 ) * ( getfocuseditemname( ) == "cardTitle9_2" ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 26 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 26 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "@" + tablelookupbyrow( "mp/cardTitleTable.csv" , 26 + ( localvarint( "ui_pageIndex" ) * 27 ) , 1 ) )
+			exp material ( tablelookupbyrow( "mp/cardTitleTable.csv" , 26 + ( localvarint( "ui_pageIndex" ) * 27 ) , 2 ) )
+		}
+		itemDef
+		{
+			rect 100 338 60 40 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 0.25 1 0.45 1
+			background "highlight_selected"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 26 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) * ( ( sin( milliseconds( ) / 100 ) * 0.5 + 0.5 ) * 0.5 + 0.5 ) * 0.65 )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 26 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect 110 348 40 20 2 1
+			decoration
+			visible 1
+			style 3
+			forecolor 1 1 1 1
+			background "specialty_new_bg"
+			textscale 0.55
+			exp forecolor a ( getplayerdata( "titleNew" , tablelookupbyrow( "mp/cardTitleTable.csv" , 26 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 26 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) )
+		}
+		itemDef
+		{
+			rect 110 348 160 32 2 1
+			decoration
+			visible 1
+			style 1
+			forecolor 1 1 1 1
+			backcolor 1 1 1 1
+			background "cardtitle_locked"
+			textfont 3
+			textalign 5
+			textaligny 8
+			textscale 0.375
+			visible when ( ( tablelookupbyrow( "mp/cardTitleTable.csv" , 26 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) != "" ) && !isitemunlocked( tablelookupbyrow( "mp/cardTitleTable.csv" , 26 + ( localvarint( "ui_pageIndex" ) * 27 ) , 0 ) ) )
+			exp text ( "" )
+		}
+		itemDef
+		{
+			rect -304 140 -32 128 2 1
+			visible 1
+			group "left_arrow"
+			style 3
+			forecolor 1 1 1 1
+			background "summary_arrow"
+			type 1
+			textscale 0.55
+			visible when ( localvarint( "ui_pageIndex" ) && dvarbool( "wideScreen" ) )
+			action
+			{
+				if ( localvarint( "ui_pageIndex" ) )
+				{
+					setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+					;;
+				}
+			}
+		}
+		itemDef
+		{
+			rect -304 140 32 128 2 1
+			visible 1
+			forecolor 1 1 1 1
+			type 1
+			textscale 0.55
+			visible when ( localvarint( "ui_pageIndex" ) && dvarbool( "wideScreen" ) )
+			action
+			{
+				if ( localvarint( "ui_pageIndex" ) )
+				{
+					setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+					;;
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setItemColor "left_arrow" forecolor 1 1 "0.5" 1;
+			}
+			leaveFocus
+			{
+				setItemColor "left_arrow" forecolor 1 1 1 1;
+			}
+		}
+		itemDef
+		{
+			rect 272 140 32 128 2 1
+			visible 1
+			group "right_arrow"
+			style 3
+			forecolor 1 1 1 1
+			background "summary_arrow"
+			type 1
+			textscale 0.55
+			visible when ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) && dvarbool( "wideScreen" ) )
+			action
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+				{
+					setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+					;;
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setItemColor "right_arrow" forecolor 1 1 "0.5" 1;
+			}
+			leaveFocus
+			{
+				setItemColor "right_arrow" forecolor 1 1 1 1;
+			}
+		}
+		itemDef
+		{
+			rect -260 26 -20 80 2 1
+			decoration
+			visible 1
+			group "left_arrow"
+			style 3
+			forecolor 1 1 1 1
+			background "summary_arrow"
+			type 1
+			textscale 0.55
+			visible when ( localvarint( "ui_pageIndex" ) && !dvarbool( "wideScreen" ) )
+		}
+		itemDef
+		{
+			rect -260 26 20 80 2 1
+			visible 1
+			forecolor 1 1 1 1
+			type 1
+			textscale 0.55
+			visible when ( localvarint( "ui_pageIndex" ) && !dvarbool( "wideScreen" ) )
+			action
+			{
+				if ( localvarint( "ui_pageIndex" ) )
+				{
+					setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) - 1 );
+					;;
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setItemColor "left_arrow" forecolor 1 1 "0.5" 1;
+			}
+			leaveFocus
+			{
+				setItemColor "left_arrow" forecolor 1 1 1 1;
+			}
+		}
+		itemDef
+		{
+			rect 240 26 20 80 2 1
+			visible 1
+			group "right_arrow"
+			style 3
+			forecolor 1 1 1 1
+			background "summary_arrow"
+			type 1
+			textscale 0.55
+			visible when ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) && !dvarbool( "wideScreen" ) )
+			action
+			{
+				if ( localvarint( "ui_pageIndex" ) < localvarint( "ui_numPages" ) )
+				{
+					setLocalVarInt "ui_pageIndex" ( localvarint( "ui_pageIndex" ) + 1 );
+					;;
+				}
+			}
+			onFocus
+			{
+				play "mouse_over";
+				setItemColor "right_arrow" forecolor 1 1 "0.5" 1;
+			}
+			leaveFocus
+			{
+				setItemColor "right_arrow" forecolor 1 1 1 1;
+			}
+		}
+		itemDef
+		{
+			rect -64 -20 336 20 1 3
+			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@PLATFORM_BACK_CAPS"
+			visible when ( "@PLATFORM_BACK_CAPS" == "@PLATFORM_BACK_CAPS" )
+			action
+			{
+				play "mouse_click";
+				play "mouse_click";
+				"escape" self;
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+		itemDef
+		{
+			rect -64 -20 336 20 1 3
+			visible 1
+			group "mw2_button"
+			style 1
+			forecolor 1 1 1 1
+			disablecolor 0.6 0.55 0.55 1
+			background "menu_button_selection_bar"
+			type 1
+			textfont 3
+			textalign 6
+			textalignx -60
+			textscale 0.375
+			text "@PLATFORM_BACK_CAPS"
+			visible when ( "@PLATFORM_BACK_CAPS" == "@PLATFORM_GAME_SUMMARY_CAPS" )
+			action
+			{
+				play "mouse_click";
+				play "mouse_click";
+				open "popup_summary";
+			}
+			onFocus
+			{
+				play "mouse_over";
+				if ( dvarstring( "gameMode" ) != "mp" )
+				{
+					setItemColor "mw2_button" backcolor 0 0 0 0;
+				}
+				setItemColor self backcolor 0 0 0 1;
+				setLocalVarBool "ui_menuAButton" ( 1 );
+			}
+			leaveFocus
+			{
+				setItemColor self backcolor 0 0 0 "0.0";
+				setLocalVarString "ui_hint_text" ( "@NULL_EMPTY" );
+				setLocalVarBool "ui_menuAButton" ( 0 );
+			}
+		}
+	}
+}
